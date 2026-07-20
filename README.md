@@ -2,7 +2,9 @@
 
 **I designed the agentic ASIC framework. The framework autonomously produced this chip — no human wrote RTL, testbenches, or ran EDA tools.**
 
-![KLayout render of drone_soc GDS](layout.png)
+![KLayout render of drone_soc GDS — signal layers only, power/fill/clock hidden](layout_beauty.png)
+
+![Chip floorplan — Ibex core, 8KB SRAM macro, peripheral cluster, Wishbone interconnect](floorplan.png)
 
 Tapeout-ready GDS on SkyWater 130nm. DRC/LVS clean. 10/10 autonomous stages audited PASS by Claude Opus 4.8.
 
@@ -107,14 +109,12 @@ The early-stage directories (business, specification, architecture) include only
 
 ## Design Flow
 
-```
-Spec → Arch → RTL (lint/formal/synth/equiv) → Firmware (BSP/drivers/bootrom)
-→ Verification (cocotb 368 tests) → Promotion → Backend (LibreLane P&R)
-→ Caravel (mpw-precheck) → Document
-```
+![Pipeline diagram — 10 autonomous stages with Claude Opus 4.8 audit gates](pipeline.svg)
 
 **Self-audit gate:** Every stage audited by Claude Opus 4.8 (200 max-turns, high effort).
 **Framework:** Hermes agentic ASIC workflow — Vera orchestration.
+
+![Signoff summary — 8 metrics: 227K cells, DRC 0, LVS clean, +30ns WNS, 368/368 tests](signoff_card.png)
 
 ---
 
