@@ -1,0 +1,61 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+
+-- Executing script file `design_smt2.ys' --
+
+1. Executing RTLIL frontend.
+Input filename: design_prep.il
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `sram_8kb'. Setting top module to sram_8kb.
+
+2.1. Analyzing design hierarchy..
+Top module:  \sram_8kb
+
+2.2. Analyzing design hierarchy..
+Top module:  \sram_8kb
+Removed 0 unused modules.
+
+3. Executing FORMALFF pass.
+
+4. Executing DFFUNMAP pass (unmap clock enable and synchronous reset from FFs).
+
+5. Printing statistics.
+
+=== sram_8kb ===
+
+        +----------Local Count, excluding submodules.
+        | 
+    20500 wires
+   141481 wire bits
+     2061 public wires
+    65667 public wire bits
+       10 ports
+       87 port bits
+    26636 cells
+     8193   $anyinit
+        1   $anyseq
+        1   $assume
+     2047   $eq
+        2   $logic_and
+        2   $logic_not
+     8196   $mux
+        1   $not
+        1   $pmux
+     8192   $reduce_and
+
+6. Executing SMT2 backend.
+
+6.1. Executing BMUXMAP pass.
+
+6.2. Executing DEMUXMAP pass.
+Creating SMT-LIBv2 representation of module sram_8kb.
+
+End of script. Logfile hash: 32c1ef77e2, time: 0.72s, user: 0.80s, system: 0.05s, MEM: 85.69 MB peak
+Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+Time spent: 85% 2x write_smt2 (0 sec), 11% 2x read_rtlil (0 sec), ...

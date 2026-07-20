@@ -1,0 +1,1617 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+
+-- Executing script file `../model/design.ys' --
+
+1. Executing Verilog-2005 frontend: axis_fifo.v
+Parsing formal SystemVerilog input from `axis_fifo.v' to AST representation.
+Storing AST representation for module `$abstract\axis_fifo'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: EF_UART.v
+Parsing formal SystemVerilog input from `EF_UART.v' to AST representation.
+Storing AST representation for module `$abstract\EF_UART'.
+Storing AST representation for module `$abstract\BAUDGEN'.
+Storing AST representation for module `$abstract\UART_RX'.
+Storing AST representation for module `$abstract\UART_TX'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: EF_UART_WB.v
+Parsing formal SystemVerilog input from `EF_UART_WB.v' to AST representation.
+Storing AST representation for module `$abstract\EF_UART_WB'.
+Successfully finished Verilog frontend.
+
+4. Executing Verilog-2005 frontend: EF_UART_WB_wrapper.v
+Parsing formal SystemVerilog input from `EF_UART_WB_wrapper.v' to AST representation.
+Storing AST representation for module `$abstract\EF_UART_WB_wrapper'.
+Successfully finished Verilog frontend.
+
+5. Executing Verilog-2005 frontend: ef_util_lib.v
+Parsing formal SystemVerilog input from `ef_util_lib.v' to AST representation.
+Storing AST representation for module `$abstract\ef_util_sync'.
+Storing AST representation for module `$abstract\ef_util_ped'.
+Storing AST representation for module `$abstract\ef_util_ned'.
+Storing AST representation for module `$abstract\ef_util_ticker'.
+Storing AST representation for module `$abstract\ef_util_glitch_filter'.
+Storing AST representation for module `$abstract\ef_util_fifo'.
+Storing AST representation for module `$abstract\ef_util_clkmux_2x1'.
+Storing AST representation for module `$abstract\ef_util_clkmux_4x1'.
+Storing AST representation for module `$abstract\ef_util_gating_cell'.
+Successfully finished Verilog frontend.
+
+6. Executing HIERARCHY pass (managing design hierarchy).
+
+7. Executing AST frontend in derive mode using pre-parsed AST for module `\EF_UART_WB_wrapper'.
+Generating RTLIL representation for module `\EF_UART_WB_wrapper'.
+
+7.1. Analyzing design hierarchy..
+Top module:  \EF_UART_WB_wrapper
+
+7.2. Executing AST frontend in derive mode using pre-parsed AST for module `\EF_UART_WB'.
+Generating RTLIL representation for module `\EF_UART_WB'.
+
+7.3. Analyzing design hierarchy..
+Top module:  \EF_UART_WB_wrapper
+Used module:     \EF_UART_WB
+Parameter \MDW = 9
+Parameter \FAW = 4
+Parameter \SC = 8
+Parameter \GFLEN = 8
+
+7.4. Executing AST frontend in derive mode using pre-parsed AST for module `\EF_UART'.
+Parameter \MDW = 9
+Parameter \FAW = 4
+Parameter \SC = 8
+Parameter \GFLEN = 8
+Generating RTLIL representation for module `$paramod$e9cdd1478d980710c2839daafb26d490f06a2359\EF_UART'.
+
+7.5. Executing AST frontend in derive mode using pre-parsed AST for module `\ef_util_gating_cell'.
+Generating RTLIL representation for module `\ef_util_gating_cell'.
+
+7.6. Analyzing design hierarchy..
+Top module:  \EF_UART_WB_wrapper
+Used module:     \EF_UART_WB
+Used module:         $paramod$e9cdd1478d980710c2839daafb26d490f06a2359\EF_UART
+Used module:         \ef_util_gating_cell
+Parameter \NUM_SAMPLES = 8
+Parameter \MDW = 9
+
+7.7. Executing AST frontend in derive mode using pre-parsed AST for module `\UART_RX'.
+Parameter \NUM_SAMPLES = 8
+Parameter \MDW = 9
+Generating RTLIL representation for module `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX'.
+Parameter \DW = 9
+Parameter \AW = 4
+
+7.8. Executing AST frontend in derive mode using pre-parsed AST for module `\ef_util_fifo'.
+Parameter \DW = 9
+Parameter \AW = 4
+Generating RTLIL representation for module `$paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo'.
+Parameter \NUM_SAMPLES = 8
+Parameter \MDW = 9
+
+7.9. Executing AST frontend in derive mode using pre-parsed AST for module `\UART_TX'.
+Parameter \NUM_SAMPLES = 8
+Parameter \MDW = 9
+Generating RTLIL representation for module `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX'.
+Parameter \DW = 9
+Parameter \AW = 4
+Found cached RTLIL representation for module `$paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo'.
+
+7.10. Executing AST frontend in derive mode using pre-parsed AST for module `\BAUDGEN'.
+Generating RTLIL representation for module `\BAUDGEN'.
+Parameter \N = 8
+
+7.11. Executing AST frontend in derive mode using pre-parsed AST for module `\ef_util_glitch_filter'.
+Parameter \N = 8
+Generating RTLIL representation for module `$paramod\ef_util_glitch_filter\N=s32'00000000000000000000000000001000'.
+
+7.12. Executing AST frontend in derive mode using pre-parsed AST for module `\ef_util_sync'.
+Generating RTLIL representation for module `\ef_util_sync'.
+
+7.13. Analyzing design hierarchy..
+Top module:  \EF_UART_WB_wrapper
+Used module:     \EF_UART_WB
+Used module:         $paramod$e9cdd1478d980710c2839daafb26d490f06a2359\EF_UART
+Used module:             $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX
+Used module:             $paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo
+Used module:             $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX
+Used module:             \BAUDGEN
+Used module:             $paramod\ef_util_glitch_filter\N=s32'00000000000000000000000000001000
+Used module:             \ef_util_sync
+Used module:         \ef_util_gating_cell
+
+7.14. Executing AST frontend in derive mode using pre-parsed AST for module `\ef_util_ticker'.
+Generating RTLIL representation for module `\ef_util_ticker'.
+
+7.15. Analyzing design hierarchy..
+Top module:  \EF_UART_WB_wrapper
+Used module:     \EF_UART_WB
+Used module:         $paramod$e9cdd1478d980710c2839daafb26d490f06a2359\EF_UART
+Used module:             $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX
+Used module:             $paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo
+Used module:             $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX
+Used module:             \BAUDGEN
+Used module:             $paramod\ef_util_glitch_filter\N=s32'00000000000000000000000000001000
+Used module:                 \ef_util_ticker
+Used module:             \ef_util_sync
+Used module:         \ef_util_gating_cell
+
+7.16. Analyzing design hierarchy..
+Top module:  \EF_UART_WB_wrapper
+Used module:     \EF_UART_WB
+Used module:         $paramod$e9cdd1478d980710c2839daafb26d490f06a2359\EF_UART
+Used module:             $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX
+Used module:             $paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo
+Used module:             $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX
+Used module:             \BAUDGEN
+Used module:             $paramod\ef_util_glitch_filter\N=s32'00000000000000000000000000001000
+Used module:                 \ef_util_ticker
+Used module:             \ef_util_sync
+Used module:         \ef_util_gating_cell
+Removing unused module `$abstract\ef_util_gating_cell'.
+Removing unused module `$abstract\ef_util_clkmux_4x1'.
+Removing unused module `$abstract\ef_util_clkmux_2x1'.
+Removing unused module `$abstract\ef_util_fifo'.
+Removing unused module `$abstract\ef_util_glitch_filter'.
+Removing unused module `$abstract\ef_util_ticker'.
+Removing unused module `$abstract\ef_util_ned'.
+Removing unused module `$abstract\ef_util_ped'.
+Removing unused module `$abstract\ef_util_sync'.
+Removing unused module `$abstract\EF_UART_WB_wrapper'.
+Removing unused module `$abstract\EF_UART_WB'.
+Removing unused module `$abstract\UART_TX'.
+Removing unused module `$abstract\UART_RX'.
+Removing unused module `$abstract\BAUDGEN'.
+Removing unused module `$abstract\EF_UART'.
+Removing unused module `$abstract\axis_fifo'.
+Removed 16 unused modules.
+
+8. Executing PROC pass (convert processes to netlists).
+
+8.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+8.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 5 switch rules as full_case in process $proc$ef_util_lib.v:229$192 in module $paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo.
+Marked 2 switch rules as full_case in process $proc$ef_util_lib.v:201$190 in module $paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo.
+Marked 1 switch rules as full_case in process $proc$ef_util_lib.v:192$180 in module $paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo.
+Marked 2 switch rules as full_case in process $proc$EF_UART.v:397$168 in module $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX.
+Marked 22 switch rules as full_case in process $proc$EF_UART.v:312$143 in module $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX.
+Marked 3 switch rules as full_case in process $proc$EF_UART.v:286$139 in module $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX.
+Marked 4 switch rules as full_case in process $proc$EF_UART.v:193$127 in module $paramod$e9cdd1478d980710c2839daafb26d490f06a2359\EF_UART.
+Marked 2 switch rules as full_case in process $proc$EF_UART_WB.v:326$113 in module EF_UART_WB.
+Marked 11 switch rules as full_case in process $proc$EF_UART_WB.v:216$56 in module EF_UART_WB.
+Marked 2 switch rules as full_case in process $proc$EF_UART_WB.v:199$53 in module EF_UART_WB.
+Marked 1 switch rules as full_case in process $proc$EF_UART_WB.v:196$50 in module EF_UART_WB.
+Marked 1 switch rules as full_case in process $proc$EF_UART_WB.v:187$46 in module EF_UART_WB.
+Marked 2 switch rules as full_case in process $proc$EF_UART_WB.v:181$42 in module EF_UART_WB.
+Marked 1 switch rules as full_case in process $proc$EF_UART_WB.v:174$39 in module EF_UART_WB.
+Marked 2 switch rules as full_case in process $proc$EF_UART_WB.v:164$35 in module EF_UART_WB.
+Marked 1 switch rules as full_case in process $proc$EF_UART_WB.v:157$32 in module EF_UART_WB.
+Marked 1 switch rules as full_case in process $proc$EF_UART_WB.v:148$29 in module EF_UART_WB.
+Marked 1 switch rules as full_case in process $proc$EF_UART_WB.v:142$26 in module EF_UART_WB.
+Marked 1 switch rules as full_case in process $proc$EF_UART_WB.v:133$23 in module EF_UART_WB.
+Marked 1 switch rules as full_case in process $proc$EF_UART_WB.v:123$20 in module EF_UART_WB.
+Marked 2 switch rules as full_case in process $proc$ef_util_lib.v:100$245 in module ef_util_ticker.
+Marked 2 switch rules as full_case in process $proc$ef_util_lib.v:89$240 in module ef_util_ticker.
+Marked 2 switch rules as full_case in process $proc$ef_util_lib.v:143$236 in module $paramod\ef_util_glitch_filter\N=s32'00000000000000000000000000001000.
+Marked 1 switch rules as full_case in process $proc$ef_util_lib.v:134$231 in module $paramod\ef_util_glitch_filter\N=s32'00000000000000000000000000001000.
+Marked 1 switch rules as full_case in process $proc$EF_UART.v:231$224 in module BAUDGEN.
+Marked 16 switch rules as full_case in process $proc$EF_UART.v:482$206 in module $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX.
+Marked 1 switch rules as full_case in process $proc$EF_UART.v:465$204 in module $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX.
+Removed a total of 0 dead cases.
+
+8.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 19 redundant assignments.
+Promoted 25 assignments to connections.
+
+8.4. Executing PROC_INIT pass (extract init attributes).
+
+8.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst_n in `$paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo.$proc$ef_util_lib.v:201$190'.
+Found async reset \resetn in `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX.$proc$EF_UART.v:397$168'.
+Found async reset \resetn in `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX.$proc$EF_UART.v:286$139'.
+Found async reset \rst_n in `$paramod$e9cdd1478d980710c2839daafb26d490f06a2359\EF_UART.$proc$EF_UART.v:193$127'.
+Found async reset \rst_i in `\EF_UART_WB.$proc$EF_UART_WB.v:326$113'.
+Found async reset \rst_i in `\EF_UART_WB.$proc$EF_UART_WB.v:216$56'.
+Found async reset \rst_i in `\EF_UART_WB.$proc$EF_UART_WB.v:199$53'.
+Found async reset \rst_i in `\EF_UART_WB.$proc$EF_UART_WB.v:196$50'.
+Found async reset \rst_i in `\EF_UART_WB.$proc$EF_UART_WB.v:187$46'.
+Found async reset \rst_i in `\EF_UART_WB.$proc$EF_UART_WB.v:181$42'.
+Found async reset \rst_i in `\EF_UART_WB.$proc$EF_UART_WB.v:174$39'.
+Found async reset \rst_i in `\EF_UART_WB.$proc$EF_UART_WB.v:164$35'.
+Found async reset \rst_i in `\EF_UART_WB.$proc$EF_UART_WB.v:157$32'.
+Found async reset \rst_i in `\EF_UART_WB.$proc$EF_UART_WB.v:148$29'.
+Found async reset \rst_i in `\EF_UART_WB.$proc$EF_UART_WB.v:142$26'.
+Found async reset \rst_i in `\EF_UART_WB.$proc$EF_UART_WB.v:133$23'.
+Found async reset \rst_i in `\EF_UART_WB.$proc$EF_UART_WB.v:123$20'.
+Found async reset \rst_n in `\ef_util_ticker.$proc$ef_util_lib.v:100$245'.
+Found async reset \rst_n in `\ef_util_ticker.$proc$ef_util_lib.v:89$240'.
+Found async reset \rst_n in `$paramod\ef_util_glitch_filter\N=s32'00000000000000000000000000001000.$proc$ef_util_lib.v:143$236'.
+Found async reset \rst_n in `$paramod\ef_util_glitch_filter\N=s32'00000000000000000000000000001000.$proc$ef_util_lib.v:134$231'.
+Found async reset \rst_n in `\BAUDGEN.$proc$EF_UART.v:231$224'.
+Found async reset \resetn in `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX.$proc$EF_UART.v:465$204'.
+
+8.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~95 debug messages>
+
+8.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `$paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo.$proc$ef_util_lib.v:229$192'.
+     1/15: $4\full_next[0:0]
+     2/15: $3\full_next[0:0]
+     3/15: $3\level_next[3:0]
+     4/15: $4\empty_next[0:0]
+     5/15: $2\w_ptr_next[3:0]
+     6/15: $3\empty_next[0:0]
+     7/15: $2\empty_next[0:0]
+     8/15: $2\level_next[3:0]
+     9/15: $2\full_next[0:0]
+    10/15: $2\r_ptr_next[3:0]
+    11/15: $1\empty_next[0:0]
+    12/15: $1\full_next[0:0]
+    13/15: $1\level_next[3:0]
+    14/15: $1\r_ptr_next[3:0]
+    15/15: $1\w_ptr_next[3:0]
+Creating decoders for process `$paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo.$proc$ef_util_lib.v:201$190'.
+     1/5: $0\level_reg[3:0]
+     2/5: $0\empty_reg[0:0]
+     3/5: $0\full_reg[0:0]
+     4/5: $0\r_ptr_reg[3:0]
+     5/5: $0\w_ptr_reg[3:0]
+Creating decoders for process `$paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo.$proc$ef_util_lib.v:192$180'.
+     1/3: $1$memwr$\array_reg$ef_util_lib.v:194$179_EN[8:0]$186
+     2/3: $1$memwr$\array_reg$ef_util_lib.v:194$179_DATA[8:0]$185
+     3/3: $1$memwr$\array_reg$ef_util_lib.v:194$179_ADDR[3:0]$184
+Creating decoders for process `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX.$proc$EF_UART.v:397$168'.
+     1/1: $0\brk[11:0]
+Creating decoders for process `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX.$proc$EF_UART.v:312$143'.
+     1/57: $7\f_error_next[0:0]
+     2/57: $6\f_error_next[0:0]
+     3/57: $6\rx_done[0:0]
+     4/57: $15\next_state[2:0]
+     5/57: $12\b_next[3:0]
+     6/57: $5\f_error_next[0:0]
+     7/57: $11\b_next[3:0]
+     8/57: $14\next_state[2:0]
+     9/57: $5\rx_done[0:0]
+    10/57: $13\next_state[2:0]
+    11/57: $4\rx_done[0:0]
+    12/57: $4\f_error_next[0:0]
+    13/57: $12\next_state[2:0]
+    14/57: $3\rx_done[0:0]
+    15/57: $3\f_error_next[0:0]
+    16/57: $10\b_next[3:0]
+    17/57: $2\f_error_next[0:0]
+    18/57: $9\b_next[3:0]
+    19/57: $11\next_state[2:0]
+    20/57: $2\rx_done[0:0]
+    21/57: $8\p_error_next[0:0]
+    22/57: $7\p_error_next[0:0]
+    23/57: $6\p_error_next[0:0]
+    24/57: $5\p_error_next[0:0]
+    25/57: $4\p_error_next[0:0]
+    26/57: $3\p_error_next[0:0]
+    27/57: $10\next_state[2:0]
+    28/57: $8\b_next[3:0]
+    29/57: $2\p_error_next[0:0]
+    30/57: $7\b_next[3:0]
+    31/57: $9\next_state[2:0]
+    32/57: $8\next_state[2:0]
+    33/57: $7\next_state[2:0]
+    34/57: $6\count_next[3:0]
+    35/57: $5\count_next[3:0]
+    36/57: $6\next_state[2:0]
+    37/57: $3\data_next[8:0]
+    38/57: $6\b_next[3:0]
+    39/57: $2\data_next[8:0]
+    40/57: $4\count_next[3:0]
+    41/57: $5\b_next[3:0]
+    42/57: $5\next_state[2:0]
+    43/57: $3\count_next[3:0]
+    44/57: $4\b_next[3:0]
+    45/57: $4\next_state[2:0]
+    46/57: $2\count_next[3:0]
+    47/57: $3\b_next[3:0]
+    48/57: $3\next_state[2:0]
+    49/57: $2\b_next[3:0]
+    50/57: $2\next_state[2:0]
+    51/57: $1\b_next[3:0]
+    52/57: $1\next_state[2:0]
+    53/57: $1\f_error_next[0:0]
+    54/57: $1\p_error_next[0:0]
+    55/57: $1\data_next[8:0]
+    56/57: $1\count_next[3:0]
+    57/57: $1\rx_done[0:0]
+Creating decoders for process `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX.$proc$EF_UART.v:286$139'.
+     1/6: $0\data_reg[8:0]
+     2/6: $0\count_reg[3:0]
+     3/6: $0\b_reg[3:0]
+     4/6: $0\current_state[2:0]
+     5/6: $0\f_error_reg[0:0]
+     6/6: $0\p_error_reg[0:0]
+Creating decoders for process `$paramod$e9cdd1478d980710c2839daafb26d490f06a2359\EF_UART.$proc$EF_UART.v:193$127'.
+     1/2: $0\samples_count[4:0]
+     2/2: $0\bits_count[5:0]
+Creating decoders for process `\EF_UART_WB.$proc$EF_UART_WB.v:326$113'.
+     1/1: $0\ack_o[0:0]
+Creating decoders for process `\EF_UART_WB.$proc$EF_UART_WB.v:216$56'.
+     1/11: $0\RIS_REG[9:0] [9]
+     2/11: $0\RIS_REG[9:0] [8]
+     3/11: $0\RIS_REG[9:0] [7]
+     4/11: $0\RIS_REG[9:0] [6]
+     5/11: $0\RIS_REG[9:0] [5]
+     6/11: $0\RIS_REG[9:0] [4]
+     7/11: $0\RIS_REG[9:0] [3]
+     8/11: $0\RIS_REG[9:0] [2]
+     9/11: $0\RIS_REG[9:0] [1]
+    10/11: $0\RIS_REG[9:0] [0]
+    11/11: $1\_i_[31:0]
+Creating decoders for process `\EF_UART_WB.$proc$EF_UART_WB.v:199$53'.
+     1/1: $0\IC_REG[9:0]
+Creating decoders for process `\EF_UART_WB.$proc$EF_UART_WB.v:196$50'.
+     1/1: $0\IM_REG[9:0]
+Creating decoders for process `\EF_UART_WB.$proc$EF_UART_WB.v:187$46'.
+     1/1: $0\GCLK_REG[0:0]
+Creating decoders for process `\EF_UART_WB.$proc$EF_UART_WB.v:181$42'.
+     1/1: $0\TX_FIFO_FLUSH_REG[0:0]
+Creating decoders for process `\EF_UART_WB.$proc$EF_UART_WB.v:174$39'.
+     1/1: $0\TX_FIFO_THRESHOLD_REG[3:0]
+Creating decoders for process `\EF_UART_WB.$proc$EF_UART_WB.v:164$35'.
+     1/1: $0\RX_FIFO_FLUSH_REG[0:0]
+Creating decoders for process `\EF_UART_WB.$proc$EF_UART_WB.v:157$32'.
+     1/1: $0\RX_FIFO_THRESHOLD_REG[3:0]
+Creating decoders for process `\EF_UART_WB.$proc$EF_UART_WB.v:148$29'.
+     1/1: $0\MATCH_REG[8:0]
+Creating decoders for process `\EF_UART_WB.$proc$EF_UART_WB.v:142$26'.
+     1/1: $0\CFG_REG[13:0]
+Creating decoders for process `\EF_UART_WB.$proc$EF_UART_WB.v:133$23'.
+     1/1: $0\CTRL_REG[4:0]
+Creating decoders for process `\EF_UART_WB.$proc$EF_UART_WB.v:123$20'.
+     1/1: $0\PR_REG[15:0]
+Creating decoders for process `\ef_util_ticker.$proc$ef_util_lib.v:100$245'.
+     1/1: $0\tick_reg[0:0]
+Creating decoders for process `\ef_util_ticker.$proc$ef_util_lib.v:89$240'.
+     1/1: $0\counter[7:0]
+Creating decoders for process `\ef_util_sync.$proc$ef_util_lib.v:38$238'.
+Creating decoders for process `$paramod\ef_util_glitch_filter\N=s32'00000000000000000000000000001000.$proc$ef_util_lib.v:143$236'.
+     1/1: $0\out[0:0]
+Creating decoders for process `$paramod\ef_util_glitch_filter\N=s32'00000000000000000000000000001000.$proc$ef_util_lib.v:134$231'.
+     1/1: $0\shifter[7:0]
+Creating decoders for process `\BAUDGEN.$proc$EF_UART.v:231$224'.
+     1/1: $0\count_reg[15:0]
+Creating decoders for process `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX.$proc$EF_UART.v:482$206'.
+     1/45: $6\tx_done[0:0]
+     2/45: $15\next_state[2:0]
+     3/45: $12\b_next[3:0]
+     4/45: $11\b_next[3:0]
+     5/45: $14\next_state[2:0]
+     6/45: $5\tx_done[0:0]
+     7/45: $13\next_state[2:0]
+     8/45: $4\tx_done[0:0]
+     9/45: $12\next_state[2:0]
+    10/45: $3\tx_done[0:0]
+    11/45: $10\b_next[3:0]
+    12/45: $9\b_next[3:0]
+    13/45: $11\next_state[2:0]
+    14/45: $2\tx_done[0:0]
+    15/45: $10\next_state[2:0]
+    16/45: $8\b_next[3:0]
+    17/45: $7\b_next[3:0]
+    18/45: $9\next_state[2:0]
+    19/45: $2\tx_next[0:0]
+    20/45: $8\next_state[2:0]
+    21/45: $7\next_state[2:0]
+    22/45: $6\count_next[3:0]
+    23/45: $5\count_next[3:0]
+    24/45: $6\next_state[2:0]
+    25/45: $4\data_next[8:0]
+    26/45: $6\b_next[3:0]
+    27/45: $3\data_next[8:0]
+    28/45: $4\count_next[3:0]
+    29/45: $5\b_next[3:0]
+    30/45: $5\next_state[2:0]
+    31/45: $3\count_next[3:0]
+    32/45: $4\b_next[3:0]
+    33/45: $4\next_state[2:0]
+    34/45: $2\count_next[3:0]
+    35/45: $3\b_next[3:0]
+    36/45: $3\next_state[2:0]
+    37/45: $2\data_next[8:0]
+    38/45: $2\b_next[3:0]
+    39/45: $2\next_state[2:0]
+    40/45: $1\data_next[8:0]
+    41/45: $1\b_next[3:0]
+    42/45: $1\next_state[2:0]
+    43/45: $1\tx_next[0:0]
+    44/45: $1\count_next[3:0]
+    45/45: $1\tx_done[0:0]
+Creating decoders for process `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX.$proc$EF_UART.v:465$204'.
+     1/5: $0\tx_reg[0:0]
+     2/5: $0\data_reg[8:0]
+     3/5: $0\count_reg[3:0]
+     4/5: $0\b_reg[3:0]
+     5/5: $0\current_state[2:0]
+
+8.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `$paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo.\w_ptr_next' from process `$paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo.$proc$ef_util_lib.v:229$192'.
+No latch inferred for signal `$paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo.\w_ptr_succ' from process `$paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo.$proc$ef_util_lib.v:229$192'.
+No latch inferred for signal `$paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo.\r_ptr_next' from process `$paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo.$proc$ef_util_lib.v:229$192'.
+No latch inferred for signal `$paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo.\r_ptr_succ' from process `$paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo.$proc$ef_util_lib.v:229$192'.
+No latch inferred for signal `$paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo.\level_next' from process `$paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo.$proc$ef_util_lib.v:229$192'.
+No latch inferred for signal `$paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo.\full_next' from process `$paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo.$proc$ef_util_lib.v:229$192'.
+No latch inferred for signal `$paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo.\empty_next' from process `$paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo.$proc$ef_util_lib.v:229$192'.
+No latch inferred for signal `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX.\rx_done' from process `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX.$proc$EF_UART.v:312$143'.
+No latch inferred for signal `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX.\next_state' from process `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX.$proc$EF_UART.v:312$143'.
+No latch inferred for signal `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX.\b_next' from process `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX.$proc$EF_UART.v:312$143'.
+No latch inferred for signal `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX.\count_next' from process `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX.$proc$EF_UART.v:312$143'.
+No latch inferred for signal `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX.\data_next' from process `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX.$proc$EF_UART.v:312$143'.
+No latch inferred for signal `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX.\p_error_next' from process `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX.$proc$EF_UART.v:312$143'.
+No latch inferred for signal `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX.\f_error_next' from process `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX.$proc$EF_UART.v:312$143'.
+No latch inferred for signal `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX.\tx_done' from process `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX.$proc$EF_UART.v:482$206'.
+No latch inferred for signal `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX.\next_state' from process `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX.$proc$EF_UART.v:482$206'.
+No latch inferred for signal `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX.\b_next' from process `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX.$proc$EF_UART.v:482$206'.
+No latch inferred for signal `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX.\count_next' from process `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX.$proc$EF_UART.v:482$206'.
+No latch inferred for signal `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX.\data_next' from process `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX.$proc$EF_UART.v:482$206'.
+No latch inferred for signal `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX.\tx_next' from process `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX.$proc$EF_UART.v:482$206'.
+
+8.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `$paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo.\w_ptr_reg' using process `$paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo.$proc$ef_util_lib.v:201$190'.
+  created $adff cell `$procdff$1548' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo.\r_ptr_reg' using process `$paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo.$proc$ef_util_lib.v:201$190'.
+  created $adff cell `$procdff$1553' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo.\level_reg' using process `$paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo.$proc$ef_util_lib.v:201$190'.
+  created $adff cell `$procdff$1558' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo.\full_reg' using process `$paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo.$proc$ef_util_lib.v:201$190'.
+  created $adff cell `$procdff$1563' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo.\empty_reg' using process `$paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo.$proc$ef_util_lib.v:201$190'.
+  created $adff cell `$procdff$1568' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo.$memwr$\array_reg$ef_util_lib.v:194$179_ADDR' using process `$paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo.$proc$ef_util_lib.v:192$180'.
+  created $dff cell `$procdff$1569' with positive edge clock.
+Creating register for signal `$paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo.$memwr$\array_reg$ef_util_lib.v:194$179_DATA' using process `$paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo.$proc$ef_util_lib.v:192$180'.
+  created $dff cell `$procdff$1570' with positive edge clock.
+Creating register for signal `$paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo.$memwr$\array_reg$ef_util_lib.v:194$179_EN' using process `$paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo.$proc$ef_util_lib.v:192$180'.
+  created $dff cell `$procdff$1571' with positive edge clock.
+Creating register for signal `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX.\brk' using process `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX.$proc$EF_UART.v:397$168'.
+  created $adff cell `$procdff$1576' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX.\current_state' using process `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX.$proc$EF_UART.v:286$139'.
+  created $adff cell `$procdff$1581' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX.\b_reg' using process `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX.$proc$EF_UART.v:286$139'.
+  created $adff cell `$procdff$1586' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX.\count_reg' using process `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX.$proc$EF_UART.v:286$139'.
+  created $adff cell `$procdff$1591' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX.\data_reg' using process `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX.$proc$EF_UART.v:286$139'.
+  created $adff cell `$procdff$1596' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX.\p_error_reg' using process `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX.$proc$EF_UART.v:286$139'.
+  created $adff cell `$procdff$1601' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX.\f_error_reg' using process `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX.$proc$EF_UART.v:286$139'.
+  created $dff cell `$procdff$1608' with positive edge clock.
+Creating register for signal `$paramod$e9cdd1478d980710c2839daafb26d490f06a2359\EF_UART.\bits_count' using process `$paramod$e9cdd1478d980710c2839daafb26d490f06a2359\EF_UART.$proc$EF_UART.v:193$127'.
+  created $adff cell `$procdff$1613' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$e9cdd1478d980710c2839daafb26d490f06a2359\EF_UART.\samples_count' using process `$paramod$e9cdd1478d980710c2839daafb26d490f06a2359\EF_UART.$proc$EF_UART.v:193$127'.
+  created $adff cell `$procdff$1618' with positive edge clock and positive level reset.
+Creating register for signal `\EF_UART_WB.\ack_o' using process `\EF_UART_WB.$proc$EF_UART_WB.v:326$113'.
+  created $adff cell `$procdff$1621' with positive edge clock and positive level reset.
+Creating register for signal `\EF_UART_WB.\RIS_REG' using process `\EF_UART_WB.$proc$EF_UART_WB.v:216$56'.
+  created $adff cell `$procdff$1624' with positive edge clock and positive level reset.
+Creating register for signal `\EF_UART_WB.\_i_' using process `\EF_UART_WB.$proc$EF_UART_WB.v:216$56'.
+  created $dff cell `$procdff$1629' with positive edge clock.
+Creating register for signal `\EF_UART_WB.\IC_REG' using process `\EF_UART_WB.$proc$EF_UART_WB.v:199$53'.
+  created $adff cell `$procdff$1632' with positive edge clock and positive level reset.
+Creating register for signal `\EF_UART_WB.\IM_REG' using process `\EF_UART_WB.$proc$EF_UART_WB.v:196$50'.
+  created $adff cell `$procdff$1635' with positive edge clock and positive level reset.
+Creating register for signal `\EF_UART_WB.\GCLK_REG' using process `\EF_UART_WB.$proc$EF_UART_WB.v:187$46'.
+  created $adff cell `$procdff$1638' with positive edge clock and positive level reset.
+Creating register for signal `\EF_UART_WB.\TX_FIFO_FLUSH_REG' using process `\EF_UART_WB.$proc$EF_UART_WB.v:181$42'.
+  created $adff cell `$procdff$1641' with positive edge clock and positive level reset.
+Creating register for signal `\EF_UART_WB.\TX_FIFO_THRESHOLD_REG' using process `\EF_UART_WB.$proc$EF_UART_WB.v:174$39'.
+  created $adff cell `$procdff$1644' with positive edge clock and positive level reset.
+Creating register for signal `\EF_UART_WB.\RX_FIFO_FLUSH_REG' using process `\EF_UART_WB.$proc$EF_UART_WB.v:164$35'.
+  created $adff cell `$procdff$1647' with positive edge clock and positive level reset.
+Creating register for signal `\EF_UART_WB.\RX_FIFO_THRESHOLD_REG' using process `\EF_UART_WB.$proc$EF_UART_WB.v:157$32'.
+  created $adff cell `$procdff$1650' with positive edge clock and positive level reset.
+Creating register for signal `\EF_UART_WB.\MATCH_REG' using process `\EF_UART_WB.$proc$EF_UART_WB.v:148$29'.
+  created $adff cell `$procdff$1653' with positive edge clock and positive level reset.
+Creating register for signal `\EF_UART_WB.\CFG_REG' using process `\EF_UART_WB.$proc$EF_UART_WB.v:142$26'.
+  created $adff cell `$procdff$1656' with positive edge clock and positive level reset.
+Creating register for signal `\EF_UART_WB.\CTRL_REG' using process `\EF_UART_WB.$proc$EF_UART_WB.v:133$23'.
+  created $adff cell `$procdff$1659' with positive edge clock and positive level reset.
+Creating register for signal `\EF_UART_WB.\PR_REG' using process `\EF_UART_WB.$proc$EF_UART_WB.v:123$20'.
+  created $adff cell `$procdff$1662' with positive edge clock and positive level reset.
+Creating register for signal `\ef_util_ticker.\tick_reg' using process `\ef_util_ticker.$proc$ef_util_lib.v:100$245'.
+  created $adff cell `$procdff$1667' with positive edge clock and positive level reset.
+Creating register for signal `\ef_util_ticker.\counter' using process `\ef_util_ticker.$proc$ef_util_lib.v:89$240'.
+  created $adff cell `$procdff$1672' with positive edge clock and positive level reset.
+Creating register for signal `\ef_util_sync.\sync' using process `\ef_util_sync.$proc$ef_util_lib.v:38$238'.
+  created $dff cell `$procdff$1673' with positive edge clock.
+Creating register for signal `$paramod\ef_util_glitch_filter\N=s32'00000000000000000000000000001000.\out' using process `$paramod\ef_util_glitch_filter\N=s32'00000000000000000000000000001000.$proc$ef_util_lib.v:143$236'.
+  created $adff cell `$procdff$1678' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\ef_util_glitch_filter\N=s32'00000000000000000000000000001000.\shifter' using process `$paramod\ef_util_glitch_filter\N=s32'00000000000000000000000000001000.$proc$ef_util_lib.v:134$231'.
+  created $adff cell `$procdff$1683' with positive edge clock and positive level reset.
+Creating register for signal `\BAUDGEN.\count_reg' using process `\BAUDGEN.$proc$EF_UART.v:231$224'.
+  created $adff cell `$procdff$1688' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX.\current_state' using process `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX.$proc$EF_UART.v:465$204'.
+  created $adff cell `$procdff$1693' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX.\b_reg' using process `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX.$proc$EF_UART.v:465$204'.
+  created $adff cell `$procdff$1698' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX.\count_reg' using process `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX.$proc$EF_UART.v:465$204'.
+  created $adff cell `$procdff$1703' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX.\data_reg' using process `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX.$proc$EF_UART.v:465$204'.
+  created $adff cell `$procdff$1708' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX.\tx_reg' using process `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX.$proc$EF_UART.v:465$204'.
+  created $adff cell `$procdff$1713' with positive edge clock and positive level reset.
+
+8.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+8.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 5 empty switches in `$paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo.$proc$ef_util_lib.v:229$192'.
+Removing empty process `$paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo.$proc$ef_util_lib.v:229$192'.
+Found and cleaned up 1 empty switch in `$paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo.$proc$ef_util_lib.v:201$190'.
+Removing empty process `$paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo.$proc$ef_util_lib.v:201$190'.
+Found and cleaned up 1 empty switch in `$paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo.$proc$ef_util_lib.v:192$180'.
+Removing empty process `$paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo.$proc$ef_util_lib.v:192$180'.
+Found and cleaned up 3 empty switches in `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX.$proc$EF_UART.v:397$168'.
+Removing empty process `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX.$proc$EF_UART.v:397$168'.
+Found and cleaned up 22 empty switches in `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX.$proc$EF_UART.v:312$143'.
+Removing empty process `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX.$proc$EF_UART.v:312$143'.
+Found and cleaned up 4 empty switches in `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX.$proc$EF_UART.v:286$139'.
+Removing empty process `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX.$proc$EF_UART.v:286$139'.
+Found and cleaned up 4 empty switches in `$paramod$e9cdd1478d980710c2839daafb26d490f06a2359\EF_UART.$proc$EF_UART.v:193$127'.
+Removing empty process `$paramod$e9cdd1478d980710c2839daafb26d490f06a2359\EF_UART.$proc$EF_UART.v:193$127'.
+Found and cleaned up 1 empty switch in `\EF_UART_WB.$proc$EF_UART_WB.v:326$113'.
+Removing empty process `EF_UART_WB.$proc$EF_UART_WB.v:326$113'.
+Found and cleaned up 20 empty switches in `\EF_UART_WB.$proc$EF_UART_WB.v:216$56'.
+Removing empty process `EF_UART_WB.$proc$EF_UART_WB.v:216$56'.
+Found and cleaned up 1 empty switch in `\EF_UART_WB.$proc$EF_UART_WB.v:199$53'.
+Removing empty process `EF_UART_WB.$proc$EF_UART_WB.v:199$53'.
+Found and cleaned up 1 empty switch in `\EF_UART_WB.$proc$EF_UART_WB.v:196$50'.
+Removing empty process `EF_UART_WB.$proc$EF_UART_WB.v:196$50'.
+Found and cleaned up 1 empty switch in `\EF_UART_WB.$proc$EF_UART_WB.v:187$46'.
+Removing empty process `EF_UART_WB.$proc$EF_UART_WB.v:187$46'.
+Found and cleaned up 1 empty switch in `\EF_UART_WB.$proc$EF_UART_WB.v:181$42'.
+Removing empty process `EF_UART_WB.$proc$EF_UART_WB.v:181$42'.
+Found and cleaned up 1 empty switch in `\EF_UART_WB.$proc$EF_UART_WB.v:174$39'.
+Removing empty process `EF_UART_WB.$proc$EF_UART_WB.v:174$39'.
+Found and cleaned up 1 empty switch in `\EF_UART_WB.$proc$EF_UART_WB.v:164$35'.
+Removing empty process `EF_UART_WB.$proc$EF_UART_WB.v:164$35'.
+Found and cleaned up 1 empty switch in `\EF_UART_WB.$proc$EF_UART_WB.v:157$32'.
+Removing empty process `EF_UART_WB.$proc$EF_UART_WB.v:157$32'.
+Found and cleaned up 1 empty switch in `\EF_UART_WB.$proc$EF_UART_WB.v:148$29'.
+Removing empty process `EF_UART_WB.$proc$EF_UART_WB.v:148$29'.
+Found and cleaned up 1 empty switch in `\EF_UART_WB.$proc$EF_UART_WB.v:142$26'.
+Removing empty process `EF_UART_WB.$proc$EF_UART_WB.v:142$26'.
+Found and cleaned up 1 empty switch in `\EF_UART_WB.$proc$EF_UART_WB.v:133$23'.
+Removing empty process `EF_UART_WB.$proc$EF_UART_WB.v:133$23'.
+Found and cleaned up 1 empty switch in `\EF_UART_WB.$proc$EF_UART_WB.v:123$20'.
+Removing empty process `EF_UART_WB.$proc$EF_UART_WB.v:123$20'.
+Found and cleaned up 1 empty switch in `\ef_util_ticker.$proc$ef_util_lib.v:100$245'.
+Removing empty process `ef_util_ticker.$proc$ef_util_lib.v:100$245'.
+Found and cleaned up 2 empty switches in `\ef_util_ticker.$proc$ef_util_lib.v:89$240'.
+Removing empty process `ef_util_ticker.$proc$ef_util_lib.v:89$240'.
+Removing empty process `ef_util_sync.$proc$ef_util_lib.v:38$238'.
+Found and cleaned up 2 empty switches in `$paramod\ef_util_glitch_filter\N=s32'00000000000000000000000000001000.$proc$ef_util_lib.v:143$236'.
+Removing empty process `$paramod\ef_util_glitch_filter\N=s32'00000000000000000000000000001000.$proc$ef_util_lib.v:143$236'.
+Found and cleaned up 1 empty switch in `$paramod\ef_util_glitch_filter\N=s32'00000000000000000000000000001000.$proc$ef_util_lib.v:134$231'.
+Removing empty process `$paramod\ef_util_glitch_filter\N=s32'00000000000000000000000000001000.$proc$ef_util_lib.v:134$231'.
+Found and cleaned up 1 empty switch in `\BAUDGEN.$proc$EF_UART.v:231$224'.
+Removing empty process `BAUDGEN.$proc$EF_UART.v:231$224'.
+Found and cleaned up 16 empty switches in `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX.$proc$EF_UART.v:482$206'.
+Removing empty process `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX.$proc$EF_UART.v:482$206'.
+Removing empty process `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX.$proc$EF_UART.v:465$204'.
+Cleaned up 95 empty switches.
+
+8.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo.
+<suppressed ~20 debug messages>
+Optimizing module $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX.
+<suppressed ~28 debug messages>
+Optimizing module ef_util_gating_cell.
+Optimizing module $paramod$e9cdd1478d980710c2839daafb26d490f06a2359\EF_UART.
+<suppressed ~4 debug messages>
+Optimizing module EF_UART_WB.
+<suppressed ~28 debug messages>
+Optimizing module EF_UART_WB_wrapper.
+Optimizing module ef_util_ticker.
+<suppressed ~6 debug messages>
+Optimizing module ef_util_sync.
+Optimizing module $paramod\ef_util_glitch_filter\N=s32'00000000000000000000000000001000.
+<suppressed ~5 debug messages>
+Optimizing module BAUDGEN.
+<suppressed ~2 debug messages>
+Optimizing module $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX.
+<suppressed ~19 debug messages>
+
+9. Executing OPT pass (performing simple optimizations).
+
+9.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo.
+Optimizing module $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX.
+Optimizing module ef_util_gating_cell.
+Optimizing module $paramod$e9cdd1478d980710c2839daafb26d490f06a2359\EF_UART.
+Optimizing module EF_UART_WB.
+Optimizing module EF_UART_WB_wrapper.
+Optimizing module ef_util_ticker.
+Optimizing module ef_util_sync.
+Optimizing module $paramod\ef_util_glitch_filter\N=s32'00000000000000000000000000001000.
+Optimizing module BAUDGEN.
+Optimizing module $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX.
+
+9.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo'.
+Computing hashes of 81 cells of `$paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo'.
+Finding duplicate cells in `$paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo'.
+Computing hashes of 59 cells of `$paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo'.
+Finding duplicate cells in `$paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo'.
+<suppressed ~66 debug messages>
+Finding identical cells in module `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX'.
+Computing hashes of 290 cells of `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX'.
+Finding duplicate cells in `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX'.
+Computing hashes of 203 cells of `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX'.
+Finding duplicate cells in `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX'.
+<suppressed ~261 debug messages>
+Finding identical cells in module `\ef_util_gating_cell'.
+Computing hashes of 0 cells of `\ef_util_gating_cell'.
+Finding duplicate cells in `\ef_util_gating_cell'.
+Finding identical cells in module `$paramod$e9cdd1478d980710c2839daafb26d490f06a2359\EF_UART'.
+Computing hashes of 34 cells of `$paramod$e9cdd1478d980710c2839daafb26d490f06a2359\EF_UART'.
+Finding duplicate cells in `$paramod$e9cdd1478d980710c2839daafb26d490f06a2359\EF_UART'.
+Computing hashes of 33 cells of `$paramod$e9cdd1478d980710c2839daafb26d490f06a2359\EF_UART'.
+Finding duplicate cells in `$paramod$e9cdd1478d980710c2839daafb26d490f06a2359\EF_UART'.
+<suppressed ~3 debug messages>
+Finding identical cells in module `\EF_UART_WB'.
+Computing hashes of 132 cells of `\EF_UART_WB'.
+Finding duplicate cells in `\EF_UART_WB'.
+Computing hashes of 121 cells of `\EF_UART_WB'.
+Finding duplicate cells in `\EF_UART_WB'.
+<suppressed ~33 debug messages>
+Finding identical cells in module `\EF_UART_WB_wrapper'.
+Computing hashes of 2 cells of `\EF_UART_WB_wrapper'.
+Finding duplicate cells in `\EF_UART_WB_wrapper'.
+Finding identical cells in module `\ef_util_ticker'.
+Computing hashes of 13 cells of `\ef_util_ticker'.
+Finding duplicate cells in `\ef_util_ticker'.
+Computing hashes of 11 cells of `\ef_util_ticker'.
+Finding duplicate cells in `\ef_util_ticker'.
+<suppressed ~6 debug messages>
+Finding identical cells in module `\ef_util_sync'.
+Computing hashes of 1 cells of `\ef_util_sync'.
+Finding duplicate cells in `\ef_util_sync'.
+Finding identical cells in module `$paramod\ef_util_glitch_filter\N=s32'00000000000000000000000000001000'.
+Computing hashes of 13 cells of `$paramod\ef_util_glitch_filter\N=s32'00000000000000000000000000001000'.
+Finding duplicate cells in `$paramod\ef_util_glitch_filter\N=s32'00000000000000000000000000001000'.
+Computing hashes of 11 cells of `$paramod\ef_util_glitch_filter\N=s32'00000000000000000000000000001000'.
+Finding duplicate cells in `$paramod\ef_util_glitch_filter\N=s32'00000000000000000000000000001000'.
+<suppressed ~6 debug messages>
+Finding identical cells in module `\BAUDGEN'.
+Computing hashes of 9 cells of `\BAUDGEN'.
+Finding duplicate cells in `\BAUDGEN'.
+Computing hashes of 8 cells of `\BAUDGEN'.
+Finding duplicate cells in `\BAUDGEN'.
+<suppressed ~3 debug messages>
+Finding identical cells in module `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX'.
+Computing hashes of 206 cells of `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX'.
+Finding duplicate cells in `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX'.
+Computing hashes of 138 cells of `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX'.
+Finding duplicate cells in `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX'.
+<suppressed ~204 debug messages>
+Removed a total of 194 cells.
+
+9.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+      Replacing known input bits on port B of cell $procmux$260: \full_reg -> 1'1
+      Replacing known input bits on port A of cell $procmux$251: \full_reg -> 1'0
+      Replacing known input bits on port B of cell $procmux$300: \empty_reg -> 1'1
+      Replacing known input bits on port A of cell $procmux$290: \empty_reg -> 1'0
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $procmux$326.
+    dead port 2/2 on $mux $procmux$318.
+    dead port 2/2 on $mux $procmux$310.
+    dead port 2/2 on $mux $procmux$302.
+    dead port 2/2 on $mux $procmux$294.
+    dead port 1/2 on $mux $procmux$292.
+    dead port 2/2 on $mux $procmux$283.
+    dead port 2/2 on $mux $procmux$276.
+    dead port 2/2 on $mux $procmux$269.
+    dead port 2/2 on $mux $procmux$262.
+    dead port 2/2 on $mux $procmux$255.
+    dead port 1/2 on $mux $procmux$253.
+Running muxtree optimizer on module $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+      Replacing known input bits on port B of cell $procmux$979: \p_error_next -> 1'1
+      Replacing known input bits on port B of cell $procmux$974: \f_error_next -> 1'1
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $procmux$791.
+    dead port 2/2 on $mux $procmux$789.
+    dead port 2/2 on $mux $procmux$779.
+    dead port 2/2 on $mux $procmux$777.
+    dead port 2/2 on $mux $procmux$767.
+    dead port 2/2 on $mux $procmux$765.
+    dead port 2/2 on $mux $procmux$755.
+    dead port 2/2 on $mux $procmux$753.
+    dead port 2/2 on $mux $procmux$751.
+    dead port 2/2 on $mux $procmux$740.
+    dead port 2/2 on $mux $procmux$738.
+    dead port 2/2 on $mux $procmux$736.
+    dead port 2/2 on $mux $procmux$725.
+    dead port 2/2 on $mux $procmux$723.
+    dead port 2/2 on $mux $procmux$721.
+    dead port 2/2 on $mux $procmux$719.
+    dead port 2/2 on $mux $procmux$707.
+    dead port 2/2 on $mux $procmux$699.
+    dead port 2/2 on $mux $procmux$691.
+    dead port 2/2 on $mux $procmux$683.
+    dead port 2/2 on $mux $procmux$681.
+    dead port 2/2 on $mux $procmux$672.
+    dead port 2/2 on $mux $procmux$670.
+    dead port 2/2 on $mux $procmux$661.
+    dead port 2/2 on $mux $procmux$659.
+    dead port 2/2 on $mux $procmux$650.
+    dead port 2/2 on $mux $procmux$930.
+    dead port 2/2 on $mux $procmux$648.
+    dead port 2/2 on $mux $procmux$646.
+    dead port 2/2 on $mux $procmux$633.
+    dead port 2/2 on $mux $procmux$631.
+    dead port 2/2 on $mux $procmux$629.
+    dead port 2/2 on $mux $procmux$627.
+    dead port 2/2 on $mux $procmux$613.
+    dead port 2/2 on $mux $procmux$919.
+    dead port 2/2 on $mux $procmux$611.
+    dead port 2/2 on $mux $procmux$609.
+    dead port 2/2 on $mux $procmux$607.
+    dead port 2/2 on $mux $procmux$594.
+    dead port 2/2 on $mux $procmux$592.
+    dead port 2/2 on $mux $procmux$590.
+    dead port 2/2 on $mux $procmux$588.
+    dead port 2/2 on $mux $procmux$908.
+    dead port 2/2 on $mux $procmux$576.
+    dead port 2/2 on $mux $procmux$574.
+    dead port 2/2 on $mux $procmux$572.
+    dead port 2/2 on $mux $procmux$570.
+    dead port 2/2 on $mux $procmux$559.
+    dead port 2/2 on $mux $procmux$898.
+    dead port 2/2 on $mux $procmux$552.
+    dead port 2/2 on $mux $procmux$545.
+    dead port 2/2 on $mux $procmux$538.
+    dead port 2/2 on $mux $procmux$888.
+    dead port 2/2 on $mux $procmux$531.
+    dead port 2/2 on $mux $procmux$529.
+    dead port 2/2 on $mux $procmux$521.
+    dead port 2/2 on $mux $procmux$519.
+    dead port 2/2 on $mux $procmux$511.
+    dead port 2/2 on $mux $procmux$878.
+    dead port 2/2 on $mux $procmux$509.
+    dead port 2/2 on $mux $procmux$501.
+    dead port 2/2 on $mux $procmux$499.
+    dead port 2/2 on $mux $procmux$491.
+    dead port 2/2 on $mux $procmux$876.
+    dead port 2/2 on $mux $procmux$489.
+    dead port 2/2 on $mux $procmux$487.
+    dead port 2/2 on $mux $procmux$478.
+    dead port 2/2 on $mux $procmux$476.
+    dead port 2/2 on $mux $procmux$474.
+    dead port 2/2 on $mux $procmux$465.
+    dead port 2/2 on $mux $procmux$865.
+    dead port 2/2 on $mux $procmux$463.
+    dead port 2/2 on $mux $procmux$461.
+    dead port 2/2 on $mux $procmux$452.
+    dead port 2/2 on $mux $procmux$446.
+    dead port 2/2 on $mux $procmux$863.
+    dead port 2/2 on $mux $procmux$440.
+    dead port 2/2 on $mux $procmux$434.
+    dead port 2/2 on $mux $procmux$852.
+    dead port 2/2 on $mux $procmux$428.
+    dead port 2/2 on $mux $procmux$426.
+    dead port 2/2 on $mux $procmux$419.
+    dead port 2/2 on $mux $procmux$850.
+    dead port 2/2 on $mux $procmux$417.
+    dead port 2/2 on $mux $procmux$410.
+    dead port 2/2 on $mux $procmux$408.
+    dead port 2/2 on $mux $procmux$401.
+    dead port 2/2 on $mux $procmux$839.
+    dead port 2/2 on $mux $procmux$399.
+    dead port 2/2 on $mux $procmux$392.
+    dead port 2/2 on $mux $procmux$390.
+    dead port 2/2 on $mux $procmux$388.
+    dead port 2/2 on $mux $procmux$830.
+    dead port 2/2 on $mux $procmux$821.
+    dead port 2/2 on $mux $procmux$812.
+    dead port 2/2 on $mux $procmux$803.
+    dead port 2/2 on $mux $procmux$801.
+Running muxtree optimizer on module \ef_util_gating_cell..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module $paramod$e9cdd1478d980710c2839daafb26d490f06a2359\EF_UART..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \EF_UART_WB..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \EF_UART_WB_wrapper..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \ef_util_ticker..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \ef_util_sync..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module $paramod\ef_util_glitch_filter\N=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \BAUDGEN..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $procmux$1398.
+    dead port 2/2 on $mux $procmux$1389.
+    dead port 2/2 on $mux $procmux$1380.
+    dead port 2/2 on $mux $procmux$1371.
+    dead port 2/2 on $mux $procmux$1362.
+    dead port 2/2 on $mux $procmux$1360.
+    dead port 2/2 on $mux $procmux$1350.
+    dead port 2/2 on $mux $procmux$1348.
+    dead port 2/2 on $mux $procmux$1338.
+    dead port 2/2 on $mux $procmux$1336.
+    dead port 2/2 on $mux $procmux$1326.
+    dead port 2/2 on $mux $procmux$1324.
+    dead port 2/2 on $mux $procmux$1314.
+    dead port 2/2 on $mux $procmux$1312.
+    dead port 2/2 on $mux $procmux$1310.
+    dead port 2/2 on $mux $procmux$1299.
+    dead port 2/2 on $mux $procmux$1500.
+    dead port 2/2 on $mux $procmux$1297.
+    dead port 2/2 on $mux $procmux$1295.
+    dead port 2/2 on $mux $procmux$1284.
+    dead port 2/2 on $mux $procmux$1282.
+    dead port 2/2 on $mux $procmux$1280.
+    dead port 2/2 on $mux $procmux$1278.
+    dead port 2/2 on $mux $procmux$1266.
+    dead port 2/2 on $mux $procmux$1256.
+    dead port 2/2 on $mux $procmux$1489.
+    dead port 2/2 on $mux $procmux$1248.
+    dead port 2/2 on $mux $procmux$1240.
+    dead port 2/2 on $mux $procmux$1238.
+    dead port 2/2 on $mux $procmux$1229.
+    dead port 2/2 on $mux $procmux$1478.
+    dead port 2/2 on $mux $procmux$1227.
+    dead port 2/2 on $mux $procmux$1218.
+    dead port 2/2 on $mux $procmux$1211.
+    dead port 2/2 on $mux $procmux$1204.
+    dead port 2/2 on $mux $procmux$1467.
+    dead port 2/2 on $mux $procmux$1197.
+    dead port 2/2 on $mux $procmux$1195.
+    dead port 2/2 on $mux $procmux$1187.
+    dead port 2/2 on $mux $procmux$1185.
+    dead port 2/2 on $mux $procmux$1177.
+    dead port 2/2 on $mux $procmux$1457.
+    dead port 2/2 on $mux $procmux$1175.
+    dead port 2/2 on $mux $procmux$1167.
+    dead port 2/2 on $mux $procmux$1165.
+    dead port 2/2 on $mux $procmux$1163.
+    dead port 2/2 on $mux $procmux$1154.
+    dead port 2/2 on $mux $procmux$1152.
+    dead port 2/2 on $mux $procmux$1150.
+    dead port 2/2 on $mux $procmux$1141.
+    dead port 2/2 on $mux $procmux$1447.
+    dead port 2/2 on $mux $procmux$1135.
+    dead port 2/2 on $mux $procmux$1129.
+    dead port 2/2 on $mux $procmux$1123.
+    dead port 2/2 on $mux $procmux$1437.
+    dead port 2/2 on $mux $procmux$1121.
+    dead port 2/2 on $mux $procmux$1114.
+    dead port 2/2 on $mux $procmux$1112.
+    dead port 2/2 on $mux $procmux$1105.
+    dead port 2/2 on $mux $procmux$1435.
+    dead port 2/2 on $mux $procmux$1103.
+    dead port 2/2 on $mux $procmux$1424.
+    dead port 2/2 on $mux $procmux$1422.
+    dead port 2/2 on $mux $procmux$1411.
+    dead port 2/2 on $mux $procmux$1409.
+Removed 174 multiplexer ports.
+<suppressed ~431 debug messages>
+
+9.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo.
+    Consolidated identical input bits for $mux cell $procmux$367:
+      Old ports: A=9'000000000, B=9'111111111, Y=$procmux$367_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$367_Y [0]
+      New connections: $procmux$367_Y [8:1] = { $procmux$367_Y [0] $procmux$367_Y [0] $procmux$367_Y [0] $procmux$367_Y [0] $procmux$367_Y [0] $procmux$367_Y [0] $procmux$367_Y [0] $procmux$367_Y [0] }
+  Optimizing cells in module $paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo.
+  Optimizing cells in module $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX.
+  Optimizing cells in module \ef_util_gating_cell.
+  Optimizing cells in module $paramod$e9cdd1478d980710c2839daafb26d490f06a2359\EF_UART.
+  Optimizing cells in module \EF_UART_WB.
+  Optimizing cells in module \EF_UART_WB_wrapper.
+  Optimizing cells in module \ef_util_ticker.
+  Optimizing cells in module \ef_util_sync.
+  Optimizing cells in module $paramod\ef_util_glitch_filter\N=s32'00000000000000000000000000001000.
+  Optimizing cells in module \BAUDGEN.
+  Optimizing cells in module $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX.
+    New ctrl vector for $pmux cell $procmux$1526: { $auto$opt_reduce.cc:135:opt_pmux$1716 $procmux$1529_CMP $procmux$1538_CMP $procmux$1539_CMP }
+  Optimizing cells in module $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX.
+Performed a total of 2 changes.
+
+9.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo'.
+Computing hashes of 47 cells of `$paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo'.
+Finding duplicate cells in `$paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo'.
+Finding identical cells in module `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX'.
+Computing hashes of 106 cells of `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX'.
+Finding duplicate cells in `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX'.
+Computing hashes of 101 cells of `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX'.
+Finding duplicate cells in `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX'.
+Computing hashes of 97 cells of `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX'.
+Finding duplicate cells in `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX'.
+Computing hashes of 96 cells of `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX'.
+Finding duplicate cells in `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX'.
+<suppressed ~30 debug messages>
+Finding identical cells in module `\ef_util_gating_cell'.
+Computing hashes of 0 cells of `\ef_util_gating_cell'.
+Finding duplicate cells in `\ef_util_gating_cell'.
+Finding identical cells in module `$paramod$e9cdd1478d980710c2839daafb26d490f06a2359\EF_UART'.
+Computing hashes of 33 cells of `$paramod$e9cdd1478d980710c2839daafb26d490f06a2359\EF_UART'.
+Finding duplicate cells in `$paramod$e9cdd1478d980710c2839daafb26d490f06a2359\EF_UART'.
+Finding identical cells in module `\EF_UART_WB'.
+Computing hashes of 121 cells of `\EF_UART_WB'.
+Finding duplicate cells in `\EF_UART_WB'.
+Finding identical cells in module `\EF_UART_WB_wrapper'.
+Computing hashes of 2 cells of `\EF_UART_WB_wrapper'.
+Finding duplicate cells in `\EF_UART_WB_wrapper'.
+Finding identical cells in module `\ef_util_ticker'.
+Computing hashes of 11 cells of `\ef_util_ticker'.
+Finding duplicate cells in `\ef_util_ticker'.
+Finding identical cells in module `\ef_util_sync'.
+Computing hashes of 1 cells of `\ef_util_sync'.
+Finding duplicate cells in `\ef_util_sync'.
+Finding identical cells in module `$paramod\ef_util_glitch_filter\N=s32'00000000000000000000000000001000'.
+Computing hashes of 11 cells of `$paramod\ef_util_glitch_filter\N=s32'00000000000000000000000000001000'.
+Finding duplicate cells in `$paramod\ef_util_glitch_filter\N=s32'00000000000000000000000000001000'.
+Finding identical cells in module `\BAUDGEN'.
+Computing hashes of 8 cells of `\BAUDGEN'.
+Finding duplicate cells in `\BAUDGEN'.
+Finding identical cells in module `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX'.
+Computing hashes of 74 cells of `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX'.
+Finding duplicate cells in `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX'.
+Computing hashes of 71 cells of `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX'.
+Finding duplicate cells in `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX'.
+Computing hashes of 68 cells of `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX'.
+Finding duplicate cells in `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX'.
+<suppressed ~18 debug messages>
+Removed a total of 16 cells.
+
+9.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $procdff$1553 ($adff) from module $paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo (D = $procmux$361_Y, Q = \r_ptr_reg).
+Adding EN signal on $procdff$1558 ($adff) from module $paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo (D = $procmux$352_Y, Q = \level_reg).
+Adding EN signal on $procdff$1568 ($adff) from module $paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo (D = $procmux$355_Y, Q = \empty_reg).
+Adding EN signal on $procdff$1548 ($adff) from module $paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo (D = $procmux$364_Y, Q = \w_ptr_reg).
+Adding EN signal on $procdff$1563 ($adff) from module $paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo (D = $procmux$358_Y, Q = \full_reg).
+Adding EN signal on $procdff$1596 ($adff) from module $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX (D = $2\data_next[8:0], Q = \data_reg).
+Adding EN signal on $procdff$1581 ($adff) from module $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX (D = $procmux$941_Y, Q = \current_state).
+Adding EN signal on $procdff$1576 ($adff) from module $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX (D = $procmux$376_Y, Q = \brk).
+Adding EN signal on $procdff$1591 ($adff) from module $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX (D = $procmux$967_Y, Q = \count_reg).
+Adding EN signal on $procdff$1608 ($dff) from module $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX (D = $procmux$977_Y, Q = \f_error_reg).
+Adding SRST signal on $auto$ff.cc:337:slice$1802 ($dffe) from module $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX (D = $procmux$974_Y, Q = \f_error_reg, rval = 1'0).
+Adding EN signal on $procdff$1586 ($adff) from module $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX (D = $procmux$933_Y, Q = \b_reg).
+Adding EN signal on $procdff$1601 ($adff) from module $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX (D = $procmux$982_Y, Q = \p_error_reg).
+Adding EN signal on $procdff$1618 ($adff) from module $paramod$e9cdd1478d980710c2839daafb26d490f06a2359\EF_UART (D = $procmux$985_Y, Q = \samples_count).
+Adding EN signal on $procdff$1613 ($adff) from module $paramod$e9cdd1478d980710c2839daafb26d490f06a2359\EF_UART (D = $procmux$999_Y, Q = \bits_count).
+Adding EN signal on $procdff$1662 ($adff) from module EF_UART_WB (D = \dat_i [15:0], Q = \PR_REG).
+Adding EN signal on $procdff$1653 ($adff) from module EF_UART_WB (D = \dat_i [8:0], Q = \MATCH_REG).
+Adding EN signal on $procdff$1638 ($adff) from module EF_UART_WB (D = \dat_i [0], Q = \GCLK_REG).
+Adding EN signal on $procdff$1650 ($adff) from module EF_UART_WB (D = \dat_i [3:0], Q = \RX_FIFO_THRESHOLD_REG).
+Adding EN signal on $procdff$1635 ($adff) from module EF_UART_WB (D = \dat_i [9:0], Q = \IM_REG).
+Adding EN signal on $procdff$1656 ($adff) from module EF_UART_WB (D = \dat_i [13:0], Q = \CFG_REG).
+Adding EN signal on $procdff$1629 ($dff) from module EF_UART_WB (D = 10, Q = \_i_).
+Adding EN signal on $procdff$1659 ($adff) from module EF_UART_WB (D = \dat_i [4:0], Q = \CTRL_REG).
+Adding EN signal on $procdff$1624 ($adff) from module EF_UART_WB (D = $procmux$1054_Y, Q = \RIS_REG [0]).
+Adding EN signal on $procdff$1624 ($adff) from module EF_UART_WB (D = $procmux$1044_Y, Q = \RIS_REG [2]).
+Adding EN signal on $procdff$1624 ($adff) from module EF_UART_WB (D = $procmux$1049_Y, Q = \RIS_REG [1]).
+Adding EN signal on $procdff$1624 ($adff) from module EF_UART_WB (D = $procmux$1039_Y, Q = \RIS_REG [3]).
+Adding EN signal on $procdff$1624 ($adff) from module EF_UART_WB (D = $procmux$1034_Y, Q = \RIS_REG [4]).
+Adding EN signal on $procdff$1624 ($adff) from module EF_UART_WB (D = $procmux$1029_Y, Q = \RIS_REG [5]).
+Adding EN signal on $procdff$1624 ($adff) from module EF_UART_WB (D = $procmux$1024_Y, Q = \RIS_REG [6]).
+Adding EN signal on $procdff$1624 ($adff) from module EF_UART_WB (D = $procmux$1019_Y, Q = \RIS_REG [7]).
+Adding EN signal on $procdff$1624 ($adff) from module EF_UART_WB (D = $procmux$1014_Y, Q = \RIS_REG [8]).
+Adding EN signal on $procdff$1624 ($adff) from module EF_UART_WB (D = $procmux$1009_Y, Q = \RIS_REG [9]).
+Adding EN signal on $procdff$1644 ($adff) from module EF_UART_WB (D = \dat_i [3:0], Q = \TX_FIFO_THRESHOLD_REG).
+Setting constant 0-bit at position 0 on $auto$ff.cc:337:slice$1836 ($dffe) from module EF_UART_WB.
+Setting constant 1-bit at position 1 on $auto$ff.cc:337:slice$1836 ($dffe) from module EF_UART_WB.
+Setting constant 0-bit at position 2 on $auto$ff.cc:337:slice$1836 ($dffe) from module EF_UART_WB.
+Setting constant 1-bit at position 3 on $auto$ff.cc:337:slice$1836 ($dffe) from module EF_UART_WB.
+Setting constant 0-bit at position 4 on $auto$ff.cc:337:slice$1836 ($dffe) from module EF_UART_WB.
+Setting constant 0-bit at position 5 on $auto$ff.cc:337:slice$1836 ($dffe) from module EF_UART_WB.
+Setting constant 0-bit at position 6 on $auto$ff.cc:337:slice$1836 ($dffe) from module EF_UART_WB.
+Setting constant 0-bit at position 7 on $auto$ff.cc:337:slice$1836 ($dffe) from module EF_UART_WB.
+Setting constant 0-bit at position 8 on $auto$ff.cc:337:slice$1836 ($dffe) from module EF_UART_WB.
+Setting constant 0-bit at position 9 on $auto$ff.cc:337:slice$1836 ($dffe) from module EF_UART_WB.
+Setting constant 0-bit at position 10 on $auto$ff.cc:337:slice$1836 ($dffe) from module EF_UART_WB.
+Setting constant 0-bit at position 11 on $auto$ff.cc:337:slice$1836 ($dffe) from module EF_UART_WB.
+Setting constant 0-bit at position 12 on $auto$ff.cc:337:slice$1836 ($dffe) from module EF_UART_WB.
+Setting constant 0-bit at position 13 on $auto$ff.cc:337:slice$1836 ($dffe) from module EF_UART_WB.
+Setting constant 0-bit at position 14 on $auto$ff.cc:337:slice$1836 ($dffe) from module EF_UART_WB.
+Setting constant 0-bit at position 15 on $auto$ff.cc:337:slice$1836 ($dffe) from module EF_UART_WB.
+Setting constant 0-bit at position 16 on $auto$ff.cc:337:slice$1836 ($dffe) from module EF_UART_WB.
+Setting constant 0-bit at position 17 on $auto$ff.cc:337:slice$1836 ($dffe) from module EF_UART_WB.
+Setting constant 0-bit at position 18 on $auto$ff.cc:337:slice$1836 ($dffe) from module EF_UART_WB.
+Setting constant 0-bit at position 19 on $auto$ff.cc:337:slice$1836 ($dffe) from module EF_UART_WB.
+Setting constant 0-bit at position 20 on $auto$ff.cc:337:slice$1836 ($dffe) from module EF_UART_WB.
+Setting constant 0-bit at position 21 on $auto$ff.cc:337:slice$1836 ($dffe) from module EF_UART_WB.
+Setting constant 0-bit at position 22 on $auto$ff.cc:337:slice$1836 ($dffe) from module EF_UART_WB.
+Setting constant 0-bit at position 23 on $auto$ff.cc:337:slice$1836 ($dffe) from module EF_UART_WB.
+Setting constant 0-bit at position 24 on $auto$ff.cc:337:slice$1836 ($dffe) from module EF_UART_WB.
+Setting constant 0-bit at position 25 on $auto$ff.cc:337:slice$1836 ($dffe) from module EF_UART_WB.
+Setting constant 0-bit at position 26 on $auto$ff.cc:337:slice$1836 ($dffe) from module EF_UART_WB.
+Setting constant 0-bit at position 27 on $auto$ff.cc:337:slice$1836 ($dffe) from module EF_UART_WB.
+Setting constant 0-bit at position 28 on $auto$ff.cc:337:slice$1836 ($dffe) from module EF_UART_WB.
+Setting constant 0-bit at position 29 on $auto$ff.cc:337:slice$1836 ($dffe) from module EF_UART_WB.
+Setting constant 0-bit at position 30 on $auto$ff.cc:337:slice$1836 ($dffe) from module EF_UART_WB.
+Setting constant 0-bit at position 31 on $auto$ff.cc:337:slice$1836 ($dffe) from module EF_UART_WB.
+Adding EN signal on $procdff$1672 ($adff) from module ef_util_ticker (D = $procmux$1085_Y, Q = \counter).
+Adding EN signal on $procdff$1678 ($adff) from module $paramod\ef_util_glitch_filter\N=s32'00000000000000000000000000001000 (D = $procmux$1092_Y, Q = \out).
+Adding EN signal on $procdff$1683 ($adff) from module $paramod\ef_util_glitch_filter\N=s32'00000000000000000000000000001000 (D = { \shifter [6:0] \in }, Q = \shifter).
+Adding EN signal on $procdff$1688 ($adff) from module BAUDGEN (D = $ternary$EF_UART.v:238$228_Y [15:0], Q = \count_reg).
+Adding EN signal on $procdff$1703 ($adff) from module $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX (D = $procmux$1537_Y, Q = \count_reg).
+Adding EN signal on $procdff$1708 ($adff) from module $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX (D = $procmux$1506_Y, Q = \data_reg).
+Adding EN signal on $procdff$1713 ($adff) from module $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX (D = $procmux$1526_Y, Q = \tx_reg).
+Adding EN signal on $procdff$1698 ($adff) from module $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX (D = $procmux$1510_Y, Q = \b_reg).
+Adding EN signal on $procdff$1693 ($adff) from module $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX (D = $procmux$1518_Y, Q = \current_state).
+
+9.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo..
+Finding unused cells or wires in module $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX..
+Finding unused cells or wires in module \ef_util_gating_cell..
+Finding unused cells or wires in module $paramod$e9cdd1478d980710c2839daafb26d490f06a2359\EF_UART..
+Finding unused cells or wires in module \EF_UART_WB..
+Finding unused cells or wires in module \EF_UART_WB_wrapper..
+Finding unused cells or wires in module \ef_util_ticker..
+Finding unused cells or wires in module \ef_util_sync..
+Finding unused cells or wires in module $paramod\ef_util_glitch_filter\N=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module \BAUDGEN..
+Finding unused cells or wires in module $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX..
+Removed 41 unused cells and 960 unused wires.
+<suppressed ~68 debug messages>
+
+9.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo.
+<suppressed ~5 debug messages>
+Optimizing module $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX.
+<suppressed ~5 debug messages>
+Optimizing module ef_util_gating_cell.
+Optimizing module $paramod$e9cdd1478d980710c2839daafb26d490f06a2359\EF_UART.
+<suppressed ~1 debug messages>
+Optimizing module EF_UART_WB.
+<suppressed ~10 debug messages>
+Optimizing module EF_UART_WB_wrapper.
+Optimizing module ef_util_ticker.
+Optimizing module ef_util_sync.
+Optimizing module $paramod\ef_util_glitch_filter\N=s32'00000000000000000000000000001000.
+Optimizing module BAUDGEN.
+Optimizing module $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX.
+<suppressed ~5 debug messages>
+
+9.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+9.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \ef_util_gating_cell..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module $paramod$e9cdd1478d980710c2839daafb26d490f06a2359\EF_UART..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \EF_UART_WB..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \EF_UART_WB_wrapper..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \ef_util_ticker..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \ef_util_sync..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module $paramod\ef_util_glitch_filter\N=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \BAUDGEN..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~229 debug messages>
+
+9.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo.
+  Optimizing cells in module $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX.
+    New ctrl vector for $pmux cell $procmux$933: { $auto$opt_reduce.cc:135:opt_pmux$1943 $procmux$853_CMP $eq$EF_UART.v:298$141_Y }
+    New ctrl vector for $pmux cell $procmux$949: $auto$opt_reduce.cc:135:opt_pmux$1945
+  Optimizing cells in module $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX.
+  Optimizing cells in module \ef_util_gating_cell.
+  Optimizing cells in module $paramod$e9cdd1478d980710c2839daafb26d490f06a2359\EF_UART.
+  Optimizing cells in module \EF_UART_WB.
+  Optimizing cells in module \EF_UART_WB_wrapper.
+  Optimizing cells in module \ef_util_ticker.
+  Optimizing cells in module \ef_util_sync.
+  Optimizing cells in module $paramod\ef_util_glitch_filter\N=s32'00000000000000000000000000001000.
+  Optimizing cells in module \BAUDGEN.
+  Optimizing cells in module $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX.
+    New ctrl vector for $pmux cell $procmux$1510: { $auto$opt_reduce.cc:135:opt_pmux$1947 $procmux$1412_CMP $procmux$1479_CMP }
+  Optimizing cells in module $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX.
+Performed a total of 3 changes.
+
+9.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo'.
+Computing hashes of 57 cells of `$paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo'.
+Finding duplicate cells in `$paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo'.
+Computing hashes of 51 cells of `$paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo'.
+Finding duplicate cells in `$paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo'.
+<suppressed ~18 debug messages>
+Finding identical cells in module `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX'.
+Computing hashes of 119 cells of `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX'.
+Finding duplicate cells in `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX'.
+Computing hashes of 112 cells of `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX'.
+Finding duplicate cells in `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX'.
+<suppressed ~21 debug messages>
+Finding identical cells in module `\ef_util_gating_cell'.
+Computing hashes of 0 cells of `\ef_util_gating_cell'.
+Finding duplicate cells in `\ef_util_gating_cell'.
+Finding identical cells in module `$paramod$e9cdd1478d980710c2839daafb26d490f06a2359\EF_UART'.
+Computing hashes of 32 cells of `$paramod$e9cdd1478d980710c2839daafb26d490f06a2359\EF_UART'.
+Finding duplicate cells in `$paramod$e9cdd1478d980710c2839daafb26d490f06a2359\EF_UART'.
+Finding identical cells in module `\EF_UART_WB'.
+Computing hashes of 114 cells of `\EF_UART_WB'.
+Finding duplicate cells in `\EF_UART_WB'.
+Finding identical cells in module `\EF_UART_WB_wrapper'.
+Computing hashes of 2 cells of `\EF_UART_WB_wrapper'.
+Finding duplicate cells in `\EF_UART_WB_wrapper'.
+Finding identical cells in module `\ef_util_ticker'.
+Computing hashes of 8 cells of `\ef_util_ticker'.
+Finding duplicate cells in `\ef_util_ticker'.
+Finding identical cells in module `\ef_util_sync'.
+Computing hashes of 1 cells of `\ef_util_sync'.
+Finding duplicate cells in `\ef_util_sync'.
+Finding identical cells in module `$paramod\ef_util_glitch_filter\N=s32'00000000000000000000000000001000'.
+Computing hashes of 8 cells of `$paramod\ef_util_glitch_filter\N=s32'00000000000000000000000000001000'.
+Finding duplicate cells in `$paramod\ef_util_glitch_filter\N=s32'00000000000000000000000000001000'.
+Finding identical cells in module `\BAUDGEN'.
+Computing hashes of 5 cells of `\BAUDGEN'.
+Finding duplicate cells in `\BAUDGEN'.
+Finding identical cells in module `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX'.
+Computing hashes of 98 cells of `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX'.
+Finding duplicate cells in `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX'.
+Computing hashes of 88 cells of `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX'.
+Finding duplicate cells in `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX'.
+<suppressed ~30 debug messages>
+Removed a total of 23 cells.
+
+9.13. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $auto$ff.cc:337:slice$1754 ($adffe) from module $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX (D = { \rx \data_reg [8:1] }, Q = \data_reg).
+Adding EN signal on $auto$ff.cc:337:slice$1808 ($adffe) from module $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX (D = \b_next, Q = \b_reg).
+Adding EN signal on $auto$ff.cc:337:slice$1904 ($adffe) from module $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX (D = \b_next, Q = \b_reg).
+
+9.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo..
+Finding unused cells or wires in module $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX..
+Finding unused cells or wires in module \ef_util_gating_cell..
+Finding unused cells or wires in module $paramod$e9cdd1478d980710c2839daafb26d490f06a2359\EF_UART..
+Finding unused cells or wires in module \EF_UART_WB..
+Finding unused cells or wires in module \EF_UART_WB_wrapper..
+Finding unused cells or wires in module \ef_util_ticker..
+Finding unused cells or wires in module \ef_util_sync..
+Finding unused cells or wires in module $paramod\ef_util_glitch_filter\N=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module \BAUDGEN..
+Finding unused cells or wires in module $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX..
+Removed 2 unused cells and 25 unused wires.
+<suppressed ~5 debug messages>
+
+9.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo.
+Optimizing module $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX.
+Optimizing module ef_util_gating_cell.
+Optimizing module $paramod$e9cdd1478d980710c2839daafb26d490f06a2359\EF_UART.
+Optimizing module EF_UART_WB.
+Optimizing module EF_UART_WB_wrapper.
+Optimizing module ef_util_ticker.
+Optimizing module ef_util_sync.
+Optimizing module $paramod\ef_util_glitch_filter\N=s32'00000000000000000000000000001000.
+Optimizing module BAUDGEN.
+Optimizing module $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX.
+
+9.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+9.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \ef_util_gating_cell..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module $paramod$e9cdd1478d980710c2839daafb26d490f06a2359\EF_UART..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \EF_UART_WB..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \EF_UART_WB_wrapper..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \ef_util_ticker..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \ef_util_sync..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module $paramod\ef_util_glitch_filter\N=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \BAUDGEN..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~211 debug messages>
+
+9.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo.
+  Optimizing cells in module $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX.
+    New input vector for $reduce_and cell $auto$opt_dff.cc:252:make_patterns_logic$1955: { $auto$opt_dff.cc:234:make_patterns_logic$1760 $auto$opt_dff.cc:234:make_patterns_logic$1766 $auto$opt_dff.cc:234:make_patterns_logic$1780 $auto$opt_dff.cc:234:make_patterns_logic$1952 }
+  Optimizing cells in module $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX.
+  Optimizing cells in module \ef_util_gating_cell.
+  Optimizing cells in module $paramod$e9cdd1478d980710c2839daafb26d490f06a2359\EF_UART.
+  Optimizing cells in module \EF_UART_WB.
+  Optimizing cells in module \EF_UART_WB_wrapper.
+  Optimizing cells in module \ef_util_ticker.
+  Optimizing cells in module \ef_util_sync.
+  Optimizing cells in module $paramod\ef_util_glitch_filter\N=s32'00000000000000000000000000001000.
+  Optimizing cells in module \BAUDGEN.
+  Optimizing cells in module $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX.
+    New input vector for $reduce_and cell $auto$opt_dff.cc:252:make_patterns_logic$1960: { $auto$opt_dff.cc:234:make_patterns_logic$1878 $auto$opt_dff.cc:234:make_patterns_logic$1893 $auto$opt_dff.cc:234:make_patterns_logic$1909 $auto$opt_dff.cc:234:make_patterns_logic$1957 }
+  Optimizing cells in module $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX.
+Performed a total of 2 changes.
+
+9.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo'.
+Computing hashes of 51 cells of `$paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo'.
+Finding duplicate cells in `$paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo'.
+Finding identical cells in module `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX'.
+Computing hashes of 113 cells of `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX'.
+Finding duplicate cells in `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX'.
+Finding identical cells in module `\ef_util_gating_cell'.
+Computing hashes of 0 cells of `\ef_util_gating_cell'.
+Finding duplicate cells in `\ef_util_gating_cell'.
+Finding identical cells in module `$paramod$e9cdd1478d980710c2839daafb26d490f06a2359\EF_UART'.
+Computing hashes of 32 cells of `$paramod$e9cdd1478d980710c2839daafb26d490f06a2359\EF_UART'.
+Finding duplicate cells in `$paramod$e9cdd1478d980710c2839daafb26d490f06a2359\EF_UART'.
+Finding identical cells in module `\EF_UART_WB'.
+Computing hashes of 114 cells of `\EF_UART_WB'.
+Finding duplicate cells in `\EF_UART_WB'.
+Finding identical cells in module `\EF_UART_WB_wrapper'.
+Computing hashes of 2 cells of `\EF_UART_WB_wrapper'.
+Finding duplicate cells in `\EF_UART_WB_wrapper'.
+Finding identical cells in module `\ef_util_ticker'.
+Computing hashes of 8 cells of `\ef_util_ticker'.
+Finding duplicate cells in `\ef_util_ticker'.
+Finding identical cells in module `\ef_util_sync'.
+Computing hashes of 1 cells of `\ef_util_sync'.
+Finding duplicate cells in `\ef_util_sync'.
+Finding identical cells in module `$paramod\ef_util_glitch_filter\N=s32'00000000000000000000000000001000'.
+Computing hashes of 8 cells of `$paramod\ef_util_glitch_filter\N=s32'00000000000000000000000000001000'.
+Finding duplicate cells in `$paramod\ef_util_glitch_filter\N=s32'00000000000000000000000000001000'.
+Finding identical cells in module `\BAUDGEN'.
+Computing hashes of 5 cells of `\BAUDGEN'.
+Finding duplicate cells in `\BAUDGEN'.
+Finding identical cells in module `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX'.
+Computing hashes of 90 cells of `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX'.
+Finding duplicate cells in `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX'.
+Removed a total of 0 cells.
+
+9.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+9.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo..
+Finding unused cells or wires in module $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX..
+Finding unused cells or wires in module \ef_util_gating_cell..
+Finding unused cells or wires in module $paramod$e9cdd1478d980710c2839daafb26d490f06a2359\EF_UART..
+Finding unused cells or wires in module \EF_UART_WB..
+Finding unused cells or wires in module \EF_UART_WB_wrapper..
+Finding unused cells or wires in module \ef_util_ticker..
+Finding unused cells or wires in module \ef_util_sync..
+Finding unused cells or wires in module $paramod\ef_util_glitch_filter\N=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module \BAUDGEN..
+Finding unused cells or wires in module $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX..
+Removed 2 unused cells and 2 unused wires.
+<suppressed ~4 debug messages>
+
+9.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo.
+Optimizing module $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX.
+Optimizing module ef_util_gating_cell.
+Optimizing module $paramod$e9cdd1478d980710c2839daafb26d490f06a2359\EF_UART.
+Optimizing module EF_UART_WB.
+Optimizing module EF_UART_WB_wrapper.
+Optimizing module ef_util_ticker.
+Optimizing module ef_util_sync.
+Optimizing module $paramod\ef_util_glitch_filter\N=s32'00000000000000000000000000001000.
+Optimizing module BAUDGEN.
+Optimizing module $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX.
+
+9.23. Rerunning OPT passes. (Maybe there is more to do..)
+
+9.24. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \ef_util_gating_cell..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module $paramod$e9cdd1478d980710c2839daafb26d490f06a2359\EF_UART..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \EF_UART_WB..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \EF_UART_WB_wrapper..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \ef_util_ticker..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \ef_util_sync..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module $paramod\ef_util_glitch_filter\N=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \BAUDGEN..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~211 debug messages>
+
+9.25. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo.
+  Optimizing cells in module $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX.
+  Optimizing cells in module \ef_util_gating_cell.
+  Optimizing cells in module $paramod$e9cdd1478d980710c2839daafb26d490f06a2359\EF_UART.
+  Optimizing cells in module \EF_UART_WB.
+  Optimizing cells in module \EF_UART_WB_wrapper.
+  Optimizing cells in module \ef_util_ticker.
+  Optimizing cells in module \ef_util_sync.
+  Optimizing cells in module $paramod\ef_util_glitch_filter\N=s32'00000000000000000000000000001000.
+  Optimizing cells in module \BAUDGEN.
+  Optimizing cells in module $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX.
+Performed a total of 0 changes.
+
+9.26. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo'.
+Computing hashes of 51 cells of `$paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo'.
+Finding duplicate cells in `$paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo'.
+Finding identical cells in module `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX'.
+Computing hashes of 112 cells of `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX'.
+Finding duplicate cells in `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX'.
+Finding identical cells in module `\ef_util_gating_cell'.
+Computing hashes of 0 cells of `\ef_util_gating_cell'.
+Finding duplicate cells in `\ef_util_gating_cell'.
+Finding identical cells in module `$paramod$e9cdd1478d980710c2839daafb26d490f06a2359\EF_UART'.
+Computing hashes of 32 cells of `$paramod$e9cdd1478d980710c2839daafb26d490f06a2359\EF_UART'.
+Finding duplicate cells in `$paramod$e9cdd1478d980710c2839daafb26d490f06a2359\EF_UART'.
+Finding identical cells in module `\EF_UART_WB'.
+Computing hashes of 114 cells of `\EF_UART_WB'.
+Finding duplicate cells in `\EF_UART_WB'.
+Finding identical cells in module `\EF_UART_WB_wrapper'.
+Computing hashes of 2 cells of `\EF_UART_WB_wrapper'.
+Finding duplicate cells in `\EF_UART_WB_wrapper'.
+Finding identical cells in module `\ef_util_ticker'.
+Computing hashes of 8 cells of `\ef_util_ticker'.
+Finding duplicate cells in `\ef_util_ticker'.
+Finding identical cells in module `\ef_util_sync'.
+Computing hashes of 1 cells of `\ef_util_sync'.
+Finding duplicate cells in `\ef_util_sync'.
+Finding identical cells in module `$paramod\ef_util_glitch_filter\N=s32'00000000000000000000000000001000'.
+Computing hashes of 8 cells of `$paramod\ef_util_glitch_filter\N=s32'00000000000000000000000000001000'.
+Finding duplicate cells in `$paramod\ef_util_glitch_filter\N=s32'00000000000000000000000000001000'.
+Finding identical cells in module `\BAUDGEN'.
+Computing hashes of 5 cells of `\BAUDGEN'.
+Finding duplicate cells in `\BAUDGEN'.
+Finding identical cells in module `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX'.
+Computing hashes of 89 cells of `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX'.
+Finding duplicate cells in `$paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX'.
+Removed a total of 0 cells.
+
+9.27. Executing OPT_DFF pass (perform DFF optimizations).
+
+9.28. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo..
+Finding unused cells or wires in module $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX..
+Finding unused cells or wires in module \ef_util_gating_cell..
+Finding unused cells or wires in module $paramod$e9cdd1478d980710c2839daafb26d490f06a2359\EF_UART..
+Finding unused cells or wires in module \EF_UART_WB..
+Finding unused cells or wires in module \EF_UART_WB_wrapper..
+Finding unused cells or wires in module \ef_util_ticker..
+Finding unused cells or wires in module \ef_util_sync..
+Finding unused cells or wires in module $paramod\ef_util_glitch_filter\N=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module \BAUDGEN..
+Finding unused cells or wires in module $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX..
+
+9.29. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo.
+Optimizing module $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX.
+Optimizing module ef_util_gating_cell.
+Optimizing module $paramod$e9cdd1478d980710c2839daafb26d490f06a2359\EF_UART.
+Optimizing module EF_UART_WB.
+Optimizing module EF_UART_WB_wrapper.
+Optimizing module ef_util_ticker.
+Optimizing module ef_util_sync.
+Optimizing module $paramod\ef_util_glitch_filter\N=s32'00000000000000000000000000001000.
+Optimizing module BAUDGEN.
+Optimizing module $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX.
+
+9.30. Finished fast OPT passes. (There is nothing left to do.)
+
+10. Executing FLATTEN pass (flatten design).
+Deleting now unused module $paramod$0c8e12aec8bade0d4c7e5b2f6ebf181d63aab499\ef_util_fifo.
+Deleting now unused module $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_RX.
+Deleting now unused module ef_util_gating_cell.
+Deleting now unused module $paramod$e9cdd1478d980710c2839daafb26d490f06a2359\EF_UART.
+Deleting now unused module EF_UART_WB.
+Deleting now unused module ef_util_ticker.
+Deleting now unused module ef_util_sync.
+Deleting now unused module $paramod\ef_util_glitch_filter\N=s32'00000000000000000000000000001000.
+Deleting now unused module BAUDGEN.
+Deleting now unused module $paramod$b4c45ad6b7a50c506f0a9649f786147095b9aae3\UART_TX.
+<suppressed ~11 debug messages>
+
+11. Executing OPT pass (performing simple optimizations).
+
+11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module EF_UART_WB_wrapper.
+<suppressed ~84 debug messages>
+
+11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\EF_UART_WB_wrapper'.
+Computing hashes of 470 cells of `\EF_UART_WB_wrapper'.
+Finding duplicate cells in `\EF_UART_WB_wrapper'.
+Computing hashes of 464 cells of `\EF_UART_WB_wrapper'.
+Finding duplicate cells in `\EF_UART_WB_wrapper'.
+<suppressed ~18 debug messages>
+Removed a total of 6 cells.
+
+11.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \EF_UART_WB_wrapper..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~241 debug messages>
+
+11.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \EF_UART_WB_wrapper.
+Performed a total of 0 changes.
+
+11.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\EF_UART_WB_wrapper'.
+Computing hashes of 464 cells of `\EF_UART_WB_wrapper'.
+Finding duplicate cells in `\EF_UART_WB_wrapper'.
+Computing hashes of 461 cells of `\EF_UART_WB_wrapper'.
+Finding duplicate cells in `\EF_UART_WB_wrapper'.
+<suppressed ~9 debug messages>
+Removed a total of 3 cells.
+
+11.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+11.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \EF_UART_WB_wrapper..
+Removed 4 unused cells and 21 unused wires.
+<suppressed ~10 debug messages>
+
+11.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module EF_UART_WB_wrapper.
+
+11.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+11.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \EF_UART_WB_wrapper..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~247 debug messages>
+
+11.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \EF_UART_WB_wrapper.
+Performed a total of 0 changes.
+
+11.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\EF_UART_WB_wrapper'.
+Computing hashes of 457 cells of `\EF_UART_WB_wrapper'.
+Finding duplicate cells in `\EF_UART_WB_wrapper'.
+Removed a total of 0 cells.
+
+11.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+11.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \EF_UART_WB_wrapper..
+
+11.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module EF_UART_WB_wrapper.
+
+11.16. Finished fast OPT passes. (There is nothing left to do.)
+
+12. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `EF_UART_WB_wrapper'. Setting top module to EF_UART_WB_wrapper.
+
+12.1. Analyzing design hierarchy..
+Top module:  \EF_UART_WB_wrapper
+
+12.2. Analyzing design hierarchy..
+Top module:  \EF_UART_WB_wrapper
+Removed 0 unused modules.
+
+13. Executing jny backend.
+
+14. Executing RTLIL backend.
+Output filename: ../model/design.il
+
+End of script. Logfile hash: e71a77d8a9, time: 0.14s, user: 0.14s, system: 0.02s, MEM: 20.53 MB peak
+Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+Time spent: 16% 9x opt_expr (0 sec), 16% 6x opt_clean (0 sec), ...

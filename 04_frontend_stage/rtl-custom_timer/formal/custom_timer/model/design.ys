@@ -1,0 +1,10 @@
+# running in ~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-custom_timer/formal/custom_timer/src/
+read -formal custom_timer.v
+hierarchy -top custom_timer
+proc; opt
+flatten; opt
+
+hierarchy -smtcheck
+rename -witness
+write_jny -no-connections ../model/design.json
+write_rtlil ../model/design.il

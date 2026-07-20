@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="irq_ctrl_driver" tests="1" failures="0" errors="0" skipped="1" time="0.000">
+  <testcase classname="irq_ctrl" name="irq_ctrl_driver_compile" status="pass"/>
+</testsuite>

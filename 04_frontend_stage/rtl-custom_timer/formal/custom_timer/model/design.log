@@ -1,0 +1,553 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+
+-- Executing script file `../model/design.ys' --
+
+1. Executing Verilog-2005 frontend: custom_timer.v
+Parsing formal SystemVerilog input from `custom_timer.v' to AST representation.
+Storing AST representation for module `$abstract\custom_timer'.
+Successfully finished Verilog frontend.
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+
+3. Executing AST frontend in derive mode using pre-parsed AST for module `\custom_timer'.
+Generating RTLIL representation for module `\custom_timer'.
+Warning: Replacing memory \pulse_valid with list of registers. See custom_timer.v:106
+Warning: Replacing memory \glitch_filter with list of registers. See custom_timer.v:105
+Warning: Replacing memory \capture_edge with list of registers. See custom_timer.v:104
+Warning: Replacing memory \capture_sync with list of registers. See custom_timer.v:103
+Warning: Replacing memory \ticks_delta with list of registers. See custom_timer.v:102
+Warning: Replacing memory \last_capture with list of registers. See custom_timer.v:101
+Warning: Replacing memory \capture_timer with list of registers. See custom_timer.v:100
+Warning: Replacing memory \rpm_val with list of registers. See custom_timer.v:89
+
+3.1. Analyzing design hierarchy..
+Top module:  \custom_timer
+
+3.2. Analyzing design hierarchy..
+Top module:  \custom_timer
+Removing unused module `$abstract\custom_timer'.
+Removed 1 unused modules.
+
+4. Executing PROC pass (convert processes to netlists).
+
+4.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+4.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 25 switch rules as full_case in process $proc$custom_timer.v:87$6 in module custom_timer.
+Removed a total of 0 dead cases.
+
+4.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 19 redundant assignments.
+Promoted 4 assignments to connections.
+
+4.4. Executing PROC_INIT pass (extract init attributes).
+
+4.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \wb_rst_ni in `\custom_timer.$proc$custom_timer.v:87$6'.
+
+4.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~29 debug messages>
+
+4.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\custom_timer.$proc$custom_timer.v:87$6'.
+     1/87: $0\rpm_valid[3:0] [3]
+     2/87: $14\delta[31:0]
+     3/87: $14\pp_eff[31:0]
+     4/87: $0\pulse_valid[3][0:0]
+     5/87: $13\delta[31:0]
+     6/87: $13\pp_eff[31:0]
+     7/87: $13\numerator[47:0]
+     8/87: $12\delta[31:0]
+     9/87: $12\pp_eff[31:0]
+    10/87: $12\numerator[47:0]
+    11/87: $0\capture_timer[3][27:0]
+    12/87: $11\numerator[47:0]
+    13/87: $11\delta[31:0]
+    14/87: $11\pp_eff[31:0]
+    15/87: $0\pulse_valid[2][0:0]
+    16/87: $10\delta[31:0]
+    17/87: $10\pp_eff[31:0]
+    18/87: $10\numerator[47:0]
+    19/87: $9\delta[31:0]
+    20/87: $9\pp_eff[31:0]
+    21/87: $9\numerator[47:0]
+    22/87: $0\rpm_valid[3:0] [2]
+    23/87: $0\rpm_valid[3:0] [1]
+    24/87: $8\numerator[47:0]
+    25/87: $8\delta[31:0]
+    26/87: $8\pp_eff[31:0]
+    27/87: $0\pulse_valid[1][0:0]
+    28/87: $7\delta[31:0]
+    29/87: $7\pp_eff[31:0]
+    30/87: $7\numerator[47:0]
+    31/87: $6\delta[31:0]
+    32/87: $6\pp_eff[31:0]
+    33/87: $6\numerator[47:0]
+    34/87: $0\capture_timer[2][27:0]
+    35/87: $0\rpm_valid[3:0] [0]
+    36/87: $5\numerator[47:0]
+    37/87: $5\delta[31:0]
+    38/87: $5\pp_eff[31:0]
+    39/87: $0\pulse_valid[0][0:0]
+    40/87: $4\delta[31:0]
+    41/87: $4\pp_eff[31:0]
+    42/87: $4\numerator[47:0]
+    43/87: $3\delta[31:0]
+    44/87: $3\pp_eff[31:0]
+    45/87: $3\numerator[47:0]
+    46/87: $0\capture_timer[1][27:0]
+    47/87: $14\numerator[47:0]
+    48/87: $2\j[31:0]
+    49/87: $2\delta[31:0]
+    50/87: $2\pp_eff[31:0]
+    51/87: $2\numerator[47:0]
+    52/87: $0\capture_edge[3][0:0]
+    53/87: $0\capture_sync[3][1:0]
+    54/87: $0\capture_edge[2][0:0]
+    55/87: $0\capture_sync[2][1:0]
+    56/87: $0\capture_edge[1][0:0]
+    57/87: $0\capture_sync[1][1:0]
+    58/87: $0\capture_edge[0][0:0]
+    59/87: $0\capture_sync[0][1:0]
+    60/87: $1\delta[31:0]
+    61/87: $1\pp_eff[31:0]
+    62/87: $1\numerator[47:0]
+    63/87: $1\j[31:0]
+    64/87: $0\irq_rpm_o[0:0]
+    65/87: $0\wb_err_o[0:0]
+    66/87: $0\wb_ack_o[0:0]
+    67/87: $0\glitch_filter[3][2:0]
+    68/87: $0\glitch_filter[2][2:0]
+    69/87: $0\glitch_filter[1][2:0]
+    70/87: $0\glitch_filter[0][2:0]
+    71/87: $0\ticks_delta[3][27:0]
+    72/87: $0\ticks_delta[2][27:0]
+    73/87: $0\ticks_delta[1][27:0]
+    74/87: $0\ticks_delta[0][27:0]
+    75/87: $0\last_capture[3][27:0]
+    76/87: $0\last_capture[2][27:0]
+    77/87: $0\last_capture[1][27:0]
+    78/87: $0\last_capture[0][27:0]
+    79/87: $0\rpm_val[3][15:0]
+    80/87: $0\rpm_val[2][15:0]
+    81/87: $0\rpm_val[1][15:0]
+    82/87: $0\rpm_val[0][15:0]
+    83/87: $0\ctrl_filter[2:0]
+    84/87: $0\ctrl_enable[0:0]
+    85/87: $0\pole_pairs[15:0]
+    86/87: $0\capture_timer[0][27:0]
+    87/87: $0\wb_dat_o[31:0]
+
+4.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+4.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\custom_timer.\wb_dat_o' using process `\custom_timer.$proc$custom_timer.v:87$6'.
+  created $adff cell `$procdff$859' with positive edge clock and positive level reset.
+Creating register for signal `\custom_timer.\wb_ack_o' using process `\custom_timer.$proc$custom_timer.v:87$6'.
+  created $adff cell `$procdff$864' with positive edge clock and positive level reset.
+Creating register for signal `\custom_timer.\wb_err_o' using process `\custom_timer.$proc$custom_timer.v:87$6'.
+  created $adff cell `$procdff$869' with positive edge clock and positive level reset.
+Creating register for signal `\custom_timer.\irq_rpm_o' using process `\custom_timer.$proc$custom_timer.v:87$6'.
+  created $adff cell `$procdff$874' with positive edge clock and positive level reset.
+Creating register for signal `\custom_timer.\rpm_valid' using process `\custom_timer.$proc$custom_timer.v:87$6'.
+  created $adff cell `$procdff$879' with positive edge clock and positive level reset.
+Creating register for signal `\custom_timer.\pole_pairs' using process `\custom_timer.$proc$custom_timer.v:87$6'.
+  created $adff cell `$procdff$884' with positive edge clock and positive level reset.
+Creating register for signal `\custom_timer.\ctrl_enable' using process `\custom_timer.$proc$custom_timer.v:87$6'.
+  created $adff cell `$procdff$889' with positive edge clock and positive level reset.
+Creating register for signal `\custom_timer.\ctrl_filter' using process `\custom_timer.$proc$custom_timer.v:87$6'.
+  created $adff cell `$procdff$894' with positive edge clock and positive level reset.
+Creating register for signal `\custom_timer.\j' using process `\custom_timer.$proc$custom_timer.v:87$6'.
+  created $adff cell `$procdff$899' with positive edge clock and positive level reset.
+Creating register for signal `\custom_timer.\numerator' using process `\custom_timer.$proc$custom_timer.v:87$6'.
+  created $dff cell `$procdff$906' with positive edge clock.
+Creating register for signal `\custom_timer.\pp_eff' using process `\custom_timer.$proc$custom_timer.v:87$6'.
+  created $dff cell `$procdff$913' with positive edge clock.
+Creating register for signal `\custom_timer.\delta' using process `\custom_timer.$proc$custom_timer.v:87$6'.
+  created $dff cell `$procdff$920' with positive edge clock.
+Creating register for signal `\custom_timer.\rpm_val[0]' using process `\custom_timer.$proc$custom_timer.v:87$6'.
+  created $adff cell `$procdff$925' with positive edge clock and positive level reset.
+Creating register for signal `\custom_timer.\rpm_val[1]' using process `\custom_timer.$proc$custom_timer.v:87$6'.
+  created $adff cell `$procdff$930' with positive edge clock and positive level reset.
+Creating register for signal `\custom_timer.\rpm_val[2]' using process `\custom_timer.$proc$custom_timer.v:87$6'.
+  created $adff cell `$procdff$935' with positive edge clock and positive level reset.
+Creating register for signal `\custom_timer.\rpm_val[3]' using process `\custom_timer.$proc$custom_timer.v:87$6'.
+  created $adff cell `$procdff$940' with positive edge clock and positive level reset.
+Creating register for signal `\custom_timer.\capture_timer[0]' using process `\custom_timer.$proc$custom_timer.v:87$6'.
+  created $adff cell `$procdff$945' with positive edge clock and positive level reset.
+Creating register for signal `\custom_timer.\capture_timer[1]' using process `\custom_timer.$proc$custom_timer.v:87$6'.
+  created $adff cell `$procdff$950' with positive edge clock and positive level reset.
+Creating register for signal `\custom_timer.\capture_timer[2]' using process `\custom_timer.$proc$custom_timer.v:87$6'.
+  created $adff cell `$procdff$955' with positive edge clock and positive level reset.
+Creating register for signal `\custom_timer.\capture_timer[3]' using process `\custom_timer.$proc$custom_timer.v:87$6'.
+  created $adff cell `$procdff$960' with positive edge clock and positive level reset.
+Creating register for signal `\custom_timer.\last_capture[0]' using process `\custom_timer.$proc$custom_timer.v:87$6'.
+  created $adff cell `$procdff$965' with positive edge clock and positive level reset.
+Creating register for signal `\custom_timer.\last_capture[1]' using process `\custom_timer.$proc$custom_timer.v:87$6'.
+  created $adff cell `$procdff$970' with positive edge clock and positive level reset.
+Creating register for signal `\custom_timer.\last_capture[2]' using process `\custom_timer.$proc$custom_timer.v:87$6'.
+  created $adff cell `$procdff$975' with positive edge clock and positive level reset.
+Creating register for signal `\custom_timer.\last_capture[3]' using process `\custom_timer.$proc$custom_timer.v:87$6'.
+  created $adff cell `$procdff$980' with positive edge clock and positive level reset.
+Creating register for signal `\custom_timer.\ticks_delta[0]' using process `\custom_timer.$proc$custom_timer.v:87$6'.
+  created $adff cell `$procdff$985' with positive edge clock and positive level reset.
+Creating register for signal `\custom_timer.\ticks_delta[1]' using process `\custom_timer.$proc$custom_timer.v:87$6'.
+  created $adff cell `$procdff$990' with positive edge clock and positive level reset.
+Creating register for signal `\custom_timer.\ticks_delta[2]' using process `\custom_timer.$proc$custom_timer.v:87$6'.
+  created $adff cell `$procdff$995' with positive edge clock and positive level reset.
+Creating register for signal `\custom_timer.\ticks_delta[3]' using process `\custom_timer.$proc$custom_timer.v:87$6'.
+  created $adff cell `$procdff$1000' with positive edge clock and positive level reset.
+Creating register for signal `\custom_timer.\capture_sync[0]' using process `\custom_timer.$proc$custom_timer.v:87$6'.
+  created $adff cell `$procdff$1005' with positive edge clock and positive level reset.
+Creating register for signal `\custom_timer.\capture_sync[1]' using process `\custom_timer.$proc$custom_timer.v:87$6'.
+  created $adff cell `$procdff$1010' with positive edge clock and positive level reset.
+Creating register for signal `\custom_timer.\capture_sync[2]' using process `\custom_timer.$proc$custom_timer.v:87$6'.
+  created $adff cell `$procdff$1015' with positive edge clock and positive level reset.
+Creating register for signal `\custom_timer.\capture_sync[3]' using process `\custom_timer.$proc$custom_timer.v:87$6'.
+  created $adff cell `$procdff$1020' with positive edge clock and positive level reset.
+Creating register for signal `\custom_timer.\capture_edge[0]' using process `\custom_timer.$proc$custom_timer.v:87$6'.
+  created $adff cell `$procdff$1025' with positive edge clock and positive level reset.
+Creating register for signal `\custom_timer.\capture_edge[1]' using process `\custom_timer.$proc$custom_timer.v:87$6'.
+  created $adff cell `$procdff$1030' with positive edge clock and positive level reset.
+Creating register for signal `\custom_timer.\capture_edge[2]' using process `\custom_timer.$proc$custom_timer.v:87$6'.
+  created $adff cell `$procdff$1035' with positive edge clock and positive level reset.
+Creating register for signal `\custom_timer.\capture_edge[3]' using process `\custom_timer.$proc$custom_timer.v:87$6'.
+  created $adff cell `$procdff$1040' with positive edge clock and positive level reset.
+Creating register for signal `\custom_timer.\glitch_filter[0]' using process `\custom_timer.$proc$custom_timer.v:87$6'.
+  created $adff cell `$procdff$1045' with positive edge clock and positive level reset.
+Creating register for signal `\custom_timer.\glitch_filter[1]' using process `\custom_timer.$proc$custom_timer.v:87$6'.
+  created $adff cell `$procdff$1050' with positive edge clock and positive level reset.
+Creating register for signal `\custom_timer.\glitch_filter[2]' using process `\custom_timer.$proc$custom_timer.v:87$6'.
+  created $adff cell `$procdff$1055' with positive edge clock and positive level reset.
+Creating register for signal `\custom_timer.\glitch_filter[3]' using process `\custom_timer.$proc$custom_timer.v:87$6'.
+  created $adff cell `$procdff$1060' with positive edge clock and positive level reset.
+Creating register for signal `\custom_timer.\pulse_valid[0]' using process `\custom_timer.$proc$custom_timer.v:87$6'.
+  created $adff cell `$procdff$1065' with positive edge clock and positive level reset.
+Creating register for signal `\custom_timer.\pulse_valid[1]' using process `\custom_timer.$proc$custom_timer.v:87$6'.
+  created $adff cell `$procdff$1070' with positive edge clock and positive level reset.
+Creating register for signal `\custom_timer.\pulse_valid[2]' using process `\custom_timer.$proc$custom_timer.v:87$6'.
+  created $adff cell `$procdff$1075' with positive edge clock and positive level reset.
+Creating register for signal `\custom_timer.\pulse_valid[3]' using process `\custom_timer.$proc$custom_timer.v:87$6'.
+  created $adff cell `$procdff$1080' with positive edge clock and positive level reset.
+
+4.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+4.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 29 empty switches in `\custom_timer.$proc$custom_timer.v:87$6'.
+Removing empty process `custom_timer.$proc$custom_timer.v:87$6'.
+Cleaned up 29 empty switches.
+
+4.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module custom_timer.
+<suppressed ~94 debug messages>
+
+5. Executing OPT pass (performing simple optimizations).
+
+5.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module custom_timer.
+
+5.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\custom_timer'.
+Computing hashes of 439 cells of `\custom_timer'.
+Finding duplicate cells in `\custom_timer'.
+Computing hashes of 381 cells of `\custom_timer'.
+Finding duplicate cells in `\custom_timer'.
+<suppressed ~174 debug messages>
+Removed a total of 58 cells.
+
+5.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \custom_timer..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $procmux$532.
+    dead port 2/2 on $mux $procmux$530.
+    dead port 1/2 on $mux $procmux$528.
+    dead port 2/2 on $mux $procmux$508.
+    dead port 2/2 on $mux $procmux$502.
+    dead port 2/2 on $mux $procmux$496.
+    dead port 2/2 on $mux $procmux$490.
+    dead port 2/2 on $mux $procmux$488.
+    dead port 2/2 on $mux $procmux$481.
+    dead port 2/2 on $mux $procmux$479.
+    dead port 2/2 on $mux $procmux$472.
+    dead port 2/2 on $mux $procmux$470.
+    dead port 2/2 on $mux $procmux$454.
+    dead port 2/2 on $mux $procmux$452.
+    dead port 1/2 on $mux $procmux$450.
+    dead port 2/2 on $mux $procmux$442.
+    dead port 2/2 on $mux $procmux$440.
+    dead port 1/2 on $mux $procmux$438.
+    dead port 2/2 on $mux $procmux$430.
+    dead port 2/2 on $mux $procmux$428.
+    dead port 1/2 on $mux $procmux$426.
+    dead port 2/2 on $mux $procmux$391.
+    dead port 2/2 on $mux $procmux$385.
+    dead port 2/2 on $mux $procmux$379.
+    dead port 2/2 on $mux $procmux$373.
+    dead port 2/2 on $mux $procmux$371.
+    dead port 2/2 on $mux $procmux$364.
+    dead port 2/2 on $mux $procmux$362.
+    dead port 2/2 on $mux $procmux$355.
+    dead port 2/2 on $mux $procmux$353.
+    dead port 2/2 on $mux $procmux$337.
+    dead port 2/2 on $mux $procmux$335.
+    dead port 1/2 on $mux $procmux$333.
+    dead port 2/2 on $mux $procmux$325.
+    dead port 2/2 on $mux $procmux$323.
+    dead port 1/2 on $mux $procmux$321.
+    dead port 2/2 on $mux $procmux$313.
+    dead port 2/2 on $mux $procmux$311.
+    dead port 1/2 on $mux $procmux$309.
+    dead port 2/2 on $mux $procmux$271.
+    dead port 2/2 on $mux $procmux$265.
+    dead port 2/2 on $mux $procmux$259.
+    dead port 2/2 on $mux $procmux$253.
+    dead port 2/2 on $mux $procmux$251.
+    dead port 2/2 on $mux $procmux$244.
+    dead port 2/2 on $mux $procmux$242.
+    dead port 2/2 on $mux $procmux$235.
+    dead port 2/2 on $mux $procmux$233.
+    dead port 2/2 on $mux $procmux$217.
+    dead port 2/2 on $mux $procmux$215.
+    dead port 1/2 on $mux $procmux$213.
+    dead port 2/2 on $mux $procmux$205.
+    dead port 2/2 on $mux $procmux$203.
+    dead port 1/2 on $mux $procmux$201.
+    dead port 2/2 on $mux $procmux$193.
+    dead port 2/2 on $mux $procmux$191.
+    dead port 1/2 on $mux $procmux$189.
+    dead port 2/2 on $mux $procmux$169.
+    dead port 2/2 on $mux $procmux$163.
+    dead port 2/2 on $mux $procmux$157.
+    dead port 2/2 on $mux $procmux$151.
+    dead port 2/2 on $mux $procmux$149.
+    dead port 2/2 on $mux $procmux$142.
+    dead port 2/2 on $mux $procmux$140.
+    dead port 2/2 on $mux $procmux$133.
+    dead port 2/2 on $mux $procmux$131.
+    dead port 2/2 on $mux $procmux$115.
+    dead port 2/2 on $mux $procmux$113.
+    dead port 1/2 on $mux $procmux$111.
+    dead port 2/2 on $mux $procmux$103.
+    dead port 2/2 on $mux $procmux$101.
+    dead port 1/2 on $mux $procmux$99.
+Removed 72 multiplexer ports.
+<suppressed ~1974 debug messages>
+
+5.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \custom_timer.
+    New ctrl vector for $pmux cell $procmux$619: $auto$opt_reduce.cc:135:opt_pmux$1082
+    New ctrl vector for $pmux cell $procmux$609: $auto$opt_reduce.cc:135:opt_pmux$1084
+  Optimizing cells in module \custom_timer.
+Performed a total of 2 changes.
+
+5.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\custom_timer'.
+Computing hashes of 311 cells of `\custom_timer'.
+Finding duplicate cells in `\custom_timer'.
+Computing hashes of 308 cells of `\custom_timer'.
+Finding duplicate cells in `\custom_timer'.
+Computing hashes of 305 cells of `\custom_timer'.
+Finding duplicate cells in `\custom_timer'.
+<suppressed ~18 debug messages>
+Removed a total of 6 cells.
+
+5.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $procdff$913 ($dff) from module custom_timer (D = $12\pp_eff[31:0], Q = \pp_eff).
+Adding EN signal on $procdff$970 ($adff) from module custom_timer (D = $procmux$733_Y, Q = \last_capture[1]).
+Adding EN signal on $procdff$1000 ($adff) from module custom_timer (D = $procmux$679_Y, Q = \ticks_delta[3]).
+Adding EN signal on $procdff$935 ($adff) from module custom_timer (D = $procmux$763_Y, Q = \rpm_val[2]).
+Adding EN signal on $procdff$1045 ($adff) from module custom_timer (D = $procmux$670_Y, Q = \glitch_filter[0]).
+Adding EN signal on $procdff$859 ($adff) from module custom_timer (D = $procmux$842_Y, Q = \wb_dat_o).
+Adding EN signal on $procdff$940 ($adff) from module custom_timer (D = $procmux$748_Y, Q = \rpm_val[3]).
+Adding EN signal on $procdff$975 ($adff) from module custom_timer (D = $procmux$724_Y, Q = \last_capture[2]).
+Adding EN signal on $procdff$995 ($adff) from module custom_timer (D = $procmux$688_Y, Q = \ticks_delta[2]).
+Adding EN signal on $procdff$884 ($adff) from module custom_timer (D = \wb_dat_i [15:0], Q = \pole_pairs).
+Adding EN signal on $procdff$980 ($adff) from module custom_timer (D = $procmux$715_Y, Q = \last_capture[3]).
+Adding EN signal on $procdff$1060 ($adff) from module custom_timer (D = $procmux$637_Y, Q = \glitch_filter[3]).
+Adding EN signal on $procdff$889 ($adff) from module custom_timer (D = \wb_dat_i [0], Q = \ctrl_enable).
+Adding EN signal on $procdff$1055 ($adff) from module custom_timer (D = $procmux$648_Y, Q = \glitch_filter[2]).
+Adding EN signal on $procdff$894 ($adff) from module custom_timer (D = \wb_dat_i [3:1], Q = \ctrl_filter).
+Adding EN signal on $procdff$906 ($dff) from module custom_timer (D = $12\numerator[47:0], Q = \numerator).
+Adding EN signal on $procdff$985 ($adff) from module custom_timer (D = $procmux$706_Y, Q = \ticks_delta[0]).
+Adding EN signal on $procdff$965 ($adff) from module custom_timer (D = $procmux$742_Y, Q = \last_capture[0]).
+Adding EN signal on $procdff$920 ($dff) from module custom_timer (D = $12\delta[31:0], Q = \delta).
+Adding EN signal on $procdff$1050 ($adff) from module custom_timer (D = $procmux$659_Y, Q = \glitch_filter[1]).
+Adding EN signal on $procdff$925 ($adff) from module custom_timer (D = $procmux$793_Y, Q = \rpm_val[0]).
+Adding EN signal on $procdff$990 ($adff) from module custom_timer (D = $procmux$697_Y, Q = \ticks_delta[1]).
+Adding EN signal on $procdff$930 ($adff) from module custom_timer (D = $procmux$778_Y, Q = \rpm_val[1]).
+Setting constant 0-bit at position 0 on $procdff$899 ($adff) from module custom_timer.
+Setting constant 0-bit at position 1 on $procdff$899 ($adff) from module custom_timer.
+Setting constant 1-bit at position 2 on $procdff$899 ($adff) from module custom_timer.
+Setting constant 0-bit at position 3 on $procdff$899 ($adff) from module custom_timer.
+Setting constant 0-bit at position 4 on $procdff$899 ($adff) from module custom_timer.
+Setting constant 0-bit at position 5 on $procdff$899 ($adff) from module custom_timer.
+Setting constant 0-bit at position 6 on $procdff$899 ($adff) from module custom_timer.
+Setting constant 0-bit at position 7 on $procdff$899 ($adff) from module custom_timer.
+Setting constant 0-bit at position 8 on $procdff$899 ($adff) from module custom_timer.
+Setting constant 0-bit at position 9 on $procdff$899 ($adff) from module custom_timer.
+Setting constant 0-bit at position 10 on $procdff$899 ($adff) from module custom_timer.
+Setting constant 0-bit at position 11 on $procdff$899 ($adff) from module custom_timer.
+Setting constant 0-bit at position 12 on $procdff$899 ($adff) from module custom_timer.
+Setting constant 0-bit at position 13 on $procdff$899 ($adff) from module custom_timer.
+Setting constant 0-bit at position 14 on $procdff$899 ($adff) from module custom_timer.
+Setting constant 0-bit at position 15 on $procdff$899 ($adff) from module custom_timer.
+Setting constant 0-bit at position 16 on $procdff$899 ($adff) from module custom_timer.
+Setting constant 0-bit at position 17 on $procdff$899 ($adff) from module custom_timer.
+Setting constant 0-bit at position 18 on $procdff$899 ($adff) from module custom_timer.
+Setting constant 0-bit at position 19 on $procdff$899 ($adff) from module custom_timer.
+Setting constant 0-bit at position 20 on $procdff$899 ($adff) from module custom_timer.
+Setting constant 0-bit at position 21 on $procdff$899 ($adff) from module custom_timer.
+Setting constant 0-bit at position 22 on $procdff$899 ($adff) from module custom_timer.
+Setting constant 0-bit at position 23 on $procdff$899 ($adff) from module custom_timer.
+Setting constant 0-bit at position 24 on $procdff$899 ($adff) from module custom_timer.
+Setting constant 0-bit at position 25 on $procdff$899 ($adff) from module custom_timer.
+Setting constant 0-bit at position 26 on $procdff$899 ($adff) from module custom_timer.
+Setting constant 0-bit at position 27 on $procdff$899 ($adff) from module custom_timer.
+Setting constant 0-bit at position 28 on $procdff$899 ($adff) from module custom_timer.
+Setting constant 0-bit at position 29 on $procdff$899 ($adff) from module custom_timer.
+Setting constant 0-bit at position 30 on $procdff$899 ($adff) from module custom_timer.
+Setting constant 0-bit at position 31 on $procdff$899 ($adff) from module custom_timer.
+
+5.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \custom_timer..
+Removed 93 unused cells and 616 unused wires.
+<suppressed ~101 debug messages>
+
+5.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module custom_timer.
+
+5.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \custom_timer..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~338 debug messages>
+
+5.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \custom_timer.
+Performed a total of 0 changes.
+
+5.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\custom_timer'.
+Computing hashes of 255 cells of `\custom_timer'.
+Finding duplicate cells in `\custom_timer'.
+Computing hashes of 246 cells of `\custom_timer'.
+Finding duplicate cells in `\custom_timer'.
+Computing hashes of 242 cells of `\custom_timer'.
+Finding duplicate cells in `\custom_timer'.
+<suppressed ~39 debug messages>
+Removed a total of 13 cells.
+
+5.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \custom_timer..
+Removed 0 unused cells and 13 unused wires.
+<suppressed ~1 debug messages>
+
+5.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module custom_timer.
+
+5.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \custom_timer..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~338 debug messages>
+
+5.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \custom_timer.
+Performed a total of 0 changes.
+
+5.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\custom_timer'.
+Computing hashes of 242 cells of `\custom_timer'.
+Finding duplicate cells in `\custom_timer'.
+Removed a total of 0 cells.
+
+5.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \custom_timer..
+
+5.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module custom_timer.
+
+5.23. Finished fast OPT passes. (There is nothing left to do.)
+
+6. Executing FLATTEN pass (flatten design).
+
+7. Executing OPT pass (performing simple optimizations).
+
+7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module custom_timer.
+
+7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\custom_timer'.
+Computing hashes of 242 cells of `\custom_timer'.
+Finding duplicate cells in `\custom_timer'.
+Removed a total of 0 cells.
+
+7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \custom_timer..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~338 debug messages>
+
+7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \custom_timer.
+Performed a total of 0 changes.
+
+7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\custom_timer'.
+Computing hashes of 242 cells of `\custom_timer'.
+Finding duplicate cells in `\custom_timer'.
+Removed a total of 0 cells.
+
+7.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+7.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \custom_timer..
+
+7.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module custom_timer.
+
+7.9. Finished fast OPT passes. (There is nothing left to do.)
+
+8. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `custom_timer'. Setting top module to custom_timer.
+
+8.1. Analyzing design hierarchy..
+Top module:  \custom_timer
+
+8.2. Analyzing design hierarchy..
+Top module:  \custom_timer
+Removed 0 unused modules.
+
+9. Executing jny backend.
+
+10. Executing RTLIL backend.
+Output filename: ../model/design.il
+
+Warnings: 8 unique messages, 8 total
+End of script. Logfile hash: ed6030190b, time: 0.11s, user: 0.11s, system: 0.01s, MEM: 21.13 MB peak
+Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+Time spent: 18% 4x opt_dff (0 sec), 18% 2x hierarchy (0 sec), ...

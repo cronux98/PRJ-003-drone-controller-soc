@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IP-010 v4 bring-up cosimulation results -->
+<!-- Status: BLOCKED — 06_verification_stage/ is empty, no SoC top-level available -->
+<testsuite name="tb-fw-bringup" tests="5" failures="0" errors="0" skipped="5" time="0.000">
+  <testcase classname="bringup" name="bootrom_boot_sequence" status="skipped">
+    <skipped message="BLOCKED: No SoC top-level RTL in 06_verification_stage. Need assembled SoC for cocotb-on-RTL simulation."/>
+  </testcase>
+  <testcase classname="bringup" name="sram_walking_ones_test" status="skipped">
+    <skipped message="BLOCKED: Requires SoC top-level RTL."/>
+  </testcase>
+  <testcase classname="bringup" name="uart_tx_loopback" status="skipped">
+    <skipped message="BLOCKED: Requires SoC top-level RTL."/>
+  </testcase>
+  <testcase classname="bringup" name="peripheral_register_rw" status="skipped">
+    <skipped message="BLOCKED: Requires SoC top-level RTL."/>
+  </testcase>
+  <testcase classname="bringup" name="bringup_compile" status="pass">
+    <system-out>Bring-up firmware compiles successfully. Awaiting SoC top-level for RTL cosimulation.</system-out>
+  </testcase>
+</testsuite>

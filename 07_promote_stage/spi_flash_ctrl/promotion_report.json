@@ -1,0 +1,12 @@
+{
+  "module": "spi_flash_ctrl",
+  "classification": "REUSE_INTERNAL",
+  "tier": "A",
+  "cell_count": 377,
+  "synthesis_log": "~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-spi_flash_ctrl/logs/synth/spi_flash_ctrl_synth.log",
+  "results_xml": "~/hermes_workspace/projects/IP-010/v4/06_verification_stage/tb-spi_flash_ctrl/results.xml",
+  "equiv_status": "PROVEN",
+  "tests_passed": 15,
+  "tests_total": 15,
+  "admitted": true
+}

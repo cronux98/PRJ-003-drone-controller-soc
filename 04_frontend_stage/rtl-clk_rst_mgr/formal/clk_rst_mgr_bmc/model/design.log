@@ -1,0 +1,302 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+
+-- Executing script file `../model/design.ys' --
+
+1. Executing Verilog-2005 frontend: clk_rst_mgr.v
+Parsing formal SystemVerilog input from `clk_rst_mgr.v' to AST representation.
+Storing AST representation for module `$abstract\clk_rst_mgr'.
+Successfully finished Verilog frontend.
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+
+3. Executing AST frontend in derive mode using pre-parsed AST for module `\clk_rst_mgr'.
+Generating RTLIL representation for module `\clk_rst_mgr'.
+
+3.1. Analyzing design hierarchy..
+Top module:  \clk_rst_mgr
+
+3.2. Analyzing design hierarchy..
+Top module:  \clk_rst_mgr
+Removing unused module `$abstract\clk_rst_mgr'.
+Removed 1 unused modules.
+
+4. Executing PROC pass (convert processes to netlists).
+
+4.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+4.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$clk_rst_mgr.v:92$11 in module clk_rst_mgr.
+Marked 1 switch rules as full_case in process $proc$clk_rst_mgr.v:83$9 in module clk_rst_mgr.
+Marked 4 switch rules as full_case in process $proc$clk_rst_mgr.v:55$4 in module clk_rst_mgr.
+Marked 1 switch rules as full_case in process $proc$clk_rst_mgr.v:42$2 in module clk_rst_mgr.
+Removed a total of 0 dead cases.
+
+4.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 2 redundant assignments.
+Promoted 0 assignments to connections.
+
+4.4. Executing PROC_INIT pass (extract init attributes).
+
+4.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst_ni in `\clk_rst_mgr.$proc$clk_rst_mgr.v:92$11'.
+Found async reset \user_reset_n_i in `\clk_rst_mgr.$proc$clk_rst_mgr.v:83$9'.
+Found async reset \user_reset_n_i in `\clk_rst_mgr.$proc$clk_rst_mgr.v:55$4'.
+Found async reset \user_reset_n_i in `\clk_rst_mgr.$proc$clk_rst_mgr.v:42$2'.
+
+4.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~7 debug messages>
+
+4.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\clk_rst_mgr.$proc$clk_rst_mgr.v:92$11'.
+     1/2: $0\wb_ack_o[0:0]
+     2/2: $0\wb_dat_o[31:0]
+Creating decoders for process `\clk_rst_mgr.$proc$clk_rst_mgr.v:83$9'.
+     1/1: $0\wdg_reset_occurred[0:0]
+Creating decoders for process `\clk_rst_mgr.$proc$clk_rst_mgr.v:55$4'.
+     1/3: $0\cpu_held[0:0]
+     2/3: $0\cpu_rst_counter[4:0]
+     3/3: $0\cpu_rst_n_o[0:0]
+Creating decoders for process `\clk_rst_mgr.$proc$clk_rst_mgr.v:42$2'.
+     1/1: $0\rst_sync[1:0]
+
+4.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+4.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\clk_rst_mgr.\wb_dat_o' using process `\clk_rst_mgr.$proc$clk_rst_mgr.v:92$11'.
+  created $adff cell `$procdff$63' with positive edge clock and positive level reset.
+Creating register for signal `\clk_rst_mgr.\wb_ack_o' using process `\clk_rst_mgr.$proc$clk_rst_mgr.v:92$11'.
+  created $adff cell `$procdff$68' with positive edge clock and positive level reset.
+Creating register for signal `\clk_rst_mgr.\wdg_reset_occurred' using process `\clk_rst_mgr.$proc$clk_rst_mgr.v:83$9'.
+  created $adff cell `$procdff$73' with positive edge clock and positive level reset.
+Creating register for signal `\clk_rst_mgr.\cpu_rst_n_o' using process `\clk_rst_mgr.$proc$clk_rst_mgr.v:55$4'.
+  created $adff cell `$procdff$78' with positive edge clock and positive level reset.
+Creating register for signal `\clk_rst_mgr.\cpu_rst_counter' using process `\clk_rst_mgr.$proc$clk_rst_mgr.v:55$4'.
+  created $adff cell `$procdff$83' with positive edge clock and positive level reset.
+Creating register for signal `\clk_rst_mgr.\cpu_held' using process `\clk_rst_mgr.$proc$clk_rst_mgr.v:55$4'.
+  created $adff cell `$procdff$88' with positive edge clock and positive level reset.
+Creating register for signal `\clk_rst_mgr.\rst_sync' using process `\clk_rst_mgr.$proc$clk_rst_mgr.v:42$2'.
+  created $adff cell `$procdff$93' with positive edge clock and positive level reset.
+
+4.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+4.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 2 empty switches in `\clk_rst_mgr.$proc$clk_rst_mgr.v:92$11'.
+Removing empty process `clk_rst_mgr.$proc$clk_rst_mgr.v:92$11'.
+Found and cleaned up 1 empty switch in `\clk_rst_mgr.$proc$clk_rst_mgr.v:83$9'.
+Removing empty process `clk_rst_mgr.$proc$clk_rst_mgr.v:83$9'.
+Found and cleaned up 4 empty switches in `\clk_rst_mgr.$proc$clk_rst_mgr.v:55$4'.
+Removing empty process `clk_rst_mgr.$proc$clk_rst_mgr.v:55$4'.
+Removing empty process `clk_rst_mgr.$proc$clk_rst_mgr.v:42$2'.
+Cleaned up 7 empty switches.
+
+4.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module clk_rst_mgr.
+<suppressed ~18 debug messages>
+
+5. Executing OPT pass (performing simple optimizations).
+
+5.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module clk_rst_mgr.
+
+5.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\clk_rst_mgr'.
+Computing hashes of 43 cells of `\clk_rst_mgr'.
+Finding duplicate cells in `\clk_rst_mgr'.
+Computing hashes of 35 cells of `\clk_rst_mgr'.
+Finding duplicate cells in `\clk_rst_mgr'.
+<suppressed ~24 debug messages>
+Removed a total of 8 cells.
+
+5.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \clk_rst_mgr..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+      Replacing known input bits on port A of cell $procmux$29: \cpu_held -> 1'0
+      Replacing known input bits on port B of cell $procmux$27: \cpu_held -> 1'1
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~22 debug messages>
+
+5.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \clk_rst_mgr.
+Performed a total of 0 changes.
+
+5.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\clk_rst_mgr'.
+Computing hashes of 35 cells of `\clk_rst_mgr'.
+Finding duplicate cells in `\clk_rst_mgr'.
+Removed a total of 0 cells.
+
+5.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $procdff$78 ($adff) from module clk_rst_mgr (D = $procmux$57_Y, Q = \cpu_rst_n_o).
+Adding EN signal on $procdff$73 ($adff) from module clk_rst_mgr (D = 1'1, Q = \wdg_reset_occurred).
+Adding EN signal on $procdff$83 ($adff) from module clk_rst_mgr (D = $procmux$46_Y, Q = \cpu_rst_counter).
+Adding EN signal on $procdff$63 ($adff) from module clk_rst_mgr (D = { 29'00000000000000000000000000000 \wdg_reset_occurred \cpu_held $logic_not$clk_rst_mgr.v:103$17_Y }, Q = \wb_dat_o).
+Setting constant 0-bit at position 3 on $auto$ff.cc:337:slice$105 ($adffe) from module clk_rst_mgr.
+Setting constant 0-bit at position 4 on $auto$ff.cc:337:slice$105 ($adffe) from module clk_rst_mgr.
+Setting constant 0-bit at position 5 on $auto$ff.cc:337:slice$105 ($adffe) from module clk_rst_mgr.
+Setting constant 0-bit at position 6 on $auto$ff.cc:337:slice$105 ($adffe) from module clk_rst_mgr.
+Setting constant 0-bit at position 7 on $auto$ff.cc:337:slice$105 ($adffe) from module clk_rst_mgr.
+Setting constant 0-bit at position 8 on $auto$ff.cc:337:slice$105 ($adffe) from module clk_rst_mgr.
+Setting constant 0-bit at position 9 on $auto$ff.cc:337:slice$105 ($adffe) from module clk_rst_mgr.
+Setting constant 0-bit at position 10 on $auto$ff.cc:337:slice$105 ($adffe) from module clk_rst_mgr.
+Setting constant 0-bit at position 11 on $auto$ff.cc:337:slice$105 ($adffe) from module clk_rst_mgr.
+Setting constant 0-bit at position 12 on $auto$ff.cc:337:slice$105 ($adffe) from module clk_rst_mgr.
+Setting constant 0-bit at position 13 on $auto$ff.cc:337:slice$105 ($adffe) from module clk_rst_mgr.
+Setting constant 0-bit at position 14 on $auto$ff.cc:337:slice$105 ($adffe) from module clk_rst_mgr.
+Setting constant 0-bit at position 15 on $auto$ff.cc:337:slice$105 ($adffe) from module clk_rst_mgr.
+Setting constant 0-bit at position 16 on $auto$ff.cc:337:slice$105 ($adffe) from module clk_rst_mgr.
+Setting constant 0-bit at position 17 on $auto$ff.cc:337:slice$105 ($adffe) from module clk_rst_mgr.
+Setting constant 0-bit at position 18 on $auto$ff.cc:337:slice$105 ($adffe) from module clk_rst_mgr.
+Setting constant 0-bit at position 19 on $auto$ff.cc:337:slice$105 ($adffe) from module clk_rst_mgr.
+Setting constant 0-bit at position 20 on $auto$ff.cc:337:slice$105 ($adffe) from module clk_rst_mgr.
+Setting constant 0-bit at position 21 on $auto$ff.cc:337:slice$105 ($adffe) from module clk_rst_mgr.
+Setting constant 0-bit at position 22 on $auto$ff.cc:337:slice$105 ($adffe) from module clk_rst_mgr.
+Setting constant 0-bit at position 23 on $auto$ff.cc:337:slice$105 ($adffe) from module clk_rst_mgr.
+Setting constant 0-bit at position 24 on $auto$ff.cc:337:slice$105 ($adffe) from module clk_rst_mgr.
+Setting constant 0-bit at position 25 on $auto$ff.cc:337:slice$105 ($adffe) from module clk_rst_mgr.
+Setting constant 0-bit at position 26 on $auto$ff.cc:337:slice$105 ($adffe) from module clk_rst_mgr.
+Setting constant 0-bit at position 27 on $auto$ff.cc:337:slice$105 ($adffe) from module clk_rst_mgr.
+Setting constant 0-bit at position 28 on $auto$ff.cc:337:slice$105 ($adffe) from module clk_rst_mgr.
+Setting constant 0-bit at position 29 on $auto$ff.cc:337:slice$105 ($adffe) from module clk_rst_mgr.
+Setting constant 0-bit at position 30 on $auto$ff.cc:337:slice$105 ($adffe) from module clk_rst_mgr.
+Setting constant 0-bit at position 31 on $auto$ff.cc:337:slice$105 ($adffe) from module clk_rst_mgr.
+
+5.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \clk_rst_mgr..
+Removed 9 unused cells and 48 unused wires.
+<suppressed ~11 debug messages>
+
+5.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module clk_rst_mgr.
+
+5.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \clk_rst_mgr..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~17 debug messages>
+
+5.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \clk_rst_mgr.
+Performed a total of 0 changes.
+
+5.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\clk_rst_mgr'.
+Computing hashes of 32 cells of `\clk_rst_mgr'.
+Finding duplicate cells in `\clk_rst_mgr'.
+Computing hashes of 31 cells of `\clk_rst_mgr'.
+Finding duplicate cells in `\clk_rst_mgr'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+5.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \clk_rst_mgr..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+5.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module clk_rst_mgr.
+
+5.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \clk_rst_mgr..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~17 debug messages>
+
+5.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \clk_rst_mgr.
+Performed a total of 0 changes.
+
+5.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\clk_rst_mgr'.
+Computing hashes of 31 cells of `\clk_rst_mgr'.
+Finding duplicate cells in `\clk_rst_mgr'.
+Removed a total of 0 cells.
+
+5.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \clk_rst_mgr..
+
+5.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module clk_rst_mgr.
+
+5.23. Finished fast OPT passes. (There is nothing left to do.)
+
+6. Executing FLATTEN pass (flatten design).
+
+7. Executing OPT pass (performing simple optimizations).
+
+7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module clk_rst_mgr.
+
+7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\clk_rst_mgr'.
+Computing hashes of 31 cells of `\clk_rst_mgr'.
+Finding duplicate cells in `\clk_rst_mgr'.
+Removed a total of 0 cells.
+
+7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \clk_rst_mgr..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~17 debug messages>
+
+7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \clk_rst_mgr.
+Performed a total of 0 changes.
+
+7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\clk_rst_mgr'.
+Computing hashes of 31 cells of `\clk_rst_mgr'.
+Finding duplicate cells in `\clk_rst_mgr'.
+Removed a total of 0 cells.
+
+7.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+7.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \clk_rst_mgr..
+
+7.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module clk_rst_mgr.
+
+7.9. Finished fast OPT passes. (There is nothing left to do.)
+
+8. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `clk_rst_mgr'. Setting top module to clk_rst_mgr.
+
+8.1. Analyzing design hierarchy..
+Top module:  \clk_rst_mgr
+
+8.2. Analyzing design hierarchy..
+Top module:  \clk_rst_mgr
+Removed 0 unused modules.
+
+9. Executing jny backend.
+
+10. Executing RTLIL backend.
+Output filename: ../model/design.il
+
+End of script. Logfile hash: 14852fb175, time: 0.01s, user: 0.02s, system: 0.00s, MEM: 15.14 MB peak
+Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+Time spent: 17% 6x opt_merge (0 sec), 16% 2x hierarchy (0 sec), ...

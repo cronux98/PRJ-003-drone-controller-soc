@@ -1,0 +1,117 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+
+-- Executing script file `design_prep.ys' --
+
+1. Executing RTLIL frontend.
+Input filename: design.il
+
+2. Executing SCC pass (detecting logic loops).
+Found 0 SCCs in module EF_UART_WB_wrapper.
+Found 0 SCCs.
+
+3. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+4. Executing MEMORY_NORDFF pass (extracting $dff cells from memories).
+
+5. Executing ASYNC2SYNC pass.
+Replacing EF_UART_WB_wrapper.$flatten\u_ef_uart.$auto$ff.cc:337:slice$1830 ($adffe): ARST=\wb_rst_ni, D=\wb_dat_i [15:0], Q=\u_ef_uart.PR_REG
+Replacing EF_UART_WB_wrapper.$flatten\u_ef_uart.$auto$ff.cc:337:slice$1831 ($adffe): ARST=\wb_rst_ni, D=\wb_dat_i [8:0], Q=\u_ef_uart.MATCH_REG
+Replacing EF_UART_WB_wrapper.$flatten\u_ef_uart.$auto$ff.cc:337:slice$1833 ($adffe): ARST=\wb_rst_ni, D=\wb_dat_i [3:0], Q=\u_ef_uart.RX_FIFO_THRESHOLD_REG
+Replacing EF_UART_WB_wrapper.$flatten\u_ef_uart.$auto$ff.cc:337:slice$1834 ($adffe): ARST=\wb_rst_ni, D=\wb_dat_i [9:0], Q=\u_ef_uart.IM_REG
+Replacing EF_UART_WB_wrapper.$flatten\u_ef_uart.$auto$ff.cc:337:slice$1835 ($adffe): ARST=\wb_rst_ni, D=\wb_dat_i [13:0], Q=\u_ef_uart.CFG_REG
+Replacing EF_UART_WB_wrapper.$flatten\u_ef_uart.$auto$ff.cc:337:slice$1837 ($adffe): ARST=\wb_rst_ni, D=\wb_dat_i [4:0], Q=\u_ef_uart.CTRL_REG
+Replacing EF_UART_WB_wrapper.$flatten\u_ef_uart.$auto$ff.cc:337:slice$1838 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_uart.$0\RIS_REG[9:0] [0], Q=\u_ef_uart.RIS_REG [0]
+Replacing EF_UART_WB_wrapper.$flatten\u_ef_uart.$auto$ff.cc:337:slice$1841 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_uart.$0\RIS_REG[9:0] [2], Q=\u_ef_uart.RIS_REG [2]
+Replacing EF_UART_WB_wrapper.$flatten\u_ef_uart.$auto$ff.cc:337:slice$1844 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_uart.$0\RIS_REG[9:0] [1], Q=\u_ef_uart.RIS_REG [1]
+Replacing EF_UART_WB_wrapper.$flatten\u_ef_uart.$auto$ff.cc:337:slice$1847 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_uart.$0\RIS_REG[9:0] [3], Q=\u_ef_uart.RIS_REG [3]
+Replacing EF_UART_WB_wrapper.$flatten\u_ef_uart.$auto$ff.cc:337:slice$1850 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_uart.$0\RIS_REG[9:0] [4], Q=\u_ef_uart.RIS_REG [4]
+Replacing EF_UART_WB_wrapper.$flatten\u_ef_uart.$auto$ff.cc:337:slice$1853 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_uart.$0\RIS_REG[9:0] [5], Q=\u_ef_uart.RIS_REG [5]
+Replacing EF_UART_WB_wrapper.$flatten\u_ef_uart.$auto$ff.cc:337:slice$1856 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_uart.$0\RIS_REG[9:0] [6], Q=\u_ef_uart.RIS_REG [6]
+Replacing EF_UART_WB_wrapper.$flatten\u_ef_uart.$auto$ff.cc:337:slice$1859 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_uart.$0\RIS_REG[9:0] [7], Q=\u_ef_uart.RIS_REG [7]
+Replacing EF_UART_WB_wrapper.$flatten\u_ef_uart.$auto$ff.cc:337:slice$1862 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_uart.$0\RIS_REG[9:0] [8], Q=\u_ef_uart.RIS_REG [8]
+Replacing EF_UART_WB_wrapper.$flatten\u_ef_uart.$auto$ff.cc:337:slice$1865 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_uart.$0\RIS_REG[9:0] [9], Q=\u_ef_uart.RIS_REG [9]
+Replacing EF_UART_WB_wrapper.$flatten\u_ef_uart.$auto$ff.cc:337:slice$1868 ($adffe): ARST=\wb_rst_ni, D=\wb_dat_i [3:0], Q=\u_ef_uart.TX_FIFO_THRESHOLD_REG
+Replacing EF_UART_WB_wrapper.$flatten\u_ef_uart.$procdff$1621 ($adff): ARST=\wb_rst_ni, D=$flatten\u_ef_uart.$0\ack_o[0:0], Q=\u_ef_uart.ack_o
+Replacing EF_UART_WB_wrapper.$flatten\u_ef_uart.$procdff$1632 ($adff): ARST=\wb_rst_ni, D=$flatten\u_ef_uart.$0\IC_REG[9:0], Q=\u_ef_uart.IC_REG
+Replacing EF_UART_WB_wrapper.$flatten\u_ef_uart.$procdff$1641 ($adff): ARST=\wb_rst_ni, D=$flatten\u_ef_uart.$0\TX_FIFO_FLUSH_REG[0:0], Q=\u_ef_uart.TX_FIFO_FLUSH_REG
+Replacing EF_UART_WB_wrapper.$flatten\u_ef_uart.$procdff$1647 ($adff): ARST=\wb_rst_ni, D=$flatten\u_ef_uart.$0\RX_FIFO_FLUSH_REG[0:0], Q=\u_ef_uart.RX_FIFO_FLUSH_REG
+Replacing EF_UART_WB_wrapper.$flatten\u_ef_uart.\instance_to_wrap.$auto$ff.cc:337:slice$1820 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_uart.\instance_to_wrap.$procmux$985_Y, Q=\u_ef_uart.instance_to_wrap.samples_count
+Replacing EF_UART_WB_wrapper.$flatten\u_ef_uart.\instance_to_wrap.$auto$ff.cc:337:slice$1825 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_uart.\instance_to_wrap.$procmux$999_Y, Q=\u_ef_uart.instance_to_wrap.bits_count
+Replacing EF_UART_WB_wrapper.$flatten\u_ef_uart.\instance_to_wrap.\buad_gen.$auto$ff.cc:337:slice$1874 ($adffe): ARST=\wb_rst_ni, D=\u_ef_uart.instance_to_wrap.buad_gen.count_next, Q=\u_ef_uart.instance_to_wrap.buad_gen.count_reg
+Replacing EF_UART_WB_wrapper.$flatten\u_ef_uart.\instance_to_wrap.\fifo_rx.$auto$ff.cc:337:slice$1717 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_uart.\instance_to_wrap.\fifo_rx.$0\r_ptr_reg[3:0], Q=\u_ef_uart.instance_to_wrap.fifo_rx.r_ptr_reg
+Replacing EF_UART_WB_wrapper.$flatten\u_ef_uart.\instance_to_wrap.\fifo_rx.$auto$ff.cc:337:slice$1724 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_uart.\instance_to_wrap.\fifo_rx.$0\level_reg[3:0], Q=\u_ef_uart.instance_to_wrap.fifo_rx.level_reg
+Replacing EF_UART_WB_wrapper.$flatten\u_ef_uart.\instance_to_wrap.\fifo_rx.$auto$ff.cc:337:slice$1733 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_uart.\instance_to_wrap.\fifo_rx.$0\empty_reg[0:0], Q=\u_ef_uart.instance_to_wrap.fifo_rx.empty_reg
+Replacing EF_UART_WB_wrapper.$flatten\u_ef_uart.\instance_to_wrap.\fifo_rx.$auto$ff.cc:337:slice$1740 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_uart.\instance_to_wrap.\fifo_rx.$0\w_ptr_reg[3:0], Q=\u_ef_uart.instance_to_wrap.fifo_rx.w_ptr_reg
+Replacing EF_UART_WB_wrapper.$flatten\u_ef_uart.\instance_to_wrap.\fifo_rx.$auto$ff.cc:337:slice$1747 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_uart.\instance_to_wrap.\fifo_rx.$0\full_reg[0:0], Q=\u_ef_uart.instance_to_wrap.fifo_rx.full_reg
+Replacing EF_UART_WB_wrapper.$flatten\u_ef_uart.\instance_to_wrap.\fifo_tx.$auto$ff.cc:337:slice$1717 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_uart.\instance_to_wrap.\fifo_tx.$0\r_ptr_reg[3:0], Q=\u_ef_uart.instance_to_wrap.fifo_tx.r_ptr_reg
+Replacing EF_UART_WB_wrapper.$flatten\u_ef_uart.\instance_to_wrap.\fifo_tx.$auto$ff.cc:337:slice$1724 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_uart.\instance_to_wrap.\fifo_tx.$0\level_reg[3:0], Q=\u_ef_uart.instance_to_wrap.fifo_tx.level_reg
+Replacing EF_UART_WB_wrapper.$flatten\u_ef_uart.\instance_to_wrap.\fifo_tx.$auto$ff.cc:337:slice$1733 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_uart.\instance_to_wrap.\fifo_tx.$0\empty_reg[0:0], Q=\u_ef_uart.instance_to_wrap.fifo_tx.empty_reg
+Replacing EF_UART_WB_wrapper.$flatten\u_ef_uart.\instance_to_wrap.\fifo_tx.$auto$ff.cc:337:slice$1740 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_uart.\instance_to_wrap.\fifo_tx.$0\w_ptr_reg[3:0], Q=\u_ef_uart.instance_to_wrap.fifo_tx.w_ptr_reg
+Replacing EF_UART_WB_wrapper.$flatten\u_ef_uart.\instance_to_wrap.\fifo_tx.$auto$ff.cc:337:slice$1747 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_uart.\instance_to_wrap.\fifo_tx.$0\full_reg[0:0], Q=\u_ef_uart.instance_to_wrap.fifo_tx.full_reg
+Replacing EF_UART_WB_wrapper.$flatten\u_ef_uart.\instance_to_wrap.\rx_glitch_filter.$auto$ff.cc:337:slice$1870 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_uart.\instance_to_wrap.\rx_glitch_filter.$0\out[0:0], Q=\u_ef_uart.instance_to_wrap.rx_glitch_filter.out
+Replacing EF_UART_WB_wrapper.$flatten\u_ef_uart.\instance_to_wrap.\rx_glitch_filter.$auto$ff.cc:337:slice$1873 ($adffe): ARST=\wb_rst_ni, D={ \u_ef_uart.instance_to_wrap.rx_glitch_filter.shifter [6:0] \u_ef_uart.instance_to_wrap.rx_sync.sync [1] }, Q=\u_ef_uart.instance_to_wrap.rx_glitch_filter.shifter
+Replacing EF_UART_WB_wrapper.$flatten\u_ef_uart.\instance_to_wrap.\rx_glitch_filter.\ticker.$auto$ff.cc:337:slice$1869 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_uart.\instance_to_wrap.\rx_glitch_filter.\ticker.$procmux$1085_Y, Q=\u_ef_uart.instance_to_wrap.rx_glitch_filter.ticker.counter
+Replacing EF_UART_WB_wrapper.$flatten\u_ef_uart.\instance_to_wrap.\rx_glitch_filter.\ticker.$procdff$1667 ($adff): ARST=\wb_rst_ni, D=$flatten\u_ef_uart.\instance_to_wrap.\rx_glitch_filter.\ticker.$0\tick_reg[0:0], Q=\u_ef_uart.instance_to_wrap.rx_glitch_filter.ticker.tick_reg
+Replacing EF_UART_WB_wrapper.$flatten\u_ef_uart.\instance_to_wrap.\uart_rx.$auto$ff.cc:337:slice$1755 ($adffe): ARST=\wb_rst_ni, D=\u_ef_uart.instance_to_wrap.uart_rx.next_state, Q=\u_ef_uart.instance_to_wrap.uart_rx.current_state
+Replacing EF_UART_WB_wrapper.$flatten\u_ef_uart.\instance_to_wrap.\uart_rx.$auto$ff.cc:337:slice$1784 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_uart.\instance_to_wrap.\uart_rx.$procmux$376_Y, Q=\u_ef_uart.instance_to_wrap.uart_rx.brk
+Replacing EF_UART_WB_wrapper.$flatten\u_ef_uart.\instance_to_wrap.\uart_rx.$auto$ff.cc:337:slice$1787 ($adffe): ARST=\wb_rst_ni, D=\u_ef_uart.instance_to_wrap.uart_rx.count_next, Q=\u_ef_uart.instance_to_wrap.uart_rx.count_reg
+Replacing EF_UART_WB_wrapper.$flatten\u_ef_uart.\instance_to_wrap.\uart_rx.$auto$ff.cc:337:slice$1817 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_uart.\instance_to_wrap.\uart_rx.$0\p_error_reg[0:0], Q=\u_ef_uart.instance_to_wrap.uart_rx.p_error_reg
+Replacing EF_UART_WB_wrapper.$flatten\u_ef_uart.\instance_to_wrap.\uart_rx.$auto$ff.cc:337:slice$1948 ($adffe): ARST=\wb_rst_ni, D={ \u_ef_uart.instance_to_wrap.rx_in \u_ef_uart.instance_to_wrap.uart_rx.data_reg [8:1] }, Q=\u_ef_uart.instance_to_wrap.uart_rx.data_reg
+Replacing EF_UART_WB_wrapper.$flatten\u_ef_uart.\instance_to_wrap.\uart_rx.$auto$ff.cc:337:slice$1951 ($adffe): ARST=\wb_rst_ni, D=\u_ef_uart.instance_to_wrap.uart_rx.b_next, Q=\u_ef_uart.instance_to_wrap.uart_rx.b_reg
+Replacing EF_UART_WB_wrapper.$flatten\u_ef_uart.\instance_to_wrap.\uart_tx.$auto$ff.cc:337:slice$1875 ($adffe): ARST=\wb_rst_ni, D=\u_ef_uart.instance_to_wrap.uart_tx.count_next, Q=\u_ef_uart.instance_to_wrap.uart_tx.count_reg
+Replacing EF_UART_WB_wrapper.$flatten\u_ef_uart.\instance_to_wrap.\uart_tx.$auto$ff.cc:337:slice$1890 ($adffe): ARST=\wb_rst_ni, D=\u_ef_uart.instance_to_wrap.uart_tx.data_next, Q=\u_ef_uart.instance_to_wrap.uart_tx.data_reg
+Replacing EF_UART_WB_wrapper.$flatten\u_ef_uart.\instance_to_wrap.\uart_tx.$auto$ff.cc:337:slice$1901 ($adffe): ARST=\wb_rst_ni, D=\u_ef_uart.instance_to_wrap.uart_tx.tx_next, Q=\u_ef_uart.instance_to_wrap.uart_tx.tx_reg
+Replacing EF_UART_WB_wrapper.$flatten\u_ef_uart.\instance_to_wrap.\uart_tx.$auto$ff.cc:337:slice$1913 ($adffe): ARST=\wb_rst_ni, D=\u_ef_uart.instance_to_wrap.uart_tx.next_state, Q=\u_ef_uart.instance_to_wrap.uart_tx.current_state
+Replacing EF_UART_WB_wrapper.$flatten\u_ef_uart.\instance_to_wrap.\uart_tx.$auto$ff.cc:337:slice$1956 ($adffe): ARST=\wb_rst_ni, D=\u_ef_uart.instance_to_wrap.uart_tx.b_next, Q=\u_ef_uart.instance_to_wrap.uart_tx.b_reg
+
+6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \EF_UART_WB_wrapper..
+
+7. Executing FORMALFF pass.
+
+8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \EF_UART_WB_wrapper..
+Removed 1 unused cells and 1 unused wires.
+<suppressed ~2 debug messages>
+
+9. Executing CHECK pass (checking for obvious problems).
+Checking module EF_UART_WB_wrapper...
+Found and reported 0 problems.
+
+10. Executing SETUNDEF pass (replace undef values with defined constants).
+
+11. Executing OPT pass (performing simple optimizations).
+
+11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module EF_UART_WB_wrapper.
+
+11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\EF_UART_WB_wrapper'.
+Computing hashes of 692 cells of `\EF_UART_WB_wrapper'.
+Finding duplicate cells in `\EF_UART_WB_wrapper'.
+Removed a total of 0 cells.
+
+11.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+11.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \EF_UART_WB_wrapper..
+
+11.5. Finished fast OPT passes.
+
+12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \EF_UART_WB_wrapper..
+Removed 0 unused cells and 140 unused wires.
+<suppressed ~1 debug messages>
+
+13. Executing RTLIL backend.
+Output filename: ../model/design_prep.il
+
+End of script. Logfile hash: d4a6e84816, time: 0.05s, user: 0.04s, system: 0.01s, MEM: 17.41 MB peak
+Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+Time spent: 39% 4x opt_clean (0 sec), 11% 1x check (0 sec), ...

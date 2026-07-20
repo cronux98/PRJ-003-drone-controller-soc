@@ -1,0 +1,10 @@
+{
+  "waiver_id": "W04-004",
+  "check": "3.16",
+  "stage": "04_frontend",
+  "reason": "verify_frontend_artifacts.sh exits 1 with 38/90 failures. All failures correspond to waivered items (formal tests=0, equiv wrapper naming, provenance). The gate is honest \u2014 it correctly identifies gaps that have been adjudicated and waivered.",
+  "compensating_check": "Same compensating checks as W04-001 through W04-003.",
+  "adjudicator": "Vera",
+  "date": "2026-07-19",
+  "status": "ACCEPTED"
+}

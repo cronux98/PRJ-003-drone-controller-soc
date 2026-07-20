@@ -1,0 +1,73 @@
+=== Batch run started Sun Jul 19 11:45:25 AM UTC 2026 ===
+
+--- clk_rst_mgr ---
+  PASS
+  results.xml: 2396B
+
+--- irq_ctrl ---
+  PASS
+  results.xml: 2313B
+
+--- caravel_wrapper ---
+  FAIL (see /tmp/sim_caravel_wrapper.log)
+  results.xml: 3207B
+
+--- sram_8kb ---
+  FAIL (see /tmp/sim_sram_8kb.log)
+
+--- wishbone_interconnect ---
+  FAIL (see /tmp/sim_wishbone_interconnect.log)
+  results.xml: 3486B
+
+--- spi_flash_ctrl ---
+  FAIL (see /tmp/sim_spi_flash_ctrl.log)
+  results.xml: 6052B
+
+--- dshot_pwm ---
+  FAIL (see /tmp/sim_dshot_pwm.log)
+  results.xml: 5750B
+
+--- custom_timer ---
+  FAIL (see /tmp/sim_custom_timer.log)
+  results.xml: 5930B
+
+--- timer ---
+  PASS
+  results.xml: 4068B
+
+--- watchdog ---
+  PASS
+  results.xml: 4188B
+
+--- uart_0 ---
+  FAIL (see /tmp/sim_uart_0.log)
+  results.xml: 5691B
+
+--- uart_1 ---
+  FAIL (see /tmp/sim_uart_1.log)
+  results.xml: 5688B
+
+--- uart_2 ---
+  FAIL (see /tmp/sim_uart_2.log)
+  results.xml: 5685B
+
+--- gpio ---
+  PASS
+  results.xml: 3993B
+
+--- spi_0 ---
+  FAIL (see /tmp/sim_spi_0.log)
+  results.xml: 14800B
+
+--- i2c_0 ---
+  FAIL (see /tmp/sim_i2c_0.log)
+  results.xml: 14799B
+
+--- ibex_core ---
+  FAIL (see /tmp/sim_ibex_core.log)
+
+--- drone_soc ---
+  FAIL (see /tmp/sim_drone_soc.log)
+
+=== Batch run complete Sun Jul 19 11:45:50 AM UTC 2026 ===
+Modules PASS: 5  FAIL: 13

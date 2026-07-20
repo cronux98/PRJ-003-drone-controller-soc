@@ -1,0 +1,60 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+
+-- Executing script file `design_smt2.ys' --
+
+1. Executing RTLIL frontend.
+Input filename: design_prep.il
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `wishbone_interconnect'. Setting top module to wishbone_interconnect.
+
+2.1. Analyzing design hierarchy..
+Top module:  \wishbone_interconnect
+
+2.2. Analyzing design hierarchy..
+Top module:  \wishbone_interconnect
+Removed 0 unused modules.
+
+3. Executing FORMALFF pass.
+
+4. Executing DFFUNMAP pass (unmap clock enable and synchronous reset from FFs).
+
+5. Printing statistics.
+
+=== wishbone_interconnect ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      207 wires
+     2299 wire bits
+      145 public wires
+     1741 public wire bits
+      137 ports
+     1577 port bits
+      113 cells
+        3   $anyinit
+        1   $assume
+       13   $eq
+       43   $logic_and
+        1   $logic_not
+       13   $logic_or
+       37   $mux
+        1   $not
+        1   $reduce_and
+
+6. Executing SMT2 backend.
+
+6.1. Executing BMUXMAP pass.
+
+6.2. Executing DEMUXMAP pass.
+Creating SMT-LIBv2 representation of module wishbone_interconnect.
+
+End of script. Logfile hash: 14709fb741, time: 0.00s, user: 0.01s, system: 0.00s, MEM: 15.03 MB peak
+Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+Time spent: 71% 2x write_smt2 (0 sec), 16% 2x read_rtlil (0 sec), ...

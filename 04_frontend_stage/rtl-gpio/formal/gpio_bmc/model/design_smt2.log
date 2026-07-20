@@ -1,0 +1,62 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+
+-- Executing script file `design_smt2.ys' --
+
+1. Executing RTLIL frontend.
+Input filename: design_prep.il
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `EF_GPIO8_WB_wrapper'. Setting top module to EF_GPIO8_WB_wrapper.
+
+2.1. Analyzing design hierarchy..
+Top module:  \EF_GPIO8_WB_wrapper
+
+2.2. Analyzing design hierarchy..
+Top module:  \EF_GPIO8_WB_wrapper
+Removed 0 unused modules.
+
+3. Executing FORMALFF pass.
+
+4. Executing DFFUNMAP pass (unmap clock enable and synchronous reset from FFs).
+
+5. Printing statistics.
+
+=== EF_GPIO8_WB_wrapper ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      483 wires
+     1388 wire bits
+      316 public wires
+      852 public wire bits
+       15 ports
+      135 port bits
+      377 cells
+       24   $and
+       53   $anyinit
+       32   $anyseq
+        1   $assume
+        6   $eq
+        1   $logic_not
+      182   $mux
+       18   $not
+       32   $reduce_bool
+        1   $reduce_or
+       27   $scopeinfo
+
+6. Executing SMT2 backend.
+
+6.1. Executing BMUXMAP pass.
+
+6.2. Executing DEMUXMAP pass.
+Creating SMT-LIBv2 representation of module EF_GPIO8_WB_wrapper.
+
+End of script. Logfile hash: afa7f1d704, time: 0.01s, user: 0.01s, system: 0.01s, MEM: 15.30 MB peak
+Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+Time spent: 68% 2x write_smt2 (0 sec), 22% 2x read_rtlil (0 sec), ...

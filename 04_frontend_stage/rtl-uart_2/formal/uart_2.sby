@@ -1,0 +1,29 @@
+# IP-010 v3 formal verification for uart_2
+# GENERATED-FROM: kanban task t_74da3230, IP-010 v3 frontend
+
+[tasks]
+bmc
+
+[options]
+bmc: mode bmc
+bmc: depth 25
+
+[engines]
+smtbmc bitwuzla
+
+[script]
+read -formal axis_fifo.v
+read -formal EF_UART.v
+read -formal EF_UART_WB.v
+read -formal EF_UART_WB_wrapper.v
+read -formal ef_util_lib.v
+hierarchy -top EF_UART_WB_wrapper
+proc; opt
+flatten; opt
+
+[files]
+rtl-uart_2/rtl/axis_fifo.v
+rtl-uart_2/rtl/EF_UART.v
+rtl-uart_2/rtl/EF_UART_WB.v
+rtl-uart_2/rtl/EF_UART_WB_wrapper.v
+rtl-uart_2/rtl/ef_util_lib.v

@@ -1,0 +1,10 @@
+{
+  "waiver_id": "W04-002",
+  "check": "3.8",
+  "stage": "04_frontend",
+  "reason": "10 Efabless wrapper modules (EF_UART_WB_wrapper, etc.) fail equivalence because synthesis produces the wrapper module as netlist top, while the .ys script references the parent module. 6 non-wrapper modules PASS equivalence.",
+  "compensating_check": "GLS at Stage 06. Each wrapper module must pass gate-level simulation against RTL testbench.",
+  "adjudicator": "Vera",
+  "date": "2026-07-19",
+  "status": "ACCEPTED"
+}

@@ -1,0 +1,74 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+
+-- Executing script file `design_smt2.ys' --
+
+1. Executing RTLIL frontend.
+Input filename: design_prep.il
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `EF_I2C_WB_wrapper'. Setting top module to EF_I2C_WB_wrapper.
+
+2.1. Analyzing design hierarchy..
+Top module:  \EF_I2C_WB_wrapper
+
+2.2. Analyzing design hierarchy..
+Top module:  \EF_I2C_WB_wrapper
+Removed 0 unused modules.
+
+3. Executing FORMALFF pass.
+
+4. Executing DFFUNMAP pass (unmap clock enable and synchronous reset from FFs).
+
+5. Printing statistics.
+
+=== EF_I2C_WB_wrapper ===
+
+        +----------Local Count, excluding submodules.
+        | 
+     1103 wires
+     4174 wire bits
+      439 public wires
+     1952 public wire bits
+       15 ports
+      111 port bits
+      929 cells
+        6   $add
+       17   $and
+       97   $anyinit
+       43   $anyseq
+        1   $assume
+      129   $eq
+       16   $ff
+        3   $gt
+        7   $logic_and
+       17   $logic_not
+       15   $logic_or
+      378   $mux
+       21   $ne
+       23   $not
+        8   $or
+       36   $pmux
+       72   $reduce_and
+       17   $reduce_bool
+       10   $reduce_or
+        7   $scopeinfo
+        2   $shiftx
+        3   $sub
+        1   $xor
+
+6. Executing SMT2 backend.
+
+6.1. Executing BMUXMAP pass.
+
+6.2. Executing DEMUXMAP pass.
+Creating SMT-LIBv2 representation of module EF_I2C_WB_wrapper.
+
+End of script. Logfile hash: e6552f5439, time: 0.02s, user: 0.02s, system: 0.00s, MEM: 16.55 MB peak
+Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+Time spent: 72% 2x write_smt2 (0 sec), 19% 2x read_rtlil (0 sec), ...

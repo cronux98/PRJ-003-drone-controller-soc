@@ -1,0 +1,166 @@
+{
+  "verdict": "FAIL",
+  "stage": "08_backend_stage",
+  "project": "IP-010",
+  "retry": 0,
+  "checks": [
+    {
+      "check": "7.1 GDS exists",
+      "result": "PASS",
+      "evidence": "final/gds/drone_soc.gds 69,418,830 B; klayout 35,784,634 B"
+    },
+    {
+      "check": "7.2 Netlist exists",
+      "result": "PASS",
+      "evidence": "final/nl/drone_soc.nl.v 13,844,841 B"
+    },
+    {
+      "check": "7.3 SPEF exists",
+      "result": "PASS",
+      "evidence": "final/spef/{nom,max,min}/drone_soc.*.spef, 43-45 MB each"
+    },
+    {
+      "check": "7.4 STA reports exist",
+      "result": "PASS",
+      "evidence": "136 .rpt files under 56-openroad-stapostpnr/"
+    },
+    {
+      "check": "7.5 Setup slack >= 0",
+      "result": "PASS",
+      "evidence": "timing__setup__ws=+30.0162 ns; 0 setup violations all 9 corners (summary.rpt)"
+    },
+    {
+      "check": "7.6 Hold slack >= 0",
+      "result": "PASS",
+      "evidence": "timing__hold__ws=+0.08995 ns; 0 hold violations all 9 corners (summary.rpt)"
+    },
+    {
+      "check": "7.7 DRC clean",
+      "result": "PASS",
+      "evidence": "magic__drc_error__count=0, klayout__drc_error__count=0, route__drc_errors=0; grep -c violat drc.magic.rpt = 0"
+    },
+    {
+      "check": "7.8 LVS clean",
+      "result": "PASS",
+      "evidence": "71-netgen-lvs/reports/lvs.netgen.rpt: 'Final result: Circuits match uniquely.'; design__lvs_error__count=0, all lvs_* difference counts 0"
+    },
+    {
+      "check": "7.9 Utilization 30-80%",
+      "result": "PASS",
+      "evidence": "design__instance__utilization=0.497355 (49.7%)"
+    },
+    {
+      "check": "7.10 Power report exists",
+      "result": "PASS",
+      "evidence": "36-openroad-stamidpnr-1/power.rpt, 44-openroad-stamidpnr-3/power.rpt; power__total=0.01117 W"
+    },
+    {
+      "check": "7.15 SRAM blackbox macro",
+      "result": "PASS",
+      "evidence": "config.yaml EXTRA_LEFS/EXTRA_GDS macros/sram_8kb/*; netlist has exactly 1 'sram_8kb u_sram' instance"
+    },
+    {
+      "check": "No SRAM flop expansion",
+      "result": "PASS",
+      "evidence": "5,042 sky130 DFF cells in netlist \u2014 8 kB SRAM as flops would need ~65,536; SRAM stayed a hard macro"
+    },
+    {
+      "check": "G.1 upstream gate",
+      "result": "PASS",
+      "evidence": "07_promote_stage/audit/audit_pass.json exists"
+    },
+    {
+      "check": "G.15 identity",
+      "result": "PASS",
+      "evidence": "netlist declares 'module drone_soc'; final LEF declares 'MACRO drone_soc'"
+    },
+    {
+      "check": "G.9 null metrics",
+      "result": "PASS",
+      "evidence": "no null metric cited beside a PASS verdict"
+    },
+    {
+      "check": "7.23 antenna clean",
+      "result": "FAIL",
+      "evidence": "final/metrics.json antenna__violating__nets=1, antenna__violating__pins=1, route__antenna_violation__count=1",
+      "fix": {
+        "type": "STAGE_FIX",
+        "description": "1 antenna-violating net remains after 16 diode insertions",
+        "action": "Re-run routing with increased diode insertion. In librelane/config.yaml set GRT_REPAIR_ANTENNAS: true and RUN_HEURISTIC_DIODE_INSERTION: true, then re-run flow and confirm antenna__violating__nets==0.",
+        "file": "08_backend_stage/librelane/config.yaml",
+        "command": "cd 08_backend_stage/librelane && librelane config.yaml --run-tag v4-antenna-fix"
+      }
+    },
+    {
+      "check": "7.22 cost telemetry present",
+      "result": "FAIL",
+      "evidence": "final/metrics.json has neither wall_clock_s nor cost_usd",
+      "fix": {
+        "type": "STAGE_FIX",
+        "description": "wall_clock_s and cost_usd absent from metrics.json",
+        "action": "Emit run telemetry into the stage metrics. Compute wall clock from run start/end and append both keys to final/metrics.json via the stage's post-run script.",
+        "file": "08_backend_stage/librelane/runs/v4-complete/final/metrics.json",
+        "command": "python3 -c \"import json,p;\" # append wall_clock_s and cost_usd keys"
+      }
+    },
+    {
+      "check": "7.25 PD iteration log integrity",
+      "result": "FAIL",
+      "evidence": "No PD_ITERATION_LOG.md anywhere under 08_backend_stage",
+      "fix": {
+        "type": "STAGE_FIX",
+        "description": "PD iteration log missing entirely",
+        "action": "Author PD_ITERATION_LOG.md recording each PD iteration with numeric claims sourced from final/metrics.json keys (timing__setup__ws, magic__drc_error__count, antenna__violating__nets, design__max_slew_violation__count).",
+        "file": "08_backend_stage/PD_ITERATION_LOG.md",
+        "command": ""
+      }
+    },
+    {
+      "check": "7.20 / G.10 stage handoff published",
+      "result": "FAIL",
+      "evidence": "results/ is empty (0 files, mtime 12:11 < newest run artifact 16:40); no RUN_TAG. reports/, logs/, constraints/ also empty",
+      "fix": {
+        "type": "STAGE_FIX",
+        "description": "results/ handoff directory empty and stale",
+        "action": "Publish the signed-off run: copy final/gds, final/nl, final/spef, final/metrics.json and summary.rpt into results/, and write results/RUN_TAG containing 'v4-complete'.",
+        "file": "08_backend_stage/results/RUN_TAG",
+        "command": "cd 08_backend_stage && cp -r librelane/runs/v4-complete/final/{gds,nl,spef,metrics.json} results/ && echo v4-complete > results/RUN_TAG"
+      }
+    },
+    {
+      "check": "7.21 checker-disable hygiene",
+      "result": "FAIL",
+      "evidence": "config.yaml:61 ERROR_ON_LINTER_ERRORS:false and :62 ERROR_ON_LINTER_WARNINGS:false and :68 ERROR_ON_DISCONNECTED_PINS:false \u2014 comments name signals but carry no expiry run-tag (only the :63 block has '[expires: v4-run3]')",
+      "fix": {
+        "type": "SCRIPT_FIX",
+        "description": "Three ERROR_ON_* disables lack expiry run-tags",
+        "action": "Add an '[expires: <run-tag>]' marker to the inline comment on config.yaml lines 61, 62 and 68, matching the format already used on line 67.",
+        "file": "08_backend_stage/librelane/config.yaml",
+        "command": ""
+      }
+    },
+    {
+      "check": "v6a Step E index update guard",
+      "result": "FAIL",
+      "evidence": "grep -i backend matched no row in 00_validation_report/00_validation_index.md or 11_postmortem_audit/00_postmortem_index.md \u2014 no row pattern to update",
+      "fix": {
+        "type": "MISSING_STAGE",
+        "description": "Neither index contains a row for the backend stage",
+        "action": "Vera: add a Stage 08 / Backend row to both index tables so auditor row-updates can bind. Auditor appended a row rather than fabricating an in-place update.",
+        "file": "00_validation_report/00_validation_index.md",
+        "command": ""
+      }
+    }
+  ],
+  "findings": [
+    "antenna__violating__nets=1 \u2014 rubric 7.23 requires 0; 16 antenna diodes inserted but one net unresolved",
+    "metrics.json lacks wall_clock_s and cost_usd (7.22)",
+    "PD_ITERATION_LOG.md does not exist (7.25)",
+    "results/ handoff directory is empty and older than the newest run artifact (7.20/G.10)",
+    "Three ERROR_ON_* disables in config.yaml carry no expiry run-tag (7.21)",
+    "Neither validation nor postmortem index contains a backend row (v6a Step E)",
+    "Observation, not a FAIL: 19,447 max-slew and 128 max-cap violations are the worst-corner (max_ss_100C_1v60) figures, not 9-corner totals as the dispatch brief stated; 2,387 max-fanout violations are constant across all corners and were not mentioned in the brief at all. At 60 ns period with +30 ns setup slack these do not threaten timing closure, and no narrative log claims them clean (none exists), so 7.7b is not violated \u2014 but they must be disclosed in the PD log required above."
+  ],
+  "summary": "15 of 21 mandatory checks passed \u2014 6 failed, 6 fixes generated",
+  "fix_count": 6
+}

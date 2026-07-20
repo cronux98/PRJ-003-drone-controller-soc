@@ -1,0 +1,1 @@
+/home/smdadmin/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-uart_0/rtl/EF_UART_WB_wrapper.v

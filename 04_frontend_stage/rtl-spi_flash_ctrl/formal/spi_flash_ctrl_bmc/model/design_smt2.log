@@ -1,0 +1,66 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+
+-- Executing script file `design_smt2.ys' --
+
+1. Executing RTLIL frontend.
+Input filename: design_prep.il
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `spi_flash_ctrl'. Setting top module to spi_flash_ctrl.
+
+2.1. Analyzing design hierarchy..
+Top module:  \spi_flash_ctrl
+
+2.2. Analyzing design hierarchy..
+Top module:  \spi_flash_ctrl
+Removed 0 unused modules.
+
+3. Executing FORMALFF pass.
+
+4. Executing DFFUNMAP pass (unmap clock enable and synchronous reset from FFs).
+
+5. Printing statistics.
+
+=== spi_flash_ctrl ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      240 wires
+     1054 wire bits
+       85 public wires
+      466 public wire bits
+       17 ports
+      113 port bits
+      226 cells
+       15   $anyinit
+       39   $anyseq
+        1   $assume
+       16   $eq
+        2   $logic_and
+        5   $logic_not
+        6   $logic_or
+       90   $mux
+       16   $ne
+        3   $not
+        9   $pmux
+       10   $reduce_and
+        8   $reduce_bool
+        4   $reduce_or
+        2   $sub
+
+6. Executing SMT2 backend.
+
+6.1. Executing BMUXMAP pass.
+
+6.2. Executing DEMUXMAP pass.
+Creating SMT-LIBv2 representation of module spi_flash_ctrl.
+
+End of script. Logfile hash: c36923c24c, time: 0.01s, user: 0.01s, system: 0.01s, MEM: 15.11 MB peak
+Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+Time spent: 72% 2x write_smt2 (0 sec), 17% 2x read_rtlil (0 sec), ...

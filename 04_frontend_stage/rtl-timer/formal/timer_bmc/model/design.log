@@ -1,0 +1,952 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+
+-- Executing script file `../model/design.ys' --
+
+1. Executing Verilog-2005 frontend: EF_TMR32.v
+Parsing formal SystemVerilog input from `EF_TMR32.v' to AST representation.
+Storing AST representation for module `$abstract\EF_TMR32'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: EF_TMR32_WB_wrapper.v
+Parsing formal SystemVerilog input from `EF_TMR32_WB_wrapper.v' to AST representation.
+Storing AST representation for module `$abstract\EF_TMR32_WB_wrapper'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: ef_util_lib.v
+Parsing formal SystemVerilog input from `ef_util_lib.v' to AST representation.
+Storing AST representation for module `$abstract\ef_util_sync'.
+Storing AST representation for module `$abstract\ef_util_ped'.
+Storing AST representation for module `$abstract\ef_util_ned'.
+Storing AST representation for module `$abstract\ef_util_ticker'.
+Storing AST representation for module `$abstract\ef_util_glitch_filter'.
+Storing AST representation for module `$abstract\ef_util_fifo'.
+Storing AST representation for module `$abstract\ef_util_clkmux_2x1'.
+Storing AST representation for module `$abstract\ef_util_clkmux_4x1'.
+Storing AST representation for module `$abstract\ef_util_gating_cell'.
+Successfully finished Verilog frontend.
+
+4. Executing Verilog-2005 frontend: timer.v
+Parsing formal SystemVerilog input from `timer.v' to AST representation.
+Storing AST representation for module `$abstract\EF_TMR32_WB'.
+Successfully finished Verilog frontend.
+
+5. Executing HIERARCHY pass (managing design hierarchy).
+
+6. Executing AST frontend in derive mode using pre-parsed AST for module `\EF_TMR32_WB_wrapper'.
+Generating RTLIL representation for module `\EF_TMR32_WB_wrapper'.
+
+6.1. Analyzing design hierarchy..
+Top module:  \EF_TMR32_WB_wrapper
+
+6.2. Executing AST frontend in derive mode using pre-parsed AST for module `\EF_TMR32_WB'.
+Generating RTLIL representation for module `\EF_TMR32_WB'.
+
+6.3. Analyzing design hierarchy..
+Top module:  \EF_TMR32_WB_wrapper
+Used module:     \EF_TMR32_WB
+Parameter \PRW = 16
+
+6.4. Executing AST frontend in derive mode using pre-parsed AST for module `\EF_TMR32'.
+Parameter \PRW = 16
+Generating RTLIL representation for module `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000'.
+
+6.5. Executing AST frontend in derive mode using pre-parsed AST for module `\ef_util_gating_cell'.
+Generating RTLIL representation for module `\ef_util_gating_cell'.
+
+6.6. Analyzing design hierarchy..
+Top module:  \EF_TMR32_WB_wrapper
+Used module:     \EF_TMR32_WB
+Used module:         $paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000
+Used module:         \ef_util_gating_cell
+
+6.7. Executing AST frontend in derive mode using pre-parsed AST for module `\ef_util_ped'.
+Generating RTLIL representation for module `\ef_util_ped'.
+
+6.8. Analyzing design hierarchy..
+Top module:  \EF_TMR32_WB_wrapper
+Used module:     \EF_TMR32_WB
+Used module:         $paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000
+Used module:             \ef_util_ped
+Used module:         \ef_util_gating_cell
+
+6.9. Analyzing design hierarchy..
+Top module:  \EF_TMR32_WB_wrapper
+Used module:     \EF_TMR32_WB
+Used module:         $paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000
+Used module:             \ef_util_ped
+Used module:         \ef_util_gating_cell
+Removing unused module `$abstract\EF_TMR32_WB'.
+Removing unused module `$abstract\ef_util_gating_cell'.
+Removing unused module `$abstract\ef_util_clkmux_4x1'.
+Removing unused module `$abstract\ef_util_clkmux_2x1'.
+Removing unused module `$abstract\ef_util_fifo'.
+Removing unused module `$abstract\ef_util_glitch_filter'.
+Removing unused module `$abstract\ef_util_ticker'.
+Removing unused module `$abstract\ef_util_ned'.
+Removing unused module `$abstract\ef_util_ped'.
+Removing unused module `$abstract\ef_util_sync'.
+Removing unused module `$abstract\EF_TMR32_WB_wrapper'.
+Removing unused module `$abstract\EF_TMR32'.
+Removed 12 unused modules.
+
+7. Executing PROC pass (convert processes to netlists).
+
+7.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+7.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 2 switch rules as full_case in process $proc$EF_TMR32.v:268$288 in module $paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.
+Marked 2 switch rules as full_case in process $proc$EF_TMR32.v:261$284 in module $paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.
+Marked 1 switch rules as full_case in process $proc$EF_TMR32.v:254$278 in module $paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.
+Marked 1 switch rules as full_case in process $proc$EF_TMR32.v:249$274 in module $paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.
+Marked 1 switch rules as full_case in process $proc$EF_TMR32.v:241$271 in module $paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.
+Marked 2 switch rules as full_case in process $proc$EF_TMR32.v:232$267 in module $paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.
+Marked 2 switch rules as full_case in process $proc$EF_TMR32.v:219$264 in module $paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.
+Marked 2 switch rules as full_case in process $proc$EF_TMR32.v:210$261 in module $paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.
+Removed 6 dead cases from process $proc$EF_TMR32.v:198$212 in module $paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.
+Marked 7 switch rules as full_case in process $proc$EF_TMR32.v:198$212 in module $paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.
+Removed 6 dead cases from process $proc$EF_TMR32.v:186$163 in module $paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.
+Marked 7 switch rules as full_case in process $proc$EF_TMR32.v:186$163 in module $paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.
+Marked 7 switch rules as full_case in process $proc$EF_TMR32.v:151$154 in module $paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.
+Marked 3 switch rules as full_case in process $proc$EF_TMR32.v:137$151 in module $paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.
+Marked 10 switch rules as full_case in process $proc$EF_TMR32.v:109$134 in module $paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.
+Marked 3 switch rules as full_case in process $proc$EF_TMR32.v:94$123 in module $paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.
+Marked 3 switch rules as full_case in process $proc$EF_TMR32.v:77$113 in module $paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.
+Marked 2 switch rules as full_case in process $proc$timer.v:262$97 in module EF_TMR32_WB.
+Marked 4 switch rules as full_case in process $proc$timer.v:195$51 in module EF_TMR32_WB.
+Marked 2 switch rules as full_case in process $proc$timer.v:185$48 in module EF_TMR32_WB.
+Marked 1 switch rules as full_case in process $proc$timer.v:182$45 in module EF_TMR32_WB.
+Marked 1 switch rules as full_case in process $proc$timer.v:173$41 in module EF_TMR32_WB.
+Marked 1 switch rules as full_case in process $proc$timer.v:168$38 in module EF_TMR32_WB.
+Marked 1 switch rules as full_case in process $proc$timer.v:162$35 in module EF_TMR32_WB.
+Marked 1 switch rules as full_case in process $proc$timer.v:156$32 in module EF_TMR32_WB.
+Marked 1 switch rules as full_case in process $proc$timer.v:150$29 in module EF_TMR32_WB.
+Marked 1 switch rules as full_case in process $proc$timer.v:144$26 in module EF_TMR32_WB.
+Marked 1 switch rules as full_case in process $proc$timer.v:138$23 in module EF_TMR32_WB.
+Marked 1 switch rules as full_case in process $proc$timer.v:126$20 in module EF_TMR32_WB.
+Marked 1 switch rules as full_case in process $proc$timer.v:120$17 in module EF_TMR32_WB.
+Marked 1 switch rules as full_case in process $proc$timer.v:114$14 in module EF_TMR32_WB.
+Marked 1 switch rules as full_case in process $proc$timer.v:108$11 in module EF_TMR32_WB.
+Removed a total of 12 dead cases.
+
+7.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 5 redundant assignments.
+Promoted 41 assignments to connections.
+
+7.4. Executing PROC_INIT pass (extract init attributes).
+
+7.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst_n in `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:268$288'.
+Found async reset \rst_n in `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:261$284'.
+Found async reset \rst_n in `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:254$278'.
+Found async reset \rst_n in `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:249$274'.
+Found async reset \rst_n in `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:241$271'.
+Found async reset \rst_n in `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:232$267'.
+Found async reset \rst_n in `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:219$264'.
+Found async reset \rst_n in `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:210$261'.
+Found async reset \rst_n in `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:151$154'.
+Found async reset \rst_n in `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:137$151'.
+Found async reset \rst_n in `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:94$123'.
+Found async reset \rst_n in `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:77$113'.
+Found async reset \rst_i in `\EF_TMR32_WB.$proc$timer.v:262$97'.
+Found async reset \rst_i in `\EF_TMR32_WB.$proc$timer.v:195$51'.
+Found async reset \rst_i in `\EF_TMR32_WB.$proc$timer.v:185$48'.
+Found async reset \rst_i in `\EF_TMR32_WB.$proc$timer.v:182$45'.
+Found async reset \rst_i in `\EF_TMR32_WB.$proc$timer.v:173$41'.
+Found async reset \rst_i in `\EF_TMR32_WB.$proc$timer.v:168$38'.
+Found async reset \rst_i in `\EF_TMR32_WB.$proc$timer.v:162$35'.
+Found async reset \rst_i in `\EF_TMR32_WB.$proc$timer.v:156$32'.
+Found async reset \rst_i in `\EF_TMR32_WB.$proc$timer.v:150$29'.
+Found async reset \rst_i in `\EF_TMR32_WB.$proc$timer.v:144$26'.
+Found async reset \rst_i in `\EF_TMR32_WB.$proc$timer.v:138$23'.
+Found async reset \rst_i in `\EF_TMR32_WB.$proc$timer.v:126$20'.
+Found async reset \rst_i in `\EF_TMR32_WB.$proc$timer.v:120$17'.
+Found async reset \rst_i in `\EF_TMR32_WB.$proc$timer.v:114$14'.
+Found async reset \rst_i in `\EF_TMR32_WB.$proc$timer.v:108$11'.
+
+7.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~74 debug messages>
+
+7.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:268$288'.
+     1/1: $0\fault_reg[0:0]
+Creating decoders for process `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:261$284'.
+     1/1: $0\fault_clr_reg[0:0]
+Creating decoders for process `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:254$278'.
+     1/1: $0\pwm1_w_dt[0:0]
+Creating decoders for process `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:249$274'.
+     1/1: $0\pwm0_w_dt[0:0]
+Creating decoders for process `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:241$271'.
+     1/1: $0\pwm0_delayed[0:0]
+Creating decoders for process `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:232$267'.
+     1/1: $0\dly_cntr[7:0]
+Creating decoders for process `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:219$264'.
+     1/1: $0\pwm1_reg[0:0]
+Creating decoders for process `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:210$261'.
+     1/1: $0\pwm0_reg[0:0]
+Creating decoders for process `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:198$212'.
+     1/25: $2\pwm_action$func$EF_TMR32.v:205$111.$result[0:0]$259
+     2/25: $2\pwm_action$func$EF_TMR32.v:204$110.$result[0:0]$257
+     3/25: $2\pwm_action$func$EF_TMR32.v:203$109.$result[0:0]$255
+     4/25: $2\pwm_action$func$EF_TMR32.v:202$108.$result[0:0]$253
+     5/25: $2\pwm_action$func$EF_TMR32.v:201$107.$result[0:0]$251
+     6/25: $2\pwm_action$func$EF_TMR32.v:200$106.$result[0:0]$249
+     7/25: $1\pwm1_reg_next[0:0]
+     8/25: $1\pwm_action$func$EF_TMR32.v:200$106.$result[0:0]$231
+     9/25: $1\pwm_action$func$EF_TMR32.v:200$106.sig[0:0]$233
+    10/25: $1\pwm_action$func$EF_TMR32.v:200$106.action[1:0]$232
+    11/25: $1\pwm_action$func$EF_TMR32.v:205$111.sig[0:0]$248
+    12/25: $1\pwm_action$func$EF_TMR32.v:205$111.action[1:0]$247
+    13/25: $1\pwm_action$func$EF_TMR32.v:205$111.$result[0:0]$246
+    14/25: $1\pwm_action$func$EF_TMR32.v:204$110.sig[0:0]$245
+    15/25: $1\pwm_action$func$EF_TMR32.v:204$110.action[1:0]$244
+    16/25: $1\pwm_action$func$EF_TMR32.v:204$110.$result[0:0]$243
+    17/25: $1\pwm_action$func$EF_TMR32.v:203$109.sig[0:0]$242
+    18/25: $1\pwm_action$func$EF_TMR32.v:203$109.action[1:0]$241
+    19/25: $1\pwm_action$func$EF_TMR32.v:203$109.$result[0:0]$240
+    20/25: $1\pwm_action$func$EF_TMR32.v:202$108.sig[0:0]$239
+    21/25: $1\pwm_action$func$EF_TMR32.v:202$108.action[1:0]$238
+    22/25: $1\pwm_action$func$EF_TMR32.v:202$108.$result[0:0]$237
+    23/25: $1\pwm_action$func$EF_TMR32.v:201$107.sig[0:0]$236
+    24/25: $1\pwm_action$func$EF_TMR32.v:201$107.action[1:0]$235
+    25/25: $1\pwm_action$func$EF_TMR32.v:201$107.$result[0:0]$234
+Creating decoders for process `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:186$163'.
+     1/25: $2\pwm_action$func$EF_TMR32.v:193$105.$result[0:0]$210
+     2/25: $2\pwm_action$func$EF_TMR32.v:192$104.$result[0:0]$208
+     3/25: $2\pwm_action$func$EF_TMR32.v:191$103.$result[0:0]$206
+     4/25: $2\pwm_action$func$EF_TMR32.v:190$102.$result[0:0]$204
+     5/25: $2\pwm_action$func$EF_TMR32.v:189$101.$result[0:0]$202
+     6/25: $2\pwm_action$func$EF_TMR32.v:188$100.$result[0:0]$200
+     7/25: $1\pwm0_reg_next[0:0]
+     8/25: $1\pwm_action$func$EF_TMR32.v:188$100.$result[0:0]$182
+     9/25: $1\pwm_action$func$EF_TMR32.v:188$100.sig[0:0]$184
+    10/25: $1\pwm_action$func$EF_TMR32.v:188$100.action[1:0]$183
+    11/25: $1\pwm_action$func$EF_TMR32.v:193$105.sig[0:0]$199
+    12/25: $1\pwm_action$func$EF_TMR32.v:193$105.action[1:0]$198
+    13/25: $1\pwm_action$func$EF_TMR32.v:193$105.$result[0:0]$197
+    14/25: $1\pwm_action$func$EF_TMR32.v:192$104.sig[0:0]$196
+    15/25: $1\pwm_action$func$EF_TMR32.v:192$104.action[1:0]$195
+    16/25: $1\pwm_action$func$EF_TMR32.v:192$104.$result[0:0]$194
+    17/25: $1\pwm_action$func$EF_TMR32.v:191$103.sig[0:0]$193
+    18/25: $1\pwm_action$func$EF_TMR32.v:191$103.action[1:0]$192
+    19/25: $1\pwm_action$func$EF_TMR32.v:191$103.$result[0:0]$191
+    20/25: $1\pwm_action$func$EF_TMR32.v:190$102.sig[0:0]$190
+    21/25: $1\pwm_action$func$EF_TMR32.v:190$102.action[1:0]$189
+    22/25: $1\pwm_action$func$EF_TMR32.v:190$102.$result[0:0]$188
+    23/25: $1\pwm_action$func$EF_TMR32.v:189$101.sig[0:0]$187
+    24/25: $1\pwm_action$func$EF_TMR32.v:189$101.action[1:0]$186
+    25/25: $1\pwm_action$func$EF_TMR32.v:189$101.$result[0:0]$185
+Creating decoders for process `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:151$154'.
+     1/1: $0\tmr_dir[0:0]
+Creating decoders for process `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:137$151'.
+     1/1: $0\tmr_reg[31:0]
+Creating decoders for process `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:109$134'.
+     1/10: $10\tmr_reg_next[31:0]
+     2/10: $9\tmr_reg_next[31:0]
+     3/10: $8\tmr_reg_next[31:0]
+     4/10: $7\tmr_reg_next[31:0]
+     5/10: $6\tmr_reg_next[31:0]
+     6/10: $5\tmr_reg_next[31:0]
+     7/10: $4\tmr_reg_next[31:0]
+     8/10: $3\tmr_reg_next[31:0]
+     9/10: $2\tmr_reg_next[31:0]
+    10/10: $1\tmr_reg_next[31:0]
+Creating decoders for process `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:94$123'.
+     1/1: $0\tmr_run[0:0]
+Creating decoders for process `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:77$113'.
+     1/1: $0\pr_reg[15:0]
+Creating decoders for process `\EF_TMR32_WB.$proc$timer.v:262$97'.
+     1/1: $0\ack_o[0:0]
+Creating decoders for process `\EF_TMR32_WB.$proc$timer.v:195$51'.
+     1/4: $0\RIS_REG[2:0] [2]
+     2/4: $0\RIS_REG[2:0] [1]
+     3/4: $0\RIS_REG[2:0] [0]
+     4/4: $1\_i_[31:0]
+Creating decoders for process `\EF_TMR32_WB.$proc$timer.v:185$48'.
+     1/1: $0\IC_REG[2:0]
+Creating decoders for process `\EF_TMR32_WB.$proc$timer.v:182$45'.
+     1/1: $0\IM_REG[2:0]
+Creating decoders for process `\EF_TMR32_WB.$proc$timer.v:173$41'.
+     1/1: $0\GCLK_REG[0:0]
+Creating decoders for process `\EF_TMR32_WB.$proc$timer.v:168$38'.
+     1/1: $0\PWMFC_REG[15:0]
+Creating decoders for process `\EF_TMR32_WB.$proc$timer.v:162$35'.
+     1/1: $0\PWMDT_REG[7:0]
+Creating decoders for process `\EF_TMR32_WB.$proc$timer.v:156$32'.
+     1/1: $0\PWM1CFG_REG[15:0]
+Creating decoders for process `\EF_TMR32_WB.$proc$timer.v:150$29'.
+     1/1: $0\PWM0CFG_REG[11:0]
+Creating decoders for process `\EF_TMR32_WB.$proc$timer.v:144$26'.
+     1/1: $0\CFG_REG[2:0]
+Creating decoders for process `\EF_TMR32_WB.$proc$timer.v:138$23'.
+     1/1: $0\CTRL_REG[6:0]
+Creating decoders for process `\EF_TMR32_WB.$proc$timer.v:126$20'.
+     1/1: $0\CMPY_REG[31:0]
+Creating decoders for process `\EF_TMR32_WB.$proc$timer.v:120$17'.
+     1/1: $0\CMPX_REG[31:0]
+Creating decoders for process `\EF_TMR32_WB.$proc$timer.v:114$14'.
+     1/1: $0\PR_REG[15:0]
+Creating decoders for process `\EF_TMR32_WB.$proc$timer.v:108$11'.
+     1/1: $0\RELOAD_REG[31:0]
+Creating decoders for process `\ef_util_ped.$proc$ef_util_lib.v:54$301'.
+
+7.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.\pwm1_reg_next' from process `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:198$212'.
+No latch inferred for signal `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.\pwm0_reg_next' from process `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:186$163'.
+No latch inferred for signal `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.\tmr_reg_next' from process `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:109$134'.
+
+7.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.\fault_reg' using process `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:268$288'.
+  created $adff cell `$procdff$917' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.\fault_clr_reg' using process `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:261$284'.
+  created $adff cell `$procdff$922' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.\pwm1_w_dt' using process `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:254$278'.
+  created $adff cell `$procdff$927' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.\pwm0_w_dt' using process `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:249$274'.
+  created $adff cell `$procdff$932' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.\pwm0_delayed' using process `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:241$271'.
+  created $adff cell `$procdff$937' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.\dly_cntr' using process `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:232$267'.
+  created $adff cell `$procdff$942' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.\pwm1_reg' using process `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:219$264'.
+  created $adff cell `$procdff$947' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.\pwm0_reg' using process `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:210$261'.
+  created $adff cell `$procdff$952' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.\tmr_dir' using process `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:151$154'.
+  created $adff cell `$procdff$957' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.\tmr_reg' using process `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:137$151'.
+  created $adff cell `$procdff$962' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.\tmr_run' using process `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:94$123'.
+  created $adff cell `$procdff$967' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.\pr_reg' using process `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:77$113'.
+  created $adff cell `$procdff$972' with positive edge clock and positive level reset.
+Creating register for signal `\EF_TMR32_WB.\ack_o' using process `\EF_TMR32_WB.$proc$timer.v:262$97'.
+  created $adff cell `$procdff$975' with positive edge clock and positive level reset.
+Creating register for signal `\EF_TMR32_WB.\RIS_REG' using process `\EF_TMR32_WB.$proc$timer.v:195$51'.
+  created $adff cell `$procdff$978' with positive edge clock and positive level reset.
+Creating register for signal `\EF_TMR32_WB.\_i_' using process `\EF_TMR32_WB.$proc$timer.v:195$51'.
+  created $dff cell `$procdff$983' with positive edge clock.
+Creating register for signal `\EF_TMR32_WB.\IC_REG' using process `\EF_TMR32_WB.$proc$timer.v:185$48'.
+  created $adff cell `$procdff$986' with positive edge clock and positive level reset.
+Creating register for signal `\EF_TMR32_WB.\IM_REG' using process `\EF_TMR32_WB.$proc$timer.v:182$45'.
+  created $adff cell `$procdff$989' with positive edge clock and positive level reset.
+Creating register for signal `\EF_TMR32_WB.\GCLK_REG' using process `\EF_TMR32_WB.$proc$timer.v:173$41'.
+  created $adff cell `$procdff$992' with positive edge clock and positive level reset.
+Creating register for signal `\EF_TMR32_WB.\PWMFC_REG' using process `\EF_TMR32_WB.$proc$timer.v:168$38'.
+  created $adff cell `$procdff$995' with positive edge clock and positive level reset.
+Creating register for signal `\EF_TMR32_WB.\PWMDT_REG' using process `\EF_TMR32_WB.$proc$timer.v:162$35'.
+  created $adff cell `$procdff$998' with positive edge clock and positive level reset.
+Creating register for signal `\EF_TMR32_WB.\PWM1CFG_REG' using process `\EF_TMR32_WB.$proc$timer.v:156$32'.
+  created $adff cell `$procdff$1001' with positive edge clock and positive level reset.
+Creating register for signal `\EF_TMR32_WB.\PWM0CFG_REG' using process `\EF_TMR32_WB.$proc$timer.v:150$29'.
+  created $adff cell `$procdff$1004' with positive edge clock and positive level reset.
+Creating register for signal `\EF_TMR32_WB.\CFG_REG' using process `\EF_TMR32_WB.$proc$timer.v:144$26'.
+  created $adff cell `$procdff$1007' with positive edge clock and positive level reset.
+Creating register for signal `\EF_TMR32_WB.\CTRL_REG' using process `\EF_TMR32_WB.$proc$timer.v:138$23'.
+  created $adff cell `$procdff$1010' with positive edge clock and positive level reset.
+Creating register for signal `\EF_TMR32_WB.\CMPY_REG' using process `\EF_TMR32_WB.$proc$timer.v:126$20'.
+  created $adff cell `$procdff$1013' with positive edge clock and positive level reset.
+Creating register for signal `\EF_TMR32_WB.\CMPX_REG' using process `\EF_TMR32_WB.$proc$timer.v:120$17'.
+  created $adff cell `$procdff$1016' with positive edge clock and positive level reset.
+Creating register for signal `\EF_TMR32_WB.\PR_REG' using process `\EF_TMR32_WB.$proc$timer.v:114$14'.
+  created $adff cell `$procdff$1019' with positive edge clock and positive level reset.
+Creating register for signal `\EF_TMR32_WB.\RELOAD_REG' using process `\EF_TMR32_WB.$proc$timer.v:108$11'.
+  created $adff cell `$procdff$1022' with positive edge clock and positive level reset.
+Creating register for signal `\ef_util_ped.\last_in' using process `\ef_util_ped.$proc$ef_util_lib.v:54$301'.
+  created $dff cell `$procdff$1023' with positive edge clock.
+
+7.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+7.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 2 empty switches in `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:268$288'.
+Removing empty process `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:268$288'.
+Found and cleaned up 2 empty switches in `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:261$284'.
+Removing empty process `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:261$284'.
+Removing empty process `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:254$278'.
+Removing empty process `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:249$274'.
+Found and cleaned up 2 empty switches in `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:241$271'.
+Removing empty process `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:241$271'.
+Found and cleaned up 2 empty switches in `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:232$267'.
+Removing empty process `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:232$267'.
+Found and cleaned up 2 empty switches in `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:219$264'.
+Removing empty process `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:219$264'.
+Found and cleaned up 2 empty switches in `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:210$261'.
+Removing empty process `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:210$261'.
+Found and cleaned up 7 empty switches in `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:198$212'.
+Removing empty process `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:198$212'.
+Found and cleaned up 7 empty switches in `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:186$163'.
+Removing empty process `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:186$163'.
+Found and cleaned up 8 empty switches in `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:151$154'.
+Removing empty process `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:151$154'.
+Found and cleaned up 4 empty switches in `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:137$151'.
+Removing empty process `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:137$151'.
+Found and cleaned up 10 empty switches in `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:109$134'.
+Removing empty process `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:109$134'.
+Found and cleaned up 4 empty switches in `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:94$123'.
+Removing empty process `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:94$123'.
+Found and cleaned up 2 empty switches in `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:77$113'.
+Removing empty process `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.$proc$EF_TMR32.v:77$113'.
+Found and cleaned up 1 empty switch in `\EF_TMR32_WB.$proc$timer.v:262$97'.
+Removing empty process `EF_TMR32_WB.$proc$timer.v:262$97'.
+Found and cleaned up 6 empty switches in `\EF_TMR32_WB.$proc$timer.v:195$51'.
+Removing empty process `EF_TMR32_WB.$proc$timer.v:195$51'.
+Found and cleaned up 1 empty switch in `\EF_TMR32_WB.$proc$timer.v:185$48'.
+Removing empty process `EF_TMR32_WB.$proc$timer.v:185$48'.
+Found and cleaned up 1 empty switch in `\EF_TMR32_WB.$proc$timer.v:182$45'.
+Removing empty process `EF_TMR32_WB.$proc$timer.v:182$45'.
+Found and cleaned up 1 empty switch in `\EF_TMR32_WB.$proc$timer.v:173$41'.
+Removing empty process `EF_TMR32_WB.$proc$timer.v:173$41'.
+Found and cleaned up 1 empty switch in `\EF_TMR32_WB.$proc$timer.v:168$38'.
+Removing empty process `EF_TMR32_WB.$proc$timer.v:168$38'.
+Found and cleaned up 1 empty switch in `\EF_TMR32_WB.$proc$timer.v:162$35'.
+Removing empty process `EF_TMR32_WB.$proc$timer.v:162$35'.
+Found and cleaned up 1 empty switch in `\EF_TMR32_WB.$proc$timer.v:156$32'.
+Removing empty process `EF_TMR32_WB.$proc$timer.v:156$32'.
+Found and cleaned up 1 empty switch in `\EF_TMR32_WB.$proc$timer.v:150$29'.
+Removing empty process `EF_TMR32_WB.$proc$timer.v:150$29'.
+Found and cleaned up 1 empty switch in `\EF_TMR32_WB.$proc$timer.v:144$26'.
+Removing empty process `EF_TMR32_WB.$proc$timer.v:144$26'.
+Found and cleaned up 1 empty switch in `\EF_TMR32_WB.$proc$timer.v:138$23'.
+Removing empty process `EF_TMR32_WB.$proc$timer.v:138$23'.
+Found and cleaned up 1 empty switch in `\EF_TMR32_WB.$proc$timer.v:126$20'.
+Removing empty process `EF_TMR32_WB.$proc$timer.v:126$20'.
+Found and cleaned up 1 empty switch in `\EF_TMR32_WB.$proc$timer.v:120$17'.
+Removing empty process `EF_TMR32_WB.$proc$timer.v:120$17'.
+Found and cleaned up 1 empty switch in `\EF_TMR32_WB.$proc$timer.v:114$14'.
+Removing empty process `EF_TMR32_WB.$proc$timer.v:114$14'.
+Found and cleaned up 1 empty switch in `\EF_TMR32_WB.$proc$timer.v:108$11'.
+Removing empty process `EF_TMR32_WB.$proc$timer.v:108$11'.
+Removing empty process `ef_util_ped.$proc$ef_util_lib.v:54$301'.
+Cleaned up 74 empty switches.
+
+7.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.
+<suppressed ~51 debug messages>
+Optimizing module EF_TMR32_WB.
+<suppressed ~20 debug messages>
+Optimizing module EF_TMR32_WB_wrapper.
+Optimizing module ef_util_ped.
+Optimizing module ef_util_gating_cell.
+
+8. Executing OPT pass (performing simple optimizations).
+
+8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.
+Optimizing module EF_TMR32_WB.
+Optimizing module EF_TMR32_WB_wrapper.
+Optimizing module ef_util_ped.
+Optimizing module ef_util_gating_cell.
+
+8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000'.
+Computing hashes of 363 cells of `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000'.
+Finding duplicate cells in `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000'.
+Computing hashes of 261 cells of `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000'.
+Finding duplicate cells in `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000'.
+<suppressed ~306 debug messages>
+Finding identical cells in module `\EF_TMR32_WB'.
+Computing hashes of 116 cells of `\EF_TMR32_WB'.
+Finding duplicate cells in `\EF_TMR32_WB'.
+Computing hashes of 104 cells of `\EF_TMR32_WB'.
+Finding duplicate cells in `\EF_TMR32_WB'.
+<suppressed ~36 debug messages>
+Finding identical cells in module `\EF_TMR32_WB_wrapper'.
+Computing hashes of 2 cells of `\EF_TMR32_WB_wrapper'.
+Finding duplicate cells in `\EF_TMR32_WB_wrapper'.
+Finding identical cells in module `\ef_util_ped'.
+Computing hashes of 3 cells of `\ef_util_ped'.
+Finding duplicate cells in `\ef_util_ped'.
+Finding identical cells in module `\ef_util_gating_cell'.
+Computing hashes of 0 cells of `\ef_util_gating_cell'.
+Finding duplicate cells in `\ef_util_gating_cell'.
+Removed a total of 114 cells.
+
+8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 1/2 on $mux $procmux$632.
+    dead port 2/2 on $mux $procmux$632.
+    dead port 1/2 on $mux $procmux$627.
+    dead port 2/2 on $mux $procmux$627.
+    dead port 1/2 on $mux $procmux$622.
+    dead port 2/2 on $mux $procmux$622.
+    dead port 1/2 on $mux $procmux$617.
+    dead port 2/2 on $mux $procmux$617.
+    dead port 1/2 on $mux $procmux$613.
+    dead port 2/2 on $mux $procmux$613.
+    dead port 1/2 on $mux $procmux$609.
+    dead port 2/2 on $mux $procmux$609.
+    dead port 1/2 on $mux $procmux$605.
+    dead port 2/2 on $mux $procmux$605.
+    dead port 1/2 on $mux $procmux$602.
+    dead port 2/2 on $mux $procmux$602.
+    dead port 1/2 on $mux $procmux$599.
+    dead port 2/2 on $mux $procmux$599.
+    dead port 1/2 on $mux $procmux$596.
+    dead port 2/2 on $mux $procmux$596.
+    dead port 1/2 on $mux $procmux$588.
+    dead port 2/2 on $mux $procmux$588.
+    dead port 1/2 on $mux $procmux$580.
+    dead port 2/2 on $mux $procmux$580.
+    dead port 2/2 on $mux $procmux$564.
+    dead port 2/2 on $mux $procmux$551.
+    dead port 2/2 on $mux $procmux$847.
+    dead port 2/2 on $mux $procmux$539.
+    dead port 2/2 on $mux $procmux$528.
+    dead port 2/2 on $mux $procmux$841.
+    dead port 2/2 on $mux $procmux$518.
+    dead port 1/2 on $mux $procmux$838.
+    dead port 2/2 on $mux $procmux$509.
+    dead port 1/2 on $mux $procmux$501.
+    dead port 2/2 on $mux $procmux$501.
+    dead port 2/2 on $mux $procmux$832.
+    dead port 1/2 on $mux $procmux$494.
+    dead port 2/2 on $mux $procmux$494.
+    dead port 1/2 on $mux $procmux$829.
+    dead port 1/2 on $mux $procmux$487.
+    dead port 2/2 on $mux $procmux$487.
+    dead port 1/2 on $mux $procmux$826.
+    dead port 1/2 on $mux $procmux$480.
+    dead port 2/2 on $mux $procmux$480.
+    dead port 1/2 on $mux $procmux$474.
+    dead port 2/2 on $mux $procmux$474.
+    dead port 2/2 on $mux $procmux$820.
+    dead port 1/2 on $mux $procmux$468.
+    dead port 2/2 on $mux $procmux$468.
+    dead port 1/2 on $mux $procmux$817.
+    dead port 1/2 on $mux $procmux$462.
+    dead port 2/2 on $mux $procmux$462.
+    dead port 1/2 on $mux $procmux$814.
+    dead port 1/2 on $mux $procmux$457.
+    dead port 2/2 on $mux $procmux$457.
+    dead port 1/2 on $mux $procmux$811.
+    dead port 1/2 on $mux $procmux$452.
+    dead port 2/2 on $mux $procmux$452.
+    dead port 1/2 on $mux $procmux$447.
+    dead port 2/2 on $mux $procmux$447.
+    dead port 2/2 on $mux $procmux$805.
+    dead port 1/2 on $mux $procmux$443.
+    dead port 2/2 on $mux $procmux$443.
+    dead port 1/2 on $mux $procmux$802.
+    dead port 1/2 on $mux $procmux$439.
+    dead port 2/2 on $mux $procmux$439.
+    dead port 1/2 on $mux $procmux$799.
+    dead port 1/2 on $mux $procmux$435.
+    dead port 2/2 on $mux $procmux$435.
+    dead port 1/2 on $mux $procmux$796.
+    dead port 1/2 on $mux $procmux$432.
+    dead port 2/2 on $mux $procmux$432.
+    dead port 2/2 on $mux $procmux$793.
+    dead port 1/2 on $mux $procmux$429.
+    dead port 2/2 on $mux $procmux$429.
+    dead port 1/2 on $mux $procmux$426.
+    dead port 2/2 on $mux $procmux$426.
+    dead port 2/2 on $mux $procmux$787.
+    dead port 1/2 on $mux $procmux$418.
+    dead port 2/2 on $mux $procmux$418.
+    dead port 1/2 on $mux $procmux$784.
+    dead port 1/2 on $mux $procmux$410.
+    dead port 2/2 on $mux $procmux$410.
+    dead port 1/2 on $mux $procmux$781.
+    dead port 1/2 on $mux $procmux$778.
+    dead port 1/2 on $mux $procmux$775.
+    dead port 2/2 on $mux $procmux$769.
+    dead port 1/2 on $mux $procmux$766.
+    dead port 1/2 on $mux $procmux$763.
+    dead port 2/2 on $mux $procmux$394.
+    dead port 1/2 on $mux $procmux$760.
+    dead port 2/2 on $mux $procmux$381.
+    dead port 1/2 on $mux $procmux$757.
+    dead port 2/2 on $mux $procmux$369.
+    dead port 2/2 on $mux $procmux$754.
+    dead port 2/2 on $mux $procmux$358.
+    dead port 2/2 on $mux $procmux$348.
+    dead port 2/2 on $mux $procmux$748.
+    dead port 2/2 on $mux $procmux$339.
+    dead port 1/2 on $mux $procmux$745.
+    dead port 1/2 on $mux $procmux$742.
+    dead port 1/2 on $mux $procmux$739.
+    dead port 1/2 on $mux $procmux$736.
+    dead port 1/2 on $mux $procmux$733.
+    dead port 2/2 on $mux $procmux$727.
+    dead port 1/2 on $mux $procmux$724.
+    dead port 1/2 on $mux $procmux$721.
+    dead port 1/2 on $mux $procmux$718.
+    dead port 1/2 on $mux $procmux$715.
+    dead port 1/2 on $mux $procmux$712.
+    dead port 2/2 on $mux $procmux$709.
+    dead port 1/2 on $mux $procmux$671.
+    dead port 2/2 on $mux $procmux$671.
+    dead port 1/2 on $mux $procmux$664.
+    dead port 2/2 on $mux $procmux$664.
+    dead port 1/2 on $mux $procmux$657.
+    dead port 2/2 on $mux $procmux$657.
+    dead port 1/2 on $mux $procmux$650.
+    dead port 2/2 on $mux $procmux$650.
+    dead port 1/2 on $mux $procmux$644.
+    dead port 2/2 on $mux $procmux$644.
+    dead port 1/2 on $mux $procmux$638.
+    dead port 2/2 on $mux $procmux$638.
+Running muxtree optimizer on module \EF_TMR32_WB..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \EF_TMR32_WB_wrapper..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \ef_util_ped..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \ef_util_gating_cell..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 123 multiplexer ports.
+<suppressed ~214 debug messages>
+
+8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.
+  Optimizing cells in module \EF_TMR32_WB.
+  Optimizing cells in module \EF_TMR32_WB_wrapper.
+  Optimizing cells in module \ef_util_ped.
+  Optimizing cells in module \ef_util_gating_cell.
+Performed a total of 0 changes.
+
+8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000'.
+Computing hashes of 174 cells of `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000'.
+Finding duplicate cells in `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000'.
+Computing hashes of 173 cells of `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000'.
+Finding duplicate cells in `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000'.
+<suppressed ~3 debug messages>
+Finding identical cells in module `\EF_TMR32_WB'.
+Computing hashes of 104 cells of `\EF_TMR32_WB'.
+Finding duplicate cells in `\EF_TMR32_WB'.
+Finding identical cells in module `\EF_TMR32_WB_wrapper'.
+Computing hashes of 2 cells of `\EF_TMR32_WB_wrapper'.
+Finding duplicate cells in `\EF_TMR32_WB_wrapper'.
+Finding identical cells in module `\ef_util_ped'.
+Computing hashes of 3 cells of `\ef_util_ped'.
+Finding duplicate cells in `\ef_util_ped'.
+Finding identical cells in module `\ef_util_gating_cell'.
+Computing hashes of 0 cells of `\ef_util_gating_cell'.
+Finding duplicate cells in `\ef_util_gating_cell'.
+Removed a total of 1 cells.
+
+8.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $procdff$952 ($adff) from module $paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000 (D = $procmux$329_Y, Q = \pwm0_reg).
+Adding EN signal on $procdff$962 ($adff) from module $paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000 (D = $procmux$701_Y, Q = \tmr_reg).
+Adding EN signal on $procdff$957 ($adff) from module $paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000 (D = $procmux$693_Y, Q = \tmr_dir).
+Adding EN signal on $procdff$942 ($adff) from module $paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000 (D = $procmux$319_Y, Q = \dly_cntr).
+Adding EN signal on $procdff$967 ($adff) from module $paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000 (D = $procmux$860_Y, Q = \tmr_run).
+Adding EN signal on $procdff$947 ($adff) from module $paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000 (D = $procmux$324_Y, Q = \pwm1_reg).
+Adding EN signal on $procdff$922 ($adff) from module $paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000 (D = $procmux$312_Y, Q = \fault_clr_reg).
+Adding EN signal on $procdff$917 ($adff) from module $paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000 (D = $procmux$307_Y, Q = \fault_reg).
+Adding EN signal on $procdff$937 ($adff) from module $paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000 (D = \pwm0_reg, Q = \pwm0_delayed).
+Adding EN signal on $procdff$1001 ($adff) from module EF_TMR32_WB (D = \dat_i [15:0], Q = \PWM1CFG_REG).
+Adding EN signal on $procdff$978 ($adff) from module EF_TMR32_WB (D = $procmux$879_Y, Q = \RIS_REG [1]).
+Adding EN signal on $procdff$978 ($adff) from module EF_TMR32_WB (D = $procmux$874_Y, Q = \RIS_REG [2]).
+Adding EN signal on $procdff$978 ($adff) from module EF_TMR32_WB (D = $procmux$884_Y, Q = \RIS_REG [0]).
+Adding EN signal on $procdff$1013 ($adff) from module EF_TMR32_WB (D = \dat_i, Q = \CMPY_REG).
+Adding EN signal on $procdff$983 ($dff) from module EF_TMR32_WB (D = 3, Q = \_i_).
+Adding EN signal on $procdff$1004 ($adff) from module EF_TMR32_WB (D = \dat_i [11:0], Q = \PWM0CFG_REG).
+Adding EN signal on $procdff$1019 ($adff) from module EF_TMR32_WB (D = \dat_i [15:0], Q = \PR_REG).
+Adding EN signal on $procdff$989 ($adff) from module EF_TMR32_WB (D = \dat_i [2:0], Q = \IM_REG).
+Adding EN signal on $procdff$1007 ($adff) from module EF_TMR32_WB (D = \dat_i [2:0], Q = \CFG_REG).
+Adding EN signal on $procdff$992 ($adff) from module EF_TMR32_WB (D = \dat_i [0], Q = \GCLK_REG).
+Adding EN signal on $procdff$1016 ($adff) from module EF_TMR32_WB (D = \dat_i, Q = \CMPX_REG).
+Adding EN signal on $procdff$998 ($adff) from module EF_TMR32_WB (D = \dat_i [7:0], Q = \PWMDT_REG).
+Adding EN signal on $procdff$1010 ($adff) from module EF_TMR32_WB (D = \dat_i [6:0], Q = \CTRL_REG).
+Adding EN signal on $procdff$995 ($adff) from module EF_TMR32_WB (D = \dat_i [15:0], Q = \PWMFC_REG).
+Adding EN signal on $procdff$1022 ($adff) from module EF_TMR32_WB (D = \dat_i, Q = \RELOAD_REG).
+Setting constant 1-bit at position 0 on $auto$ff.cc:337:slice$1106 ($dffe) from module EF_TMR32_WB.
+Setting constant 1-bit at position 1 on $auto$ff.cc:337:slice$1106 ($dffe) from module EF_TMR32_WB.
+Setting constant 0-bit at position 2 on $auto$ff.cc:337:slice$1106 ($dffe) from module EF_TMR32_WB.
+Setting constant 0-bit at position 3 on $auto$ff.cc:337:slice$1106 ($dffe) from module EF_TMR32_WB.
+Setting constant 0-bit at position 4 on $auto$ff.cc:337:slice$1106 ($dffe) from module EF_TMR32_WB.
+Setting constant 0-bit at position 5 on $auto$ff.cc:337:slice$1106 ($dffe) from module EF_TMR32_WB.
+Setting constant 0-bit at position 6 on $auto$ff.cc:337:slice$1106 ($dffe) from module EF_TMR32_WB.
+Setting constant 0-bit at position 7 on $auto$ff.cc:337:slice$1106 ($dffe) from module EF_TMR32_WB.
+Setting constant 0-bit at position 8 on $auto$ff.cc:337:slice$1106 ($dffe) from module EF_TMR32_WB.
+Setting constant 0-bit at position 9 on $auto$ff.cc:337:slice$1106 ($dffe) from module EF_TMR32_WB.
+Setting constant 0-bit at position 10 on $auto$ff.cc:337:slice$1106 ($dffe) from module EF_TMR32_WB.
+Setting constant 0-bit at position 11 on $auto$ff.cc:337:slice$1106 ($dffe) from module EF_TMR32_WB.
+Setting constant 0-bit at position 12 on $auto$ff.cc:337:slice$1106 ($dffe) from module EF_TMR32_WB.
+Setting constant 0-bit at position 13 on $auto$ff.cc:337:slice$1106 ($dffe) from module EF_TMR32_WB.
+Setting constant 0-bit at position 14 on $auto$ff.cc:337:slice$1106 ($dffe) from module EF_TMR32_WB.
+Setting constant 0-bit at position 15 on $auto$ff.cc:337:slice$1106 ($dffe) from module EF_TMR32_WB.
+Setting constant 0-bit at position 16 on $auto$ff.cc:337:slice$1106 ($dffe) from module EF_TMR32_WB.
+Setting constant 0-bit at position 17 on $auto$ff.cc:337:slice$1106 ($dffe) from module EF_TMR32_WB.
+Setting constant 0-bit at position 18 on $auto$ff.cc:337:slice$1106 ($dffe) from module EF_TMR32_WB.
+Setting constant 0-bit at position 19 on $auto$ff.cc:337:slice$1106 ($dffe) from module EF_TMR32_WB.
+Setting constant 0-bit at position 20 on $auto$ff.cc:337:slice$1106 ($dffe) from module EF_TMR32_WB.
+Setting constant 0-bit at position 21 on $auto$ff.cc:337:slice$1106 ($dffe) from module EF_TMR32_WB.
+Setting constant 0-bit at position 22 on $auto$ff.cc:337:slice$1106 ($dffe) from module EF_TMR32_WB.
+Setting constant 0-bit at position 23 on $auto$ff.cc:337:slice$1106 ($dffe) from module EF_TMR32_WB.
+Setting constant 0-bit at position 24 on $auto$ff.cc:337:slice$1106 ($dffe) from module EF_TMR32_WB.
+Setting constant 0-bit at position 25 on $auto$ff.cc:337:slice$1106 ($dffe) from module EF_TMR32_WB.
+Setting constant 0-bit at position 26 on $auto$ff.cc:337:slice$1106 ($dffe) from module EF_TMR32_WB.
+Setting constant 0-bit at position 27 on $auto$ff.cc:337:slice$1106 ($dffe) from module EF_TMR32_WB.
+Setting constant 0-bit at position 28 on $auto$ff.cc:337:slice$1106 ($dffe) from module EF_TMR32_WB.
+Setting constant 0-bit at position 29 on $auto$ff.cc:337:slice$1106 ($dffe) from module EF_TMR32_WB.
+Setting constant 0-bit at position 30 on $auto$ff.cc:337:slice$1106 ($dffe) from module EF_TMR32_WB.
+Setting constant 0-bit at position 31 on $auto$ff.cc:337:slice$1106 ($dffe) from module EF_TMR32_WB.
+
+8.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000..
+Finding unused cells or wires in module \EF_TMR32_WB..
+Finding unused cells or wires in module \EF_TMR32_WB_wrapper..
+Finding unused cells or wires in module \ef_util_ped..
+Finding unused cells or wires in module \ef_util_gating_cell..
+Removed 25 unused cells and 535 unused wires.
+<suppressed ~41 debug messages>
+
+8.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.
+<suppressed ~10 debug messages>
+Optimizing module EF_TMR32_WB.
+<suppressed ~3 debug messages>
+Optimizing module EF_TMR32_WB_wrapper.
+Optimizing module ef_util_ped.
+Optimizing module ef_util_gating_cell.
+
+8.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+8.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \EF_TMR32_WB..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \EF_TMR32_WB_wrapper..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \ef_util_ped..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \ef_util_gating_cell..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+<suppressed ~96 debug messages>
+
+8.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.
+  Optimizing cells in module \EF_TMR32_WB.
+  Optimizing cells in module \EF_TMR32_WB_wrapper.
+  Optimizing cells in module \ef_util_ped.
+  Optimizing cells in module \ef_util_gating_cell.
+Performed a total of 0 changes.
+
+8.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000'.
+Computing hashes of 195 cells of `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000'.
+Finding duplicate cells in `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000'.
+Computing hashes of 193 cells of `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000'.
+Finding duplicate cells in `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000'.
+<suppressed ~6 debug messages>
+Finding identical cells in module `\EF_TMR32_WB'.
+Computing hashes of 81 cells of `\EF_TMR32_WB'.
+Finding duplicate cells in `\EF_TMR32_WB'.
+Finding identical cells in module `\EF_TMR32_WB_wrapper'.
+Computing hashes of 2 cells of `\EF_TMR32_WB_wrapper'.
+Finding duplicate cells in `\EF_TMR32_WB_wrapper'.
+Finding identical cells in module `\ef_util_ped'.
+Computing hashes of 3 cells of `\ef_util_ped'.
+Finding duplicate cells in `\ef_util_ped'.
+Finding identical cells in module `\ef_util_gating_cell'.
+Computing hashes of 0 cells of `\ef_util_gating_cell'.
+Finding duplicate cells in `\ef_util_gating_cell'.
+Removed a total of 2 cells.
+
+8.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+8.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000..
+Finding unused cells or wires in module \EF_TMR32_WB..
+Finding unused cells or wires in module \EF_TMR32_WB_wrapper..
+Finding unused cells or wires in module \ef_util_ped..
+Finding unused cells or wires in module \ef_util_gating_cell..
+Removed 0 unused cells and 2 unused wires.
+<suppressed ~1 debug messages>
+
+8.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.
+Optimizing module EF_TMR32_WB.
+Optimizing module EF_TMR32_WB_wrapper.
+Optimizing module ef_util_ped.
+Optimizing module ef_util_gating_cell.
+
+8.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+8.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \EF_TMR32_WB..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \EF_TMR32_WB_wrapper..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \ef_util_ped..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \ef_util_gating_cell..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+<suppressed ~96 debug messages>
+
+8.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.
+  Optimizing cells in module \EF_TMR32_WB.
+  Optimizing cells in module \EF_TMR32_WB_wrapper.
+  Optimizing cells in module \ef_util_ped.
+  Optimizing cells in module \ef_util_gating_cell.
+Performed a total of 0 changes.
+
+8.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000'.
+Computing hashes of 193 cells of `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000'.
+Finding duplicate cells in `$paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000'.
+Finding identical cells in module `\EF_TMR32_WB'.
+Computing hashes of 81 cells of `\EF_TMR32_WB'.
+Finding duplicate cells in `\EF_TMR32_WB'.
+Finding identical cells in module `\EF_TMR32_WB_wrapper'.
+Computing hashes of 2 cells of `\EF_TMR32_WB_wrapper'.
+Finding duplicate cells in `\EF_TMR32_WB_wrapper'.
+Finding identical cells in module `\ef_util_ped'.
+Computing hashes of 3 cells of `\ef_util_ped'.
+Finding duplicate cells in `\ef_util_ped'.
+Finding identical cells in module `\ef_util_gating_cell'.
+Computing hashes of 0 cells of `\ef_util_gating_cell'.
+Finding duplicate cells in `\ef_util_gating_cell'.
+Removed a total of 0 cells.
+
+8.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+8.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000..
+Finding unused cells or wires in module \EF_TMR32_WB..
+Finding unused cells or wires in module \EF_TMR32_WB_wrapper..
+Finding unused cells or wires in module \ef_util_ped..
+Finding unused cells or wires in module \ef_util_gating_cell..
+
+8.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.
+Optimizing module EF_TMR32_WB.
+Optimizing module EF_TMR32_WB_wrapper.
+Optimizing module ef_util_ped.
+Optimizing module ef_util_gating_cell.
+
+8.23. Finished fast OPT passes. (There is nothing left to do.)
+
+9. Executing FLATTEN pass (flatten design).
+Deleting now unused module $paramod\EF_TMR32\PRW=s32'00000000000000000000000000010000.
+Deleting now unused module EF_TMR32_WB.
+Deleting now unused module ef_util_ped.
+Deleting now unused module ef_util_gating_cell.
+<suppressed ~4 debug messages>
+
+10. Executing OPT pass (performing simple optimizations).
+
+10.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module EF_TMR32_WB_wrapper.
+<suppressed ~46 debug messages>
+
+10.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\EF_TMR32_WB_wrapper'.
+Computing hashes of 274 cells of `\EF_TMR32_WB_wrapper'.
+Finding duplicate cells in `\EF_TMR32_WB_wrapper'.
+Removed a total of 0 cells.
+
+10.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \EF_TMR32_WB_wrapper..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~93 debug messages>
+
+10.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \EF_TMR32_WB_wrapper.
+Performed a total of 0 changes.
+
+10.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\EF_TMR32_WB_wrapper'.
+Computing hashes of 274 cells of `\EF_TMR32_WB_wrapper'.
+Finding duplicate cells in `\EF_TMR32_WB_wrapper'.
+Removed a total of 0 cells.
+
+10.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+10.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \EF_TMR32_WB_wrapper..
+Removed 122 unused cells and 134 unused wires.
+<suppressed ~144 debug messages>
+
+10.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module EF_TMR32_WB_wrapper.
+
+10.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+10.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \EF_TMR32_WB_wrapper..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~66 debug messages>
+
+10.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \EF_TMR32_WB_wrapper.
+Performed a total of 0 changes.
+
+10.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\EF_TMR32_WB_wrapper'.
+Computing hashes of 152 cells of `\EF_TMR32_WB_wrapper'.
+Finding duplicate cells in `\EF_TMR32_WB_wrapper'.
+Removed a total of 0 cells.
+
+10.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+10.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \EF_TMR32_WB_wrapper..
+
+10.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module EF_TMR32_WB_wrapper.
+
+10.16. Finished fast OPT passes. (There is nothing left to do.)
+
+11. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `EF_TMR32_WB_wrapper'. Setting top module to EF_TMR32_WB_wrapper.
+
+11.1. Analyzing design hierarchy..
+Top module:  \EF_TMR32_WB_wrapper
+
+11.2. Analyzing design hierarchy..
+Top module:  \EF_TMR32_WB_wrapper
+Removed 0 unused modules.
+
+12. Executing jny backend.
+
+13. Executing RTLIL backend.
+Output filename: ../model/design.il
+
+End of script. Logfile hash: d1df6f0ff0, time: 0.10s, user: 0.10s, system: 0.01s, MEM: 18.45 MB peak
+Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+Time spent: 18% 5x opt_dff (0 sec), 16% 2x hierarchy (0 sec), ...

@@ -1,0 +1,12 @@
+{
+  "module": "wishbone_interconnect",
+  "classification": "REUSE_INTERNAL",
+  "tier": "B",
+  "cell_count": 699,
+  "synthesis_log": "~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-wishbone_interconnect/logs/synth/wishbone_interconnect_synth.log",
+  "results_xml": "~/hermes_workspace/projects/IP-010/v4/06_verification_stage/tb-wishbone_interconnect/results.xml",
+  "equiv_status": "PROVEN",
+  "tests_passed": 15,
+  "tests_total": 15,
+  "admitted": true
+}

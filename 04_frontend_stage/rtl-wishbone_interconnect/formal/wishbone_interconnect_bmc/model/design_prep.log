@@ -1,0 +1,71 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+
+-- Executing script file `design_prep.ys' --
+
+1. Executing RTLIL frontend.
+Input filename: design.il
+
+2. Executing SCC pass (detecting logic loops).
+Found 0 SCCs in module wishbone_interconnect.
+Found 0 SCCs.
+
+3. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+4. Executing MEMORY_NORDFF pass (extracting $dff cells from memories).
+
+5. Executing ASYNC2SYNC pass.
+Replacing wishbone_interconnect.$auto$ff.cc:337:slice$537 ($adffe): ARST=\wb_rst_ni, D=\mux_out, Q=\rd_data_q
+Replacing wishbone_interconnect.$procdff$521 ($adff): ARST=\wb_rst_ni, D=\rd_data_q, Q=\wb_dat_o
+Replacing wishbone_interconnect.$procdff$526 ($adff): ARST=\wb_rst_ni, D=$0\wb_ack_o[0:0], Q=\wb_ack_o
+
+6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wishbone_interconnect..
+
+7. Executing FORMALFF pass.
+
+8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wishbone_interconnect..
+Removed 1 unused cells and 1 unused wires.
+<suppressed ~2 debug messages>
+
+9. Executing CHECK pass (checking for obvious problems).
+Checking module wishbone_interconnect...
+Found and reported 0 problems.
+
+10. Executing SETUNDEF pass (replace undef values with defined constants).
+
+11. Executing OPT pass (performing simple optimizations).
+
+11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wishbone_interconnect.
+
+11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wishbone_interconnect'.
+Computing hashes of 111 cells of `\wishbone_interconnect'.
+Finding duplicate cells in `\wishbone_interconnect'.
+Removed a total of 0 cells.
+
+11.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+11.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wishbone_interconnect..
+
+11.5. Finished fast OPT passes.
+
+12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wishbone_interconnect..
+Removed 0 unused cells and 3 unused wires.
+<suppressed ~1 debug messages>
+
+13. Executing RTLIL backend.
+Output filename: ../model/design_prep.il
+
+End of script. Logfile hash: d720b06972, time: 0.02s, user: 0.01s, system: 0.01s, MEM: 15.20 MB peak
+Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+Time spent: 43% 4x opt_clean (0 sec), 11% 1x check (0 sec), ...

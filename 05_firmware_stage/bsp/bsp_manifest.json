@@ -1,0 +1,45 @@
+{
+  "_metadata": {
+    "project": "IP-010",
+    "version": "v4",
+    "generated": "2026-07-19T11:19:00Z",
+    "agent": "firmware-engineer",
+    "source": "memory_map.json@3455a1e3258d23f4da89752e4aba0ac4"
+  },
+  "files": {
+    "bsp/crt0.S": {
+      "provenance": "GENERATED-FROM: memory_map.json@3455a1e3258d23f4da89752e4aba0ac4",
+      "description": "Boot startup: stack init, BSS clear, trap vector, jump to main"
+    },
+    "bsp/main.c": {
+      "provenance": "GENERATED-FROM: memory_map.json@3455a1e3258d23f4da89752e4aba0ac4",
+      "description": "BSP smoke test main: SRAM write/read test, UART output"
+    },
+    "bsp/link.ld": {
+      "provenance": "GENERATED-FROM: memory_map.json@3455a1e3258d23f4da89752e4aba0ac4",
+      "description": "Linker script with SRAM region at 0x00000000"
+    },
+    "bsp/include/soc.h": {
+      "provenance": "GENERATED-FROM: memory_map.json@3455a1e3258d23f4da89752e4aba0ac4",
+      "description": "SoC header: region bases, register accessors, bit manipulation"
+    },
+    "bsp/Makefile": {
+      "provenance": "GENERATED-FROM: memory_map.json@3455a1e3258d23f4da89752e4aba0ac4",
+      "description": "Pinned-toolchain Makefile: riscv32-unknown-elf-gcc 14.2.1"
+    }
+  },
+  "build": {
+    "compiler": "/opt/OpenROAD/riscv/gcc14-no-zcmp/bin/riscv32-unknown-elf-gcc",
+    "version": "14.2.1",
+    "march": "rv32imc_zicsr",
+    "mabi": "ilp32",
+    "log": "fw_build.log"
+  },
+  "sizes": {
+    "text": 100,
+    "data": 0,
+    "bss": 0,
+    "total": 100,
+    "max_bytes": 8192
+  }
+}

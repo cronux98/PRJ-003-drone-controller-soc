@@ -1,0 +1,120 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+
+-- Executing script file `design_prep.ys' --
+
+1. Executing RTLIL frontend.
+Input filename: design.il
+
+2. Executing SCC pass (detecting logic loops).
+Found 0 SCCs in module dshot_pwm.
+Found 0 SCCs.
+
+3. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+4. Executing MEMORY_NORDFF pass (extracting $dff cells from memories).
+
+5. Executing ASYNC2SYNC pass.
+Replacing dshot_pwm.$auto$ff.cc:337:slice$7541 ($adffe): ARST=\wb_rst_ni, D=$procmux$5883_Y, Q=\dshot_timer[1]
+Replacing dshot_pwm.$auto$ff.cc:337:slice$7546 ($adffe): ARST=\wb_rst_ni, D=$procmux$6753_Y, Q=\wb_dat_o
+Replacing dshot_pwm.$auto$ff.cc:337:slice$7551 ($adffe): ARST=\wb_rst_ni, D=\wb_dat_i [1], Q=\ctrl_pwm_en
+Replacing dshot_pwm.$auto$ff.cc:337:slice$7554 ($adffe): ARST=\wb_rst_ni, D=\wb_dat_i [10:0], Q=\throttle_next[1]
+Replacing dshot_pwm.$auto$ff.cc:337:slice$7557 ($adffe): ARST=\wb_rst_ni, D=$procmux$5579_Y, Q=\dshot_bit_cnt[3]
+Replacing dshot_pwm.$auto$ff.cc:337:slice$7568 ($adffe): ARST=\wb_rst_ni, D=\wb_dat_i [15:0], Q=\pwm_period[1]
+Replacing dshot_pwm.$auto$ff.cc:337:slice$7571 ($adffe): ARST=\wb_rst_ni, D=$procmux$5661_Y, Q=\dshot_bit_cnt[1]
+Replacing dshot_pwm.$auto$ff.cc:337:slice$7582 ($adffe): ARST=\wb_rst_ni, D=$0\pwm_counter[1][15:0], Q=\pwm_counter[1]
+Replacing dshot_pwm.$auto$ff.cc:337:slice$7585 ($adffe): ARST=\wb_rst_ni, D=\wb_dat_i [10:0], Q=\throttle_next[2]
+Replacing dshot_pwm.$auto$ff.cc:337:slice$7588 ($adffe): ARST=\wb_rst_ni, D=$procmux$5813_Y, Q=\dshot_timer[2]
+Replacing dshot_pwm.$auto$ff.cc:337:slice$7593 ($adffe): ARST=\wb_rst_ni, D=\wb_dat_i [2], Q=\ctrl_auto_commit
+Replacing dshot_pwm.$auto$ff.cc:337:slice$7596 ($adffe): ARST=\wb_rst_ni, D=$procmux$6029_Y, Q=\dshot_state[3]
+Replacing dshot_pwm.$auto$ff.cc:337:slice$7609 ($adffe): ARST=\wb_rst_ni, D=$procmux$5436_Y, Q=\dshot_frame[3]
+Replacing dshot_pwm.$auto$ff.cc:337:slice$7624 ($adffe): ARST=\wb_rst_ni, D=\wb_dat_i [10:0], Q=\throttle_next[3]
+Replacing dshot_pwm.$auto$ff.cc:337:slice$7627 ($adffe): ARST=\wb_rst_ni, D=$0\pwm_counter[0][15:0], Q=\pwm_counter[0]
+Replacing dshot_pwm.$auto$ff.cc:337:slice$7630 ($adffe): ARST=\wb_rst_ni, D=\wb_dat_i [4:3], Q=\pwm_prescaler
+Replacing dshot_pwm.$auto$ff.cc:337:slice$7633 ($adffe): ARST=\wb_rst_ni, D=$procmux$5469_Y, Q=\dshot_frame[2]
+Replacing dshot_pwm.$auto$ff.cc:337:slice$7648 ($adffe): ARST=\wb_rst_ni, D=\wb_dat_i [0], Q=\ctrl_dshot_en
+Replacing dshot_pwm.$auto$ff.cc:337:slice$7651 ($adffe): ARST=\wb_rst_ni, D=$procmux$5504_Y, Q=\dshot_frame[1]
+Replacing dshot_pwm.$auto$ff.cc:337:slice$7666 ($adffe): ARST=\wb_rst_ni, D=$0\pwm_out_o[1:0] [0], Q=\pwm_out_o [0]
+Replacing dshot_pwm.$auto$ff.cc:337:slice$7669 ($adffe): ARST=\wb_rst_ni, D=$0\pwm_out_o[1:0] [1], Q=\pwm_out_o [1]
+Replacing dshot_pwm.$auto$ff.cc:337:slice$7672 ($adffe): ARST=\wb_rst_ni, D=\wb_dat_i [15:0], Q=\pwm_duty[0]
+Replacing dshot_pwm.$auto$ff.cc:337:slice$7675 ($adffe): ARST=\wb_rst_ni, D=$procmux$6088_Y, Q=\dshot_state[2]
+Replacing dshot_pwm.$auto$ff.cc:337:slice$7688 ($adffe): ARST=\wb_rst_ni, D=$procmux$5752_Y, Q=\dshot_timer[3]
+Replacing dshot_pwm.$auto$ff.cc:337:slice$7695 ($adffe): ARST=\wb_rst_ni, D=$procmux$5618_Y, Q=\dshot_bit_cnt[2]
+Replacing dshot_pwm.$auto$ff.cc:337:slice$7706 ($adffe): ARST=\wb_rst_ni, D=\wb_dat_i [15:0], Q=\pwm_period[0]
+Replacing dshot_pwm.$auto$ff.cc:337:slice$7709 ($adffe): ARST=\wb_rst_ni, D=\wb_dat_i [15:0], Q=\pwm_duty[1]
+Replacing dshot_pwm.$auto$ff.cc:337:slice$7712 ($adffe): ARST=\wb_rst_ni, D=$procmux$6155_Y, Q=\dshot_state[1]
+Replacing dshot_pwm.$auto$ff.cc:337:slice$7725 ($adffe): ARST=\wb_rst_ni, D=\wb_dat_i [10:0], Q=\throttle_next[0]
+Replacing dshot_pwm.$auto$ff.cc:337:slice$7728 ($adffe): ARST=\wb_rst_ni, D=\wb_dat_i [3:0], Q=\telemetry_req
+Replacing dshot_pwm.$procdff$6784 ($adff): ARST=\wb_rst_ni, D=$0\wb_ack_o[0:0], Q=\wb_ack_o
+Replacing dshot_pwm.$procdff$6789 ($adff): ARST=\wb_rst_ni, D=$0\wb_err_o[0:0], Q=\wb_err_o
+Replacing dshot_pwm.$procdff$6794 ($adff): ARST=\wb_rst_ni, D=\dshot_out_reg, Q=\dshot_out_o
+Replacing dshot_pwm.$procdff$6804 ($adff): ARST=\wb_rst_ni, D=$0\irq_update_o[0:0], Q=\irq_update_o
+Replacing dshot_pwm.$procdff$6834 ($adff): ARST=\wb_rst_ni, D=$0\dshot_ch_sel[1:0], Q=\dshot_ch_sel
+Replacing dshot_pwm.$procdff$6839 ($adff): ARST=\wb_rst_ni, D=$0\dshot_frame_active[0:0], Q=\dshot_frame_active
+Replacing dshot_pwm.$procdff$6844 ($adff): ARST=\wb_rst_ni, D=$0\dshot_update_pending[0:0], Q=\dshot_update_pending
+Replacing dshot_pwm.$procdff$6849 ($adff): ARST=\wb_rst_ni, D=$0$lookahead\dshot_out_reg$63[3:0]$166, Q=\dshot_out_reg
+Replacing dshot_pwm.$procdff$6966 ($adff): ARST=\wb_rst_ni, D=$0\throttle_act[0][10:0], Q=\throttle_act[0]
+Replacing dshot_pwm.$procdff$6971 ($adff): ARST=\wb_rst_ni, D=$0\throttle_act[1][10:0], Q=\throttle_act[1]
+Replacing dshot_pwm.$procdff$6976 ($adff): ARST=\wb_rst_ni, D=$0\throttle_act[2][10:0], Q=\throttle_act[2]
+Replacing dshot_pwm.$procdff$6981 ($adff): ARST=\wb_rst_ni, D=$0\throttle_act[3][10:0], Q=\throttle_act[3]
+Replacing dshot_pwm.$procdff$7006 ($adff): ARST=\wb_rst_ni, D=$0\dshot_state[0][2:0], Q=\dshot_state[0]
+Replacing dshot_pwm.$procdff$7026 ($adff): ARST=\wb_rst_ni, D=$0\dshot_timer[0][7:0], Q=\dshot_timer[0]
+Replacing dshot_pwm.$procdff$7046 ($adff): ARST=\wb_rst_ni, D=$0\dshot_bit_cnt[0][3:0], Q=\dshot_bit_cnt[0]
+Replacing dshot_pwm.$procdff$7066 ($adff): ARST=\wb_rst_ni, D=$0\dshot_frame[0][15:0], Q=\dshot_frame[0]
+Replacing dshot_pwm.$procdff$7096 ($adff): ARST=\wb_rst_ni, D=$0\pwm_prescale_cnt[0][5:0], Q=\pwm_prescale_cnt[0]
+Replacing dshot_pwm.$procdff$7101 ($adff): ARST=\wb_rst_ni, D=$0\pwm_prescale_cnt[1][5:0], Q=\pwm_prescale_cnt[1]
+Replacing dshot_pwm.$procdff$7106 ($adff): ARST=\wb_rst_ni, D=$0\pwm_prescale_tick[0][0:0], Q=\pwm_prescale_tick[0]
+Replacing dshot_pwm.$procdff$7111 ($adff): ARST=\wb_rst_ni, D=$0\pwm_prescale_tick[1][0:0], Q=\pwm_prescale_tick[1]
+
+6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dshot_pwm..
+
+7. Executing FORMALFF pass.
+
+8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dshot_pwm..
+Removed 1 unused cells and 1 unused wires.
+<suppressed ~2 debug messages>
+
+9. Executing CHECK pass (checking for obvious problems).
+Checking module dshot_pwm...
+Found and reported 0 problems.
+
+10. Executing SETUNDEF pass (replace undef values with defined constants).
+
+11. Executing OPT pass (performing simple optimizations).
+
+11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dshot_pwm.
+
+11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\dshot_pwm'.
+Computing hashes of 925 cells of `\dshot_pwm'.
+Finding duplicate cells in `\dshot_pwm'.
+Removed a total of 0 cells.
+
+11.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+11.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dshot_pwm..
+Removed 9 unused cells and 18 unused wires.
+<suppressed ~19 debug messages>
+
+11.5. Finished fast OPT passes.
+
+12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dshot_pwm..
+Removed 0 unused cells and 165 unused wires.
+<suppressed ~1 debug messages>
+
+13. Executing RTLIL backend.
+Output filename: ../model/design_prep.il
+
+End of script. Logfile hash: 87ada33148, time: 0.07s, user: 0.06s, system: 0.02s, MEM: 19.79 MB peak
+Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+Time spent: 40% 4x opt_clean (0 sec), 14% 1x check (0 sec), ...

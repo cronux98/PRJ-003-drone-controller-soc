@@ -1,0 +1,10 @@
+# running in ~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-clk_rst_mgr/formal/clk_rst_mgr_bmc/src/
+read -formal clk_rst_mgr.v
+hierarchy -top clk_rst_mgr
+proc; opt
+flatten; opt
+
+hierarchy -smtcheck
+rename -witness
+write_jny -no-connections ../model/design.json
+write_rtlil ../model/design.il

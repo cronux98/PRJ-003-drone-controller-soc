@@ -1,0 +1,83 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+
+-- Executing script file `design_prep.ys' --
+
+1. Executing RTLIL frontend.
+Input filename: design.il
+
+2. Executing SCC pass (detecting logic loops).
+Found 0 SCCs in module spi_flash_ctrl.
+Found 0 SCCs.
+
+3. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+4. Executing MEMORY_NORDFF pass (extracting $dff cells from memories).
+
+5. Executing ASYNC2SYNC pass.
+Replacing spi_flash_ctrl.$auto$ff.cc:337:slice$478 ($adffe): ARST=\wb_rst_ni, D=\wb_dat_i [7:0], Q=\cmd_reg
+Replacing spi_flash_ctrl.$auto$ff.cc:337:slice$481 ($adffe): ARST=\wb_rst_ni, D=$0\sck_toggle[0:0], Q=\sck_toggle
+Replacing spi_flash_ctrl.$auto$ff.cc:337:slice$484 ($adffe): ARST=\wb_rst_ni, D={ \rx_shift [6:0] \flash_miso_i }, Q=\rddata_reg
+Replacing spi_flash_ctrl.$auto$ff.cc:337:slice$507 ($adffe): ARST=\wb_rst_ni, D=\wb_dat_i [23:0], Q=\addr_reg
+Replacing spi_flash_ctrl.$auto$ff.cc:337:slice$517 ($adffe): ARST=\wb_rst_ni, D=$0\addr_byte_cnt[2:0], Q=\addr_byte_cnt
+Replacing spi_flash_ctrl.$auto$ff.cc:337:slice$534 ($adffe): ARST=\wb_rst_ni, D=$0\flash_sck_o[0:0], Q=\flash_sck_o
+Replacing spi_flash_ctrl.$auto$ff.cc:337:slice$537 ($adffe): ARST=\wb_rst_ni, D=$0\rx_shift[7:0], Q=\rx_shift
+Replacing spi_flash_ctrl.$auto$ff.cc:337:slice$562 ($adffe): ARST=\wb_rst_ni, D=$0\flash_cs_o[0:0], Q=\flash_cs_o
+Replacing spi_flash_ctrl.$auto$ff.cc:337:slice$565 ($adffe): ARST=\wb_rst_ni, D=\wb_dat_i [7:0], Q=\txdata_reg
+Replacing spi_flash_ctrl.$auto$ff.cc:337:slice$583 ($adffe): ARST=\wb_rst_ni, D=$0\shift_reg[7:0], Q=\shift_reg
+Replacing spi_flash_ctrl.$auto$ff.cc:337:slice$604 ($adffe): ARST=\wb_rst_ni, D=$0\bit_cnt[2:0], Q=\bit_cnt
+Replacing spi_flash_ctrl.$auto$ff.cc:337:slice$611 ($adffe): ARST=\wb_rst_ni, D=$0\flash_mosi_o[0:0], Q=\flash_mosi_o
+Replacing spi_flash_ctrl.$auto$ff.cc:337:slice$616 ($adffe): ARST=\wb_rst_ni, D=$0\fsm_state[2:0], Q=\fsm_state
+Replacing spi_flash_ctrl.$procdff$438 ($adff): ARST=\wb_rst_ni, D=$0\wb_dat_o[31:0], Q=\wb_dat_o
+Replacing spi_flash_ctrl.$procdff$443 ($adff): ARST=\wb_rst_ni, D=$0\wb_ack_o[0:0], Q=\wb_ack_o
+
+6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_flash_ctrl..
+
+7. Executing FORMALFF pass.
+
+8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_flash_ctrl..
+Removed 1 unused cells and 1 unused wires.
+<suppressed ~2 debug messages>
+
+9. Executing CHECK pass (checking for obvious problems).
+Checking module spi_flash_ctrl...
+Found and reported 0 problems.
+
+10. Executing SETUNDEF pass (replace undef values with defined constants).
+
+11. Executing OPT pass (performing simple optimizations).
+
+11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_flash_ctrl.
+
+11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_flash_ctrl'.
+Computing hashes of 224 cells of `\spi_flash_ctrl'.
+Finding duplicate cells in `\spi_flash_ctrl'.
+Removed a total of 0 cells.
+
+11.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+11.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_flash_ctrl..
+
+11.5. Finished fast OPT passes.
+
+12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_flash_ctrl..
+Removed 0 unused cells and 54 unused wires.
+<suppressed ~1 debug messages>
+
+13. Executing RTLIL backend.
+Output filename: ../model/design_prep.il
+
+End of script. Logfile hash: 12b709c683, time: 0.02s, user: 0.02s, system: 0.01s, MEM: 15.14 MB peak
+Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+Time spent: 31% 4x opt_clean (0 sec), 19% 2x read_rtlil (0 sec), ...

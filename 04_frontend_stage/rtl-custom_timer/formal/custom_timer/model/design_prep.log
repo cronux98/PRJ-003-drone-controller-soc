@@ -1,0 +1,104 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+
+-- Executing script file `design_prep.ys' --
+
+1. Executing RTLIL frontend.
+Input filename: design.il
+
+2. Executing SCC pass (detecting logic loops).
+Found 0 SCCs in module custom_timer.
+Found 0 SCCs.
+
+3. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+4. Executing MEMORY_NORDFF pass (extracting $dff cells from memories).
+
+5. Executing ASYNC2SYNC pass.
+Replacing custom_timer.$auto$ff.cc:337:slice$1088 ($adffe): ARST=\wb_rst_ni, D=$0\last_capture[1][27:0], Q=\last_capture[1]
+Replacing custom_timer.$auto$ff.cc:337:slice$1095 ($adffe): ARST=\wb_rst_ni, D=$0\ticks_delta[3][27:0], Q=\ticks_delta[3]
+Replacing custom_timer.$auto$ff.cc:337:slice$1102 ($adffe): ARST=\wb_rst_ni, D=$procmux$763_Y, Q=\rpm_val[2]
+Replacing custom_timer.$auto$ff.cc:337:slice$1107 ($adffe): ARST=\wb_rst_ni, D=$0\glitch_filter[0][2:0], Q=\glitch_filter[0]
+Replacing custom_timer.$auto$ff.cc:337:slice$1110 ($adffe): ARST=\wb_rst_ni, D=$procmux$842_Y, Q=\wb_dat_o
+Replacing custom_timer.$auto$ff.cc:337:slice$1115 ($adffe): ARST=\wb_rst_ni, D=$procmux$748_Y, Q=\rpm_val[3]
+Replacing custom_timer.$auto$ff.cc:337:slice$1120 ($adffe): ARST=\wb_rst_ni, D=$0\last_capture[2][27:0], Q=\last_capture[2]
+Replacing custom_timer.$auto$ff.cc:337:slice$1127 ($adffe): ARST=\wb_rst_ni, D=$0\ticks_delta[2][27:0], Q=\ticks_delta[2]
+Replacing custom_timer.$auto$ff.cc:337:slice$1134 ($adffe): ARST=\wb_rst_ni, D=\wb_dat_i [15:0], Q=\pole_pairs
+Replacing custom_timer.$auto$ff.cc:337:slice$1137 ($adffe): ARST=\wb_rst_ni, D=$0\last_capture[3][27:0], Q=\last_capture[3]
+Replacing custom_timer.$auto$ff.cc:337:slice$1144 ($adffe): ARST=\wb_rst_ni, D=$0\glitch_filter[3][2:0], Q=\glitch_filter[3]
+Replacing custom_timer.$auto$ff.cc:337:slice$1147 ($adffe): ARST=\wb_rst_ni, D=\wb_dat_i [0], Q=\ctrl_enable
+Replacing custom_timer.$auto$ff.cc:337:slice$1150 ($adffe): ARST=\wb_rst_ni, D=$0\glitch_filter[2][2:0], Q=\glitch_filter[2]
+Replacing custom_timer.$auto$ff.cc:337:slice$1153 ($adffe): ARST=\wb_rst_ni, D=\wb_dat_i [3:1], Q=\ctrl_filter
+Replacing custom_timer.$auto$ff.cc:337:slice$1159 ($adffe): ARST=\wb_rst_ni, D=$0\ticks_delta[0][27:0], Q=\ticks_delta[0]
+Replacing custom_timer.$auto$ff.cc:337:slice$1166 ($adffe): ARST=\wb_rst_ni, D=$0\last_capture[0][27:0], Q=\last_capture[0]
+Replacing custom_timer.$auto$ff.cc:337:slice$1176 ($adffe): ARST=\wb_rst_ni, D=$0\glitch_filter[1][2:0], Q=\glitch_filter[1]
+Replacing custom_timer.$auto$ff.cc:337:slice$1179 ($adffe): ARST=\wb_rst_ni, D=$procmux$793_Y, Q=\rpm_val[0]
+Replacing custom_timer.$auto$ff.cc:337:slice$1184 ($adffe): ARST=\wb_rst_ni, D=$0\ticks_delta[1][27:0], Q=\ticks_delta[1]
+Replacing custom_timer.$auto$ff.cc:337:slice$1191 ($adffe): ARST=\wb_rst_ni, D=$procmux$778_Y, Q=\rpm_val[1]
+Replacing custom_timer.$procdff$1005 ($adff): ARST=\wb_rst_ni, D=$0\capture_sync[0][1:0], Q=\capture_sync[0]
+Replacing custom_timer.$procdff$1010 ($adff): ARST=\wb_rst_ni, D=$0\capture_sync[1][1:0], Q=\capture_sync[1]
+Replacing custom_timer.$procdff$1015 ($adff): ARST=\wb_rst_ni, D=$0\capture_sync[2][1:0], Q=\capture_sync[2]
+Replacing custom_timer.$procdff$1020 ($adff): ARST=\wb_rst_ni, D=$0\capture_sync[3][1:0], Q=\capture_sync[3]
+Replacing custom_timer.$procdff$1025 ($adff): ARST=\wb_rst_ni, D=$0\capture_edge[0][0:0], Q=\capture_edge[0]
+Replacing custom_timer.$procdff$1030 ($adff): ARST=\wb_rst_ni, D=$0\capture_edge[1][0:0], Q=\capture_edge[1]
+Replacing custom_timer.$procdff$1035 ($adff): ARST=\wb_rst_ni, D=$0\capture_edge[2][0:0], Q=\capture_edge[2]
+Replacing custom_timer.$procdff$1040 ($adff): ARST=\wb_rst_ni, D=$0\capture_edge[3][0:0], Q=\capture_edge[3]
+Replacing custom_timer.$procdff$864 ($adff): ARST=\wb_rst_ni, D=$0\wb_ack_o[0:0], Q=\wb_ack_o
+Replacing custom_timer.$procdff$869 ($adff): ARST=\wb_rst_ni, D=$0\wb_err_o[0:0], Q=\wb_err_o
+Replacing custom_timer.$procdff$874 ($adff): ARST=\wb_rst_ni, D=$0\irq_rpm_o[0:0], Q=\irq_rpm_o
+Replacing custom_timer.$procdff$879 ($adff): ARST=\wb_rst_ni, D=$0\rpm_valid[3:0], Q=\rpm_valid
+Replacing custom_timer.$procdff$945 ($adff): ARST=\wb_rst_ni, D=$0\capture_timer[0][27:0], Q=\capture_timer[0]
+Replacing custom_timer.$procdff$950 ($adff): ARST=\wb_rst_ni, D=$0\capture_timer[1][27:0], Q=\capture_timer[1]
+Replacing custom_timer.$procdff$955 ($adff): ARST=\wb_rst_ni, D=$0\capture_timer[2][27:0], Q=\capture_timer[2]
+Replacing custom_timer.$procdff$960 ($adff): ARST=\wb_rst_ni, D=$0\capture_timer[3][27:0], Q=\capture_timer[3]
+
+6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \custom_timer..
+
+7. Executing FORMALFF pass.
+
+8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \custom_timer..
+Removed 1 unused cells and 1 unused wires.
+<suppressed ~2 debug messages>
+
+9. Executing CHECK pass (checking for obvious problems).
+Checking module custom_timer...
+Found and reported 0 problems.
+
+10. Executing SETUNDEF pass (replace undef values with defined constants).
+
+11. Executing OPT pass (performing simple optimizations).
+
+11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module custom_timer.
+
+11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\custom_timer'.
+Computing hashes of 354 cells of `\custom_timer'.
+Finding duplicate cells in `\custom_timer'.
+Removed a total of 0 cells.
+
+11.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+11.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \custom_timer..
+
+11.5. Finished fast OPT passes.
+
+12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \custom_timer..
+Removed 0 unused cells and 56 unused wires.
+<suppressed ~1 debug messages>
+
+13. Executing RTLIL backend.
+Output filename: ../model/design_prep.il
+
+End of script. Logfile hash: 254819da41, time: 0.05s, user: 0.05s, system: 0.01s, MEM: 18.58 MB peak
+Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+Time spent: 36% 1x check (0 sec), 29% 4x opt_clean (0 sec), ...

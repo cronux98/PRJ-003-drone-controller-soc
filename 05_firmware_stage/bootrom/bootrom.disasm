@@ -1,0 +1,84 @@
+
+bootrom.elf:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00000000 <_start>:
+   0:	00002117          	auipc	sp,0x2
+   4:	00010113          	mv	sp,sp
+   8:	10400293          	li	t0,260
+   c:	10400313          	li	t1,260
+  10:	0062f763          	bgeu	t0,t1,1e <bss_clear+0xa>
+
+00000014 <bss_clear>:
+  14:	0002a023          	sw	zero,0(t0)
+  18:	0291                	addi	t0,t0,4
+  1a:	fe62ede3          	bltu	t0,t1,14 <bss_clear>
+  1e:	2889                	jal	70 <boot_main>
+
+00000020 <hang>:
+  20:	10500073          	wfi
+  24:	bff5                	j	20 <hang>
+	...
+
+00000030 <trap_handler>:
+  30:	342022f3          	csrr	t0,mcause
+  34:	34102373          	csrr	t1,mepc
+
+00000038 <trap_loop>:
+  38:	10500073          	wfi
+  3c:	bff5                	j	38 <trap_loop>
+  3e:	0000                	unimp
+	...
+
+00000042 <uart_puts>:
+  42:	80002637          	lui	a2,0x80002
+  46:	00460793          	addi	a5,a2,4 # 80002004 <_stack_top+0x80000004>
+  4a:	00054683          	lbu	a3,0(a0)
+  4e:	e291                	bnez	a3,52 <uart_puts+0x10>
+  50:	8082                	ret
+  52:	0505                	addi	a0,a0,1
+  54:	4398                	lw	a4,0(a5)
+  56:	8b05                	andi	a4,a4,1
+  58:	c319                	beqz	a4,5e <uart_puts+0x1c>
+  5a:	c214                	sw	a3,0(a2)
+  5c:	b7fd                	j	4a <uart_puts+0x8>
+  5e:	bfdd                	j	54 <uart_puts+0x12>
+
+00000060 <app_main>:
+  60:	1141                	addi	sp,sp,-16 # 1ff0 <_bss_end+0x1eec>
+  62:	0c000513          	li	a0,192
+  66:	c606                	sw	ra,12(sp)
+  68:	3fe9                	jal	42 <uart_puts>
+  6a:	10500073          	wfi
+  6e:	bff5                	j	6a <app_main+0xa>
+
+00000070 <boot_main>:
+  70:	1141                	addi	sp,sp,-16
+  72:	0cc00513          	li	a0,204
+  76:	c606                	sw	ra,12(sp)
+  78:	37e9                	jal	42 <uart_puts>
+  7a:	aa55b6b7          	lui	a3,0xaa55b
+  7e:	a5568693          	addi	a3,a3,-1451 # aa55aa55 <_stack_top+0xaa558a55>
+  82:	4621                	li	a2,8
+  84:	c214                	sw	a3,0(a2)
+  86:	55aa57b7          	lui	a5,0x55aa5
+  8a:	5aa78793          	addi	a5,a5,1450 # 55aa55aa <_stack_top+0x55aa35aa>
+  8e:	4731                	li	a4,12
+  90:	c31c                	sw	a5,0(a4)
+  92:	4210                	lw	a2,0(a2)
+  94:	4318                	lw	a4,0(a4)
+  96:	00d61e63          	bne	a2,a3,b2 <boot_main+0x42>
+  9a:	00f71c63          	bne	a4,a5,b2 <boot_main+0x42>
+  9e:	0e000513          	li	a0,224
+  a2:	3745                	jal	42 <uart_puts>
+  a4:	0ec00513          	li	a0,236
+  a8:	3f69                	jal	42 <uart_puts>
+  aa:	3f5d                	jal	60 <app_main>
+  ac:	10500073          	wfi
+  b0:	bff5                	j	ac <boot_main+0x3c>
+  b2:	0f800513          	li	a0,248
+  b6:	3771                	jal	42 <uart_puts>
+  b8:	10500073          	wfi
+  bc:	bff5                	j	b8 <boot_main+0x48>

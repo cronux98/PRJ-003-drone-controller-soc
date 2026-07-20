@@ -1,0 +1,10 @@
+{
+  "waiver_id": "W04-001",
+  "check": "3.5",
+  "stage": "04_frontend",
+  "reason": "No SVA assertions in 16 RTL modules \u2014 all formal BMC XMLs report tests=0. Adding assertions to 16 modules is scoped to verification stage.",
+  "compensating_check": "Full-module Gate-Level Simulation (GLS) at Stage 06_verification. Every module must pass functional GLS with the same testbench used for RTL simulation.",
+  "adjudicator": "Vera",
+  "date": "2026-07-19",
+  "status": "ACCEPTED"
+}

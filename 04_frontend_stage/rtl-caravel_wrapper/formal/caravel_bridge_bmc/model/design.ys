@@ -1,0 +1,10 @@
+# running in ~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-caravel_wrapper/formal/caravel_bridge_bmc/src/
+read -formal caravel_wrapper.v
+hierarchy -top caravel_wrapper
+proc; opt
+flatten; opt
+
+hierarchy -smtcheck
+rename -witness
+write_jny -no-connections ../model/design.json
+write_rtlil ../model/design.il

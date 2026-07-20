@@ -1,0 +1,2905 @@
+{
+  "$schema": "https://raw.githubusercontent.com/YosysHQ/yosys/main/misc/jny.schema.json",
+  "generator": "Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)",
+  "version": "0.0.1",
+  "invocation": "write_jny -no-connections ../model/design.json ",
+  "features": ["attributes", "properties"],
+  "modules": [
+      {
+        "name": "EF_GPIO8_WB_wrapper",
+        "cell_sorts": [
+          {
+            "type": "$scopeinfo",
+            "ports": [
+
+            ],
+            "cells": [
+                {
+                  "name": "u_ef_gpio",
+                  "attributes": {
+                    "cell_module_not_derived": "00000000000000000000000000000001",
+                    "cell_src": "EF_GPIO8_WB_wrapper.v:34.17-49.6",
+                    "module": "EF_GPIO8_WB",
+                    "module_hdlname": "EF_GPIO8_WB",
+                    "module_src": "gpio.v:25.1-367.10"
+                  },
+                  "parameters": {
+                    "TYPE": "module"
+                  }
+                },
+                {
+                  "name": "u_ef_gpio.clk_gate_cell",
+                  "attributes": {
+                    "cell_module_not_derived": "00000000000000000000000000000001",
+                    "cell_src": "gpio.v:55.23-61.4",
+                    "hdlname": "u_ef_gpio clk_gate_cell",
+                    "module": "ef_util_gating_cell",
+                    "module_hdlname": "ef_util_gating_cell",
+                    "module_src": "ef_util_lib.v:366.1-393.10"
+                  },
+                  "parameters": {
+                    "TYPE": "module"
+                  }
+                },
+                {
+                  "name": "u_ef_gpio.instance_to_wrap",
+                  "attributes": {
+                    "cell_module_not_derived": "00000000000000000000000000000001",
+                    "cell_src": "gpio.v:310.12-351.4",
+                    "hdlname": "u_ef_gpio instance_to_wrap",
+                    "module": "EF_GPIO8",
+                    "module_hdlname": "EF_GPIO8",
+                    "module_src": "EF_GPIO8.v:20.1-113.10"
+                  },
+                  "parameters": {
+                    "TYPE": "module"
+                  }
+                },
+                {
+                  "name": "u_ef_gpio.instance_to_wrap.ned_0",
+                  "attributes": {
+                    "cell_module_not_derived": "00000000000000000000000000000001",
+                    "cell_src": "EF_GPIO8.v:102.17-102.69",
+                    "hdlname": "u_ef_gpio instance_to_wrap ned_0",
+                    "module": "ef_util_ned",
+                    "module_hdlname": "ef_util_ned",
+                    "module_src": "ef_util_lib.v:62.1-71.10"
+                  },
+                  "parameters": {
+                    "TYPE": "module"
+                  }
+                },
+                {
+                  "name": "u_ef_gpio.instance_to_wrap.ned_1",
+                  "attributes": {
+                    "cell_module_not_derived": "00000000000000000000000000000001",
+                    "cell_src": "EF_GPIO8.v:103.17-103.69",
+                    "hdlname": "u_ef_gpio instance_to_wrap ned_1",
+                    "module": "ef_util_ned",
+                    "module_hdlname": "ef_util_ned",
+                    "module_src": "ef_util_lib.v:62.1-71.10"
+                  },
+                  "parameters": {
+                    "TYPE": "module"
+                  }
+                },
+                {
+                  "name": "u_ef_gpio.instance_to_wrap.ned_2",
+                  "attributes": {
+                    "cell_module_not_derived": "00000000000000000000000000000001",
+                    "cell_src": "EF_GPIO8.v:104.17-104.69",
+                    "hdlname": "u_ef_gpio instance_to_wrap ned_2",
+                    "module": "ef_util_ned",
+                    "module_hdlname": "ef_util_ned",
+                    "module_src": "ef_util_lib.v:62.1-71.10"
+                  },
+                  "parameters": {
+                    "TYPE": "module"
+                  }
+                },
+                {
+                  "name": "u_ef_gpio.instance_to_wrap.ned_3",
+                  "attributes": {
+                    "cell_module_not_derived": "00000000000000000000000000000001",
+                    "cell_src": "EF_GPIO8.v:105.17-105.69",
+                    "hdlname": "u_ef_gpio instance_to_wrap ned_3",
+                    "module": "ef_util_ned",
+                    "module_hdlname": "ef_util_ned",
+                    "module_src": "ef_util_lib.v:62.1-71.10"
+                  },
+                  "parameters": {
+                    "TYPE": "module"
+                  }
+                },
+                {
+                  "name": "u_ef_gpio.instance_to_wrap.ned_4",
+                  "attributes": {
+                    "cell_module_not_derived": "00000000000000000000000000000001",
+                    "cell_src": "EF_GPIO8.v:106.17-106.69",
+                    "hdlname": "u_ef_gpio instance_to_wrap ned_4",
+                    "module": "ef_util_ned",
+                    "module_hdlname": "ef_util_ned",
+                    "module_src": "ef_util_lib.v:62.1-71.10"
+                  },
+                  "parameters": {
+                    "TYPE": "module"
+                  }
+                },
+                {
+                  "name": "u_ef_gpio.instance_to_wrap.ned_5",
+                  "attributes": {
+                    "cell_module_not_derived": "00000000000000000000000000000001",
+                    "cell_src": "EF_GPIO8.v:107.17-107.69",
+                    "hdlname": "u_ef_gpio instance_to_wrap ned_5",
+                    "module": "ef_util_ned",
+                    "module_hdlname": "ef_util_ned",
+                    "module_src": "ef_util_lib.v:62.1-71.10"
+                  },
+                  "parameters": {
+                    "TYPE": "module"
+                  }
+                },
+                {
+                  "name": "u_ef_gpio.instance_to_wrap.ned_6",
+                  "attributes": {
+                    "cell_module_not_derived": "00000000000000000000000000000001",
+                    "cell_src": "EF_GPIO8.v:108.17-108.69",
+                    "hdlname": "u_ef_gpio instance_to_wrap ned_6",
+                    "module": "ef_util_ned",
+                    "module_hdlname": "ef_util_ned",
+                    "module_src": "ef_util_lib.v:62.1-71.10"
+                  },
+                  "parameters": {
+                    "TYPE": "module"
+                  }
+                },
+                {
+                  "name": "u_ef_gpio.instance_to_wrap.ned_7",
+                  "attributes": {
+                    "cell_module_not_derived": "00000000000000000000000000000001",
+                    "cell_src": "EF_GPIO8.v:109.17-109.69",
+                    "hdlname": "u_ef_gpio instance_to_wrap ned_7",
+                    "module": "ef_util_ned",
+                    "module_hdlname": "ef_util_ned",
+                    "module_src": "ef_util_lib.v:62.1-71.10"
+                  },
+                  "parameters": {
+                    "TYPE": "module"
+                  }
+                },
+                {
+                  "name": "u_ef_gpio.instance_to_wrap.ped_0",
+                  "attributes": {
+                    "cell_module_not_derived": "00000000000000000000000000000001",
+                    "cell_src": "EF_GPIO8.v:93.17-93.69",
+                    "hdlname": "u_ef_gpio instance_to_wrap ped_0",
+                    "module": "ef_util_ped",
+                    "module_hdlname": "ef_util_ped",
+                    "module_src": "ef_util_lib.v:48.1-57.10"
+                  },
+                  "parameters": {
+                    "TYPE": "module"
+                  }
+                },
+                {
+                  "name": "u_ef_gpio.instance_to_wrap.ped_1",
+                  "attributes": {
+                    "cell_module_not_derived": "00000000000000000000000000000001",
+                    "cell_src": "EF_GPIO8.v:94.17-94.69",
+                    "hdlname": "u_ef_gpio instance_to_wrap ped_1",
+                    "module": "ef_util_ped",
+                    "module_hdlname": "ef_util_ped",
+                    "module_src": "ef_util_lib.v:48.1-57.10"
+                  },
+                  "parameters": {
+                    "TYPE": "module"
+                  }
+                },
+                {
+                  "name": "u_ef_gpio.instance_to_wrap.ped_2",
+                  "attributes": {
+                    "cell_module_not_derived": "00000000000000000000000000000001",
+                    "cell_src": "EF_GPIO8.v:95.17-95.69",
+                    "hdlname": "u_ef_gpio instance_to_wrap ped_2",
+                    "module": "ef_util_ped",
+                    "module_hdlname": "ef_util_ped",
+                    "module_src": "ef_util_lib.v:48.1-57.10"
+                  },
+                  "parameters": {
+                    "TYPE": "module"
+                  }
+                },
+                {
+                  "name": "u_ef_gpio.instance_to_wrap.ped_3",
+                  "attributes": {
+                    "cell_module_not_derived": "00000000000000000000000000000001",
+                    "cell_src": "EF_GPIO8.v:96.17-96.69",
+                    "hdlname": "u_ef_gpio instance_to_wrap ped_3",
+                    "module": "ef_util_ped",
+                    "module_hdlname": "ef_util_ped",
+                    "module_src": "ef_util_lib.v:48.1-57.10"
+                  },
+                  "parameters": {
+                    "TYPE": "module"
+                  }
+                },
+                {
+                  "name": "u_ef_gpio.instance_to_wrap.ped_4",
+                  "attributes": {
+                    "cell_module_not_derived": "00000000000000000000000000000001",
+                    "cell_src": "EF_GPIO8.v:97.17-97.69",
+                    "hdlname": "u_ef_gpio instance_to_wrap ped_4",
+                    "module": "ef_util_ped",
+                    "module_hdlname": "ef_util_ped",
+                    "module_src": "ef_util_lib.v:48.1-57.10"
+                  },
+                  "parameters": {
+                    "TYPE": "module"
+                  }
+                },
+                {
+                  "name": "u_ef_gpio.instance_to_wrap.ped_5",
+                  "attributes": {
+                    "cell_module_not_derived": "00000000000000000000000000000001",
+                    "cell_src": "EF_GPIO8.v:98.17-98.69",
+                    "hdlname": "u_ef_gpio instance_to_wrap ped_5",
+                    "module": "ef_util_ped",
+                    "module_hdlname": "ef_util_ped",
+                    "module_src": "ef_util_lib.v:48.1-57.10"
+                  },
+                  "parameters": {
+                    "TYPE": "module"
+                  }
+                },
+                {
+                  "name": "u_ef_gpio.instance_to_wrap.ped_6",
+                  "attributes": {
+                    "cell_module_not_derived": "00000000000000000000000000000001",
+                    "cell_src": "EF_GPIO8.v:99.17-99.69",
+                    "hdlname": "u_ef_gpio instance_to_wrap ped_6",
+                    "module": "ef_util_ped",
+                    "module_hdlname": "ef_util_ped",
+                    "module_src": "ef_util_lib.v:48.1-57.10"
+                  },
+                  "parameters": {
+                    "TYPE": "module"
+                  }
+                },
+                {
+                  "name": "u_ef_gpio.instance_to_wrap.ped_7",
+                  "attributes": {
+                    "cell_module_not_derived": "00000000000000000000000000000001",
+                    "cell_src": "EF_GPIO8.v:100.17-100.69",
+                    "hdlname": "u_ef_gpio instance_to_wrap ped_7",
+                    "module": "ef_util_ped",
+                    "module_hdlname": "ef_util_ped",
+                    "module_src": "ef_util_lib.v:48.1-57.10"
+                  },
+                  "parameters": {
+                    "TYPE": "module"
+                  }
+                },
+                {
+                  "name": "u_ef_gpio.instance_to_wrap.synchronizer[0]",
+                  "attributes": {
+                    "cell_src": "EF_GPIO8.v:69.18-69.77",
+                    "hdlname": "u_ef_gpio instance_to_wrap synchronizer[0]",
+                    "module": "ef_util_sync",
+                    "module_dynports": "00000000000000000000000000000001",
+                    "module_hdlname": "ef_util_sync",
+                    "module_src": "ef_util_lib.v:30.1-43.10"
+                  },
+                  "parameters": {
+                    "TYPE": "module"
+                  }
+                },
+                {
+                  "name": "u_ef_gpio.instance_to_wrap.synchronizer[1]",
+                  "attributes": {
+                    "cell_src": "EF_GPIO8.v:69.18-69.77",
+                    "hdlname": "u_ef_gpio instance_to_wrap synchronizer[1]",
+                    "module": "ef_util_sync",
+                    "module_dynports": "00000000000000000000000000000001",
+                    "module_hdlname": "ef_util_sync",
+                    "module_src": "ef_util_lib.v:30.1-43.10"
+                  },
+                  "parameters": {
+                    "TYPE": "module"
+                  }
+                },
+                {
+                  "name": "u_ef_gpio.instance_to_wrap.synchronizer[2]",
+                  "attributes": {
+                    "cell_src": "EF_GPIO8.v:69.18-69.77",
+                    "hdlname": "u_ef_gpio instance_to_wrap synchronizer[2]",
+                    "module": "ef_util_sync",
+                    "module_dynports": "00000000000000000000000000000001",
+                    "module_hdlname": "ef_util_sync",
+                    "module_src": "ef_util_lib.v:30.1-43.10"
+                  },
+                  "parameters": {
+                    "TYPE": "module"
+                  }
+                },
+                {
+                  "name": "u_ef_gpio.instance_to_wrap.synchronizer[3]",
+                  "attributes": {
+                    "cell_src": "EF_GPIO8.v:69.18-69.77",
+                    "hdlname": "u_ef_gpio instance_to_wrap synchronizer[3]",
+                    "module": "ef_util_sync",
+                    "module_dynports": "00000000000000000000000000000001",
+                    "module_hdlname": "ef_util_sync",
+                    "module_src": "ef_util_lib.v:30.1-43.10"
+                  },
+                  "parameters": {
+                    "TYPE": "module"
+                  }
+                },
+                {
+                  "name": "u_ef_gpio.instance_to_wrap.synchronizer[4]",
+                  "attributes": {
+                    "cell_src": "EF_GPIO8.v:69.18-69.77",
+                    "hdlname": "u_ef_gpio instance_to_wrap synchronizer[4]",
+                    "module": "ef_util_sync",
+                    "module_dynports": "00000000000000000000000000000001",
+                    "module_hdlname": "ef_util_sync",
+                    "module_src": "ef_util_lib.v:30.1-43.10"
+                  },
+                  "parameters": {
+                    "TYPE": "module"
+                  }
+                },
+                {
+                  "name": "u_ef_gpio.instance_to_wrap.synchronizer[5]",
+                  "attributes": {
+                    "cell_src": "EF_GPIO8.v:69.18-69.77",
+                    "hdlname": "u_ef_gpio instance_to_wrap synchronizer[5]",
+                    "module": "ef_util_sync",
+                    "module_dynports": "00000000000000000000000000000001",
+                    "module_hdlname": "ef_util_sync",
+                    "module_src": "ef_util_lib.v:30.1-43.10"
+                  },
+                  "parameters": {
+                    "TYPE": "module"
+                  }
+                },
+                {
+                  "name": "u_ef_gpio.instance_to_wrap.synchronizer[6]",
+                  "attributes": {
+                    "cell_src": "EF_GPIO8.v:69.18-69.77",
+                    "hdlname": "u_ef_gpio instance_to_wrap synchronizer[6]",
+                    "module": "ef_util_sync",
+                    "module_dynports": "00000000000000000000000000000001",
+                    "module_hdlname": "ef_util_sync",
+                    "module_src": "ef_util_lib.v:30.1-43.10"
+                  },
+                  "parameters": {
+                    "TYPE": "module"
+                  }
+                },
+                {
+                  "name": "u_ef_gpio.instance_to_wrap.synchronizer[7]",
+                  "attributes": {
+                    "cell_src": "EF_GPIO8.v:69.18-69.77",
+                    "hdlname": "u_ef_gpio instance_to_wrap synchronizer[7]",
+                    "module": "ef_util_sync",
+                    "module_dynports": "00000000000000000000000000000001",
+                    "module_hdlname": "ef_util_sync",
+                    "module_src": "ef_util_lib.v:30.1-43.10"
+                  },
+                  "parameters": {
+                    "TYPE": "module"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$dff",
+            "ports": [
+                {
+                  "name": "CLK",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "D",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "Q",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$flatten\\u_ef_gpio.\\instance_to_wrap.\\ned_0.$procdff$334",
+                  "attributes": {
+                    "src": "ef_util_lib.v:68.5-69.23"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.\\instance_to_wrap.\\ned_1.$procdff$334",
+                  "attributes": {
+                    "src": "ef_util_lib.v:68.5-69.23"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.\\instance_to_wrap.\\ned_2.$procdff$334",
+                  "attributes": {
+                    "src": "ef_util_lib.v:68.5-69.23"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.\\instance_to_wrap.\\ned_3.$procdff$334",
+                  "attributes": {
+                    "src": "ef_util_lib.v:68.5-69.23"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.\\instance_to_wrap.\\ned_4.$procdff$334",
+                  "attributes": {
+                    "src": "ef_util_lib.v:68.5-69.23"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.\\instance_to_wrap.\\ned_5.$procdff$334",
+                  "attributes": {
+                    "src": "ef_util_lib.v:68.5-69.23"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.\\instance_to_wrap.\\ned_6.$procdff$334",
+                  "attributes": {
+                    "src": "ef_util_lib.v:68.5-69.23"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.\\instance_to_wrap.\\ned_7.$procdff$334",
+                  "attributes": {
+                    "src": "ef_util_lib.v:68.5-69.23"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.\\instance_to_wrap.\\synchronizer[0].$procdff$335",
+                  "attributes": {
+                    "src": "ef_util_lib.v:38.5-39.44"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000010"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.\\instance_to_wrap.\\synchronizer[1].$procdff$335",
+                  "attributes": {
+                    "src": "ef_util_lib.v:38.5-39.44"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000010"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.\\instance_to_wrap.\\synchronizer[2].$procdff$335",
+                  "attributes": {
+                    "src": "ef_util_lib.v:38.5-39.44"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000010"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.\\instance_to_wrap.\\synchronizer[3].$procdff$335",
+                  "attributes": {
+                    "src": "ef_util_lib.v:38.5-39.44"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000010"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.\\instance_to_wrap.\\synchronizer[4].$procdff$335",
+                  "attributes": {
+                    "src": "ef_util_lib.v:38.5-39.44"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000010"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.\\instance_to_wrap.\\synchronizer[5].$procdff$335",
+                  "attributes": {
+                    "src": "ef_util_lib.v:38.5-39.44"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000010"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.\\instance_to_wrap.\\synchronizer[6].$procdff$335",
+                  "attributes": {
+                    "src": "ef_util_lib.v:38.5-39.44"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000010"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.\\instance_to_wrap.\\synchronizer[7].$procdff$335",
+                  "attributes": {
+                    "src": "ef_util_lib.v:38.5-39.44"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000010"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$reduce_or",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [32, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$flatten\\u_ef_gpio.$reduce_or$gpio.v:308$89",
+                  "attributes": {
+                    "src": "gpio.v:308.16-308.24"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000100000",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$not",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$flatten\\u_ef_gpio.$not$gpio.v:365$108",
+                  "attributes": {
+                    "src": "gpio.v:365.25-365.31"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.\\instance_to_wrap.\\ned_0.$not$ef_util_lib.v:70$128",
+                  "attributes": {
+                    "src": "ef_util_lib.v:70.18-70.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.\\instance_to_wrap.\\ned_1.$not$ef_util_lib.v:70$128",
+                  "attributes": {
+                    "src": "ef_util_lib.v:70.18-70.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.\\instance_to_wrap.\\ned_2.$not$ef_util_lib.v:70$128",
+                  "attributes": {
+                    "src": "ef_util_lib.v:70.18-70.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.\\instance_to_wrap.\\ned_3.$not$ef_util_lib.v:70$128",
+                  "attributes": {
+                    "src": "ef_util_lib.v:70.18-70.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.\\instance_to_wrap.\\ned_4.$not$ef_util_lib.v:70$128",
+                  "attributes": {
+                    "src": "ef_util_lib.v:70.18-70.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.\\instance_to_wrap.\\ned_5.$not$ef_util_lib.v:70$128",
+                  "attributes": {
+                    "src": "ef_util_lib.v:70.18-70.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.\\instance_to_wrap.\\ned_6.$not$ef_util_lib.v:70$128",
+                  "attributes": {
+                    "src": "ef_util_lib.v:70.18-70.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.\\instance_to_wrap.\\ned_7.$not$ef_util_lib.v:70$128",
+                  "attributes": {
+                    "src": "ef_util_lib.v:70.18-70.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.\\instance_to_wrap.\\ped_0.$not$ef_util_lib.v:56$131",
+                  "attributes": {
+                    "src": "ef_util_lib.v:56.23-56.31"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.\\instance_to_wrap.\\ped_1.$not$ef_util_lib.v:56$131",
+                  "attributes": {
+                    "src": "ef_util_lib.v:56.23-56.31"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.\\instance_to_wrap.\\ped_2.$not$ef_util_lib.v:56$131",
+                  "attributes": {
+                    "src": "ef_util_lib.v:56.23-56.31"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.\\instance_to_wrap.\\ped_3.$not$ef_util_lib.v:56$131",
+                  "attributes": {
+                    "src": "ef_util_lib.v:56.23-56.31"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.\\instance_to_wrap.\\ped_4.$not$ef_util_lib.v:56$131",
+                  "attributes": {
+                    "src": "ef_util_lib.v:56.23-56.31"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.\\instance_to_wrap.\\ped_5.$not$ef_util_lib.v:56$131",
+                  "attributes": {
+                    "src": "ef_util_lib.v:56.23-56.31"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.\\instance_to_wrap.\\ped_6.$not$ef_util_lib.v:56$131",
+                  "attributes": {
+                    "src": "ef_util_lib.v:56.23-56.31"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.\\instance_to_wrap.\\ped_7.$not$ef_util_lib.v:56$131",
+                  "attributes": {
+                    "src": "ef_util_lib.v:56.23-56.31"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$eq",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [16, 0]
+                },
+                {
+                  "name": "B",
+                  "direction": "io",
+                  "range": [16, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$flatten\\u_ef_gpio.$eq$gpio.v:355$91",
+                  "attributes": {
+                    "src": "gpio.v:355.5-355.38"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000010000",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000010000",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$eq$gpio.v:356$92",
+                  "attributes": {
+                    "src": "gpio.v:356.5-356.36"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000010000",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000010000",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$eq$gpio.v:357$93",
+                  "attributes": {
+                    "src": "gpio.v:357.5-357.35"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000010000",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000010000",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$eq$gpio.v:358$94",
+                  "attributes": {
+                    "src": "gpio.v:358.5-358.36"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000010000",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000010000",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$eq$gpio.v:359$95",
+                  "attributes": {
+                    "src": "gpio.v:359.5-359.36"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000010000",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000010000",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$eq$gpio.v:360$96",
+                  "attributes": {
+                    "src": "gpio.v:360.5-360.35"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000010000",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000010000",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$logic_not",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [16, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$flatten\\u_ef_gpio.$eq$gpio.v:354$90",
+                  "attributes": {
+                    "src": "gpio.v:354.5-354.38"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000010000",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$mux",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "B",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "S",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$134",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "gpio.v:365.14-365.31|gpio.v:365.10-366.24"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$136",
+                  "attributes": {
+                    "src": "gpio.v:304.18-304.38|gpio.v:304.14-304.61"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$139",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "gpio.v:303.13-303.24|gpio.v:303.9-304.61"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$141",
+                  "attributes": {
+                    "src": "gpio.v:300.18-300.38|gpio.v:300.14-300.61"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$144",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "gpio.v:299.13-299.24|gpio.v:299.9-300.61"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$146",
+                  "attributes": {
+                    "src": "gpio.v:296.18-296.38|gpio.v:296.14-296.61"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$149",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "gpio.v:295.13-295.24|gpio.v:295.9-296.61"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$151",
+                  "attributes": {
+                    "src": "gpio.v:292.18-292.38|gpio.v:292.14-292.61"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$154",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "gpio.v:291.13-291.24|gpio.v:291.9-292.61"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$156",
+                  "attributes": {
+                    "src": "gpio.v:288.18-288.38|gpio.v:288.14-288.61"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$159",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "gpio.v:287.13-287.24|gpio.v:287.9-288.61"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$161",
+                  "attributes": {
+                    "src": "gpio.v:284.18-284.38|gpio.v:284.14-284.61"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$164",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "gpio.v:283.13-283.24|gpio.v:283.9-284.61"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$166",
+                  "attributes": {
+                    "src": "gpio.v:280.18-280.38|gpio.v:280.14-280.61"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$169",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "gpio.v:279.13-279.24|gpio.v:279.9-280.61"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$171",
+                  "attributes": {
+                    "src": "gpio.v:276.18-276.38|gpio.v:276.14-276.61"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$174",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "gpio.v:275.13-275.24|gpio.v:275.9-276.61"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$176",
+                  "attributes": {
+                    "src": "gpio.v:272.18-272.38|gpio.v:272.14-272.61"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$179",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "gpio.v:271.13-271.24|gpio.v:271.9-272.61"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$181",
+                  "attributes": {
+                    "src": "gpio.v:268.18-268.38|gpio.v:268.14-268.61"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$184",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "gpio.v:267.13-267.24|gpio.v:267.9-268.61"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$186",
+                  "attributes": {
+                    "src": "gpio.v:264.18-264.38|gpio.v:264.14-264.61"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$189",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "gpio.v:263.13-263.24|gpio.v:263.9-264.61"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$191",
+                  "attributes": {
+                    "src": "gpio.v:260.18-260.38|gpio.v:260.14-260.61"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$194",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "gpio.v:259.13-259.24|gpio.v:259.9-260.61"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$196",
+                  "attributes": {
+                    "src": "gpio.v:256.18-256.38|gpio.v:256.14-256.61"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$199",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "gpio.v:255.13-255.24|gpio.v:255.9-256.61"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$201",
+                  "attributes": {
+                    "src": "gpio.v:252.18-252.38|gpio.v:252.14-252.61"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$204",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "gpio.v:251.13-251.24|gpio.v:251.9-252.61"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$206",
+                  "attributes": {
+                    "src": "gpio.v:248.18-248.38|gpio.v:248.14-248.61"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$209",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "gpio.v:247.13-247.24|gpio.v:247.9-248.61"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$211",
+                  "attributes": {
+                    "src": "gpio.v:244.18-244.38|gpio.v:244.14-244.61"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$214",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "gpio.v:243.13-243.24|gpio.v:243.9-244.61"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$216",
+                  "attributes": {
+                    "src": "gpio.v:240.18-240.38|gpio.v:240.14-240.61"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$219",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "gpio.v:239.13-239.24|gpio.v:239.9-240.61"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$221",
+                  "attributes": {
+                    "src": "gpio.v:236.18-236.38|gpio.v:236.14-236.61"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$224",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "gpio.v:235.13-235.24|gpio.v:235.9-236.61"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$226",
+                  "attributes": {
+                    "src": "gpio.v:232.18-232.38|gpio.v:232.14-232.61"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$229",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "gpio.v:231.13-231.24|gpio.v:231.9-232.61"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$231",
+                  "attributes": {
+                    "src": "gpio.v:228.18-228.38|gpio.v:228.14-228.61"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$234",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "gpio.v:227.13-227.24|gpio.v:227.9-228.61"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$236",
+                  "attributes": {
+                    "src": "gpio.v:224.18-224.38|gpio.v:224.14-224.61"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$239",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "gpio.v:223.13-223.24|gpio.v:223.9-224.61"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$241",
+                  "attributes": {
+                    "src": "gpio.v:220.18-220.38|gpio.v:220.14-220.61"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$244",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "gpio.v:219.13-219.24|gpio.v:219.9-220.61"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$246",
+                  "attributes": {
+                    "src": "gpio.v:216.18-216.37|gpio.v:216.14-216.60"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$249",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "gpio.v:215.13-215.24|gpio.v:215.9-216.60"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$251",
+                  "attributes": {
+                    "src": "gpio.v:212.18-212.37|gpio.v:212.14-212.60"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$254",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "gpio.v:211.13-211.24|gpio.v:211.9-212.60"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$256",
+                  "attributes": {
+                    "src": "gpio.v:208.18-208.37|gpio.v:208.14-208.60"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$259",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "gpio.v:207.13-207.24|gpio.v:207.9-208.60"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$261",
+                  "attributes": {
+                    "src": "gpio.v:204.18-204.37|gpio.v:204.14-204.60"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$264",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "gpio.v:203.13-203.24|gpio.v:203.9-204.60"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$266",
+                  "attributes": {
+                    "src": "gpio.v:200.18-200.37|gpio.v:200.14-200.60"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$269",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "gpio.v:199.13-199.24|gpio.v:199.9-200.60"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$271",
+                  "attributes": {
+                    "src": "gpio.v:196.18-196.37|gpio.v:196.14-196.60"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$274",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "gpio.v:195.13-195.24|gpio.v:195.9-196.60"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$276",
+                  "attributes": {
+                    "src": "gpio.v:192.18-192.37|gpio.v:192.14-192.60"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$279",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "gpio.v:191.13-191.24|gpio.v:191.9-192.60"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$281",
+                  "attributes": {
+                    "src": "gpio.v:188.18-188.37|gpio.v:188.14-188.60"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$284",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "gpio.v:187.13-187.24|gpio.v:187.9-188.60"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$286",
+                  "attributes": {
+                    "src": "gpio.v:184.18-184.37|gpio.v:184.14-184.60"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$289",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "gpio.v:183.13-183.24|gpio.v:183.9-184.60"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$291",
+                  "attributes": {
+                    "src": "gpio.v:180.18-180.37|gpio.v:180.14-180.60"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$294",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "gpio.v:179.13-179.24|gpio.v:179.9-180.60"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procmux$297",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "gpio.v:138.14-138.54|gpio.v:138.10-139.26"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$ternary$gpio.v:354$106",
+                  "attributes": {
+                    "src": "gpio.v:354.4-361.16"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$ternary$gpio.v:355$104",
+                  "attributes": {
+                    "src": "gpio.v:355.4-361.16"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$ternary$gpio.v:356$102",
+                  "attributes": {
+                    "src": "gpio.v:356.4-361.16"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$ternary$gpio.v:357$100",
+                  "attributes": {
+                    "src": "gpio.v:357.4-361.16"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$ternary$gpio.v:358$99",
+                  "attributes": {
+                    "src": "gpio.v:358.4-361.16"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$ternary$gpio.v:359$98",
+                  "attributes": {
+                    "src": "gpio.v:359.4-361.16"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$ternary$gpio.v:360$97",
+                  "attributes": {
+                    "src": "gpio.v:360.4-361.16"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$reduce_bool",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [2, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$opt_dff.cc:235:make_patterns_logic$341",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$opt_dff.cc:235:make_patterns_logic$344",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$opt_dff.cc:235:make_patterns_logic$347",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$opt_dff.cc:235:make_patterns_logic$350",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$opt_dff.cc:235:make_patterns_logic$353",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$opt_dff.cc:235:make_patterns_logic$356",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$opt_dff.cc:235:make_patterns_logic$359",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$opt_dff.cc:235:make_patterns_logic$362",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$opt_dff.cc:235:make_patterns_logic$365",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$opt_dff.cc:235:make_patterns_logic$368",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$opt_dff.cc:235:make_patterns_logic$371",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$opt_dff.cc:235:make_patterns_logic$374",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$opt_dff.cc:235:make_patterns_logic$377",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$opt_dff.cc:235:make_patterns_logic$380",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$opt_dff.cc:235:make_patterns_logic$383",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$opt_dff.cc:235:make_patterns_logic$386",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$opt_dff.cc:235:make_patterns_logic$389",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$opt_dff.cc:235:make_patterns_logic$392",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$opt_dff.cc:235:make_patterns_logic$395",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$opt_dff.cc:235:make_patterns_logic$398",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$opt_dff.cc:235:make_patterns_logic$401",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$opt_dff.cc:235:make_patterns_logic$404",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$opt_dff.cc:235:make_patterns_logic$407",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$opt_dff.cc:235:make_patterns_logic$410",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$opt_dff.cc:235:make_patterns_logic$413",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$opt_dff.cc:235:make_patterns_logic$416",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$opt_dff.cc:235:make_patterns_logic$419",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$opt_dff.cc:235:make_patterns_logic$422",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$opt_dff.cc:235:make_patterns_logic$425",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$opt_dff.cc:235:make_patterns_logic$428",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$opt_dff.cc:235:make_patterns_logic$431",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$opt_dff.cc:235:make_patterns_logic$434",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$adff",
+            "ports": [
+                {
+                  "name": "ARST",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "CLK",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "D",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "Q",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$flatten\\u_ef_gpio.$procdff$309",
+                  "attributes": {
+                    "src": "gpio.v:363.3-366.24"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$procdff$320",
+                  "attributes": {
+                    "src": "gpio.v:136.3-139.26"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "00000000000000000000000000000000",
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$adffe",
+            "ports": [
+                {
+                  "name": "ARST",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "CLK",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "D",
+                  "direction": "io",
+                  "range": [8, 0]
+                },
+                {
+                  "name": "EN",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "Q",
+                  "direction": "",
+                  "range": [8, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$ff.cc:337:slice$338",
+                  "attributes": {
+                    "src": "gpio.v:119.3-121.81"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "00000000",
+                    "CLK_POLARITY": "00000000000000000000000000000001",
+                    "EN_POLARITY": "00000000000000000000000000000001",
+                    "WIDTH": "00000000000000000000000000001000"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$ff.cc:337:slice$339",
+                  "attributes": {
+                    "src": "gpio.v:175.3-306.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "00000000000000000000000000000001",
+                    "EN_POLARITY": "00000000000000000000000000000001",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$ff.cc:337:slice$342",
+                  "attributes": {
+                    "src": "gpio.v:175.3-306.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "00000000000000000000000000000001",
+                    "EN_POLARITY": "00000000000000000000000000000001",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$ff.cc:337:slice$345",
+                  "attributes": {
+                    "src": "gpio.v:175.3-306.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "00000000000000000000000000000001",
+                    "EN_POLARITY": "00000000000000000000000000000001",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$ff.cc:337:slice$348",
+                  "attributes": {
+                    "src": "gpio.v:175.3-306.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "00000000000000000000000000000001",
+                    "EN_POLARITY": "00000000000000000000000000000001",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$ff.cc:337:slice$351",
+                  "attributes": {
+                    "src": "gpio.v:175.3-306.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "00000000000000000000000000000001",
+                    "EN_POLARITY": "00000000000000000000000000000001",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$ff.cc:337:slice$354",
+                  "attributes": {
+                    "src": "gpio.v:175.3-306.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "00000000000000000000000000000001",
+                    "EN_POLARITY": "00000000000000000000000000000001",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$ff.cc:337:slice$357",
+                  "attributes": {
+                    "src": "gpio.v:175.3-306.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "00000000000000000000000000000001",
+                    "EN_POLARITY": "00000000000000000000000000000001",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$ff.cc:337:slice$360",
+                  "attributes": {
+                    "src": "gpio.v:175.3-306.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "00000000000000000000000000000001",
+                    "EN_POLARITY": "00000000000000000000000000000001",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$ff.cc:337:slice$363",
+                  "attributes": {
+                    "src": "gpio.v:175.3-306.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "00000000000000000000000000000001",
+                    "EN_POLARITY": "00000000000000000000000000000001",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$ff.cc:337:slice$366",
+                  "attributes": {
+                    "src": "gpio.v:175.3-306.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "00000000000000000000000000000001",
+                    "EN_POLARITY": "00000000000000000000000000000001",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$ff.cc:337:slice$369",
+                  "attributes": {
+                    "src": "gpio.v:175.3-306.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "00000000000000000000000000000001",
+                    "EN_POLARITY": "00000000000000000000000000000001",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$ff.cc:337:slice$372",
+                  "attributes": {
+                    "src": "gpio.v:175.3-306.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "00000000000000000000000000000001",
+                    "EN_POLARITY": "00000000000000000000000000000001",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$ff.cc:337:slice$375",
+                  "attributes": {
+                    "src": "gpio.v:175.3-306.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "00000000000000000000000000000001",
+                    "EN_POLARITY": "00000000000000000000000000000001",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$ff.cc:337:slice$378",
+                  "attributes": {
+                    "src": "gpio.v:175.3-306.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "00000000000000000000000000000001",
+                    "EN_POLARITY": "00000000000000000000000000000001",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$ff.cc:337:slice$381",
+                  "attributes": {
+                    "src": "gpio.v:175.3-306.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "00000000000000000000000000000001",
+                    "EN_POLARITY": "00000000000000000000000000000001",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$ff.cc:337:slice$384",
+                  "attributes": {
+                    "src": "gpio.v:175.3-306.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "00000000000000000000000000000001",
+                    "EN_POLARITY": "00000000000000000000000000000001",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$ff.cc:337:slice$387",
+                  "attributes": {
+                    "src": "gpio.v:175.3-306.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "00000000000000000000000000000001",
+                    "EN_POLARITY": "00000000000000000000000000000001",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$ff.cc:337:slice$390",
+                  "attributes": {
+                    "src": "gpio.v:175.3-306.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "00000000000000000000000000000001",
+                    "EN_POLARITY": "00000000000000000000000000000001",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$ff.cc:337:slice$393",
+                  "attributes": {
+                    "src": "gpio.v:175.3-306.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "00000000000000000000000000000001",
+                    "EN_POLARITY": "00000000000000000000000000000001",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$ff.cc:337:slice$396",
+                  "attributes": {
+                    "src": "gpio.v:175.3-306.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "00000000000000000000000000000001",
+                    "EN_POLARITY": "00000000000000000000000000000001",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$ff.cc:337:slice$399",
+                  "attributes": {
+                    "src": "gpio.v:175.3-306.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "00000000000000000000000000000001",
+                    "EN_POLARITY": "00000000000000000000000000000001",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$ff.cc:337:slice$402",
+                  "attributes": {
+                    "src": "gpio.v:175.3-306.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "00000000000000000000000000000001",
+                    "EN_POLARITY": "00000000000000000000000000000001",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$ff.cc:337:slice$405",
+                  "attributes": {
+                    "src": "gpio.v:175.3-306.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "00000000000000000000000000000001",
+                    "EN_POLARITY": "00000000000000000000000000000001",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$ff.cc:337:slice$408",
+                  "attributes": {
+                    "src": "gpio.v:175.3-306.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "00000000000000000000000000000001",
+                    "EN_POLARITY": "00000000000000000000000000000001",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$ff.cc:337:slice$411",
+                  "attributes": {
+                    "src": "gpio.v:175.3-306.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "00000000000000000000000000000001",
+                    "EN_POLARITY": "00000000000000000000000000000001",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$ff.cc:337:slice$414",
+                  "attributes": {
+                    "src": "gpio.v:175.3-306.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "00000000000000000000000000000001",
+                    "EN_POLARITY": "00000000000000000000000000000001",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$ff.cc:337:slice$417",
+                  "attributes": {
+                    "src": "gpio.v:175.3-306.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "00000000000000000000000000000001",
+                    "EN_POLARITY": "00000000000000000000000000000001",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$ff.cc:337:slice$420",
+                  "attributes": {
+                    "src": "gpio.v:175.3-306.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "00000000000000000000000000000001",
+                    "EN_POLARITY": "00000000000000000000000000000001",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$ff.cc:337:slice$423",
+                  "attributes": {
+                    "src": "gpio.v:175.3-306.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "00000000000000000000000000000001",
+                    "EN_POLARITY": "00000000000000000000000000000001",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$ff.cc:337:slice$426",
+                  "attributes": {
+                    "src": "gpio.v:175.3-306.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "00000000000000000000000000000001",
+                    "EN_POLARITY": "00000000000000000000000000000001",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$ff.cc:337:slice$429",
+                  "attributes": {
+                    "src": "gpio.v:175.3-306.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "00000000000000000000000000000001",
+                    "EN_POLARITY": "00000000000000000000000000000001",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$ff.cc:337:slice$432",
+                  "attributes": {
+                    "src": "gpio.v:175.3-306.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "00000000000000000000000000000001",
+                    "EN_POLARITY": "00000000000000000000000000000001",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$ff.cc:337:slice$435",
+                  "attributes": {
+                    "src": "gpio.v:133.3-135.80"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "00000000000000000000000000000000",
+                    "CLK_POLARITY": "00000000000000000000000000000001",
+                    "EN_POLARITY": "00000000000000000000000000000001",
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$auto$ff.cc:337:slice$436",
+                  "attributes": {
+                    "src": "gpio.v:113.3-115.85"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "00000000",
+                    "CLK_POLARITY": "00000000000000000000000000000001",
+                    "EN_POLARITY": "00000000000000000000000000000001",
+                    "WIDTH": "00000000000000000000000000001000"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$and",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "B",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$flatten\\u_ef_gpio.$and$gpio.v:115$42",
+                  "attributes": {
+                    "src": "gpio.v:115.14-115.57"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$and$gpio.v:121$45",
+                  "attributes": {
+                    "src": "gpio.v:121.14-121.55"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$and$gpio.v:132$49",
+                  "attributes": {
+                    "src": "gpio.v:132.27-132.43"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000100000",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000100000",
+                    "Y_WIDTH": "00000000000000000000000000100000"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$and$gpio.v:135$52",
+                  "attributes": {
+                    "src": "gpio.v:135.14-135.54"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$and$gpio.v:138$55",
+                  "attributes": {
+                    "src": "gpio.v:138.14-138.54"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$and$gpio.v:365$109",
+                  "attributes": {
+                    "src": "gpio.v:365.14-365.31"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$and$gpio.v:66$35",
+                  "attributes": {
+                    "src": "gpio.v:66.27-66.40"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.$and$gpio.v:67$36",
+                  "attributes": {
+                    "src": "gpio.v:67.24-67.39"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.\\instance_to_wrap.\\ned_0.$and$ef_util_lib.v:70$129",
+                  "attributes": {
+                    "src": "ef_util_lib.v:70.18-70.31"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.\\instance_to_wrap.\\ned_1.$and$ef_util_lib.v:70$129",
+                  "attributes": {
+                    "src": "ef_util_lib.v:70.18-70.31"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.\\instance_to_wrap.\\ned_2.$and$ef_util_lib.v:70$129",
+                  "attributes": {
+                    "src": "ef_util_lib.v:70.18-70.31"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.\\instance_to_wrap.\\ned_3.$and$ef_util_lib.v:70$129",
+                  "attributes": {
+                    "src": "ef_util_lib.v:70.18-70.31"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.\\instance_to_wrap.\\ned_4.$and$ef_util_lib.v:70$129",
+                  "attributes": {
+                    "src": "ef_util_lib.v:70.18-70.31"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.\\instance_to_wrap.\\ned_5.$and$ef_util_lib.v:70$129",
+                  "attributes": {
+                    "src": "ef_util_lib.v:70.18-70.31"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.\\instance_to_wrap.\\ned_6.$and$ef_util_lib.v:70$129",
+                  "attributes": {
+                    "src": "ef_util_lib.v:70.18-70.31"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.\\instance_to_wrap.\\ned_7.$and$ef_util_lib.v:70$129",
+                  "attributes": {
+                    "src": "ef_util_lib.v:70.18-70.31"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.\\instance_to_wrap.\\ped_0.$and$ef_util_lib.v:56$132",
+                  "attributes": {
+                    "src": "ef_util_lib.v:56.18-56.31"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.\\instance_to_wrap.\\ped_1.$and$ef_util_lib.v:56$132",
+                  "attributes": {
+                    "src": "ef_util_lib.v:56.18-56.31"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.\\instance_to_wrap.\\ped_2.$and$ef_util_lib.v:56$132",
+                  "attributes": {
+                    "src": "ef_util_lib.v:56.18-56.31"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.\\instance_to_wrap.\\ped_3.$and$ef_util_lib.v:56$132",
+                  "attributes": {
+                    "src": "ef_util_lib.v:56.18-56.31"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.\\instance_to_wrap.\\ped_4.$and$ef_util_lib.v:56$132",
+                  "attributes": {
+                    "src": "ef_util_lib.v:56.18-56.31"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.\\instance_to_wrap.\\ped_5.$and$ef_util_lib.v:56$132",
+                  "attributes": {
+                    "src": "ef_util_lib.v:56.18-56.31"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.\\instance_to_wrap.\\ped_6.$and$ef_util_lib.v:56$132",
+                  "attributes": {
+                    "src": "ef_util_lib.v:56.18-56.31"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_gpio.\\instance_to_wrap.\\ped_7.$and$ef_util_lib.v:56$132",
+                  "attributes": {
+                    "src": "ef_util_lib.v:56.18-56.31"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          }
+        ],
+        "attributes": {
+            "hdlname": "EF_GPIO8_WB_wrapper",
+            "top": "00000000000000000000000000000001",
+            "src": "EF_GPIO8_WB_wrapper.v:7.1-57.10"
+        }
+      }
+  ]
+}

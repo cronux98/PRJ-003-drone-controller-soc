@@ -1,0 +1,12 @@
+{
+  "module": "timer",
+  "classification": "REUSE_INTERNAL",
+  "tier": "B",
+  "cell_count": 1766,
+  "synthesis_log": "~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-timer/logs/synth/timer_synth.log",
+  "results_xml": "~/hermes_workspace/projects/IP-010/v4/06_verification_stage/tb-timer/results.xml",
+  "equiv_status": "WAIVED",
+  "tests_passed": 15,
+  "tests_total": 15,
+  "admitted": true
+}

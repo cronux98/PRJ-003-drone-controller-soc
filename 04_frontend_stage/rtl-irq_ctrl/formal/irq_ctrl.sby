@@ -1,0 +1,21 @@
+# IP-010 v3 formal verification for irq_ctrl
+# GENERATED-FROM: kanban task t_74da3230, IP-010 v3 frontend
+
+[tasks]
+bmc
+
+[options]
+bmc: mode bmc
+bmc: depth 25
+
+[engines]
+smtbmc bitwuzla
+
+[script]
+read -formal irq_ctrl.v
+hierarchy -top irq_ctrl
+proc; opt
+flatten; opt
+
+[files]
+rtl-irq_ctrl/rtl/irq_ctrl.v

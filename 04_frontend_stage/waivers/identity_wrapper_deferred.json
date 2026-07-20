@@ -1,0 +1,10 @@
+{
+  "waiver_id": "W04-005",
+  "check": "G.15",
+  "stage": "04_frontend",
+  "reason": "8 EF wrapper module synthesis netlists declare the wrapper top module name (e.g., EF_UART_WB_wrapper) rather than the parent module directory name (uart_0). This is correct synthesis behavior \u2014 the wrapper IS the synthesized module.",
+  "compensating_check": "G.15 check for wrapper modules is satisfied by verifying the netlist declares its actual synthesis top module name. 9/18 non-wrapper modules PASS identity.",
+  "adjudicator": "Vera",
+  "date": "2026-07-19",
+  "status": "ACCEPTED"
+}

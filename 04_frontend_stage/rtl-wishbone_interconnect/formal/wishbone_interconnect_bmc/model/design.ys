@@ -1,0 +1,10 @@
+# running in ~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-wishbone_interconnect/formal/wishbone_interconnect_bmc/src/
+read -formal wishbone_interconnect.v
+hierarchy -top wishbone_interconnect
+proc; opt
+flatten; opt
+
+hierarchy -smtcheck
+rename -witness
+write_jny -no-connections ../model/design.json
+write_rtlil ../model/design.il

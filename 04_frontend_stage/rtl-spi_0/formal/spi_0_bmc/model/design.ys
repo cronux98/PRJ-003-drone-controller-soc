@@ -1,0 +1,14 @@
+# running in ~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-spi_0/formal/spi_0_bmc/src/
+read -formal EF_SPI.v
+read -formal EF_SPI_WB_wrapper.v
+read -formal ef_util_lib.v
+read -formal spi_0.v
+read -formal spi_master.v
+hierarchy -top EF_SPI_WB_wrapper
+proc; opt
+flatten; opt
+
+hierarchy -smtcheck
+rename -witness
+write_jny -no-connections ../model/design.json
+write_rtlil ../model/design.il

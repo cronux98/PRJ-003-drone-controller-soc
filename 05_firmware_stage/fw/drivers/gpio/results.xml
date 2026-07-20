@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="gpio_driver" tests="1" failures="0" errors="0" skipped="1" time="0.000">
+  <testcase classname="gpio" name="gpio_driver_compile" status="pass"/>
+</testsuite>

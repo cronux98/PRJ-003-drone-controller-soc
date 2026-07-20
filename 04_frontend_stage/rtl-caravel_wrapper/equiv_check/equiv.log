@@ -1,0 +1,10 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+
+-- Executing script file `rtl-caravel_wrapper/equiv_check/equiv_caravel_bridge.ys' --
+ERROR: File `rtl-caravel_bridge/rtl/caravel_bridge.v' not found or is a directory

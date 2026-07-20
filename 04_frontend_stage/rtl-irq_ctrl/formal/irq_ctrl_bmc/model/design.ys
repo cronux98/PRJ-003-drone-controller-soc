@@ -1,0 +1,10 @@
+# running in ~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-irq_ctrl/formal/irq_ctrl_bmc/src/
+read -formal irq_ctrl.v
+hierarchy -top irq_ctrl
+proc; opt
+flatten; opt
+
+hierarchy -smtcheck
+rename -witness
+write_jny -no-connections ../model/design.json
+write_rtlil ../model/design.il

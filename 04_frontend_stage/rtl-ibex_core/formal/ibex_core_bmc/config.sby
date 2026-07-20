@@ -1,0 +1,46 @@
+# IP-010 v3 formal verification for ibex_core
+# GENERATED-FROM: kanban task t_74da3230, IP-010 v3 frontend
+
+[options]
+mode bmc
+depth 25
+
+[engines]
+smtbmc bitwuzla
+
+[script]
+read -formal alu_ctrl.v
+read -formal alu.v
+read -formal branch_unit.v
+read -formal ctrl_unit.v
+read -formal ex_mem.v
+read -formal forwarding_unit.v
+read -formal hazard_unit.v
+read -formal ibex_core.v
+read -formal ibex_core_wb.v
+read -formal id_ex.v
+read -formal if_id.v
+read -formal imm_gen.v
+read -formal mem_wb.v
+read -formal pc.v
+read -formal reg_file.v
+hierarchy -top ibex_core
+proc; opt
+flatten; opt
+
+[files]
+rtl-ibex_core/rtl/alu_ctrl.v
+rtl-ibex_core/rtl/alu.v
+rtl-ibex_core/rtl/branch_unit.v
+rtl-ibex_core/rtl/ctrl_unit.v
+rtl-ibex_core/rtl/ex_mem.v
+rtl-ibex_core/rtl/forwarding_unit.v
+rtl-ibex_core/rtl/hazard_unit.v
+rtl-ibex_core/rtl/ibex_core.v
+rtl-ibex_core/rtl/ibex_core_wb.v
+rtl-ibex_core/rtl/id_ex.v
+rtl-ibex_core/rtl/if_id.v
+rtl-ibex_core/rtl/imm_gen.v
+rtl-ibex_core/rtl/mem_wb.v
+rtl-ibex_core/rtl/pc.v
+rtl-ibex_core/rtl/reg_file.v

@@ -1,0 +1,143 @@
+{
+  "GENERATED-FROM": "parse_all_results_xml.py",
+  "project": "IP-010",
+  "version": "v4",
+  "generated": "2026-07-19T11:55:27.165689",
+  "total_modules": 18,
+  "rtl_pass": 18,
+  "rtl_fail": 0,
+  "gls_pass": 0,
+  "gls_fail": 0,
+  "cluster_findings": "failure_clusters.txt",
+  "tier_assignments": "tier_assignment.json",
+  "blocked_modules": [],
+  "modules": {
+    "caravel_wrapper": {
+      "tests": 9,
+      "passed": 9,
+      "failed": 0,
+      "errors": 0,
+      "verdict": "PASS"
+    },
+    "clk_rst_mgr": {
+      "tests": 8,
+      "passed": 8,
+      "failed": 0,
+      "errors": 0,
+      "verdict": "PASS"
+    },
+    "custom_timer": {
+      "tests": 15,
+      "passed": 15,
+      "failed": 0,
+      "errors": 0,
+      "verdict": "PASS"
+    },
+    "drone_soc": {
+      "tests": 40,
+      "passed": 40,
+      "failed": 0,
+      "errors": 0,
+      "verdict": "PASS"
+    },
+    "dshot_pwm": {
+      "tests": 40,
+      "passed": 40,
+      "failed": 0,
+      "errors": 0,
+      "verdict": "PASS"
+    },
+    "gpio": {
+      "tests": 15,
+      "passed": 15,
+      "failed": 0,
+      "errors": 0,
+      "verdict": "PASS"
+    },
+    "i2c_0": {
+      "tests": 40,
+      "passed": 40,
+      "failed": 0,
+      "errors": 0,
+      "verdict": "PASS"
+    },
+    "ibex_core": {
+      "tests": 40,
+      "passed": 40,
+      "failed": 0,
+      "errors": 0,
+      "verdict": "PASS"
+    },
+    "irq_ctrl": {
+      "tests": 8,
+      "passed": 8,
+      "failed": 0,
+      "errors": 0,
+      "verdict": "PASS"
+    },
+    "spi_0": {
+      "tests": 40,
+      "passed": 40,
+      "failed": 0,
+      "errors": 0,
+      "verdict": "PASS"
+    },
+    "spi_flash_ctrl": {
+      "tests": 15,
+      "passed": 15,
+      "failed": 0,
+      "errors": 0,
+      "verdict": "PASS"
+    },
+    "sram_8kb": {
+      "tests": 8,
+      "passed": 8,
+      "failed": 0,
+      "errors": 0,
+      "verdict": "PASS"
+    },
+    "timer": {
+      "tests": 15,
+      "passed": 15,
+      "failed": 0,
+      "errors": 0,
+      "verdict": "PASS"
+    },
+    "uart_0": {
+      "tests": 15,
+      "passed": 15,
+      "failed": 0,
+      "errors": 0,
+      "verdict": "PASS"
+    },
+    "uart_1": {
+      "tests": 15,
+      "passed": 15,
+      "failed": 0,
+      "errors": 0,
+      "verdict": "PASS"
+    },
+    "uart_2": {
+      "tests": 15,
+      "passed": 15,
+      "failed": 0,
+      "errors": 0,
+      "verdict": "PASS"
+    },
+    "watchdog": {
+      "tests": 15,
+      "passed": 15,
+      "failed": 0,
+      "errors": 0,
+      "verdict": "PASS"
+    },
+    "wishbone_interconnect": {
+      "tests": 15,
+      "passed": 15,
+      "failed": 0,
+      "errors": 0,
+      "verdict": "PASS"
+    }
+  },
+  "total_tests": 368
+}

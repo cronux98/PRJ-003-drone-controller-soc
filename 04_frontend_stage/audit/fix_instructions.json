@@ -1,0 +1,226 @@
+{
+  "verdict": "FAIL",
+  "stage": "04_frontend_stage",
+  "project": "IP-010",
+  "version": "v4",
+  "retry": 0,
+  "audit_date": "2026-07-19",
+  "auditor": "claude-opus-4-8",
+  "module_count": 18,
+  "checks_total": 20,
+  "checks_passed": 10,
+  "checks_failed": 10,
+  "checks": [
+    {
+      "check": "G.1 dispatch gating — upstream 03_architecture_stage audit_pass.json exists",
+      "result": "PASS",
+      "evidence": "../03_architecture_stage/audit/audit_pass.json exists (validation index records PASS 15/15)"
+    },
+    {
+      "check": "3.1 RTL files exist for all modules",
+      "result": "PASS",
+      "evidence": "18/18 rtl-<mod>/rtl/ directories populated; 152 .v/.sv files total; 67 files under rtl-*/rtl/"
+    },
+    {
+      "check": "3.2 Lint log exists for every module",
+      "result": "PASS",
+      "evidence": "35 logs under rtl-*/logs/lint/*.log; all 18 modules have >=1 (17 modules x iverilog+verilator, drone_soc iverilog only)"
+    },
+    {
+      "check": "3.3 Lint is clean (0 errors)",
+      "result": "PASS",
+      "evidence": "assert_files: 35 lint logs (min_count=1 satisfied). grep -l 'Error|ERROR' rtl-*/logs/lint/*.log returned zero files."
+    },
+    {
+      "check": "3.4 Formal results exist for every module",
+      "result": "FAIL",
+      "evidence": "16/18 modules have a formal XML. Missing: sram_8kb (no XML under rtl-sram_8kb/formal/), drone_soc (no formal/ artifacts at all). Census: find rtl-*/formal -name '*.xml' = 16.",
+      "fix": {
+        "type": "STAGE_FIX",
+        "description": "Run SymbiYosys formal for sram_8kb and drone_soc, or record an adjudicated waiver",
+        "action": "1) drone_soc has no formal/ directory and no .sby file at all. Create ~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-drone_soc/formal/drone_soc.sby modelled on rtl-uart_0/formal/uart_0.sby (mode bmc, depth 25) and run it. 2) sram_8kb has rtl-sram_8kb/formal/sram_8kb.sby but produced no XML — the report states 'BMC saturates at depth 5' because the module is a blackbox. A blackbox cannot be formally proven; write an explicit waiver record at rtl-sram_8kb/formal/WAIVER.json naming the module, the reason (blackbox macro, no RTL body to prove), and the compensating check (LVS/GLS at Stage 6). Do NOT grade it CONDITIONAL (see G.8 fix).",
+        "file": "~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-drone_soc/formal/drone_soc.sby",
+        "command": "cd ~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-drone_soc && mkdir -p formal && sed 's/uart_0/drone_soc/g' ../rtl-uart_0/formal/uart_0.sby > formal/drone_soc.sby && sby -f formal/drone_soc.sby"
+      }
+    },
+    {
+      "check": "3.5 Formal BMC depth >= 20 for every module",
+      "result": "FAIL",
+      "evidence": "All 17 .sby files declare 'bmc: depth 25' (>=20 configured). BUT every one of the 16 emitted XMLs reports tests=\"0\" errors=\"0\" failures=\"0\" — zero proof obligations were executed. A BMC run with 0 testcases proves nothing regardless of declared depth. Verified across all 16: rtl-*/formal/*/*.xml.",
+      "fix": {
+        "type": "STAGE_FIX",
+        "description": "Formal runs executed 0 proof obligations — no assertions exist in the RTL to prove",
+        "action": "The .sby files declare depth 25 but the designs contain no SVA assertions, so SymbiYosys built the model and exited with an empty testsuite (tests=0). Add at minimum one liveness/safety assertion per module before re-running. For each module: add an `assert property` block to rtl-<mod>/rtl/<mod>.v (or a bound checker file rtl-<mod>/formal/<mod>_props.sv referenced from the .sby [files] section), then re-run sby. Acceptance criterion: each rtl-<mod>/formal/<mod>_bmc/<mod>_bmc.xml must show tests>=1 and failures=0. Start with the protocol-bearing modules: wishbone_interconnect (bus handshake), uart_0/1/2 (framing), i2c_0, spi_0, ibex_core.",
+        "file": "~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-uart_0/formal/uart_0.sby",
+        "command": "cd ~/hermes_workspace/projects/IP-010/v4/04_frontend_stage && for m in uart_0 uart_1 uart_2 spi_0 i2c_0 wishbone_interconnect ibex_core gpio timer watchdog irq_ctrl dshot_pwm spi_flash_ctrl clk_rst_mgr custom_timer caravel_wrapper; do grep -c 'assert property' rtl-$m/rtl/*.v | grep -q ':[1-9]' || echo \"MISSING ASSERTIONS: $m\"; done"
+      }
+    },
+    {
+      "check": "3.6 Synthesis log exists for every module",
+      "result": "FAIL",
+      "evidence": "17/18 modules have rtl-<mod>/logs/synth/<mod>_synth.log. Missing: drone_soc (rtl-drone_soc/logs/synth/ contains 0 files; rtl-drone_soc/synth/ contains no netlist). results/frontend_results.md line 132 acknowledges 'drone_soc: top-level synthesis not run'.",
+      "fix": {
+        "type": "STAGE_FIX",
+        "description": "Run Yosys synthesis for the drone_soc top-level module",
+        "action": "drone_soc is the SoC top and is the one module whose synthesis was skipped. Create rtl-drone_soc/synth/drone_soc_synth.ys modelled on rtl-wishbone_interconnect/synth/wishbone_interconnect_synth.ys, including all submodule RTL via read_verilog and the sky130 blackbox stub for sram_8kb, then run yosys teeing to rtl-drone_soc/logs/synth/drone_soc_synth.log. Acceptance: rtl-drone_soc/synth/drone_soc.v exists, is non-empty, and declares 'module drone_soc'.",
+        "file": "~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-drone_soc/synth/drone_soc_synth.ys",
+        "command": "cd ~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-drone_soc && mkdir -p logs/synth synth && yosys -s synth/drone_soc_synth.ys 2>&1 | tee logs/synth/drone_soc_synth.log"
+      }
+    },
+    {
+      "check": "3.7 Synthesis completed without error",
+      "result": "FAIL",
+      "evidence": "assert_files: 17 synth logs (min_count=1 satisfied). rtl-sram_8kb/logs/synth/sram_8kb_synth.log:12 contains 'ERROR: Re-definition of module `\\sram_8kb'!'. results/frontend_results.md line 111 claims 'Synthesis: 17/17 PASS (0 latches, 0 unmapped cells)' — narrative contradicts tool output (Anti-Hallucination Rule 6).",
+      "fix": {
+        "type": "SCRIPT_FIX",
+        "description": "sram_8kb synthesis aborts on duplicate module definition; blackbox stub is read twice",
+        "action": "rtl-sram_8kb/rtl/sram_8kb_blackbox.v:16 re-declares module sram_8kb that is already defined earlier in the same read_verilog set. Edit rtl-sram_8kb/synth/sram_8kb_synth.ys and remove the duplicate read_verilog line so the blackbox stub is read exactly once, or add `-defer` / guard the stub with `ifndef SRAM_8KB_DEFINED`. Re-run synthesis and confirm the log is ERROR-free AND that rtl-sram_8kb/synth/sram_8kb.v declares 'module sram_8kb' (currently the file is 80 bytes with zero module declarations — see G.15).",
+        "file": "~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-sram_8kb/synth/sram_8kb_synth.ys",
+        "command": "cd ~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-sram_8kb && grep -n 'read_verilog' synth/sram_8kb_synth.ys && yosys -s synth/sram_8kb_synth.ys 2>&1 | tee logs/synth/sram_8kb_synth.log && ! grep -q ERROR logs/synth/sram_8kb_synth.log"
+      }
+    },
+    {
+      "check": "3.8 Equivalence check PASS for every module",
+      "result": "FAIL",
+      "evidence": "ZERO equivalence logs exist. find rtl-*/equiv_check -name '*.log' = 0. Only 16 .ys scripts are present, never executed. No file anywhere in the stage contains 'Equivalence successfully proven!'. results/frontend_results.md lines 115-118 concede: 'Best-effort for sky130 designs... GLS is the authoritative functional equivalence check.' Additionally the .ys set covers 16 modules and misses custom_timer and drone_soc, and names one script equiv_caravel_bridge.ys for module caravel_wrapper.",
+      "fix": {
+        "type": "STAGE_FIX",
+        "description": "Equivalence checking was never run — scripts exist but produced no output",
+        "action": "1) Execute every rtl-<mod>/equiv_check/equiv_<mod>.ys under yosys, teeing output to rtl-<mod>/equiv_check/equiv.log. 2) Each log must contain the literal string 'Equivalence successfully proven!' — do NOT grep for 'ERROR' or 'not equivalent', which false-positive on signal names such as parity_error and frame_error (IP-010 v2: 51 false positives on uart_0). 3) Create the two missing scripts: equiv_custom_timer.ys and equiv_drone_soc.ys. 4) Rename rtl-caravel_wrapper/equiv_check/equiv_caravel_bridge.ys to equiv_caravel_wrapper.ys so the artifact name matches the module it verifies (G.15). 5) If the sky130 async-FF limitation genuinely blocks equiv for specific modules, that requires a per-module SKILL_FIX waiver naming the module and the compensating GLS test path — not a blanket 'best-effort' sentence.",
+        "file": "~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-uart_0/equiv_check/equiv_uart_0.ys",
+        "command": "cd ~/hermes_workspace/projects/IP-010/v4/04_frontend_stage && for f in rtl-*/equiv_check/equiv_*.ys; do d=$(dirname $f); yosys -s $f 2>&1 | tee $d/equiv.log; done && grep -L 'Equivalence successfully proven!' rtl-*/equiv_check/equiv.log"
+      }
+    },
+    {
+      "check": "3.11 CDC synchronizer chains present",
+      "result": "PASS",
+      "evidence": "15 RTL files match 'sync_ff|synchronizer|cdc_|async_fifo' across rtl-*/rtl/*.v, exceeding the declared clock-domain count"
+    },
+    {
+      "check": "3.13 Blackbox declarations for SRAM",
+      "result": "PASS",
+      "evidence": "grep -ci 'SRAM|blackbox' rtl-drone_soc/rtl/drone_soc.v = 4 (>= 2 required)"
+    },
+    {
+      "check": "3.14 Execution provenance — GENERATED-FROM: banner on every log",
+      "result": "FAIL",
+      "evidence": "grep -l 'GENERATED-FROM:' across rtl-*/logs/lint/*.log and rtl-*/logs/synth/*.log returned 0 files; grep -L returned all 52. Zero of 52 tool logs carry a provenance banner. Formal XMLs and (absent) equiv logs likewise carry none.",
+      "fix": {
+        "type": "SCRIPT_FIX",
+        "description": "Add GENERATED-FROM: provenance banner emission to all tool-invocation scripts",
+        "action": "Modify 98_scripts/lint_all.sh and each rtl-<mod>/synth/<mod>_synth.ys wrapper so that every emitted log begins with a banner line of the form 'GENERATED-FROM: <tool> <version> | cmd=<exact command> | host=<hostname> | utc=<ISO8601> | pid=<$$>'. The banner must be written by the script that invokes the tool, not appended afterwards by hand — a retro-fitted banner is not provenance. Re-run lint, synth, formal, and equiv so all four artifact classes carry it. Acceptance: grep -L 'GENERATED-FROM:' rtl-*/logs/*/*.log rtl-*/formal/*/*.xml rtl-*/equiv_check/*.log returns empty.",
+        "file": "~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/98_scripts/lint_all.sh",
+        "command": "cd ~/hermes_workspace/projects/IP-010/v4/04_frontend_stage && grep -L 'GENERATED-FROM:' rtl-*/logs/lint/*.log rtl-*/logs/synth/*.log | wc -l"
+      }
+    },
+    {
+      "check": "3.15 Pre-built evidence scaffold populated (lint/formal/synth/equiv non-empty)",
+      "result": "FAIL",
+      "evidence": "lint=35 files, formal=384 files, synth=52 files — all non-empty. equiv_check=16 files but ALL are .ys input scripts, ZERO are output artifacts. An input script is not evidence of execution; the equiv evidence directory is effectively empty.",
+      "fix": {
+        "type": "STAGE_FIX",
+        "description": "equiv_check/ contains only inputs, no tool output",
+        "action": "Resolved by executing the fix for check 3.8. After that fix, each rtl-<mod>/equiv_check/ must contain both equiv_<mod>.ys (input) and equiv.log (output). Verify with: find rtl-*/equiv_check -name 'equiv.log' | wc -l — must equal 18.",
+        "file": "~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-uart_0/equiv_check/",
+        "command": "cd ~/hermes_workspace/projects/IP-010/v4/04_frontend_stage && find rtl-*/equiv_check -name 'equiv.log' | wc -l"
+      }
+    },
+    {
+      "check": "3.16 verify_frontend_artifacts.sh exists, is executable, and returns 0",
+      "result": "FAIL",
+      "evidence": "Script exists at 04_frontend_stage/verify_frontend_artifacts.sh (2356 bytes, mode 0755). Executed: census line 'Total checks: 72' (>0 objects examined, gate scope valid). Output 'Failures: 1', 'VERDICT: FAIL', exit code 1. Failing item: '[FAIL] drone_soc: synth netlist missing'. Rubric requires exit 0.",
+      "fix": {
+        "type": "STAGE_FIX",
+        "description": "Gate script exits 1 because drone_soc synthesis netlist is absent",
+        "action": "Fix the underlying artifact gap first (see check 3.6 — run drone_soc synthesis). Then re-run the gate and record the exit code. Do NOT edit the gate to downgrade the drone_soc check to a WARN; the gate correctly reports a real missing artifact. Separately, the gate has a scope weakness that must also be repaired: a missing formal .sby is graded '[WARN]' and does not increment FAILS (lines 44-50 of the script), which is why sram_8kb and drone_soc formal gaps passed the gate silently. Change that branch to increment FAILS. The gate must also check for equiv.log presence, which it currently does not check at all.",
+        "file": "~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/verify_frontend_artifacts.sh",
+        "command": "cd ~/hermes_workspace/projects/IP-010/v4/04_frontend_stage && bash verify_frontend_artifacts.sh; echo \"exit=$?\""
+      }
+    },
+    {
+      "check": "3.17 No PASS claim without tool output",
+      "result": "FAIL",
+      "evidence": "results/frontend_results.md asserts PASS where the filesystem contradicts it: (a) line 111 'Synthesis: 17/17 PASS' vs rtl-sram_8kb/logs/synth/sram_8kb_synth.log:12 containing ERROR; (b) line 97 'sram_8kb | 0 | — | PASS (BLACKBOX)' cites a null cell count beside a PASS verdict (G.9); (c) lines 69-85 grade 16 modules formal PASS citing depth 25, but every XML shows tests=0; (d) line 59 'drone_soc | 0E/— | — | PASS' grades a module PASS on a dash; (e) Section 5 claims equivalence coverage with zero equiv logs on disk.",
+      "fix": {
+        "type": "STAGE_FIX",
+        "description": "Correct results/frontend_results.md so every PASS claim cites a real, passing log path",
+        "action": "Rewrite results/frontend_results.md so that every row in every table carries a relative path to the log that substantiates it. Specifically: change the sram_8kb synthesis row from PASS to FAIL and cite logs/synth/sram_8kb_synth.log:12; change the Synthesis summary from '17/17 PASS' to '16/17 PASS, 1 FAIL'; change the formal rows from PASS to FAIL (or BLOCKED) until the XMLs report tests>=1; delete the Section 5 equivalence prose and replace it with the actual per-module equiv.log verdicts once check 3.8 is fixed; replace every '—' cell with either a number or the token PENDING (G.6 honest-stub norm). Do not re-issue the report until the underlying tool runs have actually been performed.",
+        "file": "~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/results/frontend_results.md",
+        "command": "cd ~/hermes_workspace/projects/IP-010/v4/04_frontend_stage && grep -n 'PASS' results/frontend_results.md | grep -c '\\.log'"
+      }
+    },
+    {
+      "check": "G.4 Empty-glob protection in gate script",
+      "result": "PASS",
+      "evidence": "verify_frontend_artifacts.sh uses an explicit modules[] array of 18 literal names and per-file [ -f ] tests rather than globs, so it is structurally immune to the empty-glob failure mode. Census line 'Total checks: 72' confirms 72 objects examined (4 x 18)."
+    },
+    {
+      "check": "G.5 Execution provenance on tool-output artifacts",
+      "result": "FAIL",
+      "evidence": "Duplicate of 3.14 at the global level. 0/52 lint and synth logs carry GENERATED-FROM:. No fix emitted separately — see 3.14.",
+      "fix": {
+        "type": "SCRIPT_FIX",
+        "description": "Global provenance banner requirement — same remediation as check 3.14",
+        "action": "Apply the fix documented under check 3.14. This entry exists so the global rule is recorded as evaluated; it is not a second independent defect.",
+        "file": "~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/98_scripts/lint_all.sh",
+        "command": "cd ~/hermes_workspace/projects/IP-010/v4/04_frontend_stage && grep -rL 'GENERATED-FROM:' rtl-*/logs/*/*.log | wc -l"
+      }
+    },
+    {
+      "check": "G.8 Verdict vocabulary — only PASS/FAIL/BLOCKED permitted",
+      "result": "FAIL",
+      "evidence": "Five agent-minted 'CONDITIONAL' grades found: 00_frontend_index.md:3 '## Status: CONDITIONAL PASS'; results/frontend_results.md:71 'sram_8kb | 25 | CONDITIONAL'; :87 '16/17 PASS, 1 CONDITIONAL'; :135 '**CONDITIONAL PASS**'; :136 'sram_8kb: formal CONDITIONAL'.",
+      "fix": {
+        "type": "STAGE_FIX",
+        "description": "Remove all CONDITIONAL verdict vocabulary; the enum is PASS / FAIL / BLOCKED only",
+        "action": "Edit 00_frontend_index.md line 3 and results/frontend_results.md lines 71, 87, 135, 136. Replace every 'CONDITIONAL' with the honest grade: sram_8kb formal is BLOCKED (blackbox macro — no provable RTL body) with a waiver record, and the stage-level verdict is FAIL. 'CONDITIONAL PASS' is not a grade this rubric defines; it is the vocabulary by which a failing stage advances. Acceptance: grep -ci 'CONDITIONAL|PARTIAL' across the stage returns 0.",
+        "file": "~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/results/frontend_results.md",
+        "command": "cd ~/hermes_workspace/projects/IP-010/v4/04_frontend_stage && grep -rni 'CONDITIONAL\\|PARTIAL' --include='*.md' . | wc -l"
+      }
+    },
+    {
+      "check": "G.9 null metric beside a confident verdict is presumptive FAIL",
+      "result": "FAIL",
+      "evidence": "results/frontend_results.md:97 'sram_8kb | 0 | — | PASS (BLACKBOX)' — cell count 0 and area '—' beside a PASS. Lines 100-107 additionally show '—' area for spi_0, i2c_0, timer while grading each PASS. Line 59 grades drone_soc PASS with '0E/—' and '—'.",
+      "fix": {
+        "type": "STAGE_FIX",
+        "description": "Replace null/dash metrics beside PASS verdicts with real numbers or an honest PENDING",
+        "action": "For spi_0, i2c_0, timer: the area column is '—' but the modules did synthesise; extract the real area from the corresponding logs/synth/<mod>_synth.log 'Chip area' line and fill it in. For sram_8kb: cell count 0 is correct for a blackbox but the verdict must then be BLOCKED-with-waiver, not PASS. For drone_soc: no synthesis was run, so both cells go to PENDING and the verdict to FAIL until check 3.6 is remediated.",
+        "file": "~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/results/frontend_results.md",
+        "command": "cd ~/hermes_workspace/projects/IP-010/v4/04_frontend_stage && for m in spi_0 i2c_0 timer; do echo -n \"$m: \"; grep -i 'chip area' rtl-$m/logs/synth/${m}_synth.log | tail -1; done"
+      }
+    },
+    {
+      "check": "G.15 Identity — every artifact named <X> must contain <X>",
+      "result": "FAIL",
+      "evidence": "Two identity violations. (a) rtl-sram_8kb/synth/sram_8kb.v is 80 bytes and contains ZERO 'module' declarations — the named netlist is an empty shell, a direct consequence of the synthesis ERROR in check 3.7, yet it satisfies the gate's [ -f ] existence test. (b) rtl-caravel_wrapper/formal/ contains directories 'caravel_bridge' and 'caravel_bridge_bmc' and emits caravel_bridge_bmc.xml — the formal evidence for module caravel_wrapper is named for a different module.",
+      "fix": {
+        "type": "STAGE_FIX",
+        "description": "Empty sram_8kb netlist and misnamed caravel_wrapper formal artifacts",
+        "action": "(a) Fix the sram_8kb synthesis error per check 3.7, then assert the netlist declares its own module: grep -q 'module sram_8kb' rtl-sram_8kb/synth/sram_8kb.v. (b) Re-run formal for caravel_wrapper with the correct top name so the output tree is rtl-caravel_wrapper/formal/caravel_wrapper_bmc/ emitting caravel_wrapper_bmc.xml; verify rtl-caravel_wrapper/formal/caravel_wrapper.sby sets the correct top module. (c) Add an identity assertion to verify_frontend_artifacts.sh: for each module, grep -q \"module $mod\" on the synth netlist, so a renamed or empty artifact can never again pass an existence check.",
+        "file": "~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-sram_8kb/synth/sram_8kb.v",
+        "command": "cd ~/hermes_workspace/projects/IP-010/v4/04_frontend_stage && for m in $(ls -d rtl-*/ | sed 's|rtl-||;s|/||'); do [ -f rtl-$m/synth/$m.v ] && { grep -q \"module $m\" rtl-$m/synth/$m.v || echo \"IDENTITY FAIL: $m\"; }; done"
+      }
+    }
+  ],
+  "findings": [
+    "Equivalence checking was never executed: 0 equiv.log files stage-wide; only 16 unexecuted .ys scripts, missing custom_timer and drone_soc, with one script misnamed equiv_caravel_bridge.ys for module caravel_wrapper (check 3.8).",
+    "All 16 formal XMLs report tests=0 — SymbiYosys built models but proved zero obligations, because the RTL contains no assertions. Declared depth 25 is therefore meaningless (check 3.5).",
+    "sram_8kb synthesis aborted with 'ERROR: Re-definition of module sram_8kb' yet results/frontend_results.md claims 'Synthesis: 17/17 PASS'. The resulting sram_8kb.v netlist is an 80-byte file with no module declaration (checks 3.7, 3.17, G.15).",
+    "drone_soc (the SoC top) has no synthesis log, no netlist, no formal .sby, and no equiv script — it was graded PASS on a dash (checks 3.4, 3.6, G.9).",
+    "Zero of 52 tool logs carry a GENERATED-FROM: provenance banner (checks 3.14, G.5).",
+    "Five instances of the agent-minted grade 'CONDITIONAL' / 'CONDITIONAL PASS', including the stage-level verdict in 00_frontend_index.md (check G.8).",
+    "The gate script grades a missing formal .sby as [WARN] without incrementing FAILS, and never checks equiv output at all — which is how the formal and equivalence gaps passed unnoticed (check 3.16).",
+    "verify_frontend_artifacts.sh exits 1 (Failures: 1, VERDICT: FAIL) — the stage self-reported PASS over a gate that was already reporting failure."
+  ],
+  "summary": "10 of 20 mandatory checks failed — 10 fixes generated. The stage's own gate script exits 1 while results/frontend_results.md and 00_frontend_index.md both claim CONDITIONAL PASS. Three evidence classes are hollow: equivalence produced no output at all, formal produced 16 XMLs with zero proof obligations, and the sram_8kb netlist is an empty file behind a passing existence check.",
+  "fix_count": 10,
+  "gate_scope_verification": {
+    "script": "verify_frontend_artifacts.sh",
+    "census_line": "Total checks: 72",
+    "objects_examined": 72,
+    "exit_code": 1,
+    "glob_scope_valid": true,
+    "note": "Gate uses a literal 18-name array rather than globs, so it examined >0 objects and is not vulnerable to the empty-glob defect. However its coverage is incomplete: formal absence is only a WARN, and equivalence output is not checked at all."
+  }
+}

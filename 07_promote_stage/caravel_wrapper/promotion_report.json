@@ -1,0 +1,12 @@
+{
+  "module": "caravel_wrapper",
+  "classification": "REUSE_GITHUB",
+  "tier": "A",
+  "cell_count": 199,
+  "synthesis_log": "~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-caravel_wrapper/logs/synth/caravel_wrapper_synth.log",
+  "results_xml": "~/hermes_workspace/projects/IP-010/v4/06_verification_stage/tb-caravel_wrapper/results.xml",
+  "equiv_status": "WAIVED",
+  "tests_passed": 9,
+  "tests_total": 9,
+  "admitted": true
+}

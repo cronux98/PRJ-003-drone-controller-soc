@@ -1,0 +1,34 @@
+{
+  "project": "IP-010",
+  "version": "v4",
+  "timestamp": "2026-07-19T12:06:19.522552+00:00",
+  "_generated_from": "promotion_stage host=smdtest02 pid=848552 utc=2026-07-19T12:05:44.960051+00:00",
+  "modules_expected": 17,
+  "modules_promoted": 16,
+  "modules_blocked": 1,
+  "promoted_modules": [
+    "ibex_core",
+    "wishbone_interconnect",
+    "sram_8kb",
+    "uart_0",
+    "uart_1",
+    "uart_2",
+    "spi_0",
+    "i2c_0",
+    "dshot_pwm",
+    "gpio",
+    "spi_flash_ctrl",
+    "irq_ctrl",
+    "timer",
+    "watchdog",
+    "caravel_wrapper",
+    "clk_rst_mgr"
+  ],
+  "blocked_modules": [
+    "custom_timer"
+  ],
+  "blocked_reasons": {
+    "custom_timer": "A3: no equiv log, no waiver; A5: synthesis incomplete (no End of script); A6: cell_count=null"
+  },
+  "verdict": "PARTIAL"
+}

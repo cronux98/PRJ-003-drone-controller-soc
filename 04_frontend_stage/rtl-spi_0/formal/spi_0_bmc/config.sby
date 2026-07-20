@@ -1,0 +1,26 @@
+# IP-010 v3 formal verification for spi_0
+# GENERATED-FROM: kanban task t_74da3230, IP-010 v3 frontend
+
+[options]
+mode bmc
+depth 25
+
+[engines]
+smtbmc bitwuzla
+
+[script]
+read -formal EF_SPI.v
+read -formal EF_SPI_WB_wrapper.v
+read -formal ef_util_lib.v
+read -formal spi_0.v
+read -formal spi_master.v
+hierarchy -top EF_SPI_WB_wrapper
+proc; opt
+flatten; opt
+
+[files]
+rtl-spi_0/rtl/EF_SPI.v
+rtl-spi_0/rtl/EF_SPI_WB_wrapper.v
+rtl-spi_0/rtl/ef_util_lib.v
+rtl-spi_0/rtl/spi_0.v
+rtl-spi_0/rtl/spi_master.v

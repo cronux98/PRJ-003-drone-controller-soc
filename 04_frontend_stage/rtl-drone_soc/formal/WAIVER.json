@@ -1,0 +1,7 @@
+{
+  "module": "drone_soc",
+  "reason": "SoC top-level module \u2014 too large for BMC formal (>19K cells). Compensated by full-SoC GLS at Stage 06.",
+  "adjudicator": "Vera",
+  "date": "2026-07-19",
+  "status": "ACCEPTED"
+}

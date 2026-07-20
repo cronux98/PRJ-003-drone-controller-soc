@@ -1,0 +1,525 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+
+-- Executing script file `../model/design.ys' --
+
+1. Executing Verilog-2005 frontend: irq_ctrl.v
+Parsing formal SystemVerilog input from `irq_ctrl.v' to AST representation.
+Storing AST representation for module `$abstract\irq_ctrl'.
+Successfully finished Verilog frontend.
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+
+3. Executing AST frontend in derive mode using pre-parsed AST for module `\irq_ctrl'.
+Generating RTLIL representation for module `\irq_ctrl'.
+Warning: Replacing memory \prio with list of registers. See irq_ctrl.v:65
+
+3.1. Analyzing design hierarchy..
+Top module:  \irq_ctrl
+
+3.2. Analyzing design hierarchy..
+Top module:  \irq_ctrl
+Removing unused module `$abstract\irq_ctrl'.
+Removed 1 unused modules.
+
+4. Executing PROC pass (convert processes to netlists).
+
+4.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+4.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 38 switch rules as full_case in process $proc$irq_ctrl.v:54$12 in module irq_ctrl.
+Removed a total of 0 dead cases.
+
+4.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 4 redundant assignments.
+Promoted 5 assignments to connections.
+
+4.4. Executing PROC_INIT pass (extract init attributes).
+
+4.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst_ni in `\irq_ctrl.$proc$irq_ctrl.v:54$12'.
+
+4.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~53 debug messages>
+
+4.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\irq_ctrl.$proc$irq_ctrl.v:54$12'.
+     1/82: $0\wb_dat_o[31:0] [31:16]
+     2/82: $5$bitselwrite$pos$irq_ctrl.v:136$9[3:0]$142
+     3/82: $20\claim_id[3:0]
+     4/82: $19\claim_id[3:0]
+     5/82: $18\claim_id[3:0]
+     6/82: $17\claim_id[3:0]
+     7/82: $16\claim_id[3:0]
+     8/82: $15\claim_id[3:0]
+     9/82: $14\claim_id[3:0]
+    10/82: $13\claim_id[3:0]
+    11/82: $12\claim_id[3:0]
+    12/82: $11\claim_id[3:0]
+    13/82: $10\claim_id[3:0]
+    14/82: $9\claim_id[3:0]
+    15/82: $8\claim_id[3:0]
+    16/82: $7\claim_id[3:0]
+    17/82: $6\claim_id[3:0]
+    18/82: $5\claim_id[3:0]
+    19/82: $0\wb_dat_o[31:0] [15:14]
+    20/82: $0\wb_dat_o[31:0] [7:6]
+    21/82: $0\wb_dat_o[31:0] [5:4]
+    22/82: $0\wb_dat_o[31:0] [3:2]
+    23/82: $0\wb_dat_o[31:0] [1:0]
+    24/82: $21$lookahead\pending$11[15:0]$143
+    25/82: $0\wb_dat_o[31:0] [13:12]
+    26/82: $0\wb_dat_o[31:0] [9:8]
+    27/82: $0\wb_dat_o[31:0] [11:10]
+    28/82: $4$bitselwrite$pos$irq_ctrl.v:136$9[3:0]$89
+    29/82: $4\claim_id[3:0]
+    30/82: $5\i[31:0]
+    31/82: $4\i[31:0]
+    32/82: $3\i[31:0]
+    33/82: $19$lookahead\pending$11[15:0]$88
+    34/82: $3$bitselwrite$pos$irq_ctrl.v:136$9[3:0]$87
+    35/82: $3\claim_id[3:0]
+    36/82: $18$lookahead\pending$11[15:0]$86
+    37/82: $2$bitselwrite$pos$irq_ctrl.v:136$9[3:0]$85
+    38/82: $2\claim_id[3:0]
+    39/82: $2\i[31:0]
+    40/82: $17$lookahead\pending$11[15:15]$33
+    41/82: $16$lookahead\pending$11[14:14]$32
+    42/82: $15$lookahead\pending$11[13:13]$31
+    43/82: $14$lookahead\pending$11[12:12]$30
+    44/82: $13$lookahead\pending$11[11:11]$29
+    45/82: $12$lookahead\pending$11[10:10]$28
+    46/82: $11$lookahead\pending$11[9:9]$27
+    47/82: $10$lookahead\pending$11[8:8]$26
+    48/82: $9$lookahead\pending$11[7:7]$25
+    49/82: $8$lookahead\pending$11[6:6]$24
+    50/82: $7$lookahead\pending$11[5:5]$23
+    51/82: $6$lookahead\pending$11[4:4]$22
+    52/82: $5$lookahead\pending$11[3:3]$21
+    53/82: $4$lookahead\pending$11[2:2]$20
+    54/82: $3$lookahead\pending$11[1:1]$19
+    55/82: $2$lookahead\pending$11[0:0]$18
+    56/82: $1$lookahead\pending$11[15:0]$17
+    57/82: $1$bitselwrite$pos$irq_ctrl.v:136$9[3:0]$16
+    58/82: $1\claim_id[3:0]
+    59/82: $1\i[31:0]
+    60/82: $0\m_irq_o[0:0]
+    61/82: $0\irq_sync2[15:0]
+    62/82: $0\irq_sync1[15:0]
+    63/82: $0\wb_ack_o[0:0]
+    64/82: $0\prio[15][1:0]
+    65/82: $0\prio[14][1:0]
+    66/82: $0\prio[13][1:0]
+    67/82: $0\prio[12][1:0]
+    68/82: $0\prio[11][1:0]
+    69/82: $0\prio[10][1:0]
+    70/82: $0\prio[9][1:0]
+    71/82: $0\prio[8][1:0]
+    72/82: $0\prio[7][1:0]
+    73/82: $0\prio[6][1:0]
+    74/82: $0\prio[5][1:0]
+    75/82: $0\prio[4][1:0]
+    76/82: $0\prio[3][1:0]
+    77/82: $0\prio[2][1:0]
+    78/82: $0\prio[1][1:0]
+    79/82: $0\prio[0][1:0]
+    80/82: $0\threshold[1:0]
+    81/82: $0\enable[15:0]
+    82/82: $20$lookahead\pending$11[15:0]$90
+
+4.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+4.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\irq_ctrl.\i' using process `\irq_ctrl.$proc$irq_ctrl.v:54$12'.
+  created $adff cell `$procdff$852' with positive edge clock and positive level reset.
+Creating register for signal `\irq_ctrl.\wb_dat_o' using process `\irq_ctrl.$proc$irq_ctrl.v:54$12'.
+  created $adff cell `$procdff$857' with positive edge clock and positive level reset.
+Creating register for signal `\irq_ctrl.\wb_ack_o' using process `\irq_ctrl.$proc$irq_ctrl.v:54$12'.
+  created $adff cell `$procdff$862' with positive edge clock and positive level reset.
+Creating register for signal `\irq_ctrl.\m_irq_o' using process `\irq_ctrl.$proc$irq_ctrl.v:54$12'.
+  created $adff cell `$procdff$867' with positive edge clock and positive level reset.
+Creating register for signal `\irq_ctrl.\pending' using process `\irq_ctrl.$proc$irq_ctrl.v:54$12'.
+  created $adff cell `$procdff$872' with positive edge clock and positive level reset.
+Creating register for signal `\irq_ctrl.\enable' using process `\irq_ctrl.$proc$irq_ctrl.v:54$12'.
+  created $adff cell `$procdff$877' with positive edge clock and positive level reset.
+Creating register for signal `\irq_ctrl.\threshold' using process `\irq_ctrl.$proc$irq_ctrl.v:54$12'.
+  created $adff cell `$procdff$882' with positive edge clock and positive level reset.
+Creating register for signal `\irq_ctrl.\irq_sync1' using process `\irq_ctrl.$proc$irq_ctrl.v:54$12'.
+  created $adff cell `$procdff$887' with positive edge clock and positive level reset.
+Creating register for signal `\irq_ctrl.\irq_sync2' using process `\irq_ctrl.$proc$irq_ctrl.v:54$12'.
+  created $adff cell `$procdff$892' with positive edge clock and positive level reset.
+Creating register for signal `\irq_ctrl.\claim_id' using process `\irq_ctrl.$proc$irq_ctrl.v:54$12'.
+  created $dff cell `$procdff$899' with positive edge clock.
+Creating register for signal `\irq_ctrl.$bitselwrite$pos$irq_ctrl.v:136$9' using process `\irq_ctrl.$proc$irq_ctrl.v:54$12'.
+  created $adff cell `$procdff$904' with positive edge clock and positive level reset.
+Creating register for signal `\irq_ctrl.\prio[0]' using process `\irq_ctrl.$proc$irq_ctrl.v:54$12'.
+  created $adff cell `$procdff$909' with positive edge clock and positive level reset.
+Creating register for signal `\irq_ctrl.\prio[1]' using process `\irq_ctrl.$proc$irq_ctrl.v:54$12'.
+  created $adff cell `$procdff$914' with positive edge clock and positive level reset.
+Creating register for signal `\irq_ctrl.\prio[2]' using process `\irq_ctrl.$proc$irq_ctrl.v:54$12'.
+  created $adff cell `$procdff$919' with positive edge clock and positive level reset.
+Creating register for signal `\irq_ctrl.\prio[3]' using process `\irq_ctrl.$proc$irq_ctrl.v:54$12'.
+  created $adff cell `$procdff$924' with positive edge clock and positive level reset.
+Creating register for signal `\irq_ctrl.\prio[4]' using process `\irq_ctrl.$proc$irq_ctrl.v:54$12'.
+  created $adff cell `$procdff$929' with positive edge clock and positive level reset.
+Creating register for signal `\irq_ctrl.\prio[5]' using process `\irq_ctrl.$proc$irq_ctrl.v:54$12'.
+  created $adff cell `$procdff$934' with positive edge clock and positive level reset.
+Creating register for signal `\irq_ctrl.\prio[6]' using process `\irq_ctrl.$proc$irq_ctrl.v:54$12'.
+  created $adff cell `$procdff$939' with positive edge clock and positive level reset.
+Creating register for signal `\irq_ctrl.\prio[7]' using process `\irq_ctrl.$proc$irq_ctrl.v:54$12'.
+  created $adff cell `$procdff$944' with positive edge clock and positive level reset.
+Creating register for signal `\irq_ctrl.\prio[8]' using process `\irq_ctrl.$proc$irq_ctrl.v:54$12'.
+  created $adff cell `$procdff$949' with positive edge clock and positive level reset.
+Creating register for signal `\irq_ctrl.\prio[9]' using process `\irq_ctrl.$proc$irq_ctrl.v:54$12'.
+  created $adff cell `$procdff$954' with positive edge clock and positive level reset.
+Creating register for signal `\irq_ctrl.\prio[10]' using process `\irq_ctrl.$proc$irq_ctrl.v:54$12'.
+  created $adff cell `$procdff$959' with positive edge clock and positive level reset.
+Creating register for signal `\irq_ctrl.\prio[11]' using process `\irq_ctrl.$proc$irq_ctrl.v:54$12'.
+  created $adff cell `$procdff$964' with positive edge clock and positive level reset.
+Creating register for signal `\irq_ctrl.\prio[12]' using process `\irq_ctrl.$proc$irq_ctrl.v:54$12'.
+  created $adff cell `$procdff$969' with positive edge clock and positive level reset.
+Creating register for signal `\irq_ctrl.\prio[13]' using process `\irq_ctrl.$proc$irq_ctrl.v:54$12'.
+  created $adff cell `$procdff$974' with positive edge clock and positive level reset.
+Creating register for signal `\irq_ctrl.\prio[14]' using process `\irq_ctrl.$proc$irq_ctrl.v:54$12'.
+  created $adff cell `$procdff$979' with positive edge clock and positive level reset.
+Creating register for signal `\irq_ctrl.\prio[15]' using process `\irq_ctrl.$proc$irq_ctrl.v:54$12'.
+  created $adff cell `$procdff$984' with positive edge clock and positive level reset.
+Creating register for signal `\irq_ctrl.$lookahead\pending$11' using process `\irq_ctrl.$proc$irq_ctrl.v:54$12'.
+  created $adff cell `$procdff$989' with positive edge clock and positive level reset.
+
+4.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+4.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 53 empty switches in `\irq_ctrl.$proc$irq_ctrl.v:54$12'.
+Removing empty process `irq_ctrl.$proc$irq_ctrl.v:54$12'.
+Cleaned up 53 empty switches.
+
+4.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module irq_ctrl.
+<suppressed ~64 debug messages>
+
+5. Executing OPT pass (performing simple optimizations).
+
+5.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module irq_ctrl.
+
+5.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\irq_ctrl'.
+Computing hashes of 459 cells of `\irq_ctrl'.
+Finding duplicate cells in `\irq_ctrl'.
+Computing hashes of 326 cells of `\irq_ctrl'.
+Finding duplicate cells in `\irq_ctrl'.
+Computing hashes of 310 cells of `\irq_ctrl'.
+Finding duplicate cells in `\irq_ctrl'.
+<suppressed ~447 debug messages>
+Removed a total of 149 cells.
+
+5.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \irq_ctrl..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 1/2 on $mux $procmux$559.
+    dead port 2/2 on $mux $procmux$559.
+    dead port 2/2 on $mux $procmux$553.
+    dead port 1/2 on $mux $procmux$547.
+    dead port 2/2 on $mux $procmux$547.
+    dead port 1/2 on $mux $procmux$545.
+    dead port 2/2 on $mux $procmux$545.
+    dead port 2/2 on $mux $procmux$541.
+    dead port 2/2 on $mux $procmux$535.
+    dead port 2/2 on $mux $procmux$529.
+    dead port 2/2 on $mux $procmux$527.
+    dead port 2/2 on $mux $procmux$518.
+    dead port 1/2 on $mux $procmux$516.
+    dead port 2/2 on $mux $procmux$507.
+    dead port 1/2 on $mux $procmux$505.
+    dead port 1/2 on $mux $procmux$498.
+    dead port 2/2 on $mux $procmux$498.
+    dead port 1/2 on $mux $procmux$496.
+    dead port 2/2 on $mux $procmux$496.
+    dead port 1/2 on $mux $procmux$493.
+    dead port 2/2 on $mux $procmux$493.
+    dead port 2/2 on $mux $procmux$846.
+    dead port 1/2 on $mux $procmux$844.
+    dead port 2/2 on $mux $procmux$447.
+    dead port 1/2 on $mux $procmux$445.
+    dead port 2/2 on $mux $procmux$442.
+    dead port 2/2 on $mux $procmux$366.
+    dead port 1/2 on $mux $procmux$364.
+    dead port 2/2 on $mux $procmux$361.
+    dead port 2/2 on $mux $procmux$354.
+    dead port 1/2 on $mux $procmux$352.
+    dead port 2/2 on $mux $procmux$349.
+    dead port 2/2 on $mux $procmux$342.
+    dead port 1/2 on $mux $procmux$340.
+    dead port 2/2 on $mux $procmux$337.
+    dead port 2/2 on $mux $procmux$330.
+    dead port 1/2 on $mux $procmux$328.
+    dead port 2/2 on $mux $procmux$325.
+    dead port 2/2 on $mux $procmux$318.
+    dead port 1/2 on $mux $procmux$316.
+    dead port 2/2 on $mux $procmux$313.
+    dead port 2/2 on $mux $procmux$306.
+    dead port 1/2 on $mux $procmux$304.
+    dead port 2/2 on $mux $procmux$301.
+    dead port 2/2 on $mux $procmux$294.
+    dead port 1/2 on $mux $procmux$292.
+    dead port 2/2 on $mux $procmux$289.
+    dead port 2/2 on $mux $procmux$282.
+    dead port 1/2 on $mux $procmux$280.
+    dead port 2/2 on $mux $procmux$277.
+    dead port 2/2 on $mux $procmux$270.
+    dead port 1/2 on $mux $procmux$268.
+    dead port 2/2 on $mux $procmux$265.
+    dead port 2/2 on $mux $procmux$258.
+    dead port 1/2 on $mux $procmux$256.
+    dead port 2/2 on $mux $procmux$253.
+    dead port 2/2 on $mux $procmux$246.
+    dead port 1/2 on $mux $procmux$244.
+    dead port 2/2 on $mux $procmux$241.
+    dead port 2/2 on $mux $procmux$234.
+    dead port 1/2 on $mux $procmux$232.
+    dead port 2/2 on $mux $procmux$229.
+    dead port 2/2 on $mux $procmux$222.
+    dead port 1/2 on $mux $procmux$220.
+    dead port 2/2 on $mux $procmux$217.
+    dead port 2/2 on $mux $procmux$210.
+    dead port 1/2 on $mux $procmux$208.
+    dead port 2/2 on $mux $procmux$205.
+    dead port 2/2 on $mux $procmux$198.
+    dead port 1/2 on $mux $procmux$196.
+    dead port 2/2 on $mux $procmux$193.
+    dead port 1/2 on $mux $procmux$174.
+    dead port 2/2 on $mux $procmux$174.
+    dead port 1/2 on $mux $procmux$172.
+    dead port 2/2 on $mux $procmux$172.
+    dead port 1/2 on $mux $procmux$169.
+    dead port 2/2 on $mux $procmux$169.
+    dead port 1/2 on $mux $procmux$167.
+    dead port 2/2 on $mux $procmux$167.
+Removed 79 multiplexer ports.
+<suppressed ~252 debug messages>
+
+5.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \irq_ctrl.
+    New ctrl vector for $pmux cell $procmux$524: $auto$opt_reduce.cc:135:opt_pmux$991
+    New ctrl vector for $pmux cell $procmux$511: { $procmux$842_CMP $auto$opt_reduce.cc:135:opt_pmux$993 }
+  Optimizing cells in module \irq_ctrl.
+Performed a total of 2 changes.
+
+5.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\irq_ctrl'.
+Computing hashes of 243 cells of `\irq_ctrl'.
+Finding duplicate cells in `\irq_ctrl'.
+Computing hashes of 242 cells of `\irq_ctrl'.
+Finding duplicate cells in `\irq_ctrl'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+5.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $procdff$914 ($adff) from module irq_ctrl (D = \wb_dat_i [3:2], Q = \prio[1]).
+Adding EN signal on $procdff$877 ($adff) from module irq_ctrl (D = \wb_dat_i [15:0], Q = \enable).
+Adding EN signal on $procdff$954 ($adff) from module irq_ctrl (D = \wb_dat_i [3:2], Q = \prio[9]).
+Adding EN signal on $procdff$882 ($adff) from module irq_ctrl (D = \wb_dat_i [1:0], Q = \threshold).
+Adding EN signal on $procdff$934 ($adff) from module irq_ctrl (D = \wb_dat_i [11:10], Q = \prio[5]).
+Adding EN signal on $procdff$919 ($adff) from module irq_ctrl (D = \wb_dat_i [5:4], Q = \prio[2]).
+Adding EN signal on $procdff$899 ($dff) from module irq_ctrl (D = $3\claim_id[3:0], Q = \claim_id).
+Adding EN signal on $procdff$944 ($adff) from module irq_ctrl (D = \wb_dat_i [15:14], Q = \prio[7]).
+Adding EN signal on $procdff$974 ($adff) from module irq_ctrl (D = \wb_dat_i [11:10], Q = \prio[13]).
+Adding EN signal on $procdff$924 ($adff) from module irq_ctrl (D = \wb_dat_i [7:6], Q = \prio[3]).
+Adding EN signal on $procdff$984 ($adff) from module irq_ctrl (D = \wb_dat_i [15:14], Q = \prio[15]).
+Adding EN signal on $procdff$857 ($adff) from module irq_ctrl (D = 16'0000000000000000, Q = \wb_dat_o [31:16]).
+Adding EN signal on $procdff$857 ($adff) from module irq_ctrl (D = $procmux$372_Y, Q = \wb_dat_o [15:14]).
+Adding EN signal on $procdff$857 ($adff) from module irq_ctrl (D = $procmux$386_Y, Q = \wb_dat_o [7:6]).
+Adding EN signal on $procdff$857 ($adff) from module irq_ctrl (D = $procmux$400_Y, Q = \wb_dat_o [5:4]).
+Adding EN signal on $procdff$857 ($adff) from module irq_ctrl (D = $procmux$412_Y, Q = \wb_dat_o [3:2]).
+Adding EN signal on $procdff$857 ($adff) from module irq_ctrl (D = $procmux$425_Y, Q = \wb_dat_o [1:0]).
+Adding EN signal on $procdff$857 ($adff) from module irq_ctrl (D = $procmux$453_Y, Q = \wb_dat_o [13:12]).
+Adding EN signal on $procdff$857 ($adff) from module irq_ctrl (D = $procmux$467_Y, Q = \wb_dat_o [9:8]).
+Adding EN signal on $procdff$857 ($adff) from module irq_ctrl (D = $procmux$481_Y, Q = \wb_dat_o [11:10]).
+Adding EN signal on $procdff$969 ($adff) from module irq_ctrl (D = \wb_dat_i [9:8], Q = \prio[12]).
+Adding EN signal on $procdff$979 ($adff) from module irq_ctrl (D = \wb_dat_i [13:12], Q = \prio[14]).
+Adding EN signal on $procdff$929 ($adff) from module irq_ctrl (D = \wb_dat_i [9:8], Q = \prio[4]).
+Adding EN signal on $procdff$949 ($adff) from module irq_ctrl (D = \wb_dat_i [1:0], Q = \prio[8]).
+Adding EN signal on $procdff$909 ($adff) from module irq_ctrl (D = \wb_dat_i [1:0], Q = \prio[0]).
+Adding EN signal on $procdff$939 ($adff) from module irq_ctrl (D = \wb_dat_i [13:12], Q = \prio[6]).
+Adding EN signal on $procdff$964 ($adff) from module irq_ctrl (D = \wb_dat_i [7:6], Q = \prio[11]).
+Adding EN signal on $procdff$959 ($adff) from module irq_ctrl (D = \wb_dat_i [5:4], Q = \prio[10]).
+Setting constant 0-bit at position 0 on $auto$ff.cc:337:slice$1027 ($adffe) from module irq_ctrl.
+Setting constant 0-bit at position 1 on $auto$ff.cc:337:slice$1027 ($adffe) from module irq_ctrl.
+Setting constant 0-bit at position 2 on $auto$ff.cc:337:slice$1027 ($adffe) from module irq_ctrl.
+Setting constant 0-bit at position 3 on $auto$ff.cc:337:slice$1027 ($adffe) from module irq_ctrl.
+Setting constant 0-bit at position 4 on $auto$ff.cc:337:slice$1027 ($adffe) from module irq_ctrl.
+Setting constant 0-bit at position 5 on $auto$ff.cc:337:slice$1027 ($adffe) from module irq_ctrl.
+Setting constant 0-bit at position 6 on $auto$ff.cc:337:slice$1027 ($adffe) from module irq_ctrl.
+Setting constant 0-bit at position 7 on $auto$ff.cc:337:slice$1027 ($adffe) from module irq_ctrl.
+Setting constant 0-bit at position 8 on $auto$ff.cc:337:slice$1027 ($adffe) from module irq_ctrl.
+Setting constant 0-bit at position 9 on $auto$ff.cc:337:slice$1027 ($adffe) from module irq_ctrl.
+Setting constant 0-bit at position 10 on $auto$ff.cc:337:slice$1027 ($adffe) from module irq_ctrl.
+Setting constant 0-bit at position 11 on $auto$ff.cc:337:slice$1027 ($adffe) from module irq_ctrl.
+Setting constant 0-bit at position 12 on $auto$ff.cc:337:slice$1027 ($adffe) from module irq_ctrl.
+Setting constant 0-bit at position 13 on $auto$ff.cc:337:slice$1027 ($adffe) from module irq_ctrl.
+Setting constant 0-bit at position 14 on $auto$ff.cc:337:slice$1027 ($adffe) from module irq_ctrl.
+Setting constant 0-bit at position 15 on $auto$ff.cc:337:slice$1027 ($adffe) from module irq_ctrl.
+Setting constant 1-bit at position 0 on $procdff$989 ($adff) from module irq_ctrl.
+Setting constant 1-bit at position 1 on $procdff$989 ($adff) from module irq_ctrl.
+Setting constant 1-bit at position 2 on $procdff$989 ($adff) from module irq_ctrl.
+Setting constant 1-bit at position 3 on $procdff$989 ($adff) from module irq_ctrl.
+Setting constant 1-bit at position 4 on $procdff$989 ($adff) from module irq_ctrl.
+Setting constant 1-bit at position 5 on $procdff$989 ($adff) from module irq_ctrl.
+Setting constant 1-bit at position 6 on $procdff$989 ($adff) from module irq_ctrl.
+Setting constant 1-bit at position 7 on $procdff$989 ($adff) from module irq_ctrl.
+Setting constant 1-bit at position 8 on $procdff$989 ($adff) from module irq_ctrl.
+Setting constant 1-bit at position 9 on $procdff$989 ($adff) from module irq_ctrl.
+Setting constant 1-bit at position 10 on $procdff$989 ($adff) from module irq_ctrl.
+Setting constant 1-bit at position 11 on $procdff$989 ($adff) from module irq_ctrl.
+Setting constant 1-bit at position 12 on $procdff$989 ($adff) from module irq_ctrl.
+Setting constant 1-bit at position 13 on $procdff$989 ($adff) from module irq_ctrl.
+Setting constant 1-bit at position 14 on $procdff$989 ($adff) from module irq_ctrl.
+Setting constant 1-bit at position 15 on $procdff$989 ($adff) from module irq_ctrl.
+Setting constant 1-bit at position 0 on $procdff$904 ($adff) from module irq_ctrl.
+Setting constant 1-bit at position 1 on $procdff$904 ($adff) from module irq_ctrl.
+Setting constant 1-bit at position 2 on $procdff$904 ($adff) from module irq_ctrl.
+Setting constant 1-bit at position 3 on $procdff$904 ($adff) from module irq_ctrl.
+
+5.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \irq_ctrl..
+Removed 89 unused cells and 581 unused wires.
+<suppressed ~93 debug messages>
+
+5.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module irq_ctrl.
+
+5.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \irq_ctrl..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~92 debug messages>
+
+5.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \irq_ctrl.
+Performed a total of 0 changes.
+
+5.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\irq_ctrl'.
+Computing hashes of 195 cells of `\irq_ctrl'.
+Finding duplicate cells in `\irq_ctrl'.
+Computing hashes of 174 cells of `\irq_ctrl'.
+Finding duplicate cells in `\irq_ctrl'.
+Computing hashes of 167 cells of `\irq_ctrl'.
+Finding duplicate cells in `\irq_ctrl'.
+<suppressed ~84 debug messages>
+Removed a total of 28 cells.
+
+5.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \irq_ctrl..
+Removed 0 unused cells and 28 unused wires.
+<suppressed ~1 debug messages>
+
+5.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module irq_ctrl.
+
+5.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \irq_ctrl..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~92 debug messages>
+
+5.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \irq_ctrl.
+Performed a total of 0 changes.
+
+5.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\irq_ctrl'.
+Computing hashes of 167 cells of `\irq_ctrl'.
+Finding duplicate cells in `\irq_ctrl'.
+Removed a total of 0 cells.
+
+5.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \irq_ctrl..
+
+5.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module irq_ctrl.
+
+5.23. Finished fast OPT passes. (There is nothing left to do.)
+
+6. Executing FLATTEN pass (flatten design).
+
+7. Executing OPT pass (performing simple optimizations).
+
+7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module irq_ctrl.
+
+7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\irq_ctrl'.
+Computing hashes of 167 cells of `\irq_ctrl'.
+Finding duplicate cells in `\irq_ctrl'.
+Removed a total of 0 cells.
+
+7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \irq_ctrl..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~92 debug messages>
+
+7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \irq_ctrl.
+Performed a total of 0 changes.
+
+7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\irq_ctrl'.
+Computing hashes of 167 cells of `\irq_ctrl'.
+Finding duplicate cells in `\irq_ctrl'.
+Removed a total of 0 cells.
+
+7.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+7.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \irq_ctrl..
+
+7.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module irq_ctrl.
+
+7.9. Finished fast OPT passes. (There is nothing left to do.)
+
+8. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `irq_ctrl'. Setting top module to irq_ctrl.
+
+8.1. Analyzing design hierarchy..
+Top module:  \irq_ctrl
+
+8.2. Analyzing design hierarchy..
+Top module:  \irq_ctrl
+Removed 0 unused modules.
+
+9. Executing jny backend.
+
+10. Executing RTLIL backend.
+Output filename: ../model/design.il
+
+Warnings: 1 unique messages, 1 total
+End of script. Logfile hash: 54c2ccbf74, time: 0.06s, user: 0.05s, system: 0.02s, MEM: 15.97 MB peak
+Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+Time spent: 41% 2x hierarchy (0 sec), 11% 7x opt_expr (0 sec), ...

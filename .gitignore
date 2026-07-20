@@ -1,0 +1,32 @@
+# Build artifacts
+sim_build/
+__pycache__/
+*.pyc
+*.vvp
+*.vcd
+*.gch
+*.o
+*.elf
+*.bin
+*.hex
+*.map
+
+# LibreLane run directories (keep final GDS/DEF only)
+08_backend_stage/librelane/runs/
+
+# Caravel precheck git submodule
+09_caravel_stage/mpw_precheck/.git/
+
+# Temporary/scratch
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Python virtualenv
+venv/
+.venv/
+
+# Formal tool databases (large SQLite)
+**/formal/*/status.sqlite
+09_caravel_stage/mpw_precheck/

@@ -1,0 +1,844 @@
+
+-- Executing script file `~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-spi_flash_ctrl/synth/spi_flash_ctrl_synth.ys' --
+
+1. Executing Verilog-2005 frontend: ~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-spi_flash_ctrl/rtl/spi_flash_ctrl.v
+Parsing Verilog input from `~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-spi_flash_ctrl/rtl/spi_flash_ctrl.v' to AST representation.
+Generating RTLIL representation for module `\spi_flash_ctrl'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: ~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-spi_flash_ctrl/rtl/spi_master.v
+Parsing Verilog input from `~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-spi_flash_ctrl/rtl/spi_master.v' to AST representation.
+Generating RTLIL representation for module `\spi_master'.
+Generating RTLIL representation for module `\sri'.
+Generating RTLIL representation for module `\sro'.
+Successfully finished Verilog frontend.
+
+3. Executing HIERARCHY pass (managing design hierarchy).
+
+3.1. Analyzing design hierarchy..
+Top module:  \spi_flash_ctrl
+
+3.2. Analyzing design hierarchy..
+Top module:  \spi_flash_ctrl
+Removing unused module `\sro'.
+Removing unused module `\sri'.
+Removing unused module `\spi_master'.
+Removed 3 unused modules.
+
+4. Executing PROC pass (convert processes to netlists).
+
+4.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+4.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 16 switch rules as full_case in process $proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-spi_flash_ctrl/rtl/spi_flash_ctrl.v:147$9 in module spi_flash_ctrl.
+Removed 4 dead cases from process $proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-spi_flash_ctrl/rtl/spi_flash_ctrl.v:94$2 in module spi_flash_ctrl.
+Marked 3 switch rules as full_case in process $proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-spi_flash_ctrl/rtl/spi_flash_ctrl.v:94$2 in module spi_flash_ctrl.
+Removed a total of 4 dead cases.
+
+4.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 3 redundant assignments.
+Promoted 0 assignments to connections.
+
+4.4. Executing PROC_INIT pass (extract init attributes).
+
+4.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \wb_rst_ni in `\spi_flash_ctrl.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-spi_flash_ctrl/rtl/spi_flash_ctrl.v:147$9'.
+Found async reset \wb_rst_ni in `\spi_flash_ctrl.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-spi_flash_ctrl/rtl/spi_flash_ctrl.v:94$2'.
+
+4.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~21 debug messages>
+
+4.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\spi_flash_ctrl.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-spi_flash_ctrl/rtl/spi_flash_ctrl.v:147$9'.
+     1/15: $0\sck_toggle[0:0]
+     2/15: $0\rx_shift[7:0]
+     3/15: $0\shift_reg[7:0]
+     4/15: $0\addr_byte_cnt[2:0]
+     5/15: $0\bit_cnt[2:0]
+     6/15: $0\fsm_state[2:0]
+     7/15: $0\status_wel[0:0]
+     8/15: $0\status_busy[0:0]
+     9/15: $0\status_done[0:0]
+    10/15: $0\rddata_reg[7:0]
+    11/15: $0\flash_hold_o[0:0]
+    12/15: $0\flash_wp_o[0:0]
+    13/15: $0\flash_cs_o[0:0]
+    14/15: $0\flash_mosi_o[0:0]
+    15/15: $0\flash_sck_o[0:0]
+Creating decoders for process `\spi_flash_ctrl.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-spi_flash_ctrl/rtl/spi_flash_ctrl.v:94$2'.
+     1/8: $0\wb_dat_o[31:0]
+     2/8: $0\wb_err_o[0:0]
+     3/8: $0\wb_ack_o[0:0]
+     4/8: $0\ctrl_fast_mode[0:0]
+     5/8: $0\ctrl_go[0:0]
+     6/8: $0\txdata_reg[7:0]
+     7/8: $0\addr_reg[23:0]
+     8/8: $0\cmd_reg[7:0]
+
+4.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+4.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\spi_flash_ctrl.\flash_sck_o' using process `\spi_flash_ctrl.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-spi_flash_ctrl/rtl/spi_flash_ctrl.v:147$9'.
+  created $adff cell `$procdff$408' with positive edge clock and positive level reset.
+Creating register for signal `\spi_flash_ctrl.\flash_mosi_o' using process `\spi_flash_ctrl.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-spi_flash_ctrl/rtl/spi_flash_ctrl.v:147$9'.
+  created $adff cell `$procdff$413' with positive edge clock and positive level reset.
+Creating register for signal `\spi_flash_ctrl.\flash_cs_o' using process `\spi_flash_ctrl.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-spi_flash_ctrl/rtl/spi_flash_ctrl.v:147$9'.
+  created $adff cell `$procdff$418' with positive edge clock and positive level reset.
+Creating register for signal `\spi_flash_ctrl.\flash_wp_o' using process `\spi_flash_ctrl.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-spi_flash_ctrl/rtl/spi_flash_ctrl.v:147$9'.
+  created $adff cell `$procdff$423' with positive edge clock and positive level reset.
+Creating register for signal `\spi_flash_ctrl.\flash_hold_o' using process `\spi_flash_ctrl.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-spi_flash_ctrl/rtl/spi_flash_ctrl.v:147$9'.
+  created $adff cell `$procdff$428' with positive edge clock and positive level reset.
+Creating register for signal `\spi_flash_ctrl.\rddata_reg' using process `\spi_flash_ctrl.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-spi_flash_ctrl/rtl/spi_flash_ctrl.v:147$9'.
+  created $adff cell `$procdff$433' with positive edge clock and positive level reset.
+Creating register for signal `\spi_flash_ctrl.\status_done' using process `\spi_flash_ctrl.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-spi_flash_ctrl/rtl/spi_flash_ctrl.v:147$9'.
+  created $adff cell `$procdff$438' with positive edge clock and positive level reset.
+Creating register for signal `\spi_flash_ctrl.\status_busy' using process `\spi_flash_ctrl.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-spi_flash_ctrl/rtl/spi_flash_ctrl.v:147$9'.
+  created $adff cell `$procdff$443' with positive edge clock and positive level reset.
+Creating register for signal `\spi_flash_ctrl.\status_wel' using process `\spi_flash_ctrl.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-spi_flash_ctrl/rtl/spi_flash_ctrl.v:147$9'.
+  created $adff cell `$procdff$448' with positive edge clock and positive level reset.
+Creating register for signal `\spi_flash_ctrl.\fsm_state' using process `\spi_flash_ctrl.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-spi_flash_ctrl/rtl/spi_flash_ctrl.v:147$9'.
+  created $adff cell `$procdff$453' with positive edge clock and positive level reset.
+Creating register for signal `\spi_flash_ctrl.\bit_cnt' using process `\spi_flash_ctrl.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-spi_flash_ctrl/rtl/spi_flash_ctrl.v:147$9'.
+  created $adff cell `$procdff$458' with positive edge clock and positive level reset.
+Creating register for signal `\spi_flash_ctrl.\addr_byte_cnt' using process `\spi_flash_ctrl.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-spi_flash_ctrl/rtl/spi_flash_ctrl.v:147$9'.
+  created $adff cell `$procdff$463' with positive edge clock and positive level reset.
+Creating register for signal `\spi_flash_ctrl.\shift_reg' using process `\spi_flash_ctrl.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-spi_flash_ctrl/rtl/spi_flash_ctrl.v:147$9'.
+  created $adff cell `$procdff$468' with positive edge clock and positive level reset.
+Creating register for signal `\spi_flash_ctrl.\rx_shift' using process `\spi_flash_ctrl.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-spi_flash_ctrl/rtl/spi_flash_ctrl.v:147$9'.
+  created $adff cell `$procdff$473' with positive edge clock and positive level reset.
+Creating register for signal `\spi_flash_ctrl.\sck_toggle' using process `\spi_flash_ctrl.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-spi_flash_ctrl/rtl/spi_flash_ctrl.v:147$9'.
+  created $adff cell `$procdff$478' with positive edge clock and positive level reset.
+Creating register for signal `\spi_flash_ctrl.\wb_dat_o' using process `\spi_flash_ctrl.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-spi_flash_ctrl/rtl/spi_flash_ctrl.v:94$2'.
+  created $adff cell `$procdff$483' with positive edge clock and positive level reset.
+Creating register for signal `\spi_flash_ctrl.\wb_ack_o' using process `\spi_flash_ctrl.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-spi_flash_ctrl/rtl/spi_flash_ctrl.v:94$2'.
+  created $adff cell `$procdff$488' with positive edge clock and positive level reset.
+Creating register for signal `\spi_flash_ctrl.\wb_err_o' using process `\spi_flash_ctrl.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-spi_flash_ctrl/rtl/spi_flash_ctrl.v:94$2'.
+  created $adff cell `$procdff$493' with positive edge clock and positive level reset.
+Creating register for signal `\spi_flash_ctrl.\cmd_reg' using process `\spi_flash_ctrl.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-spi_flash_ctrl/rtl/spi_flash_ctrl.v:94$2'.
+  created $adff cell `$procdff$498' with positive edge clock and positive level reset.
+Creating register for signal `\spi_flash_ctrl.\addr_reg' using process `\spi_flash_ctrl.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-spi_flash_ctrl/rtl/spi_flash_ctrl.v:94$2'.
+  created $adff cell `$procdff$503' with positive edge clock and positive level reset.
+Creating register for signal `\spi_flash_ctrl.\txdata_reg' using process `\spi_flash_ctrl.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-spi_flash_ctrl/rtl/spi_flash_ctrl.v:94$2'.
+  created $adff cell `$procdff$508' with positive edge clock and positive level reset.
+Creating register for signal `\spi_flash_ctrl.\ctrl_go' using process `\spi_flash_ctrl.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-spi_flash_ctrl/rtl/spi_flash_ctrl.v:94$2'.
+  created $adff cell `$procdff$513' with positive edge clock and positive level reset.
+Creating register for signal `\spi_flash_ctrl.\ctrl_fast_mode' using process `\spi_flash_ctrl.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-spi_flash_ctrl/rtl/spi_flash_ctrl.v:94$2'.
+  created $adff cell `$procdff$518' with positive edge clock and positive level reset.
+
+4.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+4.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 16 empty switches in `\spi_flash_ctrl.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-spi_flash_ctrl/rtl/spi_flash_ctrl.v:147$9'.
+Removing empty process `spi_flash_ctrl.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-spi_flash_ctrl/rtl/spi_flash_ctrl.v:147$9'.
+Found and cleaned up 5 empty switches in `\spi_flash_ctrl.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-spi_flash_ctrl/rtl/spi_flash_ctrl.v:94$2'.
+Removing empty process `spi_flash_ctrl.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-spi_flash_ctrl/rtl/spi_flash_ctrl.v:94$2'.
+Cleaned up 21 empty switches.
+
+4.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_flash_ctrl.
+<suppressed ~66 debug messages>
+
+5. Executing OPT pass (performing simple optimizations).
+
+5.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_flash_ctrl.
+
+5.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_flash_ctrl'.
+Computing hashes of 223 cells of `\spi_flash_ctrl'.
+Finding duplicate cells in `\spi_flash_ctrl'.
+Computing hashes of 150 cells of `\spi_flash_ctrl'.
+Finding duplicate cells in `\spi_flash_ctrl'.
+<suppressed ~219 debug messages>
+Removed a total of 73 cells.
+
+5.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \spi_flash_ctrl..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 1/4 on $pmux $procmux$128.
+Removed 1 multiplexer ports.
+<suppressed ~107 debug messages>
+
+5.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \spi_flash_ctrl.
+    New ctrl vector for $pmux cell $procmux$341: { $auto$opt_reduce.cc:135:opt_pmux$520 $procmux$346_CMP $procmux$350_CMP $procmux$354_CMP $procmux$358_CMP }
+    New ctrl vector for $pmux cell $procmux$91: { $auto$opt_reduce.cc:135:opt_pmux$522 $procmux$359_CMP }
+  Optimizing cells in module \spi_flash_ctrl.
+Performed a total of 2 changes.
+
+5.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_flash_ctrl'.
+Computing hashes of 152 cells of `\spi_flash_ctrl'.
+Finding duplicate cells in `\spi_flash_ctrl'.
+Computing hashes of 145 cells of `\spi_flash_ctrl'.
+Finding duplicate cells in `\spi_flash_ctrl'.
+Computing hashes of 143 cells of `\spi_flash_ctrl'.
+Finding duplicate cells in `\spi_flash_ctrl'.
+<suppressed ~27 debug messages>
+Removed a total of 9 cells.
+
+5.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $procdff$498 ($adff) from module spi_flash_ctrl (D = \wb_dat_i [7:0], Q = \cmd_reg).
+Adding EN signal on $procdff$478 ($adff) from module spi_flash_ctrl (D = $procmux$91_Y, Q = \sck_toggle).
+Adding EN signal on $procdff$433 ($adff) from module spi_flash_ctrl (D = { \rx_shift [6:0] \flash_miso_i }, Q = \rddata_reg).
+Adding EN signal on $procdff$458 ($adff) from module spi_flash_ctrl (D = $procmux$193_Y, Q = \bit_cnt).
+Adding EN signal on $procdff$438 ($adff) from module spi_flash_ctrl (D = $procmux$305_Y, Q = \status_done).
+Adding EN signal on $procdff$503 ($adff) from module spi_flash_ctrl (D = \wb_dat_i [23:0], Q = \addr_reg).
+Adding EN signal on $procdff$443 ($adff) from module spi_flash_ctrl (D = $procmux$299_Y, Q = \status_busy).
+Adding EN signal on $procdff$463 ($adff) from module spi_flash_ctrl (D = $procmux$173_Y, Q = \addr_byte_cnt).
+Adding EN signal on $procdff$408 ($adff) from module spi_flash_ctrl (D = $procmux$341_Y, Q = \flash_sck_o).
+Adding EN signal on $procdff$473 ($adff) from module spi_flash_ctrl (D = $procmux$104_Y, Q = \rx_shift).
+Adding EN signal on $procdff$413 ($adff) from module spi_flash_ctrl (D = $procmux$330_Y, Q = \flash_mosi_o).
+Adding EN signal on $procdff$448 ($adff) from module spi_flash_ctrl (D = 1'1, Q = \status_wel).
+Adding EN signal on $procdff$418 ($adff) from module spi_flash_ctrl (D = $procmux$320_Y, Q = \flash_cs_o).
+Handling D = Q on $procdff$518 ($adff) from module spi_flash_ctrl (removing D path).
+Adding EN signal on $procdff$508 ($adff) from module spi_flash_ctrl (D = \wb_dat_i [7:0], Q = \txdata_reg).
+Handling D = Q on $procdff$423 ($adff) from module spi_flash_ctrl (removing D path).
+Adding EN signal on $procdff$453 ($adff) from module spi_flash_ctrl (D = $procmux$239_Y, Q = \fsm_state).
+Handling D = Q on $procdff$428 ($adff) from module spi_flash_ctrl (removing D path).
+Adding EN signal on $procdff$468 ($adff) from module spi_flash_ctrl (D = $procmux$124_Y, Q = \shift_reg).
+Setting constant 1-bit at position 0 on $procdff$428 ($dlatch) from module spi_flash_ctrl.
+Setting constant 1-bit at position 0 on $procdff$423 ($dlatch) from module spi_flash_ctrl.
+Setting constant 0-bit at position 0 on $procdff$518 ($dlatch) from module spi_flash_ctrl.
+Setting constant 0-bit at position 0 on $procdff$493 ($adff) from module spi_flash_ctrl.
+
+5.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_flash_ctrl..
+Removed 28 unused cells and 236 unused wires.
+<suppressed ~33 debug messages>
+
+5.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_flash_ctrl.
+<suppressed ~9 debug messages>
+
+5.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \spi_flash_ctrl..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~83 debug messages>
+
+5.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \spi_flash_ctrl.
+    New ctrl vector for $pmux cell $procmux$239: { $auto$opt_reduce.cc:135:opt_pmux$642 $procmux$118_CMP $procmux$156_CMP $procmux$159_CMP }
+    New ctrl vector for $pmux cell $procmux$341: { $auto$opt_reduce.cc:135:opt_pmux$644 $auto$opt_reduce.cc:135:opt_pmux$520 }
+    New ctrl vector for $pmux cell $procmux$193: { $auto$opt_reduce.cc:135:opt_pmux$646 $procmux$118_CMP $procmux$156_CMP $procmux$159_CMP }
+    New ctrl vector for $pmux cell $procmux$330: $auto$opt_reduce.cc:135:opt_pmux$648
+  Optimizing cells in module \spi_flash_ctrl.
+Performed a total of 4 changes.
+
+5.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_flash_ctrl'.
+Computing hashes of 166 cells of `\spi_flash_ctrl'.
+Finding duplicate cells in `\spi_flash_ctrl'.
+Computing hashes of 148 cells of `\spi_flash_ctrl'.
+Finding duplicate cells in `\spi_flash_ctrl'.
+<suppressed ~54 debug messages>
+Removed a total of 18 cells.
+
+5.13. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $auto$ff.cc:337:slice$534 ($adffe) from module spi_flash_ctrl (D = $0\bit_cnt[2:0], Q = \bit_cnt).
+Adding EN signal on $auto$ff.cc:337:slice$597 ($adffe) from module spi_flash_ctrl (D = $0\flash_mosi_o[0:0], Q = \flash_mosi_o).
+Handling D = Q on $procdff$513 ($adff) from module spi_flash_ctrl (removing D path).
+Adding EN signal on $auto$ff.cc:337:slice$613 ($adffe) from module spi_flash_ctrl (D = $0\fsm_state[2:0], Q = \fsm_state).
+Setting constant 0-bit at position 0 on $procdff$513 ($dlatch) from module spi_flash_ctrl.
+
+5.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_flash_ctrl..
+Removed 0 unused cells and 18 unused wires.
+<suppressed ~1 debug messages>
+
+5.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_flash_ctrl.
+<suppressed ~6 debug messages>
+
+5.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \spi_flash_ctrl..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~69 debug messages>
+
+5.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \spi_flash_ctrl.
+    New input vector for $reduce_and cell $auto$opt_dff.cc:252:make_patterns_logic$667: { $auto$opt_dff.cc:234:make_patterns_logic$535 $auto$opt_dff.cc:234:make_patterns_logic$537 $auto$opt_dff.cc:234:make_patterns_logic$539 $auto$opt_dff.cc:234:make_patterns_logic$569 $auto$opt_dff.cc:234:make_patterns_logic$571 $auto$opt_dff.cc:234:make_patterns_logic$591 $auto$opt_dff.cc:234:make_patterns_logic$662 $auto$opt_dff.cc:234:make_patterns_logic$664 }
+    New input vector for $reduce_and cell $auto$opt_dff.cc:252:make_patterns_logic$655: { $auto$opt_dff.cc:234:make_patterns_logic$535 $auto$opt_dff.cc:234:make_patterns_logic$537 $auto$opt_dff.cc:234:make_patterns_logic$539 $auto$opt_dff.cc:234:make_patterns_logic$541 $auto$opt_dff.cc:234:make_patterns_logic$543 $auto$opt_dff.cc:234:make_patterns_logic$545 $auto$opt_dff.cc:234:make_patterns_logic$650 $auto$opt_dff.cc:234:make_patterns_logic$652 }
+    New ctrl vector for $pmux cell $procmux$320: $auto$opt_reduce.cc:135:opt_pmux$669
+  Optimizing cells in module \spi_flash_ctrl.
+Performed a total of 3 changes.
+
+5.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_flash_ctrl'.
+Computing hashes of 150 cells of `\spi_flash_ctrl'.
+Finding duplicate cells in `\spi_flash_ctrl'.
+Computing hashes of 148 cells of `\spi_flash_ctrl'.
+Finding duplicate cells in `\spi_flash_ctrl'.
+<suppressed ~6 debug messages>
+Removed a total of 2 cells.
+
+5.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_flash_ctrl..
+Removed 6 unused cells and 14 unused wires.
+<suppressed ~8 debug messages>
+
+5.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_flash_ctrl.
+<suppressed ~1 debug messages>
+
+5.23. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.24. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \spi_flash_ctrl..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~67 debug messages>
+
+5.25. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \spi_flash_ctrl.
+Performed a total of 0 changes.
+
+5.26. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_flash_ctrl'.
+Computing hashes of 142 cells of `\spi_flash_ctrl'.
+Finding duplicate cells in `\spi_flash_ctrl'.
+Removed a total of 0 cells.
+
+5.27. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.28. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_flash_ctrl..
+
+5.29. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_flash_ctrl.
+
+5.30. Finished fast OPT passes. (There is nothing left to do.)
+
+6. Executing FSM pass (extract and optimize FSM).
+
+6.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+6.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+6.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+6.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_flash_ctrl..
+
+6.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+6.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+6.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+6.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+7. Executing OPT pass (performing simple optimizations).
+
+7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_flash_ctrl.
+
+7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_flash_ctrl'.
+Computing hashes of 142 cells of `\spi_flash_ctrl'.
+Finding duplicate cells in `\spi_flash_ctrl'.
+Removed a total of 0 cells.
+
+7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \spi_flash_ctrl..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~67 debug messages>
+
+7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \spi_flash_ctrl.
+Performed a total of 0 changes.
+
+7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_flash_ctrl'.
+Computing hashes of 142 cells of `\spi_flash_ctrl'.
+Finding duplicate cells in `\spi_flash_ctrl'.
+Removed a total of 0 cells.
+
+7.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+7.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_flash_ctrl..
+
+7.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_flash_ctrl.
+
+7.9. Finished fast OPT passes. (There is nothing left to do.)
+
+8. Executing MEMORY pass.
+
+8.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+8.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+8.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+8.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+8.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+8.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_flash_ctrl..
+
+8.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+8.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+8.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_flash_ctrl..
+
+8.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+8.11. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+9. Executing OPT pass (performing simple optimizations).
+
+9.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_flash_ctrl.
+
+9.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_flash_ctrl'.
+Computing hashes of 142 cells of `\spi_flash_ctrl'.
+Finding duplicate cells in `\spi_flash_ctrl'.
+Removed a total of 0 cells.
+
+9.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \spi_flash_ctrl..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~67 debug messages>
+
+9.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \spi_flash_ctrl.
+Performed a total of 0 changes.
+
+9.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_flash_ctrl'.
+Computing hashes of 142 cells of `\spi_flash_ctrl'.
+Finding duplicate cells in `\spi_flash_ctrl'.
+Removed a total of 0 cells.
+
+9.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+9.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_flash_ctrl..
+
+9.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_flash_ctrl.
+
+9.9. Finished fast OPT passes. (There is nothing left to do.)
+
+10. Executing TECHMAP pass (map to technology primitives).
+
+10.1. Executing Verilog-2005 frontend: ~/oss-cad-suite/lib/../share/yosys/techmap.v
+Parsing Verilog input from `~/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `$__div_mod_u'.
+Generating RTLIL representation for module `$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Generating RTLIL representation for module `$connect'.
+Generating RTLIL representation for module `$input_port'.
+Successfully finished Verilog frontend.
+
+10.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $reduce_or.
+Using extmapper simplemap for cells of type $reduce_and.
+Using extmapper simplemap for cells of type $ne.
+Using extmapper simplemap for cells of type $adffe.
+Using extmapper simplemap for cells of type $reduce_bool.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $logic_and.
+Using extmapper simplemap for cells of type $logic_not.
+Using extmapper simplemap for cells of type $eq.
+Using extmapper simplemap for cells of type $logic_or.
+Running "alumacc" on wrapper $extern:wrap:$sub:Y_WIDTH=3:B_WIDTH=1:A_WIDTH=3:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$sub:Y_WIDTH=3:B_WIDTH=1:A_WIDTH=3:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$sub:Y_WIDTH=3:B_WIDTH=1:A_WIDTH=3:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $paramod$c5c783b17ab1d780abfad8cfe6563a0a7b47a3b0\_90_pmux for cells of type $pmux.
+Using extmapper simplemap for cells of type $mux.
+Using template $paramod$fc16b9f758000d363d24f130038bd99b46b4fa1b\_90_pmux for cells of type $pmux.
+Using template $paramod$ee721315a7b0169d82611b9aea01747035b97792\_90_pmux for cells of type $pmux.
+Using template $paramod$32e7c4d6f92ff4337599ece53082d2e88a82a9f2\_90_pmux for cells of type $pmux.
+Using template $paramod$d31bf4d7d72e59528d18fbd4f322e9d608532043\_90_pmux for cells of type $pmux.
+Using template $paramod$b098bc6f249c0ac91c4d6e19d54b23c285914115\_90_pmux for cells of type $pmux.
+Using extmapper simplemap for cells of type $adff.
+Using extmapper simplemap for cells of type $and.
+Using template $paramod$b8c0a997bce700f23568a5ada79cc6781d1f5ca0\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $xor.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000000011 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000000011 for cells of type $lcu.
+Using extmapper simplemap for cells of type $pos.
+Using extmapper simplemap for cells of type $or.
+No more expansions possible.
+<suppressed ~601 debug messages>
+
+11. Executing OPT pass (performing simple optimizations).
+
+11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_flash_ctrl.
+<suppressed ~487 debug messages>
+
+11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_flash_ctrl'.
+Computing hashes of 864 cells of `\spi_flash_ctrl'.
+Finding duplicate cells in `\spi_flash_ctrl'.
+Computing hashes of 788 cells of `\spi_flash_ctrl'.
+Finding duplicate cells in `\spi_flash_ctrl'.
+Computing hashes of 767 cells of `\spi_flash_ctrl'.
+Finding duplicate cells in `\spi_flash_ctrl'.
+Computing hashes of 755 cells of `\spi_flash_ctrl'.
+Finding duplicate cells in `\spi_flash_ctrl'.
+Computing hashes of 746 cells of `\spi_flash_ctrl'.
+Finding duplicate cells in `\spi_flash_ctrl'.
+Computing hashes of 739 cells of `\spi_flash_ctrl'.
+Finding duplicate cells in `\spi_flash_ctrl'.
+<suppressed ~375 debug messages>
+Removed a total of 125 cells.
+
+11.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \spi_flash_ctrl..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+11.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \spi_flash_ctrl.
+Performed a total of 0 changes.
+
+11.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_flash_ctrl'.
+Computing hashes of 739 cells of `\spi_flash_ctrl'.
+Finding duplicate cells in `\spi_flash_ctrl'.
+Removed a total of 0 cells.
+
+11.6. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 0-bit at position 0 on $auto$ff.cc:337:slice$1740 ($_DFF_PN0_) from module spi_flash_ctrl.
+
+11.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_flash_ctrl..
+Removed 9 unused cells and 566 unused wires.
+<suppressed ~10 debug messages>
+
+11.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_flash_ctrl.
+
+11.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+11.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \spi_flash_ctrl..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+11.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \spi_flash_ctrl.
+Performed a total of 0 changes.
+
+11.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_flash_ctrl'.
+Computing hashes of 729 cells of `\spi_flash_ctrl'.
+Finding duplicate cells in `\spi_flash_ctrl'.
+Removed a total of 0 cells.
+
+11.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+11.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_flash_ctrl..
+
+11.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_flash_ctrl.
+
+11.16. Finished fast OPT passes. (There is nothing left to do.)
+
+12. Executing DFFLIBMAP pass (mapping DFF cells to sequential cells from liberty file).
+  cell sky130_fd_sc_hd__dfxtp_1 (noninv, pins=3, area=20.02) is a direct match for cell type $_DFF_P_.
+  cell sky130_fd_sc_hd__dfrtn_1 (noninv, pins=4, area=25.02) is a direct match for cell type $_DFF_NN0_.
+  cell sky130_fd_sc_hd__dfrtp_1 (noninv, pins=4, area=25.02) is a direct match for cell type $_DFF_PN0_.
+  cell sky130_fd_sc_hd__dfstp_2 (noninv, pins=4, area=26.28) is a direct match for cell type $_DFF_PN1_.
+  cell sky130_fd_sc_hd__edfxtp_1 (noninv, pins=4, area=30.03) is a direct match for cell type $_DFFE_PP_.
+  cell sky130_fd_sc_hd__dfbbn_1 (noninv, pins=6, area=32.53) is a direct match for cell type $_DFFSR_NNN_.
+  cell sky130_fd_sc_hd__dfbbp_1 (noninv, pins=6, area=32.53) is a direct match for cell type $_DFFSR_PNN_.
+  final dff cell mappings:
+    unmapped dff cell: $_DFF_N_
+    \sky130_fd_sc_hd__dfxtp_1 _DFF_P_ (.CLK( C), .D( D), .Q( Q));
+    \sky130_fd_sc_hd__dfrtn_1 _DFF_NN0_ (.CLK_N( C), .D( D), .Q( Q), .RESET_B( R));
+    unmapped dff cell: $_DFF_NN1_
+    unmapped dff cell: $_DFF_NP0_
+    unmapped dff cell: $_DFF_NP1_
+    \sky130_fd_sc_hd__dfrtp_1 _DFF_PN0_ (.CLK( C), .D( D), .Q( Q), .RESET_B( R));
+    \sky130_fd_sc_hd__dfstp_2 _DFF_PN1_ (.CLK( C), .D( D), .Q( Q), .SET_B( R));
+    unmapped dff cell: $_DFF_PP0_
+    unmapped dff cell: $_DFF_PP1_
+    unmapped dff cell: $_DFFE_NN_
+    unmapped dff cell: $_DFFE_NP_
+    unmapped dff cell: $_DFFE_PN_
+    \sky130_fd_sc_hd__edfxtp_1 _DFFE_PP_ (.CLK( C), .D( D), .DE( E), .Q( Q));
+    \sky130_fd_sc_hd__dfbbn_1 _DFFSR_NNN_ (.CLK_N( C), .D( D), .Q( Q), .Q_N(~Q), .RESET_B( R), .SET_B( S));
+    unmapped dff cell: $_DFFSR_NNP_
+    unmapped dff cell: $_DFFSR_NPN_
+    unmapped dff cell: $_DFFSR_NPP_
+    \sky130_fd_sc_hd__dfbbp_1 _DFFSR_PNN_ (.CLK( C), .D( D), .Q( Q), .Q_N(~Q), .RESET_B( R), .SET_B( S));
+    unmapped dff cell: $_DFFSR_PNP_
+    unmapped dff cell: $_DFFSR_PPN_
+    unmapped dff cell: $_DFFSR_PPP_
+
+12.1. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+<suppressed ~24 debug messages>
+Mapping DFF cells in module `\spi_flash_ctrl':
+  mapped 100 $_DFF_PN0_ cells to \sky130_fd_sc_hd__dfrtp_1 cells.
+  mapped 1 $_DFF_PN1_ cells to \sky130_fd_sc_hd__dfstp_2 cells.
+
+13. Executing ABC pass (technology mapping using ABC).
+
+13.1. Extracting gate netlist of module `\spi_flash_ctrl' to `<abc-temp-dir>/input.blif'..
+ABC: using cached merged SCL: /tmp/yosys-liberty-scl-cache/yosys_merged_f46f2c32.scl (1 files)
+Replacing 106 occurrences of constant undef bits with constant zero bits
+
+13.1.1. Executed ABC.
+Extracted 704 gates and 816 wires to a netlist network with 109 inputs and 101 outputs.
+Running ABC script: <abc-temp-dir>/abc.script
+ABC: UC Berkeley, ABC 1.01 (compiled Apr 26 2026 04:19:40)
+ABC: abc 01> empty
+ABC: abc 01> source <abc-temp-dir>/abc.script
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_scl /tmp/yosys-liberty-scl-cache/yosys_merged_f46f2c32.scl 
+ABC: Warning: Detected 9 multi-output cells (for example, "sky130_fd_sc_hd__fa_1").
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+ABC: 
+ABC: YOSYS_ABC_DONE 
+
+13.1.2. Re-integrating ABC results.
+ABC RESULTS:   sky130_fd_sc_hd__a2111oi_0 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a21boi_0 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a21o_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__a21oi_1 cells:       23
+ABC RESULTS:   sky130_fd_sc_hd__a221o_1 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__a221oi_1 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__a22o_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__a22oi_1 cells:       23
+ABC RESULTS:   sky130_fd_sc_hd__a31oi_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a32oi_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__and3_1 cells:       18
+ABC RESULTS:   sky130_fd_sc_hd__and4b_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__clkinv_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__lpflow_isobufsrc_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__mux2_1 cells:       43
+ABC RESULTS:   sky130_fd_sc_hd__nand2_1 cells:       50
+ABC RESULTS:   sky130_fd_sc_hd__nand2b_1 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__nand3_1 cells:       16
+ABC RESULTS:   sky130_fd_sc_hd__nand4_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nand4bb_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nor2_1 cells:       17
+ABC RESULTS:   sky130_fd_sc_hd__nor3_1 cells:        8
+ABC RESULTS:   sky130_fd_sc_hd__nor3b_1 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__nor4_1 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__o2111ai_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o211ai_1 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__o21a_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__o21ai_0 cells:       22
+ABC RESULTS:   sky130_fd_sc_hd__o22ai_1 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__o2bb2ai_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__o31ai_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o32a_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__or3_1 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__or3b_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__or4_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__or4b_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__xnor2_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__xor2_1 cells:        2
+ABC RESULTS:        internal signals:      606
+ABC RESULTS:           input signals:      109
+ABC RESULTS:          output signals:      101
+Removing temp directory.
+Removing global temp directory.
+
+14. Executing OPT pass (performing simple optimizations).
+
+14.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_flash_ctrl.
+
+14.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_flash_ctrl'.
+Computing hashes of 377 cells of `\spi_flash_ctrl'.
+Finding duplicate cells in `\spi_flash_ctrl'.
+Removed a total of 0 cells.
+
+14.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \spi_flash_ctrl..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+14.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \spi_flash_ctrl.
+Performed a total of 0 changes.
+
+14.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_flash_ctrl'.
+Computing hashes of 377 cells of `\spi_flash_ctrl'.
+Finding duplicate cells in `\spi_flash_ctrl'.
+Removed a total of 0 cells.
+
+14.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+14.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_flash_ctrl..
+Removed 0 unused cells and 438 unused wires.
+<suppressed ~2 debug messages>
+
+14.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_flash_ctrl.
+
+14.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+14.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \spi_flash_ctrl..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+14.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \spi_flash_ctrl.
+Performed a total of 0 changes.
+
+14.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_flash_ctrl'.
+Computing hashes of 377 cells of `\spi_flash_ctrl'.
+Finding duplicate cells in `\spi_flash_ctrl'.
+Removed a total of 0 cells.
+
+14.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+14.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_flash_ctrl..
+
+14.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_flash_ctrl.
+
+14.16. Finished fast OPT passes. (There is nothing left to do.)
+
+15. Printing statistics.
+
+=== spi_flash_ctrl ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+      283        - wires
+      477        - wire bits
+       30        - public wires
+      193        - public wire bits
+       17        - ports
+      113        - port bits
+      377 4.33E+03 cells
+        1    8.758   sky130_fd_sc_hd__a2111oi_0
+        1    7.507   sky130_fd_sc_hd__a21boi_0
+        2   15.014   sky130_fd_sc_hd__a21o_1
+       23   115.11   sky130_fd_sc_hd__a21oi_1
+        3   30.029   sky130_fd_sc_hd__a221o_1
+        5   43.792   sky130_fd_sc_hd__a221oi_1
+        2   17.517   sky130_fd_sc_hd__a22o_1
+       23  172.666   sky130_fd_sc_hd__a22oi_1
+        1    6.256   sky130_fd_sc_hd__a31oi_1
+        1    8.758   sky130_fd_sc_hd__a32oi_1
+       18  112.608   sky130_fd_sc_hd__and3_1
+        1    10.01   sky130_fd_sc_hd__and4b_1
+        1    3.754   sky130_fd_sc_hd__clkinv_1
+      100   2502.4   sky130_fd_sc_hd__dfrtp_1
+        1   26.275   sky130_fd_sc_hd__dfstp_2
+        2   12.512   sky130_fd_sc_hd__lpflow_isobufsrc_1
+       43  484.214   sky130_fd_sc_hd__mux2_1
+       50   187.68   sky130_fd_sc_hd__nand2_1
+        3   18.768   sky130_fd_sc_hd__nand2b_1
+       16   80.077   sky130_fd_sc_hd__nand3_1
+        1    6.256   sky130_fd_sc_hd__nand4_1
+        1   11.261   sky130_fd_sc_hd__nand4bb_1
+       17   63.811   sky130_fd_sc_hd__nor2_1
+        8   40.038   sky130_fd_sc_hd__nor3_1
+        3   22.522   sky130_fd_sc_hd__nor3b_1
+        3   18.768   sky130_fd_sc_hd__nor4_1
+        1    8.758   sky130_fd_sc_hd__o2111ai_1
+        4   30.029   sky130_fd_sc_hd__o211ai_1
+        2   15.014   sky130_fd_sc_hd__o21a_1
+       22  110.106   sky130_fd_sc_hd__o21ai_0
+        3   18.768   sky130_fd_sc_hd__o22ai_1
+        2   17.517   sky130_fd_sc_hd__o2bb2ai_1
+        1    7.507   sky130_fd_sc_hd__o31ai_1
+        1    10.01   sky130_fd_sc_hd__o32a_1
+        4   25.024   sky130_fd_sc_hd__or3_1
+        2   17.517   sky130_fd_sc_hd__or3b_1
+        1    7.507   sky130_fd_sc_hd__or4_1
+        1    10.01   sky130_fd_sc_hd__or4b_1
+        1    8.758   sky130_fd_sc_hd__xnor2_1
+        2   17.517   sky130_fd_sc_hd__xor2_1
+
+   Chip area for module '\spi_flash_ctrl': 4330.403200
+     of which used for sequential elements: 2528.675200 (58.39%)
+
+16. Executing Verilog backend.
+
+16.1. Executing BMUXMAP pass.
+
+16.2. Executing DEMUXMAP pass.
+Dumping module `\spi_flash_ctrl'.
+
+End of script. Logfile hash: d3380d311d, time: 0.47s, user: 0.29s, system: 0.01s, MEM: 45.25 MB peak
+Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+Time spent: 42% 1x abc (0 sec), 13% 1x stat (0 sec), ...

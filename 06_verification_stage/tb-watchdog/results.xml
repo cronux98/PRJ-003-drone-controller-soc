@@ -1,0 +1,20 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1784461765" />
+    <testcase name="test_reset" classname="test_watchdog" file="~/hermes_workspace/projects/IP-010/v4/06_verification_stage/tb-watchdog/test_watchdog.py" lineno="12" time="0.0010356903076171875" sim_time_ns="80.0" ratio_time="77243.16758747699" />
+    <testcase name="test_register_rw" classname="test_watchdog" file="~/hermes_workspace/projects/IP-010/v4/06_verification_stage/tb-watchdog/test_watchdog.py" lineno="24" time="0.003597736358642578" sim_time_ns="361.0" ratio_time="100340.87104042413" />
+    <testcase name="test_wb_ack" classname="test_watchdog" file="~/hermes_workspace/projects/IP-010/v4/06_verification_stage/tb-watchdog/test_watchdog.py" lineno="57" time="0.0007717609405517578" sim_time_ns="100.99999999999994" ratio_time="130869.54093296254" />
+    <testcase name="test_consecutive_writes" classname="test_watchdog" file="~/hermes_workspace/projects/IP-010/v4/06_verification_stage/tb-watchdog/test_watchdog.py" lineno="71" time="0.0013532638549804688" sim_time_ns="161.0" ratio_time="118971.62508809021" />
+    <testcase name="test_idle_read" classname="test_watchdog" file="~/hermes_workspace/projects/IP-010/v4/06_verification_stage/tb-watchdog/test_watchdog.py" lineno="91" time="0.0007698535919189453" sim_time_ns="101.0" ratio_time="131193.77640136264" />
+    <testcase name="test_stress_00" classname="test_watchdog" file="~/hermes_workspace/projects/IP-010/v4/06_verification_stage/tb-watchdog/test_watchdog.py" lineno="105" time="0.0009388923645019531" sim_time_ns="121.0" ratio_time="128875.2625698324" />
+    <testcase name="test_stress_01" classname="test_watchdog" file="~/hermes_workspace/projects/IP-010/v4/06_verification_stage/tb-watchdog/test_watchdog.py" lineno="120" time="0.0009701251983642578" sim_time_ns="121.00000000000011" ratio_time="124726.16957483423" />
+    <testcase name="test_stress_02" classname="test_watchdog" file="~/hermes_workspace/projects/IP-010/v4/06_verification_stage/tb-watchdog/test_watchdog.py" lineno="135" time="0.0009889602661132812" sim_time_ns="121.0" ratio_time="122350.7193828351" />
+    <testcase name="test_stress_03" classname="test_watchdog" file="~/hermes_workspace/projects/IP-010/v4/06_verification_stage/tb-watchdog/test_watchdog.py" lineno="150" time="0.0009696483612060547" sim_time_ns="121.0" ratio_time="124787.50528645192" />
+    <testcase name="test_stress_04" classname="test_watchdog" file="~/hermes_workspace/projects/IP-010/v4/06_verification_stage/tb-watchdog/test_watchdog.py" lineno="165" time="0.0009417533874511719" sim_time_ns="121.0" ratio_time="128483.74278481012" />
+    <testcase name="test_stress_05" classname="test_watchdog" file="~/hermes_workspace/projects/IP-010/v4/06_verification_stage/tb-watchdog/test_watchdog.py" lineno="180" time="0.0009753704071044922" sim_time_ns="121.0" ratio_time="124055.43485700317" />
+    <testcase name="test_stress_06" classname="test_watchdog" file="~/hermes_workspace/projects/IP-010/v4/06_verification_stage/tb-watchdog/test_watchdog.py" lineno="195" time="0.0009307861328125" sim_time_ns="121.0" ratio_time="129997.6393442623" />
+    <testcase name="test_stress_07" classname="test_watchdog" file="~/hermes_workspace/projects/IP-010/v4/06_verification_stage/tb-watchdog/test_watchdog.py" lineno="210" time="0.0009419918060302734" sim_time_ns="121.0" ratio_time="128451.22348772462" />
+    <testcase name="test_stress_08" classname="test_watchdog" file="~/hermes_workspace/projects/IP-010/v4/06_verification_stage/tb-watchdog/test_watchdog.py" lineno="225" time="0.0009438991546630859" sim_time_ns="121.0" ratio_time="128191.66052033342" />
+    <testcase name="test_stress_09" classname="test_watchdog" file="~/hermes_workspace/projects/IP-010/v4/06_verification_stage/tb-watchdog/test_watchdog.py" lineno="240" time="0.0009412765502929688" sim_time_ns="121.0" ratio_time="128548.83080040527" />
+  </testsuite>
+</testsuites>

@@ -1,0 +1,1 @@
+/home/smdadmin/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-spi_0/rtl/EF_SPI_WB_wrapper.v

@@ -1,0 +1,91 @@
+# LibreLane v3 config.yaml — IP-010 v4 Drone Controller SoC
+# Top module: drone_soc
+# Clock: 16.67 MHz (CLOCK_PERIOD = 60.0 ns)
+# PDK: sky130hd (auto-discovered)
+# SRAM: sram_8kb blackbox with dummy LEF/GDS macro
+
+DESIGN_NAME: drone_soc
+VERILOG_FILES:
+  - ~/hermes_workspace/projects/IP-010/v4/08_backend_stage/rtl/alu_ctrl.v
+  - ~/hermes_workspace/projects/IP-010/v4/08_backend_stage/rtl/alu.v
+  - ~/hermes_workspace/projects/IP-010/v4/08_backend_stage/rtl/axis_fifo.v
+  - ~/hermes_workspace/projects/IP-010/v4/08_backend_stage/rtl/branch_unit.v
+  - ~/hermes_workspace/projects/IP-010/v4/08_backend_stage/rtl/caravel_wrapper.v
+  - ~/hermes_workspace/projects/IP-010/v4/08_backend_stage/rtl/clk_rst_mgr.v
+  - ~/hermes_workspace/projects/IP-010/v4/08_backend_stage/rtl/ctrl_unit.v
+  - ~/hermes_workspace/projects/IP-010/v4/08_backend_stage/rtl/custom_timer.v
+  - ~/hermes_workspace/projects/IP-010/v4/08_backend_stage/rtl/drone_soc.v
+  - ~/hermes_workspace/projects/IP-010/v4/08_backend_stage/rtl/dshot_pwm.v
+  - ~/hermes_workspace/projects/IP-010/v4/08_backend_stage/rtl/EF_GPIO8.v
+  - ~/hermes_workspace/projects/IP-010/v4/08_backend_stage/rtl/EF_GPIO8_WB_wrapper.v
+  - ~/hermes_workspace/projects/IP-010/v4/08_backend_stage/rtl/EF_I2C_WB_wrapper.v
+  - ~/hermes_workspace/projects/IP-010/v4/08_backend_stage/rtl/EF_SPI.v
+  - ~/hermes_workspace/projects/IP-010/v4/08_backend_stage/rtl/EF_SPI_WB_wrapper.v
+  - ~/hermes_workspace/projects/IP-010/v4/08_backend_stage/rtl/EF_TMR32.v
+  - ~/hermes_workspace/projects/IP-010/v4/08_backend_stage/rtl/EF_TMR32_WB_wrapper.v
+  - ~/hermes_workspace/projects/IP-010/v4/08_backend_stage/rtl/EF_UART.v
+  - ~/hermes_workspace/projects/IP-010/v4/08_backend_stage/rtl/EF_UART_WB.v
+  - ~/hermes_workspace/projects/IP-010/v4/08_backend_stage/rtl/EF_UART_WB_wrapper.v
+  - ~/hermes_workspace/projects/IP-010/v4/08_backend_stage/rtl/ef_util_lib.v
+  - ~/hermes_workspace/projects/IP-010/v4/08_backend_stage/rtl/EF_WDT32.v
+  - ~/hermes_workspace/projects/IP-010/v4/08_backend_stage/rtl/EF_WDT32_WB_wrapper.v
+  - ~/hermes_workspace/projects/IP-010/v4/08_backend_stage/rtl/ex_mem.v
+  - ~/hermes_workspace/projects/IP-010/v4/08_backend_stage/rtl/forwarding_unit.v
+  - ~/hermes_workspace/projects/IP-010/v4/08_backend_stage/rtl/gpio.v
+  - ~/hermes_workspace/projects/IP-010/v4/08_backend_stage/rtl/hazard_unit.v
+  - ~/hermes_workspace/projects/IP-010/v4/08_backend_stage/rtl/i2c_0.v
+  - ~/hermes_workspace/projects/IP-010/v4/08_backend_stage/rtl/i2c_init.v
+  - ~/hermes_workspace/projects/IP-010/v4/08_backend_stage/rtl/i2c_master.v
+  - ~/hermes_workspace/projects/IP-010/v4/08_backend_stage/rtl/i2c_master_wbs_16.v
+  - ~/hermes_workspace/projects/IP-010/v4/08_backend_stage/rtl/i2c_master_wbs_8.v
+  - ~/hermes_workspace/projects/IP-010/v4/08_backend_stage/rtl/i2c_single_reg.v
+  - ~/hermes_workspace/projects/IP-010/v4/08_backend_stage/rtl/ibex_core.v
+  - ~/hermes_workspace/projects/IP-010/v4/08_backend_stage/rtl/ibex_core_wb.v
+  - ~/hermes_workspace/projects/IP-010/v4/08_backend_stage/rtl/id_ex.v
+  - ~/hermes_workspace/projects/IP-010/v4/08_backend_stage/rtl/if_id.v
+  - ~/hermes_workspace/projects/IP-010/v4/08_backend_stage/rtl/imm_gen.v
+  - ~/hermes_workspace/projects/IP-010/v4/08_backend_stage/rtl/irq_ctrl.v
+  - ~/hermes_workspace/projects/IP-010/v4/08_backend_stage/rtl/mem_wb.v
+  - ~/hermes_workspace/projects/IP-010/v4/08_backend_stage/rtl/pc.v
+  - ~/hermes_workspace/projects/IP-010/v4/08_backend_stage/rtl/reg_file.v
+  - ~/hermes_workspace/projects/IP-010/v4/08_backend_stage/rtl/spi_0.v
+  - ~/hermes_workspace/projects/IP-010/v4/08_backend_stage/rtl/spi_flash_ctrl.v
+  - ~/hermes_workspace/projects/IP-010/v4/08_backend_stage/rtl/spi_master.v
+  - ~/hermes_workspace/projects/IP-010/v4/08_backend_stage/rtl/sram_8kb_blackbox.v
+  - ~/hermes_workspace/projects/IP-010/v4/08_backend_stage/rtl/timer.v
+  - ~/hermes_workspace/projects/IP-010/v4/08_backend_stage/rtl/watchdog.v
+  - ~/hermes_workspace/projects/IP-010/v4/08_backend_stage/rtl/wb_interconnect_bus.v
+  - ~/hermes_workspace/projects/IP-010/v4/08_backend_stage/rtl/wishbone_interconnect.v
+CLOCK_PERIOD: 60.0
+CLOCK_PORT: clk_i
+ERROR_ON_LINTER_ERRORS: false    # [expires: v4-complete] Waived: 0 current errors; legacy RTL WIDTHEXPAND/WIDTHTRUNC
+ERROR_ON_LINTER_WARNINGS: false  # [expires: v4-complete] Waived: Verilator warnings in legacy IP RTL (WIDTHEXPAND, WIDTHTRUNC, UNOPTFLAT, CASEOVERLAP, TIMESCALEMOD, UNUSEDSIGNAL, PINMISSING, PINCONNECTEMPTY)
+ERROR_ON_SYNTH_CHECKS: false   # Waived: 3 RTL slaves (irq_ctrl, caravel_wrapper, clk_rst_mgr) lack wb_err_o port.
+                              # drone_soc connects .wb_err_o() for all 15 slaves but these 3 modules don't implement it.
+                              # sram_8kb blackbox wb_err_o fixed in v4 (PD domain). Remaining 3 are RTL fixes.
+                              # Non-blocking: wb_err is optional in Wishbone B4 spec.
+                              # [expires: v4-run3 — fix RTL or add waiver permanent]
+ERROR_ON_DISCONNECTED_PINS: false # [expires: v4-complete] Waived: SRAM blackbox has no VDD/VSS pins — handled by macro wrapper
+IGNORE_DISCONNECTED_MODULES:
+  - sram_8kb
+MACRO_PLACEMENT_CFG: ~/hermes_workspace/projects/IP-010/v4/08_backend_stage/librelane/macro_placement.cfg
+
+# SRAM macro files — dummy LEF/GDS with MACRO name sram_8kb matching blackbox module
+# Copied from v3 proven configuration
+EXTRA_LEFS:
+  - ~/hermes_workspace/projects/IP-010/v4/08_backend_stage/macros/sram_8kb/sram_8kb.lef
+EXTRA_GDS:
+  - ~/hermes_workspace/projects/IP-010/v4/08_backend_stage/macros/sram_8kb/sram_8kb.gds
+
+# PDK-specific overrides
+pdk::sky130*:
+  FP_CORE_UTIL: 35
+  CLOCK_PERIOD: 60.0
+
+# Antenna repair — v3-proven: heuristic diode insertion fixes the persistent net1140 violator
+# (met3, ratio 601.86/400.00=1.50) that survives basic repair
+RUN_HEURISTIC_DIODE_INSERTION: true
+HEURISTIC_ANTENNA_THRESHOLD: 60
+GRT_ANTENNA_REPAIR_MARGIN: 20
+DRT_ANTENNA_REPAIR_MARGIN: 20
+DIODE_PADDING: 2

@@ -1,0 +1,712 @@
+VERSION 5.8 ;
+NAMESCASESENSITIVE ON ;
+BUSBITCHARS "[]" ;
+DIVIDERCHAR "/" ;
+
+MACRO sram_8kb
+  CLASS BLOCK ;
+  ORIGIN 0.000 0.000 ;
+  FOREIGN sram_8kb 0.000 0.000 ;
+  SIZE 400.000 BY 350.000 ;
+  SYMMETRY X Y ;
+  SITE unithd ;
+
+  PIN clk_i
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 5.000 170.000 10.000 180.000 ;
+    END
+  END clk_i
+
+  PIN rst_ni
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 15.000 170.000 20.000 180.000 ;
+    END
+  END rst_ni
+
+  PIN wb_adr_i[0]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 25.000 170.000 30.000 180.000 ;
+    END
+  END wb_adr_i[0]
+
+  PIN wb_adr_i[1]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 35.000 170.000 40.000 180.000 ;
+    END
+  END wb_adr_i[1]
+
+  PIN wb_adr_i[2]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 45.000 170.000 50.000 180.000 ;
+    END
+  END wb_adr_i[2]
+
+  PIN wb_adr_i[3]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 55.000 170.000 60.000 180.000 ;
+    END
+  END wb_adr_i[3]
+
+  PIN wb_adr_i[4]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 65.000 170.000 70.000 180.000 ;
+    END
+  END wb_adr_i[4]
+
+  PIN wb_adr_i[5]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 75.000 170.000 80.000 180.000 ;
+    END
+  END wb_adr_i[5]
+
+  PIN wb_adr_i[6]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 85.000 170.000 90.000 180.000 ;
+    END
+  END wb_adr_i[6]
+
+  PIN wb_adr_i[7]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 95.000 170.000 100.000 180.000 ;
+    END
+  END wb_adr_i[7]
+
+  PIN wb_adr_i[8]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 105.000 170.000 110.000 180.000 ;
+    END
+  END wb_adr_i[8]
+
+  PIN wb_adr_i[9]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 115.000 170.000 120.000 180.000 ;
+    END
+  END wb_adr_i[9]
+
+  PIN wb_adr_i[10]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 125.000 170.000 130.000 180.000 ;
+    END
+  END wb_adr_i[10]
+
+  PIN wb_adr_i[11]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 135.000 170.000 140.000 180.000 ;
+    END
+  END wb_adr_i[11]
+
+  PIN wb_adr_i[12]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 145.000 170.000 150.000 180.000 ;
+    END
+  END wb_adr_i[12]
+
+  PIN wb_dat_i[0]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 155.000 170.000 160.000 180.000 ;
+    END
+  END wb_dat_i[0]
+
+  PIN wb_dat_i[1]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 165.000 170.000 170.000 180.000 ;
+    END
+  END wb_dat_i[1]
+
+  PIN wb_dat_i[2]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 175.000 170.000 180.000 180.000 ;
+    END
+  END wb_dat_i[2]
+
+  PIN wb_dat_i[3]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 185.000 170.000 190.000 180.000 ;
+    END
+  END wb_dat_i[3]
+
+  PIN wb_dat_i[4]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 195.000 170.000 200.000 180.000 ;
+    END
+  END wb_dat_i[4]
+
+  PIN wb_dat_i[5]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 205.000 170.000 210.000 180.000 ;
+    END
+  END wb_dat_i[5]
+
+  PIN wb_dat_i[6]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 215.000 170.000 220.000 180.000 ;
+    END
+  END wb_dat_i[6]
+
+  PIN wb_dat_i[7]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 225.000 170.000 230.000 180.000 ;
+    END
+  END wb_dat_i[7]
+
+  PIN wb_dat_i[8]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 235.000 170.000 240.000 180.000 ;
+    END
+  END wb_dat_i[8]
+
+  PIN wb_dat_i[9]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 245.000 170.000 250.000 180.000 ;
+    END
+  END wb_dat_i[9]
+
+  PIN wb_dat_i[10]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 255.000 170.000 260.000 180.000 ;
+    END
+  END wb_dat_i[10]
+
+  PIN wb_dat_i[11]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 265.000 170.000 270.000 180.000 ;
+    END
+  END wb_dat_i[11]
+
+  PIN wb_dat_i[12]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 275.000 170.000 280.000 180.000 ;
+    END
+  END wb_dat_i[12]
+
+  PIN wb_dat_i[13]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 285.000 170.000 290.000 180.000 ;
+    END
+  END wb_dat_i[13]
+
+  PIN wb_dat_i[14]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 295.000 170.000 300.000 180.000 ;
+    END
+  END wb_dat_i[14]
+
+  PIN wb_dat_i[15]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 305.000 170.000 310.000 180.000 ;
+    END
+  END wb_dat_i[15]
+
+  PIN wb_dat_i[16]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 315.000 170.000 320.000 180.000 ;
+    END
+  END wb_dat_i[16]
+
+  PIN wb_dat_i[17]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 325.000 170.000 330.000 180.000 ;
+    END
+  END wb_dat_i[17]
+
+  PIN wb_dat_i[18]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 335.000 170.000 340.000 180.000 ;
+    END
+  END wb_dat_i[18]
+
+  PIN wb_dat_i[19]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 345.000 170.000 350.000 180.000 ;
+    END
+  END wb_dat_i[19]
+
+  PIN wb_dat_i[20]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 355.000 170.000 360.000 180.000 ;
+    END
+  END wb_dat_i[20]
+
+  PIN wb_dat_i[21]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 365.000 170.000 370.000 180.000 ;
+    END
+  END wb_dat_i[21]
+
+  PIN wb_dat_i[22]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 375.000 170.000 380.000 180.000 ;
+    END
+  END wb_dat_i[22]
+
+  PIN wb_dat_i[23]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 385.000 170.000 390.000 180.000 ;
+    END
+  END wb_dat_i[23]
+
+  PIN wb_dat_i[24]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 5.000 10.000 10.000 20.000 ;
+    END
+  END wb_dat_i[24]
+
+  PIN wb_dat_i[25]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 15.000 10.000 20.000 20.000 ;
+    END
+  END wb_dat_i[25]
+
+  PIN wb_dat_i[26]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 25.000 10.000 30.000 20.000 ;
+    END
+  END wb_dat_i[26]
+
+  PIN wb_dat_i[27]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 35.000 10.000 40.000 20.000 ;
+    END
+  END wb_dat_i[27]
+
+  PIN wb_dat_i[28]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 45.000 10.000 50.000 20.000 ;
+    END
+  END wb_dat_i[28]
+
+  PIN wb_dat_i[29]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 55.000 10.000 60.000 20.000 ;
+    END
+  END wb_dat_i[29]
+
+  PIN wb_dat_i[30]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 65.000 10.000 70.000 20.000 ;
+    END
+  END wb_dat_i[30]
+
+  PIN wb_dat_i[31]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 75.000 10.000 80.000 20.000 ;
+    END
+  END wb_dat_i[31]
+
+  PIN wb_sel_i[0]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 85.000 10.000 90.000 20.000 ;
+    END
+  END wb_sel_i[0]
+
+  PIN wb_sel_i[1]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 95.000 10.000 100.000 20.000 ;
+    END
+  END wb_sel_i[1]
+
+  PIN wb_sel_i[2]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 105.000 10.000 110.000 20.000 ;
+    END
+  END wb_sel_i[2]
+
+  PIN wb_sel_i[3]
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 115.000 10.000 120.000 20.000 ;
+    END
+  END wb_sel_i[3]
+
+  PIN wb_we_i
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 125.000 10.000 130.000 20.000 ;
+    END
+  END wb_we_i
+
+  PIN wb_stb_i
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 135.000 10.000 140.000 20.000 ;
+    END
+  END wb_stb_i
+
+  PIN wb_cyc_i
+    DIRECTION INPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 145.000 10.000 150.000 20.000 ;
+    END
+  END wb_cyc_i
+
+  PIN wb_dat_o[0]
+    DIRECTION OUTPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 155.000 10.000 160.000 20.000 ;
+    END
+  END wb_dat_o[0]
+
+  PIN wb_dat_o[1]
+    DIRECTION OUTPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 165.000 10.000 170.000 20.000 ;
+    END
+  END wb_dat_o[1]
+
+  PIN wb_dat_o[2]
+    DIRECTION OUTPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 175.000 10.000 180.000 20.000 ;
+    END
+  END wb_dat_o[2]
+
+  PIN wb_dat_o[3]
+    DIRECTION OUTPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 185.000 10.000 190.000 20.000 ;
+    END
+  END wb_dat_o[3]
+
+  PIN wb_dat_o[4]
+    DIRECTION OUTPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 195.000 10.000 200.000 20.000 ;
+    END
+  END wb_dat_o[4]
+
+  PIN wb_dat_o[5]
+    DIRECTION OUTPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 205.000 10.000 210.000 20.000 ;
+    END
+  END wb_dat_o[5]
+
+  PIN wb_dat_o[6]
+    DIRECTION OUTPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 215.000 10.000 220.000 20.000 ;
+    END
+  END wb_dat_o[6]
+
+  PIN wb_dat_o[7]
+    DIRECTION OUTPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 225.000 10.000 230.000 20.000 ;
+    END
+  END wb_dat_o[7]
+
+  PIN wb_dat_o[8]
+    DIRECTION OUTPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 235.000 10.000 240.000 20.000 ;
+    END
+  END wb_dat_o[8]
+
+  PIN wb_dat_o[9]
+    DIRECTION OUTPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 245.000 10.000 250.000 20.000 ;
+    END
+  END wb_dat_o[9]
+
+  PIN wb_dat_o[10]
+    DIRECTION OUTPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 255.000 10.000 260.000 20.000 ;
+    END
+  END wb_dat_o[10]
+
+  PIN wb_dat_o[11]
+    DIRECTION OUTPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 265.000 10.000 270.000 20.000 ;
+    END
+  END wb_dat_o[11]
+
+  PIN wb_dat_o[12]
+    DIRECTION OUTPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 275.000 10.000 280.000 20.000 ;
+    END
+  END wb_dat_o[12]
+
+  PIN wb_dat_o[13]
+    DIRECTION OUTPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 285.000 10.000 290.000 20.000 ;
+    END
+  END wb_dat_o[13]
+
+  PIN wb_dat_o[14]
+    DIRECTION OUTPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 295.000 10.000 300.000 20.000 ;
+    END
+  END wb_dat_o[14]
+
+  PIN wb_dat_o[15]
+    DIRECTION OUTPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 305.000 10.000 310.000 20.000 ;
+    END
+  END wb_dat_o[15]
+
+  PIN wb_dat_o[16]
+    DIRECTION OUTPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 315.000 10.000 320.000 20.000 ;
+    END
+  END wb_dat_o[16]
+
+  PIN wb_dat_o[17]
+    DIRECTION OUTPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 325.000 10.000 330.000 20.000 ;
+    END
+  END wb_dat_o[17]
+
+  PIN wb_dat_o[18]
+    DIRECTION OUTPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 335.000 10.000 340.000 20.000 ;
+    END
+  END wb_dat_o[18]
+
+  PIN wb_dat_o[19]
+    DIRECTION OUTPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 345.000 10.000 350.000 20.000 ;
+    END
+  END wb_dat_o[19]
+
+  PIN wb_dat_o[20]
+    DIRECTION OUTPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 355.000 10.000 360.000 20.000 ;
+    END
+  END wb_dat_o[20]
+
+  PIN wb_dat_o[21]
+    DIRECTION OUTPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 365.000 10.000 370.000 20.000 ;
+    END
+  END wb_dat_o[21]
+
+  PIN wb_dat_o[22]
+    DIRECTION OUTPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 375.000 10.000 380.000 20.000 ;
+    END
+  END wb_dat_o[22]
+
+  PIN wb_dat_o[23]
+    DIRECTION OUTPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 385.000 10.000 390.000 20.000 ;
+    END
+  END wb_dat_o[23]
+
+  PIN wb_dat_o[24]
+    DIRECTION OUTPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 5.000 330.000 10.000 340.000 ;
+    END
+  END wb_dat_o[24]
+
+  PIN wb_dat_o[25]
+    DIRECTION OUTPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 15.000 330.000 20.000 340.000 ;
+    END
+  END wb_dat_o[25]
+
+  PIN wb_dat_o[26]
+    DIRECTION OUTPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 25.000 330.000 30.000 340.000 ;
+    END
+  END wb_dat_o[26]
+
+  PIN wb_dat_o[27]
+    DIRECTION OUTPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 35.000 330.000 40.000 340.000 ;
+    END
+  END wb_dat_o[27]
+
+  PIN wb_dat_o[28]
+    DIRECTION OUTPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 45.000 330.000 50.000 340.000 ;
+    END
+  END wb_dat_o[28]
+
+  PIN wb_dat_o[29]
+    DIRECTION OUTPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 55.000 330.000 60.000 340.000 ;
+    END
+  END wb_dat_o[29]
+
+  PIN wb_dat_o[30]
+    DIRECTION OUTPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 65.000 330.000 70.000 340.000 ;
+    END
+  END wb_dat_o[30]
+
+  PIN wb_dat_o[31]
+    DIRECTION OUTPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 75.000 330.000 80.000 340.000 ;
+    END
+  END wb_dat_o[31]
+
+  PIN wb_ack_o
+    DIRECTION OUTPUT ;
+    PORT
+      LAYER met2 ;
+        RECT 85.000 330.000 90.000 340.000 ;
+    END
+  END wb_ack_o
+
+END sram_8kb
+
+END LIBRARY

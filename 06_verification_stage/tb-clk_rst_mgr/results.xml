@@ -1,0 +1,13 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1784461755" />
+    <testcase name="test_reset" classname="test_clk_rst_mgr" file="~/hermes_workspace/projects/IP-010/v4/06_verification_stage/tb-clk_rst_mgr/test_clk_rst_mgr.py" lineno="12" time="0.001047372817993164" sim_time_ns="80.0" ratio_time="76381.58889141817" />
+    <testcase name="test_register_rw" classname="test_clk_rst_mgr" file="~/hermes_workspace/projects/IP-010/v4/06_verification_stage/tb-clk_rst_mgr/test_clk_rst_mgr.py" lineno="24" time="0.00390934944152832" sim_time_ns="240.99999999999997" ratio_time="61647.08568640604" />
+    <testcase name="test_wb_ack" classname="test_clk_rst_mgr" file="~/hermes_workspace/projects/IP-010/v4/06_verification_stage/tb-clk_rst_mgr/test_clk_rst_mgr.py" lineno="48" time="0.0012362003326416016" sim_time_ns="101.0" ratio_time="81701.96798457087" />
+    <testcase name="test_consecutive_writes" classname="test_clk_rst_mgr" file="~/hermes_workspace/projects/IP-010/v4/06_verification_stage/tb-clk_rst_mgr/test_clk_rst_mgr.py" lineno="62" time="0.0013265609741210938" sim_time_ns="161.00000000000006" ratio_time="121366.45291157445" />
+    <testcase name="test_idle_read" classname="test_clk_rst_mgr" file="~/hermes_workspace/projects/IP-010/v4/06_verification_stage/tb-clk_rst_mgr/test_clk_rst_mgr.py" lineno="82" time="0.0007486343383789062" sim_time_ns="101.0" ratio_time="134912.32611464968" />
+    <testcase name="test_stress_00" classname="test_clk_rst_mgr" file="~/hermes_workspace/projects/IP-010/v4/06_verification_stage/tb-clk_rst_mgr/test_clk_rst_mgr.py" lineno="96" time="0.000934600830078125" sim_time_ns="121.0" ratio_time="129467.03673469387" />
+    <testcase name="test_stress_01" classname="test_clk_rst_mgr" file="~/hermes_workspace/projects/IP-010/v4/06_verification_stage/tb-clk_rst_mgr/test_clk_rst_mgr.py" lineno="111" time="0.0009250640869140625" sim_time_ns="121.0" ratio_time="130801.74845360825" />
+    <testcase name="test_stress_02" classname="test_clk_rst_mgr" file="~/hermes_workspace/projects/IP-010/v4/06_verification_stage/tb-clk_rst_mgr/test_clk_rst_mgr.py" lineno="126" time="0.0009388923645019531" sim_time_ns="121.00000000000011" ratio_time="128875.26256983253" />
+  </testsuite>
+</testsuites>

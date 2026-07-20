@@ -1,0 +1,27 @@
+# IP-010 v3 formal verification for gpio
+# GENERATED-FROM: kanban task t_74da3230, IP-010 v3 frontend
+
+[tasks]
+bmc
+
+[options]
+bmc: mode bmc
+bmc: depth 25
+
+[engines]
+smtbmc bitwuzla
+
+[script]
+read -formal EF_GPIO8.v
+read -formal EF_GPIO8_WB_wrapper.v
+read -formal ef_util_lib.v
+read -formal gpio.v
+hierarchy -top EF_GPIO8_WB_wrapper
+proc; opt
+flatten; opt
+
+[files]
+rtl-gpio/rtl/EF_GPIO8.v
+rtl-gpio/rtl/EF_GPIO8_WB_wrapper.v
+rtl-gpio/rtl/ef_util_lib.v
+rtl-gpio/rtl/gpio.v

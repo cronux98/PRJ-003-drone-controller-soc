@@ -1,0 +1,34 @@
+# IP-010 v3 formal verification for i2c_0
+# GENERATED-FROM: kanban task t_74da3230, IP-010 v3 frontend
+
+[options]
+mode bmc
+depth 25
+
+[engines]
+smtbmc bitwuzla
+
+[script]
+read -formal axis_fifo.v
+read -formal EF_I2C_WB_wrapper.v
+read -formal ef_util_lib.v
+read -formal i2c_0.v
+read -formal i2c_init.v
+read -formal i2c_master.v
+read -formal i2c_master_wbs_16.v
+read -formal i2c_master_wbs_8.v
+read -formal i2c_single_reg.v
+hierarchy -top EF_I2C_WB_wrapper
+proc; opt
+flatten; opt
+
+[files]
+rtl-i2c_0/rtl/axis_fifo.v
+rtl-i2c_0/rtl/EF_I2C_WB_wrapper.v
+rtl-i2c_0/rtl/ef_util_lib.v
+rtl-i2c_0/rtl/i2c_0.v
+rtl-i2c_0/rtl/i2c_init.v
+rtl-i2c_0/rtl/i2c_master.v
+rtl-i2c_0/rtl/i2c_master_wbs_16.v
+rtl-i2c_0/rtl/i2c_master_wbs_8.v
+rtl-i2c_0/rtl/i2c_single_reg.v

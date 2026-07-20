@@ -1,0 +1,65 @@
+%Warning-UNUSEDSIGNAL: ~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-wishbone_interconnect/rtl/wishbone_interconnect.v:25:80: Signal is not used: 's0_err_i'
+                                                                                                                                                       : ... note: In instance 'wishbone_interconnect'
+   25 |     input  wire [31:0] s0_dat_i,    input  wire        s0_ack_i,    input wire s0_err_i,
+      |                                                                                ^~~~~~~~
+                       ... For warning description see https://verilator.org/warn/UNUSEDSIGNAL?v=5.049
+                       ... Use "/* verilator lint_off UNUSEDSIGNAL */" and lint_on around source to disable this message.
+%Warning-UNUSEDSIGNAL: ~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-wishbone_interconnect/rtl/wishbone_interconnect.v:31:80: Signal is not used: 's1_err_i'
+                                                                                                                                                       : ... note: In instance 'wishbone_interconnect'
+   31 |     input  wire [31:0] s1_dat_i,    input  wire        s1_ack_i,    input wire s1_err_i,
+      |                                                                                ^~~~~~~~
+%Warning-UNUSEDSIGNAL: ~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-wishbone_interconnect/rtl/wishbone_interconnect.v:37:80: Signal is not used: 's2_err_i'
+                                                                                                                                                       : ... note: In instance 'wishbone_interconnect'
+   37 |     input  wire [31:0] s2_dat_i,    input  wire        s2_ack_i,    input wire s2_err_i,
+      |                                                                                ^~~~~~~~
+%Warning-UNUSEDSIGNAL: ~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-wishbone_interconnect/rtl/wishbone_interconnect.v:43:80: Signal is not used: 's3_err_i'
+                                                                                                                                                       : ... note: In instance 'wishbone_interconnect'
+   43 |     input  wire [31:0] s3_dat_i,    input  wire        s3_ack_i,    input wire s3_err_i,
+      |                                                                                ^~~~~~~~
+%Warning-UNUSEDSIGNAL: ~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-wishbone_interconnect/rtl/wishbone_interconnect.v:49:80: Signal is not used: 's4_err_i'
+                                                                                                                                                       : ... note: In instance 'wishbone_interconnect'
+   49 |     input  wire [31:0] s4_dat_i,    input  wire        s4_ack_i,    input wire s4_err_i,
+      |                                                                                ^~~~~~~~
+%Warning-UNUSEDSIGNAL: ~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-wishbone_interconnect/rtl/wishbone_interconnect.v:55:80: Signal is not used: 's5_err_i'
+                                                                                                                                                       : ... note: In instance 'wishbone_interconnect'
+   55 |     input  wire [31:0] s5_dat_i,    input  wire        s5_ack_i,    input wire s5_err_i,
+      |                                                                                ^~~~~~~~
+%Warning-UNUSEDSIGNAL: ~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-wishbone_interconnect/rtl/wishbone_interconnect.v:61:80: Signal is not used: 's6_err_i'
+                                                                                                                                                       : ... note: In instance 'wishbone_interconnect'
+   61 |     input  wire [31:0] s6_dat_i,    input  wire        s6_ack_i,    input wire s6_err_i,
+      |                                                                                ^~~~~~~~
+%Warning-UNUSEDSIGNAL: ~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-wishbone_interconnect/rtl/wishbone_interconnect.v:67:80: Signal is not used: 's7_err_i'
+                                                                                                                                                       : ... note: In instance 'wishbone_interconnect'
+   67 |     input  wire [31:0] s7_dat_i,    input  wire        s7_ack_i,    input wire s7_err_i,
+      |                                                                                ^~~~~~~~
+%Warning-UNUSEDSIGNAL: ~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-wishbone_interconnect/rtl/wishbone_interconnect.v:73:80: Signal is not used: 's8_err_i'
+                                                                                                                                                       : ... note: In instance 'wishbone_interconnect'
+   73 |     input  wire [31:0] s8_dat_i,    input  wire        s8_ack_i,    input wire s8_err_i,
+      |                                                                                ^~~~~~~~
+%Warning-UNUSEDSIGNAL: ~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-wishbone_interconnect/rtl/wishbone_interconnect.v:79:80: Signal is not used: 's9_err_i'
+                                                                                                                                                       : ... note: In instance 'wishbone_interconnect'
+   79 |     input  wire [31:0] s9_dat_i,    input  wire        s9_ack_i,    input wire s9_err_i,
+      |                                                                                ^~~~~~~~
+%Warning-UNUSEDSIGNAL: ~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-wishbone_interconnect/rtl/wishbone_interconnect.v:85:80: Signal is not used: 's10_err_i'
+                                                                                                                                                       : ... note: In instance 'wishbone_interconnect'
+   85 |     input  wire [31:0] s10_dat_i,   input  wire        s10_ack_i,   input wire s10_err_i,
+      |                                                                                ^~~~~~~~~
+%Warning-UNUSEDSIGNAL: ~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-wishbone_interconnect/rtl/wishbone_interconnect.v:91:80: Signal is not used: 's11_err_i'
+                                                                                                                                                       : ... note: In instance 'wishbone_interconnect'
+   91 |     input  wire [31:0] s11_dat_i,   input  wire        s11_ack_i,   input wire s11_err_i,
+      |                                                                                ^~~~~~~~~
+%Warning-UNUSEDSIGNAL: ~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-wishbone_interconnect/rtl/wishbone_interconnect.v:97:80: Signal is not used: 's12_err_i'
+                                                                                                                                                       : ... note: In instance 'wishbone_interconnect'
+   97 |     input  wire [31:0] s12_dat_i,   input  wire        s12_ack_i,   input wire s12_err_i,
+      |                                                                                ^~~~~~~~~
+%Warning-UNUSEDSIGNAL: ~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-wishbone_interconnect/rtl/wishbone_interconnect.v:103:80: Signal is not used: 's13_err_i'
+                                                                                                                                                        : ... note: In instance 'wishbone_interconnect'
+  103 |     input  wire [31:0] s13_dat_i,   input  wire        s13_ack_i,   input wire s13_err_i
+      |                                                                                ^~~~~~~~~
+%Warning-UNUSEDSIGNAL: ~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-wishbone_interconnect/rtl/wishbone_interconnect.v:112:13: Signal is not driven, nor used: 's'
+                                                                                                                                                        : ... note: In instance 'wishbone_interconnect'
+  112 |     integer s;
+      |             ^
+- V e r i l a t i o n   R e p o r t: Verilator 5.049 devel rev v5.048-4-ge4803f29b (mod)
+- Verilator: Built from 0.047 MB sources in 2 modules, into 0.031 MB in 3 C++ files needing 0.000 MB
+- Verilator: Walltime 0.015 s (elab=0.002, cvt=0.009, bld=0.000); cpu 0.015 s on 1 threads; allocated 21.289 MB

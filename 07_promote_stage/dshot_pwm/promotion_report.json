@@ -1,0 +1,12 @@
+{
+  "module": "dshot_pwm",
+  "classification": "CREATE",
+  "tier": "C",
+  "cell_count": 2254,
+  "synthesis_log": "~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-dshot_pwm/logs/synth/dshot_pwm_synth.log",
+  "results_xml": "~/hermes_workspace/projects/IP-010/v4/06_verification_stage/tb-dshot_pwm/results.xml",
+  "equiv_status": "PROVEN",
+  "tests_passed": 40,
+  "tests_total": 40,
+  "admitted": true
+}

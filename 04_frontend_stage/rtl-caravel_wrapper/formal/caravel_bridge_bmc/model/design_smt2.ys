@@ -1,0 +1,8 @@
+# running in ~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-caravel_wrapper/formal/caravel_bridge_bmc/model/
+read_rtlil design_prep.il
+hierarchy -smtcheck
+delete */t:$print
+formalff -assume
+dffunmap
+stat
+write_smt2 -wires design_smt2.smt2

@@ -1,0 +1,17 @@
+%Warning-UNUSEDSIGNAL: ~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-caravel_wrapper/rtl/caravel_wrapper.v:12:24: Bits of signal are not used: 'wb_adr_i'[3:2]
+                                                                                                                                           : ... note: In instance 'caravel_wrapper'
+   12 |     input  wire [31:0] wb_adr_i,
+      |                        ^~~~~~~~
+                       ... For warning description see https://verilator.org/warn/UNUSEDSIGNAL?v=5.049
+                       ... Use "/* verilator lint_off UNUSEDSIGNAL */" and lint_on around source to disable this message.
+%Warning-UNUSEDSIGNAL: ~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-caravel_wrapper/rtl/caravel_wrapper.v:24:25: Bits of signal are not used: 'la_oenb_i'[31:0]
+                                                                                                                                           : ... note: In instance 'caravel_wrapper'
+   24 |     input  wire [127:0] la_oenb_i,
+      |                         ^~~~~~~~~
+%Warning-UNUSEDSIGNAL: ~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-caravel_wrapper/rtl/caravel_wrapper.v:27:25: Bits of signal are not used: 'io_in_i'[7:0]
+                                                                                                                                           : ... note: In instance 'caravel_wrapper'
+   27 |     input  wire [37:0]  io_in_i,
+      |                         ^~~~~~~
+- V e r i l a t i o n   R e p o r t: Verilator 5.049 devel rev v5.048-4-ge4803f29b (mod)
+- Verilator: Built from 0.035 MB sources in 2 modules, into 0.010 MB in 3 C++ files needing 0.000 MB
+- Verilator: Walltime 0.006 s (elab=0.000, cvt=0.002, bld=0.000); cpu 0.006 s on 1 threads; allocated 20.574 MB

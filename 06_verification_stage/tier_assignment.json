@@ -1,0 +1,196 @@
+{
+  "generated_by": "coverage-tier.py",
+  "project": "IP-010",
+  "version": "v4",
+  "method": "Synthesis cell count used as toggle-bin estimate proxy",
+  "modules": 18,
+  "tier_summary": {
+    "A": 9,
+    "B": 5,
+    "C": 4
+  },
+  "assignments": {
+    "caravel_wrapper": {
+      "module": "caravel_wrapper",
+      "tier": "A",
+      "estimated_toggle_bins": 199,
+      "tests_found": 9,
+      "tests_required": 8,
+      "test_count_met": true,
+      "coverage_target_toggle": 90,
+      "coverage_target_line": 90
+    },
+    "clk_rst_mgr": {
+      "module": "clk_rst_mgr",
+      "tier": "A",
+      "estimated_toggle_bins": 44,
+      "tests_found": 8,
+      "tests_required": 8,
+      "test_count_met": true,
+      "coverage_target_toggle": 90,
+      "coverage_target_line": 90
+    },
+    "custom_timer": {
+      "module": "custom_timer",
+      "tier": "B",
+      "estimated_toggle_bins": 1875,
+      "tests_found": 15,
+      "tests_required": 15,
+      "test_count_met": true,
+      "coverage_target_toggle": 70,
+      "coverage_target_line": 90
+    },
+    "drone_soc": {
+      "module": "drone_soc",
+      "tier": "C",
+      "estimated_toggle_bins": 19305,
+      "tests_found": 40,
+      "tests_required": 40,
+      "test_count_met": true,
+      "coverage_target_toggle": 40,
+      "coverage_target_line": 90,
+      "waiver": "SoC top-level \u2014 coverage threshold waived per CLAUDE.md \u00a74.6e"
+    },
+    "dshot_pwm": {
+      "module": "dshot_pwm",
+      "tier": "C",
+      "estimated_toggle_bins": 2254,
+      "tests_found": 40,
+      "tests_required": 40,
+      "test_count_met": true,
+      "coverage_target_toggle": 40,
+      "coverage_target_line": 90
+    },
+    "gpio": {
+      "module": "gpio",
+      "tier": "B",
+      "estimated_toggle_bins": 593,
+      "tests_found": 15,
+      "tests_required": 15,
+      "test_count_met": true,
+      "coverage_target_toggle": 70,
+      "coverage_target_line": 90
+    },
+    "i2c_0": {
+      "module": "i2c_0",
+      "tier": "C",
+      "estimated_toggle_bins": 2141,
+      "tests_found": 40,
+      "tests_required": 40,
+      "test_count_met": true,
+      "coverage_target_toggle": 40,
+      "coverage_target_line": 90
+    },
+    "ibex_core": {
+      "module": "ibex_core",
+      "tier": "C",
+      "estimated_toggle_bins": 3534,
+      "tests_found": 40,
+      "tests_required": 40,
+      "test_count_met": true,
+      "coverage_target_toggle": 40,
+      "coverage_target_line": 90
+    },
+    "irq_ctrl": {
+      "module": "irq_ctrl",
+      "tier": "A",
+      "estimated_toggle_bins": 396,
+      "tests_found": 8,
+      "tests_required": 8,
+      "test_count_met": true,
+      "coverage_target_toggle": 90,
+      "coverage_target_line": 90
+    },
+    "spi_0": {
+      "module": "spi_0",
+      "tier": "B",
+      "estimated_toggle_bins": 1116,
+      "tests_found": 40,
+      "tests_required": 15,
+      "test_count_met": true,
+      "coverage_target_toggle": 70,
+      "coverage_target_line": 90
+    },
+    "spi_flash_ctrl": {
+      "module": "spi_flash_ctrl",
+      "tier": "A",
+      "estimated_toggle_bins": 377,
+      "tests_found": 15,
+      "tests_required": 8,
+      "test_count_met": true,
+      "coverage_target_toggle": 90,
+      "coverage_target_line": 90
+    },
+    "sram_8kb": {
+      "module": "sram_8kb",
+      "tier": "A",
+      "estimated_toggle_bins": 0,
+      "tests_found": 8,
+      "tests_required": 8,
+      "test_count_met": true,
+      "coverage_target_toggle": 90,
+      "coverage_target_line": 90
+    },
+    "timer": {
+      "module": "timer",
+      "tier": "B",
+      "estimated_toggle_bins": 1766,
+      "tests_found": 15,
+      "tests_required": 15,
+      "test_count_met": true,
+      "coverage_target_toggle": 70,
+      "coverage_target_line": 90
+    },
+    "uart_0": {
+      "module": "uart_0",
+      "tier": "A",
+      "estimated_toggle_bins": 252,
+      "tests_found": 15,
+      "tests_required": 8,
+      "test_count_met": true,
+      "coverage_target_toggle": 90,
+      "coverage_target_line": 90
+    },
+    "uart_1": {
+      "module": "uart_1",
+      "tier": "A",
+      "estimated_toggle_bins": 252,
+      "tests_found": 15,
+      "tests_required": 8,
+      "test_count_met": true,
+      "coverage_target_toggle": 90,
+      "coverage_target_line": 90
+    },
+    "uart_2": {
+      "module": "uart_2",
+      "tier": "A",
+      "estimated_toggle_bins": 252,
+      "tests_found": 15,
+      "tests_required": 8,
+      "test_count_met": true,
+      "coverage_target_toggle": 90,
+      "coverage_target_line": 90
+    },
+    "watchdog": {
+      "module": "watchdog",
+      "tier": "A",
+      "estimated_toggle_bins": 364,
+      "tests_found": 15,
+      "tests_required": 8,
+      "test_count_met": true,
+      "coverage_target_toggle": 90,
+      "coverage_target_line": 90
+    },
+    "wishbone_interconnect": {
+      "module": "wishbone_interconnect",
+      "tier": "B",
+      "estimated_toggle_bins": 699,
+      "tests_found": 15,
+      "tests_required": 15,
+      "test_count_met": true,
+      "coverage_target_toggle": 70,
+      "coverage_target_line": 90
+    }
+  },
+  "findings": []
+}

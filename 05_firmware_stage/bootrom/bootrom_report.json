@@ -1,0 +1,5 @@
+{
+  "bootrom_size_bytes": 260,
+  "max_budget_bytes": 4096,
+  "verdict": "PASS"
+}

@@ -1,0 +1,90 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+
+-- Executing script file `design_prep.ys' --
+
+1. Executing RTLIL frontend.
+Input filename: design.il
+
+2. Executing SCC pass (detecting logic loops).
+Found 0 SCCs in module EF_TMR32_WB_wrapper.
+Found 0 SCCs.
+
+3. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+4. Executing MEMORY_NORDFF pass (extracting $dff cells from memories).
+
+5. Executing ASYNC2SYNC pass.
+Replacing EF_TMR32_WB_wrapper.$flatten\u_ef_tmr.$auto$ff.cc:337:slice$1095 ($adffe): ARST=\wb_rst_ni, D=\wb_dat_i [15:0], Q=\u_ef_tmr.PWM1CFG_REG
+Replacing EF_TMR32_WB_wrapper.$flatten\u_ef_tmr.$auto$ff.cc:337:slice$1096 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_tmr.$0\RIS_REG[2:0] [1], Q=\u_ef_tmr.RIS_REG [1]
+Replacing EF_TMR32_WB_wrapper.$flatten\u_ef_tmr.$auto$ff.cc:337:slice$1099 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_tmr.$0\RIS_REG[2:0] [2], Q=\u_ef_tmr.RIS_REG [2]
+Replacing EF_TMR32_WB_wrapper.$flatten\u_ef_tmr.$auto$ff.cc:337:slice$1102 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_tmr.$0\RIS_REG[2:0] [0], Q=\u_ef_tmr.RIS_REG [0]
+Replacing EF_TMR32_WB_wrapper.$flatten\u_ef_tmr.$auto$ff.cc:337:slice$1105 ($adffe): ARST=\wb_rst_ni, D=\wb_dat_i, Q=\u_ef_tmr.CMPY_REG
+Replacing EF_TMR32_WB_wrapper.$flatten\u_ef_tmr.$auto$ff.cc:337:slice$1107 ($adffe): ARST=\wb_rst_ni, D=\wb_dat_i [11:0], Q=\u_ef_tmr.PWM0CFG_REG
+Replacing EF_TMR32_WB_wrapper.$flatten\u_ef_tmr.$auto$ff.cc:337:slice$1108 ($adffe): ARST=\wb_rst_ni, D=\wb_dat_i [15:0], Q=\u_ef_tmr.PR_REG
+Replacing EF_TMR32_WB_wrapper.$flatten\u_ef_tmr.$auto$ff.cc:337:slice$1109 ($adffe): ARST=\wb_rst_ni, D=\wb_dat_i [2:0], Q=\u_ef_tmr.IM_REG
+Replacing EF_TMR32_WB_wrapper.$flatten\u_ef_tmr.$auto$ff.cc:337:slice$1110 ($adffe): ARST=\wb_rst_ni, D=\wb_dat_i [2:0], Q=\u_ef_tmr.CFG_REG
+Replacing EF_TMR32_WB_wrapper.$flatten\u_ef_tmr.$auto$ff.cc:337:slice$1112 ($adffe): ARST=\wb_rst_ni, D=\wb_dat_i, Q=\u_ef_tmr.CMPX_REG
+Replacing EF_TMR32_WB_wrapper.$flatten\u_ef_tmr.$auto$ff.cc:337:slice$1113 ($adffe): ARST=\wb_rst_ni, D=\wb_dat_i [7:0], Q=\u_ef_tmr.PWMDT_REG
+Replacing EF_TMR32_WB_wrapper.$flatten\u_ef_tmr.$auto$ff.cc:337:slice$1114 ($adffe): ARST=\wb_rst_ni, D=\wb_dat_i [6:0], Q=\u_ef_tmr.CTRL_REG
+Replacing EF_TMR32_WB_wrapper.$flatten\u_ef_tmr.$auto$ff.cc:337:slice$1115 ($adffe): ARST=\wb_rst_ni, D=\wb_dat_i [15:0], Q=\u_ef_tmr.PWMFC_REG
+Replacing EF_TMR32_WB_wrapper.$flatten\u_ef_tmr.$auto$ff.cc:337:slice$1116 ($adffe): ARST=\wb_rst_ni, D=\wb_dat_i, Q=\u_ef_tmr.RELOAD_REG
+Replacing EF_TMR32_WB_wrapper.$flatten\u_ef_tmr.$procdff$975 ($adff): ARST=\wb_rst_ni, D=$flatten\u_ef_tmr.$0\ack_o[0:0], Q=\u_ef_tmr.ack_o
+Replacing EF_TMR32_WB_wrapper.$flatten\u_ef_tmr.$procdff$986 ($adff): ARST=\wb_rst_ni, D=$flatten\u_ef_tmr.$0\IC_REG[2:0], Q=\u_ef_tmr.IC_REG
+Replacing EF_TMR32_WB_wrapper.$flatten\u_ef_tmr.\instance_to_wrap.$auto$ff.cc:337:slice$1041 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_tmr.\instance_to_wrap.$procmux$701_Y, Q=\u_ef_tmr.instance_to_wrap.tmr_reg
+Replacing EF_TMR32_WB_wrapper.$flatten\u_ef_tmr.\instance_to_wrap.$auto$ff.cc:337:slice$1054 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_tmr.\instance_to_wrap.$0\tmr_dir[0:0], Q=\u_ef_tmr.instance_to_wrap.tmr_dir
+Replacing EF_TMR32_WB_wrapper.$flatten\u_ef_tmr.\instance_to_wrap.$auto$ff.cc:337:slice$1062 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_tmr.\instance_to_wrap.$0\tmr_run[0:0], Q=\u_ef_tmr.instance_to_wrap.tmr_run
+Replacing EF_TMR32_WB_wrapper.$flatten\u_ef_tmr.\instance_to_wrap.$procdff$972 ($adff): ARST=\wb_rst_ni, D=$flatten\u_ef_tmr.\instance_to_wrap.$0\pr_reg[15:0], Q=\u_ef_tmr.instance_to_wrap.pr_reg
+
+6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \EF_TMR32_WB_wrapper..
+
+7. Executing FORMALFF pass.
+
+8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \EF_TMR32_WB_wrapper..
+Removed 1 unused cells and 1 unused wires.
+<suppressed ~2 debug messages>
+
+9. Executing CHECK pass (checking for obvious problems).
+Checking module EF_TMR32_WB_wrapper...
+Found and reported 0 problems.
+
+10. Executing SETUNDEF pass (replace undef values with defined constants).
+
+11. Executing OPT pass (performing simple optimizations).
+
+11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module EF_TMR32_WB_wrapper.
+
+11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\EF_TMR32_WB_wrapper'.
+Computing hashes of 245 cells of `\EF_TMR32_WB_wrapper'.
+Finding duplicate cells in `\EF_TMR32_WB_wrapper'.
+Removed a total of 0 cells.
+
+11.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+11.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \EF_TMR32_WB_wrapper..
+Removed 24 unused cells and 48 unused wires.
+<suppressed ~49 debug messages>
+
+11.5. Finished fast OPT passes.
+
+12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \EF_TMR32_WB_wrapper..
+Removed 0 unused cells and 32 unused wires.
+<suppressed ~1 debug messages>
+
+13. Executing RTLIL backend.
+Output filename: ../model/design_prep.il
+
+End of script. Logfile hash: c8288c0f09, time: 0.03s, user: 0.03s, system: 0.01s, MEM: 16.52 MB peak
+Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+Time spent: 42% 4x opt_clean (0 sec), 14% 1x check (0 sec), ...

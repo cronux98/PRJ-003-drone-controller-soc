@@ -1,0 +1,13 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1784461757" />
+    <testcase name="test_reset" classname="test_irq_ctrl" file="~/hermes_workspace/projects/IP-010/v4/06_verification_stage/tb-irq_ctrl/test_irq_ctrl.py" lineno="12" time="0.0011548995971679688" sim_time_ns="80.0" ratio_time="69270.09083402147" />
+    <testcase name="test_register_rw" classname="test_irq_ctrl" file="~/hermes_workspace/projects/IP-010/v4/06_verification_stage/tb-irq_ctrl/test_irq_ctrl.py" lineno="24" time="0.003796100616455078" sim_time_ns="321.0" ratio_time="84560.45622409246" />
+    <testcase name="test_wb_ack" classname="test_irq_ctrl" file="~/hermes_workspace/projects/IP-010/v4/06_verification_stage/tb-irq_ctrl/test_irq_ctrl.py" lineno="54" time="0.0009682178497314453" sim_time_ns="101.0" ratio_time="104315.3666584585" />
+    <testcase name="test_consecutive_writes" classname="test_irq_ctrl" file="~/hermes_workspace/projects/IP-010/v4/06_verification_stage/tb-irq_ctrl/test_irq_ctrl.py" lineno="68" time="0.0016083717346191406" sim_time_ns="161.00000000000006" ratio_time="100101.23688111478" />
+    <testcase name="test_idle_read" classname="test_irq_ctrl" file="~/hermes_workspace/projects/IP-010/v4/06_verification_stage/tb-irq_ctrl/test_irq_ctrl.py" lineno="88" time="0.0009217262268066406" sim_time_ns="101.0" ratio_time="109577.00569063632" />
+    <testcase name="test_stress_00" classname="test_irq_ctrl" file="~/hermes_workspace/projects/IP-010/v4/06_verification_stage/tb-irq_ctrl/test_irq_ctrl.py" lineno="102" time="0.001135110855102539" sim_time_ns="121.0" ratio_time="106597.518168452" />
+    <testcase name="test_stress_01" classname="test_irq_ctrl" file="~/hermes_workspace/projects/IP-010/v4/06_verification_stage/tb-irq_ctrl/test_irq_ctrl.py" lineno="117" time="0.0011279582977294922" sim_time_ns="121.0" ratio_time="107273.46945677446" />
+    <testcase name="test_stress_02" classname="test_irq_ctrl" file="~/hermes_workspace/projects/IP-010/v4/06_verification_stage/tb-irq_ctrl/test_irq_ctrl.py" lineno="132" time="0.0011913776397705078" sim_time_ns="121.00000000000011" ratio_time="101563.09465679417" />
+  </testsuite>
+</testsuites>

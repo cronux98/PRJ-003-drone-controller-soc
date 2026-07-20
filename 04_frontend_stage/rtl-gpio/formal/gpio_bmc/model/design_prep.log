@@ -1,0 +1,105 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+
+-- Executing script file `design_prep.ys' --
+
+1. Executing RTLIL frontend.
+Input filename: design.il
+
+2. Executing SCC pass (detecting logic loops).
+Found 0 SCCs in module EF_GPIO8_WB_wrapper.
+Found 0 SCCs.
+
+3. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+4. Executing MEMORY_NORDFF pass (extracting $dff cells from memories).
+
+5. Executing ASYNC2SYNC pass.
+Replacing EF_GPIO8_WB_wrapper.$flatten\u_ef_gpio.$auto$ff.cc:337:slice$338 ($adffe): ARST=\wb_rst_ni, D=\wb_dat_i [7:0], Q=\u_ef_gpio.DIR_REG
+Replacing EF_GPIO8_WB_wrapper.$flatten\u_ef_gpio.$auto$ff.cc:337:slice$339 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_gpio.$0\RIS_REG[31:0] [0], Q=\u_ef_gpio.RIS_REG [0]
+Replacing EF_GPIO8_WB_wrapper.$flatten\u_ef_gpio.$auto$ff.cc:337:slice$342 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_gpio.$0\RIS_REG[31:0] [1], Q=\u_ef_gpio.RIS_REG [1]
+Replacing EF_GPIO8_WB_wrapper.$flatten\u_ef_gpio.$auto$ff.cc:337:slice$345 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_gpio.$0\RIS_REG[31:0] [2], Q=\u_ef_gpio.RIS_REG [2]
+Replacing EF_GPIO8_WB_wrapper.$flatten\u_ef_gpio.$auto$ff.cc:337:slice$348 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_gpio.$0\RIS_REG[31:0] [3], Q=\u_ef_gpio.RIS_REG [3]
+Replacing EF_GPIO8_WB_wrapper.$flatten\u_ef_gpio.$auto$ff.cc:337:slice$351 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_gpio.$0\RIS_REG[31:0] [4], Q=\u_ef_gpio.RIS_REG [4]
+Replacing EF_GPIO8_WB_wrapper.$flatten\u_ef_gpio.$auto$ff.cc:337:slice$354 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_gpio.$0\RIS_REG[31:0] [5], Q=\u_ef_gpio.RIS_REG [5]
+Replacing EF_GPIO8_WB_wrapper.$flatten\u_ef_gpio.$auto$ff.cc:337:slice$357 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_gpio.$0\RIS_REG[31:0] [6], Q=\u_ef_gpio.RIS_REG [6]
+Replacing EF_GPIO8_WB_wrapper.$flatten\u_ef_gpio.$auto$ff.cc:337:slice$360 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_gpio.$0\RIS_REG[31:0] [7], Q=\u_ef_gpio.RIS_REG [7]
+Replacing EF_GPIO8_WB_wrapper.$flatten\u_ef_gpio.$auto$ff.cc:337:slice$363 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_gpio.$0\RIS_REG[31:0] [8], Q=\u_ef_gpio.RIS_REG [8]
+Replacing EF_GPIO8_WB_wrapper.$flatten\u_ef_gpio.$auto$ff.cc:337:slice$366 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_gpio.$0\RIS_REG[31:0] [9], Q=\u_ef_gpio.RIS_REG [9]
+Replacing EF_GPIO8_WB_wrapper.$flatten\u_ef_gpio.$auto$ff.cc:337:slice$369 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_gpio.$0\RIS_REG[31:0] [10], Q=\u_ef_gpio.RIS_REG [10]
+Replacing EF_GPIO8_WB_wrapper.$flatten\u_ef_gpio.$auto$ff.cc:337:slice$372 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_gpio.$0\RIS_REG[31:0] [11], Q=\u_ef_gpio.RIS_REG [11]
+Replacing EF_GPIO8_WB_wrapper.$flatten\u_ef_gpio.$auto$ff.cc:337:slice$375 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_gpio.$0\RIS_REG[31:0] [12], Q=\u_ef_gpio.RIS_REG [12]
+Replacing EF_GPIO8_WB_wrapper.$flatten\u_ef_gpio.$auto$ff.cc:337:slice$378 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_gpio.$0\RIS_REG[31:0] [13], Q=\u_ef_gpio.RIS_REG [13]
+Replacing EF_GPIO8_WB_wrapper.$flatten\u_ef_gpio.$auto$ff.cc:337:slice$381 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_gpio.$0\RIS_REG[31:0] [14], Q=\u_ef_gpio.RIS_REG [14]
+Replacing EF_GPIO8_WB_wrapper.$flatten\u_ef_gpio.$auto$ff.cc:337:slice$384 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_gpio.$0\RIS_REG[31:0] [15], Q=\u_ef_gpio.RIS_REG [15]
+Replacing EF_GPIO8_WB_wrapper.$flatten\u_ef_gpio.$auto$ff.cc:337:slice$387 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_gpio.$0\RIS_REG[31:0] [16], Q=\u_ef_gpio.RIS_REG [16]
+Replacing EF_GPIO8_WB_wrapper.$flatten\u_ef_gpio.$auto$ff.cc:337:slice$390 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_gpio.$0\RIS_REG[31:0] [17], Q=\u_ef_gpio.RIS_REG [17]
+Replacing EF_GPIO8_WB_wrapper.$flatten\u_ef_gpio.$auto$ff.cc:337:slice$393 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_gpio.$0\RIS_REG[31:0] [18], Q=\u_ef_gpio.RIS_REG [18]
+Replacing EF_GPIO8_WB_wrapper.$flatten\u_ef_gpio.$auto$ff.cc:337:slice$396 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_gpio.$0\RIS_REG[31:0] [19], Q=\u_ef_gpio.RIS_REG [19]
+Replacing EF_GPIO8_WB_wrapper.$flatten\u_ef_gpio.$auto$ff.cc:337:slice$399 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_gpio.$0\RIS_REG[31:0] [20], Q=\u_ef_gpio.RIS_REG [20]
+Replacing EF_GPIO8_WB_wrapper.$flatten\u_ef_gpio.$auto$ff.cc:337:slice$402 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_gpio.$0\RIS_REG[31:0] [21], Q=\u_ef_gpio.RIS_REG [21]
+Replacing EF_GPIO8_WB_wrapper.$flatten\u_ef_gpio.$auto$ff.cc:337:slice$405 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_gpio.$0\RIS_REG[31:0] [22], Q=\u_ef_gpio.RIS_REG [22]
+Replacing EF_GPIO8_WB_wrapper.$flatten\u_ef_gpio.$auto$ff.cc:337:slice$408 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_gpio.$0\RIS_REG[31:0] [23], Q=\u_ef_gpio.RIS_REG [23]
+Replacing EF_GPIO8_WB_wrapper.$flatten\u_ef_gpio.$auto$ff.cc:337:slice$411 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_gpio.$0\RIS_REG[31:0] [24], Q=\u_ef_gpio.RIS_REG [24]
+Replacing EF_GPIO8_WB_wrapper.$flatten\u_ef_gpio.$auto$ff.cc:337:slice$414 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_gpio.$0\RIS_REG[31:0] [25], Q=\u_ef_gpio.RIS_REG [25]
+Replacing EF_GPIO8_WB_wrapper.$flatten\u_ef_gpio.$auto$ff.cc:337:slice$417 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_gpio.$0\RIS_REG[31:0] [26], Q=\u_ef_gpio.RIS_REG [26]
+Replacing EF_GPIO8_WB_wrapper.$flatten\u_ef_gpio.$auto$ff.cc:337:slice$420 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_gpio.$0\RIS_REG[31:0] [27], Q=\u_ef_gpio.RIS_REG [27]
+Replacing EF_GPIO8_WB_wrapper.$flatten\u_ef_gpio.$auto$ff.cc:337:slice$423 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_gpio.$0\RIS_REG[31:0] [28], Q=\u_ef_gpio.RIS_REG [28]
+Replacing EF_GPIO8_WB_wrapper.$flatten\u_ef_gpio.$auto$ff.cc:337:slice$426 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_gpio.$0\RIS_REG[31:0] [29], Q=\u_ef_gpio.RIS_REG [29]
+Replacing EF_GPIO8_WB_wrapper.$flatten\u_ef_gpio.$auto$ff.cc:337:slice$429 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_gpio.$0\RIS_REG[31:0] [30], Q=\u_ef_gpio.RIS_REG [30]
+Replacing EF_GPIO8_WB_wrapper.$flatten\u_ef_gpio.$auto$ff.cc:337:slice$432 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_gpio.$0\RIS_REG[31:0] [31], Q=\u_ef_gpio.RIS_REG [31]
+Replacing EF_GPIO8_WB_wrapper.$flatten\u_ef_gpio.$auto$ff.cc:337:slice$435 ($adffe): ARST=\wb_rst_ni, D=\wb_dat_i, Q=\u_ef_gpio.IM_REG
+Replacing EF_GPIO8_WB_wrapper.$flatten\u_ef_gpio.$auto$ff.cc:337:slice$436 ($adffe): ARST=\wb_rst_ni, D=\wb_dat_i [7:0], Q=\u_ef_gpio.DATAO_REG
+Replacing EF_GPIO8_WB_wrapper.$flatten\u_ef_gpio.$procdff$309 ($adff): ARST=\wb_rst_ni, D=$flatten\u_ef_gpio.$0\ack_o[0:0], Q=\u_ef_gpio.ack_o
+Replacing EF_GPIO8_WB_wrapper.$flatten\u_ef_gpio.$procdff$320 ($adff): ARST=\wb_rst_ni, D=$flatten\u_ef_gpio.$0\IC_REG[31:0], Q=\u_ef_gpio.IC_REG
+
+6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \EF_GPIO8_WB_wrapper..
+
+7. Executing FORMALFF pass.
+
+8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \EF_GPIO8_WB_wrapper..
+Removed 1 unused cells and 1 unused wires.
+<suppressed ~2 debug messages>
+
+9. Executing CHECK pass (checking for obvious problems).
+Checking module EF_GPIO8_WB_wrapper...
+Found and reported 0 problems.
+
+10. Executing SETUNDEF pass (replace undef values with defined constants).
+
+11. Executing OPT pass (performing simple optimizations).
+
+11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module EF_GPIO8_WB_wrapper.
+
+11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\EF_GPIO8_WB_wrapper'.
+Computing hashes of 375 cells of `\EF_GPIO8_WB_wrapper'.
+Finding duplicate cells in `\EF_GPIO8_WB_wrapper'.
+Removed a total of 0 cells.
+
+11.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+11.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \EF_GPIO8_WB_wrapper..
+
+11.5. Finished fast OPT passes.
+
+12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \EF_GPIO8_WB_wrapper..
+Removed 0 unused cells and 69 unused wires.
+<suppressed ~1 debug messages>
+
+13. Executing RTLIL backend.
+Output filename: ../model/design_prep.il
+
+End of script. Logfile hash: 9bed26c43f, time: 0.02s, user: 0.02s, system: 0.00s, MEM: 15.39 MB peak
+Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+Time spent: 39% 4x opt_clean (0 sec), 8% 1x check (0 sec), ...

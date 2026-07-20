@@ -1,0 +1,399 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+
+-- Executing script file `../model/design.ys' --
+
+1. Executing Verilog-2005 frontend: spi_flash_ctrl.v
+Parsing formal SystemVerilog input from `spi_flash_ctrl.v' to AST representation.
+Storing AST representation for module `$abstract\spi_flash_ctrl'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: spi_master.v
+Parsing formal SystemVerilog input from `spi_master.v' to AST representation.
+Storing AST representation for module `$abstract\spi_master'.
+Storing AST representation for module `$abstract\sri'.
+Storing AST representation for module `$abstract\sro'.
+Successfully finished Verilog frontend.
+
+3. Executing HIERARCHY pass (managing design hierarchy).
+
+4. Executing AST frontend in derive mode using pre-parsed AST for module `\spi_flash_ctrl'.
+Generating RTLIL representation for module `\spi_flash_ctrl'.
+
+4.1. Analyzing design hierarchy..
+Top module:  \spi_flash_ctrl
+
+4.2. Analyzing design hierarchy..
+Top module:  \spi_flash_ctrl
+Removing unused module `$abstract\sro'.
+Removing unused module `$abstract\sri'.
+Removing unused module `$abstract\spi_master'.
+Removing unused module `$abstract\spi_flash_ctrl'.
+Removed 4 unused modules.
+
+5. Executing PROC pass (convert processes to netlists).
+
+5.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+5.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 16 switch rules as full_case in process $proc$spi_flash_ctrl.v:147$10 in module spi_flash_ctrl.
+Removed 4 dead cases from process $proc$spi_flash_ctrl.v:94$3 in module spi_flash_ctrl.
+Marked 3 switch rules as full_case in process $proc$spi_flash_ctrl.v:94$3 in module spi_flash_ctrl.
+Removed a total of 4 dead cases.
+
+5.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 3 redundant assignments.
+Promoted 0 assignments to connections.
+
+5.4. Executing PROC_INIT pass (extract init attributes).
+
+5.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \wb_rst_ni in `\spi_flash_ctrl.$proc$spi_flash_ctrl.v:147$10'.
+Found async reset \wb_rst_ni in `\spi_flash_ctrl.$proc$spi_flash_ctrl.v:94$3'.
+
+5.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~21 debug messages>
+
+5.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\spi_flash_ctrl.$proc$spi_flash_ctrl.v:147$10'.
+     1/15: $0\sck_toggle[0:0]
+     2/15: $0\rx_shift[7:0]
+     3/15: $0\shift_reg[7:0]
+     4/15: $0\addr_byte_cnt[2:0]
+     5/15: $0\bit_cnt[2:0]
+     6/15: $0\fsm_state[2:0]
+     7/15: $0\status_wel[0:0]
+     8/15: $0\status_busy[0:0]
+     9/15: $0\status_done[0:0]
+    10/15: $0\rddata_reg[7:0]
+    11/15: $0\flash_hold_o[0:0]
+    12/15: $0\flash_wp_o[0:0]
+    13/15: $0\flash_cs_o[0:0]
+    14/15: $0\flash_mosi_o[0:0]
+    15/15: $0\flash_sck_o[0:0]
+Creating decoders for process `\spi_flash_ctrl.$proc$spi_flash_ctrl.v:94$3'.
+     1/8: $0\wb_dat_o[31:0]
+     2/8: $0\wb_err_o[0:0]
+     3/8: $0\wb_ack_o[0:0]
+     4/8: $0\ctrl_fast_mode[0:0]
+     5/8: $0\ctrl_go[0:0]
+     6/8: $0\txdata_reg[7:0]
+     7/8: $0\addr_reg[23:0]
+     8/8: $0\cmd_reg[7:0]
+
+5.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+5.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\spi_flash_ctrl.\flash_sck_o' using process `\spi_flash_ctrl.$proc$spi_flash_ctrl.v:147$10'.
+  created $adff cell `$procdff$363' with positive edge clock and positive level reset.
+Creating register for signal `\spi_flash_ctrl.\flash_mosi_o' using process `\spi_flash_ctrl.$proc$spi_flash_ctrl.v:147$10'.
+  created $adff cell `$procdff$368' with positive edge clock and positive level reset.
+Creating register for signal `\spi_flash_ctrl.\flash_cs_o' using process `\spi_flash_ctrl.$proc$spi_flash_ctrl.v:147$10'.
+  created $adff cell `$procdff$373' with positive edge clock and positive level reset.
+Creating register for signal `\spi_flash_ctrl.\flash_wp_o' using process `\spi_flash_ctrl.$proc$spi_flash_ctrl.v:147$10'.
+  created $adff cell `$procdff$378' with positive edge clock and positive level reset.
+Creating register for signal `\spi_flash_ctrl.\flash_hold_o' using process `\spi_flash_ctrl.$proc$spi_flash_ctrl.v:147$10'.
+  created $adff cell `$procdff$383' with positive edge clock and positive level reset.
+Creating register for signal `\spi_flash_ctrl.\rddata_reg' using process `\spi_flash_ctrl.$proc$spi_flash_ctrl.v:147$10'.
+  created $adff cell `$procdff$388' with positive edge clock and positive level reset.
+Creating register for signal `\spi_flash_ctrl.\status_done' using process `\spi_flash_ctrl.$proc$spi_flash_ctrl.v:147$10'.
+  created $adff cell `$procdff$393' with positive edge clock and positive level reset.
+Creating register for signal `\spi_flash_ctrl.\status_busy' using process `\spi_flash_ctrl.$proc$spi_flash_ctrl.v:147$10'.
+  created $adff cell `$procdff$398' with positive edge clock and positive level reset.
+Creating register for signal `\spi_flash_ctrl.\status_wel' using process `\spi_flash_ctrl.$proc$spi_flash_ctrl.v:147$10'.
+  created $adff cell `$procdff$403' with positive edge clock and positive level reset.
+Creating register for signal `\spi_flash_ctrl.\fsm_state' using process `\spi_flash_ctrl.$proc$spi_flash_ctrl.v:147$10'.
+  created $adff cell `$procdff$408' with positive edge clock and positive level reset.
+Creating register for signal `\spi_flash_ctrl.\bit_cnt' using process `\spi_flash_ctrl.$proc$spi_flash_ctrl.v:147$10'.
+  created $adff cell `$procdff$413' with positive edge clock and positive level reset.
+Creating register for signal `\spi_flash_ctrl.\addr_byte_cnt' using process `\spi_flash_ctrl.$proc$spi_flash_ctrl.v:147$10'.
+  created $adff cell `$procdff$418' with positive edge clock and positive level reset.
+Creating register for signal `\spi_flash_ctrl.\shift_reg' using process `\spi_flash_ctrl.$proc$spi_flash_ctrl.v:147$10'.
+  created $adff cell `$procdff$423' with positive edge clock and positive level reset.
+Creating register for signal `\spi_flash_ctrl.\rx_shift' using process `\spi_flash_ctrl.$proc$spi_flash_ctrl.v:147$10'.
+  created $adff cell `$procdff$428' with positive edge clock and positive level reset.
+Creating register for signal `\spi_flash_ctrl.\sck_toggle' using process `\spi_flash_ctrl.$proc$spi_flash_ctrl.v:147$10'.
+  created $adff cell `$procdff$433' with positive edge clock and positive level reset.
+Creating register for signal `\spi_flash_ctrl.\wb_dat_o' using process `\spi_flash_ctrl.$proc$spi_flash_ctrl.v:94$3'.
+  created $adff cell `$procdff$438' with positive edge clock and positive level reset.
+Creating register for signal `\spi_flash_ctrl.\wb_ack_o' using process `\spi_flash_ctrl.$proc$spi_flash_ctrl.v:94$3'.
+  created $adff cell `$procdff$443' with positive edge clock and positive level reset.
+Creating register for signal `\spi_flash_ctrl.\wb_err_o' using process `\spi_flash_ctrl.$proc$spi_flash_ctrl.v:94$3'.
+  created $adff cell `$procdff$448' with positive edge clock and positive level reset.
+Creating register for signal `\spi_flash_ctrl.\cmd_reg' using process `\spi_flash_ctrl.$proc$spi_flash_ctrl.v:94$3'.
+  created $adff cell `$procdff$453' with positive edge clock and positive level reset.
+Creating register for signal `\spi_flash_ctrl.\addr_reg' using process `\spi_flash_ctrl.$proc$spi_flash_ctrl.v:94$3'.
+  created $adff cell `$procdff$458' with positive edge clock and positive level reset.
+Creating register for signal `\spi_flash_ctrl.\txdata_reg' using process `\spi_flash_ctrl.$proc$spi_flash_ctrl.v:94$3'.
+  created $adff cell `$procdff$463' with positive edge clock and positive level reset.
+Creating register for signal `\spi_flash_ctrl.\ctrl_go' using process `\spi_flash_ctrl.$proc$spi_flash_ctrl.v:94$3'.
+  created $adff cell `$procdff$468' with positive edge clock and positive level reset.
+Creating register for signal `\spi_flash_ctrl.\ctrl_fast_mode' using process `\spi_flash_ctrl.$proc$spi_flash_ctrl.v:94$3'.
+  created $adff cell `$procdff$473' with positive edge clock and positive level reset.
+
+5.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+5.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 16 empty switches in `\spi_flash_ctrl.$proc$spi_flash_ctrl.v:147$10'.
+Removing empty process `spi_flash_ctrl.$proc$spi_flash_ctrl.v:147$10'.
+Found and cleaned up 5 empty switches in `\spi_flash_ctrl.$proc$spi_flash_ctrl.v:94$3'.
+Removing empty process `spi_flash_ctrl.$proc$spi_flash_ctrl.v:94$3'.
+Cleaned up 21 empty switches.
+
+5.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_flash_ctrl.
+<suppressed ~66 debug messages>
+
+6. Executing OPT pass (performing simple optimizations).
+
+6.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_flash_ctrl.
+
+6.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_flash_ctrl'.
+Computing hashes of 223 cells of `\spi_flash_ctrl'.
+Finding duplicate cells in `\spi_flash_ctrl'.
+Computing hashes of 150 cells of `\spi_flash_ctrl'.
+Finding duplicate cells in `\spi_flash_ctrl'.
+<suppressed ~219 debug messages>
+Removed a total of 73 cells.
+
+6.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \spi_flash_ctrl..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 1/4 on $pmux $procmux$83.
+Removed 1 multiplexer ports.
+<suppressed ~107 debug messages>
+
+6.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \spi_flash_ctrl.
+    New ctrl vector for $pmux cell $procmux$296: { $auto$opt_reduce.cc:135:opt_pmux$475 $procmux$301_CMP $procmux$305_CMP $procmux$309_CMP $procmux$313_CMP }
+    New ctrl vector for $pmux cell $procmux$46: { $auto$opt_reduce.cc:135:opt_pmux$477 $procmux$314_CMP }
+  Optimizing cells in module \spi_flash_ctrl.
+Performed a total of 2 changes.
+
+6.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_flash_ctrl'.
+Computing hashes of 152 cells of `\spi_flash_ctrl'.
+Finding duplicate cells in `\spi_flash_ctrl'.
+Computing hashes of 145 cells of `\spi_flash_ctrl'.
+Finding duplicate cells in `\spi_flash_ctrl'.
+Computing hashes of 143 cells of `\spi_flash_ctrl'.
+Finding duplicate cells in `\spi_flash_ctrl'.
+<suppressed ~27 debug messages>
+Removed a total of 9 cells.
+
+6.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $procdff$453 ($adff) from module spi_flash_ctrl (D = \wb_dat_i [7:0], Q = \cmd_reg).
+Adding EN signal on $procdff$433 ($adff) from module spi_flash_ctrl (D = $procmux$46_Y, Q = \sck_toggle).
+Adding EN signal on $procdff$388 ($adff) from module spi_flash_ctrl (D = { \rx_shift [6:0] \flash_miso_i }, Q = \rddata_reg).
+Adding EN signal on $procdff$413 ($adff) from module spi_flash_ctrl (D = $procmux$148_Y, Q = \bit_cnt).
+Adding EN signal on $procdff$393 ($adff) from module spi_flash_ctrl (D = $procmux$260_Y, Q = \status_done).
+Adding EN signal on $procdff$458 ($adff) from module spi_flash_ctrl (D = \wb_dat_i [23:0], Q = \addr_reg).
+Adding EN signal on $procdff$398 ($adff) from module spi_flash_ctrl (D = $procmux$254_Y, Q = \status_busy).
+Adding EN signal on $procdff$418 ($adff) from module spi_flash_ctrl (D = $procmux$128_Y, Q = \addr_byte_cnt).
+Adding EN signal on $procdff$363 ($adff) from module spi_flash_ctrl (D = $procmux$296_Y, Q = \flash_sck_o).
+Adding EN signal on $procdff$428 ($adff) from module spi_flash_ctrl (D = $procmux$59_Y, Q = \rx_shift).
+Adding EN signal on $procdff$368 ($adff) from module spi_flash_ctrl (D = $procmux$285_Y, Q = \flash_mosi_o).
+Adding EN signal on $procdff$403 ($adff) from module spi_flash_ctrl (D = 1'1, Q = \status_wel).
+Adding EN signal on $procdff$373 ($adff) from module spi_flash_ctrl (D = $procmux$275_Y, Q = \flash_cs_o).
+Handling D = Q on $procdff$473 ($adff) from module spi_flash_ctrl (removing D path).
+Adding EN signal on $procdff$463 ($adff) from module spi_flash_ctrl (D = \wb_dat_i [7:0], Q = \txdata_reg).
+Handling D = Q on $procdff$378 ($adff) from module spi_flash_ctrl (removing D path).
+Adding EN signal on $procdff$408 ($adff) from module spi_flash_ctrl (D = $procmux$194_Y, Q = \fsm_state).
+Handling D = Q on $procdff$383 ($adff) from module spi_flash_ctrl (removing D path).
+Adding EN signal on $procdff$423 ($adff) from module spi_flash_ctrl (D = $procmux$79_Y, Q = \shift_reg).
+Setting constant 1-bit at position 0 on $procdff$383 ($dlatch) from module spi_flash_ctrl.
+Setting constant 1-bit at position 0 on $procdff$378 ($dlatch) from module spi_flash_ctrl.
+Setting constant 0-bit at position 0 on $procdff$473 ($dlatch) from module spi_flash_ctrl.
+Setting constant 0-bit at position 0 on $procdff$448 ($adff) from module spi_flash_ctrl.
+
+6.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_flash_ctrl..
+Removed 28 unused cells and 236 unused wires.
+<suppressed ~33 debug messages>
+
+6.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_flash_ctrl.
+<suppressed ~9 debug messages>
+
+6.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+6.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \spi_flash_ctrl..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~83 debug messages>
+
+6.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \spi_flash_ctrl.
+    New ctrl vector for $pmux cell $procmux$194: { $auto$opt_reduce.cc:135:opt_pmux$597 $procmux$101_CMP $procmux$111_CMP $procmux$114_CMP }
+    New ctrl vector for $pmux cell $procmux$296: { $auto$opt_reduce.cc:135:opt_pmux$599 $auto$opt_reduce.cc:135:opt_pmux$475 }
+    New ctrl vector for $pmux cell $procmux$148: { $auto$opt_reduce.cc:135:opt_pmux$601 $procmux$101_CMP $procmux$111_CMP $procmux$114_CMP }
+    New ctrl vector for $pmux cell $procmux$285: $auto$opt_reduce.cc:135:opt_pmux$603
+  Optimizing cells in module \spi_flash_ctrl.
+Performed a total of 4 changes.
+
+6.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_flash_ctrl'.
+Computing hashes of 166 cells of `\spi_flash_ctrl'.
+Finding duplicate cells in `\spi_flash_ctrl'.
+Computing hashes of 148 cells of `\spi_flash_ctrl'.
+Finding duplicate cells in `\spi_flash_ctrl'.
+<suppressed ~54 debug messages>
+Removed a total of 18 cells.
+
+6.13. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $auto$ff.cc:337:slice$489 ($adffe) from module spi_flash_ctrl (D = $0\bit_cnt[2:0], Q = \bit_cnt).
+Adding EN signal on $auto$ff.cc:337:slice$552 ($adffe) from module spi_flash_ctrl (D = $0\flash_mosi_o[0:0], Q = \flash_mosi_o).
+Handling D = Q on $procdff$468 ($adff) from module spi_flash_ctrl (removing D path).
+Adding EN signal on $auto$ff.cc:337:slice$568 ($adffe) from module spi_flash_ctrl (D = $0\fsm_state[2:0], Q = \fsm_state).
+Setting constant 0-bit at position 0 on $procdff$468 ($dlatch) from module spi_flash_ctrl.
+
+6.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_flash_ctrl..
+Removed 0 unused cells and 18 unused wires.
+<suppressed ~1 debug messages>
+
+6.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_flash_ctrl.
+<suppressed ~6 debug messages>
+
+6.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+6.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \spi_flash_ctrl..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~69 debug messages>
+
+6.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \spi_flash_ctrl.
+    New input vector for $reduce_and cell $auto$opt_dff.cc:252:make_patterns_logic$622: { $auto$opt_dff.cc:234:make_patterns_logic$490 $auto$opt_dff.cc:234:make_patterns_logic$492 $auto$opt_dff.cc:234:make_patterns_logic$494 $auto$opt_dff.cc:234:make_patterns_logic$524 $auto$opt_dff.cc:234:make_patterns_logic$526 $auto$opt_dff.cc:234:make_patterns_logic$546 $auto$opt_dff.cc:234:make_patterns_logic$617 $auto$opt_dff.cc:234:make_patterns_logic$619 }
+    New input vector for $reduce_and cell $auto$opt_dff.cc:252:make_patterns_logic$610: { $auto$opt_dff.cc:234:make_patterns_logic$490 $auto$opt_dff.cc:234:make_patterns_logic$492 $auto$opt_dff.cc:234:make_patterns_logic$494 $auto$opt_dff.cc:234:make_patterns_logic$496 $auto$opt_dff.cc:234:make_patterns_logic$498 $auto$opt_dff.cc:234:make_patterns_logic$500 $auto$opt_dff.cc:234:make_patterns_logic$605 $auto$opt_dff.cc:234:make_patterns_logic$607 }
+    New ctrl vector for $pmux cell $procmux$275: $auto$opt_reduce.cc:135:opt_pmux$624
+  Optimizing cells in module \spi_flash_ctrl.
+Performed a total of 3 changes.
+
+6.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_flash_ctrl'.
+Computing hashes of 150 cells of `\spi_flash_ctrl'.
+Finding duplicate cells in `\spi_flash_ctrl'.
+Computing hashes of 148 cells of `\spi_flash_ctrl'.
+Finding duplicate cells in `\spi_flash_ctrl'.
+<suppressed ~6 debug messages>
+Removed a total of 2 cells.
+
+6.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_flash_ctrl..
+Removed 6 unused cells and 14 unused wires.
+<suppressed ~8 debug messages>
+
+6.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_flash_ctrl.
+<suppressed ~1 debug messages>
+
+6.23. Rerunning OPT passes. (Maybe there is more to do..)
+
+6.24. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \spi_flash_ctrl..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~67 debug messages>
+
+6.25. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \spi_flash_ctrl.
+Performed a total of 0 changes.
+
+6.26. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_flash_ctrl'.
+Computing hashes of 142 cells of `\spi_flash_ctrl'.
+Finding duplicate cells in `\spi_flash_ctrl'.
+Removed a total of 0 cells.
+
+6.27. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.28. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_flash_ctrl..
+
+6.29. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_flash_ctrl.
+
+6.30. Finished fast OPT passes. (There is nothing left to do.)
+
+7. Executing FLATTEN pass (flatten design).
+
+8. Executing OPT pass (performing simple optimizations).
+
+8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_flash_ctrl.
+
+8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_flash_ctrl'.
+Computing hashes of 142 cells of `\spi_flash_ctrl'.
+Finding duplicate cells in `\spi_flash_ctrl'.
+Removed a total of 0 cells.
+
+8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \spi_flash_ctrl..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~67 debug messages>
+
+8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \spi_flash_ctrl.
+Performed a total of 0 changes.
+
+8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\spi_flash_ctrl'.
+Computing hashes of 142 cells of `\spi_flash_ctrl'.
+Finding duplicate cells in `\spi_flash_ctrl'.
+Removed a total of 0 cells.
+
+8.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+8.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \spi_flash_ctrl..
+
+8.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module spi_flash_ctrl.
+
+8.9. Finished fast OPT passes. (There is nothing left to do.)
+
+9. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `spi_flash_ctrl'. Setting top module to spi_flash_ctrl.
+
+9.1. Analyzing design hierarchy..
+Top module:  \spi_flash_ctrl
+
+9.2. Analyzing design hierarchy..
+Top module:  \spi_flash_ctrl
+Removed 0 unused modules.
+
+10. Executing jny backend.
+
+11. Executing RTLIL backend.
+Output filename: ../model/design.il
+
+End of script. Logfile hash: 0fc0fb49b1, time: 0.04s, user: 0.04s, system: 0.01s, MEM: 16.70 MB peak
+Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+Time spent: 17% 8x opt_expr (0 sec), 16% 5x opt_dff (0 sec), ...

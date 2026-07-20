@@ -1,0 +1,130 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+
+-- Executing script file `design_prep.ys' --
+
+1. Executing RTLIL frontend.
+Input filename: design.il
+
+2. Executing SCC pass (detecting logic loops).
+Found 0 SCCs in module EF_I2C_WB_wrapper.
+Found 0 SCCs.
+
+3. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+4. Executing MEMORY_NORDFF pass (extracting $dff cells from memories).
+
+5. Executing ASYNC2SYNC pass.
+Replacing EF_I2C_WB_wrapper.$flatten\u_ef_i2c.$auto$ff.cc:337:slice$5428 ($adffe): ARST=\wb_rst_ni, D=\wb_dat_i [8:0], Q=\u_ef_i2c.IM_REG
+Replacing EF_I2C_WB_wrapper.$flatten\u_ef_i2c.$auto$ff.cc:337:slice$5429 ($adffe): ARST=\wb_rst_ni, D=\wb_dat_i [0], Q=\u_ef_i2c.GCLK_REG
+Replacing EF_I2C_WB_wrapper.$flatten\u_ef_i2c.$procdff$5046 ($adff): ARST=\wb_rst_ni, D=$flatten\u_ef_i2c.$0\i2c_ack_o[0:0], Q=\u_ef_i2c.i2c_ack_o
+Replacing EF_I2C_WB_wrapper.$flatten\u_ef_i2c.\master_inst.$auto$ff.cc:337:slice$5649 ($adffe): ARST=\wb_rst_ni, D=\wb_dat_i [15:8], Q=\u_ef_i2c.master_inst.prescale_reg [15:8]
+Replacing EF_I2C_WB_wrapper.$flatten\u_ef_i2c.\master_inst.$auto$ff.cc:337:slice$5652 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_i2c.\master_inst.$5\prescale_next[15:0] [7:0], Q=\u_ef_i2c.master_inst.prescale_reg [7:0]
+Replacing EF_I2C_WB_wrapper.$flatten\u_ef_i2c.\master_inst.$auto$ff.cc:337:slice$5657 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_i2c.\master_inst.$3\cmd_fifo_overflow_next[0:0], Q=\u_ef_i2c.master_inst.cmd_fifo_overflow_reg
+Replacing EF_I2C_WB_wrapper.$flatten\u_ef_i2c.\master_inst.$auto$ff.cc:337:slice$5668 ($adffe): ARST=\wb_rst_ni, D=\wb_dat_i [12], Q=\u_ef_i2c.master_inst.cmd_stop_reg
+Replacing EF_I2C_WB_wrapper.$flatten\u_ef_i2c.\master_inst.$auto$ff.cc:337:slice$5671 ($adffe): ARST=\wb_rst_ni, D=\wb_dat_i [10], Q=\u_ef_i2c.master_inst.cmd_write_reg
+Replacing EF_I2C_WB_wrapper.$flatten\u_ef_i2c.\master_inst.$auto$ff.cc:337:slice$5674 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_i2c.\master_inst.$5\data_in_last_next[0:0], Q=\u_ef_i2c.master_inst.data_in_last_reg
+Replacing EF_I2C_WB_wrapper.$flatten\u_ef_i2c.\master_inst.$auto$ff.cc:337:slice$5677 ($adffe): ARST=\wb_rst_ni, D=\wb_dat_i [11], Q=\u_ef_i2c.master_inst.cmd_write_multiple_reg
+Replacing EF_I2C_WB_wrapper.$flatten\u_ef_i2c.\master_inst.$auto$ff.cc:337:slice$5680 ($adffe): ARST=\wb_rst_ni, D=\wb_dat_i [6:0], Q=\u_ef_i2c.master_inst.cmd_address_reg
+Replacing EF_I2C_WB_wrapper.$flatten\u_ef_i2c.\master_inst.$auto$ff.cc:337:slice$5683 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_i2c.\master_inst.$3\write_fifo_overflow_next[0:0], Q=\u_ef_i2c.master_inst.write_fifo_overflow_reg
+Replacing EF_I2C_WB_wrapper.$flatten\u_ef_i2c.\master_inst.$auto$ff.cc:337:slice$5694 ($adffe): ARST=\wb_rst_ni, D=\wb_dat_i [9], Q=\u_ef_i2c.master_inst.cmd_read_reg
+Replacing EF_I2C_WB_wrapper.$flatten\u_ef_i2c.\master_inst.$auto$ff.cc:337:slice$5697 ($adffe): ARST=\wb_rst_ni, D=\wb_dat_i [7:0], Q=\u_ef_i2c.master_inst.data_in_reg
+Replacing EF_I2C_WB_wrapper.$flatten\u_ef_i2c.\master_inst.$auto$ff.cc:337:slice$5700 ($adffe): ARST=\wb_rst_ni, D=\wb_dat_i [8], Q=\u_ef_i2c.master_inst.cmd_start_reg
+Replacing EF_I2C_WB_wrapper.$flatten\u_ef_i2c.\master_inst.$procdff$4995 ($adff): ARST=\wb_rst_ni, D=\u_ef_i2c.master_inst.wbs_dat_o_next, Q=\u_ef_i2c.master_inst.wbs_dat_o_reg
+Replacing EF_I2C_WB_wrapper.$flatten\u_ef_i2c.\master_inst.$procdff$4998 ($adff): ARST=\wb_rst_ni, D=\u_ef_i2c.master_inst.wbs_ack_o_next, Q=\u_ef_i2c.master_inst.wbs_ack_o_reg
+Replacing EF_I2C_WB_wrapper.$flatten\u_ef_i2c.\master_inst.$procdff$5019 ($adff): ARST=\wb_rst_ni, D=\u_ef_i2c.master_inst.cmd_valid_next, Q=\u_ef_i2c.master_inst.cmd_valid_reg
+Replacing EF_I2C_WB_wrapper.$flatten\u_ef_i2c.\master_inst.$procdff$5025 ($adff): ARST=\wb_rst_ni, D=\u_ef_i2c.master_inst.data_in_valid_next, Q=\u_ef_i2c.master_inst.data_in_valid_reg
+Replacing EF_I2C_WB_wrapper.$flatten\u_ef_i2c.\master_inst.$procdff$5031 ($adff): ARST=\wb_rst_ni, D=\u_ef_i2c.master_inst.data_out_ready_next, Q=\u_ef_i2c.master_inst.data_out_ready_reg
+Replacing EF_I2C_WB_wrapper.$flatten\u_ef_i2c.\master_inst.$procdff$5037 ($adff): ARST=\wb_rst_ni, D=\u_ef_i2c.master_inst.missed_ack_next, Q=\u_ef_i2c.master_inst.missed_ack_reg
+Replacing EF_I2C_WB_wrapper.$flatten\u_ef_i2c.\master_inst.\genblk1.cmd_fifo_inst.$auto$ff.cc:337:slice$5478 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_i2c.\master_inst.\genblk1.cmd_fifo_inst.$add$axis_fifo.v:281$150_Y [4:0], Q=\u_ef_i2c.master_inst.genblk1.cmd_fifo_inst.rd_ptr_reg
+Replacing EF_I2C_WB_wrapper.$flatten\u_ef_i2c.\master_inst.\genblk1.cmd_fifo_inst.$auto$ff.cc:337:slice$5483 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_i2c.\master_inst.\genblk1.cmd_fifo_inst.$0\m_axis_tvalid_pipe_reg[1:0] [1], Q=\u_ef_i2c.master_inst.genblk1.cmd_fifo_inst.m_axis_tvalid_pipe_reg [1]
+Replacing EF_I2C_WB_wrapper.$flatten\u_ef_i2c.\master_inst.\genblk1.cmd_fifo_inst.$auto$ff.cc:337:slice$5486 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_i2c.\master_inst.\genblk1.cmd_fifo_inst.$0\m_axis_tvalid_pipe_reg[1:0] [0], Q=\u_ef_i2c.master_inst.genblk1.cmd_fifo_inst.m_axis_tvalid_pipe_reg [0]
+Replacing EF_I2C_WB_wrapper.$flatten\u_ef_i2c.\master_inst.\genblk1.cmd_fifo_inst.$auto$ff.cc:337:slice$5499 ($adffe): ARST=\wb_rst_ni, D=\u_ef_i2c.master_inst.genblk1.cmd_fifo_inst.m_axis_pipe_reg[0], Q=\u_ef_i2c.master_inst.genblk1.cmd_fifo_inst.m_axis_pipe_reg[1]
+Replacing EF_I2C_WB_wrapper.$flatten\u_ef_i2c.\master_inst.\genblk1.cmd_fifo_inst.$auto$ff.cc:337:slice$5505 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_i2c.\master_inst.\genblk1.cmd_fifo_inst.$add$axis_fifo.v:219$135_Y [4:0], Q=\u_ef_i2c.master_inst.genblk1.cmd_fifo_inst.wr_ptr_reg
+Replacing EF_I2C_WB_wrapper.$flatten\u_ef_i2c.\master_inst.\genblk2.write_fifo_inst.$auto$ff.cc:337:slice$5576 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_i2c.\master_inst.\genblk2.write_fifo_inst.$add$axis_fifo.v:281$104_Y [4:0], Q=\u_ef_i2c.master_inst.genblk2.write_fifo_inst.rd_ptr_reg
+Replacing EF_I2C_WB_wrapper.$flatten\u_ef_i2c.\master_inst.\genblk2.write_fifo_inst.$auto$ff.cc:337:slice$5581 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_i2c.\master_inst.\genblk2.write_fifo_inst.$0\m_axis_tvalid_pipe_reg[1:0] [1], Q=\u_ef_i2c.master_inst.genblk2.write_fifo_inst.m_axis_tvalid_pipe_reg [1]
+Replacing EF_I2C_WB_wrapper.$flatten\u_ef_i2c.\master_inst.\genblk2.write_fifo_inst.$auto$ff.cc:337:slice$5584 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_i2c.\master_inst.\genblk2.write_fifo_inst.$0\m_axis_tvalid_pipe_reg[1:0] [0], Q=\u_ef_i2c.master_inst.genblk2.write_fifo_inst.m_axis_tvalid_pipe_reg [0]
+Replacing EF_I2C_WB_wrapper.$flatten\u_ef_i2c.\master_inst.\genblk2.write_fifo_inst.$auto$ff.cc:337:slice$5597 ($adffe): ARST=\wb_rst_ni, D=\u_ef_i2c.master_inst.genblk2.write_fifo_inst.m_axis_pipe_reg[0], Q=\u_ef_i2c.master_inst.genblk2.write_fifo_inst.m_axis_pipe_reg[1]
+Replacing EF_I2C_WB_wrapper.$flatten\u_ef_i2c.\master_inst.\genblk2.write_fifo_inst.$auto$ff.cc:337:slice$5603 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_i2c.\master_inst.\genblk2.write_fifo_inst.$add$axis_fifo.v:219$89_Y [4:0], Q=\u_ef_i2c.master_inst.genblk2.write_fifo_inst.wr_ptr_reg
+Replacing EF_I2C_WB_wrapper.$flatten\u_ef_i2c.\master_inst.\genblk3.read_fifo_inst.$auto$ff.cc:337:slice$5576 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_i2c.\master_inst.\genblk3.read_fifo_inst.$add$axis_fifo.v:281$104_Y [4:0], Q=\u_ef_i2c.master_inst.genblk3.read_fifo_inst.rd_ptr_reg
+Replacing EF_I2C_WB_wrapper.$flatten\u_ef_i2c.\master_inst.\genblk3.read_fifo_inst.$auto$ff.cc:337:slice$5581 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_i2c.\master_inst.\genblk3.read_fifo_inst.$0\m_axis_tvalid_pipe_reg[1:0] [1], Q=\u_ef_i2c.master_inst.genblk3.read_fifo_inst.m_axis_tvalid_pipe_reg [1]
+Replacing EF_I2C_WB_wrapper.$flatten\u_ef_i2c.\master_inst.\genblk3.read_fifo_inst.$auto$ff.cc:337:slice$5584 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_i2c.\master_inst.\genblk3.read_fifo_inst.$0\m_axis_tvalid_pipe_reg[1:0] [0], Q=\u_ef_i2c.master_inst.genblk3.read_fifo_inst.m_axis_tvalid_pipe_reg [0]
+Replacing EF_I2C_WB_wrapper.$flatten\u_ef_i2c.\master_inst.\genblk3.read_fifo_inst.$auto$ff.cc:337:slice$5597 ($adffe): ARST=\wb_rst_ni, D=\u_ef_i2c.master_inst.genblk3.read_fifo_inst.m_axis_pipe_reg[0], Q=\u_ef_i2c.master_inst.genblk3.read_fifo_inst.m_axis_pipe_reg[1]
+Replacing EF_I2C_WB_wrapper.$flatten\u_ef_i2c.\master_inst.\genblk3.read_fifo_inst.$auto$ff.cc:337:slice$5603 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_i2c.\master_inst.\genblk3.read_fifo_inst.$add$axis_fifo.v:219$89_Y [4:0], Q=\u_ef_i2c.master_inst.genblk3.read_fifo_inst.wr_ptr_reg
+Replacing EF_I2C_WB_wrapper.$flatten\u_ef_i2c.\master_inst.\i2c_master_inst.$auto$ff.cc:337:slice$5439 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_i2c.\master_inst.\i2c_master_inst.$0\bus_active_reg[0:0], Q=\u_ef_i2c.master_inst.i2c_master_inst.bus_active_reg
+Replacing EF_I2C_WB_wrapper.$flatten\u_ef_i2c.\master_inst.\i2c_master_inst.$auto$ff.cc:337:slice$5442 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_i2c.\master_inst.\i2c_master_inst.$2\state_next[4:0], Q=\u_ef_i2c.master_inst.i2c_master_inst.state_reg
+Replacing EF_I2C_WB_wrapper.$flatten\u_ef_i2c.\master_inst.\i2c_master_inst.$auto$ff.cc:337:slice$5703 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_i2c.\master_inst.\i2c_master_inst.$5\phy_state_next[4:0], Q=\u_ef_i2c.master_inst.i2c_master_inst.phy_state_reg
+Replacing EF_I2C_WB_wrapper.$flatten\u_ef_i2c.\master_inst.\i2c_master_inst.$auto$ff.cc:337:slice$5712 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_i2c.\master_inst.\i2c_master_inst.$2\bit_count_next[3:0], Q=\u_ef_i2c.master_inst.i2c_master_inst.bit_count_reg
+Replacing EF_I2C_WB_wrapper.$flatten\u_ef_i2c.\master_inst.\i2c_master_inst.$auto$ff.cc:337:slice$5739 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_i2c.\master_inst.\i2c_master_inst.$3\delay_sda_next[0:0], Q=\u_ef_i2c.master_inst.i2c_master_inst.delay_sda_reg
+Replacing EF_I2C_WB_wrapper.$flatten\u_ef_i2c.\master_inst.\i2c_master_inst.$auto$ff.cc:337:slice$5740 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_i2c.\master_inst.\i2c_master_inst.$5\bus_control_next[0:0], Q=\u_ef_i2c.master_inst.i2c_master_inst.bus_control_reg
+Replacing EF_I2C_WB_wrapper.$flatten\u_ef_i2c.\master_inst.\i2c_master_inst.$auto$ff.cc:337:slice$5751 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_i2c.\master_inst.\i2c_master_inst.$4\delay_next[16:0], Q=\u_ef_i2c.master_inst.i2c_master_inst.delay_reg
+Replacing EF_I2C_WB_wrapper.$flatten\u_ef_i2c.\master_inst.\i2c_master_inst.$auto$ff.cc:337:slice$5764 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_i2c.\master_inst.\i2c_master_inst.$5\scl_o_next[0:0], Q=\u_ef_i2c.master_inst.i2c_master_inst.scl_o_reg
+Replacing EF_I2C_WB_wrapper.$flatten\u_ef_i2c.\master_inst.\i2c_master_inst.$auto$ff.cc:337:slice$5775 ($adffe): ARST=\wb_rst_ni, D=\u_ef_i2c.master_inst.genblk1.cmd_fifo_inst.m_axis_pipe_reg[1] [0], Q=\u_ef_i2c.master_inst.i2c_master_inst.mode_stop_reg
+Replacing EF_I2C_WB_wrapper.$flatten\u_ef_i2c.\master_inst.\i2c_master_inst.$auto$ff.cc:337:slice$5780 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_i2c.\master_inst.\i2c_master_inst.$12\phy_tx_data[0:0], Q=\u_ef_i2c.master_inst.i2c_master_inst.m_axis_data_tlast_reg
+Replacing EF_I2C_WB_wrapper.$flatten\u_ef_i2c.\master_inst.\i2c_master_inst.$auto$ff.cc:337:slice$5787 ($adffe): ARST=\wb_rst_ni, D=\u_ef_i2c.master_inst.genblk1.cmd_fifo_inst.m_axis_pipe_reg[1] [1], Q=\u_ef_i2c.master_inst.i2c_master_inst.mode_write_multiple_reg
+Replacing EF_I2C_WB_wrapper.$flatten\u_ef_i2c.\master_inst.\i2c_master_inst.$auto$ff.cc:337:slice$5792 ($adffe): ARST=\wb_rst_ni, D=\u_ef_i2c.master_inst.genblk1.cmd_fifo_inst.m_axis_pipe_reg[1] [3], Q=\u_ef_i2c.master_inst.i2c_master_inst.mode_read_reg
+Replacing EF_I2C_WB_wrapper.$flatten\u_ef_i2c.\master_inst.\i2c_master_inst.$auto$ff.cc:337:slice$5797 ($adffe): ARST=\wb_rst_ni, D=\u_ef_i2c.master_inst.genblk2.write_fifo_inst.m_axis_pipe_reg[1] [8], Q=\u_ef_i2c.master_inst.i2c_master_inst.last_reg
+Replacing EF_I2C_WB_wrapper.$flatten\u_ef_i2c.\master_inst.\i2c_master_inst.$auto$ff.cc:337:slice$5802 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_i2c.\master_inst.\i2c_master_inst.$5\sda_o_next[0:0], Q=\u_ef_i2c.master_inst.i2c_master_inst.sda_o_reg
+Replacing EF_I2C_WB_wrapper.$flatten\u_ef_i2c.\master_inst.\i2c_master_inst.$auto$ff.cc:337:slice$5815 ($adffe): ARST=\wb_rst_ni, D=$flatten\u_ef_i2c.\master_inst.\i2c_master_inst.$2\data_next[7:0], Q=\u_ef_i2c.master_inst.i2c_master_inst.data_reg
+Replacing EF_I2C_WB_wrapper.$flatten\u_ef_i2c.\master_inst.\i2c_master_inst.$auto$ff.cc:337:slice$5832 ($adffe): ARST=\wb_rst_ni, D={ \u_ef_i2c.master_inst.i2c_master_inst.data_reg [6:0] \u_ef_i2c.master_inst.i2c_master_inst.phy_rx_data_reg }, Q=\u_ef_i2c.master_inst.i2c_master_inst.m_axis_data_tdata_reg
+Replacing EF_I2C_WB_wrapper.$flatten\u_ef_i2c.\master_inst.\i2c_master_inst.$auto$ff.cc:337:slice$5839 ($adffe): ARST=\wb_rst_ni, D=\u_ef_i2c.master_inst.genblk1.cmd_fifo_inst.m_axis_pipe_reg[1] [11:5], Q=\u_ef_i2c.master_inst.i2c_master_inst.addr_reg
+Replacing EF_I2C_WB_wrapper.$flatten\u_ef_i2c.\master_inst.\i2c_master_inst.$auto$ff.cc:337:slice$5844 ($adffe): ARST=\wb_rst_ni, D=\u_ef_i2c.master_inst.i2c_master_inst.sda_i_reg, Q=\u_ef_i2c.master_inst.i2c_master_inst.phy_rx_data_reg
+Replacing EF_I2C_WB_wrapper.$flatten\u_ef_i2c.\master_inst.\i2c_master_inst.$procdff$5055 ($adff): ARST=\wb_rst_ni, D=\u_ef_i2c.master_inst.i2c_master_inst.missed_ack_next, Q=\u_ef_i2c.master_inst.i2c_master_inst.missed_ack_reg
+Replacing EF_I2C_WB_wrapper.$flatten\u_ef_i2c.\master_inst.\i2c_master_inst.$procdff$5088 ($adff): ARST=\wb_rst_ni, D=\u_ef_i2c.master_inst.i2c_master_inst.delay_scl_next, Q=\u_ef_i2c.master_inst.i2c_master_inst.delay_scl_reg
+Replacing EF_I2C_WB_wrapper.$flatten\u_ef_i2c.\master_inst.\i2c_master_inst.$procdff$5097 ($adff): ARST=\wb_rst_ni, D=\u_ef_i2c.master_inst.i2c_master_inst.s_axis_cmd_ready_next, Q=\u_ef_i2c.master_inst.i2c_master_inst.s_axis_cmd_ready_reg
+Replacing EF_I2C_WB_wrapper.$flatten\u_ef_i2c.\master_inst.\i2c_master_inst.$procdff$5100 ($adff): ARST=\wb_rst_ni, D=\u_ef_i2c.master_inst.i2c_master_inst.s_axis_data_tready_next, Q=\u_ef_i2c.master_inst.i2c_master_inst.s_axis_data_tready_reg
+Replacing EF_I2C_WB_wrapper.$flatten\u_ef_i2c.\master_inst.\i2c_master_inst.$procdff$5106 ($adff): ARST=\wb_rst_ni, D=\u_ef_i2c.master_inst.i2c_master_inst.m_axis_data_tvalid_next, Q=\u_ef_i2c.master_inst.i2c_master_inst.m_axis_data_tvalid_reg
+Replacing EF_I2C_WB_wrapper.$flatten\u_ef_i2c.\master_inst.\i2c_master_inst.$procdff$5115 ($adff): ARST=\wb_rst_ni, D=\i2c_sda_i, Q=\u_ef_i2c.master_inst.i2c_master_inst.sda_i_reg
+Replacing EF_I2C_WB_wrapper.$flatten\u_ef_i2c.\master_inst.\i2c_master_inst.$procdff$5127 ($adff): ARST=\wb_rst_ni, D=\u_ef_i2c.master_inst.i2c_master_inst.sda_i_reg, Q=\u_ef_i2c.master_inst.i2c_master_inst.last_sda_i_reg
+Replacing EF_I2C_WB_wrapper.$flatten\u_ef_i2c.\master_inst.\i2c_master_inst.$procdff$5130 ($adff): ARST=\wb_rst_ni, D=$flatten\u_ef_i2c.\master_inst.\i2c_master_inst.$0\busy_reg[0:0], Q=\u_ef_i2c.master_inst.i2c_master_inst.busy_reg
+
+6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \EF_I2C_WB_wrapper..
+
+7. Executing FORMALFF pass.
+
+8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \EF_I2C_WB_wrapper..
+Removed 1 unused cells and 1 unused wires.
+<suppressed ~2 debug messages>
+
+9. Executing CHECK pass (checking for obvious problems).
+Checking module EF_I2C_WB_wrapper...
+Found and reported 0 problems.
+
+10. Executing SETUNDEF pass (replace undef values with defined constants).
+
+11. Executing OPT pass (performing simple optimizations).
+
+11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module EF_I2C_WB_wrapper.
+
+11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\EF_I2C_WB_wrapper'.
+Computing hashes of 927 cells of `\EF_I2C_WB_wrapper'.
+Finding duplicate cells in `\EF_I2C_WB_wrapper'.
+Removed a total of 0 cells.
+
+11.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+11.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \EF_I2C_WB_wrapper..
+
+11.5. Finished fast OPT passes.
+
+12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \EF_I2C_WB_wrapper..
+Removed 0 unused cells and 89 unused wires.
+<suppressed ~1 debug messages>
+
+13. Executing RTLIL backend.
+Output filename: ../model/design_prep.il
+
+End of script. Logfile hash: e059738192, time: 0.06s, user: 0.05s, system: 0.01s, MEM: 18.83 MB peak
+Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+Time spent: 40% 4x opt_clean (0 sec), 11% 1x check (0 sec), ...

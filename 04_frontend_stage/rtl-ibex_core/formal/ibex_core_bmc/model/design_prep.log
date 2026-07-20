@@ -1,0 +1,134 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+
+-- Executing script file `design_prep.ys' --
+
+1. Executing RTLIL frontend.
+Input filename: design.il
+
+2. Executing SCC pass (detecting logic loops).
+Found 0 SCCs in module ibex_core.
+Found 0 SCCs.
+
+3. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+4. Executing MEMORY_NORDFF pass (extracting $dff cells from memories).
+
+5. Executing ASYNC2SYNC pass.
+Replacing ibex_core.$auto$ff.cc:337:slice$1653 ($adffe): ARST=\rst_ni, D=$0\wb_active[0:0], Q=\wb_active
+Replacing ibex_core.$flatten\u_ibex.\u_ex_mem.$procdff$1459 ($adff): ARST=\rst_ni, D=\u_ibex.u_alu.result_o, Q=\u_ibex.u_ex_mem.mem_alu_result_o
+Replacing ibex_core.$flatten\u_ibex.\u_ex_mem.$procdff$1464 ($adff): ARST=\rst_ni, D=\u_ibex.fwd_mux_b, Q=\u_ibex.u_ex_mem.mem_rs2_data_o
+Replacing ibex_core.$flatten\u_ibex.\u_ex_mem.$procdff$1469 ($adff): ARST=\rst_ni, D=\u_ibex.u_id_ex.ex_rd_addr_o, Q=\u_ibex.u_ex_mem.mem_rd_addr_o
+Replacing ibex_core.$flatten\u_ibex.\u_ex_mem.$procdff$1474 ($adff): ARST=\rst_ni, D=\u_ibex.u_id_ex.ex_funct3_o, Q=\u_ibex.u_ex_mem.mem_funct3_o
+Replacing ibex_core.$flatten\u_ibex.\u_ex_mem.$procdff$1479 ($adff): ARST=\rst_ni, D=\u_ibex.u_id_ex.ex_mem_read_o, Q=\u_ibex.u_ex_mem.mem_mem_read_o
+Replacing ibex_core.$flatten\u_ibex.\u_ex_mem.$procdff$1484 ($adff): ARST=\rst_ni, D=\u_ibex.u_id_ex.ex_mem_write_o, Q=\u_ibex.u_ex_mem.mem_mem_write_o
+Replacing ibex_core.$flatten\u_ibex.\u_ex_mem.$procdff$1489 ($adff): ARST=\rst_ni, D=\u_ibex.u_id_ex.ex_reg_write_o, Q=\u_ibex.u_ex_mem.mem_reg_write_o
+Replacing ibex_core.$flatten\u_ibex.\u_ex_mem.$procdff$1499 ($adff): ARST=\rst_ni, D=\u_ibex.u_id_ex.ex_result_src_o, Q=\u_ibex.u_ex_mem.mem_result_src_o
+Replacing ibex_core.$flatten\u_ibex.\u_id_ex.$procdff$1359 ($adff): ARST=\rst_ni, D=$flatten\u_ibex.\u_id_ex.$0\ex_pc_o[31:0], Q=\u_ibex.u_id_ex.ex_pc_o
+Replacing ibex_core.$flatten\u_ibex.\u_id_ex.$procdff$1364 ($adff): ARST=\rst_ni, D=$flatten\u_ibex.\u_id_ex.$0\ex_rs1_data_o[31:0], Q=\u_ibex.u_id_ex.ex_rs1_data_o
+Replacing ibex_core.$flatten\u_ibex.\u_id_ex.$procdff$1369 ($adff): ARST=\rst_ni, D=$flatten\u_ibex.\u_id_ex.$0\ex_rs2_data_o[31:0], Q=\u_ibex.u_id_ex.ex_rs2_data_o
+Replacing ibex_core.$flatten\u_ibex.\u_id_ex.$procdff$1374 ($adff): ARST=\rst_ni, D=$flatten\u_ibex.\u_id_ex.$0\ex_imm_o[31:0], Q=\u_ibex.u_id_ex.ex_imm_o
+Replacing ibex_core.$flatten\u_ibex.\u_id_ex.$procdff$1379 ($adff): ARST=\rst_ni, D=$flatten\u_ibex.\u_id_ex.$0\ex_rs1_addr_o[4:0], Q=\u_ibex.u_id_ex.ex_rs1_addr_o
+Replacing ibex_core.$flatten\u_ibex.\u_id_ex.$procdff$1384 ($adff): ARST=\rst_ni, D=$flatten\u_ibex.\u_id_ex.$0\ex_rs2_addr_o[4:0], Q=\u_ibex.u_id_ex.ex_rs2_addr_o
+Replacing ibex_core.$flatten\u_ibex.\u_id_ex.$procdff$1389 ($adff): ARST=\rst_ni, D=$flatten\u_ibex.\u_id_ex.$0\ex_rd_addr_o[4:0], Q=\u_ibex.u_id_ex.ex_rd_addr_o
+Replacing ibex_core.$flatten\u_ibex.\u_id_ex.$procdff$1394 ($adff): ARST=\rst_ni, D=$flatten\u_ibex.\u_id_ex.$0\ex_funct3_o[2:0], Q=\u_ibex.u_id_ex.ex_funct3_o
+Replacing ibex_core.$flatten\u_ibex.\u_id_ex.$procdff$1399 ($adff): ARST=\rst_ni, D=$flatten\u_ibex.\u_id_ex.$0\ex_funct7_o[6:0], Q=\u_ibex.u_id_ex.ex_funct7_o
+Replacing ibex_core.$flatten\u_ibex.\u_id_ex.$procdff$1404 ($adff): ARST=\rst_ni, D=$flatten\u_ibex.\u_id_ex.$0\ex_alu_op_o[1:0], Q=\u_ibex.u_id_ex.ex_alu_op_o
+Replacing ibex_core.$flatten\u_ibex.\u_id_ex.$procdff$1409 ($adff): ARST=\rst_ni, D=$flatten\u_ibex.\u_id_ex.$0\ex_alu_src_o[0:0], Q=\u_ibex.u_id_ex.ex_alu_src_o
+Replacing ibex_core.$flatten\u_ibex.\u_id_ex.$procdff$1414 ($adff): ARST=\rst_ni, D=$flatten\u_ibex.\u_id_ex.$0\ex_mem_read_o[0:0], Q=\u_ibex.u_id_ex.ex_mem_read_o
+Replacing ibex_core.$flatten\u_ibex.\u_id_ex.$procdff$1419 ($adff): ARST=\rst_ni, D=$flatten\u_ibex.\u_id_ex.$0\ex_mem_write_o[0:0], Q=\u_ibex.u_id_ex.ex_mem_write_o
+Replacing ibex_core.$flatten\u_ibex.\u_id_ex.$procdff$1429 ($adff): ARST=\rst_ni, D=$flatten\u_ibex.\u_id_ex.$0\ex_reg_write_o[0:0], Q=\u_ibex.u_id_ex.ex_reg_write_o
+Replacing ibex_core.$flatten\u_ibex.\u_id_ex.$procdff$1439 ($adff): ARST=\rst_ni, D=$flatten\u_ibex.\u_id_ex.$0\ex_jump_o[0:0], Q=\u_ibex.u_id_ex.ex_jump_o
+Replacing ibex_core.$flatten\u_ibex.\u_id_ex.$procdff$1444 ($adff): ARST=\rst_ni, D=$flatten\u_ibex.\u_id_ex.$0\ex_result_src_o[1:0], Q=\u_ibex.u_id_ex.ex_result_src_o
+Replacing ibex_core.$flatten\u_ibex.\u_id_ex.$procdff$1449 ($adff): ARST=\rst_ni, D=$flatten\u_ibex.\u_id_ex.$0\ex_is_lui_o[0:0], Q=\u_ibex.u_id_ex.ex_is_lui_o
+Replacing ibex_core.$flatten\u_ibex.\u_id_ex.$procdff$1454 ($adff): ARST=\rst_ni, D=$flatten\u_ibex.\u_id_ex.$0\ex_is_auipc_o[0:0], Q=\u_ibex.u_id_ex.ex_is_auipc_o
+Replacing ibex_core.$flatten\u_ibex.\u_if_id.$auto$ff.cc:337:slice$1548 ($adffe): ARST=\rst_ni, D=$flatten\u_ibex.\u_if_id.$0\id_instr_o[31:0], Q=\u_ibex.u_if_id.id_instr_o
+Replacing ibex_core.$flatten\u_ibex.\u_if_id.$auto$ff.cc:337:slice$1554 ($adffe): ARST=\rst_ni, D=$flatten\u_ibex.\u_if_id.$0\id_pc_o[31:0], Q=\u_ibex.u_if_id.id_pc_o
+Replacing ibex_core.$flatten\u_ibex.\u_mem_wb.$procdff$1504 ($adff): ARST=\rst_ni, D=\u_ibex.u_ex_mem.mem_alu_result_o, Q=\u_ibex.u_mem_wb.wb_alu_result_o
+Replacing ibex_core.$flatten\u_ibex.\u_mem_wb.$procdff$1509 ($adff): ARST=\rst_ni, D=\wb_dat_i, Q=\u_ibex.u_mem_wb.wb_mem_data_o
+Replacing ibex_core.$flatten\u_ibex.\u_mem_wb.$procdff$1514 ($adff): ARST=\rst_ni, D=\u_ibex.u_ex_mem.mem_rd_addr_o, Q=\u_ibex.u_mem_wb.wb_rd_addr_o
+Replacing ibex_core.$flatten\u_ibex.\u_mem_wb.$procdff$1519 ($adff): ARST=\rst_ni, D=\u_ibex.u_ex_mem.mem_reg_write_o, Q=\u_ibex.u_mem_wb.wb_reg_write_o
+Replacing ibex_core.$flatten\u_ibex.\u_mem_wb.$procdff$1529 ($adff): ARST=\rst_ni, D=\u_ibex.u_ex_mem.mem_result_src_o, Q=\u_ibex.u_mem_wb.wb_result_src_o
+Replacing ibex_core.$flatten\u_ibex.\u_pc.$auto$ff.cc:337:slice$1547 ($adffe): ARST=\rst_ni, D=\u_ibex.pc_next, Q=\u_ibex.u_pc.pc_o
+Replacing ibex_core.$flatten\u_ibex.\u_reg_file.$auto$ff.cc:337:slice$1557 ($adffe): ARST=\rst_ni, D=\u_ibex.u_reg_file.rd_data_i, Q=\u_ibex.u_reg_file.regs[16]
+Replacing ibex_core.$flatten\u_ibex.\u_reg_file.$auto$ff.cc:337:slice$1560 ($adffe): ARST=\rst_ni, D=\u_ibex.u_reg_file.rd_data_i, Q=\u_ibex.u_reg_file.regs[10]
+Replacing ibex_core.$flatten\u_ibex.\u_reg_file.$auto$ff.cc:337:slice$1563 ($adffe): ARST=\rst_ni, D=\u_ibex.u_reg_file.rd_data_i, Q=\u_ibex.u_reg_file.regs[9]
+Replacing ibex_core.$flatten\u_ibex.\u_reg_file.$auto$ff.cc:337:slice$1566 ($adffe): ARST=\rst_ni, D=\u_ibex.u_reg_file.rd_data_i, Q=\u_ibex.u_reg_file.regs[19]
+Replacing ibex_core.$flatten\u_ibex.\u_reg_file.$auto$ff.cc:337:slice$1569 ($adffe): ARST=\rst_ni, D=\u_ibex.u_reg_file.rd_data_i, Q=\u_ibex.u_reg_file.regs[21]
+Replacing ibex_core.$flatten\u_ibex.\u_reg_file.$auto$ff.cc:337:slice$1572 ($adffe): ARST=\rst_ni, D=\u_ibex.u_reg_file.rd_data_i, Q=\u_ibex.u_reg_file.regs[11]
+Replacing ibex_core.$flatten\u_ibex.\u_reg_file.$auto$ff.cc:337:slice$1575 ($adffe): ARST=\rst_ni, D=\u_ibex.u_reg_file.rd_data_i, Q=\u_ibex.u_reg_file.regs[22]
+Replacing ibex_core.$flatten\u_ibex.\u_reg_file.$auto$ff.cc:337:slice$1581 ($adffe): ARST=\rst_ni, D=\u_ibex.u_reg_file.rd_data_i, Q=\u_ibex.u_reg_file.regs[17]
+Replacing ibex_core.$flatten\u_ibex.\u_reg_file.$auto$ff.cc:337:slice$1584 ($adffe): ARST=\rst_ni, D=\u_ibex.u_reg_file.rd_data_i, Q=\u_ibex.u_reg_file.regs[26]
+Replacing ibex_core.$flatten\u_ibex.\u_reg_file.$auto$ff.cc:337:slice$1587 ($adffe): ARST=\rst_ni, D=\u_ibex.u_reg_file.rd_data_i, Q=\u_ibex.u_reg_file.regs[1]
+Replacing ibex_core.$flatten\u_ibex.\u_reg_file.$auto$ff.cc:337:slice$1590 ($adffe): ARST=\rst_ni, D=\u_ibex.u_reg_file.rd_data_i, Q=\u_ibex.u_reg_file.regs[12]
+Replacing ibex_core.$flatten\u_ibex.\u_reg_file.$auto$ff.cc:337:slice$1593 ($adffe): ARST=\rst_ni, D=\u_ibex.u_reg_file.rd_data_i, Q=\u_ibex.u_reg_file.regs[2]
+Replacing ibex_core.$flatten\u_ibex.\u_reg_file.$auto$ff.cc:337:slice$1596 ($adffe): ARST=\rst_ni, D=\u_ibex.u_reg_file.rd_data_i, Q=\u_ibex.u_reg_file.regs[20]
+Replacing ibex_core.$flatten\u_ibex.\u_reg_file.$auto$ff.cc:337:slice$1599 ($adffe): ARST=\rst_ni, D=\u_ibex.u_reg_file.rd_data_i, Q=\u_ibex.u_reg_file.regs[23]
+Replacing ibex_core.$flatten\u_ibex.\u_reg_file.$auto$ff.cc:337:slice$1602 ($adffe): ARST=\rst_ni, D=\u_ibex.u_reg_file.rd_data_i, Q=\u_ibex.u_reg_file.regs[3]
+Replacing ibex_core.$flatten\u_ibex.\u_reg_file.$auto$ff.cc:337:slice$1605 ($adffe): ARST=\rst_ni, D=\u_ibex.u_reg_file.rd_data_i, Q=\u_ibex.u_reg_file.regs[28]
+Replacing ibex_core.$flatten\u_ibex.\u_reg_file.$auto$ff.cc:337:slice$1608 ($adffe): ARST=\rst_ni, D=\u_ibex.u_reg_file.rd_data_i, Q=\u_ibex.u_reg_file.regs[13]
+Replacing ibex_core.$flatten\u_ibex.\u_reg_file.$auto$ff.cc:337:slice$1611 ($adffe): ARST=\rst_ni, D=\u_ibex.u_reg_file.rd_data_i, Q=\u_ibex.u_reg_file.regs[4]
+Replacing ibex_core.$flatten\u_ibex.\u_reg_file.$auto$ff.cc:337:slice$1614 ($adffe): ARST=\rst_ni, D=\u_ibex.u_reg_file.rd_data_i, Q=\u_ibex.u_reg_file.regs[18]
+Replacing ibex_core.$flatten\u_ibex.\u_reg_file.$auto$ff.cc:337:slice$1617 ($adffe): ARST=\rst_ni, D=\u_ibex.u_reg_file.rd_data_i, Q=\u_ibex.u_reg_file.regs[30]
+Replacing ibex_core.$flatten\u_ibex.\u_reg_file.$auto$ff.cc:337:slice$1620 ($adffe): ARST=\rst_ni, D=\u_ibex.u_reg_file.rd_data_i, Q=\u_ibex.u_reg_file.regs[5]
+Replacing ibex_core.$flatten\u_ibex.\u_reg_file.$auto$ff.cc:337:slice$1623 ($adffe): ARST=\rst_ni, D=\u_ibex.u_reg_file.rd_data_i, Q=\u_ibex.u_reg_file.regs[31]
+Replacing ibex_core.$flatten\u_ibex.\u_reg_file.$auto$ff.cc:337:slice$1626 ($adffe): ARST=\rst_ni, D=\u_ibex.u_reg_file.rd_data_i, Q=\u_ibex.u_reg_file.regs[24]
+Replacing ibex_core.$flatten\u_ibex.\u_reg_file.$auto$ff.cc:337:slice$1629 ($adffe): ARST=\rst_ni, D=\u_ibex.u_reg_file.rd_data_i, Q=\u_ibex.u_reg_file.regs[6]
+Replacing ibex_core.$flatten\u_ibex.\u_reg_file.$auto$ff.cc:337:slice$1632 ($adffe): ARST=\rst_ni, D=\u_ibex.u_reg_file.rd_data_i, Q=\u_ibex.u_reg_file.regs[14]
+Replacing ibex_core.$flatten\u_ibex.\u_reg_file.$auto$ff.cc:337:slice$1635 ($adffe): ARST=\rst_ni, D=\u_ibex.u_reg_file.rd_data_i, Q=\u_ibex.u_reg_file.regs[7]
+Replacing ibex_core.$flatten\u_ibex.\u_reg_file.$auto$ff.cc:337:slice$1638 ($adffe): ARST=\rst_ni, D=\u_ibex.u_reg_file.rd_data_i, Q=\u_ibex.u_reg_file.regs[27]
+Replacing ibex_core.$flatten\u_ibex.\u_reg_file.$auto$ff.cc:337:slice$1641 ($adffe): ARST=\rst_ni, D=\u_ibex.u_reg_file.rd_data_i, Q=\u_ibex.u_reg_file.regs[15]
+Replacing ibex_core.$flatten\u_ibex.\u_reg_file.$auto$ff.cc:337:slice$1644 ($adffe): ARST=\rst_ni, D=\u_ibex.u_reg_file.rd_data_i, Q=\u_ibex.u_reg_file.regs[8]
+Replacing ibex_core.$flatten\u_ibex.\u_reg_file.$auto$ff.cc:337:slice$1647 ($adffe): ARST=\rst_ni, D=\u_ibex.u_reg_file.rd_data_i, Q=\u_ibex.u_reg_file.regs[29]
+Replacing ibex_core.$flatten\u_ibex.\u_reg_file.$auto$ff.cc:337:slice$1650 ($adffe): ARST=\rst_ni, D=\u_ibex.u_reg_file.rd_data_i, Q=\u_ibex.u_reg_file.regs[25]
+
+6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ibex_core..
+
+7. Executing FORMALFF pass.
+
+8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ibex_core..
+Removed 1 unused cells and 1 unused wires.
+<suppressed ~2 debug messages>
+
+9. Executing CHECK pass (checking for obvious problems).
+Checking module ibex_core...
+Found and reported 0 problems.
+
+10. Executing SETUNDEF pass (replace undef values with defined constants).
+
+11. Executing OPT pass (performing simple optimizations).
+
+11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ibex_core.
+
+11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ibex_core'.
+Computing hashes of 581 cells of `\ibex_core'.
+Finding duplicate cells in `\ibex_core'.
+Removed a total of 0 cells.
+
+11.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+11.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ibex_core..
+
+11.5. Finished fast OPT passes.
+
+12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ibex_core..
+Removed 0 unused cells and 76 unused wires.
+<suppressed ~1 debug messages>
+
+13. Executing RTLIL backend.
+Output filename: ../model/design_prep.il
+
+End of script. Logfile hash: a44f41af71, time: 0.08s, user: 0.07s, system: 0.02s, MEM: 21.94 MB peak
+Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+Time spent: 39% 4x opt_clean (0 sec), 21% 1x check (0 sec), ...

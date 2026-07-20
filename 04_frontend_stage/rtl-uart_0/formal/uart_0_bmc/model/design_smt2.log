@@ -1,0 +1,78 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+
+-- Executing script file `design_smt2.ys' --
+
+1. Executing RTLIL frontend.
+Input filename: design_prep.il
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `EF_UART_WB_wrapper'. Setting top module to EF_UART_WB_wrapper.
+
+2.1. Analyzing design hierarchy..
+Top module:  \EF_UART_WB_wrapper
+
+2.2. Analyzing design hierarchy..
+Top module:  \EF_UART_WB_wrapper
+Removed 0 unused modules.
+
+3. Executing FORMALFF pass.
+
+4. Executing DFFUNMAP pass (unmap clock enable and synchronous reset from FFs).
+
+5. Printing statistics.
+
+=== EF_UART_WB_wrapper ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      831 wires
+     3479 wire bits
+      402 public wires
+     1475 public wire bits
+       15 ports
+      111 port bits
+        2 memories
+      288 memory bits
+      694 cells
+       14   $add
+       30   $and
+       51   $anyinit
+       91   $anyseq
+        1   $assume
+       49   $eq
+        1   $gt
+        6   $logic_not
+        1   $lt
+        2   $memrd_v2
+        2   $memwr_v2
+      303   $mux
+       35   $ne
+        9   $not
+        1   $or
+       22   $pmux
+       23   $reduce_and
+       25   $reduce_bool
+        6   $reduce_or
+        2   $reduce_xnor
+        2   $reduce_xor
+       11   $scopeinfo
+        1   $shl
+        1   $shr
+        5   $sub
+
+6. Executing SMT2 backend.
+
+6.1. Executing BMUXMAP pass.
+
+6.2. Executing DEMUXMAP pass.
+Creating SMT-LIBv2 representation of module EF_UART_WB_wrapper.
+
+End of script. Logfile hash: cfb9e96647, time: 0.02s, user: 0.02s, system: 0.00s, MEM: 16.12 MB peak
+Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+Time spent: 73% 2x write_smt2 (0 sec), 19% 2x read_rtlil (0 sec), ...

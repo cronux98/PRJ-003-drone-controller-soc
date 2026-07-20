@@ -1,0 +1,25 @@
+SBY 10:09:00 [~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-sram_8kb/formal/sram_8kb_bmc] Removing directory '~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-sram_8kb/formal/sram_8kb_bmc'.
+SBY 10:09:00 [~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-sram_8kb/formal/sram_8kb_bmc] Copy '~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-sram_8kb/rtl/sram_8kb.v' to '~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-sram_8kb/formal/sram_8kb_bmc/src/sram_8kb.v'.
+SBY 10:09:00 [~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-sram_8kb/formal/sram_8kb_bmc] engine_0: smtbmc bitwuzla
+SBY 10:09:00 [~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-sram_8kb/formal/sram_8kb_bmc] base: starting process "cd ~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-sram_8kb/formal/sram_8kb_bmc/src; yosys -ql ../model/design.log ../model/design.ys"
+SBY 10:09:00 [~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-sram_8kb/formal/sram_8kb_bmc] base: Warning: Replacing memory \mem with list of registers. See sram_8kb.v:47
+SBY 10:09:49 [~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-sram_8kb/formal/sram_8kb_bmc] base: finished (returncode=0)
+SBY 10:09:49 [~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-sram_8kb/formal/sram_8kb_bmc] prep: starting process "cd ~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-sram_8kb/formal/sram_8kb_bmc/model; yosys -ql design_prep.log design_prep.ys"
+SBY 10:09:51 [~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-sram_8kb/formal/sram_8kb_bmc] prep: finished (returncode=0)
+SBY 10:09:51 [~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-sram_8kb/formal/sram_8kb_bmc] smt2: starting process "cd ~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-sram_8kb/formal/sram_8kb_bmc/model; yosys -ql design_smt2.log design_smt2.ys"
+SBY 10:09:52 [~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-sram_8kb/formal/sram_8kb_bmc] smt2: finished (returncode=0)
+SBY 10:09:52 [~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-sram_8kb/formal/sram_8kb_bmc] engine_0: starting process "cd ~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-sram_8kb/formal/sram_8kb_bmc; ~/oss-cad-suite/bin/yosys-smtbmc -s bitwuzla --presat --unroll --noprogress -t 25  --append 0 --dump-vcd engine_0/trace.vcd --dump-yw engine_0/trace.yw --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc model/design_smt2.smt2"
+SBY 10:09:52 [~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-sram_8kb/formal/sram_8kb_bmc] engine_0: ##   0:00:00  Solver: bitwuzla
+SBY 10:09:54 [~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-sram_8kb/formal/sram_8kb_bmc] engine_0: ##   0:00:01  Checking assumptions in step 0..
+SBY 10:09:54 [~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-sram_8kb/formal/sram_8kb_bmc] engine_0: ##   0:00:01  Checking assertions in step 0..
+SBY 10:09:55 [~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-sram_8kb/formal/sram_8kb_bmc] engine_0: ##   0:00:03  Checking assumptions in step 1..
+SBY 10:09:55 [~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-sram_8kb/formal/sram_8kb_bmc] engine_0: ##   0:00:03  Checking assertions in step 1..
+SBY 10:09:56 [~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-sram_8kb/formal/sram_8kb_bmc] engine_0: ##   0:00:04  Checking assumptions in step 2..
+SBY 10:09:56 [~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-sram_8kb/formal/sram_8kb_bmc] engine_0: ##   0:00:04  Checking assertions in step 2..
+SBY 10:09:58 [~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-sram_8kb/formal/sram_8kb_bmc] engine_0: ##   0:00:05  Checking assumptions in step 3..
+SBY 10:09:58 [~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-sram_8kb/formal/sram_8kb_bmc] engine_0: ##   0:00:05  Checking assertions in step 3..
+SBY 10:09:59 [~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-sram_8kb/formal/sram_8kb_bmc] engine_0: ##   0:00:06  Checking assumptions in step 4..
+SBY 10:09:59 [~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-sram_8kb/formal/sram_8kb_bmc] engine_0: ##   0:00:06  Checking assertions in step 4..
+SBY 10:10:00 [~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-sram_8kb/formal/sram_8kb_bmc] engine_0: ##   0:00:07  Checking assumptions in step 5..
+SBY 10:10:00 [~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-sram_8kb/formal/sram_8kb_bmc] engine_0: ##   0:00:07  Checking assertions in step 5..
+SBY 10:10:00 [~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-sram_8kb/formal/sram_8kb_bmc] engine_0: terminating process

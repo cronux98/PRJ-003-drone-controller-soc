@@ -1,0 +1,67 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+
+-- Executing script file `design_smt2.ys' --
+
+1. Executing RTLIL frontend.
+Input filename: design_prep.il
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `irq_ctrl'. Setting top module to irq_ctrl.
+
+2.1. Analyzing design hierarchy..
+Top module:  \irq_ctrl
+
+2.2. Analyzing design hierarchy..
+Top module:  \irq_ctrl
+Removed 0 unused modules.
+
+3. Executing FORMALFF pass.
+
+4. Executing DFFUNMAP pass (unmap clock enable and synchronous reset from FFs).
+
+5. Printing statistics.
+
+=== irq_ctrl ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      261 wires
+      872 wire bits
+       67 public wires
+      349 public wire bits
+       12 ports
+      123 port bits
+      260 cells
+        1   $and
+       31   $anyinit
+        3   $anyseq
+        1   $assume
+        5   $eq
+       16   $le
+       35   $logic_and
+        2   $logic_not
+      144   $mux
+        1   $neg
+        3   $not
+        1   $or
+        8   $pmux
+        5   $reduce_and
+        2   $shift
+        2   $shiftx
+
+6. Executing SMT2 backend.
+
+6.1. Executing BMUXMAP pass.
+
+6.2. Executing DEMUXMAP pass.
+Creating SMT-LIBv2 representation of module irq_ctrl.
+
+End of script. Logfile hash: 3d3dda81b2, time: 0.01s, user: 0.01s, system: 0.01s, MEM: 15.08 MB peak
+Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+Time spent: 70% 2x write_smt2 (0 sec), 19% 2x read_rtlil (0 sec), ...

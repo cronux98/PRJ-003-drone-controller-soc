@@ -1,0 +1,342 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+
+-- Executing script file `../model/design.ys' --
+
+1. Executing Verilog-2005 frontend: wishbone_interconnect.v
+Parsing formal SystemVerilog input from `wishbone_interconnect.v' to AST representation.
+Storing AST representation for module `$abstract\wishbone_interconnect'.
+Successfully finished Verilog frontend.
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+
+3. Executing AST frontend in derive mode using pre-parsed AST for module `\wishbone_interconnect'.
+Generating RTLIL representation for module `\wishbone_interconnect'.
+
+3.1. Analyzing design hierarchy..
+Top module:  \wishbone_interconnect
+
+3.2. Analyzing design hierarchy..
+Top module:  \wishbone_interconnect
+Removing unused module `$abstract\wishbone_interconnect'.
+Removed 1 unused modules.
+
+4. Executing PROC pass (convert processes to netlists).
+
+4.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+4.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$wishbone_interconnect.v:223$58 in module wishbone_interconnect.
+Marked 14 switch rules as full_case in process $proc$wishbone_interconnect.v:205$57 in module wishbone_interconnect.
+Marked 1 switch rules as full_case in process $proc$wishbone_interconnect.v:114$1 in module wishbone_interconnect.
+Removed a total of 0 dead cases.
+
+4.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 3 redundant assignments.
+Promoted 2 assignments to connections.
+
+4.4. Executing PROC_INIT pass (extract init attributes).
+
+4.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \wb_rst_ni in `\wishbone_interconnect.$proc$wishbone_interconnect.v:223$58'.
+
+4.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~17 debug messages>
+
+4.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\wishbone_interconnect.$proc$wishbone_interconnect.v:223$58'.
+     1/4: $0\wb_dat_o[31:0]
+     2/4: $0\wb_err_o[0:0]
+     3/4: $0\wb_ack_o[0:0]
+     4/4: $0\rd_data_q[31:0]
+Creating decoders for process `\wishbone_interconnect.$proc$wishbone_interconnect.v:205$57'.
+     1/14: $14\mux_out[31:0]
+     2/14: $13\mux_out[31:0]
+     3/14: $12\mux_out[31:0]
+     4/14: $11\mux_out[31:0]
+     5/14: $10\mux_out[31:0]
+     6/14: $9\mux_out[31:0]
+     7/14: $8\mux_out[31:0]
+     8/14: $7\mux_out[31:0]
+     9/14: $6\mux_out[31:0]
+    10/14: $5\mux_out[31:0]
+    11/14: $4\mux_out[31:0]
+    12/14: $3\mux_out[31:0]
+    13/14: $2\mux_out[31:0]
+    14/14: $1\mux_out[31:0]
+Creating decoders for process `\wishbone_interconnect.$proc$wishbone_interconnect.v:114$1'.
+     1/14: $1\slave_sel[13:0] [13]
+     2/14: $1\slave_sel[13:0] [10]
+     3/14: $1\slave_sel[13:0] [8]
+     4/14: $1\slave_sel[13:0] [6]
+     5/14: $1\slave_sel[13:0] [4]
+     6/14: $1\slave_sel[13:0] [2]
+     7/14: $1\slave_sel[13:0] [0]
+     8/14: $1\slave_sel[13:0] [12]
+     9/14: $1\slave_sel[13:0] [7]
+    10/14: $1\slave_sel[13:0] [3]
+    11/14: $1\slave_sel[13:0] [11]
+    12/14: $1\slave_sel[13:0] [5]
+    13/14: $1\slave_sel[13:0] [9]
+    14/14: $1\slave_sel[13:0] [1]
+
+4.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\wishbone_interconnect.\mux_out' from process `\wishbone_interconnect.$proc$wishbone_interconnect.v:205$57'.
+No latch inferred for signal `\wishbone_interconnect.\slave_sel' from process `\wishbone_interconnect.$proc$wishbone_interconnect.v:114$1'.
+
+4.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\wishbone_interconnect.\wb_dat_o' using process `\wishbone_interconnect.$proc$wishbone_interconnect.v:223$58'.
+  created $adff cell `$procdff$521' with positive edge clock and positive level reset.
+Creating register for signal `\wishbone_interconnect.\wb_ack_o' using process `\wishbone_interconnect.$proc$wishbone_interconnect.v:223$58'.
+  created $adff cell `$procdff$526' with positive edge clock and positive level reset.
+Creating register for signal `\wishbone_interconnect.\wb_err_o' using process `\wishbone_interconnect.$proc$wishbone_interconnect.v:223$58'.
+  created $adff cell `$procdff$531' with positive edge clock and positive level reset.
+Creating register for signal `\wishbone_interconnect.\rd_data_q' using process `\wishbone_interconnect.$proc$wishbone_interconnect.v:223$58'.
+  created $adff cell `$procdff$536' with positive edge clock and positive level reset.
+
+4.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+4.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 2 empty switches in `\wishbone_interconnect.$proc$wishbone_interconnect.v:223$58'.
+Removing empty process `wishbone_interconnect.$proc$wishbone_interconnect.v:223$58'.
+Found and cleaned up 14 empty switches in `\wishbone_interconnect.$proc$wishbone_interconnect.v:205$57'.
+Removing empty process `wishbone_interconnect.$proc$wishbone_interconnect.v:205$57'.
+Found and cleaned up 1 empty switch in `\wishbone_interconnect.$proc$wishbone_interconnect.v:114$1'.
+Removing empty process `wishbone_interconnect.$proc$wishbone_interconnect.v:114$1'.
+Cleaned up 17 empty switches.
+
+4.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wishbone_interconnect.
+<suppressed ~9 debug messages>
+
+5. Executing OPT pass (performing simple optimizations).
+
+5.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wishbone_interconnect.
+
+5.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wishbone_interconnect'.
+Computing hashes of 202 cells of `\wishbone_interconnect'.
+Finding duplicate cells in `\wishbone_interconnect'.
+Computing hashes of 199 cells of `\wishbone_interconnect'.
+Finding duplicate cells in `\wishbone_interconnect'.
+<suppressed ~9 debug messages>
+Removed a total of 3 cells.
+
+5.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \wishbone_interconnect..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 1/2 on $mux $procmux$379.
+    dead port 1/2 on $mux $procmux$373.
+    dead port 1/2 on $mux $procmux$370.
+    dead port 1/2 on $mux $procmux$364.
+    dead port 1/2 on $mux $procmux$361.
+    dead port 1/2 on $mux $procmux$358.
+    dead port 1/2 on $mux $procmux$352.
+    dead port 1/2 on $mux $procmux$349.
+    dead port 1/2 on $mux $procmux$346.
+    dead port 1/2 on $mux $procmux$343.
+    dead port 1/2 on $mux $procmux$337.
+    dead port 1/2 on $mux $procmux$334.
+    dead port 1/2 on $mux $procmux$331.
+    dead port 1/2 on $mux $procmux$328.
+    dead port 1/2 on $mux $procmux$325.
+    dead port 1/2 on $mux $procmux$319.
+    dead port 1/2 on $mux $procmux$316.
+    dead port 1/2 on $mux $procmux$313.
+    dead port 1/2 on $mux $procmux$310.
+    dead port 1/2 on $mux $procmux$307.
+    dead port 1/2 on $mux $procmux$304.
+    dead port 1/2 on $mux $procmux$298.
+    dead port 1/2 on $mux $procmux$295.
+    dead port 1/2 on $mux $procmux$292.
+    dead port 1/2 on $mux $procmux$289.
+    dead port 1/2 on $mux $procmux$286.
+    dead port 1/2 on $mux $procmux$283.
+    dead port 1/2 on $mux $procmux$280.
+    dead port 1/2 on $mux $procmux$274.
+    dead port 1/2 on $mux $procmux$271.
+    dead port 1/2 on $mux $procmux$268.
+    dead port 1/2 on $mux $procmux$265.
+    dead port 1/2 on $mux $procmux$262.
+    dead port 1/2 on $mux $procmux$259.
+    dead port 1/2 on $mux $procmux$256.
+    dead port 1/2 on $mux $procmux$253.
+    dead port 1/2 on $mux $procmux$247.
+    dead port 1/2 on $mux $procmux$244.
+    dead port 1/2 on $mux $procmux$241.
+    dead port 1/2 on $mux $procmux$238.
+    dead port 1/2 on $mux $procmux$235.
+    dead port 1/2 on $mux $procmux$232.
+    dead port 1/2 on $mux $procmux$229.
+    dead port 1/2 on $mux $procmux$226.
+    dead port 1/2 on $mux $procmux$223.
+    dead port 1/2 on $mux $procmux$217.
+    dead port 1/2 on $mux $procmux$214.
+    dead port 1/2 on $mux $procmux$211.
+    dead port 1/2 on $mux $procmux$208.
+    dead port 1/2 on $mux $procmux$205.
+    dead port 1/2 on $mux $procmux$202.
+    dead port 1/2 on $mux $procmux$199.
+    dead port 1/2 on $mux $procmux$196.
+    dead port 1/2 on $mux $procmux$193.
+    dead port 1/2 on $mux $procmux$190.
+    dead port 1/2 on $mux $procmux$184.
+    dead port 1/2 on $mux $procmux$181.
+    dead port 1/2 on $mux $procmux$178.
+    dead port 1/2 on $mux $procmux$175.
+    dead port 1/2 on $mux $procmux$172.
+    dead port 1/2 on $mux $procmux$169.
+    dead port 1/2 on $mux $procmux$166.
+    dead port 1/2 on $mux $procmux$163.
+    dead port 1/2 on $mux $procmux$160.
+    dead port 1/2 on $mux $procmux$157.
+    dead port 1/2 on $mux $procmux$154.
+    dead port 1/2 on $mux $procmux$148.
+    dead port 1/2 on $mux $procmux$145.
+    dead port 1/2 on $mux $procmux$142.
+    dead port 1/2 on $mux $procmux$139.
+    dead port 1/2 on $mux $procmux$136.
+    dead port 1/2 on $mux $procmux$133.
+    dead port 1/2 on $mux $procmux$130.
+    dead port 1/2 on $mux $procmux$127.
+    dead port 1/2 on $mux $procmux$124.
+    dead port 1/2 on $mux $procmux$121.
+    dead port 1/2 on $mux $procmux$118.
+    dead port 1/2 on $mux $procmux$115.
+    dead port 1/2 on $mux $procmux$109.
+    dead port 1/2 on $mux $procmux$106.
+    dead port 1/2 on $mux $procmux$103.
+    dead port 1/2 on $mux $procmux$100.
+    dead port 1/2 on $mux $procmux$97.
+    dead port 1/2 on $mux $procmux$94.
+    dead port 1/2 on $mux $procmux$91.
+    dead port 1/2 on $mux $procmux$88.
+    dead port 1/2 on $mux $procmux$85.
+    dead port 1/2 on $mux $procmux$82.
+    dead port 1/2 on $mux $procmux$79.
+    dead port 1/2 on $mux $procmux$76.
+    dead port 1/2 on $mux $procmux$73.
+Removed 91 multiplexer ports.
+<suppressed ~139 debug messages>
+
+5.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \wishbone_interconnect.
+Performed a total of 0 changes.
+
+5.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wishbone_interconnect'.
+Computing hashes of 108 cells of `\wishbone_interconnect'.
+Finding duplicate cells in `\wishbone_interconnect'.
+Removed a total of 0 cells.
+
+5.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $procdff$536 ($adff) from module wishbone_interconnect (D = \mux_out, Q = \rd_data_q).
+Setting constant 0-bit at position 0 on $procdff$531 ($adff) from module wishbone_interconnect.
+
+5.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wishbone_interconnect..
+Removed 4 unused cells and 277 unused wires.
+<suppressed ~6 debug messages>
+
+5.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wishbone_interconnect.
+
+5.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \wishbone_interconnect..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~46 debug messages>
+
+5.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \wishbone_interconnect.
+Performed a total of 0 changes.
+
+5.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wishbone_interconnect'.
+Computing hashes of 104 cells of `\wishbone_interconnect'.
+Finding duplicate cells in `\wishbone_interconnect'.
+Removed a total of 0 cells.
+
+5.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wishbone_interconnect..
+
+5.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wishbone_interconnect.
+
+5.16. Finished fast OPT passes. (There is nothing left to do.)
+
+6. Executing FLATTEN pass (flatten design).
+
+7. Executing OPT pass (performing simple optimizations).
+
+7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wishbone_interconnect.
+
+7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wishbone_interconnect'.
+Computing hashes of 104 cells of `\wishbone_interconnect'.
+Finding duplicate cells in `\wishbone_interconnect'.
+Removed a total of 0 cells.
+
+7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \wishbone_interconnect..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~46 debug messages>
+
+7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \wishbone_interconnect.
+Performed a total of 0 changes.
+
+7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wishbone_interconnect'.
+Computing hashes of 104 cells of `\wishbone_interconnect'.
+Finding duplicate cells in `\wishbone_interconnect'.
+Removed a total of 0 cells.
+
+7.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+7.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wishbone_interconnect..
+
+7.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wishbone_interconnect.
+
+7.9. Finished fast OPT passes. (There is nothing left to do.)
+
+8. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `wishbone_interconnect'. Setting top module to wishbone_interconnect.
+
+8.1. Analyzing design hierarchy..
+Top module:  \wishbone_interconnect
+
+8.2. Analyzing design hierarchy..
+Top module:  \wishbone_interconnect
+Removed 0 unused modules.
+
+9. Executing jny backend.
+
+10. Executing RTLIL backend.
+Output filename: ../model/design.il
+
+End of script. Logfile hash: 368bd5d3c2, time: 0.04s, user: 0.04s, system: 0.01s, MEM: 18.46 MB peak
+Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+Time spent: 17% 2x hierarchy (0 sec), 14% 3x opt_muxtree (0 sec), ...

@@ -1,0 +1,19 @@
+{
+  "project": "IP-010",
+  "version": "v4",
+  "stage": "05_firmware_stage",
+  "test_suite": "tb-fw-bringup",
+  "status": "BLOCKED",
+  "block_reason": "No SoC top-level RTL available in 06_verification_stage. Stage 06 (integration/verification) must produce assembled SoC top-level before cocotb-on-RTL bring-up can run.",
+  "tests_total": 5,
+  "tests_skipped": 4,
+  "tests_passed": 1,
+  "tests_failed": 0,
+  "compile_status": "PASS",
+  "blocked_tests": [
+    "bootrom_boot_sequence",
+    "sram_walking_ones_test",
+    "uart_tx_loopback",
+    "peripheral_register_rw"
+  ]
+}

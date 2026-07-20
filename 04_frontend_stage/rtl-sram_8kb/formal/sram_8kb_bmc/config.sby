@@ -1,0 +1,18 @@
+# IP-010 v3 formal verification for sram_8kb
+# GENERATED-FROM: kanban task t_74da3230, IP-010 v3 frontend
+
+[options]
+mode bmc
+depth 25
+
+[engines]
+smtbmc bitwuzla
+
+[script]
+read -formal sram_8kb.v
+hierarchy -top sram_8kb
+proc; opt
+flatten; opt
+
+[files]
+rtl-sram_8kb/rtl/sram_8kb.v

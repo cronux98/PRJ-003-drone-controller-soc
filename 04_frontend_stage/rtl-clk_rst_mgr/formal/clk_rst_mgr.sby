@@ -1,0 +1,21 @@
+# IP-010 v3 formal verification for clk_rst_mgr
+# GENERATED-FROM: kanban task t_74da3230, IP-010 v3 frontend
+
+[tasks]
+bmc
+
+[options]
+bmc: mode bmc
+bmc: depth 25
+
+[engines]
+smtbmc bitwuzla
+
+[script]
+read -formal clk_rst_mgr.v
+hierarchy -top clk_rst_mgr
+proc; opt
+flatten; opt
+
+[files]
+rtl-clk_rst_mgr/rtl/clk_rst_mgr.v

@@ -1,0 +1,99 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+
+-- Executing script file `design_prep.ys' --
+
+1. Executing RTLIL frontend.
+Input filename: design.il
+
+2. Executing SCC pass (detecting logic loops).
+Found 0 SCCs in module irq_ctrl.
+Found 0 SCCs.
+
+3. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+4. Executing MEMORY_NORDFF pass (extracting $dff cells from memories).
+
+5. Executing ASYNC2SYNC pass.
+Replacing irq_ctrl.$auto$ff.cc:337:slice$1000 ($adffe): ARST=\rst_ni, D=\wb_dat_i [3:2], Q=\prio[9]
+Replacing irq_ctrl.$auto$ff.cc:337:slice$1003 ($adffe): ARST=\rst_ni, D=\wb_dat_i [1:0], Q=\threshold
+Replacing irq_ctrl.$auto$ff.cc:337:slice$1006 ($adffe): ARST=\rst_ni, D=\wb_dat_i [11:10], Q=\prio[5]
+Replacing irq_ctrl.$auto$ff.cc:337:slice$1009 ($adffe): ARST=\rst_ni, D=\wb_dat_i [5:4], Q=\prio[2]
+Replacing irq_ctrl.$auto$ff.cc:337:slice$1015 ($adffe): ARST=\rst_ni, D=\wb_dat_i [15:14], Q=\prio[7]
+Replacing irq_ctrl.$auto$ff.cc:337:slice$1018 ($adffe): ARST=\rst_ni, D=\wb_dat_i [11:10], Q=\prio[13]
+Replacing irq_ctrl.$auto$ff.cc:337:slice$1021 ($adffe): ARST=\rst_ni, D=\wb_dat_i [7:6], Q=\prio[3]
+Replacing irq_ctrl.$auto$ff.cc:337:slice$1024 ($adffe): ARST=\rst_ni, D=\wb_dat_i [15:14], Q=\prio[15]
+Replacing irq_ctrl.$auto$ff.cc:337:slice$1032 ($adffe): ARST=\rst_ni, D=$procmux$372_Y, Q=\wb_dat_o [15:14]
+Replacing irq_ctrl.$auto$ff.cc:337:slice$1037 ($adffe): ARST=\rst_ni, D=$procmux$386_Y, Q=\wb_dat_o [7:6]
+Replacing irq_ctrl.$auto$ff.cc:337:slice$1042 ($adffe): ARST=\rst_ni, D=$procmux$400_Y, Q=\wb_dat_o [5:4]
+Replacing irq_ctrl.$auto$ff.cc:337:slice$1047 ($adffe): ARST=\rst_ni, D=$procmux$412_Y, Q=\wb_dat_o [3:2]
+Replacing irq_ctrl.$auto$ff.cc:337:slice$1052 ($adffe): ARST=\rst_ni, D=$procmux$425_Y, Q=\wb_dat_o [1:0]
+Replacing irq_ctrl.$auto$ff.cc:337:slice$1057 ($adffe): ARST=\rst_ni, D=$procmux$453_Y, Q=\wb_dat_o [13:12]
+Replacing irq_ctrl.$auto$ff.cc:337:slice$1062 ($adffe): ARST=\rst_ni, D=$procmux$467_Y, Q=\wb_dat_o [9:8]
+Replacing irq_ctrl.$auto$ff.cc:337:slice$1067 ($adffe): ARST=\rst_ni, D=$procmux$481_Y, Q=\wb_dat_o [11:10]
+Replacing irq_ctrl.$auto$ff.cc:337:slice$1072 ($adffe): ARST=\rst_ni, D=\wb_dat_i [9:8], Q=\prio[12]
+Replacing irq_ctrl.$auto$ff.cc:337:slice$1075 ($adffe): ARST=\rst_ni, D=\wb_dat_i [13:12], Q=\prio[14]
+Replacing irq_ctrl.$auto$ff.cc:337:slice$1078 ($adffe): ARST=\rst_ni, D=\wb_dat_i [9:8], Q=\prio[4]
+Replacing irq_ctrl.$auto$ff.cc:337:slice$1081 ($adffe): ARST=\rst_ni, D=\wb_dat_i [1:0], Q=\prio[8]
+Replacing irq_ctrl.$auto$ff.cc:337:slice$1084 ($adffe): ARST=\rst_ni, D=\wb_dat_i [1:0], Q=\prio[0]
+Replacing irq_ctrl.$auto$ff.cc:337:slice$1087 ($adffe): ARST=\rst_ni, D=\wb_dat_i [13:12], Q=\prio[6]
+Replacing irq_ctrl.$auto$ff.cc:337:slice$1090 ($adffe): ARST=\rst_ni, D=\wb_dat_i [7:6], Q=\prio[11]
+Replacing irq_ctrl.$auto$ff.cc:337:slice$1093 ($adffe): ARST=\rst_ni, D=\wb_dat_i [5:4], Q=\prio[10]
+Replacing irq_ctrl.$auto$ff.cc:337:slice$994 ($adffe): ARST=\rst_ni, D=\wb_dat_i [3:2], Q=\prio[1]
+Replacing irq_ctrl.$auto$ff.cc:337:slice$997 ($adffe): ARST=\rst_ni, D=\wb_dat_i [15:0], Q=\enable
+Replacing irq_ctrl.$procdff$862 ($adff): ARST=\rst_ni, D=$0\wb_ack_o[0:0], Q=\wb_ack_o
+Replacing irq_ctrl.$procdff$867 ($adff): ARST=\rst_ni, D=$0\m_irq_o[0:0], Q=\m_irq_o
+Replacing irq_ctrl.$procdff$872 ($adff): ARST=\rst_ni, D=$0$lookahead\pending$11[15:0]$14, Q=\pending
+Replacing irq_ctrl.$procdff$887 ($adff): ARST=\rst_ni, D=\irq_src_i, Q=\irq_sync1
+Replacing irq_ctrl.$procdff$892 ($adff): ARST=\rst_ni, D=\irq_sync1, Q=\irq_sync2
+
+6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \irq_ctrl..
+
+7. Executing FORMALFF pass.
+
+8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \irq_ctrl..
+Removed 1 unused cells and 1 unused wires.
+<suppressed ~2 debug messages>
+
+9. Executing CHECK pass (checking for obvious problems).
+Checking module irq_ctrl...
+Found and reported 0 problems.
+
+10. Executing SETUNDEF pass (replace undef values with defined constants).
+
+11. Executing OPT pass (performing simple optimizations).
+
+11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module irq_ctrl.
+
+11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\irq_ctrl'.
+Computing hashes of 258 cells of `\irq_ctrl'.
+Finding duplicate cells in `\irq_ctrl'.
+Removed a total of 0 cells.
+
+11.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+11.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \irq_ctrl..
+
+11.5. Finished fast OPT passes.
+
+12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \irq_ctrl..
+Removed 0 unused cells and 34 unused wires.
+<suppressed ~1 debug messages>
+
+13. Executing RTLIL backend.
+Output filename: ../model/design_prep.il
+
+End of script. Logfile hash: 8bf9844542, time: 0.02s, user: 0.02s, system: 0.01s, MEM: 15.29 MB peak
+Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+Time spent: 36% 4x opt_clean (0 sec), 10% 1x check (0 sec), ...

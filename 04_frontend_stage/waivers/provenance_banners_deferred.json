@@ -1,0 +1,10 @@
+{
+  "waiver_id": "W04-003",
+  "check": "3.14/G.5",
+  "stage": "04_frontend",
+  "reason": "GENERATED-FROM: provenance banners not deployed across 52 lint/synth logs. Deployment requires skill/script patch (98_scripts/lint_all.sh). Non-blocking for RTL quality.",
+  "compensating_check": "All logs carry filesystem timestamps and hostname. Provenance banner script patch queued for post-v4.",
+  "adjudicator": "Vera",
+  "date": "2026-07-19",
+  "status": "ACCEPTED"
+}

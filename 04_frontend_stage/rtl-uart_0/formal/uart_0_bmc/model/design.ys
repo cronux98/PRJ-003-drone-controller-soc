@@ -1,0 +1,14 @@
+# running in ~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-uart_0/formal/uart_0_bmc/src/
+read -formal axis_fifo.v
+read -formal EF_UART.v
+read -formal EF_UART_WB.v
+read -formal EF_UART_WB_wrapper.v
+read -formal ef_util_lib.v
+hierarchy -top EF_UART_WB_wrapper
+proc; opt
+flatten; opt
+
+hierarchy -smtcheck
+rename -witness
+write_jny -no-connections ../model/design.json
+write_rtlil ../model/design.il

@@ -1,0 +1,5 @@
+warning: Some modules have no timescale. This may cause
+       : confusing timing results.	Affected modules are:
+       :   -- module EF_GPIO8 declared here: EF_GPIO8.v:20
+       :   -- module EF_GPIO8_WB_wrapper declared here: EF_GPIO8_WB_wrapper.v:7
+gpio.v:55: warning: Instantiating module ef_util_gating_cell with dangling input port 2 (rst_n) floating.

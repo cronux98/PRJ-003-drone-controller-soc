@@ -1,0 +1,7 @@
+{
+  "module": "sram_8kb",
+  "reason": "Blackbox SRAM macro \u2014 no RTL body to prove. Compensated by LVS at Stage 08 + GLS at Stage 06.",
+  "adjudicator": "Vera",
+  "date": "2026-07-19",
+  "status": "ACCEPTED"
+}

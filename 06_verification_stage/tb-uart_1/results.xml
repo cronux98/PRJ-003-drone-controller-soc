@@ -1,0 +1,20 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1784461768" />
+    <testcase name="test_reset" classname="test_uart_1" file="~/hermes_workspace/projects/IP-010/v4/06_verification_stage/tb-uart_1/test_uart_1.py" lineno="12" time="0.0012271404266357422" sim_time_ns="80.0" ratio_time="65192.21293957645" />
+    <testcase name="test_register_rw" classname="test_uart_1" file="~/hermes_workspace/projects/IP-010/v4/06_verification_stage/tb-uart_1/test_uart_1.py" lineno="24" time="0.0050394535064697266" sim_time_ns="401.0" ratio_time="79572.12016842504" />
+    <testcase name="test_wb_ack" classname="test_uart_1" file="~/hermes_workspace/projects/IP-010/v4/06_verification_stage/tb-uart_1/test_uart_1.py" lineno="60" time="0.0009608268737792969" sim_time_ns="100.99999999999994" ratio_time="105117.79255583121" />
+    <testcase name="test_consecutive_writes" classname="test_uart_1" file="~/hermes_workspace/projects/IP-010/v4/06_verification_stage/tb-uart_1/test_uart_1.py" lineno="74" time="0.0016167163848876953" sim_time_ns="161.0" ratio_time="99584.5662881581" />
+    <testcase name="test_idle_read" classname="test_uart_1" file="~/hermes_workspace/projects/IP-010/v4/06_verification_stage/tb-uart_1/test_uart_1.py" lineno="94" time="0.0009584426879882812" sim_time_ns="101.0" ratio_time="105379.27960199006" />
+    <testcase name="test_stress_00" classname="test_uart_1" file="~/hermes_workspace/projects/IP-010/v4/06_verification_stage/tb-uart_1/test_uart_1.py" lineno="108" time="0.0011806488037109375" sim_time_ns="121.0" ratio_time="102486.0226171244" />
+    <testcase name="test_stress_01" classname="test_uart_1" file="~/hermes_workspace/projects/IP-010/v4/06_verification_stage/tb-uart_1/test_uart_1.py" lineno="123" time="0.0011861324310302734" sim_time_ns="121.00000000000011" ratio_time="102012.21788944733" />
+    <testcase name="test_stress_02" classname="test_uart_1" file="~/hermes_workspace/projects/IP-010/v4/06_verification_stage/tb-uart_1/test_uart_1.py" lineno="138" time="0.0011749267578125" sim_time_ns="121.0" ratio_time="102985.14285714286" />
+    <testcase name="test_stress_03" classname="test_uart_1" file="~/hermes_workspace/projects/IP-010/v4/06_verification_stage/tb-uart_1/test_uart_1.py" lineno="153" time="0.0011363029479980469" sim_time_ns="121.0" ratio_time="106485.68694922367" />
+    <testcase name="test_stress_04" classname="test_uart_1" file="~/hermes_workspace/projects/IP-010/v4/06_verification_stage/tb-uart_1/test_uart_1.py" lineno="168" time="0.0012066364288330078" sim_time_ns="121.0" ratio_time="100278.75597707962" />
+    <testcase name="test_stress_05" classname="test_uart_1" file="~/hermes_workspace/projects/IP-010/v4/06_verification_stage/tb-uart_1/test_uart_1.py" lineno="183" time="0.0011434555053710938" sim_time_ns="121.0" ratio_time="105819.59633027524" />
+    <testcase name="test_stress_06" classname="test_uart_1" file="~/hermes_workspace/projects/IP-010/v4/06_verification_stage/tb-uart_1/test_uart_1.py" lineno="198" time="0.001150369644165039" sim_time_ns="121.0" ratio_time="105183.5821761658" />
+    <testcase name="test_stress_07" classname="test_uart_1" file="~/hermes_workspace/projects/IP-010/v4/06_verification_stage/tb-uart_1/test_uart_1.py" lineno="213" time="0.001123189926147461" sim_time_ns="121.0" ratio_time="107728.88643600084" />
+    <testcase name="test_stress_08" classname="test_uart_1" file="~/hermes_workspace/projects/IP-010/v4/06_verification_stage/tb-uart_1/test_uart_1.py" lineno="228" time="0.0011601448059082031" sim_time_ns="121.0" ratio_time="104297.32511302918" />
+    <testcase name="test_stress_09" classname="test_uart_1" file="~/hermes_workspace/projects/IP-010/v4/06_verification_stage/tb-uart_1/test_uart_1.py" lineno="243" time="0.0011401176452636719" sim_time_ns="121.00000000000023" ratio_time="106129.39857800104" />
+  </testsuite>
+</testsuites>

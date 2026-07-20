@@ -1,0 +1,11 @@
+{
+  "_generated_from": "gen_reuse_manifest.py host=smdtest02 utc=2026-07-19T12:06:19.523110+00:00",
+  "module": "dshot_pwm",
+  "module_type": "CREATE",
+  "source_ip": "CREATE",
+  "source_version": "1.0",
+  "source_path": "",
+  "integration_date": "2026-07-19",
+  "generated_by": "gen_reuse_manifest.py",
+  "synthesis_log": "~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-dshot_pwm/logs/synth/dshot_pwm_synth.log"
+}

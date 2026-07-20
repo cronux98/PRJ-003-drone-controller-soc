@@ -1,0 +1,15 @@
+%Warning-BLKSEQ: ~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-irq_ctrl/rtl/irq_ctrl.v:127:38: Blocking assignment '=' in sequential logic process
+                                                                                                                        : ... note: In instance 'irq_ctrl'
+                                                                                                                        : ... Suggest using delayed assignment '<='
+  127 |                             claim_id = 4'd0;
+      |                                      ^
+                 ... For warning description see https://verilator.org/warn/BLKSEQ?v=5.049
+                 ... Use "/* verilator lint_off BLKSEQ */" and lint_on around source to disable this message.
+%Warning-BLKSEQ: ~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-irq_ctrl/rtl/irq_ctrl.v:130:46: Blocking assignment '=' in sequential logic process
+                                                                                                                        : ... note: In instance 'irq_ctrl'
+                                                                                                                        : ... Suggest using delayed assignment '<='
+  130 |                                     claim_id = i[3:0];
+      |                                              ^
+- V e r i l a t i o n   R e p o r t: Verilator 5.049 devel rev v5.048-4-ge4803f29b (mod)
+- Verilator: Built from 0.038 MB sources in 2 modules, into 0.032 MB in 3 C++ files needing 0.000 MB
+- Verilator: Walltime 0.011 s (elab=0.001, cvt=0.006, bld=0.000); cpu 0.011 s on 1 threads; allocated 21.023 MB

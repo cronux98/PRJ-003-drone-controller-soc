@@ -1,0 +1,11 @@
+# running in ~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-spi_flash_ctrl/formal/spi_flash_ctrl_bmc/src/
+read -formal spi_flash_ctrl.v
+read -formal spi_master.v
+hierarchy -top spi_flash_ctrl
+proc; opt
+flatten; opt
+
+hierarchy -smtcheck
+rename -witness
+write_jny -no-connections ../model/design.json
+write_rtlil ../model/design.il

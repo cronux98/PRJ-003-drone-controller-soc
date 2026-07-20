@@ -1,0 +1,86 @@
+{{EXTRACTING FILES}} Extracting compressed files in: /opt/input
+{{Project Type Info}} digital
+{{Project GDS Info}} user_project_wrapper: dd36a62b9ae95b2f2eda5e259859a7f4f8eb1e05
+{{Tools Info}} KLayout: v0.29.2 | Magic: v8.3.471
+{{PDKs Info}} SKY130A: None | Open PDKs: 8afc8346a57fe1ab7934ba5a6056ea8b43078e71
+{{START}} Precheck Started, the full log 'precheck.log' will be located in '/opt/input/precheck_results/19_JUL_2026___16_53_23/logs'
+{{PRECHECK SEQUENCE}} Precheck will run the following checks: [License, Makefile, Default, Documentation, Top Cell Check, Consistency, GPIO-Defines, XOR, Magic DRC, Klayout FEOL, Klayout BEOL, Klayout Offgrid, Klayout Metal Minimum Clear Area Density, Klayout Pin Label Purposes Overlapping Drawing, Klayout ZeroArea, Spike Check, Illegal Cellname Check, OEB, LVS]
+{{STEP UPDATE}} Executing Check 1 of 19: License
+An approved LICENSE (MIT) was found in /opt/input.
+{{MAIN LICENSE CHECK PASSED}} An approved LICENSE was found in project root.
+{{SUBMODULES LICENSE CHECK PASSED}} No prohibited LICENSE file(s) was found in project submodules
+{{SPDX COMPLIANCE CHECK PASSED}} Project is compliant with the SPDX Standard
+{{STEP UPDATE}} Executing Check 2 of 19: Makefile
+Makefile missing target: clean:
+Makefile missing target: help:
+Makefile missing target: verify:
+{{MAKEFILE CHECK FAILED}} Makefile file is not valid.
+{{STEP UPDATE}} Executing Check 3 of 19: Default
+{{README DEFAULT CHECK PASSED}} Project 'README.md' was modified and is not identical to the default 'README.md'
+{{CONTENT DEFAULT CHECK PASSED}} Project 'gds' was modified and is not identical to the default 'gds'
+{{STEP UPDATE}} Executing Check 4 of 19: Documentation
+The documentation file (/opt/input/README.md) contains the non-inclusive word: slave
+{{DOCUMENTATION CHECK FAILED}} Project documentation is not appropriate.
+{{STEP UPDATE}} Executing Check 5 of 19: Top Cell Check
+Success: Single top cell 'drone_soc' found in the GDS layout.
+{{Top Cell Check CHECK PASSED}} The GDS file, user_project_wrapper.gds, has exactly 1 topcell.
+{{STEP UPDATE}} Executing Check 6 of 19: Consistency
+{{CONSISTENCY CHECK FAILED}} user_project_wrapper.v file was not found in /opt/input/verilog/gl.
+{{CONSISTENCY CHECK FAILED}} The user netlist and the top netlist are not valid.
+{{STEP UPDATE}} Executing Check 7 of 19: GPIO-Defines
+GPIO-DEFINES: Checking verilog/rtl/user_defines.v, parsing files: ['/opt/mpw_precheck/checks/gpio_defines_check/verilog_assets/gpio_modes_base.v', '/opt/input/verilog/rtl/user_defines.v', '/opt/mpw_precheck/checks/gpio_defines_check/verilog_assets/gpio_modes_observe.v']
+Generating LALR tables
+WARNING: 183 shift/reduce conflicts
+{{GPIO-DEFINES: ERROR IN verilog/rtl/user_defines.v}} Directives(33) still placeholder (13'hXXXX) or not hex-literal: USER_CONFIG_GPIO_5_INIT=13'hXXXX USER_CONFIG_GPIO_6_INIT=13'hXXXX USER_CONFIG_GPIO_7_INIT=13'hXXXX USER_CONFIG_GPIO_8_INIT=13'hXXXX USER_CONFIG_GPIO_9_INIT=13'hXXXX USER_CONFIG_GPIO_10_INIT=13'hXXXX USER_CONFIG_GPIO_11_INIT=13'hXXXX USER_CONFIG_GPIO_12_INIT=13'hXXXX USER_CONFIG_GPIO_13_INIT=13'hXXXX USER_CONFIG_GPIO_25_INIT=13'hXXXX USER_CONFIG_GPIO_26_INIT=13'hXXXX USER_CONFIG_GPIO_27_INIT=13'hXXXX USER_CONFIG_GPIO_28_INIT=13'hXXXX USER_CONFIG_GPIO_29_INIT=13'hXXXX USER_CONFIG_GPIO_30_INIT=13'hXXXX USER_CONFIG_GPIO_31_INIT=13'hXXXX USER_CONFIG_GPIO_32_INIT=13'hXXXX USER_CONFIG_GPIO_33_INIT=13'hXXXX USER_CONFIG_GPIO_34_INIT=13'hXXXX USER_CONFIG_GPIO_35_INIT=13'hXXXX USER_CONFIG_GPIO_36_INIT=13'hXXXX USER_CONFIG_GPIO_37_INIT=13'hXXXX USER_CONFIG_GPIO_14_INIT=13'hXXXX USER_CONFIG_GPIO_15_INIT=13'hXXXX USER_CONFIG_GPIO_16_INIT=13'hXXXX USER_CONFIG_GPIO_17_INIT=13'hXXXX USER_CONFIG_GPIO_18_INIT=13'hXXXX USER_CONFIG_GPIO_19_INIT=13'hXXXX USER_CONFIG_GPIO_20_INIT=13'hXXXX USER_CONFIG_GPIO_21_INIT=13'hXXXX USER_CONFIG_GPIO_22_INIT=13'hXXXX USER_CONFIG_GPIO_23_INIT=13'hXXXX USER_CONFIG_GPIO_24_INIT=13'hXXXX.. No report generated.
+{{GPIO-DEFINES CHECK FAILED}} The user verilog/rtl/user_defines.v is not valid.
+{{STEP UPDATE}} Executing Check 8 of 19: XOR
+Top cell name user_project_wrapper not found.
+{{XOR CHECK FAILED}} The GDS file has non-conforming geometries.
+{{STEP UPDATE}} Executing Check 9 of 19: Magic DRC
+Found 0 violations
+0 DRC violations
+{{MAGIC DRC CHECK PASSED}} The GDS file, user_project_wrapper.gds, has no DRC violations.
+{{STEP UPDATE}} Executing Check 10 of 19: Klayout FEOL
+in CUSTOM klayout_gds_drc_check
+run: klayout -b -r /opt/mpw_precheck/checks/tech-files/sky130A_mr.drc -rd input=/opt/input/gds/user_project_wrapper.gds -rd topcell=user_project_wrapper -rd report=/opt/input/precheck_results/19_JUL_2026___16_53_23/outputs/reports/klayout_feol_check.xml -rd thr=4 -rd feol=true >& /opt/input/precheck_results/19_JUL_2026___16_53_23/logs/klayout_feol_check.log
+No DRC Violations found
+{{Klayout FEOL CHECK PASSED}} The GDS file, user_project_wrapper.gds, has no DRC violations.
+{{STEP UPDATE}} Executing Check 11 of 19: Klayout BEOL
+in CUSTOM klayout_gds_drc_check
+run: klayout -b -r /opt/mpw_precheck/checks/tech-files/sky130A_mr.drc -rd input=/opt/input/gds/user_project_wrapper.gds -rd topcell=user_project_wrapper -rd report=/opt/input/precheck_results/19_JUL_2026___16_53_23/outputs/reports/klayout_beol_check.xml -rd thr=4 -rd beol=true >& /opt/input/precheck_results/19_JUL_2026___16_53_23/logs/klayout_beol_check.log
+No DRC Violations found
+{{Klayout BEOL CHECK PASSED}} The GDS file, user_project_wrapper.gds, has no DRC violations.
+{{STEP UPDATE}} Executing Check 12 of 19: Klayout Offgrid
+in CUSTOM klayout_gds_drc_check
+run: klayout -b -r /opt/mpw_precheck/checks/tech-files/sky130A_mr.drc -rd input=/opt/input/gds/user_project_wrapper.gds -rd topcell=user_project_wrapper -rd report=/opt/input/precheck_results/19_JUL_2026___16_53_23/outputs/reports/klayout_offgrid_check.xml -rd thr=4 -rd offgrid=true >& /opt/input/precheck_results/19_JUL_2026___16_53_23/logs/klayout_offgrid_check.log
+No DRC Violations found
+{{Klayout Offgrid CHECK PASSED}} The GDS file, user_project_wrapper.gds, has no DRC violations.
+{{STEP UPDATE}} Executing Check 13 of 19: Klayout Metal Minimum Clear Area Density
+in CUSTOM klayout_gds_drc_check
+run: klayout -b -r /opt/mpw_precheck/checks/drc_checks/klayout/met_min_ca_density.lydrc -rd input=/opt/input/gds/user_project_wrapper.gds -rd topcell=user_project_wrapper -rd report=/opt/input/precheck_results/19_JUL_2026___16_53_23/outputs/reports/klayout_met_min_ca_density_check.xml -rd thr=4 >& /opt/input/precheck_results/19_JUL_2026___16_53_23/logs/klayout_met_min_ca_density_check.log
+No DRC Violations found
+{{Klayout Metal Minimum Clear Area Density CHECK PASSED}} The GDS file, user_project_wrapper.gds, has no DRC violations.
+{{STEP UPDATE}} Executing Check 14 of 19: Klayout Pin Label Purposes Overlapping Drawing
+in CUSTOM klayout_gds_drc_check
+run: klayout -b -r /opt/mpw_precheck/checks/drc_checks/klayout/pin_label_purposes_overlapping_drawing.rb.drc -rd input=/opt/input/gds/user_project_wrapper.gds -rd topcell=user_project_wrapper -rd report=/opt/input/precheck_results/19_JUL_2026___16_53_23/outputs/reports/klayout_pin_label_purposes_overlapping_drawing_check.xml -rd thr=4 -rd top_cell_name=user_project_wrapper >& /opt/input/precheck_results/19_JUL_2026___16_53_23/logs/klayout_pin_label_purposes_overlapping_drawing_check.log
+ERROR klayout_pin_label_purposes_overlapping_drawing FAILED, stat=1, see /opt/input/precheck_results/19_JUL_2026___16_53_23/logs/klayout_pin_label_purposes_overlapping_drawing_check.log
+{{Klayout Pin Label Purposes Overlapping Drawing CHECK FAILED}} The GDS file, user_project_wrapper.gds, has DRC violations.
+{{STEP UPDATE}} Executing Check 15 of 19: Klayout ZeroArea
+in CUSTOM klayout_gds_drc_check
+run: klayout -b -r /opt/mpw_precheck/checks/drc_checks/klayout/zeroarea.rb.drc -rd input=/opt/input/gds/user_project_wrapper.gds -rd topcell=user_project_wrapper -rd report=/opt/input/precheck_results/19_JUL_2026___16_53_23/outputs/reports/klayout_zeroarea_check.xml -rd thr=4 -rd cleaned_output=/opt/input/precheck_results/19_JUL_2026___16_53_23/outputs/user_project_wrapper_no_zero_areas.gds >& /opt/input/precheck_results/19_JUL_2026___16_53_23/logs/klayout_zeroarea_check.log
+No DRC Violations found
+{{Klayout ZeroArea CHECK PASSED}} The GDS file, user_project_wrapper.gds, has no DRC violations.
+{{STEP UPDATE}} Executing Check 16 of 19: Spike Check
+run: bash /opt/mpw_precheck/checks/spike_check/gdsArea0 -V -m /opt/input/precheck_results/19_JUL_2026___16_53_23/outputs/reports/spike_check.xml /opt/input/gds/user_project_wrapper.gds >& /opt/input/precheck_results/19_JUL_2026___16_53_23/logs/spike_check.log
+No Spikes found
+{{Spike Check CHECK PASSED}} The GDS file, user_project_wrapper.gds, has no spike errors.
+{{STEP UPDATE}} Executing Check 17 of 19: Illegal Cellname Check
+{{Illegal Cellname Check CHECK PASSED}} The GDS file, user_project_wrapper.gds, has no Illegal Cellnames errors.
+{{STEP UPDATE}} Executing Check 18 of 19: OEB
+ERROR OEB FAILED, Could not find LVS configuration file /opt/input/lvs/user_project_wrapper/lvs_config.json
+{{OEB CHECK FAILED}} The design, user_project_wrapper, has OEB violations.
+{{STEP UPDATE}} Executing Check 19 of 19: LVS
+ERROR LVS FAILED, Could not find LVS configuration file /opt/input/lvs/user_project_wrapper/lvs_config.json
+{{LVS CHECK FAILED}} The design, user_project_wrapper, has LVS violations.
+{{FINISH}} Executing Finished, the full log 'precheck.log' can be found in '/opt/input/precheck_results/19_JUL_2026___16_53_23/logs'
+{{FAILURE}} 8 Check(s) Failed: ['Makefile', 'Documentation', 'Consistency', 'GPIO-Defines', 'XOR', 'Klayout Pin Label Purposes Overlapping Drawing', 'OEB', 'LVS'] !!!

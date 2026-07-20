@@ -1,0 +1,98 @@
+rtl-ibex_core/rtl/ibex_core_wb.v:10: warning: timescale for ibex_core inherited from another file.
+rtl-ibex_core/rtl/ibex_core.v:4: ...: The inherited timescale is here.
+rtl-wishbone_interconnect/rtl/wishbone_interconnect.v:6: warning: timescale for wishbone_interconnect inherited from another file.
+rtl-ibex_core/rtl/reg_file.v:2: ...: The inherited timescale is here.
+rtl-sram_8kb/rtl/sram_8kb_blackbox.v:16: warning: timescale for sram_8kb inherited from another file.
+rtl-ibex_core/rtl/reg_file.v:2: ...: The inherited timescale is here.
+rtl-sram_8kb/rtl/sram_8kb.v:10: error: 'sram_8kb' has already been declared in this scope.
+rtl-sram_8kb/rtl/sram_8kb_blackbox.v:16:      : It was declared here as a module.
+rtl-sram_8kb/rtl/sram_8kb.v:10: warning: timescale for sram_8kb inherited from another file.
+rtl-ibex_core/rtl/reg_file.v:2: ...: The inherited timescale is here.
+rtl-sram_8kb/rtl/sram_8kb.v:56: error: Module sram_8kb was already declared here: rtl-sram_8kb/rtl/sram_8kb_blackbox.v:16
+
+rtl-uart_0/rtl/EF_UART_WB_wrapper.v:8: warning: timescale for EF_UART_WB_wrapper inherited from another file.
+rtl-uart_0/rtl/EF_UART_WB.v:22: ...: The inherited timescale is here.
+rtl-uart_1/rtl/EF_UART.v:47: error: 'EF_UART' has already been declared in this scope.
+rtl-uart_0/rtl/EF_UART.v:47:      : It was declared here as a module.
+rtl-uart_1/rtl/EF_UART.v:215: error: Module EF_UART was already declared here: rtl-uart_0/rtl/EF_UART.v:47
+
+rtl-uart_1/rtl/EF_UART.v:218: error: 'BAUDGEN' has already been declared in this scope.
+rtl-uart_0/rtl/EF_UART.v:218:      : It was declared here as a module.
+rtl-uart_1/rtl/EF_UART.v:241: error: Module BAUDGEN was already declared here: rtl-uart_0/rtl/EF_UART.v:218
+
+rtl-uart_1/rtl/EF_UART.v:246: error: 'UART_RX' has already been declared in this scope.
+rtl-uart_0/rtl/EF_UART.v:246:      : It was declared here as a module.
+rtl-uart_1/rtl/EF_UART.v:415: error: Module UART_RX was already declared here: rtl-uart_0/rtl/EF_UART.v:246
+
+rtl-uart_1/rtl/EF_UART.v:420: error: 'UART_TX' has already been declared in this scope.
+rtl-uart_0/rtl/EF_UART.v:420:      : It was declared here as a module.
+rtl-uart_1/rtl/EF_UART.v:581: error: Module UART_TX was already declared here: rtl-uart_0/rtl/EF_UART.v:420
+
+rtl-uart_1/rtl/EF_UART_WB.v:25: error: 'EF_UART_WB' has already been declared in this scope.
+rtl-uart_0/rtl/EF_UART_WB.v:25:      : It was declared here as a module.
+rtl-uart_1/rtl/EF_UART_WB.v:334: error: Module EF_UART_WB was already declared here: rtl-uart_0/rtl/EF_UART_WB.v:25
+
+rtl-uart_1/rtl/EF_UART_WB_wrapper.v:8: error: 'EF_UART_WB_wrapper' has already been declared in this scope.
+rtl-uart_0/rtl/EF_UART_WB_wrapper.v:8:      : It was declared here as a module.
+rtl-uart_1/rtl/EF_UART_WB_wrapper.v:8: warning: timescale for EF_UART_WB_wrapper inherited from another file.
+rtl-uart_1/rtl/EF_UART_WB.v:22: ...: The inherited timescale is here.
+rtl-uart_1/rtl/EF_UART_WB_wrapper.v:60: error: Module EF_UART_WB_wrapper was already declared here: rtl-uart_0/rtl/EF_UART_WB_wrapper.v:8
+
+rtl-uart_2/rtl/EF_UART.v:47: error: 'EF_UART' has already been declared in this scope.
+rtl-uart_0/rtl/EF_UART.v:47:      : It was declared here as a module.
+rtl-uart_2/rtl/EF_UART.v:215: error: Module EF_UART was already declared here: rtl-uart_0/rtl/EF_UART.v:47
+
+rtl-uart_2/rtl/EF_UART.v:218: error: 'BAUDGEN' has already been declared in this scope.
+rtl-uart_0/rtl/EF_UART.v:218:      : It was declared here as a module.
+rtl-uart_2/rtl/EF_UART.v:241: error: Module BAUDGEN was already declared here: rtl-uart_0/rtl/EF_UART.v:218
+
+rtl-uart_2/rtl/EF_UART.v:246: error: 'UART_RX' has already been declared in this scope.
+rtl-uart_0/rtl/EF_UART.v:246:      : It was declared here as a module.
+rtl-uart_2/rtl/EF_UART.v:415: error: Module UART_RX was already declared here: rtl-uart_0/rtl/EF_UART.v:246
+
+rtl-uart_2/rtl/EF_UART.v:420: error: 'UART_TX' has already been declared in this scope.
+rtl-uart_0/rtl/EF_UART.v:420:      : It was declared here as a module.
+rtl-uart_2/rtl/EF_UART.v:581: error: Module UART_TX was already declared here: rtl-uart_0/rtl/EF_UART.v:420
+
+rtl-uart_2/rtl/EF_UART_WB.v:25: error: 'EF_UART_WB' has already been declared in this scope.
+rtl-uart_0/rtl/EF_UART_WB.v:25:      : It was declared here as a module.
+rtl-uart_2/rtl/EF_UART_WB.v:334: error: Module EF_UART_WB was already declared here: rtl-uart_0/rtl/EF_UART_WB.v:25
+
+rtl-uart_2/rtl/EF_UART_WB_wrapper.v:8: error: 'EF_UART_WB_wrapper' has already been declared in this scope.
+rtl-uart_0/rtl/EF_UART_WB_wrapper.v:8:      : It was declared here as a module.
+rtl-uart_2/rtl/EF_UART_WB_wrapper.v:8: warning: timescale for EF_UART_WB_wrapper inherited from another file.
+rtl-uart_2/rtl/EF_UART_WB.v:22: ...: The inherited timescale is here.
+rtl-uart_2/rtl/EF_UART_WB_wrapper.v:60: error: Module EF_UART_WB_wrapper was already declared here: rtl-uart_0/rtl/EF_UART_WB_wrapper.v:8
+
+rtl-spi_0/rtl/EF_SPI_WB_wrapper.v:7: warning: timescale for EF_SPI_WB_wrapper inherited from another file.
+rtl-spi_0/rtl/EF_SPI.v:20: ...: The inherited timescale is here.
+rtl-i2c_0/rtl/EF_I2C_WB_wrapper.v:7: warning: timescale for EF_I2C_WB_wrapper inherited from another file.
+rtl-spi_0/rtl/spi_master.v:47: ...: The inherited timescale is here.
+rtl-spi_flash_ctrl/rtl/spi_flash_ctrl.v:28: warning: timescale for spi_flash_ctrl inherited from another file.
+rtl-gpio/rtl/gpio.v:22: ...: The inherited timescale is here.
+rtl-spi_flash_ctrl/rtl/spi_master.v:50: error: 'spi_master' has already been declared in this scope.
+rtl-spi_0/rtl/spi_master.v:50:      : It was declared here as a module.
+rtl-spi_flash_ctrl/rtl/spi_master.v:187: error: Module spi_master was already declared here: rtl-spi_0/rtl/spi_master.v:50
+
+rtl-spi_flash_ctrl/rtl/spi_master.v:189: error: 'sri' has already been declared in this scope.
+rtl-spi_0/rtl/spi_master.v:189:      : It was declared here as a module.
+rtl-spi_flash_ctrl/rtl/spi_master.v:219: error: Module sri was already declared here: rtl-spi_0/rtl/spi_master.v:189
+
+rtl-spi_flash_ctrl/rtl/spi_master.v:221: error: 'sro' has already been declared in this scope.
+rtl-spi_0/rtl/spi_master.v:221:      : It was declared here as a module.
+rtl-spi_flash_ctrl/rtl/spi_master.v:248: error: Module sro was already declared here: rtl-spi_0/rtl/spi_master.v:221
+
+rtl-irq_ctrl/rtl/irq_ctrl.v:7: warning: timescale for irq_ctrl inherited from another file.
+rtl-spi_flash_ctrl/rtl/spi_master.v:47: ...: The inherited timescale is here.
+rtl-timer/rtl/EF_TMR32_WB_wrapper.v:7: warning: timescale for EF_TMR32_WB_wrapper inherited from another file.
+rtl-timer/rtl/EF_TMR32.v:19: ...: The inherited timescale is here.
+rtl-watchdog/rtl/EF_WDT32_WB_wrapper.v:7: warning: timescale for EF_WDT32_WB_wrapper inherited from another file.
+rtl-watchdog/rtl/EF_WDT32.v:20: ...: The inherited timescale is here.
+rtl-caravel_wrapper/rtl/caravel_wrapper.v:7: warning: timescale for caravel_wrapper inherited from another file.
+rtl-watchdog/rtl/watchdog.v:22: ...: The inherited timescale is here.
+rtl-clk_rst_mgr/rtl/clk_rst_mgr.v:6: warning: timescale for clk_rst_mgr inherited from another file.
+rtl-watchdog/rtl/watchdog.v:22: ...: The inherited timescale is here.
+rtl-custom_timer/rtl/custom_timer.v:29: warning: timescale for custom_timer inherited from another file.
+rtl-watchdog/rtl/watchdog.v:22: ...: The inherited timescale is here.
+rtl-drone_soc/rtl/drone_soc.v:31: warning: timescale for drone_soc inherited from another file.
+rtl-watchdog/rtl/watchdog.v:22: ...: The inherited timescale is here.

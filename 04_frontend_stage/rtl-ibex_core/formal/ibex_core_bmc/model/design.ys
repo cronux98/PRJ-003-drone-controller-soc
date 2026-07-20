@@ -1,0 +1,24 @@
+# running in ~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-ibex_core/formal/ibex_core_bmc/src/
+read -formal alu_ctrl.v
+read -formal alu.v
+read -formal branch_unit.v
+read -formal ctrl_unit.v
+read -formal ex_mem.v
+read -formal forwarding_unit.v
+read -formal hazard_unit.v
+read -formal ibex_core.v
+read -formal ibex_core_wb.v
+read -formal id_ex.v
+read -formal if_id.v
+read -formal imm_gen.v
+read -formal mem_wb.v
+read -formal pc.v
+read -formal reg_file.v
+hierarchy -top ibex_core
+proc; opt
+flatten; opt
+
+hierarchy -smtcheck
+rename -witness
+write_jny -no-connections ../model/design.json
+write_rtlil ../model/design.il

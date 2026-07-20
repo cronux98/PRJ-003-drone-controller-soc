@@ -1,0 +1,463 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+
+-- Executing script file `../model/design.ys' --
+
+1. Executing Verilog-2005 frontend: ef_util_lib.v
+Parsing formal SystemVerilog input from `ef_util_lib.v' to AST representation.
+Storing AST representation for module `$abstract\ef_util_sync'.
+Storing AST representation for module `$abstract\ef_util_ped'.
+Storing AST representation for module `$abstract\ef_util_ned'.
+Storing AST representation for module `$abstract\ef_util_ticker'.
+Storing AST representation for module `$abstract\ef_util_glitch_filter'.
+Storing AST representation for module `$abstract\ef_util_fifo'.
+Storing AST representation for module `$abstract\ef_util_clkmux_2x1'.
+Storing AST representation for module `$abstract\ef_util_clkmux_4x1'.
+Storing AST representation for module `$abstract\ef_util_gating_cell'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: EF_WDT32.v
+Parsing formal SystemVerilog input from `EF_WDT32.v' to AST representation.
+Storing AST representation for module `$abstract\EF_WDT32'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: EF_WDT32_WB_wrapper.v
+Parsing formal SystemVerilog input from `EF_WDT32_WB_wrapper.v' to AST representation.
+Storing AST representation for module `$abstract\EF_WDT32_WB_wrapper'.
+Successfully finished Verilog frontend.
+
+4. Executing Verilog-2005 frontend: watchdog.v
+Parsing formal SystemVerilog input from `watchdog.v' to AST representation.
+Storing AST representation for module `$abstract\EF_WDT32_WB'.
+Successfully finished Verilog frontend.
+
+5. Executing HIERARCHY pass (managing design hierarchy).
+
+6. Executing AST frontend in derive mode using pre-parsed AST for module `\EF_WDT32_WB_wrapper'.
+Generating RTLIL representation for module `\EF_WDT32_WB_wrapper'.
+
+6.1. Analyzing design hierarchy..
+Top module:  \EF_WDT32_WB_wrapper
+
+6.2. Executing AST frontend in derive mode using pre-parsed AST for module `\EF_WDT32_WB'.
+Generating RTLIL representation for module `\EF_WDT32_WB'.
+
+6.3. Analyzing design hierarchy..
+Top module:  \EF_WDT32_WB_wrapper
+Used module:     \EF_WDT32_WB
+
+6.4. Executing AST frontend in derive mode using pre-parsed AST for module `\EF_WDT32'.
+Generating RTLIL representation for module `\EF_WDT32'.
+
+6.5. Executing AST frontend in derive mode using pre-parsed AST for module `\ef_util_gating_cell'.
+Generating RTLIL representation for module `\ef_util_gating_cell'.
+
+6.6. Analyzing design hierarchy..
+Top module:  \EF_WDT32_WB_wrapper
+Used module:     \EF_WDT32_WB
+Used module:         \EF_WDT32
+Used module:         \ef_util_gating_cell
+
+6.7. Analyzing design hierarchy..
+Top module:  \EF_WDT32_WB_wrapper
+Used module:     \EF_WDT32_WB
+Used module:         \EF_WDT32
+Used module:         \ef_util_gating_cell
+Removing unused module `$abstract\EF_WDT32_WB'.
+Removing unused module `$abstract\EF_WDT32_WB_wrapper'.
+Removing unused module `$abstract\EF_WDT32'.
+Removing unused module `$abstract\ef_util_gating_cell'.
+Removing unused module `$abstract\ef_util_clkmux_4x1'.
+Removing unused module `$abstract\ef_util_clkmux_2x1'.
+Removing unused module `$abstract\ef_util_fifo'.
+Removing unused module `$abstract\ef_util_glitch_filter'.
+Removing unused module `$abstract\ef_util_ticker'.
+Removing unused module `$abstract\ef_util_ned'.
+Removing unused module `$abstract\ef_util_ped'.
+Removing unused module `$abstract\ef_util_sync'.
+Removed 12 unused modules.
+
+7. Executing PROC pass (convert processes to netlists).
+
+7.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+7.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 3 switch rules as full_case in process $proc$EF_WDT32.v:35$52 in module EF_WDT32.
+Marked 2 switch rules as full_case in process $proc$watchdog.v:140$47 in module EF_WDT32_WB.
+Marked 2 switch rules as full_case in process $proc$watchdog.v:110$25 in module EF_WDT32_WB.
+Marked 2 switch rules as full_case in process $proc$watchdog.v:102$22 in module EF_WDT32_WB.
+Marked 1 switch rules as full_case in process $proc$watchdog.v:99$19 in module EF_WDT32_WB.
+Marked 1 switch rules as full_case in process $proc$watchdog.v:90$15 in module EF_WDT32_WB.
+Marked 1 switch rules as full_case in process $proc$watchdog.v:85$12 in module EF_WDT32_WB.
+Marked 1 switch rules as full_case in process $proc$watchdog.v:79$9 in module EF_WDT32_WB.
+Removed a total of 0 dead cases.
+
+7.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 3 redundant assignments.
+Promoted 1 assignment to connection.
+
+7.4. Executing PROC_INIT pass (extract init attributes).
+
+7.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst_n in `\EF_WDT32.$proc$EF_WDT32.v:35$52'.
+Found async reset \rst_i in `\EF_WDT32_WB.$proc$watchdog.v:140$47'.
+Found async reset \rst_i in `\EF_WDT32_WB.$proc$watchdog.v:110$25'.
+Found async reset \rst_i in `\EF_WDT32_WB.$proc$watchdog.v:102$22'.
+Found async reset \rst_i in `\EF_WDT32_WB.$proc$watchdog.v:99$19'.
+Found async reset \rst_i in `\EF_WDT32_WB.$proc$watchdog.v:90$15'.
+Found async reset \rst_i in `\EF_WDT32_WB.$proc$watchdog.v:85$12'.
+Found async reset \rst_i in `\EF_WDT32_WB.$proc$watchdog.v:79$9'.
+
+7.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~10 debug messages>
+
+7.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\EF_WDT32.$proc$EF_WDT32.v:35$52'.
+     1/1: $0\WDTMR[31:0]
+Creating decoders for process `\EF_WDT32_WB.$proc$watchdog.v:140$47'.
+     1/1: $0\ack_o[0:0]
+Creating decoders for process `\EF_WDT32_WB.$proc$watchdog.v:110$25'.
+     1/2: $1\_i_[31:0]
+     2/2: $0\RIS_REG[0:0]
+Creating decoders for process `\EF_WDT32_WB.$proc$watchdog.v:102$22'.
+     1/1: $0\IC_REG[0:0]
+Creating decoders for process `\EF_WDT32_WB.$proc$watchdog.v:99$19'.
+     1/1: $0\IM_REG[0:0]
+Creating decoders for process `\EF_WDT32_WB.$proc$watchdog.v:90$15'.
+     1/1: $0\GCLK_REG[0:0]
+Creating decoders for process `\EF_WDT32_WB.$proc$watchdog.v:85$12'.
+     1/1: $0\control_REG[0:0]
+Creating decoders for process `\EF_WDT32_WB.$proc$watchdog.v:79$9'.
+     1/1: $0\load_REG[31:0]
+
+7.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+7.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\EF_WDT32.\WDTMR' using process `\EF_WDT32.$proc$EF_WDT32.v:35$52'.
+  created $adff cell `$procdff$86' with positive edge clock and positive level reset.
+Creating register for signal `\EF_WDT32_WB.\ack_o' using process `\EF_WDT32_WB.$proc$watchdog.v:140$47'.
+  created $adff cell `$procdff$89' with positive edge clock and positive level reset.
+Creating register for signal `\EF_WDT32_WB.\RIS_REG' using process `\EF_WDT32_WB.$proc$watchdog.v:110$25'.
+  created $adff cell `$procdff$92' with positive edge clock and positive level reset.
+Creating register for signal `\EF_WDT32_WB.\_i_' using process `\EF_WDT32_WB.$proc$watchdog.v:110$25'.
+  created $dff cell `$procdff$97' with positive edge clock.
+Creating register for signal `\EF_WDT32_WB.\IC_REG' using process `\EF_WDT32_WB.$proc$watchdog.v:102$22'.
+  created $adff cell `$procdff$100' with positive edge clock and positive level reset.
+Creating register for signal `\EF_WDT32_WB.\IM_REG' using process `\EF_WDT32_WB.$proc$watchdog.v:99$19'.
+  created $adff cell `$procdff$103' with positive edge clock and positive level reset.
+Creating register for signal `\EF_WDT32_WB.\GCLK_REG' using process `\EF_WDT32_WB.$proc$watchdog.v:90$15'.
+  created $adff cell `$procdff$106' with positive edge clock and positive level reset.
+Creating register for signal `\EF_WDT32_WB.\control_REG' using process `\EF_WDT32_WB.$proc$watchdog.v:85$12'.
+  created $adff cell `$procdff$109' with positive edge clock and positive level reset.
+Creating register for signal `\EF_WDT32_WB.\load_REG' using process `\EF_WDT32_WB.$proc$watchdog.v:79$9'.
+  created $adff cell `$procdff$112' with positive edge clock and positive level reset.
+
+7.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+7.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 2 empty switches in `\EF_WDT32.$proc$EF_WDT32.v:35$52'.
+Removing empty process `EF_WDT32.$proc$EF_WDT32.v:35$52'.
+Found and cleaned up 1 empty switch in `\EF_WDT32_WB.$proc$watchdog.v:140$47'.
+Removing empty process `EF_WDT32_WB.$proc$watchdog.v:140$47'.
+Found and cleaned up 2 empty switches in `\EF_WDT32_WB.$proc$watchdog.v:110$25'.
+Removing empty process `EF_WDT32_WB.$proc$watchdog.v:110$25'.
+Found and cleaned up 1 empty switch in `\EF_WDT32_WB.$proc$watchdog.v:102$22'.
+Removing empty process `EF_WDT32_WB.$proc$watchdog.v:102$22'.
+Found and cleaned up 1 empty switch in `\EF_WDT32_WB.$proc$watchdog.v:99$19'.
+Removing empty process `EF_WDT32_WB.$proc$watchdog.v:99$19'.
+Found and cleaned up 1 empty switch in `\EF_WDT32_WB.$proc$watchdog.v:90$15'.
+Removing empty process `EF_WDT32_WB.$proc$watchdog.v:90$15'.
+Found and cleaned up 1 empty switch in `\EF_WDT32_WB.$proc$watchdog.v:85$12'.
+Removing empty process `EF_WDT32_WB.$proc$watchdog.v:85$12'.
+Found and cleaned up 1 empty switch in `\EF_WDT32_WB.$proc$watchdog.v:79$9'.
+Removing empty process `EF_WDT32_WB.$proc$watchdog.v:79$9'.
+Cleaned up 10 empty switches.
+
+7.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ef_util_gating_cell.
+Optimizing module EF_WDT32.
+<suppressed ~6 debug messages>
+Optimizing module EF_WDT32_WB.
+<suppressed ~11 debug messages>
+Optimizing module EF_WDT32_WB_wrapper.
+
+8. Executing OPT pass (performing simple optimizations).
+
+8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ef_util_gating_cell.
+Optimizing module EF_WDT32.
+Optimizing module EF_WDT32_WB.
+Optimizing module EF_WDT32_WB_wrapper.
+
+8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ef_util_gating_cell'.
+Computing hashes of 0 cells of `\ef_util_gating_cell'.
+Finding duplicate cells in `\ef_util_gating_cell'.
+Finding identical cells in module `\EF_WDT32'.
+Computing hashes of 9 cells of `\EF_WDT32'.
+Finding duplicate cells in `\EF_WDT32'.
+Finding identical cells in module `\EF_WDT32_WB'.
+Computing hashes of 57 cells of `\EF_WDT32_WB'.
+Finding duplicate cells in `\EF_WDT32_WB'.
+Computing hashes of 53 cells of `\EF_WDT32_WB'.
+Finding duplicate cells in `\EF_WDT32_WB'.
+<suppressed ~12 debug messages>
+Finding identical cells in module `\EF_WDT32_WB_wrapper'.
+Computing hashes of 2 cells of `\EF_WDT32_WB_wrapper'.
+Finding duplicate cells in `\EF_WDT32_WB_wrapper'.
+Removed a total of 4 cells.
+
+8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ef_util_gating_cell..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \EF_WDT32..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \EF_WDT32_WB..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \EF_WDT32_WB_wrapper..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+<suppressed ~28 debug messages>
+
+8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ef_util_gating_cell.
+  Optimizing cells in module \EF_WDT32.
+  Optimizing cells in module \EF_WDT32_WB.
+  Optimizing cells in module \EF_WDT32_WB_wrapper.
+Performed a total of 0 changes.
+
+8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ef_util_gating_cell'.
+Computing hashes of 0 cells of `\ef_util_gating_cell'.
+Finding duplicate cells in `\ef_util_gating_cell'.
+Finding identical cells in module `\EF_WDT32'.
+Computing hashes of 9 cells of `\EF_WDT32'.
+Finding duplicate cells in `\EF_WDT32'.
+Finding identical cells in module `\EF_WDT32_WB'.
+Computing hashes of 53 cells of `\EF_WDT32_WB'.
+Finding duplicate cells in `\EF_WDT32_WB'.
+Finding identical cells in module `\EF_WDT32_WB_wrapper'.
+Computing hashes of 2 cells of `\EF_WDT32_WB_wrapper'.
+Finding duplicate cells in `\EF_WDT32_WB_wrapper'.
+Removed a total of 0 cells.
+
+8.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $procdff$92 ($adff) from module EF_WDT32_WB (D = $procmux$69_Y, Q = \RIS_REG).
+Adding EN signal on $procdff$109 ($adff) from module EF_WDT32_WB (D = \dat_i [0], Q = \control_REG).
+Adding EN signal on $procdff$97 ($dff) from module EF_WDT32_WB (D = 1, Q = \_i_).
+Adding EN signal on $procdff$106 ($adff) from module EF_WDT32_WB (D = \dat_i [0], Q = \GCLK_REG).
+Adding EN signal on $procdff$112 ($adff) from module EF_WDT32_WB (D = \dat_i, Q = \load_REG).
+Adding EN signal on $procdff$103 ($adff) from module EF_WDT32_WB (D = \dat_i [0], Q = \IM_REG).
+Setting constant 1-bit at position 0 on $auto$ff.cc:337:slice$117 ($dffe) from module EF_WDT32_WB.
+Setting constant 0-bit at position 1 on $auto$ff.cc:337:slice$117 ($dffe) from module EF_WDT32_WB.
+Setting constant 0-bit at position 2 on $auto$ff.cc:337:slice$117 ($dffe) from module EF_WDT32_WB.
+Setting constant 0-bit at position 3 on $auto$ff.cc:337:slice$117 ($dffe) from module EF_WDT32_WB.
+Setting constant 0-bit at position 4 on $auto$ff.cc:337:slice$117 ($dffe) from module EF_WDT32_WB.
+Setting constant 0-bit at position 5 on $auto$ff.cc:337:slice$117 ($dffe) from module EF_WDT32_WB.
+Setting constant 0-bit at position 6 on $auto$ff.cc:337:slice$117 ($dffe) from module EF_WDT32_WB.
+Setting constant 0-bit at position 7 on $auto$ff.cc:337:slice$117 ($dffe) from module EF_WDT32_WB.
+Setting constant 0-bit at position 8 on $auto$ff.cc:337:slice$117 ($dffe) from module EF_WDT32_WB.
+Setting constant 0-bit at position 9 on $auto$ff.cc:337:slice$117 ($dffe) from module EF_WDT32_WB.
+Setting constant 0-bit at position 10 on $auto$ff.cc:337:slice$117 ($dffe) from module EF_WDT32_WB.
+Setting constant 0-bit at position 11 on $auto$ff.cc:337:slice$117 ($dffe) from module EF_WDT32_WB.
+Setting constant 0-bit at position 12 on $auto$ff.cc:337:slice$117 ($dffe) from module EF_WDT32_WB.
+Setting constant 0-bit at position 13 on $auto$ff.cc:337:slice$117 ($dffe) from module EF_WDT32_WB.
+Setting constant 0-bit at position 14 on $auto$ff.cc:337:slice$117 ($dffe) from module EF_WDT32_WB.
+Setting constant 0-bit at position 15 on $auto$ff.cc:337:slice$117 ($dffe) from module EF_WDT32_WB.
+Setting constant 0-bit at position 16 on $auto$ff.cc:337:slice$117 ($dffe) from module EF_WDT32_WB.
+Setting constant 0-bit at position 17 on $auto$ff.cc:337:slice$117 ($dffe) from module EF_WDT32_WB.
+Setting constant 0-bit at position 18 on $auto$ff.cc:337:slice$117 ($dffe) from module EF_WDT32_WB.
+Setting constant 0-bit at position 19 on $auto$ff.cc:337:slice$117 ($dffe) from module EF_WDT32_WB.
+Setting constant 0-bit at position 20 on $auto$ff.cc:337:slice$117 ($dffe) from module EF_WDT32_WB.
+Setting constant 0-bit at position 21 on $auto$ff.cc:337:slice$117 ($dffe) from module EF_WDT32_WB.
+Setting constant 0-bit at position 22 on $auto$ff.cc:337:slice$117 ($dffe) from module EF_WDT32_WB.
+Setting constant 0-bit at position 23 on $auto$ff.cc:337:slice$117 ($dffe) from module EF_WDT32_WB.
+Setting constant 0-bit at position 24 on $auto$ff.cc:337:slice$117 ($dffe) from module EF_WDT32_WB.
+Setting constant 0-bit at position 25 on $auto$ff.cc:337:slice$117 ($dffe) from module EF_WDT32_WB.
+Setting constant 0-bit at position 26 on $auto$ff.cc:337:slice$117 ($dffe) from module EF_WDT32_WB.
+Setting constant 0-bit at position 27 on $auto$ff.cc:337:slice$117 ($dffe) from module EF_WDT32_WB.
+Setting constant 0-bit at position 28 on $auto$ff.cc:337:slice$117 ($dffe) from module EF_WDT32_WB.
+Setting constant 0-bit at position 29 on $auto$ff.cc:337:slice$117 ($dffe) from module EF_WDT32_WB.
+Setting constant 0-bit at position 30 on $auto$ff.cc:337:slice$117 ($dffe) from module EF_WDT32_WB.
+Setting constant 0-bit at position 31 on $auto$ff.cc:337:slice$117 ($dffe) from module EF_WDT32_WB.
+
+8.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ef_util_gating_cell..
+Finding unused cells or wires in module \EF_WDT32..
+Finding unused cells or wires in module \EF_WDT32_WB..
+Finding unused cells or wires in module \EF_WDT32_WB_wrapper..
+Removed 11 unused cells and 61 unused wires.
+<suppressed ~20 debug messages>
+
+8.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ef_util_gating_cell.
+Optimizing module EF_WDT32.
+Optimizing module EF_WDT32_WB.
+<suppressed ~1 debug messages>
+Optimizing module EF_WDT32_WB_wrapper.
+
+8.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+8.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ef_util_gating_cell..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \EF_WDT32..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \EF_WDT32_WB..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \EF_WDT32_WB_wrapper..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+<suppressed ~18 debug messages>
+
+8.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ef_util_gating_cell.
+  Optimizing cells in module \EF_WDT32.
+  Optimizing cells in module \EF_WDT32_WB.
+  Optimizing cells in module \EF_WDT32_WB_wrapper.
+Performed a total of 0 changes.
+
+8.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ef_util_gating_cell'.
+Computing hashes of 0 cells of `\ef_util_gating_cell'.
+Finding duplicate cells in `\ef_util_gating_cell'.
+Finding identical cells in module `\EF_WDT32'.
+Computing hashes of 6 cells of `\EF_WDT32'.
+Finding duplicate cells in `\EF_WDT32'.
+Finding identical cells in module `\EF_WDT32_WB'.
+Computing hashes of 40 cells of `\EF_WDT32_WB'.
+Finding duplicate cells in `\EF_WDT32_WB'.
+Finding identical cells in module `\EF_WDT32_WB_wrapper'.
+Computing hashes of 2 cells of `\EF_WDT32_WB_wrapper'.
+Finding duplicate cells in `\EF_WDT32_WB_wrapper'.
+Removed a total of 0 cells.
+
+8.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+8.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ef_util_gating_cell..
+Finding unused cells or wires in module \EF_WDT32..
+Finding unused cells or wires in module \EF_WDT32_WB..
+Finding unused cells or wires in module \EF_WDT32_WB_wrapper..
+
+8.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ef_util_gating_cell.
+Optimizing module EF_WDT32.
+Optimizing module EF_WDT32_WB.
+Optimizing module EF_WDT32_WB_wrapper.
+
+8.16. Finished fast OPT passes. (There is nothing left to do.)
+
+9. Executing FLATTEN pass (flatten design).
+Deleting now unused module ef_util_gating_cell.
+Deleting now unused module EF_WDT32.
+Deleting now unused module EF_WDT32_WB.
+<suppressed ~3 debug messages>
+
+10. Executing OPT pass (performing simple optimizations).
+
+10.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module EF_WDT32_WB_wrapper.
+<suppressed ~10 debug messages>
+
+10.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\EF_WDT32_WB_wrapper'.
+Computing hashes of 47 cells of `\EF_WDT32_WB_wrapper'.
+Finding duplicate cells in `\EF_WDT32_WB_wrapper'.
+Removed a total of 0 cells.
+
+10.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \EF_WDT32_WB_wrapper..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~18 debug messages>
+
+10.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \EF_WDT32_WB_wrapper.
+Performed a total of 0 changes.
+
+10.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\EF_WDT32_WB_wrapper'.
+Computing hashes of 47 cells of `\EF_WDT32_WB_wrapper'.
+Finding duplicate cells in `\EF_WDT32_WB_wrapper'.
+Removed a total of 0 cells.
+
+10.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+10.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \EF_WDT32_WB_wrapper..
+Removed 4 unused cells and 8 unused wires.
+<suppressed ~10 debug messages>
+
+10.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module EF_WDT32_WB_wrapper.
+
+10.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+10.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \EF_WDT32_WB_wrapper..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~18 debug messages>
+
+10.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \EF_WDT32_WB_wrapper.
+Performed a total of 0 changes.
+
+10.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\EF_WDT32_WB_wrapper'.
+Computing hashes of 43 cells of `\EF_WDT32_WB_wrapper'.
+Finding duplicate cells in `\EF_WDT32_WB_wrapper'.
+Removed a total of 0 cells.
+
+10.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+10.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \EF_WDT32_WB_wrapper..
+
+10.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module EF_WDT32_WB_wrapper.
+
+10.16. Finished fast OPT passes. (There is nothing left to do.)
+
+11. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `EF_WDT32_WB_wrapper'. Setting top module to EF_WDT32_WB_wrapper.
+
+11.1. Analyzing design hierarchy..
+Top module:  \EF_WDT32_WB_wrapper
+
+11.2. Analyzing design hierarchy..
+Top module:  \EF_WDT32_WB_wrapper
+Removed 0 unused modules.
+
+12. Executing jny backend.
+
+13. Executing RTLIL backend.
+Output filename: ../model/design.il
+
+End of script. Logfile hash: 614b08e75f, time: 0.02s, user: 0.03s, system: 0.00s, MEM: 15.39 MB peak
+Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+Time spent: 16% 4x opt_clean (0 sec), 15% 8x read_verilog (0 sec), ...

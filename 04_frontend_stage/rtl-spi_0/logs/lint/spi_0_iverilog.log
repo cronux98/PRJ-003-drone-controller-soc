@@ -1,0 +1,3 @@
+EF_SPI_WB_wrapper.v:7: warning: timescale for EF_SPI_WB_wrapper inherited from another file.
+EF_SPI.v:20: ...: The inherited timescale is here.
+spi_0.v:68: warning: Instantiating module ef_util_gating_cell with dangling input port 2 (rst_n) floating.

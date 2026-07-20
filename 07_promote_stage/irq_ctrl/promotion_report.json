@@ -1,0 +1,12 @@
+{
+  "module": "irq_ctrl",
+  "classification": "REUSE_INTERNAL",
+  "tier": "A",
+  "cell_count": 396,
+  "synthesis_log": "~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-irq_ctrl/logs/synth/irq_ctrl_synth.log",
+  "results_xml": "~/hermes_workspace/projects/IP-010/v4/06_verification_stage/tb-irq_ctrl/results.xml",
+  "equiv_status": "PROVEN",
+  "tests_passed": 8,
+  "tests_total": 8,
+  "admitted": true
+}

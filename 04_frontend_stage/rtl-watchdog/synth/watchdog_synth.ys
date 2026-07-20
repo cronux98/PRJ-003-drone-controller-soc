@@ -1,0 +1,10 @@
+# Synthesis for watchdog (top=EF_WDT32_WB)
+read_verilog ~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-watchdog/rtl/*.v
+hierarchy -check -top EF_WDT32_WB
+proc; opt; fsm; opt; memory; opt
+techmap; opt
+dfflibmap -liberty ~/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130B/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty ~/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130B/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+opt
+stat -liberty ~/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130B/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+write_verilog -noattr ~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-watchdog/synth/watchdog.v

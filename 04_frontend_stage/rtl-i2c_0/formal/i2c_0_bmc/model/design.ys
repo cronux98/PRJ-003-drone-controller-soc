@@ -1,0 +1,18 @@
+# running in ~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-i2c_0/formal/i2c_0_bmc/src/
+read -formal axis_fifo.v
+read -formal EF_I2C_WB_wrapper.v
+read -formal ef_util_lib.v
+read -formal i2c_0.v
+read -formal i2c_init.v
+read -formal i2c_master.v
+read -formal i2c_master_wbs_16.v
+read -formal i2c_master_wbs_8.v
+read -formal i2c_single_reg.v
+hierarchy -top EF_I2C_WB_wrapper
+proc; opt
+flatten; opt
+
+hierarchy -smtcheck
+rename -witness
+write_jny -no-connections ../model/design.json
+write_rtlil ../model/design.il

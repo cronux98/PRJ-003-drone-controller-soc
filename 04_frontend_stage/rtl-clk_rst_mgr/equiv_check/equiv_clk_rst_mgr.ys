@@ -1,0 +1,28 @@
+# IP-010 v3 equiv check for clk_rst_mgr
+# GENERATED-FROM: kanban task t_74da3230, IP-010 v3 frontend
+# Run from: ~/hermes_workspace/projects/IP-010/v3/04_frontend_stage
+
+# Gold: RTL -> generic cells
+design -push
+read_verilog rtl-clk_rst_mgr/rtl/clk_rst_mgr.v
+hierarchy -check -top clk_rst_mgr
+proc; opt; async2sync; memory; opt; techmap; opt; flatten; opt
+design -save gold
+design -pop
+
+# Gate: Netlist -> generic cells
+design -push
+read_liberty -ignore_miss_func ~/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130B/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog rtl-clk_rst_mgr/synth/clk_rst_mgr.v
+hierarchy -check -top clk_rst_mgr
+proc; opt; async2sync; memory; opt; techmap; opt; flatten; opt
+design -save gate
+design -pop
+
+# Merge with renamed copies
+design -copy-from gate -as gate_clk_rst_mgr clk_rst_mgr
+design -copy-from gold -as gold_clk_rst_mgr clk_rst_mgr
+equiv_make -inames gold_clk_rst_mgr gate_clk_rst_mgr clk_rst_mgr
+equiv_simple
+equiv_induct
+equiv_status

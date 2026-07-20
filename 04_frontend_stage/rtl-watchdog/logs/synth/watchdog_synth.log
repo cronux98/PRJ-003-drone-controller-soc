@@ -1,0 +1,1114 @@
+
+-- Executing script file `~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-watchdog/synth/watchdog_synth.ys' --
+
+1. Executing Verilog-2005 frontend: ~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-watchdog/rtl/EF_WDT32.v
+Parsing Verilog input from `~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-watchdog/rtl/EF_WDT32.v' to AST representation.
+Generating RTLIL representation for module `\EF_WDT32'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: ~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-watchdog/rtl/EF_WDT32_WB_wrapper.v
+Parsing Verilog input from `~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-watchdog/rtl/EF_WDT32_WB_wrapper.v' to AST representation.
+Generating RTLIL representation for module `\EF_WDT32_WB_wrapper'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: ~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-watchdog/rtl/ef_util_lib.v
+Parsing Verilog input from `~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-watchdog/rtl/ef_util_lib.v' to AST representation.
+Generating RTLIL representation for module `\ef_util_sync'.
+Generating RTLIL representation for module `\ef_util_ped'.
+Generating RTLIL representation for module `\ef_util_ned'.
+Generating RTLIL representation for module `\ef_util_ticker'.
+Generating RTLIL representation for module `\ef_util_glitch_filter'.
+Generating RTLIL representation for module `\ef_util_fifo'.
+Generating RTLIL representation for module `\ef_util_clkmux_2x1'.
+Generating RTLIL representation for module `\ef_util_clkmux_4x1'.
+Generating RTLIL representation for module `\ef_util_gating_cell'.
+Successfully finished Verilog frontend.
+
+4. Executing Verilog-2005 frontend: ~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-watchdog/rtl/watchdog.v
+Parsing Verilog input from `~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-watchdog/rtl/watchdog.v' to AST representation.
+Generating RTLIL representation for module `\EF_WDT32_WB'.
+Successfully finished Verilog frontend.
+
+5. Executing HIERARCHY pass (managing design hierarchy).
+
+5.1. Analyzing design hierarchy..
+Top module:  \EF_WDT32_WB
+Used module:     \EF_WDT32
+Used module:     \ef_util_gating_cell
+
+5.2. Analyzing design hierarchy..
+Top module:  \EF_WDT32_WB
+Used module:     \EF_WDT32
+Used module:     \ef_util_gating_cell
+Removing unused module `\ef_util_clkmux_4x1'.
+Removing unused module `\ef_util_clkmux_2x1'.
+Removing unused module `\ef_util_fifo'.
+Removing unused module `\ef_util_glitch_filter'.
+Removing unused module `\ef_util_ticker'.
+Removing unused module `\ef_util_ned'.
+Removing unused module `\ef_util_ped'.
+Removing unused module `\ef_util_sync'.
+Removing unused module `\EF_WDT32_WB_wrapper'.
+Removed 9 unused modules.
+
+6. Executing PROC pass (convert processes to netlists).
+
+6.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+6.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 2 switch rules as full_case in process $proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-watchdog/rtl/watchdog.v:140$114 in module EF_WDT32_WB.
+Marked 2 switch rules as full_case in process $proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-watchdog/rtl/watchdog.v:110$92 in module EF_WDT32_WB.
+Marked 2 switch rules as full_case in process $proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-watchdog/rtl/watchdog.v:102$89 in module EF_WDT32_WB.
+Marked 1 switch rules as full_case in process $proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-watchdog/rtl/watchdog.v:99$86 in module EF_WDT32_WB.
+Marked 1 switch rules as full_case in process $proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-watchdog/rtl/watchdog.v:90$82 in module EF_WDT32_WB.
+Marked 1 switch rules as full_case in process $proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-watchdog/rtl/watchdog.v:85$79 in module EF_WDT32_WB.
+Marked 1 switch rules as full_case in process $proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-watchdog/rtl/watchdog.v:79$76 in module EF_WDT32_WB.
+Marked 3 switch rules as full_case in process $proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-watchdog/rtl/EF_WDT32.v:35$3 in module EF_WDT32.
+Removed a total of 0 dead cases.
+
+6.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 3 redundant assignments.
+Promoted 1 assignment to connection.
+
+6.4. Executing PROC_INIT pass (extract init attributes).
+
+6.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst_i in `\EF_WDT32_WB.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-watchdog/rtl/watchdog.v:140$114'.
+Found async reset \rst_i in `\EF_WDT32_WB.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-watchdog/rtl/watchdog.v:110$92'.
+Found async reset \rst_i in `\EF_WDT32_WB.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-watchdog/rtl/watchdog.v:102$89'.
+Found async reset \rst_i in `\EF_WDT32_WB.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-watchdog/rtl/watchdog.v:99$86'.
+Found async reset \rst_i in `\EF_WDT32_WB.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-watchdog/rtl/watchdog.v:90$82'.
+Found async reset \rst_i in `\EF_WDT32_WB.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-watchdog/rtl/watchdog.v:85$79'.
+Found async reset \rst_i in `\EF_WDT32_WB.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-watchdog/rtl/watchdog.v:79$76'.
+Found async reset \rst_n in `\EF_WDT32.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-watchdog/rtl/EF_WDT32.v:35$3'.
+
+6.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~10 debug messages>
+
+6.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\EF_WDT32_WB.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-watchdog/rtl/watchdog.v:140$114'.
+     1/1: $0\ack_o[0:0]
+Creating decoders for process `\EF_WDT32_WB.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-watchdog/rtl/watchdog.v:110$92'.
+     1/2: $1\_i_[31:0]
+     2/2: $0\RIS_REG[0:0]
+Creating decoders for process `\EF_WDT32_WB.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-watchdog/rtl/watchdog.v:102$89'.
+     1/1: $0\IC_REG[0:0]
+Creating decoders for process `\EF_WDT32_WB.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-watchdog/rtl/watchdog.v:99$86'.
+     1/1: $0\IM_REG[0:0]
+Creating decoders for process `\EF_WDT32_WB.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-watchdog/rtl/watchdog.v:90$82'.
+     1/1: $0\GCLK_REG[0:0]
+Creating decoders for process `\EF_WDT32_WB.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-watchdog/rtl/watchdog.v:85$79'.
+     1/1: $0\control_REG[0:0]
+Creating decoders for process `\EF_WDT32_WB.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-watchdog/rtl/watchdog.v:79$76'.
+     1/1: $0\load_REG[31:0]
+Creating decoders for process `\EF_WDT32.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-watchdog/rtl/EF_WDT32.v:35$3'.
+     1/1: $0\WDTMR[31:0]
+
+6.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+6.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\EF_WDT32_WB.\ack_o' using process `\EF_WDT32_WB.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-watchdog/rtl/watchdog.v:140$114'.
+  created $adff cell `$procdff$144' with positive edge clock and positive level reset.
+Creating register for signal `\EF_WDT32_WB.\RIS_REG' using process `\EF_WDT32_WB.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-watchdog/rtl/watchdog.v:110$92'.
+  created $adff cell `$procdff$147' with positive edge clock and positive level reset.
+Creating register for signal `\EF_WDT32_WB.\_i_' using process `\EF_WDT32_WB.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-watchdog/rtl/watchdog.v:110$92'.
+  created $dff cell `$procdff$152' with positive edge clock.
+Creating register for signal `\EF_WDT32_WB.\IC_REG' using process `\EF_WDT32_WB.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-watchdog/rtl/watchdog.v:102$89'.
+  created $adff cell `$procdff$155' with positive edge clock and positive level reset.
+Creating register for signal `\EF_WDT32_WB.\IM_REG' using process `\EF_WDT32_WB.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-watchdog/rtl/watchdog.v:99$86'.
+  created $adff cell `$procdff$158' with positive edge clock and positive level reset.
+Creating register for signal `\EF_WDT32_WB.\GCLK_REG' using process `\EF_WDT32_WB.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-watchdog/rtl/watchdog.v:90$82'.
+  created $adff cell `$procdff$161' with positive edge clock and positive level reset.
+Creating register for signal `\EF_WDT32_WB.\control_REG' using process `\EF_WDT32_WB.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-watchdog/rtl/watchdog.v:85$79'.
+  created $adff cell `$procdff$164' with positive edge clock and positive level reset.
+Creating register for signal `\EF_WDT32_WB.\load_REG' using process `\EF_WDT32_WB.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-watchdog/rtl/watchdog.v:79$76'.
+  created $adff cell `$procdff$167' with positive edge clock and positive level reset.
+Creating register for signal `\EF_WDT32.\WDTMR' using process `\EF_WDT32.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-watchdog/rtl/EF_WDT32.v:35$3'.
+  created $adff cell `$procdff$172' with positive edge clock and positive level reset.
+
+6.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+6.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\EF_WDT32_WB.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-watchdog/rtl/watchdog.v:140$114'.
+Removing empty process `EF_WDT32_WB.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-watchdog/rtl/watchdog.v:140$114'.
+Found and cleaned up 2 empty switches in `\EF_WDT32_WB.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-watchdog/rtl/watchdog.v:110$92'.
+Removing empty process `EF_WDT32_WB.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-watchdog/rtl/watchdog.v:110$92'.
+Found and cleaned up 1 empty switch in `\EF_WDT32_WB.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-watchdog/rtl/watchdog.v:102$89'.
+Removing empty process `EF_WDT32_WB.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-watchdog/rtl/watchdog.v:102$89'.
+Found and cleaned up 1 empty switch in `\EF_WDT32_WB.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-watchdog/rtl/watchdog.v:99$86'.
+Removing empty process `EF_WDT32_WB.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-watchdog/rtl/watchdog.v:99$86'.
+Found and cleaned up 1 empty switch in `\EF_WDT32_WB.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-watchdog/rtl/watchdog.v:90$82'.
+Removing empty process `EF_WDT32_WB.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-watchdog/rtl/watchdog.v:90$82'.
+Found and cleaned up 1 empty switch in `\EF_WDT32_WB.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-watchdog/rtl/watchdog.v:85$79'.
+Removing empty process `EF_WDT32_WB.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-watchdog/rtl/watchdog.v:85$79'.
+Found and cleaned up 1 empty switch in `\EF_WDT32_WB.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-watchdog/rtl/watchdog.v:79$76'.
+Removing empty process `EF_WDT32_WB.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-watchdog/rtl/watchdog.v:79$76'.
+Found and cleaned up 2 empty switches in `\EF_WDT32.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-watchdog/rtl/EF_WDT32.v:35$3'.
+Removing empty process `EF_WDT32.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-watchdog/rtl/EF_WDT32.v:35$3'.
+Cleaned up 10 empty switches.
+
+6.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ef_util_gating_cell.
+Optimizing module EF_WDT32_WB.
+<suppressed ~11 debug messages>
+Optimizing module EF_WDT32.
+<suppressed ~6 debug messages>
+
+7. Executing OPT pass (performing simple optimizations).
+
+7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ef_util_gating_cell.
+Optimizing module EF_WDT32_WB.
+Optimizing module EF_WDT32.
+
+7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ef_util_gating_cell'.
+Computing hashes of 0 cells of `\ef_util_gating_cell'.
+Finding duplicate cells in `\ef_util_gating_cell'.
+Finding identical cells in module `\EF_WDT32_WB'.
+Computing hashes of 57 cells of `\EF_WDT32_WB'.
+Finding duplicate cells in `\EF_WDT32_WB'.
+Computing hashes of 53 cells of `\EF_WDT32_WB'.
+Finding duplicate cells in `\EF_WDT32_WB'.
+<suppressed ~12 debug messages>
+Finding identical cells in module `\EF_WDT32'.
+Computing hashes of 9 cells of `\EF_WDT32'.
+Finding duplicate cells in `\EF_WDT32'.
+Removed a total of 4 cells.
+
+7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ef_util_gating_cell..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \EF_WDT32_WB..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \EF_WDT32..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~28 debug messages>
+
+7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ef_util_gating_cell.
+  Optimizing cells in module \EF_WDT32_WB.
+  Optimizing cells in module \EF_WDT32.
+Performed a total of 0 changes.
+
+7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ef_util_gating_cell'.
+Computing hashes of 0 cells of `\ef_util_gating_cell'.
+Finding duplicate cells in `\ef_util_gating_cell'.
+Finding identical cells in module `\EF_WDT32_WB'.
+Computing hashes of 53 cells of `\EF_WDT32_WB'.
+Finding duplicate cells in `\EF_WDT32_WB'.
+Finding identical cells in module `\EF_WDT32'.
+Computing hashes of 9 cells of `\EF_WDT32'.
+Finding duplicate cells in `\EF_WDT32'.
+Removed a total of 0 cells.
+
+7.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $procdff$147 ($adff) from module EF_WDT32_WB (D = $procmux$123_Y, Q = \RIS_REG).
+Adding EN signal on $procdff$164 ($adff) from module EF_WDT32_WB (D = \dat_i [0], Q = \control_REG).
+Adding EN signal on $procdff$152 ($dff) from module EF_WDT32_WB (D = 1, Q = \_i_).
+Adding EN signal on $procdff$161 ($adff) from module EF_WDT32_WB (D = \dat_i [0], Q = \GCLK_REG).
+Adding EN signal on $procdff$167 ($adff) from module EF_WDT32_WB (D = \dat_i, Q = \load_REG).
+Adding EN signal on $procdff$158 ($adff) from module EF_WDT32_WB (D = \dat_i [0], Q = \IM_REG).
+Setting constant 1-bit at position 0 on $auto$ff.cc:337:slice$177 ($dffe) from module EF_WDT32_WB.
+Setting constant 0-bit at position 1 on $auto$ff.cc:337:slice$177 ($dffe) from module EF_WDT32_WB.
+Setting constant 0-bit at position 2 on $auto$ff.cc:337:slice$177 ($dffe) from module EF_WDT32_WB.
+Setting constant 0-bit at position 3 on $auto$ff.cc:337:slice$177 ($dffe) from module EF_WDT32_WB.
+Setting constant 0-bit at position 4 on $auto$ff.cc:337:slice$177 ($dffe) from module EF_WDT32_WB.
+Setting constant 0-bit at position 5 on $auto$ff.cc:337:slice$177 ($dffe) from module EF_WDT32_WB.
+Setting constant 0-bit at position 6 on $auto$ff.cc:337:slice$177 ($dffe) from module EF_WDT32_WB.
+Setting constant 0-bit at position 7 on $auto$ff.cc:337:slice$177 ($dffe) from module EF_WDT32_WB.
+Setting constant 0-bit at position 8 on $auto$ff.cc:337:slice$177 ($dffe) from module EF_WDT32_WB.
+Setting constant 0-bit at position 9 on $auto$ff.cc:337:slice$177 ($dffe) from module EF_WDT32_WB.
+Setting constant 0-bit at position 10 on $auto$ff.cc:337:slice$177 ($dffe) from module EF_WDT32_WB.
+Setting constant 0-bit at position 11 on $auto$ff.cc:337:slice$177 ($dffe) from module EF_WDT32_WB.
+Setting constant 0-bit at position 12 on $auto$ff.cc:337:slice$177 ($dffe) from module EF_WDT32_WB.
+Setting constant 0-bit at position 13 on $auto$ff.cc:337:slice$177 ($dffe) from module EF_WDT32_WB.
+Setting constant 0-bit at position 14 on $auto$ff.cc:337:slice$177 ($dffe) from module EF_WDT32_WB.
+Setting constant 0-bit at position 15 on $auto$ff.cc:337:slice$177 ($dffe) from module EF_WDT32_WB.
+Setting constant 0-bit at position 16 on $auto$ff.cc:337:slice$177 ($dffe) from module EF_WDT32_WB.
+Setting constant 0-bit at position 17 on $auto$ff.cc:337:slice$177 ($dffe) from module EF_WDT32_WB.
+Setting constant 0-bit at position 18 on $auto$ff.cc:337:slice$177 ($dffe) from module EF_WDT32_WB.
+Setting constant 0-bit at position 19 on $auto$ff.cc:337:slice$177 ($dffe) from module EF_WDT32_WB.
+Setting constant 0-bit at position 20 on $auto$ff.cc:337:slice$177 ($dffe) from module EF_WDT32_WB.
+Setting constant 0-bit at position 21 on $auto$ff.cc:337:slice$177 ($dffe) from module EF_WDT32_WB.
+Setting constant 0-bit at position 22 on $auto$ff.cc:337:slice$177 ($dffe) from module EF_WDT32_WB.
+Setting constant 0-bit at position 23 on $auto$ff.cc:337:slice$177 ($dffe) from module EF_WDT32_WB.
+Setting constant 0-bit at position 24 on $auto$ff.cc:337:slice$177 ($dffe) from module EF_WDT32_WB.
+Setting constant 0-bit at position 25 on $auto$ff.cc:337:slice$177 ($dffe) from module EF_WDT32_WB.
+Setting constant 0-bit at position 26 on $auto$ff.cc:337:slice$177 ($dffe) from module EF_WDT32_WB.
+Setting constant 0-bit at position 27 on $auto$ff.cc:337:slice$177 ($dffe) from module EF_WDT32_WB.
+Setting constant 0-bit at position 28 on $auto$ff.cc:337:slice$177 ($dffe) from module EF_WDT32_WB.
+Setting constant 0-bit at position 29 on $auto$ff.cc:337:slice$177 ($dffe) from module EF_WDT32_WB.
+Setting constant 0-bit at position 30 on $auto$ff.cc:337:slice$177 ($dffe) from module EF_WDT32_WB.
+Setting constant 0-bit at position 31 on $auto$ff.cc:337:slice$177 ($dffe) from module EF_WDT32_WB.
+
+7.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ef_util_gating_cell..
+Finding unused cells or wires in module \EF_WDT32_WB..
+Finding unused cells or wires in module \EF_WDT32..
+Removed 11 unused cells and 61 unused wires.
+<suppressed ~20 debug messages>
+
+7.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ef_util_gating_cell.
+Optimizing module EF_WDT32_WB.
+<suppressed ~1 debug messages>
+Optimizing module EF_WDT32.
+
+7.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+7.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ef_util_gating_cell..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \EF_WDT32_WB..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \EF_WDT32..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~18 debug messages>
+
+7.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ef_util_gating_cell.
+  Optimizing cells in module \EF_WDT32_WB.
+  Optimizing cells in module \EF_WDT32.
+Performed a total of 0 changes.
+
+7.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ef_util_gating_cell'.
+Computing hashes of 0 cells of `\ef_util_gating_cell'.
+Finding duplicate cells in `\ef_util_gating_cell'.
+Finding identical cells in module `\EF_WDT32_WB'.
+Computing hashes of 40 cells of `\EF_WDT32_WB'.
+Finding duplicate cells in `\EF_WDT32_WB'.
+Finding identical cells in module `\EF_WDT32'.
+Computing hashes of 6 cells of `\EF_WDT32'.
+Finding duplicate cells in `\EF_WDT32'.
+Removed a total of 0 cells.
+
+7.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+7.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ef_util_gating_cell..
+Finding unused cells or wires in module \EF_WDT32_WB..
+Finding unused cells or wires in module \EF_WDT32..
+
+7.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ef_util_gating_cell.
+Optimizing module EF_WDT32_WB.
+Optimizing module EF_WDT32.
+
+7.16. Finished fast OPT passes. (There is nothing left to do.)
+
+8. Executing FSM pass (extract and optimize FSM).
+
+8.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+8.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+8.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+8.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ef_util_gating_cell..
+Finding unused cells or wires in module \EF_WDT32_WB..
+Finding unused cells or wires in module \EF_WDT32..
+
+8.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+8.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+8.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+8.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+9. Executing OPT pass (performing simple optimizations).
+
+9.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ef_util_gating_cell.
+Optimizing module EF_WDT32_WB.
+Optimizing module EF_WDT32.
+
+9.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ef_util_gating_cell'.
+Computing hashes of 0 cells of `\ef_util_gating_cell'.
+Finding duplicate cells in `\ef_util_gating_cell'.
+Finding identical cells in module `\EF_WDT32_WB'.
+Computing hashes of 40 cells of `\EF_WDT32_WB'.
+Finding duplicate cells in `\EF_WDT32_WB'.
+Finding identical cells in module `\EF_WDT32'.
+Computing hashes of 6 cells of `\EF_WDT32'.
+Finding duplicate cells in `\EF_WDT32'.
+Removed a total of 0 cells.
+
+9.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ef_util_gating_cell..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \EF_WDT32_WB..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \EF_WDT32..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~18 debug messages>
+
+9.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ef_util_gating_cell.
+  Optimizing cells in module \EF_WDT32_WB.
+  Optimizing cells in module \EF_WDT32.
+Performed a total of 0 changes.
+
+9.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ef_util_gating_cell'.
+Computing hashes of 0 cells of `\ef_util_gating_cell'.
+Finding duplicate cells in `\ef_util_gating_cell'.
+Finding identical cells in module `\EF_WDT32_WB'.
+Computing hashes of 40 cells of `\EF_WDT32_WB'.
+Finding duplicate cells in `\EF_WDT32_WB'.
+Finding identical cells in module `\EF_WDT32'.
+Computing hashes of 6 cells of `\EF_WDT32'.
+Finding duplicate cells in `\EF_WDT32'.
+Removed a total of 0 cells.
+
+9.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+9.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ef_util_gating_cell..
+Finding unused cells or wires in module \EF_WDT32_WB..
+Finding unused cells or wires in module \EF_WDT32..
+
+9.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ef_util_gating_cell.
+Optimizing module EF_WDT32_WB.
+Optimizing module EF_WDT32.
+
+9.9. Finished fast OPT passes. (There is nothing left to do.)
+
+10. Executing MEMORY pass.
+
+10.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+10.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+10.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+10.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+10.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+10.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ef_util_gating_cell..
+Finding unused cells or wires in module \EF_WDT32_WB..
+Finding unused cells or wires in module \EF_WDT32..
+
+10.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+10.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+10.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ef_util_gating_cell..
+Finding unused cells or wires in module \EF_WDT32_WB..
+Finding unused cells or wires in module \EF_WDT32..
+
+10.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+10.11. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+11. Executing OPT pass (performing simple optimizations).
+
+11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ef_util_gating_cell.
+Optimizing module EF_WDT32_WB.
+Optimizing module EF_WDT32.
+
+11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ef_util_gating_cell'.
+Computing hashes of 0 cells of `\ef_util_gating_cell'.
+Finding duplicate cells in `\ef_util_gating_cell'.
+Finding identical cells in module `\EF_WDT32_WB'.
+Computing hashes of 40 cells of `\EF_WDT32_WB'.
+Finding duplicate cells in `\EF_WDT32_WB'.
+Finding identical cells in module `\EF_WDT32'.
+Computing hashes of 6 cells of `\EF_WDT32'.
+Finding duplicate cells in `\EF_WDT32'.
+Removed a total of 0 cells.
+
+11.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ef_util_gating_cell..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \EF_WDT32_WB..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \EF_WDT32..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~18 debug messages>
+
+11.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ef_util_gating_cell.
+  Optimizing cells in module \EF_WDT32_WB.
+  Optimizing cells in module \EF_WDT32.
+Performed a total of 0 changes.
+
+11.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ef_util_gating_cell'.
+Computing hashes of 0 cells of `\ef_util_gating_cell'.
+Finding duplicate cells in `\ef_util_gating_cell'.
+Finding identical cells in module `\EF_WDT32_WB'.
+Computing hashes of 40 cells of `\EF_WDT32_WB'.
+Finding duplicate cells in `\EF_WDT32_WB'.
+Finding identical cells in module `\EF_WDT32'.
+Computing hashes of 6 cells of `\EF_WDT32'.
+Finding duplicate cells in `\EF_WDT32'.
+Removed a total of 0 cells.
+
+11.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+11.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ef_util_gating_cell..
+Finding unused cells or wires in module \EF_WDT32_WB..
+Finding unused cells or wires in module \EF_WDT32..
+
+11.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ef_util_gating_cell.
+Optimizing module EF_WDT32_WB.
+Optimizing module EF_WDT32.
+
+11.9. Finished fast OPT passes. (There is nothing left to do.)
+
+12. Executing TECHMAP pass (map to technology primitives).
+
+12.1. Executing Verilog-2005 frontend: ~/oss-cad-suite/lib/../share/yosys/techmap.v
+Parsing Verilog input from `~/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `$__div_mod_u'.
+Generating RTLIL representation for module `$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Generating RTLIL representation for module `$connect'.
+Generating RTLIL representation for module `$input_port'.
+Successfully finished Verilog frontend.
+
+12.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $logic_not.
+Using extmapper simplemap for cells of type $and.
+Running "alumacc" on wrapper $extern:wrap:$sub:Y_WIDTH=32:B_WIDTH=32:A_WIDTH=32:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$sub:Y_WIDTH=32:B_WIDTH=32:A_WIDTH=32:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$sub:Y_WIDTH=32:B_WIDTH=32:A_WIDTH=32:B_SIGNED=0:A_SIGNED=0:394426c56d1a028ba8fdd5469b163e04011def47.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $adff.
+Using template $paramod$fbc7873bff55778c0b3173955b7e4bce1d9d6834\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $pos.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000100000 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000100000 for cells of type $lcu.
+Using extmapper simplemap for cells of type $xor.
+Using extmapper simplemap for cells of type $or.
+Using extmapper simplemap for cells of type $adffe.
+Using extmapper simplemap for cells of type $reduce_bool.
+Using extmapper simplemap for cells of type $eq.
+No more expansions possible.
+<suppressed ~460 debug messages>
+
+13. Executing OPT pass (performing simple optimizations).
+
+13.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ef_util_gating_cell.
+Optimizing module EF_WDT32_WB.
+<suppressed ~400 debug messages>
+Optimizing module EF_WDT32.
+<suppressed ~228 debug messages>
+
+13.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ef_util_gating_cell'.
+Computing hashes of 0 cells of `\ef_util_gating_cell'.
+Finding duplicate cells in `\ef_util_gating_cell'.
+Finding identical cells in module `\EF_WDT32_WB'.
+Computing hashes of 391 cells of `\EF_WDT32_WB'.
+Finding duplicate cells in `\EF_WDT32_WB'.
+Computing hashes of 303 cells of `\EF_WDT32_WB'.
+Finding duplicate cells in `\EF_WDT32_WB'.
+Computing hashes of 251 cells of `\EF_WDT32_WB'.
+Finding duplicate cells in `\EF_WDT32_WB'.
+Computing hashes of 216 cells of `\EF_WDT32_WB'.
+Finding duplicate cells in `\EF_WDT32_WB'.
+Computing hashes of 188 cells of `\EF_WDT32_WB'.
+Finding duplicate cells in `\EF_WDT32_WB'.
+<suppressed ~609 debug messages>
+Finding identical cells in module `\EF_WDT32'.
+Computing hashes of 332 cells of `\EF_WDT32'.
+Finding duplicate cells in `\EF_WDT32'.
+Removed a total of 203 cells.
+
+13.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ef_util_gating_cell..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \EF_WDT32_WB..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \EF_WDT32..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+13.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ef_util_gating_cell.
+  Optimizing cells in module \EF_WDT32_WB.
+  Optimizing cells in module \EF_WDT32.
+Performed a total of 0 changes.
+
+13.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ef_util_gating_cell'.
+Computing hashes of 0 cells of `\ef_util_gating_cell'.
+Finding duplicate cells in `\ef_util_gating_cell'.
+Finding identical cells in module `\EF_WDT32_WB'.
+Computing hashes of 188 cells of `\EF_WDT32_WB'.
+Finding duplicate cells in `\EF_WDT32_WB'.
+Finding identical cells in module `\EF_WDT32'.
+Computing hashes of 332 cells of `\EF_WDT32'.
+Finding duplicate cells in `\EF_WDT32'.
+Removed a total of 0 cells.
+
+13.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+13.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ef_util_gating_cell..
+Finding unused cells or wires in module \EF_WDT32_WB..
+Finding unused cells or wires in module \EF_WDT32..
+Removed 17 unused cells and 154 unused wires.
+<suppressed ~19 debug messages>
+
+13.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ef_util_gating_cell.
+Optimizing module EF_WDT32_WB.
+Optimizing module EF_WDT32.
+
+13.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+13.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ef_util_gating_cell..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \EF_WDT32_WB..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \EF_WDT32..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+13.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ef_util_gating_cell.
+  Optimizing cells in module \EF_WDT32_WB.
+  Optimizing cells in module \EF_WDT32.
+Performed a total of 0 changes.
+
+13.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ef_util_gating_cell'.
+Computing hashes of 0 cells of `\ef_util_gating_cell'.
+Finding duplicate cells in `\ef_util_gating_cell'.
+Finding identical cells in module `\EF_WDT32_WB'.
+Computing hashes of 185 cells of `\EF_WDT32_WB'.
+Finding duplicate cells in `\EF_WDT32_WB'.
+Finding identical cells in module `\EF_WDT32'.
+Computing hashes of 318 cells of `\EF_WDT32'.
+Finding duplicate cells in `\EF_WDT32'.
+Removed a total of 0 cells.
+
+13.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+13.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ef_util_gating_cell..
+Finding unused cells or wires in module \EF_WDT32_WB..
+Finding unused cells or wires in module \EF_WDT32..
+
+13.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ef_util_gating_cell.
+Optimizing module EF_WDT32_WB.
+Optimizing module EF_WDT32.
+
+13.16. Finished fast OPT passes. (There is nothing left to do.)
+
+14. Executing DFFLIBMAP pass (mapping DFF cells to sequential cells from liberty file).
+  cell sky130_fd_sc_hd__dfxtp_1 (noninv, pins=3, area=20.02) is a direct match for cell type $_DFF_P_.
+  cell sky130_fd_sc_hd__dfrtn_1 (noninv, pins=4, area=25.02) is a direct match for cell type $_DFF_NN0_.
+  cell sky130_fd_sc_hd__dfrtp_1 (noninv, pins=4, area=25.02) is a direct match for cell type $_DFF_PN0_.
+  cell sky130_fd_sc_hd__dfstp_2 (noninv, pins=4, area=26.28) is a direct match for cell type $_DFF_PN1_.
+  cell sky130_fd_sc_hd__edfxtp_1 (noninv, pins=4, area=30.03) is a direct match for cell type $_DFFE_PP_.
+  cell sky130_fd_sc_hd__dfbbn_1 (noninv, pins=6, area=32.53) is a direct match for cell type $_DFFSR_NNN_.
+  cell sky130_fd_sc_hd__dfbbp_1 (noninv, pins=6, area=32.53) is a direct match for cell type $_DFFSR_PNN_.
+  final dff cell mappings:
+    unmapped dff cell: $_DFF_N_
+    \sky130_fd_sc_hd__dfxtp_1 _DFF_P_ (.CLK( C), .D( D), .Q( Q));
+    \sky130_fd_sc_hd__dfrtn_1 _DFF_NN0_ (.CLK_N( C), .D( D), .Q( Q), .RESET_B( R));
+    unmapped dff cell: $_DFF_NN1_
+    unmapped dff cell: $_DFF_NP0_
+    unmapped dff cell: $_DFF_NP1_
+    \sky130_fd_sc_hd__dfrtp_1 _DFF_PN0_ (.CLK( C), .D( D), .Q( Q), .RESET_B( R));
+    \sky130_fd_sc_hd__dfstp_2 _DFF_PN1_ (.CLK( C), .D( D), .Q( Q), .SET_B( R));
+    unmapped dff cell: $_DFF_PP0_
+    unmapped dff cell: $_DFF_PP1_
+    unmapped dff cell: $_DFFE_NN_
+    unmapped dff cell: $_DFFE_NP_
+    unmapped dff cell: $_DFFE_PN_
+    \sky130_fd_sc_hd__edfxtp_1 _DFFE_PP_ (.CLK( C), .D( D), .DE( E), .Q( Q));
+    \sky130_fd_sc_hd__dfbbn_1 _DFFSR_NNN_ (.CLK_N( C), .D( D), .Q( Q), .Q_N(~Q), .RESET_B( R), .SET_B( S));
+    unmapped dff cell: $_DFFSR_NNP_
+    unmapped dff cell: $_DFFSR_NPN_
+    unmapped dff cell: $_DFFSR_NPP_
+    \sky130_fd_sc_hd__dfbbp_1 _DFFSR_PNN_ (.CLK( C), .D( D), .Q( Q), .Q_N(~Q), .RESET_B( R), .SET_B( S));
+    unmapped dff cell: $_DFFSR_PNP_
+    unmapped dff cell: $_DFFSR_PPN_
+    unmapped dff cell: $_DFFSR_PPP_
+
+14.1. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+<suppressed ~24 debug messages>
+Mapping DFF cells in module `\ef_util_gating_cell':
+Mapping DFF cells in module `\EF_WDT32_WB':
+  mapped 38 $_DFF_PN0_ cells to \sky130_fd_sc_hd__dfrtp_1 cells.
+Mapping DFF cells in module `\EF_WDT32':
+  mapped 32 $_DFF_PN0_ cells to \sky130_fd_sc_hd__dfrtp_1 cells.
+
+15. Executing ABC pass (technology mapping using ABC).
+
+15.1. Extracting gate netlist of module `\ef_util_gating_cell' to `<abc-temp-dir>/input.blif'..
+ABC: using cached merged SCL: /tmp/yosys-liberty-scl-cache/yosys_merged_f46f2c32.scl (1 files)
+
+15.1.1. Executed ABC.
+Extracted 0 gates and 0 wires to a netlist network with 0 inputs and 0 outputs.
+Don't call ABC as there is nothing to map.
+Removing temp directory.
+
+15.2. Extracting gate netlist of module `\EF_WDT32_WB' to `<abc-temp-dir>/input.blif'..
+ABC: using cached merged SCL: /tmp/yosys-liberty-scl-cache/yosys_merged_f46f2c32.scl (1 files)
+Replacing 1 occurrences of constant undef bits with constant zero bits
+
+15.2.1. Executed ABC.
+Extracted 219 gates and 345 wires to a netlist network with 123 inputs and 110 outputs.
+Running ABC script: <abc-temp-dir>/abc.script
+ABC: UC Berkeley, ABC 1.01 (compiled Apr 26 2026 04:19:40)
+ABC: abc 01> empty
+ABC: abc 01> source <abc-temp-dir>/abc.script
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_scl /tmp/yosys-liberty-scl-cache/yosys_merged_f46f2c32.scl 
+ABC: Warning: Detected 9 multi-output cells (for example, "sky130_fd_sc_hd__fa_1").
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+ABC: 
+ABC: YOSYS_ABC_DONE 
+
+15.2.2. Re-integrating ABC results.
+ABC RESULTS:   sky130_fd_sc_hd__a211oi_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a21oi_1 cells:       48
+ABC RESULTS:   sky130_fd_sc_hd__a22o_1 cells:        9
+ABC RESULTS:   sky130_fd_sc_hd__a32oi_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__and2_0 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__and3_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__clkinv_1 cells:       41
+ABC RESULTS:   sky130_fd_sc_hd__lpflow_isobufsrc_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__mux2_1 cells:       34
+ABC RESULTS:   sky130_fd_sc_hd__nand2_1 cells:        6
+ABC RESULTS:   sky130_fd_sc_hd__nand3_1 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__nand4_1 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__nor2_1 cells:       28
+ABC RESULTS:   sky130_fd_sc_hd__nor2b_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__nor3_1 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__nor3b_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nor4_1 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__nor4b_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__o2111ai_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o21ai_0 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__or4_1 cells:        1
+ABC RESULTS:        internal signals:      112
+ABC RESULTS:           input signals:      123
+ABC RESULTS:          output signals:      110
+Removing temp directory.
+
+15.3. Extracting gate netlist of module `\EF_WDT32' to `<abc-temp-dir>/input.blif'..
+ABC: using cached merged SCL: /tmp/yosys-liberty-scl-cache/yosys_merged_f46f2c32.scl (1 files)
+
+15.3.1. Executed ABC.
+Extracted 286 gates and 351 wires to a netlist network with 65 inputs and 33 outputs.
+Running ABC script: <abc-temp-dir>/abc.script
+ABC: UC Berkeley, ABC 1.01 (compiled Apr 26 2026 04:19:40)
+ABC: abc 01> empty
+ABC: abc 01> source <abc-temp-dir>/abc.script
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_scl /tmp/yosys-liberty-scl-cache/yosys_merged_f46f2c32.scl 
+ABC: Warning: Detected 9 multi-output cells (for example, "sky130_fd_sc_hd__fa_1").
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+ABC: 
+ABC: YOSYS_ABC_DONE 
+
+15.3.2. Re-integrating ABC results.
+ABC RESULTS:   sky130_fd_sc_hd__a2bb2oi_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__clkinv_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__lpflow_isobufsrc_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__mux2_1 cells:       28
+ABC RESULTS:   sky130_fd_sc_hd__mux2i_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nand2_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__nand2b_1 cells:        7
+ABC RESULTS:   sky130_fd_sc_hd__nand3_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nor2_1 cells:        7
+ABC RESULTS:   sky130_fd_sc_hd__nor3_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nor4_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nor4b_1 cells:        7
+ABC RESULTS:   sky130_fd_sc_hd__o21a_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__o21ai_0 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__o2bb2ai_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o31a_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o31ai_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__or3_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__or4_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__or4b_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__xnor2_1 cells:        9
+ABC RESULTS:   sky130_fd_sc_hd__xor2_1 cells:       17
+ABC RESULTS:        internal signals:      253
+ABC RESULTS:           input signals:       65
+ABC RESULTS:          output signals:       33
+Removing temp directory.
+Removing global temp directory.
+
+16. Executing OPT pass (performing simple optimizations).
+
+16.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ef_util_gating_cell.
+Optimizing module EF_WDT32_WB.
+Optimizing module EF_WDT32.
+
+16.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ef_util_gating_cell'.
+Computing hashes of 0 cells of `\ef_util_gating_cell'.
+Finding duplicate cells in `\ef_util_gating_cell'.
+Finding identical cells in module `\EF_WDT32_WB'.
+Computing hashes of 238 cells of `\EF_WDT32_WB'.
+Finding duplicate cells in `\EF_WDT32_WB'.
+Finding identical cells in module `\EF_WDT32'.
+Computing hashes of 128 cells of `\EF_WDT32'.
+Finding duplicate cells in `\EF_WDT32'.
+Removed a total of 0 cells.
+
+16.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ef_util_gating_cell..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \EF_WDT32_WB..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \EF_WDT32..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+16.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ef_util_gating_cell.
+  Optimizing cells in module \EF_WDT32_WB.
+  Optimizing cells in module \EF_WDT32.
+Performed a total of 0 changes.
+
+16.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ef_util_gating_cell'.
+Computing hashes of 0 cells of `\ef_util_gating_cell'.
+Finding duplicate cells in `\ef_util_gating_cell'.
+Finding identical cells in module `\EF_WDT32_WB'.
+Computing hashes of 238 cells of `\EF_WDT32_WB'.
+Finding duplicate cells in `\EF_WDT32_WB'.
+Finding identical cells in module `\EF_WDT32'.
+Computing hashes of 128 cells of `\EF_WDT32'.
+Finding duplicate cells in `\EF_WDT32'.
+Removed a total of 0 cells.
+
+16.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+16.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ef_util_gating_cell..
+Finding unused cells or wires in module \EF_WDT32_WB..
+Finding unused cells or wires in module \EF_WDT32..
+Removed 0 unused cells and 491 unused wires.
+<suppressed ~4 debug messages>
+
+16.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ef_util_gating_cell.
+Optimizing module EF_WDT32_WB.
+Optimizing module EF_WDT32.
+
+16.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+16.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ef_util_gating_cell..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \EF_WDT32_WB..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \EF_WDT32..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+16.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ef_util_gating_cell.
+  Optimizing cells in module \EF_WDT32_WB.
+  Optimizing cells in module \EF_WDT32.
+Performed a total of 0 changes.
+
+16.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ef_util_gating_cell'.
+Computing hashes of 0 cells of `\ef_util_gating_cell'.
+Finding duplicate cells in `\ef_util_gating_cell'.
+Finding identical cells in module `\EF_WDT32_WB'.
+Computing hashes of 238 cells of `\EF_WDT32_WB'.
+Finding duplicate cells in `\EF_WDT32_WB'.
+Finding identical cells in module `\EF_WDT32'.
+Computing hashes of 128 cells of `\EF_WDT32'.
+Finding duplicate cells in `\EF_WDT32'.
+Removed a total of 0 cells.
+
+16.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+16.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ef_util_gating_cell..
+Finding unused cells or wires in module \EF_WDT32_WB..
+Finding unused cells or wires in module \EF_WDT32..
+
+16.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ef_util_gating_cell.
+Optimizing module EF_WDT32_WB.
+Optimizing module EF_WDT32.
+
+16.16. Finished fast OPT passes. (There is nothing left to do.)
+
+17. Printing statistics.
+
+=== ef_util_gating_cell ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+        4        - wires
+        4        - wire bits
+        4        - public wires
+        4        - public wire bits
+        4        - ports
+        4        - port bits
+
+=== EF_WDT32_WB ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+      192        - wires
+      412        - wire bits
+       28        - public wires
+      248        - public wire bits
+       11        - ports
+      107        - port bits
+      236  2137.05 cells
+        1    7.507   sky130_fd_sc_hd__a211oi_1
+       48   240.23   sky130_fd_sc_hd__a21oi_1
+        9   78.826   sky130_fd_sc_hd__a22o_1
+        1    8.758   sky130_fd_sc_hd__a32oi_1
+        4   25.024   sky130_fd_sc_hd__and2_0
+        1    6.256   sky130_fd_sc_hd__and3_1
+       41  153.898   sky130_fd_sc_hd__clkinv_1
+       38  950.912   sky130_fd_sc_hd__dfrtp_1
+        2   12.512   sky130_fd_sc_hd__lpflow_isobufsrc_1
+       34  382.867   sky130_fd_sc_hd__mux2_1
+        6   22.522   sky130_fd_sc_hd__nand2_1
+        3   15.014   sky130_fd_sc_hd__nand3_1
+        3   18.768   sky130_fd_sc_hd__nand4_1
+       28  105.101   sky130_fd_sc_hd__nor2_1
+        2   12.512   sky130_fd_sc_hd__nor2b_1
+        3   15.014   sky130_fd_sc_hd__nor3_1
+        1    7.507   sky130_fd_sc_hd__nor3b_1
+        4   25.024   sky130_fd_sc_hd__nor4_1
+        2   17.517   sky130_fd_sc_hd__nor4b_1
+        1    8.758   sky130_fd_sc_hd__o2111ai_1
+        3   15.014   sky130_fd_sc_hd__o21ai_0
+        1    7.507   sky130_fd_sc_hd__or4_1
+        2        - submodules
+        1        -   EF_WDT32
+        1        -   ef_util_gating_cell
+
+   Chip area for module '\EF_WDT32_WB': 2137.049600
+     of which used for sequential elements: 950.912000 (44.50%)
+
+=== EF_WDT32 ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+       70        - wires
+      163        - wire bits
+        6        - public wires
+       68        - public wire bits
+        6        - ports
+       68        - port bits
+      128 1.61E+03 cells
+        1    8.758   sky130_fd_sc_hd__a2bb2oi_1
+        2    7.507   sky130_fd_sc_hd__clkinv_1
+       32  800.768   sky130_fd_sc_hd__dfrtp_1
+        2   12.512   sky130_fd_sc_hd__lpflow_isobufsrc_1
+       28  315.302   sky130_fd_sc_hd__mux2_1
+        1    10.01   sky130_fd_sc_hd__mux2i_1
+        2    7.507   sky130_fd_sc_hd__nand2_1
+        7   43.792   sky130_fd_sc_hd__nand2b_1
+        1    5.005   sky130_fd_sc_hd__nand3_1
+        7   26.275   sky130_fd_sc_hd__nor2_1
+        1    5.005   sky130_fd_sc_hd__nor3_1
+        1    6.256   sky130_fd_sc_hd__nor4_1
+        7   61.309   sky130_fd_sc_hd__nor4b_1
+        2   15.014   sky130_fd_sc_hd__o21a_1
+        2    10.01   sky130_fd_sc_hd__o21ai_0
+        1    8.758   sky130_fd_sc_hd__o2bb2ai_1
+        1    8.758   sky130_fd_sc_hd__o31a_1
+        1    7.507   sky130_fd_sc_hd__o31ai_1
+        1    6.256   sky130_fd_sc_hd__or3_1
+        1    7.507   sky130_fd_sc_hd__or4_1
+        1    10.01   sky130_fd_sc_hd__or4b_1
+        9   78.826   sky130_fd_sc_hd__xnor2_1
+       17  148.893   sky130_fd_sc_hd__xor2_1
+
+   Chip area for module '\EF_WDT32': 1611.545600
+     of which used for sequential elements: 800.768000 (49.69%)
+
+=== design hierarchy ===
+
+        +----------Count including submodules.
+        |        +-Area including submodules.
+        |        | 
+      364 3.75E+03 EF_WDT32_WB
+      128 1.61E+03 EF_WDT32
+
+        +----------Count including submodules.
+        |        +-Area including submodules.
+        |        | 
+      266        - wires
+      579        - wire bits
+       38        - public wires
+      320        - public wire bits
+       21        - ports
+      179        - port bits
+        -        - memories
+        -        - memory bits
+        -        - processes
+      364 3.75E+03 cells
+        1    7.507   sky130_fd_sc_hd__a211oi_1
+       48   240.23   sky130_fd_sc_hd__a21oi_1
+        9   78.826   sky130_fd_sc_hd__a22o_1
+        1    8.758   sky130_fd_sc_hd__a2bb2oi_1
+        1    8.758   sky130_fd_sc_hd__a32oi_1
+        4   25.024   sky130_fd_sc_hd__and2_0
+        1    6.256   sky130_fd_sc_hd__and3_1
+       43  161.405   sky130_fd_sc_hd__clkinv_1
+       70  1751.68   sky130_fd_sc_hd__dfrtp_1
+        4   25.024   sky130_fd_sc_hd__lpflow_isobufsrc_1
+       62   698.17   sky130_fd_sc_hd__mux2_1
+        1    10.01   sky130_fd_sc_hd__mux2i_1
+        8   30.029   sky130_fd_sc_hd__nand2_1
+        7   43.792   sky130_fd_sc_hd__nand2b_1
+        4   20.019   sky130_fd_sc_hd__nand3_1
+        3   18.768   sky130_fd_sc_hd__nand4_1
+       35  131.376   sky130_fd_sc_hd__nor2_1
+        2   12.512   sky130_fd_sc_hd__nor2b_1
+        4   20.019   sky130_fd_sc_hd__nor3_1
+        1    7.507   sky130_fd_sc_hd__nor3b_1
+        5    31.28   sky130_fd_sc_hd__nor4_1
+        9   78.826   sky130_fd_sc_hd__nor4b_1
+        1    8.758   sky130_fd_sc_hd__o2111ai_1
+        2   15.014   sky130_fd_sc_hd__o21a_1
+        5   25.024   sky130_fd_sc_hd__o21ai_0
+        1    8.758   sky130_fd_sc_hd__o2bb2ai_1
+        1    8.758   sky130_fd_sc_hd__o31a_1
+        1    7.507   sky130_fd_sc_hd__o31ai_1
+        1    6.256   sky130_fd_sc_hd__or3_1
+        2   15.014   sky130_fd_sc_hd__or4_1
+        1    10.01   sky130_fd_sc_hd__or4b_1
+        9   78.826   sky130_fd_sc_hd__xnor2_1
+       17  148.893   sky130_fd_sc_hd__xor2_1
+        2 1.61E+03 submodules
+        1 1.61E+03   EF_WDT32
+        1        -   ef_util_gating_cell
+
+   Chip area for top module '\EF_WDT32_WB': 3748.595200
+     of which used for sequential elements: 1751.680000 (46.73%)
+
+18. Executing Verilog backend.
+
+18.1. Executing BMUXMAP pass.
+
+18.2. Executing DEMUXMAP pass.
+Dumping module `\EF_WDT32'.
+Dumping module `\EF_WDT32_WB'.
+Dumping module `\ef_util_gating_cell'.
+
+End of script. Logfile hash: 7b28057baa, time: 0.54s, user: 0.23s, system: 0.02s, MEM: 44.91 MB peak
+Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+Time spent: 57% 1x abc (0 sec), 12% 1x stat (0 sec), ...

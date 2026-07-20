@@ -1,0 +1,13 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1784461758" />
+    <testcase name="test_reset" classname="test_sram_8kb" file="~/hermes_workspace/projects/IP-010/v4/06_verification_stage/tb-sram_8kb/test_sram_8kb.py" lineno="12" time="0.002289295196533203" sim_time_ns="80.0" ratio_time="34945.25307227661" />
+    <testcase name="test_register_rw" classname="test_sram_8kb" file="~/hermes_workspace/projects/IP-010/v4/06_verification_stage/tb-sram_8kb/test_sram_8kb.py" lineno="24" time="0.0022649765014648438" sim_time_ns="121.0" ratio_time="53422.18778947368" />
+    <testcase name="test_wb_ack" classname="test_sram_8kb" file="~/hermes_workspace/projects/IP-010/v4/06_verification_stage/tb-sram_8kb/test_sram_8kb.py" lineno="39" time="0.0008022785186767578" sim_time_ns="101.0" ratio_time="125891.4424962853" />
+    <testcase name="test_consecutive_writes" classname="test_sram_8kb" file="~/hermes_workspace/projects/IP-010/v4/06_verification_stage/tb-sram_8kb/test_sram_8kb.py" lineno="53" time="0.0014040470123291016" sim_time_ns="161.0" ratio_time="114668.52504669724" />
+    <testcase name="test_idle_read" classname="test_sram_8kb" file="~/hermes_workspace/projects/IP-010/v4/06_verification_stage/tb-sram_8kb/test_sram_8kb.py" lineno="73" time="0.0007319450378417969" sim_time_ns="101.0" ratio_time="137988.5029315961" />
+    <testcase name="test_stress_00" classname="test_sram_8kb" file="~/hermes_workspace/projects/IP-010/v4/06_verification_stage/tb-sram_8kb/test_sram_8kb.py" lineno="87" time="0.0009486675262451172" sim_time_ns="121.0" ratio_time="127547.3194269917" />
+    <testcase name="test_stress_01" classname="test_sram_8kb" file="~/hermes_workspace/projects/IP-010/v4/06_verification_stage/tb-sram_8kb/test_sram_8kb.py" lineno="102" time="0.0009679794311523438" sim_time_ns="121.0" ratio_time="125002.65615763547" />
+    <testcase name="test_stress_02" classname="test_sram_8kb" file="~/hermes_workspace/projects/IP-010/v4/06_verification_stage/tb-sram_8kb/test_sram_8kb.py" lineno="117" time="0.0009560585021972656" sim_time_ns="121.0" ratio_time="126561.2927680798" />
+  </testsuite>
+</testsuites>

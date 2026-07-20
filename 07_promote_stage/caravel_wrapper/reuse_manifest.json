@@ -1,0 +1,11 @@
+{
+  "_generated_from": "gen_reuse_manifest.py host=smdtest02 utc=2026-07-19T12:06:19.523357+00:00",
+  "module": "caravel_wrapper",
+  "module_type": "REUSE-EXT",
+  "source_ip": "REUSE_GITHUB",
+  "source_version": "1.0",
+  "source_path": "~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-caravel_wrapper",
+  "integration_date": "2026-07-19",
+  "generated_by": "gen_reuse_manifest.py",
+  "synthesis_log": "~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-caravel_wrapper/logs/synth/caravel_wrapper_synth.log"
+}

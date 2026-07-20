@@ -1,0 +1,2504 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+
+-- Executing script file `../model/design.ys' --
+
+1. Executing Verilog-2005 frontend: axis_fifo.v
+Parsing formal SystemVerilog input from `axis_fifo.v' to AST representation.
+Storing AST representation for module `$abstract\axis_fifo'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: EF_I2C_WB_wrapper.v
+Parsing formal SystemVerilog input from `EF_I2C_WB_wrapper.v' to AST representation.
+Storing AST representation for module `$abstract\EF_I2C_WB_wrapper'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: ef_util_lib.v
+Parsing formal SystemVerilog input from `ef_util_lib.v' to AST representation.
+Storing AST representation for module `$abstract\ef_util_sync'.
+Storing AST representation for module `$abstract\ef_util_ped'.
+Storing AST representation for module `$abstract\ef_util_ned'.
+Storing AST representation for module `$abstract\ef_util_ticker'.
+Storing AST representation for module `$abstract\ef_util_glitch_filter'.
+Storing AST representation for module `$abstract\ef_util_fifo'.
+Storing AST representation for module `$abstract\ef_util_clkmux_2x1'.
+Storing AST representation for module `$abstract\ef_util_clkmux_4x1'.
+Storing AST representation for module `$abstract\ef_util_gating_cell'.
+Successfully finished Verilog frontend.
+
+4. Executing Verilog-2005 frontend: i2c_0.v
+Parsing formal SystemVerilog input from `i2c_0.v' to AST representation.
+Storing AST representation for module `$abstract\EF_I2C_WB'.
+Successfully finished Verilog frontend.
+
+5. Executing Verilog-2005 frontend: i2c_init.v
+Parsing formal SystemVerilog input from `i2c_init.v' to AST representation.
+Storing AST representation for module `$abstract\i2c_init'.
+Successfully finished Verilog frontend.
+
+6. Executing Verilog-2005 frontend: i2c_master.v
+Parsing formal SystemVerilog input from `i2c_master.v' to AST representation.
+Storing AST representation for module `$abstract\i2c_master'.
+Successfully finished Verilog frontend.
+
+7. Executing Verilog-2005 frontend: i2c_master_wbs_16.v
+Parsing formal SystemVerilog input from `i2c_master_wbs_16.v' to AST representation.
+Storing AST representation for module `$abstract\i2c_master_wbs_16'.
+Successfully finished Verilog frontend.
+
+8. Executing Verilog-2005 frontend: i2c_master_wbs_8.v
+Parsing formal SystemVerilog input from `i2c_master_wbs_8.v' to AST representation.
+Storing AST representation for module `$abstract\i2c_master_wbs_8'.
+Successfully finished Verilog frontend.
+
+9. Executing Verilog-2005 frontend: i2c_single_reg.v
+Parsing formal SystemVerilog input from `i2c_single_reg.v' to AST representation.
+Storing AST representation for module `$abstract\i2c_single_reg'.
+Successfully finished Verilog frontend.
+
+10. Executing HIERARCHY pass (managing design hierarchy).
+
+11. Executing AST frontend in derive mode using pre-parsed AST for module `\EF_I2C_WB_wrapper'.
+Generating RTLIL representation for module `\EF_I2C_WB_wrapper'.
+
+11.1. Analyzing design hierarchy..
+Top module:  \EF_I2C_WB_wrapper
+
+11.2. Executing AST frontend in derive mode using pre-parsed AST for module `\EF_I2C_WB'.
+Generating RTLIL representation for module `\EF_I2C_WB'.
+
+11.3. Analyzing design hierarchy..
+Top module:  \EF_I2C_WB_wrapper
+Used module:     \EF_I2C_WB
+Parameter \DEFAULT_PRESCALE = 1
+Parameter \FIXED_PRESCALE = 0
+Parameter \CMD_FIFO = 1
+Parameter \CMD_FIFO_DEPTH = 16
+Parameter \WRITE_FIFO = 1
+Parameter \WRITE_FIFO_DEPTH = 16
+Parameter \READ_FIFO = 1
+Parameter \READ_FIFO_DEPTH = 16
+
+11.4. Executing AST frontend in derive mode using pre-parsed AST for module `\i2c_master_wbs_16'.
+Parameter \DEFAULT_PRESCALE = 1
+Parameter \FIXED_PRESCALE = 0
+Parameter \CMD_FIFO = 1
+Parameter \CMD_FIFO_DEPTH = 16
+Parameter \WRITE_FIFO = 1
+Parameter \WRITE_FIFO_DEPTH = 16
+Parameter \READ_FIFO = 1
+Parameter \READ_FIFO_DEPTH = 16
+Generating RTLIL representation for module `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16'.
+
+11.5. Executing AST frontend in derive mode using pre-parsed AST for module `\ef_util_gating_cell'.
+Generating RTLIL representation for module `\ef_util_gating_cell'.
+
+11.6. Analyzing design hierarchy..
+Top module:  \EF_I2C_WB_wrapper
+Used module:     \EF_I2C_WB
+Used module:         $paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16
+Used module:         \ef_util_gating_cell
+Parameter \DEPTH = 16
+Parameter \DATA_WIDTH = 8
+Parameter \KEEP_ENABLE = 0
+Parameter \LAST_ENABLE = 1
+Parameter \ID_ENABLE = 0
+Parameter \DEST_ENABLE = 0
+Parameter \USER_ENABLE = 0
+Parameter \FRAME_FIFO = 0
+
+11.7. Executing AST frontend in derive mode using pre-parsed AST for module `\axis_fifo'.
+Parameter \DEPTH = 16
+Parameter \DATA_WIDTH = 8
+Parameter \KEEP_ENABLE = 0
+Parameter \LAST_ENABLE = 1
+Parameter \ID_ENABLE = 0
+Parameter \DEST_ENABLE = 0
+Parameter \USER_ENABLE = 0
+Parameter \FRAME_FIFO = 0
+Generating RTLIL representation for module `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo'.
+Warning: Replacing memory \m_axis_pipe_reg with list of registers. See axis_fifo.v:258
+Warning: Replacing memory \mem with list of registers. See axis_fifo.v:218
+Parameter \DEPTH = 16
+Parameter \DATA_WIDTH = 8
+Parameter \KEEP_ENABLE = 0
+Parameter \LAST_ENABLE = 1
+Parameter \ID_ENABLE = 0
+Parameter \DEST_ENABLE = 0
+Parameter \USER_ENABLE = 0
+Parameter \FRAME_FIFO = 0
+Found cached RTLIL representation for module `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo'.
+Parameter \DEPTH = 16
+Parameter \DATA_WIDTH = 12
+Parameter \KEEP_ENABLE = 0
+Parameter \LAST_ENABLE = 0
+Parameter \ID_ENABLE = 0
+Parameter \DEST_ENABLE = 0
+Parameter \USER_ENABLE = 0
+Parameter \FRAME_FIFO = 0
+
+11.8. Executing AST frontend in derive mode using pre-parsed AST for module `\axis_fifo'.
+Parameter \DEPTH = 16
+Parameter \DATA_WIDTH = 12
+Parameter \KEEP_ENABLE = 0
+Parameter \LAST_ENABLE = 0
+Parameter \ID_ENABLE = 0
+Parameter \DEST_ENABLE = 0
+Parameter \USER_ENABLE = 0
+Parameter \FRAME_FIFO = 0
+Generating RTLIL representation for module `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo'.
+Warning: Replacing memory \m_axis_pipe_reg with list of registers. See axis_fifo.v:258
+Warning: Replacing memory \mem with list of registers. See axis_fifo.v:218
+
+11.9. Executing AST frontend in derive mode using pre-parsed AST for module `\i2c_master'.
+Generating RTLIL representation for module `\i2c_master'.
+
+11.10. Analyzing design hierarchy..
+Top module:  \EF_I2C_WB_wrapper
+Used module:     \EF_I2C_WB
+Used module:         $paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16
+Used module:             $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo
+Used module:             $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo
+Used module:             \i2c_master
+Used module:         \ef_util_gating_cell
+
+11.11. Analyzing design hierarchy..
+Top module:  \EF_I2C_WB_wrapper
+Used module:     \EF_I2C_WB
+Used module:         $paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16
+Used module:             $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo
+Used module:             $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo
+Used module:             \i2c_master
+Used module:         \ef_util_gating_cell
+Removing unused module `$abstract\i2c_single_reg'.
+Removing unused module `$abstract\i2c_master_wbs_8'.
+Removing unused module `$abstract\i2c_master_wbs_16'.
+Removing unused module `$abstract\i2c_master'.
+Removing unused module `$abstract\i2c_init'.
+Removing unused module `$abstract\EF_I2C_WB'.
+Removing unused module `$abstract\ef_util_gating_cell'.
+Removing unused module `$abstract\ef_util_clkmux_4x1'.
+Removing unused module `$abstract\ef_util_clkmux_2x1'.
+Removing unused module `$abstract\ef_util_fifo'.
+Removing unused module `$abstract\ef_util_glitch_filter'.
+Removing unused module `$abstract\ef_util_ticker'.
+Removing unused module `$abstract\ef_util_ned'.
+Removing unused module `$abstract\ef_util_ped'.
+Removing unused module `$abstract\ef_util_sync'.
+Removing unused module `$abstract\EF_I2C_WB_wrapper'.
+Removing unused module `$abstract\axis_fifo'.
+Removed 17 unused modules.
+
+12. Executing PROC pass (convert processes to netlists).
+
+12.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 5 empty switches in `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:118$151'.
+Removing empty process `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:118$151'.
+Found and cleaned up 1 empty switch in `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:205$125'.
+Found and cleaned up 5 empty switches in `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:118$105'.
+Removing empty process `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:118$105'.
+Found and cleaned up 1 empty switch in `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:205$79'.
+Cleaned up 12 empty switches.
+
+12.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$i2c_master_wbs_16.v:615$66 in module $paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.
+Marked 16 switch rules as full_case in process $proc$i2c_master_wbs_16.v:469$41 in module $paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.
+Marked 2 switch rules as full_case in process $proc$i2c_0.v:145$31 in module EF_I2C_WB.
+Marked 1 switch rules as full_case in process $proc$i2c_0.v:141$28 in module EF_I2C_WB.
+Marked 1 switch rules as full_case in process $proc$i2c_0.v:137$25 in module EF_I2C_WB.
+Marked 3 switch rules as full_case in process $proc$i2c_master.v:829$229 in module i2c_master.
+Marked 10 switch rules as full_case in process $proc$i2c_master.v:599$221 in module i2c_master.
+Marked 25 switch rules as full_case in process $proc$i2c_master.v:293$171 in module i2c_master.
+Removed 1 dead cases from process $proc$axis_fifo.v:253$136 in module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+Marked 3 switch rules as full_case in process $proc$axis_fifo.v:253$136 in module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+Marked 3 switch rules as full_case in process $proc$axis_fifo.v:205$125 in module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+Removed 1 dead cases from process $proc$axis_fifo.v:253$90 in module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+Marked 3 switch rules as full_case in process $proc$axis_fifo.v:253$90 in module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+Marked 3 switch rules as full_case in process $proc$axis_fifo.v:205$79 in module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+Removed a total of 2 dead cases.
+
+12.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 46 redundant assignments.
+Promoted 77 assignments to connections.
+
+12.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.$proc$i2c_master_wbs_16.v:321$68'.
+  Set init value: \write_fifo_overflow_reg = 1'0
+Found init rule in `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.$proc$i2c_master_wbs_16.v:320$67'.
+  Set init value: \cmd_fifo_overflow_reg = 1'0
+Found init rule in `\i2c_master.$proc$i2c_master.v:219$242'.
+  Set init value: \phy_state_reg = 5'00000
+Found init rule in `\i2c_master.$proc$i2c_master.v:199$241'.
+  Set init value: \state_reg = 5'00000
+Found init rule in `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:175$159'.
+  Set init value: \bad_frame_reg = 1'0
+Found init rule in `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:174$158'.
+  Set init value: \overflow_reg = 1'0
+Found init rule in `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:173$157'.
+  Set init value: \drop_frame_reg = 1'0
+Found init rule in `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:163$156'.
+  Set init value: \m_axis_tvalid_pipe_reg = 2'00
+Found init rule in `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:154$154'.
+  Set init value: \rd_ptr_reg = 5'00000
+Found init rule in `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:153$153'.
+  Set init value: \wr_ptr_cur_reg = 5'00000
+Found init rule in `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:152$152'.
+  Set init value: \wr_ptr_reg = 5'00000
+Found init rule in `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:176$160'.
+  Set init value: \good_frame_reg = 1'0
+Found init rule in `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:175$113'.
+  Set init value: \bad_frame_reg = 1'0
+Found init rule in `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:174$112'.
+  Set init value: \overflow_reg = 1'0
+Found init rule in `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:173$111'.
+  Set init value: \drop_frame_reg = 1'0
+Found init rule in `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:163$110'.
+  Set init value: \m_axis_tvalid_pipe_reg = 2'00
+Found init rule in `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:154$108'.
+  Set init value: \rd_ptr_reg = 5'00000
+Found init rule in `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:153$107'.
+  Set init value: \wr_ptr_cur_reg = 5'00000
+Found init rule in `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:152$106'.
+  Set init value: \wr_ptr_reg = 5'00000
+Found init rule in `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:176$114'.
+  Set init value: \good_frame_reg = 1'0
+
+12.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst in `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.$proc$i2c_master_wbs_16.v:615$66'.
+Found async reset \rst_i in `\EF_I2C_WB.$proc$i2c_0.v:145$31'.
+Found async reset \rst_i in `\EF_I2C_WB.$proc$i2c_0.v:141$28'.
+Found async reset \rst_i in `\EF_I2C_WB.$proc$i2c_0.v:137$25'.
+Found async reset \rst in `\i2c_master.$proc$i2c_master.v:829$229'.
+Found async reset \rst in `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:253$136'.
+Found async reset \rst in `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:205$125'.
+Found async reset \rst in `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:253$90'.
+Found async reset \rst in `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:205$79'.
+
+12.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~70 debug messages>
+
+12.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.$proc$i2c_master_wbs_16.v:321$68'.
+Creating decoders for process `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.$proc$i2c_master_wbs_16.v:320$67'.
+Creating decoders for process `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.$proc$i2c_master_wbs_16.v:615$66'.
+     1/17: $0\write_fifo_overflow_reg[0:0]
+     2/17: $0\cmd_fifo_overflow_reg[0:0]
+     3/17: $0\missed_ack_reg[0:0]
+     4/17: $0\prescale_reg[15:0]
+     5/17: $0\data_out_ready_reg[0:0]
+     6/17: $0\data_in_last_reg[0:0]
+     7/17: $0\data_in_valid_reg[0:0]
+     8/17: $0\data_in_reg[7:0]
+     9/17: $0\cmd_valid_reg[0:0]
+    10/17: $0\cmd_stop_reg[0:0]
+    11/17: $0\cmd_write_multiple_reg[0:0]
+    12/17: $0\cmd_write_reg[0:0]
+    13/17: $0\cmd_read_reg[0:0]
+    14/17: $0\cmd_start_reg[0:0]
+    15/17: $0\cmd_address_reg[6:0]
+    16/17: $0\wbs_ack_o_reg[0:0]
+    17/17: $0\wbs_dat_o_reg[15:0]
+Creating decoders for process `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.$proc$i2c_master_wbs_16.v:469$41'.
+     1/87: $3\wbs_dat_o_next[15:0] [15]
+     2/87: $3\wbs_dat_o_next[15:0] [13]
+     3/87: $3\wbs_dat_o_next[15:0] [11]
+     4/87: $3\wbs_dat_o_next[15:0] [10]
+     5/87: $3\wbs_dat_o_next[15:0] [9]
+     6/87: $3\wbs_dat_o_next[15:0] [8]
+     7/87: $3\wbs_dat_o_next[15:0] [5]
+     8/87: $3\wbs_dat_o_next[15:0] [7]
+     9/87: $3\wbs_dat_o_next[15:0] [6]
+    10/87: $3\wbs_dat_o_next[15:0] [4]
+    11/87: $3\wbs_dat_o_next[15:0] [2]
+    12/87: $3\wbs_dat_o_next[15:0] [1]
+    13/87: $3\wbs_dat_o_next[15:0] [0]
+    14/87: $3\wbs_dat_o_next[15:0] [14]
+    15/87: $4\data_out_ready_next[0:0]
+    16/87: $3\wbs_dat_o_next[15:0] [3]
+    17/87: $3\wbs_dat_o_next[15:0] [12]
+    18/87: $3\data_out_ready_next[0:0]
+    19/87: $5\prescale_next[15:0]
+    20/87: $4\prescale_next[7:0]
+    21/87: $5\data_in_last_next[0:0]
+    22/87: $6\write_fifo_overflow_next[0:0]
+    23/87: $4\data_in_valid_next[0:0]
+    24/87: $4\data_in_last_next[0:0]
+    25/87: $4\data_in_next[7:0]
+    26/87: $6\cmd_fifo_overflow_next[0:0]
+    27/87: $4\cmd_valid_next[0:0]
+    28/87: $4\cmd_stop_next[0:0]
+    29/87: $4\cmd_write_multiple_next[0:0]
+    30/87: $4\cmd_write_next[0:0]
+    31/87: $4\cmd_read_next[0:0]
+    32/87: $4\cmd_start_next[0:0]
+    33/87: $4\cmd_address_next[6:0]
+    34/87: $5\write_fifo_overflow_next[0:0]
+    35/87: $5\cmd_fifo_overflow_next[0:0]
+    36/87: $4\write_fifo_overflow_next[0:0]
+    37/87: $4\cmd_fifo_overflow_next[0:0]
+    38/87: $5\missed_ack_next[0:0]
+    39/87: $4\missed_ack_next[0:0]
+    40/87: $3\write_fifo_overflow_next[0:0]
+    41/87: $3\cmd_fifo_overflow_next[0:0]
+    42/87: $3\missed_ack_next[0:0]
+    43/87: $3\prescale_next[15:0]
+    44/87: $3\data_in_last_next[0:0]
+    45/87: $3\data_in_valid_next[0:0]
+    46/87: $3\data_in_next[7:0]
+    47/87: $3\cmd_valid_next[0:0]
+    48/87: $3\cmd_stop_next[0:0]
+    49/87: $3\cmd_write_multiple_next[0:0]
+    50/87: $3\cmd_write_next[0:0]
+    51/87: $3\cmd_read_next[0:0]
+    52/87: $3\cmd_start_next[0:0]
+    53/87: $3\cmd_address_next[6:0]
+    54/87: $2\wbs_ack_o_next[0:0]
+    55/87: $2\write_fifo_overflow_next[0:0]
+    56/87: $2\cmd_fifo_overflow_next[0:0]
+    57/87: $2\missed_ack_next[0:0]
+    58/87: $2\prescale_next[15:0]
+    59/87: $2\data_in_last_next[0:0]
+    60/87: $2\data_in_valid_next[0:0]
+    61/87: $2\data_in_next[7:0]
+    62/87: $2\cmd_valid_next[0:0]
+    63/87: $2\cmd_stop_next[0:0]
+    64/87: $2\cmd_write_multiple_next[0:0]
+    65/87: $2\cmd_write_next[0:0]
+    66/87: $2\cmd_read_next[0:0]
+    67/87: $2\cmd_start_next[0:0]
+    68/87: $2\cmd_address_next[6:0]
+    69/87: $2\data_out_ready_next[0:0]
+    70/87: $2\wbs_dat_o_next[15:0]
+    71/87: $1\write_fifo_overflow_next[0:0]
+    72/87: $1\cmd_fifo_overflow_next[0:0]
+    73/87: $1\missed_ack_next[0:0]
+    74/87: $1\prescale_next[15:0]
+    75/87: $1\data_out_ready_next[0:0]
+    76/87: $1\data_in_last_next[0:0]
+    77/87: $1\data_in_valid_next[0:0]
+    78/87: $1\data_in_next[7:0]
+    79/87: $1\cmd_valid_next[0:0]
+    80/87: $1\cmd_stop_next[0:0]
+    81/87: $1\cmd_write_multiple_next[0:0]
+    82/87: $1\cmd_write_next[0:0]
+    83/87: $1\cmd_read_next[0:0]
+    84/87: $1\cmd_start_next[0:0]
+    85/87: $1\cmd_address_next[6:0]
+    86/87: $1\wbs_ack_o_next[0:0]
+    87/87: $1\wbs_dat_o_next[15:0]
+Creating decoders for process `\EF_I2C_WB.$proc$i2c_0.v:145$31'.
+     1/1: $0\i2c_ack_o[0:0]
+Creating decoders for process `\EF_I2C_WB.$proc$i2c_0.v:141$28'.
+     1/1: $0\IM_REG[8:0]
+Creating decoders for process `\EF_I2C_WB.$proc$i2c_0.v:137$25'.
+     1/1: $0\GCLK_REG[0:0]
+Creating decoders for process `\i2c_master.$proc$i2c_master.v:219$242'.
+Creating decoders for process `\i2c_master.$proc$i2c_master.v:199$241'.
+Creating decoders for process `\i2c_master.$proc$i2c_master.v:829$229'.
+     1/28: $0\bus_active_reg[0:0]
+     2/28: $0\missed_ack_reg[0:0]
+     3/28: $0\bus_control_reg[0:0]
+     4/28: $0\busy_reg[0:0]
+     5/28: $0\last_sda_i_reg[0:0]
+     6/28: $0\last_scl_i_reg[0:0]
+     7/28: $0\sda_o_reg[0:0]
+     8/28: $0\scl_o_reg[0:0]
+     9/28: $0\sda_i_reg[0:0]
+    10/28: $0\scl_i_reg[0:0]
+    11/28: $0\m_axis_data_tvalid_reg[0:0]
+    12/28: $0\m_axis_data_tlast_reg[0:0]
+    13/28: $0\m_axis_data_tdata_reg[7:0]
+    14/28: $0\s_axis_data_tready_reg[0:0]
+    15/28: $0\s_axis_cmd_ready_reg[0:0]
+    16/28: $0\bit_count_reg[3:0]
+    17/28: $0\delay_sda_reg[0:0]
+    18/28: $0\delay_scl_reg[0:0]
+    19/28: $0\delay_reg[16:0]
+    20/28: $0\mode_stop_reg[0:0]
+    21/28: $0\mode_write_multiple_reg[0:0]
+    22/28: $0\mode_read_reg[0:0]
+    23/28: $0\last_reg[0:0]
+    24/28: $0\data_reg[7:0]
+    25/28: $0\addr_reg[6:0]
+    26/28: $0\phy_rx_data_reg[0:0]
+    27/28: $0\phy_state_reg[4:0]
+    28/28: $0\state_reg[4:0]
+Creating decoders for process `\i2c_master.$proc$i2c_master.v:599$221'.
+     1/53: $10\phy_state_next[4:0]
+     2/53: $10\delay_next[16:0]
+     3/53: $10\sda_o_next[0:0]
+     4/53: $9\phy_state_next[4:0]
+     5/53: $9\delay_next[16:0]
+     6/53: $9\sda_o_next[0:0]
+     7/53: $8\phy_state_next[4:0]
+     8/53: $8\delay_next[16:0]
+     9/53: $8\sda_o_next[0:0]
+    10/53: $7\phy_state_next[4:0]
+    11/53: $7\delay_next[16:0]
+    12/53: $7\sda_o_next[0:0]
+    13/53: $6\phy_state_next[4:0]
+    14/53: $6\delay_next[16:0]
+    15/53: $6\sda_o_next[0:0]
+    16/53: $5\sda_o_next[0:0]
+    17/53: $5\delay_next[16:0]
+    18/53: $5\phy_state_next[4:0]
+    19/53: $5\scl_o_next[0:0]
+    20/53: $5\bus_control_next[0:0]
+    21/53: $5\delay_scl_next[0:0]
+    22/53: $5\phy_rx_data_next[0:0]
+    23/53: $4\phy_state_next[4:0]
+    24/53: $4\delay_next[16:0]
+    25/53: $4\bus_control_next[0:0]
+    26/53: $4\sda_o_next[0:0]
+    27/53: $4\scl_o_next[0:0]
+    28/53: $4\delay_scl_next[0:0]
+    29/53: $4\phy_rx_data_next[0:0]
+    30/53: $3\phy_state_next[4:0]
+    31/53: $3\delay_sda_next[0:0]
+    32/53: $3\bus_control_next[0:0]
+    33/53: $3\sda_o_next[0:0]
+    34/53: $3\scl_o_next[0:0]
+    35/53: $3\delay_scl_next[0:0]
+    36/53: $3\delay_next[16:0]
+    37/53: $3\phy_rx_data_next[0:0]
+    38/53: $2\phy_state_next[4:0]
+    39/53: $2\delay_scl_next[0:0]
+    40/53: $2\bus_control_next[0:0]
+    41/53: $2\sda_o_next[0:0]
+    42/53: $2\scl_o_next[0:0]
+    43/53: $2\delay_sda_next[0:0]
+    44/53: $2\delay_next[16:0]
+    45/53: $2\phy_rx_data_next[0:0]
+    46/53: $1\phy_state_next[4:0]
+    47/53: $1\delay_next[16:0]
+    48/53: $1\delay_sda_next[0:0]
+    49/53: $1\delay_scl_next[0:0]
+    50/53: $1\scl_o_next[0:0]
+    51/53: $1\sda_o_next[0:0]
+    52/53: $1\bus_control_next[0:0]
+    53/53: $1\phy_rx_data_next[0:0]
+Creating decoders for process `\i2c_master.$proc$i2c_master.v:293$171'.
+     1/155: $25\state_next[4:0]
+     2/155: $12\phy_tx_data[0:0]
+     3/155: $12\phy_write_bit[0:0]
+     4/155: $4\m_axis_data_tlast_next[0:0]
+     5/155: $24\state_next[4:0]
+     6/155: $6\phy_read_bit[0:0]
+     7/155: $3\m_axis_data_tlast_next[0:0]
+     8/155: $3\m_axis_data_tvalid_next[0:0]
+     9/155: $3\m_axis_data_tdata_next[7:0]
+    10/155: $11\phy_tx_data[0:0]
+    11/155: $11\phy_write_bit[0:0]
+    12/155: $23\state_next[4:0]
+    13/155: $8\phy_stop_bit[0:0]
+    14/155: $22\state_next[4:0]
+    15/155: $7\phy_stop_bit[0:0]
+    16/155: $21\state_next[4:0]
+    17/155: $10\phy_tx_data[0:0]
+    18/155: $10\phy_write_bit[0:0]
+    19/155: $5\phy_read_bit[0:0]
+    20/155: $20\state_next[4:0]
+    21/155: $7\s_axis_data_tready_next[0:0]
+    22/155: $14\bit_count_next[3:0]
+    23/155: $3\last_next[0:0]
+    24/155: $7\data_next[7:0]
+    25/155: $19\state_next[4:0]
+    26/155: $6\data_next[7:0]
+    27/155: $13\bit_count_next[3:0]
+    28/155: $6\s_axis_data_tready_next[0:0]
+    29/155: $18\state_next[4:0]
+    30/155: $9\phy_tx_data[0:0]
+    31/155: $9\phy_write_bit[0:0]
+    32/155: $4\phy_read_bit[0:0]
+    33/155: $17\state_next[4:0]
+    34/155: $8\phy_tx_data[0:0]
+    35/155: $8\phy_write_bit[0:0]
+    36/155: $3\phy_read_bit[0:0]
+    37/155: $16\state_next[4:0]
+    38/155: $12\bit_count_next[3:0]
+    39/155: $9\phy_start_bit[0:0]
+    40/155: $15\state_next[4:0]
+    41/155: $7\phy_tx_data[0:0]
+    42/155: $7\phy_write_bit[0:0]
+    43/155: $14\state_next[4:0]
+    44/155: $6\phy_tx_data[0:0]
+    45/155: $6\phy_write_bit[0:0]
+    46/155: $13\state_next[4:0]
+    47/155: $5\phy_tx_data[0:0]
+    48/155: $5\phy_write_bit[0:0]
+    49/155: $11\bit_count_next[3:0]
+    50/155: $5\data_next[7:0]
+    51/155: $10\bit_count_next[3:0]
+    52/155: $4\data_next[7:0]
+    53/155: $4\phy_tx_data[0:0]
+    54/155: $4\phy_write_bit[0:0]
+    55/155: $12\state_next[4:0]
+    56/155: $8\s_axis_cmd_ready_next[0:0]
+    57/155: $8\mode_stop_next[0:0]
+    58/155: $8\mode_write_multiple_next[0:0]
+    59/155: $8\mode_read_next[0:0]
+    60/155: $8\addr_next[6:0]
+    61/155: $7\s_axis_cmd_ready_next[0:0]
+    62/155: $9\bit_count_next[3:0]
+    63/155: $7\mode_stop_next[0:0]
+    64/155: $7\mode_write_multiple_next[0:0]
+    65/155: $7\mode_read_next[0:0]
+    66/155: $3\data_next[7:0]
+    67/155: $7\addr_next[6:0]
+    68/155: $3\phy_tx_data[0:0]
+    69/155: $3\phy_write_bit[0:0]
+    70/155: $11\state_next[4:0]
+    71/155: $10\state_next[4:0]
+    72/155: $6\phy_stop_bit[0:0]
+    73/155: $9\state_next[4:0]
+    74/155: $5\phy_stop_bit[0:0]
+    75/155: $8\state_next[4:0]
+    76/155: $8\bit_count_next[3:0]
+    77/155: $8\phy_start_bit[0:0]
+    78/155: $5\s_axis_data_tready_next[0:0]
+    79/155: $4\s_axis_data_tready_next[0:0]
+    80/155: $7\bit_count_next[3:0]
+    81/155: $7\phy_start_bit[0:0]
+    82/155: $7\state_next[4:0]
+    83/155: $6\s_axis_cmd_ready_next[0:0]
+    84/155: $6\mode_stop_next[0:0]
+    85/155: $6\mode_write_multiple_next[0:0]
+    86/155: $6\mode_read_next[0:0]
+    87/155: $6\addr_next[6:0]
+    88/155: $4\phy_stop_bit[0:0]
+    89/155: $3\s_axis_data_tready_next[0:0]
+    90/155: $5\s_axis_cmd_ready_next[0:0]
+    91/155: $6\bit_count_next[3:0]
+    92/155: $5\mode_stop_next[0:0]
+    93/155: $5\mode_write_multiple_next[0:0]
+    94/155: $5\mode_read_next[0:0]
+    95/155: $5\addr_next[6:0]
+    96/155: $3\phy_stop_bit[0:0]
+    97/155: $6\phy_start_bit[0:0]
+    98/155: $6\state_next[4:0]
+    99/155: $5\state_next[4:0]
+   100/155: $5\bit_count_next[3:0]
+   101/155: $5\phy_start_bit[0:0]
+   102/155: $4\bit_count_next[3:0]
+   103/155: $4\phy_start_bit[0:0]
+   104/155: $4\state_next[4:0]
+   105/155: $4\s_axis_cmd_ready_next[0:0]
+   106/155: $4\mode_stop_next[0:0]
+   107/155: $4\mode_write_multiple_next[0:0]
+   108/155: $4\mode_read_next[0:0]
+   109/155: $4\addr_next[6:0]
+   110/155: $3\s_axis_cmd_ready_next[0:0]
+   111/155: $3\bit_count_next[3:0]
+   112/155: $3\mode_stop_next[0:0]
+   113/155: $3\mode_write_multiple_next[0:0]
+   114/155: $3\mode_read_next[0:0]
+   115/155: $3\addr_next[6:0]
+   116/155: $3\phy_start_bit[0:0]
+   117/155: $3\state_next[4:0]
+   118/155: $2\s_axis_cmd_ready_next[0:0]
+   119/155: $2\bit_count_next[3:0]
+   120/155: $2\mode_stop_next[0:0]
+   121/155: $2\mode_write_multiple_next[0:0]
+   122/155: $2\mode_read_next[0:0]
+   123/155: $2\addr_next[6:0]
+   124/155: $2\phy_start_bit[0:0]
+   125/155: $2\state_next[4:0]
+   126/155: $2\m_axis_data_tlast_next[0:0]
+   127/155: $2\m_axis_data_tvalid_next[0:0]
+   128/155: $2\m_axis_data_tdata_next[7:0]
+   129/155: $2\s_axis_data_tready_next[0:0]
+   130/155: $2\last_next[0:0]
+   131/155: $2\data_next[7:0]
+   132/155: $2\phy_tx_data[0:0]
+   133/155: $2\phy_read_bit[0:0]
+   134/155: $2\phy_write_bit[0:0]
+   135/155: $2\phy_stop_bit[0:0]
+   136/155: $2\missed_ack_next[0:0]
+   137/155: $1\state_next[4:0]
+   138/155: $1\m_axis_data_tlast_next[0:0]
+   139/155: $1\m_axis_data_tvalid_next[0:0]
+   140/155: $1\m_axis_data_tdata_next[7:0]
+   141/155: $1\s_axis_data_tready_next[0:0]
+   142/155: $1\s_axis_cmd_ready_next[0:0]
+   143/155: $1\bit_count_next[3:0]
+   144/155: $1\mode_stop_next[0:0]
+   145/155: $1\mode_write_multiple_next[0:0]
+   146/155: $1\mode_read_next[0:0]
+   147/155: $1\last_next[0:0]
+   148/155: $1\data_next[7:0]
+   149/155: $1\addr_next[6:0]
+   150/155: $1\phy_tx_data[0:0]
+   151/155: $1\phy_read_bit[0:0]
+   152/155: $1\phy_write_bit[0:0]
+   153/155: $1\phy_stop_bit[0:0]
+   154/155: $1\phy_start_bit[0:0]
+   155/155: $1\missed_ack_next[0:0]
+Creating decoders for process `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:175$159'.
+Creating decoders for process `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:174$158'.
+Creating decoders for process `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:173$157'.
+Creating decoders for process `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:163$156'.
+Creating decoders for process `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:158$155'.
+Creating decoders for process `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:154$154'.
+Creating decoders for process `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:153$153'.
+Creating decoders for process `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:152$152'.
+Creating decoders for process `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:176$160'.
+Creating decoders for process `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:253$136'.
+     1/11: $3$mem2reg_rd$\mem$axis_fifo.v:277$116_DATA[11:0]$148
+     2/11: $2$mem2reg_rd$\mem$axis_fifo.v:277$116_DATA[11:0]$147
+     3/11: $2$mem2reg_rd$\mem$axis_fifo.v:277$116_ADDR[3:0]$146
+     4/11: $0\m_axis_tvalid_pipe_reg[1:0] [1]
+     5/11: $0\m_axis_tvalid_pipe_reg[1:0] [0]
+     6/11: $1$mem2reg_rd$\mem$axis_fifo.v:277$116_ADDR[3:0]$139
+     7/11: $1\j[31:0]
+     8/11: $0\m_axis_pipe_reg[1][11:0]
+     9/11: $0\m_axis_pipe_reg[0][11:0]
+    10/11: $1$mem2reg_rd$\mem$axis_fifo.v:277$116_DATA[11:0]$140
+    11/11: $0\rd_ptr_reg[4:0]
+Creating decoders for process `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:205$125'.
+     1/28: $3$mem2reg_wr$\mem$axis_fifo.v:218$115_ADDR[3:0]$133
+     2/28: $3$mem2reg_wr$\mem$axis_fifo.v:218$115_DATA[11:0]$134
+     3/28: $2$mem2reg_wr$\mem$axis_fifo.v:218$115_DATA[11:0]$132
+     4/28: $2$mem2reg_wr$\mem$axis_fifo.v:218$115_ADDR[3:0]$131
+     5/28: $1$mem2reg_wr$\mem$axis_fifo.v:218$115_DATA[11:0]$129
+     6/28: $1$mem2reg_wr$\mem$axis_fifo.v:218$115_ADDR[3:0]$128
+     7/28: $0\mem[15][11:0]
+     8/28: $0\mem[14][11:0]
+     9/28: $0\mem[13][11:0]
+    10/28: $0\mem[12][11:0]
+    11/28: $0\mem[11][11:0]
+    12/28: $0\mem[10][11:0]
+    13/28: $0\mem[9][11:0]
+    14/28: $0\mem[8][11:0]
+    15/28: $0\mem[7][11:0]
+    16/28: $0\mem[6][11:0]
+    17/28: $0\mem[5][11:0]
+    18/28: $0\mem[4][11:0]
+    19/28: $0\mem[3][11:0]
+    20/28: $0\mem[2][11:0]
+    21/28: $0\mem[1][11:0]
+    22/28: $0\mem[0][11:0]
+    23/28: $0\good_frame_reg[0:0]
+    24/28: $0\bad_frame_reg[0:0]
+    25/28: $0\overflow_reg[0:0]
+    26/28: $0\drop_frame_reg[0:0]
+    27/28: $0\wr_ptr_cur_reg[4:0]
+    28/28: $0\wr_ptr_reg[4:0]
+Creating decoders for process `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:175$113'.
+Creating decoders for process `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:174$112'.
+Creating decoders for process `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:173$111'.
+Creating decoders for process `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:163$110'.
+Creating decoders for process `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:158$109'.
+Creating decoders for process `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:154$108'.
+Creating decoders for process `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:153$107'.
+Creating decoders for process `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:152$106'.
+Creating decoders for process `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:176$114'.
+Creating decoders for process `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:253$90'.
+     1/11: $3$mem2reg_rd$\mem$axis_fifo.v:277$70_DATA[8:0]$102
+     2/11: $2$mem2reg_rd$\mem$axis_fifo.v:277$70_DATA[8:0]$101
+     3/11: $2$mem2reg_rd$\mem$axis_fifo.v:277$70_ADDR[3:0]$100
+     4/11: $0\m_axis_tvalid_pipe_reg[1:0] [1]
+     5/11: $0\m_axis_tvalid_pipe_reg[1:0] [0]
+     6/11: $1$mem2reg_rd$\mem$axis_fifo.v:277$70_ADDR[3:0]$93
+     7/11: $1\j[31:0]
+     8/11: $0\m_axis_pipe_reg[1][8:0]
+     9/11: $0\m_axis_pipe_reg[0][8:0]
+    10/11: $1$mem2reg_rd$\mem$axis_fifo.v:277$70_DATA[8:0]$94
+    11/11: $0\rd_ptr_reg[4:0]
+Creating decoders for process `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:205$79'.
+     1/28: $3$mem2reg_wr$\mem$axis_fifo.v:218$69_ADDR[3:0]$87
+     2/28: $3$mem2reg_wr$\mem$axis_fifo.v:218$69_DATA[8:0]$88
+     3/28: $2$mem2reg_wr$\mem$axis_fifo.v:218$69_DATA[8:0]$86
+     4/28: $2$mem2reg_wr$\mem$axis_fifo.v:218$69_ADDR[3:0]$85
+     5/28: $1$mem2reg_wr$\mem$axis_fifo.v:218$69_DATA[8:0]$83
+     6/28: $1$mem2reg_wr$\mem$axis_fifo.v:218$69_ADDR[3:0]$82
+     7/28: $0\mem[15][8:0]
+     8/28: $0\mem[14][8:0]
+     9/28: $0\mem[13][8:0]
+    10/28: $0\mem[12][8:0]
+    11/28: $0\mem[11][8:0]
+    12/28: $0\mem[10][8:0]
+    13/28: $0\mem[9][8:0]
+    14/28: $0\mem[8][8:0]
+    15/28: $0\mem[7][8:0]
+    16/28: $0\mem[6][8:0]
+    17/28: $0\mem[5][8:0]
+    18/28: $0\mem[4][8:0]
+    19/28: $0\mem[3][8:0]
+    20/28: $0\mem[2][8:0]
+    21/28: $0\mem[1][8:0]
+    22/28: $0\mem[0][8:0]
+    23/28: $0\good_frame_reg[0:0]
+    24/28: $0\bad_frame_reg[0:0]
+    25/28: $0\overflow_reg[0:0]
+    26/28: $0\drop_frame_reg[0:0]
+    27/28: $0\wr_ptr_cur_reg[4:0]
+    28/28: $0\wr_ptr_reg[4:0]
+
+12.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.\wbs_dat_o_next' from process `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.$proc$i2c_master_wbs_16.v:469$41'.
+No latch inferred for signal `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.\wbs_ack_o_next' from process `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.$proc$i2c_master_wbs_16.v:469$41'.
+No latch inferred for signal `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.\cmd_address_next' from process `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.$proc$i2c_master_wbs_16.v:469$41'.
+No latch inferred for signal `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.\cmd_start_next' from process `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.$proc$i2c_master_wbs_16.v:469$41'.
+No latch inferred for signal `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.\cmd_read_next' from process `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.$proc$i2c_master_wbs_16.v:469$41'.
+No latch inferred for signal `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.\cmd_write_next' from process `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.$proc$i2c_master_wbs_16.v:469$41'.
+No latch inferred for signal `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.\cmd_write_multiple_next' from process `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.$proc$i2c_master_wbs_16.v:469$41'.
+No latch inferred for signal `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.\cmd_stop_next' from process `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.$proc$i2c_master_wbs_16.v:469$41'.
+No latch inferred for signal `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.\cmd_valid_next' from process `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.$proc$i2c_master_wbs_16.v:469$41'.
+No latch inferred for signal `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.\data_in_next' from process `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.$proc$i2c_master_wbs_16.v:469$41'.
+No latch inferred for signal `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.\data_in_valid_next' from process `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.$proc$i2c_master_wbs_16.v:469$41'.
+No latch inferred for signal `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.\data_in_last_next' from process `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.$proc$i2c_master_wbs_16.v:469$41'.
+No latch inferred for signal `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.\data_out_ready_next' from process `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.$proc$i2c_master_wbs_16.v:469$41'.
+No latch inferred for signal `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.\prescale_next' from process `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.$proc$i2c_master_wbs_16.v:469$41'.
+No latch inferred for signal `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.\missed_ack_next' from process `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.$proc$i2c_master_wbs_16.v:469$41'.
+No latch inferred for signal `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.\cmd_fifo_overflow_next' from process `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.$proc$i2c_master_wbs_16.v:469$41'.
+No latch inferred for signal `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.\write_fifo_overflow_next' from process `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.$proc$i2c_master_wbs_16.v:469$41'.
+No latch inferred for signal `\i2c_master.\phy_state_next' from process `\i2c_master.$proc$i2c_master.v:599$221'.
+No latch inferred for signal `\i2c_master.\phy_rx_data_next' from process `\i2c_master.$proc$i2c_master.v:599$221'.
+No latch inferred for signal `\i2c_master.\delay_next' from process `\i2c_master.$proc$i2c_master.v:599$221'.
+No latch inferred for signal `\i2c_master.\delay_scl_next' from process `\i2c_master.$proc$i2c_master.v:599$221'.
+No latch inferred for signal `\i2c_master.\delay_sda_next' from process `\i2c_master.$proc$i2c_master.v:599$221'.
+No latch inferred for signal `\i2c_master.\scl_o_next' from process `\i2c_master.$proc$i2c_master.v:599$221'.
+No latch inferred for signal `\i2c_master.\sda_o_next' from process `\i2c_master.$proc$i2c_master.v:599$221'.
+No latch inferred for signal `\i2c_master.\bus_control_next' from process `\i2c_master.$proc$i2c_master.v:599$221'.
+No latch inferred for signal `\i2c_master.\missed_ack_next' from process `\i2c_master.$proc$i2c_master.v:293$171'.
+No latch inferred for signal `\i2c_master.\state_next' from process `\i2c_master.$proc$i2c_master.v:293$171'.
+No latch inferred for signal `\i2c_master.\phy_start_bit' from process `\i2c_master.$proc$i2c_master.v:293$171'.
+No latch inferred for signal `\i2c_master.\phy_stop_bit' from process `\i2c_master.$proc$i2c_master.v:293$171'.
+No latch inferred for signal `\i2c_master.\phy_write_bit' from process `\i2c_master.$proc$i2c_master.v:293$171'.
+No latch inferred for signal `\i2c_master.\phy_read_bit' from process `\i2c_master.$proc$i2c_master.v:293$171'.
+No latch inferred for signal `\i2c_master.\phy_release_bus' from process `\i2c_master.$proc$i2c_master.v:293$171'.
+No latch inferred for signal `\i2c_master.\phy_tx_data' from process `\i2c_master.$proc$i2c_master.v:293$171'.
+No latch inferred for signal `\i2c_master.\addr_next' from process `\i2c_master.$proc$i2c_master.v:293$171'.
+No latch inferred for signal `\i2c_master.\data_next' from process `\i2c_master.$proc$i2c_master.v:293$171'.
+No latch inferred for signal `\i2c_master.\last_next' from process `\i2c_master.$proc$i2c_master.v:293$171'.
+No latch inferred for signal `\i2c_master.\mode_read_next' from process `\i2c_master.$proc$i2c_master.v:293$171'.
+No latch inferred for signal `\i2c_master.\mode_write_multiple_next' from process `\i2c_master.$proc$i2c_master.v:293$171'.
+No latch inferred for signal `\i2c_master.\mode_stop_next' from process `\i2c_master.$proc$i2c_master.v:293$171'.
+No latch inferred for signal `\i2c_master.\bit_count_next' from process `\i2c_master.$proc$i2c_master.v:293$171'.
+No latch inferred for signal `\i2c_master.\s_axis_cmd_ready_next' from process `\i2c_master.$proc$i2c_master.v:293$171'.
+No latch inferred for signal `\i2c_master.\s_axis_data_tready_next' from process `\i2c_master.$proc$i2c_master.v:293$171'.
+No latch inferred for signal `\i2c_master.\m_axis_data_tdata_next' from process `\i2c_master.$proc$i2c_master.v:293$171'.
+No latch inferred for signal `\i2c_master.\m_axis_data_tvalid_next' from process `\i2c_master.$proc$i2c_master.v:293$171'.
+No latch inferred for signal `\i2c_master.\m_axis_data_tlast_next' from process `\i2c_master.$proc$i2c_master.v:293$171'.
+No latch inferred for signal `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.\mem_read_data_valid_reg' from process `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:158$155'.
+No latch inferred for signal `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.\mem_read_data_valid_reg' from process `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:158$109'.
+
+12.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.\wbs_dat_o_reg' using process `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.$proc$i2c_master_wbs_16.v:615$66'.
+  created $adff cell `$procdff$4995' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.\wbs_ack_o_reg' using process `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.$proc$i2c_master_wbs_16.v:615$66'.
+  created $adff cell `$procdff$4998' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.\cmd_address_reg' using process `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.$proc$i2c_master_wbs_16.v:615$66'.
+  created $adff cell `$procdff$5001' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.\cmd_start_reg' using process `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.$proc$i2c_master_wbs_16.v:615$66'.
+  created $adff cell `$procdff$5004' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.\cmd_read_reg' using process `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.$proc$i2c_master_wbs_16.v:615$66'.
+  created $adff cell `$procdff$5007' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.\cmd_write_reg' using process `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.$proc$i2c_master_wbs_16.v:615$66'.
+  created $adff cell `$procdff$5010' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.\cmd_write_multiple_reg' using process `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.$proc$i2c_master_wbs_16.v:615$66'.
+  created $adff cell `$procdff$5013' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.\cmd_stop_reg' using process `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.$proc$i2c_master_wbs_16.v:615$66'.
+  created $adff cell `$procdff$5016' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.\cmd_valid_reg' using process `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.$proc$i2c_master_wbs_16.v:615$66'.
+  created $adff cell `$procdff$5019' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.\data_in_reg' using process `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.$proc$i2c_master_wbs_16.v:615$66'.
+  created $adff cell `$procdff$5022' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.\data_in_valid_reg' using process `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.$proc$i2c_master_wbs_16.v:615$66'.
+  created $adff cell `$procdff$5025' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.\data_in_last_reg' using process `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.$proc$i2c_master_wbs_16.v:615$66'.
+  created $adff cell `$procdff$5028' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.\data_out_ready_reg' using process `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.$proc$i2c_master_wbs_16.v:615$66'.
+  created $adff cell `$procdff$5031' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.\prescale_reg' using process `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.$proc$i2c_master_wbs_16.v:615$66'.
+  created $adff cell `$procdff$5034' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.\missed_ack_reg' using process `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.$proc$i2c_master_wbs_16.v:615$66'.
+  created $adff cell `$procdff$5037' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.\cmd_fifo_overflow_reg' using process `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.$proc$i2c_master_wbs_16.v:615$66'.
+  created $adff cell `$procdff$5040' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.\write_fifo_overflow_reg' using process `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.$proc$i2c_master_wbs_16.v:615$66'.
+  created $adff cell `$procdff$5043' with positive edge clock and positive level reset.
+Creating register for signal `\EF_I2C_WB.\i2c_ack_o' using process `\EF_I2C_WB.$proc$i2c_0.v:145$31'.
+  created $adff cell `$procdff$5046' with positive edge clock and positive level reset.
+Creating register for signal `\EF_I2C_WB.\IM_REG' using process `\EF_I2C_WB.$proc$i2c_0.v:141$28'.
+  created $adff cell `$procdff$5049' with positive edge clock and positive level reset.
+Creating register for signal `\EF_I2C_WB.\GCLK_REG' using process `\EF_I2C_WB.$proc$i2c_0.v:137$25'.
+  created $adff cell `$procdff$5052' with positive edge clock and positive level reset.
+Creating register for signal `\i2c_master.\missed_ack_reg' using process `\i2c_master.$proc$i2c_master.v:829$229'.
+  created $adff cell `$procdff$5055' with positive edge clock and positive level reset.
+Creating register for signal `\i2c_master.\state_reg' using process `\i2c_master.$proc$i2c_master.v:829$229'.
+  created $adff cell `$procdff$5058' with positive edge clock and positive level reset.
+Creating register for signal `\i2c_master.\phy_state_reg' using process `\i2c_master.$proc$i2c_master.v:829$229'.
+  created $adff cell `$procdff$5061' with positive edge clock and positive level reset.
+Creating register for signal `\i2c_master.\phy_rx_data_reg' using process `\i2c_master.$proc$i2c_master.v:829$229'.
+  created $adff cell `$procdff$5064' with positive edge clock and positive level reset.
+Creating register for signal `\i2c_master.\addr_reg' using process `\i2c_master.$proc$i2c_master.v:829$229'.
+  created $adff cell `$procdff$5067' with positive edge clock and positive level reset.
+Creating register for signal `\i2c_master.\data_reg' using process `\i2c_master.$proc$i2c_master.v:829$229'.
+  created $adff cell `$procdff$5070' with positive edge clock and positive level reset.
+Creating register for signal `\i2c_master.\last_reg' using process `\i2c_master.$proc$i2c_master.v:829$229'.
+  created $adff cell `$procdff$5073' with positive edge clock and positive level reset.
+Creating register for signal `\i2c_master.\mode_read_reg' using process `\i2c_master.$proc$i2c_master.v:829$229'.
+  created $adff cell `$procdff$5076' with positive edge clock and positive level reset.
+Creating register for signal `\i2c_master.\mode_write_multiple_reg' using process `\i2c_master.$proc$i2c_master.v:829$229'.
+  created $adff cell `$procdff$5079' with positive edge clock and positive level reset.
+Creating register for signal `\i2c_master.\mode_stop_reg' using process `\i2c_master.$proc$i2c_master.v:829$229'.
+  created $adff cell `$procdff$5082' with positive edge clock and positive level reset.
+Creating register for signal `\i2c_master.\delay_reg' using process `\i2c_master.$proc$i2c_master.v:829$229'.
+  created $adff cell `$procdff$5085' with positive edge clock and positive level reset.
+Creating register for signal `\i2c_master.\delay_scl_reg' using process `\i2c_master.$proc$i2c_master.v:829$229'.
+  created $adff cell `$procdff$5088' with positive edge clock and positive level reset.
+Creating register for signal `\i2c_master.\delay_sda_reg' using process `\i2c_master.$proc$i2c_master.v:829$229'.
+  created $adff cell `$procdff$5091' with positive edge clock and positive level reset.
+Creating register for signal `\i2c_master.\bit_count_reg' using process `\i2c_master.$proc$i2c_master.v:829$229'.
+  created $adff cell `$procdff$5094' with positive edge clock and positive level reset.
+Creating register for signal `\i2c_master.\s_axis_cmd_ready_reg' using process `\i2c_master.$proc$i2c_master.v:829$229'.
+  created $adff cell `$procdff$5097' with positive edge clock and positive level reset.
+Creating register for signal `\i2c_master.\s_axis_data_tready_reg' using process `\i2c_master.$proc$i2c_master.v:829$229'.
+  created $adff cell `$procdff$5100' with positive edge clock and positive level reset.
+Creating register for signal `\i2c_master.\m_axis_data_tdata_reg' using process `\i2c_master.$proc$i2c_master.v:829$229'.
+  created $adff cell `$procdff$5103' with positive edge clock and positive level reset.
+Creating register for signal `\i2c_master.\m_axis_data_tvalid_reg' using process `\i2c_master.$proc$i2c_master.v:829$229'.
+  created $adff cell `$procdff$5106' with positive edge clock and positive level reset.
+Creating register for signal `\i2c_master.\m_axis_data_tlast_reg' using process `\i2c_master.$proc$i2c_master.v:829$229'.
+  created $adff cell `$procdff$5109' with positive edge clock and positive level reset.
+Creating register for signal `\i2c_master.\scl_i_reg' using process `\i2c_master.$proc$i2c_master.v:829$229'.
+  created $adff cell `$procdff$5112' with positive edge clock and positive level reset.
+Creating register for signal `\i2c_master.\sda_i_reg' using process `\i2c_master.$proc$i2c_master.v:829$229'.
+  created $adff cell `$procdff$5115' with positive edge clock and positive level reset.
+Creating register for signal `\i2c_master.\scl_o_reg' using process `\i2c_master.$proc$i2c_master.v:829$229'.
+  created $adff cell `$procdff$5118' with positive edge clock and positive level reset.
+Creating register for signal `\i2c_master.\sda_o_reg' using process `\i2c_master.$proc$i2c_master.v:829$229'.
+  created $adff cell `$procdff$5121' with positive edge clock and positive level reset.
+Creating register for signal `\i2c_master.\last_scl_i_reg' using process `\i2c_master.$proc$i2c_master.v:829$229'.
+  created $adff cell `$procdff$5124' with positive edge clock and positive level reset.
+Creating register for signal `\i2c_master.\last_sda_i_reg' using process `\i2c_master.$proc$i2c_master.v:829$229'.
+  created $adff cell `$procdff$5127' with positive edge clock and positive level reset.
+Creating register for signal `\i2c_master.\busy_reg' using process `\i2c_master.$proc$i2c_master.v:829$229'.
+  created $adff cell `$procdff$5130' with positive edge clock and positive level reset.
+Creating register for signal `\i2c_master.\bus_active_reg' using process `\i2c_master.$proc$i2c_master.v:829$229'.
+  created $adff cell `$procdff$5133' with positive edge clock and positive level reset.
+Creating register for signal `\i2c_master.\bus_control_reg' using process `\i2c_master.$proc$i2c_master.v:829$229'.
+  created $adff cell `$procdff$5136' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.\rd_ptr_reg' using process `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:253$136'.
+  created $adff cell `$procdff$5139' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.\m_axis_tvalid_pipe_reg' using process `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:253$136'.
+  created $adff cell `$procdff$5142' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.\j' using process `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:253$136'.
+  created $adff cell `$procdff$5145' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.\m_axis_pipe_reg[0]' using process `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:253$136'.
+  created $dff cell `$procdff$5150' with positive edge clock.
+Creating register for signal `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.\m_axis_pipe_reg[1]' using process `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:253$136'.
+  created $adff cell `$procdff$5153' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$mem2reg_rd$\mem$axis_fifo.v:277$116_ADDR' using process `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:253$136'.
+  created $adff cell `$procdff$5156' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$mem2reg_rd$\mem$axis_fifo.v:277$116_DATA' using process `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:253$136'.
+  created $adff cell `$procdff$5159' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.\wr_ptr_reg' using process `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:205$125'.
+  created $adff cell `$procdff$5162' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.\wr_ptr_cur_reg' using process `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:205$125'.
+  created $adff cell `$procdff$5165' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.\drop_frame_reg' using process `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:205$125'.
+  created $adff cell `$procdff$5168' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.\overflow_reg' using process `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:205$125'.
+  created $adff cell `$procdff$5171' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.\bad_frame_reg' using process `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:205$125'.
+  created $adff cell `$procdff$5174' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.\good_frame_reg' using process `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:205$125'.
+  created $adff cell `$procdff$5177' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.\mem[0]' using process `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:205$125'.
+  created $dff cell `$procdff$5182' with positive edge clock.
+Creating register for signal `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.\mem[1]' using process `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:205$125'.
+  created $dff cell `$procdff$5187' with positive edge clock.
+Creating register for signal `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.\mem[2]' using process `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:205$125'.
+  created $dff cell `$procdff$5192' with positive edge clock.
+Creating register for signal `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.\mem[3]' using process `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:205$125'.
+  created $dff cell `$procdff$5197' with positive edge clock.
+Creating register for signal `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.\mem[4]' using process `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:205$125'.
+  created $dff cell `$procdff$5202' with positive edge clock.
+Creating register for signal `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.\mem[5]' using process `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:205$125'.
+  created $dff cell `$procdff$5207' with positive edge clock.
+Creating register for signal `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.\mem[6]' using process `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:205$125'.
+  created $dff cell `$procdff$5212' with positive edge clock.
+Creating register for signal `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.\mem[7]' using process `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:205$125'.
+  created $dff cell `$procdff$5217' with positive edge clock.
+Creating register for signal `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.\mem[8]' using process `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:205$125'.
+  created $dff cell `$procdff$5222' with positive edge clock.
+Creating register for signal `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.\mem[9]' using process `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:205$125'.
+  created $dff cell `$procdff$5227' with positive edge clock.
+Creating register for signal `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.\mem[10]' using process `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:205$125'.
+  created $dff cell `$procdff$5232' with positive edge clock.
+Creating register for signal `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.\mem[11]' using process `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:205$125'.
+  created $dff cell `$procdff$5237' with positive edge clock.
+Creating register for signal `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.\mem[12]' using process `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:205$125'.
+  created $dff cell `$procdff$5242' with positive edge clock.
+Creating register for signal `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.\mem[13]' using process `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:205$125'.
+  created $dff cell `$procdff$5247' with positive edge clock.
+Creating register for signal `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.\mem[14]' using process `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:205$125'.
+  created $dff cell `$procdff$5252' with positive edge clock.
+Creating register for signal `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.\mem[15]' using process `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:205$125'.
+  created $dff cell `$procdff$5257' with positive edge clock.
+Creating register for signal `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$mem2reg_wr$\mem$axis_fifo.v:218$115_ADDR' using process `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:205$125'.
+  created $adff cell `$procdff$5260' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$mem2reg_wr$\mem$axis_fifo.v:218$115_DATA' using process `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:205$125'.
+  created $adff cell `$procdff$5263' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.\rd_ptr_reg' using process `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:253$90'.
+  created $adff cell `$procdff$5266' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.\m_axis_tvalid_pipe_reg' using process `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:253$90'.
+  created $adff cell `$procdff$5269' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.\j' using process `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:253$90'.
+  created $adff cell `$procdff$5272' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.\m_axis_pipe_reg[0]' using process `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:253$90'.
+  created $dff cell `$procdff$5277' with positive edge clock.
+Creating register for signal `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.\m_axis_pipe_reg[1]' using process `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:253$90'.
+  created $adff cell `$procdff$5280' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$mem2reg_rd$\mem$axis_fifo.v:277$70_ADDR' using process `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:253$90'.
+  created $adff cell `$procdff$5283' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$mem2reg_rd$\mem$axis_fifo.v:277$70_DATA' using process `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:253$90'.
+  created $adff cell `$procdff$5286' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.\wr_ptr_reg' using process `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:205$79'.
+  created $adff cell `$procdff$5289' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.\wr_ptr_cur_reg' using process `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:205$79'.
+  created $adff cell `$procdff$5292' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.\drop_frame_reg' using process `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:205$79'.
+  created $adff cell `$procdff$5295' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.\overflow_reg' using process `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:205$79'.
+  created $adff cell `$procdff$5298' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.\bad_frame_reg' using process `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:205$79'.
+  created $adff cell `$procdff$5301' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.\good_frame_reg' using process `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:205$79'.
+  created $adff cell `$procdff$5304' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.\mem[0]' using process `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:205$79'.
+  created $dff cell `$procdff$5309' with positive edge clock.
+Creating register for signal `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.\mem[1]' using process `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:205$79'.
+  created $dff cell `$procdff$5314' with positive edge clock.
+Creating register for signal `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.\mem[2]' using process `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:205$79'.
+  created $dff cell `$procdff$5319' with positive edge clock.
+Creating register for signal `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.\mem[3]' using process `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:205$79'.
+  created $dff cell `$procdff$5324' with positive edge clock.
+Creating register for signal `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.\mem[4]' using process `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:205$79'.
+  created $dff cell `$procdff$5329' with positive edge clock.
+Creating register for signal `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.\mem[5]' using process `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:205$79'.
+  created $dff cell `$procdff$5334' with positive edge clock.
+Creating register for signal `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.\mem[6]' using process `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:205$79'.
+  created $dff cell `$procdff$5339' with positive edge clock.
+Creating register for signal `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.\mem[7]' using process `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:205$79'.
+  created $dff cell `$procdff$5344' with positive edge clock.
+Creating register for signal `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.\mem[8]' using process `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:205$79'.
+  created $dff cell `$procdff$5349' with positive edge clock.
+Creating register for signal `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.\mem[9]' using process `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:205$79'.
+  created $dff cell `$procdff$5354' with positive edge clock.
+Creating register for signal `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.\mem[10]' using process `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:205$79'.
+  created $dff cell `$procdff$5359' with positive edge clock.
+Creating register for signal `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.\mem[11]' using process `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:205$79'.
+  created $dff cell `$procdff$5364' with positive edge clock.
+Creating register for signal `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.\mem[12]' using process `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:205$79'.
+  created $dff cell `$procdff$5369' with positive edge clock.
+Creating register for signal `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.\mem[13]' using process `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:205$79'.
+  created $dff cell `$procdff$5374' with positive edge clock.
+Creating register for signal `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.\mem[14]' using process `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:205$79'.
+  created $dff cell `$procdff$5379' with positive edge clock.
+Creating register for signal `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.\mem[15]' using process `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:205$79'.
+  created $dff cell `$procdff$5384' with positive edge clock.
+Creating register for signal `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$mem2reg_wr$\mem$axis_fifo.v:218$69_ADDR' using process `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:205$79'.
+  created $adff cell `$procdff$5387' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$mem2reg_wr$\mem$axis_fifo.v:218$69_DATA' using process `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:205$79'.
+  created $adff cell `$procdff$5390' with positive edge clock and positive level reset.
+
+12.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+12.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.$proc$i2c_master_wbs_16.v:321$68'.
+Removing empty process `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.$proc$i2c_master_wbs_16.v:320$67'.
+Removing empty process `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.$proc$i2c_master_wbs_16.v:615$66'.
+Found and cleaned up 16 empty switches in `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.$proc$i2c_master_wbs_16.v:469$41'.
+Removing empty process `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.$proc$i2c_master_wbs_16.v:469$41'.
+Found and cleaned up 1 empty switch in `\EF_I2C_WB.$proc$i2c_0.v:145$31'.
+Removing empty process `EF_I2C_WB.$proc$i2c_0.v:145$31'.
+Found and cleaned up 1 empty switch in `\EF_I2C_WB.$proc$i2c_0.v:141$28'.
+Removing empty process `EF_I2C_WB.$proc$i2c_0.v:141$28'.
+Found and cleaned up 1 empty switch in `\EF_I2C_WB.$proc$i2c_0.v:137$25'.
+Removing empty process `EF_I2C_WB.$proc$i2c_0.v:137$25'.
+Removing empty process `i2c_master.$proc$i2c_master.v:219$242'.
+Removing empty process `i2c_master.$proc$i2c_master.v:199$241'.
+Found and cleaned up 2 empty switches in `\i2c_master.$proc$i2c_master.v:829$229'.
+Removing empty process `i2c_master.$proc$i2c_master.v:829$229'.
+Found and cleaned up 10 empty switches in `\i2c_master.$proc$i2c_master.v:599$221'.
+Removing empty process `i2c_master.$proc$i2c_master.v:599$221'.
+Found and cleaned up 25 empty switches in `\i2c_master.$proc$i2c_master.v:293$171'.
+Removing empty process `i2c_master.$proc$i2c_master.v:293$171'.
+Removing empty process `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:175$159'.
+Removing empty process `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:174$158'.
+Removing empty process `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:173$157'.
+Removing empty process `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:163$156'.
+Removing empty process `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:158$155'.
+Removing empty process `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:154$154'.
+Removing empty process `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:153$153'.
+Removing empty process `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:152$152'.
+Removing empty process `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:176$160'.
+Found and cleaned up 5 empty switches in `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:253$136'.
+Removing empty process `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:253$136'.
+Found and cleaned up 2 empty switches in `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:205$125'.
+Removing empty process `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.$proc$axis_fifo.v:205$125'.
+Removing empty process `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:175$113'.
+Removing empty process `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:174$112'.
+Removing empty process `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:173$111'.
+Removing empty process `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:163$110'.
+Removing empty process `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:158$109'.
+Removing empty process `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:154$108'.
+Removing empty process `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:153$107'.
+Removing empty process `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:152$106'.
+Removing empty process `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:176$114'.
+Found and cleaned up 5 empty switches in `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:253$90'.
+Removing empty process `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:253$90'.
+Found and cleaned up 2 empty switches in `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:205$79'.
+Removing empty process `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.$proc$axis_fifo.v:205$79'.
+Cleaned up 70 empty switches.
+
+12.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ef_util_gating_cell.
+Optimizing module $paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.
+<suppressed ~40 debug messages>
+Optimizing module EF_I2C_WB.
+<suppressed ~3 debug messages>
+Optimizing module EF_I2C_WB_wrapper.
+Optimizing module i2c_master.
+<suppressed ~119 debug messages>
+Optimizing module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+<suppressed ~39 debug messages>
+Optimizing module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+<suppressed ~39 debug messages>
+
+13. Executing OPT pass (performing simple optimizations).
+
+13.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ef_util_gating_cell.
+Optimizing module $paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.
+Optimizing module EF_I2C_WB.
+Optimizing module EF_I2C_WB_wrapper.
+Optimizing module i2c_master.
+Optimizing module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+Optimizing module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+
+13.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ef_util_gating_cell'.
+Computing hashes of 0 cells of `\ef_util_gating_cell'.
+Finding duplicate cells in `\ef_util_gating_cell'.
+Finding identical cells in module `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16'.
+Computing hashes of 374 cells of `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16'.
+Finding duplicate cells in `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16'.
+Computing hashes of 282 cells of `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16'.
+Finding duplicate cells in `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16'.
+<suppressed ~276 debug messages>
+Finding identical cells in module `\EF_I2C_WB'.
+Computing hashes of 36 cells of `\EF_I2C_WB'.
+Finding duplicate cells in `\EF_I2C_WB'.
+Computing hashes of 32 cells of `\EF_I2C_WB'.
+Finding duplicate cells in `\EF_I2C_WB'.
+<suppressed ~12 debug messages>
+Finding identical cells in module `\EF_I2C_WB_wrapper'.
+Computing hashes of 2 cells of `\EF_I2C_WB_wrapper'.
+Finding duplicate cells in `\EF_I2C_WB_wrapper'.
+Finding identical cells in module `\i2c_master'.
+Computing hashes of 1001 cells of `\i2c_master'.
+Finding duplicate cells in `\i2c_master'.
+Computing hashes of 764 cells of `\i2c_master'.
+Finding duplicate cells in `\i2c_master'.
+Computing hashes of 759 cells of `\i2c_master'.
+Finding duplicate cells in `\i2c_master'.
+Computing hashes of 758 cells of `\i2c_master'.
+Finding duplicate cells in `\i2c_master'.
+Computing hashes of 757 cells of `\i2c_master'.
+Finding duplicate cells in `\i2c_master'.
+<suppressed ~732 debug messages>
+Finding identical cells in module `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo'.
+Computing hashes of 146 cells of `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo'.
+Finding duplicate cells in `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo'.
+Computing hashes of 142 cells of `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo'.
+Finding duplicate cells in `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo'.
+<suppressed ~12 debug messages>
+Finding identical cells in module `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo'.
+Computing hashes of 146 cells of `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo'.
+Finding duplicate cells in `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo'.
+Computing hashes of 142 cells of `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo'.
+Finding duplicate cells in `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo'.
+<suppressed ~12 debug messages>
+Removed a total of 348 cells.
+
+13.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ef_util_gating_cell..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module $paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $procmux$819.
+    dead port 2/2 on $mux $procmux$817.
+    dead port 2/2 on $mux $procmux$809.
+    dead port 2/2 on $mux $procmux$807.
+    dead port 2/2 on $mux $procmux$799.
+    dead port 2/2 on $mux $procmux$797.
+    dead port 2/2 on $mux $procmux$789.
+    dead port 2/2 on $mux $procmux$787.
+    dead port 2/2 on $mux $procmux$780.
+    dead port 2/2 on $mux $procmux$778.
+    dead port 2/2 on $mux $procmux$768.
+    dead port 2/2 on $mux $procmux$766.
+    dead port 2/2 on $mux $procmux$756.
+    dead port 2/2 on $mux $procmux$754.
+    dead port 2/2 on $mux $procmux$745.
+    dead port 2/2 on $mux $procmux$743.
+    dead port 2/2 on $mux $procmux$741.
+    dead port 2/2 on $mux $procmux$730.
+    dead port 2/2 on $mux $procmux$728.
+    dead port 2/2 on $mux $procmux$726.
+    dead port 2/2 on $mux $procmux$724.
+    dead port 2/2 on $mux $procmux$712.
+    dead port 2/2 on $mux $procmux$710.
+    dead port 2/2 on $mux $procmux$708.
+    dead port 2/2 on $mux $procmux$697.
+    dead port 2/2 on $mux $procmux$695.
+    dead port 2/2 on $mux $procmux$693.
+    dead port 2/2 on $mux $procmux$682.
+    dead port 2/2 on $mux $procmux$680.
+    dead port 2/2 on $mux $procmux$678.
+    dead port 2/2 on $mux $procmux$676.
+    dead port 2/2 on $mux $procmux$664.
+    dead port 2/2 on $mux $procmux$662.
+    dead port 2/2 on $mux $procmux$660.
+    dead port 2/2 on $mux $procmux$658.
+    dead port 2/2 on $mux $procmux$646.
+    dead port 2/2 on $mux $procmux$644.
+    dead port 2/2 on $mux $procmux$642.
+    dead port 2/2 on $mux $procmux$632.
+    dead port 2/2 on $mux $procmux$630.
+    dead port 2/2 on $mux $procmux$628.
+    dead port 2/2 on $mux $procmux$618.
+    dead port 2/2 on $mux $procmux$616.
+    dead port 2/2 on $mux $procmux$614.
+    dead port 2/2 on $mux $procmux$604.
+    dead port 2/2 on $mux $procmux$602.
+    dead port 2/2 on $mux $procmux$600.
+    dead port 2/2 on $mux $procmux$590.
+    dead port 2/2 on $mux $procmux$588.
+    dead port 2/2 on $mux $procmux$586.
+    dead port 2/2 on $mux $procmux$576.
+    dead port 2/2 on $mux $procmux$574.
+    dead port 2/2 on $mux $procmux$572.
+    dead port 2/2 on $mux $procmux$562.
+    dead port 2/2 on $mux $procmux$560.
+    dead port 2/2 on $mux $procmux$558.
+    dead port 2/2 on $mux $procmux$548.
+    dead port 2/2 on $mux $procmux$546.
+    dead port 2/2 on $mux $procmux$544.
+    dead port 2/2 on $mux $procmux$534.
+    dead port 2/2 on $mux $procmux$532.
+    dead port 2/2 on $mux $procmux$530.
+    dead port 2/2 on $mux $procmux$521.
+    dead port 2/2 on $mux $procmux$519.
+    dead port 2/2 on $mux $procmux$517.
+    dead port 2/2 on $mux $procmux$508.
+    dead port 2/2 on $mux $procmux$506.
+    dead port 2/2 on $mux $procmux$504.
+    dead port 2/2 on $mux $procmux$495.
+    dead port 2/2 on $mux $procmux$493.
+    dead port 2/2 on $mux $procmux$491.
+    dead port 2/2 on $mux $procmux$482.
+    dead port 2/2 on $mux $procmux$480.
+    dead port 2/2 on $mux $procmux$478.
+    dead port 2/2 on $mux $procmux$476.
+    dead port 2/2 on $mux $procmux$466.
+    dead port 2/2 on $mux $procmux$464.
+    dead port 2/2 on $mux $procmux$462.
+    dead port 2/2 on $mux $procmux$454.
+    dead port 2/2 on $mux $procmux$452.
+    dead port 2/2 on $mux $procmux$450.
+    dead port 2/2 on $mux $procmux$998.
+    dead port 2/2 on $mux $procmux$442.
+    dead port 1/2 on $mux $procmux$440.
+    dead port 2/2 on $mux $procmux$432.
+    dead port 1/2 on $mux $procmux$430.
+    dead port 2/2 on $mux $procmux$992.
+    dead port 2/2 on $mux $procmux$986.
+    dead port 2/2 on $mux $procmux$421.
+    dead port 1/2 on $mux $procmux$419.
+    dead port 2/2 on $mux $procmux$980.
+    dead port 2/2 on $mux $procmux$974.
+    dead port 2/2 on $mux $procmux$409.
+    dead port 1/2 on $mux $procmux$407.
+    dead port 2/2 on $mux $procmux$404.
+    dead port 2/2 on $mux $procmux$396.
+    dead port 1/2 on $mux $procmux$394.
+    dead port 2/2 on $mux $procmux$968.
+    dead port 2/2 on $mux $procmux$386.
+    dead port 1/2 on $mux $procmux$384.
+    dead port 2/2 on $mux $procmux$962.
+    dead port 2/2 on $mux $procmux$956.
+    dead port 2/2 on $mux $procmux$374.
+    dead port 1/2 on $mux $procmux$372.
+    dead port 2/2 on $mux $procmux$950.
+    dead port 2/2 on $mux $procmux$944.
+    dead port 2/2 on $mux $procmux$362.
+    dead port 1/2 on $mux $procmux$360.
+    dead port 2/2 on $mux $procmux$938.
+    dead port 2/2 on $mux $procmux$932.
+    dead port 2/2 on $mux $procmux$350.
+    dead port 1/2 on $mux $procmux$348.
+    dead port 2/2 on $mux $procmux$926.
+    dead port 2/2 on $mux $procmux$920.
+    dead port 2/2 on $mux $procmux$339.
+    dead port 1/2 on $mux $procmux$337.
+    dead port 2/2 on $mux $procmux$914.
+    dead port 2/2 on $mux $procmux$328.
+    dead port 1/2 on $mux $procmux$326.
+    dead port 2/2 on $mux $procmux$908.
+    dead port 2/2 on $mux $procmux$318.
+    dead port 1/2 on $mux $procmux$316.
+    dead port 2/2 on $mux $procmux$902.
+    dead port 2/2 on $mux $procmux$896.
+    dead port 2/2 on $mux $procmux$307.
+    dead port 1/2 on $mux $procmux$305.
+    dead port 2/2 on $mux $procmux$894.
+    dead port 2/2 on $mux $procmux$885.
+    dead port 2/2 on $mux $procmux$295.
+    dead port 1/2 on $mux $procmux$293.
+    dead port 2/2 on $mux $procmux$883.
+    dead port 2/2 on $mux $procmux$874.
+    dead port 2/2 on $mux $procmux$283.
+    dead port 1/2 on $mux $procmux$281.
+    dead port 2/2 on $mux $procmux$872.
+    dead port 2/2 on $mux $procmux$272.
+    dead port 1/2 on $mux $procmux$270.
+    dead port 2/2 on $mux $procmux$863.
+    dead port 2/2 on $mux $procmux$861.
+    dead port 2/2 on $mux $procmux$261.
+    dead port 1/2 on $mux $procmux$259.
+    dead port 2/2 on $mux $procmux$852.
+    dead port 2/2 on $mux $procmux$251.
+    dead port 1/2 on $mux $procmux$249.
+    dead port 2/2 on $mux $procmux$850.
+    dead port 2/2 on $mux $procmux$841.
+    dead port 2/2 on $mux $procmux$839.
+    dead port 2/2 on $mux $procmux$830.
+    dead port 2/2 on $mux $procmux$828.
+Running muxtree optimizer on module \EF_I2C_WB..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \EF_I2C_WB_wrapper..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \i2c_master..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+      Replacing known input bits on port A of cell $procmux$1851: \delay_sda_reg -> 1'0
+      Replacing known input bits on port B of cell $procmux$1887: \delay_scl_reg -> 1'0
+      Replacing known input bits on port B of cell $procmux$1818: \delay_scl_reg -> 1'0
+      Replacing known input bits on port A of cell $procmux$1720: \delay_scl_reg -> 1'0
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $procmux$3496.
+    dead port 1/2 on $mux $procmux$4318.
+    dead port 2/2 on $mux $procmux$3494.
+    dead port 1/2 on $mux $procmux$3477.
+    dead port 2/2 on $mux $procmux$3474.
+    dead port 2/2 on $mux $procmux$3472.
+    dead port 1/2 on $mux $procmux$3455.
+    dead port 2/2 on $mux $procmux$3452.
+    dead port 2/2 on $mux $procmux$3450.
+    dead port 1/2 on $mux $procmux$3433.
+    dead port 2/2 on $mux $procmux$3430.
+    dead port 1/2 on $mux $procmux$4311.
+    dead port 2/2 on $mux $procmux$3428.
+    dead port 1/2 on $mux $procmux$3411.
+    dead port 2/2 on $mux $procmux$3408.
+    dead port 2/2 on $mux $procmux$3406.
+    dead port 1/2 on $mux $procmux$3389.
+    dead port 2/2 on $mux $procmux$3386.
+    dead port 2/2 on $mux $procmux$3384.
+    dead port 1/2 on $mux $procmux$3367.
+    dead port 2/2 on $mux $procmux$3364.
+    dead port 2/2 on $mux $procmux$3362.
+    dead port 1/2 on $mux $procmux$3345.
+    dead port 2/2 on $mux $procmux$3342.
+    dead port 2/2 on $mux $procmux$3340.
+    dead port 2/2 on $mux $procmux$3338.
+    dead port 1/2 on $mux $procmux$3320.
+    dead port 2/2 on $mux $procmux$3317.
+    dead port 2/2 on $mux $procmux$3315.
+    dead port 2/2 on $mux $procmux$3313.
+    dead port 1/2 on $mux $procmux$3295.
+    dead port 2/2 on $mux $procmux$3292.
+    dead port 2/2 on $mux $procmux$3290.
+    dead port 2/2 on $mux $procmux$3288.
+    dead port 1/2 on $mux $procmux$3270.
+    dead port 2/2 on $mux $procmux$3267.
+    dead port 1/2 on $mux $procmux$4194.
+    dead port 2/2 on $mux $procmux$3265.
+    dead port 2/2 on $mux $procmux$3263.
+    dead port 1/2 on $mux $procmux$3245.
+    dead port 2/2 on $mux $procmux$3242.
+    dead port 2/2 on $mux $procmux$3240.
+    dead port 1/2 on $mux $procmux$3238.
+    dead port 1/2 on $mux $procmux$3220.
+    dead port 2/2 on $mux $procmux$3217.
+    dead port 2/2 on $mux $procmux$3215.
+    dead port 1/2 on $mux $procmux$3213.
+    dead port 1/2 on $mux $procmux$3195.
+    dead port 2/2 on $mux $procmux$3192.
+    dead port 1/2 on $mux $procmux$3190.
+    dead port 1/2 on $mux $procmux$3173.
+    dead port 2/2 on $mux $procmux$3170.
+    dead port 1/2 on $mux $procmux$4364.
+    dead port 1/2 on $mux $procmux$3168.
+    dead port 1/2 on $mux $procmux$3151.
+    dead port 2/2 on $mux $procmux$3148.
+    dead port 1/2 on $mux $procmux$4177.
+    dead port 1/2 on $mux $procmux$3133.
+    dead port 2/2 on $mux $procmux$3130.
+    dead port 2/2 on $mux $procmux$4174.
+    dead port 1/2 on $mux $procmux$3115.
+    dead port 2/2 on $mux $procmux$3112.
+    dead port 1/2 on $mux $procmux$3097.
+    dead port 2/2 on $mux $procmux$3094.
+    dead port 1/2 on $mux $procmux$3079.
+    dead port 2/2 on $mux $procmux$3076.
+    dead port 1/2 on $mux $procmux$4157.
+    dead port 1/2 on $mux $procmux$3061.
+    dead port 2/2 on $mux $procmux$3058.
+    dead port 2/2 on $mux $procmux$4154.
+    dead port 1/2 on $mux $procmux$3043.
+    dead port 2/2 on $mux $procmux$3040.
+    dead port 1/2 on $mux $procmux$3025.
+    dead port 2/2 on $mux $procmux$3022.
+    dead port 1/2 on $mux $procmux$3007.
+    dead port 2/2 on $mux $procmux$3004.
+    dead port 1/2 on $mux $procmux$4137.
+    dead port 1/2 on $mux $procmux$2989.
+    dead port 2/2 on $mux $procmux$2986.
+    dead port 2/2 on $mux $procmux$4134.
+    dead port 1/2 on $mux $procmux$2971.
+    dead port 2/2 on $mux $procmux$2968.
+    dead port 2/2 on $mux $procmux$2966.
+    dead port 1/2 on $mux $procmux$2950.
+    dead port 2/2 on $mux $procmux$2947.
+    dead port 2/2 on $mux $procmux$2945.
+    dead port 1/2 on $mux $procmux$2929.
+    dead port 2/2 on $mux $procmux$2926.
+    dead port 1/2 on $mux $procmux$4117.
+    dead port 2/2 on $mux $procmux$2924.
+    dead port 1/2 on $mux $procmux$2908.
+    dead port 2/2 on $mux $procmux$2905.
+    dead port 2/2 on $mux $procmux$4114.
+    dead port 2/2 on $mux $procmux$2903.
+    dead port 1/2 on $mux $procmux$2887.
+    dead port 2/2 on $mux $procmux$2884.
+    dead port 2/2 on $mux $procmux$2882.
+    dead port 1/2 on $mux $procmux$2866.
+    dead port 2/2 on $mux $procmux$2863.
+    dead port 2/2 on $mux $procmux$2861.
+    dead port 1/2 on $mux $procmux$2845.
+    dead port 2/2 on $mux $procmux$2842.
+    dead port 1/2 on $mux $procmux$4097.
+    dead port 2/2 on $mux $procmux$2840.
+    dead port 1/2 on $mux $procmux$2824.
+    dead port 2/2 on $mux $procmux$2821.
+    dead port 2/2 on $mux $procmux$4094.
+    dead port 2/2 on $mux $procmux$2819.
+    dead port 1/2 on $mux $procmux$2803.
+    dead port 2/2 on $mux $procmux$2800.
+    dead port 1/2 on $mux $procmux$4294.
+    dead port 2/2 on $mux $procmux$2798.
+    dead port 1/2 on $mux $procmux$2782.
+    dead port 2/2 on $mux $procmux$2779.
+    dead port 2/2 on $mux $procmux$2777.
+    dead port 1/2 on $mux $procmux$2761.
+    dead port 2/2 on $mux $procmux$2758.
+    dead port 1/2 on $mux $procmux$4077.
+    dead port 2/2 on $mux $procmux$2756.
+    dead port 2/2 on $mux $procmux$2754.
+    dead port 1/2 on $mux $procmux$2737.
+    dead port 2/2 on $mux $procmux$2734.
+    dead port 2/2 on $mux $procmux$4074.
+    dead port 2/2 on $mux $procmux$2732.
+    dead port 2/2 on $mux $procmux$2730.
+    dead port 1/2 on $mux $procmux$2713.
+    dead port 2/2 on $mux $procmux$2710.
+    dead port 2/2 on $mux $procmux$2708.
+    dead port 2/2 on $mux $procmux$2706.
+    dead port 1/2 on $mux $procmux$2690.
+    dead port 2/2 on $mux $procmux$2687.
+    dead port 2/2 on $mux $procmux$2685.
+    dead port 2/2 on $mux $procmux$2683.
+    dead port 1/2 on $mux $procmux$2666.
+    dead port 2/2 on $mux $procmux$2663.
+    dead port 1/2 on $mux $procmux$4057.
+    dead port 2/2 on $mux $procmux$2661.
+    dead port 2/2 on $mux $procmux$2659.
+    dead port 1/2 on $mux $procmux$2642.
+    dead port 2/2 on $mux $procmux$2639.
+    dead port 2/2 on $mux $procmux$4054.
+    dead port 2/2 on $mux $procmux$2637.
+    dead port 1/2 on $mux $procmux$2635.
+    dead port 1/2 on $mux $procmux$2618.
+    dead port 2/2 on $mux $procmux$2615.
+    dead port 2/2 on $mux $procmux$2613.
+    dead port 1/2 on $mux $procmux$2611.
+    dead port 1/2 on $mux $procmux$2594.
+    dead port 2/2 on $mux $procmux$2591.
+    dead port 2/2 on $mux $procmux$2589.
+    dead port 1/2 on $mux $procmux$2587.
+    dead port 1/2 on $mux $procmux$2570.
+    dead port 2/2 on $mux $procmux$2567.
+    dead port 1/2 on $mux $procmux$4037.
+    dead port 1/2 on $mux $procmux$2565.
+    dead port 1/2 on $mux $procmux$2549.
+    dead port 2/2 on $mux $procmux$2546.
+    dead port 2/2 on $mux $procmux$4034.
+    dead port 1/2 on $mux $procmux$2544.
+    dead port 1/2 on $mux $procmux$2528.
+    dead port 2/2 on $mux $procmux$2525.
+    dead port 1/2 on $mux $procmux$4383.
+    dead port 1/2 on $mux $procmux$2523.
+    dead port 1/2 on $mux $procmux$2507.
+    dead port 2/2 on $mux $procmux$2504.
+    dead port 1/2 on $mux $procmux$2490.
+    dead port 2/2 on $mux $procmux$2487.
+    dead port 1/2 on $mux $procmux$4017.
+    dead port 1/2 on $mux $procmux$2473.
+    dead port 2/2 on $mux $procmux$2470.
+    dead port 2/2 on $mux $procmux$4014.
+    dead port 1/2 on $mux $procmux$2456.
+    dead port 2/2 on $mux $procmux$2453.
+    dead port 1/2 on $mux $procmux$2441.
+    dead port 2/2 on $mux $procmux$2438.
+    dead port 2/2 on $mux $procmux$4012.
+    dead port 1/2 on $mux $procmux$2426.
+    dead port 2/2 on $mux $procmux$2423.
+    dead port 1/2 on $mux $procmux$2411.
+    dead port 2/2 on $mux $procmux$2408.
+    dead port 1/2 on $mux $procmux$3994.
+    dead port 1/2 on $mux $procmux$2396.
+    dead port 2/2 on $mux $procmux$2393.
+    dead port 2/2 on $mux $procmux$3991.
+    dead port 1/2 on $mux $procmux$2391.
+    dead port 1/2 on $mux $procmux$2378.
+    dead port 2/2 on $mux $procmux$2375.
+    dead port 1/2 on $mux $procmux$4354.
+    dead port 1/2 on $mux $procmux$2373.
+    dead port 1/2 on $mux $procmux$2360.
+    dead port 2/2 on $mux $procmux$2357.
+    dead port 2/2 on $mux $procmux$3989.
+    dead port 1/2 on $mux $procmux$2355.
+    dead port 1/2 on $mux $procmux$2342.
+    dead port 2/2 on $mux $procmux$2339.
+    dead port 1/2 on $mux $procmux$2337.
+    dead port 1/2 on $mux $procmux$2324.
+    dead port 2/2 on $mux $procmux$2321.
+    dead port 1/2 on $mux $procmux$3971.
+    dead port 1/2 on $mux $procmux$2310.
+    dead port 2/2 on $mux $procmux$2307.
+    dead port 2/2 on $mux $procmux$3968.
+    dead port 1/2 on $mux $procmux$2296.
+    dead port 2/2 on $mux $procmux$2293.
+    dead port 1/2 on $mux $procmux$4278.
+    dead port 1/2 on $mux $procmux$2282.
+    dead port 2/2 on $mux $procmux$2279.
+    dead port 2/2 on $mux $procmux$3966.
+    dead port 1/2 on $mux $procmux$2268.
+    dead port 2/2 on $mux $procmux$2265.
+    dead port 1/2 on $mux $procmux$2255.
+    dead port 2/2 on $mux $procmux$2252.
+    dead port 1/2 on $mux $procmux$3948.
+    dead port 1/2 on $mux $procmux$2242.
+    dead port 2/2 on $mux $procmux$2239.
+    dead port 2/2 on $mux $procmux$3945.
+    dead port 1/2 on $mux $procmux$2229.
+    dead port 2/2 on $mux $procmux$2226.
+    dead port 1/2 on $mux $procmux$2216.
+    dead port 2/2 on $mux $procmux$2213.
+    dead port 2/2 on $mux $procmux$3943.
+    dead port 1/2 on $mux $procmux$2203.
+    dead port 2/2 on $mux $procmux$2200.
+    dead port 1/2 on $mux $procmux$2191.
+    dead port 2/2 on $mux $procmux$2188.
+    dead port 1/2 on $mux $procmux$3925.
+    dead port 1/2 on $mux $procmux$2179.
+    dead port 2/2 on $mux $procmux$2176.
+    dead port 2/2 on $mux $procmux$3922.
+    dead port 1/2 on $mux $procmux$2167.
+    dead port 2/2 on $mux $procmux$2164.
+    dead port 1/2 on $mux $procmux$2155.
+    dead port 2/2 on $mux $procmux$2152.
+    dead port 2/2 on $mux $procmux$3920.
+    dead port 1/2 on $mux $procmux$2144.
+    dead port 2/2 on $mux $procmux$2141.
+    dead port 1/2 on $mux $procmux$2133.
+    dead port 2/2 on $mux $procmux$2130.
+    dead port 1/2 on $mux $procmux$3902.
+    dead port 1/2 on $mux $procmux$2128.
+    dead port 1/2 on $mux $procmux$2119.
+    dead port 2/2 on $mux $procmux$2116.
+    dead port 2/2 on $mux $procmux$3899.
+    dead port 1/2 on $mux $procmux$2114.
+    dead port 1/2 on $mux $procmux$2105.
+    dead port 2/2 on $mux $procmux$2102.
+    dead port 1/2 on $mux $procmux$2095.
+    dead port 2/2 on $mux $procmux$2092.
+    dead port 2/2 on $mux $procmux$3897.
+    dead port 1/2 on $mux $procmux$2085.
+    dead port 2/2 on $mux $procmux$2082.
+    dead port 1/2 on $mux $procmux$2075.
+    dead port 2/2 on $mux $procmux$2072.
+    dead port 1/2 on $mux $procmux$3879.
+    dead port 1/2 on $mux $procmux$2065.
+    dead port 2/2 on $mux $procmux$2062.
+    dead port 2/2 on $mux $procmux$3876.
+    dead port 1/2 on $mux $procmux$2055.
+    dead port 2/2 on $mux $procmux$2052.
+    dead port 1/2 on $mux $procmux$4344.
+    dead port 1/2 on $mux $procmux$2045.
+    dead port 2/2 on $mux $procmux$2042.
+    dead port 2/2 on $mux $procmux$3874.
+    dead port 1/2 on $mux $procmux$2035.
+    dead port 2/2 on $mux $procmux$2032.
+    dead port 1/2 on $mux $procmux$2030.
+    dead port 1/2 on $mux $procmux$2022.
+    dead port 2/2 on $mux $procmux$2019.
+    dead port 1/2 on $mux $procmux$3856.
+    dead port 1/2 on $mux $procmux$2017.
+    dead port 1/2 on $mux $procmux$2009.
+    dead port 2/2 on $mux $procmux$2006.
+    dead port 2/2 on $mux $procmux$3853.
+    dead port 1/2 on $mux $procmux$2004.
+    dead port 1/2 on $mux $procmux$1996.
+    dead port 2/2 on $mux $procmux$1993.
+    dead port 1/2 on $mux $procmux$4261.
+    dead port 1/2 on $mux $procmux$1991.
+    dead port 2/2 on $mux $procmux$3851.
+    dead port 1/2 on $mux $procmux$4401.
+    dead port 1/2 on $mux $procmux$3833.
+    dead port 2/2 on $mux $procmux$3830.
+    dead port 1/2 on $mux $procmux$4410.
+    dead port 1/2 on $mux $procmux$1908.
+    dead port 1/2 on $mux $procmux$1899.
+    dead port 1/2 on $mux $procmux$1890.
+    dead port 1/2 on $mux $procmux$1881.
+    dead port 1/2 on $mux $procmux$1872.
+    dead port 1/2 on $mux $procmux$1863.
+    dead port 1/2 on $mux $procmux$1854.
+    dead port 1/2 on $mux $procmux$1845.
+    dead port 1/2 on $mux $procmux$1836.
+    dead port 1/2 on $mux $procmux$1833.
+    dead port 1/2 on $mux $procmux$1824.
+    dead port 1/2 on $mux $procmux$1821.
+    dead port 1/2 on $mux $procmux$1812.
+    dead port 1/2 on $mux $procmux$1809.
+    dead port 1/2 on $mux $procmux$1800.
+    dead port 1/2 on $mux $procmux$1797.
+    dead port 1/2 on $mux $procmux$1788.
+    dead port 1/2 on $mux $procmux$1785.
+    dead port 1/2 on $mux $procmux$1776.
+    dead port 1/2 on $mux $procmux$1773.
+    dead port 1/2 on $mux $procmux$1764.
+    dead port 1/2 on $mux $procmux$1761.
+    dead port 1/2 on $mux $procmux$1752.
+    dead port 1/2 on $mux $procmux$1749.
+    dead port 1/2 on $mux $procmux$1746.
+    dead port 1/2 on $mux $procmux$1732.
+    dead port 1/2 on $mux $procmux$1729.
+    dead port 1/2 on $mux $procmux$1726.
+    dead port 1/2 on $mux $procmux$1712.
+    dead port 1/2 on $mux $procmux$1709.
+    dead port 1/2 on $mux $procmux$1706.
+    dead port 1/2 on $mux $procmux$1696.
+    dead port 1/2 on $mux $procmux$1693.
+    dead port 1/2 on $mux $procmux$1690.
+    dead port 2/2 on $mux $procmux$3828.
+    dead port 2/2 on $mux $procmux$3826.
+    dead port 1/2 on $mux $procmux$1672.
+    dead port 1/2 on $mux $procmux$1669.
+    dead port 1/2 on $mux $procmux$1666.
+    dead port 1/2 on $mux $procmux$3807.
+    dead port 2/2 on $mux $procmux$3804.
+    dead port 2/2 on $mux $procmux$3802.
+    dead port 2/2 on $mux $procmux$3800.
+    dead port 1/2 on $mux $procmux$3781.
+    dead port 2/2 on $mux $procmux$3778.
+    dead port 2/2 on $mux $procmux$3776.
+    dead port 1/2 on $mux $procmux$1642.
+    dead port 1/2 on $mux $procmux$1639.
+    dead port 1/2 on $mux $procmux$1636.
+    dead port 2/2 on $mux $procmux$3774.
+    dead port 1/2 on $mux $procmux$3755.
+    dead port 2/2 on $mux $procmux$3752.
+    dead port 1/2 on $mux $procmux$3736.
+    dead port 2/2 on $mux $procmux$3733.
+    dead port 1/2 on $mux $procmux$4244.
+    dead port 1/2 on $mux $procmux$3717.
+    dead port 2/2 on $mux $procmux$3714.
+    dead port 1/2 on $mux $procmux$1615.
+    dead port 1/2 on $mux $procmux$1612.
+    dead port 1/2 on $mux $procmux$1609.
+    dead port 1/2 on $mux $procmux$3698.
+    dead port 2/2 on $mux $procmux$3695.
+    dead port 1/2 on $mux $procmux$1596.
+    dead port 1/2 on $mux $procmux$1593.
+    dead port 1/2 on $mux $procmux$1590.
+    dead port 2/2 on $mux $procmux$1587.
+    dead port 1/2 on $mux $procmux$4332.
+    dead port 1/2 on $mux $procmux$1563.
+    dead port 1/2 on $mux $procmux$1560.
+    dead port 1/2 on $mux $procmux$1557.
+    dead port 2/2 on $mux $procmux$1554.
+    dead port 1/2 on $mux $procmux$1530.
+    dead port 1/2 on $mux $procmux$1527.
+    dead port 1/2 on $mux $procmux$1524.
+    dead port 2/2 on $mux $procmux$1521.
+    dead port 1/2 on $mux $procmux$3679.
+    dead port 1/2 on $mux $procmux$1497.
+    dead port 1/2 on $mux $procmux$1494.
+    dead port 1/2 on $mux $procmux$1491.
+    dead port 2/2 on $mux $procmux$1488.
+    dead port 2/2 on $mux $procmux$3676.
+    dead port 1/2 on $mux $procmux$1465.
+    dead port 1/2 on $mux $procmux$1462.
+    dead port 1/2 on $mux $procmux$1459.
+    dead port 2/2 on $mux $procmux$1456.
+    dead port 1/2 on $mux $procmux$1433.
+    dead port 1/2 on $mux $procmux$1430.
+    dead port 1/2 on $mux $procmux$1427.
+    dead port 2/2 on $mux $procmux$1424.
+    dead port 1/2 on $mux $procmux$1401.
+    dead port 1/2 on $mux $procmux$1398.
+    dead port 1/2 on $mux $procmux$1395.
+    dead port 2/2 on $mux $procmux$1392.
+    dead port 1/2 on $mux $procmux$3660.
+    dead port 1/2 on $mux $procmux$1390.
+    dead port 1/2 on $mux $procmux$1366.
+    dead port 1/2 on $mux $procmux$1363.
+    dead port 1/2 on $mux $procmux$1360.
+    dead port 2/2 on $mux $procmux$1357.
+    dead port 2/2 on $mux $procmux$3657.
+    dead port 1/2 on $mux $procmux$1355.
+    dead port 1/2 on $mux $procmux$1331.
+    dead port 1/2 on $mux $procmux$1328.
+    dead port 1/2 on $mux $procmux$1325.
+    dead port 2/2 on $mux $procmux$1322.
+    dead port 1/2 on $mux $procmux$1320.
+    dead port 1/2 on $mux $procmux$1296.
+    dead port 1/2 on $mux $procmux$1293.
+    dead port 1/2 on $mux $procmux$1290.
+    dead port 2/2 on $mux $procmux$1287.
+    dead port 1/2 on $mux $procmux$1285.
+    dead port 1/2 on $mux $procmux$1282.
+    dead port 1/2 on $mux $procmux$1258.
+    dead port 1/2 on $mux $procmux$1255.
+    dead port 1/2 on $mux $procmux$1252.
+    dead port 2/2 on $mux $procmux$1249.
+    dead port 1/2 on $mux $procmux$3641.
+    dead port 1/2 on $mux $procmux$1247.
+    dead port 1/2 on $mux $procmux$1244.
+    dead port 1/2 on $mux $procmux$1220.
+    dead port 1/2 on $mux $procmux$1217.
+    dead port 1/2 on $mux $procmux$1214.
+    dead port 2/2 on $mux $procmux$1211.
+    dead port 2/2 on $mux $procmux$3638.
+    dead port 1/2 on $mux $procmux$1209.
+    dead port 1/2 on $mux $procmux$1206.
+    dead port 1/2 on $mux $procmux$1182.
+    dead port 1/2 on $mux $procmux$1179.
+    dead port 1/2 on $mux $procmux$1176.
+    dead port 2/2 on $mux $procmux$1173.
+    dead port 1/2 on $mux $procmux$4227.
+    dead port 1/2 on $mux $procmux$1171.
+    dead port 1/2 on $mux $procmux$1168.
+    dead port 1/2 on $mux $procmux$1165.
+    dead port 1/2 on $mux $procmux$1141.
+    dead port 1/2 on $mux $procmux$1138.
+    dead port 1/2 on $mux $procmux$1135.
+    dead port 2/2 on $mux $procmux$1132.
+    dead port 1/2 on $mux $procmux$1130.
+    dead port 1/2 on $mux $procmux$1127.
+    dead port 1/2 on $mux $procmux$1124.
+    dead port 1/2 on $mux $procmux$1100.
+    dead port 1/2 on $mux $procmux$1097.
+    dead port 1/2 on $mux $procmux$1094.
+    dead port 2/2 on $mux $procmux$1091.
+    dead port 1/2 on $mux $procmux$3622.
+    dead port 1/2 on $mux $procmux$1089.
+    dead port 1/2 on $mux $procmux$1086.
+    dead port 1/2 on $mux $procmux$1083.
+    dead port 2/2 on $mux $procmux$3619.
+    dead port 1/2 on $mux $procmux$4393.
+    dead port 1/2 on $mux $procmux$3603.
+    dead port 2/2 on $mux $procmux$3600.
+    dead port 1/2 on $mux $procmux$4325.
+    dead port 1/2 on $mux $procmux$3584.
+    dead port 2/2 on $mux $procmux$3581.
+    dead port 1/2 on $mux $procmux$3565.
+    dead port 1/2 on $mux $procmux$3499.
+    dead port 1/2 on $mux $procmux$3521.
+    dead port 2/2 on $mux $procmux$3562.
+    dead port 2/2 on $mux $procmux$3518.
+    dead port 1/2 on $mux $procmux$4374.
+    dead port 2/2 on $mux $procmux$3560.
+    dead port 2/2 on $mux $procmux$3516.
+    dead port 1/2 on $mux $procmux$3543.
+    dead port 2/2 on $mux $procmux$3540.
+    dead port 1/2 on $mux $procmux$4210.
+    dead port 2/2 on $mux $procmux$3538.
+Running muxtree optimizer on module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 1/2 on $mux $procmux$4526.
+    dead port 2/2 on $mux $procmux$4526.
+    dead port 1/2 on $mux $procmux$4523.
+    dead port 2/2 on $mux $procmux$4523.
+    dead port 1/2 on $mux $procmux$4520.
+    dead port 2/2 on $mux $procmux$4520.
+    dead port 1/2 on $mux $procmux$4517.
+    dead port 2/2 on $mux $procmux$4517.
+    dead port 1/2 on $mux $procmux$4493.
+    dead port 2/2 on $mux $procmux$4493.
+    dead port 1/2 on $mux $procmux$4490.
+    dead port 2/2 on $mux $procmux$4490.
+    dead port 2/2 on $mux $procmux$4487.
+Running muxtree optimizer on module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 1/2 on $mux $procmux$4788.
+    dead port 2/2 on $mux $procmux$4788.
+    dead port 1/2 on $mux $procmux$4785.
+    dead port 2/2 on $mux $procmux$4785.
+    dead port 1/2 on $mux $procmux$4782.
+    dead port 2/2 on $mux $procmux$4782.
+    dead port 1/2 on $mux $procmux$4779.
+    dead port 2/2 on $mux $procmux$4779.
+    dead port 1/2 on $mux $procmux$4755.
+    dead port 2/2 on $mux $procmux$4755.
+    dead port 1/2 on $mux $procmux$4752.
+    dead port 2/2 on $mux $procmux$4752.
+    dead port 2/2 on $mux $procmux$4749.
+Removed 626 multiplexer ports.
+<suppressed ~1120 debug messages>
+
+13.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ef_util_gating_cell.
+  Optimizing cells in module $paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.
+  Optimizing cells in module \EF_I2C_WB.
+  Optimizing cells in module \EF_I2C_WB_wrapper.
+  Optimizing cells in module \i2c_master.
+    New ctrl vector for $pmux cell $procmux$1720: $auto$opt_reduce.cc:135:opt_pmux$5404
+    New ctrl vector for $pmux cell $procmux$1680: { $auto$opt_reduce.cc:135:opt_pmux$5408 $auto$opt_reduce.cc:135:opt_pmux$5406 }
+    New ctrl vector for $pmux cell $procmux$1649: { $procmux$1650_CMP $procmux$1721_CMP $auto$opt_reduce.cc:135:opt_pmux$5410 $procmux$1682_CMP $procmux$1744_CMP $procmux$1722_CMP $procmux$1684_CMP $procmux$1723_CMP $procmux$1686_CMP $procmux$1661_CMP $procmux$1724_CMP $procmux$1663_CMP $procmux$1688_CMP }
+    New ctrl vector for $pmux cell $procmux$1622: { $auto$opt_reduce.cc:135:opt_pmux$5412 $procmux$1723_CMP $procmux$1663_CMP $procmux$1688_CMP }
+    New ctrl vector for $pmux cell $procmux$4406: $auto$opt_reduce.cc:135:opt_pmux$5414
+    New ctrl vector for $pmux cell $procmux$4198: { $auto$opt_reduce.cc:135:opt_pmux$5416 $procmux$4360_CMP $procmux$4361_CMP $procmux$4305_CMP $procmux$4306_CMP $procmux$4391_CMP $procmux$4342_CMP $procmux$4309_CMP }
+  Optimizing cells in module \i2c_master.
+  Optimizing cells in module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+  Optimizing cells in module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+Performed a total of 6 changes.
+
+13.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ef_util_gating_cell'.
+Computing hashes of 0 cells of `\ef_util_gating_cell'.
+Finding duplicate cells in `\ef_util_gating_cell'.
+Finding identical cells in module `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16'.
+Computing hashes of 133 cells of `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16'.
+Finding duplicate cells in `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16'.
+Finding identical cells in module `\EF_I2C_WB'.
+Computing hashes of 32 cells of `\EF_I2C_WB'.
+Finding duplicate cells in `\EF_I2C_WB'.
+Finding identical cells in module `\EF_I2C_WB_wrapper'.
+Computing hashes of 2 cells of `\EF_I2C_WB_wrapper'.
+Finding duplicate cells in `\EF_I2C_WB_wrapper'.
+Finding identical cells in module `\i2c_master'.
+Computing hashes of 313 cells of `\i2c_master'.
+Finding duplicate cells in `\i2c_master'.
+Computing hashes of 291 cells of `\i2c_master'.
+Finding duplicate cells in `\i2c_master'.
+Computing hashes of 281 cells of `\i2c_master'.
+Finding duplicate cells in `\i2c_master'.
+<suppressed ~96 debug messages>
+Finding identical cells in module `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo'.
+Computing hashes of 135 cells of `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo'.
+Finding duplicate cells in `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo'.
+Finding identical cells in module `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo'.
+Computing hashes of 135 cells of `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo'.
+Finding duplicate cells in `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo'.
+Removed a total of 32 cells.
+
+13.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $procdff$5034 ($adff) from module $paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16 (D = $2\prescale_next[15:0], Q = \prescale_reg).
+Adding EN signal on $procdff$5040 ($adff) from module $paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16 (D = $2\cmd_fifo_overflow_next[0:0], Q = \cmd_fifo_overflow_reg).
+Adding EN signal on $procdff$5016 ($adff) from module $paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16 (D = $2\cmd_stop_next[0:0], Q = \cmd_stop_reg).
+Adding EN signal on $procdff$5010 ($adff) from module $paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16 (D = $2\cmd_write_next[0:0], Q = \cmd_write_reg).
+Adding EN signal on $procdff$5028 ($adff) from module $paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16 (D = $2\data_in_last_next[0:0], Q = \data_in_last_reg).
+Adding EN signal on $procdff$5013 ($adff) from module $paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16 (D = $2\cmd_write_multiple_next[0:0], Q = \cmd_write_multiple_reg).
+Adding EN signal on $procdff$5043 ($adff) from module $paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16 (D = $2\write_fifo_overflow_next[0:0], Q = \write_fifo_overflow_reg).
+Adding EN signal on $procdff$5007 ($adff) from module $paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16 (D = $2\cmd_read_next[0:0], Q = \cmd_read_reg).
+Adding EN signal on $procdff$5022 ($adff) from module $paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16 (D = $2\data_in_next[7:0], Q = \data_in_reg).
+Adding EN signal on $procdff$5004 ($adff) from module $paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16 (D = $2\cmd_start_next[0:0], Q = \cmd_start_reg).
+Adding EN signal on $procdff$5001 ($adff) from module $paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16 (D = $2\cmd_address_next[6:0], Q = \cmd_address_reg).
+Adding EN signal on $procdff$5049 ($adff) from module EF_I2C_WB (D = \dat_i [8:0], Q = \IM_REG).
+Adding EN signal on $procdff$5052 ($adff) from module EF_I2C_WB (D = \dat_i [0], Q = \GCLK_REG).
+Adding EN signal on $procdff$5094 ($adff) from module i2c_master (D = $2\bit_count_next[3:0], Q = \bit_count_reg).
+Adding EN signal on $procdff$5082 ($adff) from module i2c_master (D = $2\mode_stop_next[0:0], Q = \mode_stop_reg).
+Adding EN signal on $procdff$5109 ($adff) from module i2c_master (D = $2\m_axis_data_tlast_next[0:0], Q = \m_axis_data_tlast_reg).
+Adding EN signal on $procdff$5079 ($adff) from module i2c_master (D = $2\mode_write_multiple_next[0:0], Q = \mode_write_multiple_reg).
+Adding EN signal on $procdff$5076 ($adff) from module i2c_master (D = $2\mode_read_next[0:0], Q = \mode_read_reg).
+Adding EN signal on $procdff$5073 ($adff) from module i2c_master (D = $2\last_next[0:0], Q = \last_reg).
+Adding EN signal on $procdff$5070 ($adff) from module i2c_master (D = $2\data_next[7:0], Q = \data_reg).
+Adding EN signal on $procdff$5103 ($adff) from module i2c_master (D = $2\m_axis_data_tdata_next[7:0], Q = \m_axis_data_tdata_reg).
+Adding EN signal on $procdff$5067 ($adff) from module i2c_master (D = $2\addr_next[6:0], Q = \addr_reg).
+Adding EN signal on $procdff$5133 ($adff) from module i2c_master (D = $procmux$1062_Y, Q = \bus_active_reg).
+Adding EN signal on $procdff$5058 ($adff) from module i2c_master (D = $2\state_next[4:0], Q = \state_reg).
+Adding EN signal on $procdff$5207 ($dff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo (D = \s_axis_tdata, Q = \mem[5]).
+Adding EN signal on $procdff$5212 ($dff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo (D = \s_axis_tdata, Q = \mem[6]).
+Adding EN signal on $procdff$5197 ($dff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo (D = \s_axis_tdata, Q = \mem[3]).
+Adding EN signal on $procdff$5242 ($dff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo (D = \s_axis_tdata, Q = \mem[12]).
+Adding EN signal on $procdff$5202 ($dff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo (D = \s_axis_tdata, Q = \mem[4]).
+Adding EN signal on $procdff$5257 ($dff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo (D = \s_axis_tdata, Q = \mem[15]).
+Adding EN signal on $procdff$5247 ($dff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo (D = \s_axis_tdata, Q = \mem[13]).
+Adding EN signal on $procdff$5139 ($adff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo (D = $add$axis_fifo.v:281$150_Y [4:0], Q = \rd_ptr_reg).
+Adding EN signal on $procdff$5142 ($adff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo (D = $procmux$4497_Y, Q = \m_axis_tvalid_pipe_reg [1]).
+Adding EN signal on $procdff$5142 ($adff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo (D = $procmux$4504_Y, Q = \m_axis_tvalid_pipe_reg [0]).
+Adding EN signal on $procdff$5217 ($dff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo (D = \s_axis_tdata, Q = \mem[7]).
+Adding EN signal on $procdff$5150 ($dff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo (D = $3$mem2reg_rd$\mem$axis_fifo.v:277$116_DATA[11:0]$148, Q = \m_axis_pipe_reg[0]).
+Adding EN signal on $procdff$5153 ($adff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo (D = \m_axis_pipe_reg[0], Q = \m_axis_pipe_reg[1]).
+Adding EN signal on $procdff$5222 ($dff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo (D = \s_axis_tdata, Q = \mem[8]).
+Adding EN signal on $procdff$5162 ($adff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo (D = $add$axis_fifo.v:219$135_Y [4:0], Q = \wr_ptr_reg).
+Adding EN signal on $procdff$5227 ($dff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo (D = \s_axis_tdata, Q = \mem[9]).
+Handling D = Q on $procdff$5165 ($adff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo (removing D path).
+Adding EN signal on $procdff$5252 ($dff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo (D = \s_axis_tdata, Q = \mem[14]).
+Handling D = Q on $procdff$5168 ($adff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo (removing D path).
+Handling D = Q on $procdff$5171 ($adff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo (removing D path).
+Adding EN signal on $procdff$5232 ($dff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo (D = \s_axis_tdata, Q = \mem[10]).
+Handling D = Q on $procdff$5174 ($adff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo (removing D path).
+Handling D = Q on $procdff$5177 ($adff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo (removing D path).
+Adding EN signal on $procdff$5182 ($dff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo (D = \s_axis_tdata, Q = \mem[0]).
+Adding EN signal on $procdff$5237 ($dff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo (D = \s_axis_tdata, Q = \mem[11]).
+Adding EN signal on $procdff$5187 ($dff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo (D = \s_axis_tdata, Q = \mem[1]).
+Adding EN signal on $procdff$5192 ($dff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo (D = \s_axis_tdata, Q = \mem[2]).
+Setting constant 0-bit at position 0 on $procdff$5177 ($dlatch) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+Setting constant 0-bit at position 0 on $procdff$5171 ($dlatch) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+Setting constant 0-bit at position 0 on $procdff$5165 ($dlatch) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+Setting constant 0-bit at position 1 on $procdff$5165 ($dlatch) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+Setting constant 0-bit at position 2 on $procdff$5165 ($dlatch) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+Setting constant 0-bit at position 3 on $procdff$5165 ($dlatch) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+Setting constant 0-bit at position 4 on $procdff$5165 ($dlatch) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+Setting constant 0-bit at position 0 on $procdff$5174 ($dlatch) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+Setting constant 1-bit at position 0 on $procdff$5260 ($adff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+Setting constant 1-bit at position 1 on $procdff$5260 ($adff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+Setting constant 1-bit at position 2 on $procdff$5260 ($adff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+Setting constant 1-bit at position 3 on $procdff$5260 ($adff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+Setting constant 0-bit at position 0 on $procdff$5168 ($dlatch) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+Setting constant 1-bit at position 0 on $procdff$5159 ($adff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+Setting constant 1-bit at position 1 on $procdff$5159 ($adff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+Setting constant 1-bit at position 2 on $procdff$5159 ($adff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+Setting constant 1-bit at position 3 on $procdff$5159 ($adff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+Setting constant 1-bit at position 4 on $procdff$5159 ($adff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+Setting constant 1-bit at position 5 on $procdff$5159 ($adff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+Setting constant 1-bit at position 6 on $procdff$5159 ($adff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+Setting constant 1-bit at position 7 on $procdff$5159 ($adff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+Setting constant 1-bit at position 8 on $procdff$5159 ($adff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+Setting constant 1-bit at position 9 on $procdff$5159 ($adff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+Setting constant 1-bit at position 10 on $procdff$5159 ($adff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+Setting constant 1-bit at position 11 on $procdff$5159 ($adff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+Setting constant 0-bit at position 0 on $procdff$5145 ($adff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+Setting constant 0-bit at position 1 on $procdff$5145 ($adff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+Setting constant 0-bit at position 2 on $procdff$5145 ($adff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+Setting constant 0-bit at position 3 on $procdff$5145 ($adff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+Setting constant 0-bit at position 4 on $procdff$5145 ($adff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+Setting constant 0-bit at position 5 on $procdff$5145 ($adff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+Setting constant 0-bit at position 6 on $procdff$5145 ($adff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+Setting constant 0-bit at position 7 on $procdff$5145 ($adff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+Setting constant 0-bit at position 8 on $procdff$5145 ($adff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+Setting constant 0-bit at position 9 on $procdff$5145 ($adff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+Setting constant 0-bit at position 10 on $procdff$5145 ($adff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+Setting constant 0-bit at position 11 on $procdff$5145 ($adff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+Setting constant 0-bit at position 12 on $procdff$5145 ($adff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+Setting constant 0-bit at position 13 on $procdff$5145 ($adff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+Setting constant 0-bit at position 14 on $procdff$5145 ($adff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+Setting constant 0-bit at position 15 on $procdff$5145 ($adff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+Setting constant 0-bit at position 16 on $procdff$5145 ($adff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+Setting constant 0-bit at position 17 on $procdff$5145 ($adff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+Setting constant 0-bit at position 18 on $procdff$5145 ($adff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+Setting constant 0-bit at position 19 on $procdff$5145 ($adff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+Setting constant 0-bit at position 20 on $procdff$5145 ($adff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+Setting constant 0-bit at position 21 on $procdff$5145 ($adff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+Setting constant 0-bit at position 22 on $procdff$5145 ($adff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+Setting constant 0-bit at position 23 on $procdff$5145 ($adff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+Setting constant 0-bit at position 24 on $procdff$5145 ($adff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+Setting constant 0-bit at position 25 on $procdff$5145 ($adff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+Setting constant 0-bit at position 26 on $procdff$5145 ($adff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+Setting constant 0-bit at position 27 on $procdff$5145 ($adff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+Setting constant 0-bit at position 28 on $procdff$5145 ($adff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+Setting constant 0-bit at position 29 on $procdff$5145 ($adff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+Setting constant 0-bit at position 30 on $procdff$5145 ($adff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+Setting constant 0-bit at position 31 on $procdff$5145 ($adff) from module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+Adding EN signal on $procdff$5334 ($dff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo (D = { \s_axis_tlast \s_axis_tdata }, Q = \mem[5]).
+Adding EN signal on $procdff$5339 ($dff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo (D = { \s_axis_tlast \s_axis_tdata }, Q = \mem[6]).
+Adding EN signal on $procdff$5324 ($dff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo (D = { \s_axis_tlast \s_axis_tdata }, Q = \mem[3]).
+Adding EN signal on $procdff$5369 ($dff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo (D = { \s_axis_tlast \s_axis_tdata }, Q = \mem[12]).
+Adding EN signal on $procdff$5329 ($dff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo (D = { \s_axis_tlast \s_axis_tdata }, Q = \mem[4]).
+Adding EN signal on $procdff$5384 ($dff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo (D = { \s_axis_tlast \s_axis_tdata }, Q = \mem[15]).
+Adding EN signal on $procdff$5374 ($dff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo (D = { \s_axis_tlast \s_axis_tdata }, Q = \mem[13]).
+Adding EN signal on $procdff$5266 ($adff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo (D = $add$axis_fifo.v:281$104_Y [4:0], Q = \rd_ptr_reg).
+Adding EN signal on $procdff$5269 ($adff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo (D = $procmux$4759_Y, Q = \m_axis_tvalid_pipe_reg [1]).
+Adding EN signal on $procdff$5269 ($adff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo (D = $procmux$4766_Y, Q = \m_axis_tvalid_pipe_reg [0]).
+Adding EN signal on $procdff$5344 ($dff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo (D = { \s_axis_tlast \s_axis_tdata }, Q = \mem[7]).
+Adding EN signal on $procdff$5277 ($dff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo (D = $3$mem2reg_rd$\mem$axis_fifo.v:277$70_DATA[8:0]$102, Q = \m_axis_pipe_reg[0]).
+Adding EN signal on $procdff$5280 ($adff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo (D = \m_axis_pipe_reg[0], Q = \m_axis_pipe_reg[1]).
+Adding EN signal on $procdff$5349 ($dff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo (D = { \s_axis_tlast \s_axis_tdata }, Q = \mem[8]).
+Adding EN signal on $procdff$5289 ($adff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo (D = $add$axis_fifo.v:219$89_Y [4:0], Q = \wr_ptr_reg).
+Adding EN signal on $procdff$5354 ($dff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo (D = { \s_axis_tlast \s_axis_tdata }, Q = \mem[9]).
+Handling D = Q on $procdff$5292 ($adff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo (removing D path).
+Adding EN signal on $procdff$5379 ($dff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo (D = { \s_axis_tlast \s_axis_tdata }, Q = \mem[14]).
+Handling D = Q on $procdff$5295 ($adff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo (removing D path).
+Handling D = Q on $procdff$5298 ($adff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo (removing D path).
+Adding EN signal on $procdff$5359 ($dff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo (D = { \s_axis_tlast \s_axis_tdata }, Q = \mem[10]).
+Handling D = Q on $procdff$5301 ($adff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo (removing D path).
+Handling D = Q on $procdff$5304 ($adff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo (removing D path).
+Adding EN signal on $procdff$5309 ($dff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo (D = { \s_axis_tlast \s_axis_tdata }, Q = \mem[0]).
+Adding EN signal on $procdff$5364 ($dff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo (D = { \s_axis_tlast \s_axis_tdata }, Q = \mem[11]).
+Adding EN signal on $procdff$5314 ($dff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo (D = { \s_axis_tlast \s_axis_tdata }, Q = \mem[1]).
+Adding EN signal on $procdff$5319 ($dff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo (D = { \s_axis_tlast \s_axis_tdata }, Q = \mem[2]).
+Setting constant 0-bit at position 0 on $procdff$5304 ($dlatch) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+Setting constant 0-bit at position 0 on $procdff$5298 ($dlatch) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+Setting constant 0-bit at position 0 on $procdff$5292 ($dlatch) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+Setting constant 0-bit at position 1 on $procdff$5292 ($dlatch) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+Setting constant 0-bit at position 2 on $procdff$5292 ($dlatch) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+Setting constant 0-bit at position 3 on $procdff$5292 ($dlatch) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+Setting constant 0-bit at position 4 on $procdff$5292 ($dlatch) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+Setting constant 0-bit at position 0 on $procdff$5301 ($dlatch) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+Setting constant 1-bit at position 0 on $procdff$5387 ($adff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+Setting constant 1-bit at position 1 on $procdff$5387 ($adff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+Setting constant 1-bit at position 2 on $procdff$5387 ($adff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+Setting constant 1-bit at position 3 on $procdff$5387 ($adff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+Setting constant 0-bit at position 0 on $procdff$5295 ($dlatch) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+Setting constant 1-bit at position 0 on $procdff$5286 ($adff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+Setting constant 1-bit at position 1 on $procdff$5286 ($adff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+Setting constant 1-bit at position 2 on $procdff$5286 ($adff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+Setting constant 1-bit at position 3 on $procdff$5286 ($adff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+Setting constant 1-bit at position 4 on $procdff$5286 ($adff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+Setting constant 1-bit at position 5 on $procdff$5286 ($adff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+Setting constant 1-bit at position 6 on $procdff$5286 ($adff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+Setting constant 1-bit at position 7 on $procdff$5286 ($adff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+Setting constant 1-bit at position 8 on $procdff$5286 ($adff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+Setting constant 0-bit at position 0 on $procdff$5272 ($adff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+Setting constant 0-bit at position 1 on $procdff$5272 ($adff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+Setting constant 0-bit at position 2 on $procdff$5272 ($adff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+Setting constant 0-bit at position 3 on $procdff$5272 ($adff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+Setting constant 0-bit at position 4 on $procdff$5272 ($adff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+Setting constant 0-bit at position 5 on $procdff$5272 ($adff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+Setting constant 0-bit at position 6 on $procdff$5272 ($adff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+Setting constant 0-bit at position 7 on $procdff$5272 ($adff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+Setting constant 0-bit at position 8 on $procdff$5272 ($adff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+Setting constant 0-bit at position 9 on $procdff$5272 ($adff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+Setting constant 0-bit at position 10 on $procdff$5272 ($adff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+Setting constant 0-bit at position 11 on $procdff$5272 ($adff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+Setting constant 0-bit at position 12 on $procdff$5272 ($adff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+Setting constant 0-bit at position 13 on $procdff$5272 ($adff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+Setting constant 0-bit at position 14 on $procdff$5272 ($adff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+Setting constant 0-bit at position 15 on $procdff$5272 ($adff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+Setting constant 0-bit at position 16 on $procdff$5272 ($adff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+Setting constant 0-bit at position 17 on $procdff$5272 ($adff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+Setting constant 0-bit at position 18 on $procdff$5272 ($adff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+Setting constant 0-bit at position 19 on $procdff$5272 ($adff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+Setting constant 0-bit at position 20 on $procdff$5272 ($adff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+Setting constant 0-bit at position 21 on $procdff$5272 ($adff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+Setting constant 0-bit at position 22 on $procdff$5272 ($adff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+Setting constant 0-bit at position 23 on $procdff$5272 ($adff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+Setting constant 0-bit at position 24 on $procdff$5272 ($adff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+Setting constant 0-bit at position 25 on $procdff$5272 ($adff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+Setting constant 0-bit at position 26 on $procdff$5272 ($adff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+Setting constant 0-bit at position 27 on $procdff$5272 ($adff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+Setting constant 0-bit at position 28 on $procdff$5272 ($adff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+Setting constant 0-bit at position 29 on $procdff$5272 ($adff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+Setting constant 0-bit at position 30 on $procdff$5272 ($adff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+Setting constant 0-bit at position 31 on $procdff$5272 ($adff) from module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+
+13.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ef_util_gating_cell..
+Finding unused cells or wires in module $paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16..
+Finding unused cells or wires in module \EF_I2C_WB..
+Finding unused cells or wires in module \EF_I2C_WB_wrapper..
+Finding unused cells or wires in module \i2c_master..
+Finding unused cells or wires in module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo..
+Finding unused cells or wires in module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo..
+Removed 147 unused cells and 2696 unused wires.
+<suppressed ~187 debug messages>
+
+13.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ef_util_gating_cell.
+Optimizing module $paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.
+<suppressed ~1 debug messages>
+Optimizing module EF_I2C_WB.
+Optimizing module EF_I2C_WB_wrapper.
+Optimizing module i2c_master.
+<suppressed ~1 debug messages>
+Optimizing module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+<suppressed ~2 debug messages>
+Optimizing module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+<suppressed ~2 debug messages>
+
+13.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+13.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ef_util_gating_cell..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module $paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \EF_I2C_WB..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \EF_I2C_WB_wrapper..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \i2c_master..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~359 debug messages>
+
+13.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ef_util_gating_cell.
+  Optimizing cells in module $paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.
+  Optimizing cells in module \EF_I2C_WB.
+  Optimizing cells in module \EF_I2C_WB_wrapper.
+  Optimizing cells in module \i2c_master.
+    New ctrl vector for $pmux cell $procmux$4189: { $eq$i2c_master.v:884$233_Y $auto$opt_reduce.cc:135:opt_pmux$5640 }
+    New ctrl vector for $pmux cell $procmux$4256: $auto$opt_reduce.cc:135:opt_pmux$5642
+    New ctrl vector for $pmux cell $procmux$4273: $auto$opt_reduce.cc:135:opt_pmux$5644
+    New ctrl vector for $pmux cell $procmux$4239: $auto$opt_reduce.cc:135:opt_pmux$5646
+    New ctrl vector for $pmux cell $procmux$4222: $auto$opt_reduce.cc:135:opt_pmux$5648
+  Optimizing cells in module \i2c_master.
+  Optimizing cells in module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+  Optimizing cells in module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+Performed a total of 5 changes.
+
+13.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ef_util_gating_cell'.
+Computing hashes of 0 cells of `\ef_util_gating_cell'.
+Finding duplicate cells in `\ef_util_gating_cell'.
+Finding identical cells in module `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16'.
+Computing hashes of 121 cells of `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16'.
+Finding duplicate cells in `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16'.
+Finding identical cells in module `\EF_I2C_WB'.
+Computing hashes of 26 cells of `\EF_I2C_WB'.
+Finding duplicate cells in `\EF_I2C_WB'.
+Finding identical cells in module `\EF_I2C_WB_wrapper'.
+Computing hashes of 2 cells of `\EF_I2C_WB_wrapper'.
+Finding duplicate cells in `\EF_I2C_WB_wrapper'.
+Finding identical cells in module `\i2c_master'.
+Computing hashes of 273 cells of `\i2c_master'.
+Finding duplicate cells in `\i2c_master'.
+Computing hashes of 270 cells of `\i2c_master'.
+Finding duplicate cells in `\i2c_master'.
+<suppressed ~9 debug messages>
+Finding identical cells in module `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo'.
+Computing hashes of 108 cells of `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo'.
+Finding duplicate cells in `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo'.
+Computing hashes of 92 cells of `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo'.
+Finding duplicate cells in `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo'.
+<suppressed ~48 debug messages>
+Finding identical cells in module `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo'.
+Computing hashes of 108 cells of `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo'.
+Finding duplicate cells in `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo'.
+Computing hashes of 92 cells of `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo'.
+Finding duplicate cells in `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo'.
+<suppressed ~48 debug messages>
+Removed a total of 35 cells.
+
+13.13. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $auto$ff.cc:337:slice$5417 ($adffe) from module $paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16 (D = \wbs_dat_i [15:8], Q = \prescale_reg [15:8]).
+Adding EN signal on $auto$ff.cc:337:slice$5417 ($adffe) from module $paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16 (D = $5\prescale_next[15:0] [7:0], Q = \prescale_reg [7:0]).
+Adding EN signal on $auto$ff.cc:337:slice$5418 ($adffe) from module $paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16 (D = $3\cmd_fifo_overflow_next[0:0], Q = \cmd_fifo_overflow_reg).
+Adding EN signal on $auto$ff.cc:337:slice$5419 ($adffe) from module $paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16 (D = \wbs_dat_i [12], Q = \cmd_stop_reg).
+Adding EN signal on $auto$ff.cc:337:slice$5420 ($adffe) from module $paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16 (D = \wbs_dat_i [10], Q = \cmd_write_reg).
+Adding EN signal on $auto$ff.cc:337:slice$5421 ($adffe) from module $paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16 (D = $5\data_in_last_next[0:0], Q = \data_in_last_reg).
+Adding EN signal on $auto$ff.cc:337:slice$5422 ($adffe) from module $paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16 (D = \wbs_dat_i [11], Q = \cmd_write_multiple_reg).
+Adding EN signal on $auto$ff.cc:337:slice$5427 ($adffe) from module $paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16 (D = \wbs_dat_i [6:0], Q = \cmd_address_reg).
+Adding EN signal on $auto$ff.cc:337:slice$5423 ($adffe) from module $paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16 (D = $3\write_fifo_overflow_next[0:0], Q = \write_fifo_overflow_reg).
+Adding EN signal on $auto$ff.cc:337:slice$5424 ($adffe) from module $paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16 (D = \wbs_dat_i [9], Q = \cmd_read_reg).
+Adding EN signal on $auto$ff.cc:337:slice$5425 ($adffe) from module $paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16 (D = \wbs_dat_i [7:0], Q = \data_in_reg).
+Adding EN signal on $auto$ff.cc:337:slice$5426 ($adffe) from module $paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16 (D = \wbs_dat_i [8], Q = \cmd_start_reg).
+Adding EN signal on $procdff$5061 ($adff) from module i2c_master (D = $5\phy_state_next[4:0], Q = \phy_state_reg).
+Adding EN signal on $auto$ff.cc:337:slice$5430 ($adffe) from module i2c_master (D = $2\bit_count_next[3:0], Q = \bit_count_reg).
+Adding EN signal on $procdff$5091 ($adff) from module i2c_master (D = $3\delay_sda_next[0:0], Q = \delay_sda_reg).
+Adding EN signal on $procdff$5136 ($adff) from module i2c_master (D = $5\bus_control_next[0:0], Q = \bus_control_reg).
+Adding EN signal on $procdff$5085 ($adff) from module i2c_master (D = $4\delay_next[16:0], Q = \delay_reg).
+Adding EN signal on $procdff$5118 ($adff) from module i2c_master (D = $5\scl_o_next[0:0], Q = \scl_o_reg).
+Adding EN signal on $auto$ff.cc:337:slice$5431 ($adffe) from module i2c_master (D = \s_axis_cmd_stop, Q = \mode_stop_reg).
+Adding EN signal on $auto$ff.cc:337:slice$5432 ($adffe) from module i2c_master (D = $12\phy_tx_data[0:0], Q = \m_axis_data_tlast_reg).
+Adding EN signal on $auto$ff.cc:337:slice$5433 ($adffe) from module i2c_master (D = \s_axis_cmd_write_multiple, Q = \mode_write_multiple_reg).
+Adding EN signal on $auto$ff.cc:337:slice$5434 ($adffe) from module i2c_master (D = \s_axis_cmd_read, Q = \mode_read_reg).
+Adding EN signal on $auto$ff.cc:337:slice$5435 ($adffe) from module i2c_master (D = \s_axis_data_tlast, Q = \last_reg).
+Adding EN signal on $procdff$5121 ($adff) from module i2c_master (D = $5\sda_o_next[0:0], Q = \sda_o_reg).
+Adding EN signal on $auto$ff.cc:337:slice$5436 ($adffe) from module i2c_master (D = $2\data_next[7:0], Q = \data_reg).
+Adding EN signal on $auto$ff.cc:337:slice$5437 ($adffe) from module i2c_master (D = { \data_reg [6:0] \phy_rx_data_reg }, Q = \m_axis_data_tdata_reg).
+Adding EN signal on $auto$ff.cc:337:slice$5438 ($adffe) from module i2c_master (D = \s_axis_cmd_address, Q = \addr_reg).
+Adding EN signal on $procdff$5064 ($adff) from module i2c_master (D = \sda_i_reg, Q = \phy_rx_data_reg).
+
+13.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ef_util_gating_cell..
+Finding unused cells or wires in module $paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16..
+Finding unused cells or wires in module \EF_I2C_WB..
+Finding unused cells or wires in module \EF_I2C_WB_wrapper..
+Finding unused cells or wires in module \i2c_master..
+Finding unused cells or wires in module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo..
+Finding unused cells or wires in module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo..
+Removed 65 unused cells and 101 unused wires.
+<suppressed ~76 debug messages>
+
+13.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ef_util_gating_cell.
+Optimizing module $paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.
+<suppressed ~3 debug messages>
+Optimizing module EF_I2C_WB.
+Optimizing module EF_I2C_WB_wrapper.
+Optimizing module i2c_master.
+<suppressed ~6 debug messages>
+Optimizing module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+Optimizing module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+
+13.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+13.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ef_util_gating_cell..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module $paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \EF_I2C_WB..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \EF_I2C_WB_wrapper..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \i2c_master..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~256 debug messages>
+
+13.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ef_util_gating_cell.
+  Optimizing cells in module $paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.
+  Optimizing cells in module \EF_I2C_WB.
+  Optimizing cells in module \EF_I2C_WB_wrapper.
+  Optimizing cells in module \i2c_master.
+  Optimizing cells in module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+  Optimizing cells in module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+Performed a total of 0 changes.
+
+13.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ef_util_gating_cell'.
+Computing hashes of 0 cells of `\ef_util_gating_cell'.
+Finding duplicate cells in `\ef_util_gating_cell'.
+Finding identical cells in module `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16'.
+Computing hashes of 115 cells of `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16'.
+Finding duplicate cells in `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16'.
+Computing hashes of 109 cells of `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16'.
+Finding duplicate cells in `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16'.
+<suppressed ~18 debug messages>
+Finding identical cells in module `\EF_I2C_WB'.
+Computing hashes of 26 cells of `\EF_I2C_WB'.
+Finding duplicate cells in `\EF_I2C_WB'.
+Finding identical cells in module `\EF_I2C_WB_wrapper'.
+Computing hashes of 2 cells of `\EF_I2C_WB_wrapper'.
+Finding duplicate cells in `\EF_I2C_WB_wrapper'.
+Finding identical cells in module `\i2c_master'.
+Computing hashes of 300 cells of `\i2c_master'.
+Finding duplicate cells in `\i2c_master'.
+Computing hashes of 272 cells of `\i2c_master'.
+Finding duplicate cells in `\i2c_master'.
+Computing hashes of 268 cells of `\i2c_master'.
+Finding duplicate cells in `\i2c_master'.
+<suppressed ~96 debug messages>
+Finding identical cells in module `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo'.
+Computing hashes of 92 cells of `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo'.
+Finding duplicate cells in `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo'.
+Finding identical cells in module `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo'.
+Computing hashes of 92 cells of `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo'.
+Finding duplicate cells in `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo'.
+Removed a total of 38 cells.
+
+13.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+13.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ef_util_gating_cell..
+Finding unused cells or wires in module $paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16..
+Finding unused cells or wires in module \EF_I2C_WB..
+Finding unused cells or wires in module \EF_I2C_WB_wrapper..
+Finding unused cells or wires in module \i2c_master..
+Finding unused cells or wires in module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo..
+Finding unused cells or wires in module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo..
+Removed 0 unused cells and 38 unused wires.
+<suppressed ~2 debug messages>
+
+13.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ef_util_gating_cell.
+Optimizing module $paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.
+Optimizing module EF_I2C_WB.
+Optimizing module EF_I2C_WB_wrapper.
+Optimizing module i2c_master.
+Optimizing module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+Optimizing module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+
+13.23. Rerunning OPT passes. (Maybe there is more to do..)
+
+13.24. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ef_util_gating_cell..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module $paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \EF_I2C_WB..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \EF_I2C_WB_wrapper..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \i2c_master..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~256 debug messages>
+
+13.25. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ef_util_gating_cell.
+  Optimizing cells in module $paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.
+  Optimizing cells in module \EF_I2C_WB.
+  Optimizing cells in module \EF_I2C_WB_wrapper.
+  Optimizing cells in module \i2c_master.
+  Optimizing cells in module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+  Optimizing cells in module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+Performed a total of 0 changes.
+
+13.26. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ef_util_gating_cell'.
+Computing hashes of 0 cells of `\ef_util_gating_cell'.
+Finding duplicate cells in `\ef_util_gating_cell'.
+Finding identical cells in module `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16'.
+Computing hashes of 109 cells of `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16'.
+Finding duplicate cells in `$paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16'.
+Finding identical cells in module `\EF_I2C_WB'.
+Computing hashes of 26 cells of `\EF_I2C_WB'.
+Finding duplicate cells in `\EF_I2C_WB'.
+Finding identical cells in module `\EF_I2C_WB_wrapper'.
+Computing hashes of 2 cells of `\EF_I2C_WB_wrapper'.
+Finding duplicate cells in `\EF_I2C_WB_wrapper'.
+Finding identical cells in module `\i2c_master'.
+Computing hashes of 268 cells of `\i2c_master'.
+Finding duplicate cells in `\i2c_master'.
+Finding identical cells in module `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo'.
+Computing hashes of 92 cells of `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo'.
+Finding duplicate cells in `$paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo'.
+Finding identical cells in module `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo'.
+Computing hashes of 92 cells of `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo'.
+Finding duplicate cells in `$paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo'.
+Removed a total of 0 cells.
+
+13.27. Executing OPT_DFF pass (perform DFF optimizations).
+
+13.28. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ef_util_gating_cell..
+Finding unused cells or wires in module $paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16..
+Finding unused cells or wires in module \EF_I2C_WB..
+Finding unused cells or wires in module \EF_I2C_WB_wrapper..
+Finding unused cells or wires in module \i2c_master..
+Finding unused cells or wires in module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo..
+Finding unused cells or wires in module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo..
+
+13.29. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ef_util_gating_cell.
+Optimizing module $paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.
+Optimizing module EF_I2C_WB.
+Optimizing module EF_I2C_WB_wrapper.
+Optimizing module i2c_master.
+Optimizing module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+Optimizing module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+
+13.30. Finished fast OPT passes. (There is nothing left to do.)
+
+14. Executing FLATTEN pass (flatten design).
+Deleting now unused module ef_util_gating_cell.
+Deleting now unused module $paramod$323a030b9649baabb32f22ea6226179e8ede1b3d\i2c_master_wbs_16.
+Deleting now unused module EF_I2C_WB.
+Deleting now unused module i2c_master.
+Deleting now unused module $paramod$f1bd7922988db237f4ba194aac1401b4ee047c5d\axis_fifo.
+Deleting now unused module $paramod$fc82893ce2d814ed806bd1b817fb79d7575b3df7\axis_fifo.
+<suppressed ~7 debug messages>
+
+15. Executing OPT pass (performing simple optimizations).
+
+15.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module EF_I2C_WB_wrapper.
+<suppressed ~75 debug messages>
+
+15.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\EF_I2C_WB_wrapper'.
+Computing hashes of 669 cells of `\EF_I2C_WB_wrapper'.
+Finding duplicate cells in `\EF_I2C_WB_wrapper'.
+Computing hashes of 668 cells of `\EF_I2C_WB_wrapper'.
+Finding duplicate cells in `\EF_I2C_WB_wrapper'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+15.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \EF_I2C_WB_wrapper..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~258 debug messages>
+
+15.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \EF_I2C_WB_wrapper.
+Performed a total of 0 changes.
+
+15.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\EF_I2C_WB_wrapper'.
+Computing hashes of 668 cells of `\EF_I2C_WB_wrapper'.
+Finding duplicate cells in `\EF_I2C_WB_wrapper'.
+Removed a total of 0 cells.
+
+15.6. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 1-bit at position 0 on $flatten\u_ef_i2c.\master_inst.\i2c_master_inst.$procdff$5112 ($adff) from module EF_I2C_WB_wrapper.
+
+15.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \EF_I2C_WB_wrapper..
+Removed 1 unused cells and 19 unused wires.
+<suppressed ~10 debug messages>
+
+15.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module EF_I2C_WB_wrapper.
+<suppressed ~4 debug messages>
+
+15.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+15.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \EF_I2C_WB_wrapper..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~258 debug messages>
+
+15.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \EF_I2C_WB_wrapper.
+Performed a total of 0 changes.
+
+15.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\EF_I2C_WB_wrapper'.
+Computing hashes of 662 cells of `\EF_I2C_WB_wrapper'.
+Finding duplicate cells in `\EF_I2C_WB_wrapper'.
+Removed a total of 0 cells.
+
+15.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+15.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \EF_I2C_WB_wrapper..
+Removed 0 unused cells and 2 unused wires.
+<suppressed ~1 debug messages>
+
+15.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module EF_I2C_WB_wrapper.
+
+15.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+15.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \EF_I2C_WB_wrapper..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~258 debug messages>
+
+15.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \EF_I2C_WB_wrapper.
+Performed a total of 0 changes.
+
+15.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\EF_I2C_WB_wrapper'.
+Computing hashes of 662 cells of `\EF_I2C_WB_wrapper'.
+Finding duplicate cells in `\EF_I2C_WB_wrapper'.
+Removed a total of 0 cells.
+
+15.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+15.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \EF_I2C_WB_wrapper..
+
+15.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module EF_I2C_WB_wrapper.
+
+15.23. Finished fast OPT passes. (There is nothing left to do.)
+
+16. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `EF_I2C_WB_wrapper'. Setting top module to EF_I2C_WB_wrapper.
+
+16.1. Analyzing design hierarchy..
+Top module:  \EF_I2C_WB_wrapper
+
+16.2. Analyzing design hierarchy..
+Top module:  \EF_I2C_WB_wrapper
+Removed 0 unused modules.
+
+17. Executing jny backend.
+
+18. Executing RTLIL backend.
+Output filename: ../model/design.il
+
+Warnings: 2 unique messages, 4 total
+End of script. Logfile hash: 80a6a29285, time: 0.27s, user: 0.27s, system: 0.00s, MEM: 22.05 MB peak
+Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+Time spent: 16% 10x opt_expr (0 sec), 14% 7x opt_clean (0 sec), ...

@@ -1,0 +1,668 @@
+
+-- Executing script file `~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-caravel_wrapper/synth/caravel_wrapper_synth.ys' --
+
+1. Executing Verilog-2005 frontend: ~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-caravel_wrapper/rtl/caravel_wrapper.v
+Parsing Verilog input from `~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-caravel_wrapper/rtl/caravel_wrapper.v' to AST representation.
+Generating RTLIL representation for module `\caravel_wrapper'.
+Successfully finished Verilog frontend.
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+
+2.1. Analyzing design hierarchy..
+Top module:  \caravel_wrapper
+
+2.2. Analyzing design hierarchy..
+Top module:  \caravel_wrapper
+Removed 0 unused modules.
+
+3. Executing PROC pass (convert processes to netlists).
+
+3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-caravel_wrapper/rtl/caravel_wrapper.v:59$4 in module caravel_wrapper.
+Marked 2 switch rules as full_case in process $proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-caravel_wrapper/rtl/caravel_wrapper.v:45$2 in module caravel_wrapper.
+Removed a total of 0 dead cases.
+
+3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 3 redundant assignments.
+Promoted 0 assignments to connections.
+
+3.4. Executing PROC_INIT pass (extract init attributes).
+
+3.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst_ni in `\caravel_wrapper.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-caravel_wrapper/rtl/caravel_wrapper.v:59$4'.
+Found async reset \rst_ni in `\caravel_wrapper.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-caravel_wrapper/rtl/caravel_wrapper.v:45$2'.
+
+3.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~4 debug messages>
+
+3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\caravel_wrapper.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-caravel_wrapper/rtl/caravel_wrapper.v:59$4'.
+     1/5: $0\la_data_out_o[127:0] [127:32]
+     2/5: $0\la_data_out_o[127:0] [31:0]
+     3/5: $0\wb_ack_o[0:0]
+     4/5: $0\irq_caravel_o[0:0]
+     5/5: $0\wb_dat_o[31:0]
+Creating decoders for process `\caravel_wrapper.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-caravel_wrapper/rtl/caravel_wrapper.v:45$2'.
+     1/2: $0\bridge_valid[0:0]
+     2/2: $0\bridge_data[31:0]
+
+3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+3.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\caravel_wrapper.\wb_dat_o' using process `\caravel_wrapper.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-caravel_wrapper/rtl/caravel_wrapper.v:59$4'.
+  created $adff cell `$procdff$32' with positive edge clock and positive level reset.
+Creating register for signal `\caravel_wrapper.\wb_ack_o' using process `\caravel_wrapper.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-caravel_wrapper/rtl/caravel_wrapper.v:59$4'.
+  created $adff cell `$procdff$37' with positive edge clock and positive level reset.
+Creating register for signal `\caravel_wrapper.\la_data_out_o' using process `\caravel_wrapper.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-caravel_wrapper/rtl/caravel_wrapper.v:59$4'.
+  created $adff cell `$procdff$42' with positive edge clock and positive level reset.
+Creating register for signal `\caravel_wrapper.\irq_caravel_o' using process `\caravel_wrapper.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-caravel_wrapper/rtl/caravel_wrapper.v:59$4'.
+  created $adff cell `$procdff$47' with positive edge clock and positive level reset.
+Creating register for signal `\caravel_wrapper.\bridge_data' using process `\caravel_wrapper.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-caravel_wrapper/rtl/caravel_wrapper.v:45$2'.
+  created $adff cell `$procdff$52' with positive edge clock and positive level reset.
+Creating register for signal `\caravel_wrapper.\bridge_valid' using process `\caravel_wrapper.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-caravel_wrapper/rtl/caravel_wrapper.v:45$2'.
+  created $adff cell `$procdff$57' with positive edge clock and positive level reset.
+
+3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 3 empty switches in `\caravel_wrapper.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-caravel_wrapper/rtl/caravel_wrapper.v:59$4'.
+Removing empty process `caravel_wrapper.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-caravel_wrapper/rtl/caravel_wrapper.v:59$4'.
+Found and cleaned up 1 empty switch in `\caravel_wrapper.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-caravel_wrapper/rtl/caravel_wrapper.v:45$2'.
+Removing empty process `caravel_wrapper.$proc$~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-caravel_wrapper/rtl/caravel_wrapper.v:45$2'.
+Cleaned up 4 empty switches.
+
+3.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module caravel_wrapper.
+<suppressed ~13 debug messages>
+
+4. Executing OPT pass (performing simple optimizations).
+
+4.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module caravel_wrapper.
+
+4.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\caravel_wrapper'.
+Computing hashes of 28 cells of `\caravel_wrapper'.
+Finding duplicate cells in `\caravel_wrapper'.
+Computing hashes of 22 cells of `\caravel_wrapper'.
+Finding duplicate cells in `\caravel_wrapper'.
+<suppressed ~18 debug messages>
+Removed a total of 6 cells.
+
+4.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \caravel_wrapper..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~12 debug messages>
+
+4.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \caravel_wrapper.
+Performed a total of 0 changes.
+
+4.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\caravel_wrapper'.
+Computing hashes of 22 cells of `\caravel_wrapper'.
+Finding duplicate cells in `\caravel_wrapper'.
+Removed a total of 0 cells.
+
+4.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $procdff$52 ($adff) from module caravel_wrapper (D = \la_data_in_i [31:0], Q = \bridge_data).
+Adding EN signal on $procdff$42 ($adff) from module caravel_wrapper (D = \wb_dat_i, Q = \la_data_out_o [31:0]).
+Adding EN signal on $procdff$42 ($adff) from module caravel_wrapper (D = \la_data_out_o [127:32], Q = \la_data_out_o [127:32]).
+Handling D = Q on $auto$ff.cc:337:slice$62 ($adffe) from module caravel_wrapper (removing D path).
+Adding EN signal on $procdff$32 ($adff) from module caravel_wrapper (D = \bridge_data, Q = \wb_dat_o).
+Setting constant 0-bit at position 0 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 1 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 2 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 3 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 4 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 5 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 6 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 7 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 8 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 9 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 10 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 11 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 12 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 13 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 14 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 15 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 16 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 17 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 18 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 19 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 20 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 21 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 22 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 23 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 24 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 25 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 26 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 27 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 28 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 29 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 30 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 31 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 32 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 33 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 34 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 35 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 36 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 37 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 38 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 39 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 40 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 41 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 42 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 43 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 44 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 45 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 46 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 47 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 48 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 49 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 50 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 51 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 52 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 53 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 54 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 55 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 56 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 57 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 58 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 59 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 60 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 61 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 62 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 63 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 64 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 65 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 66 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 67 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 68 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 69 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 70 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 71 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 72 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 73 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 74 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 75 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 76 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 77 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 78 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 79 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 80 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 81 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 82 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 83 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 84 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 85 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 86 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 87 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 88 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 89 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 90 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 91 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 92 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 93 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 94 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+Setting constant 0-bit at position 95 on $auto$ff.cc:337:slice$62 ($dlatch) from module caravel_wrapper.
+
+4.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \caravel_wrapper..
+Removed 10 unused cells and 36 unused wires.
+<suppressed ~12 debug messages>
+
+4.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module caravel_wrapper.
+
+4.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \caravel_wrapper..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~4 debug messages>
+
+4.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \caravel_wrapper.
+Performed a total of 0 changes.
+
+4.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\caravel_wrapper'.
+Computing hashes of 16 cells of `\caravel_wrapper'.
+Finding duplicate cells in `\caravel_wrapper'.
+Removed a total of 0 cells.
+
+4.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \caravel_wrapper..
+
+4.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module caravel_wrapper.
+
+4.16. Finished fast OPT passes. (There is nothing left to do.)
+
+5. Executing FSM pass (extract and optimize FSM).
+
+5.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+5.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+5.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+5.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \caravel_wrapper..
+
+5.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+5.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+5.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+5.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+6. Executing OPT pass (performing simple optimizations).
+
+6.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module caravel_wrapper.
+
+6.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\caravel_wrapper'.
+Computing hashes of 16 cells of `\caravel_wrapper'.
+Finding duplicate cells in `\caravel_wrapper'.
+Removed a total of 0 cells.
+
+6.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \caravel_wrapper..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~4 debug messages>
+
+6.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \caravel_wrapper.
+Performed a total of 0 changes.
+
+6.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\caravel_wrapper'.
+Computing hashes of 16 cells of `\caravel_wrapper'.
+Finding duplicate cells in `\caravel_wrapper'.
+Removed a total of 0 cells.
+
+6.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \caravel_wrapper..
+
+6.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module caravel_wrapper.
+
+6.9. Finished fast OPT passes. (There is nothing left to do.)
+
+7. Executing MEMORY pass.
+
+7.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+7.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+7.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+7.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+7.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+7.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \caravel_wrapper..
+
+7.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+7.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+7.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \caravel_wrapper..
+
+7.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+7.11. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+8. Executing OPT pass (performing simple optimizations).
+
+8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module caravel_wrapper.
+
+8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\caravel_wrapper'.
+Computing hashes of 16 cells of `\caravel_wrapper'.
+Finding duplicate cells in `\caravel_wrapper'.
+Removed a total of 0 cells.
+
+8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \caravel_wrapper..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~4 debug messages>
+
+8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \caravel_wrapper.
+Performed a total of 0 changes.
+
+8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\caravel_wrapper'.
+Computing hashes of 16 cells of `\caravel_wrapper'.
+Finding duplicate cells in `\caravel_wrapper'.
+Removed a total of 0 cells.
+
+8.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+8.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \caravel_wrapper..
+
+8.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module caravel_wrapper.
+
+8.9. Finished fast OPT passes. (There is nothing left to do.)
+
+9. Executing TECHMAP pass (map to technology primitives).
+
+9.1. Executing Verilog-2005 frontend: ~/oss-cad-suite/lib/../share/yosys/techmap.v
+Parsing Verilog input from `~/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `$__div_mod_u'.
+Generating RTLIL representation for module `$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Generating RTLIL representation for module `$connect'.
+Generating RTLIL representation for module `$input_port'.
+Successfully finished Verilog frontend.
+
+9.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $reduce_and.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $adffe.
+Using extmapper simplemap for cells of type $logic_and.
+Using extmapper simplemap for cells of type $logic_not.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $adff.
+No more expansions possible.
+<suppressed ~93 debug messages>
+
+10. Executing OPT pass (performing simple optimizations).
+
+10.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module caravel_wrapper.
+<suppressed ~2 debug messages>
+
+10.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\caravel_wrapper'.
+Computing hashes of 107 cells of `\caravel_wrapper'.
+Finding duplicate cells in `\caravel_wrapper'.
+Removed a total of 0 cells.
+
+10.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \caravel_wrapper..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+10.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \caravel_wrapper.
+Performed a total of 0 changes.
+
+10.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\caravel_wrapper'.
+Computing hashes of 107 cells of `\caravel_wrapper'.
+Finding duplicate cells in `\caravel_wrapper'.
+Removed a total of 0 cells.
+
+10.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+10.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \caravel_wrapper..
+Removed 0 unused cells and 4 unused wires.
+<suppressed ~1 debug messages>
+
+10.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module caravel_wrapper.
+
+10.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+10.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \caravel_wrapper..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+10.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \caravel_wrapper.
+Performed a total of 0 changes.
+
+10.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\caravel_wrapper'.
+Computing hashes of 107 cells of `\caravel_wrapper'.
+Finding duplicate cells in `\caravel_wrapper'.
+Removed a total of 0 cells.
+
+10.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+10.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \caravel_wrapper..
+
+10.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module caravel_wrapper.
+
+10.16. Finished fast OPT passes. (There is nothing left to do.)
+
+11. Executing DFFLIBMAP pass (mapping DFF cells to sequential cells from liberty file).
+  cell sky130_fd_sc_hd__dfxtp_1 (noninv, pins=3, area=20.02) is a direct match for cell type $_DFF_P_.
+  cell sky130_fd_sc_hd__dfrtn_1 (noninv, pins=4, area=25.02) is a direct match for cell type $_DFF_NN0_.
+  cell sky130_fd_sc_hd__dfrtp_1 (noninv, pins=4, area=25.02) is a direct match for cell type $_DFF_PN0_.
+  cell sky130_fd_sc_hd__dfstp_2 (noninv, pins=4, area=26.28) is a direct match for cell type $_DFF_PN1_.
+  cell sky130_fd_sc_hd__edfxtp_1 (noninv, pins=4, area=30.03) is a direct match for cell type $_DFFE_PP_.
+  cell sky130_fd_sc_hd__dfbbn_1 (noninv, pins=6, area=32.53) is a direct match for cell type $_DFFSR_NNN_.
+  cell sky130_fd_sc_hd__dfbbp_1 (noninv, pins=6, area=32.53) is a direct match for cell type $_DFFSR_PNN_.
+  final dff cell mappings:
+    unmapped dff cell: $_DFF_N_
+    \sky130_fd_sc_hd__dfxtp_1 _DFF_P_ (.CLK( C), .D( D), .Q( Q));
+    \sky130_fd_sc_hd__dfrtn_1 _DFF_NN0_ (.CLK_N( C), .D( D), .Q( Q), .RESET_B( R));
+    unmapped dff cell: $_DFF_NN1_
+    unmapped dff cell: $_DFF_NP0_
+    unmapped dff cell: $_DFF_NP1_
+    \sky130_fd_sc_hd__dfrtp_1 _DFF_PN0_ (.CLK( C), .D( D), .Q( Q), .RESET_B( R));
+    \sky130_fd_sc_hd__dfstp_2 _DFF_PN1_ (.CLK( C), .D( D), .Q( Q), .SET_B( R));
+    unmapped dff cell: $_DFF_PP0_
+    unmapped dff cell: $_DFF_PP1_
+    unmapped dff cell: $_DFFE_NN_
+    unmapped dff cell: $_DFFE_NP_
+    unmapped dff cell: $_DFFE_PN_
+    \sky130_fd_sc_hd__edfxtp_1 _DFFE_PP_ (.CLK( C), .D( D), .DE( E), .Q( Q));
+    \sky130_fd_sc_hd__dfbbn_1 _DFFSR_NNN_ (.CLK_N( C), .D( D), .Q( Q), .Q_N(~Q), .RESET_B( R), .SET_B( S));
+    unmapped dff cell: $_DFFSR_NNP_
+    unmapped dff cell: $_DFFSR_NPN_
+    unmapped dff cell: $_DFFSR_NPP_
+    \sky130_fd_sc_hd__dfbbp_1 _DFFSR_PNN_ (.CLK( C), .D( D), .Q( Q), .Q_N(~Q), .RESET_B( R), .SET_B( S));
+    unmapped dff cell: $_DFFSR_PNP_
+    unmapped dff cell: $_DFFSR_PPN_
+    unmapped dff cell: $_DFFSR_PPP_
+
+11.1. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+<suppressed ~24 debug messages>
+Mapping DFF cells in module `\caravel_wrapper':
+  mapped 99 $_DFF_PN0_ cells to \sky130_fd_sc_hd__dfrtp_1 cells.
+
+12. Executing ABC pass (technology mapping using ABC).
+
+12.1. Extracting gate netlist of module `\caravel_wrapper' to `<abc-temp-dir>/input.blif'..
+ABC: using cached merged SCL: /tmp/yosys-liberty-scl-cache/yosys_merged_f46f2c32.scl (1 files)
+
+12.1.1. Executed ABC.
+Extracted 104 gates and 270 wires to a netlist network with 166 inputs and 98 outputs.
+Running ABC script: <abc-temp-dir>/abc.script
+ABC: UC Berkeley, ABC 1.01 (compiled Apr 26 2026 04:19:40)
+ABC: abc 01> empty
+ABC: abc 01> source <abc-temp-dir>/abc.script
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_scl /tmp/yosys-liberty-scl-cache/yosys_merged_f46f2c32.scl 
+ABC: Warning: Detected 9 multi-output cells (for example, "sky130_fd_sc_hd__fa_1").
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+ABC: 
+ABC: YOSYS_ABC_DONE 
+
+12.1.2. Re-integrating ABC results.
+ABC RESULTS:   sky130_fd_sc_hd__and2_0 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__and4b_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__lpflow_isobufsrc_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__mux2_1 cells:       96
+ABC RESULTS:   sky130_fd_sc_hd__nand2_1 cells:        1
+ABC RESULTS:        internal signals:        6
+ABC RESULTS:           input signals:      166
+ABC RESULTS:          output signals:       98
+Removing temp directory.
+Removing global temp directory.
+
+13. Executing OPT pass (performing simple optimizations).
+
+13.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module caravel_wrapper.
+
+13.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\caravel_wrapper'.
+Computing hashes of 199 cells of `\caravel_wrapper'.
+Finding duplicate cells in `\caravel_wrapper'.
+Removed a total of 0 cells.
+
+13.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \caravel_wrapper..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+13.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \caravel_wrapper.
+Performed a total of 0 changes.
+
+13.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\caravel_wrapper'.
+Computing hashes of 199 cells of `\caravel_wrapper'.
+Finding duplicate cells in `\caravel_wrapper'.
+Removed a total of 0 cells.
+
+13.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+13.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \caravel_wrapper..
+Removed 0 unused cells and 270 unused wires.
+<suppressed ~1 debug messages>
+
+13.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module caravel_wrapper.
+
+13.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+13.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \caravel_wrapper..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+13.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \caravel_wrapper.
+Performed a total of 0 changes.
+
+13.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\caravel_wrapper'.
+Computing hashes of 199 cells of `\caravel_wrapper'.
+Finding duplicate cells in `\caravel_wrapper'.
+Removed a total of 0 cells.
+
+13.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+13.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \caravel_wrapper..
+
+13.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module caravel_wrapper.
+
+13.16. Finished fast OPT passes. (There is nothing left to do.)
+
+14. Printing statistics.
+
+=== caravel_wrapper ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+      118        - wires
+      663        - wire bits
+       18        - public wires
+      563        - public wire bits
+       16        - ports
+      530        - port bits
+      199 3.58E+03 cells
+        1    6.256   sky130_fd_sc_hd__and2_0
+        1    10.01   sky130_fd_sc_hd__and4b_1
+       99 2.48E+03   sky130_fd_sc_hd__dfrtp_1
+        1    6.256   sky130_fd_sc_hd__lpflow_isobufsrc_1
+       96 1.08E+03   sky130_fd_sc_hd__mux2_1
+        1    3.754   sky130_fd_sc_hd__nand2_1
+
+   Chip area for module '\caravel_wrapper': 3584.688000
+     of which used for sequential elements: 2477.376000 (69.11%)
+
+15. Executing Verilog backend.
+
+15.1. Executing BMUXMAP pass.
+
+15.2. Executing DEMUXMAP pass.
+Dumping module `\caravel_wrapper'.
+
+End of script. Logfile hash: 53b938a0b6, time: 0.28s, user: 0.17s, system: 0.02s, MEM: 43.73 MB peak
+Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)
+Time spent: 39% 1x abc (0 sec), 23% 1x dfflibmap (0 sec), ...

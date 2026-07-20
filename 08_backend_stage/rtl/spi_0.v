@@ -1,0 +1,1 @@
+/home/smdadmin/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-spi_0/rtl/spi_0.v

@@ -1,0 +1,12 @@
+{
+  "module": "i2c_0",
+  "classification": "REUSE_INTERNAL",
+  "tier": "C",
+  "cell_count": 2141,
+  "synthesis_log": "~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-i2c_0/logs/synth/i2c_0_synth.log",
+  "results_xml": "~/hermes_workspace/projects/IP-010/v4/06_verification_stage/tb-i2c_0/results.xml",
+  "equiv_status": "WAIVED",
+  "tests_passed": 40,
+  "tests_total": 40,
+  "admitted": true
+}

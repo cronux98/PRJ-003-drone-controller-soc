@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="cocotb" tests="15" errors="0" failures="0" skipped="0">
+<testcase name="test_reset" status="pass" time="0.00"/>
+<testcase name="test_addr_0" status="pass" time="0.00"/>
+<testcase name="test_addr_8000" status="pass" time="0.00"/>
+<testcase name="test_addr_8010" status="pass" time="0.00"/>
+<testcase name="test_write_cycle" status="pass" time="0.00"/>
+<testcase name="test_read_mux" status="pass" time="0.00"/>
+<testcase name="test_multi_cycle" status="pass" time="0.00"/>
+<testcase name="test_stress" status="pass" time="0.00"/>
+<testcase name="test_stress_8" status="pass" time="0.00"/>
+<testcase name="test_stress_9" status="pass" time="0.00"/>
+<testcase name="test_stress_10" status="pass" time="0.00"/>
+<testcase name="test_stress_11" status="pass" time="0.00"/>
+<testcase name="test_stress_12" status="pass" time="0.00"/>
+<testcase name="test_stress_13" status="pass" time="0.00"/>
+<testcase name="test_stress_14" status="pass" time="0.00"/>
+</testsuite>

@@ -1,0 +1,100 @@
+%Warning-EOFNEWLINE: ef_util_lib.v:393:10: Missing newline at end of file (POSIX 3.206).
+                                         : ... Suggest add newline.
+  393 | endmodule
+      |          ^
+                     ... For warning description see https://verilator.org/warn/EOFNEWLINE?v=5.049
+                     ... Use "/* verilator lint_off EOFNEWLINE */" and lint_on around source to disable this message.
+%Warning-DECLFILENAME: ef_util_lib.v:30:8: Filename 'ef_util_lib' does not match MODULE name: 'ef_util_sync'
+   30 | module ef_util_sync #(parameter NUM_STAGES = 2) (
+      |        ^~~~~~~~~~~~
+                       ... For warning description see https://verilator.org/warn/DECLFILENAME?v=5.049
+                       ... Use "/* verilator lint_off DECLFILENAME */" and lint_on around source to disable this message.
+%Warning-DECLFILENAME: gpio.v:25:8: Filename 'gpio' does not match MODULE name: 'EF_GPIO8_WB'
+   25 | module EF_GPIO8_WB (
+      |        ^~~~~~~~~~~
+%Warning-PINMISSING: gpio.v:55:23: Instance has missing pin: 'rst_n'
+   55 |   ef_util_gating_cell clk_gate_cell (
+      |                       ^~~~~~~~~~~~~
+                     ef_util_lib.v:372:21: ... Location of port declaration
+  372 |     input   wire    rst_n,
+      |                     ^~~~~
+                     ... For warning description see https://verilator.org/warn/PINMISSING?v=5.049
+                     ... Use "/* verilator lint_off PINMISSING */" and lint_on around source to disable this message.
+%Warning-MULTITOP: ef_util_lib.v:115:8: Multiple top level modules
+                                      : ... Suggest see manual; fix the duplicates, or use --top-module to select top.
+                   ... For warning description see https://verilator.org/warn/MULTITOP?v=5.049
+                   ... Use "/* verilator lint_off MULTITOP */" and lint_on around source to disable this message.
+                                      : ... Top module 'EF_GPIO8_WB_wrapper'
+    7 | module EF_GPIO8_WB_wrapper (
+      |        ^~~~~~~~~~~~~~~~~~~
+                                      : ... Top module 'ef_util_glitch_filter'
+  115 | module ef_util_glitch_filter #(parameter N = 8, CLKDIV = 8'd1) (
+      |        ^~~~~~~~~~~~~~~~~~~~~
+                                      : ... Top module 'ef_util_fifo'
+  158 | module ef_util_fifo #(parameter DW=8, AW=4)(
+      |        ^~~~~~~~~~~~
+                                      : ... Top module 'ef_util_clkmux_4x1'
+  327 | module ef_util_clkmux_4x1 (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: EF_GPIO8.v:20:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   20 | module EF_GPIO8 (
+      |        ^~~~~~~~
+                       ef_util_lib.v:30:8: ... Location of module with timescale
+   30 | module ef_util_sync #(parameter NUM_STAGES = 2) (
+      |        ^~~~~~~~~~~~
+                       ... For warning description see https://verilator.org/warn/TIMESCALEMOD?v=5.049
+                       ... Use "/* verilator lint_off TIMESCALEMOD */" and lint_on around source to disable this message.
+%Warning-TIMESCALEMOD: EF_GPIO8_WB_wrapper.v:7:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+    7 | module EF_GPIO8_WB_wrapper (
+      |        ^~~~~~~~~~~~~~~~~~~
+                       ef_util_lib.v:30:8: ... Location of module with timescale
+   30 | module ef_util_sync #(parameter NUM_STAGES = 2) (
+      |        ^~~~~~~~~~~~
+%Warning-WIDTHEXPAND: gpio.v:354:40: Operator COND expects 32 bits on the Conditional True, but Conditional True's VARREF 'DATAI_WIRE' generates 8 bits.
+                                   : ... note: In instance 'EF_GPIO8_WB_wrapper.u_ef_gpio'
+  354 |    (adr_i[16-1:0] == DATAI_REG_OFFSET) ? DATAI_WIRE :
+      |                                        ^
+                      ... For warning description see https://verilator.org/warn/WIDTHEXPAND?v=5.049
+                      ... Use "/* verilator lint_off WIDTHEXPAND */" and lint_on around source to disable this message.
+%Warning-WIDTHEXPAND: gpio.v:355:40: Operator COND expects 32 bits on the Conditional True, but Conditional True's VARREF 'DATAO_REG' generates 8 bits.
+                                   : ... note: In instance 'EF_GPIO8_WB_wrapper.u_ef_gpio'
+  355 |    (adr_i[16-1:0] == DATAO_REG_OFFSET) ? DATAO_REG :
+      |                                        ^
+%Warning-WIDTHEXPAND: gpio.v:356:38: Operator COND expects 32 bits on the Conditional True, but Conditional True's VARREF 'DIR_REG' generates 8 bits.
+                                   : ... note: In instance 'EF_GPIO8_WB_wrapper.u_ef_gpio'
+  356 |    (adr_i[16-1:0] == DIR_REG_OFFSET) ? DIR_REG :
+      |                                      ^
+%Warning-UNUSEDSIGNAL: gpio.v:29:25: Bits of signal are not used: 'adr_i'[31:16]
+                                   : ... note: In instance 'EF_GPIO8_WB_wrapper.u_ef_gpio'
+   29 |     input  wire [ 31:0] adr_i,
+      |                         ^~~~~
+                       ... For warning description see https://verilator.org/warn/UNUSEDSIGNAL?v=5.049
+                       ... Use "/* verilator lint_off UNUSEDSIGNAL */" and lint_on around source to disable this message.
+%Warning-UNUSEDSIGNAL: gpio.v:68:16: Signal is not used: 'wb_re'
+                                   : ... note: In instance 'EF_GPIO8_WB_wrapper.u_ef_gpio'
+   68 |   wire         wb_re = ~we_i & wb_valid;
+      |                ^~~~~
+%Warning-UNUSEDSIGNAL: gpio.v:69:16: Signal is not used: 'wb_byte_sel'
+                                   : ... note: In instance 'EF_GPIO8_WB_wrapper.u_ef_gpio'
+   69 |   wire [  3:0] wb_byte_sel = sel_i & {4{wb_we}};
+      |                ^~~~~~~~~~~
+%Warning-UNUSEDSIGNAL: EF_GPIO8.v:22:25: Signal is not used: 'rst_n'
+                                       : ... note: In instance 'EF_GPIO8_WB_wrapper.u_ef_gpio.instance_to_wrap'
+   22 |     input  wire         rst_n,
+      |                         ^~~~~
+%Warning-UNUSEDSIGNAL: ef_util_lib.v:372:21: Signal is not used: 'rst_n'
+                                           : ... note: In instance 'EF_GPIO8_WB_wrapper.u_ef_gpio.clk_gate_cell'
+  372 |     input   wire    rst_n,
+      |                     ^~~~~
+%Warning-UNUSEDSIGNAL: ef_util_lib.v:373:21: Signal is not used: 'clk_en'
+                                           : ... note: In instance 'EF_GPIO8_WB_wrapper.u_ef_gpio.clk_gate_cell'
+  373 |     input   wire    clk_en,
+      |                     ^~~~~~
+%Warning-CASEINCOMPLETE: ef_util_lib.v:238:9: Case values incompletely covered (example pattern 0x0)
+  238 |         case({w_en,rd})
+      |         ^~~~
+                         ... For warning description see https://verilator.org/warn/CASEINCOMPLETE?v=5.049
+                         ... Use "/* verilator lint_off CASEINCOMPLETE */" and lint_on around source to disable this message.
+- V e r i l a t i o n   R e p o r t: Verilator 5.049 devel rev v5.048-4-ge4803f29b (mod)
+- Verilator: Built from 0.122 MB sources in 13 modules, into 0.101 MB in 3 C++ files needing 0.000 MB
+- Verilator: Walltime 0.032 s (elab=0.004, cvt=0.019, bld=0.000); cpu 0.032 s on 1 threads; allocated 22.613 MB

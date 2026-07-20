@@ -1,0 +1,32 @@
+GENERATED-FROM: make all @ 2026-07-19T11:29:41Z PID=835184
+
+riscv32-unknown-elf-gcc (g2d47645cd) 14.2.1 20241024
+Date: 2026-07-19T11:29:41Z
+ISA: rv32imc_zicsr  ABI: ilp32
+CFLAGS: -march=rv32imc_zicsr -mabi=ilp32 -nostdlib -nostartfiles -ffreestanding -Os -Wall -Wextra -Werror
+
+=== BSP ===
+/opt/OpenROAD/riscv/gcc14-no-zcmp/bin/riscv32-unknown-elf-gcc -march=rv32imc_zicsr -mabi=ilp32 -nostdlib -nostartfiles -ffreestanding -Os -Wall -Wextra -Werror -I bsp/include -c -o bsp/crt0.o bsp/crt0.S
+/opt/OpenROAD/riscv/gcc14-no-zcmp/bin/riscv32-unknown-elf-gcc -march=rv32imc_zicsr -mabi=ilp32 -nostdlib -nostartfiles -ffreestanding -Os -Wall -Wextra -Werror -I bsp/include -c -o bsp/main.o bsp/main.c
+/opt/OpenROAD/riscv/gcc14-no-zcmp/bin/riscv32-unknown-elf-gcc -march=rv32imc_zicsr -mabi=ilp32 -T bsp/link.ld -nostdlib -Wl,-Map=bsp/firmware.map -o bsp/firmware.elf bsp/crt0.o bsp/main.o
+   text	   data	    bss	    dec	    hex	filename
+    100	      0	      0	    100	     64	bsp/firmware.elf
+BSP hex: 304 bytes
+
+=== BOOTROM ===
+/opt/OpenROAD/riscv/gcc14-no-zcmp/bin/riscv32-unknown-elf-gcc -march=rv32imc_zicsr -mabi=ilp32 -nostdlib -nostartfiles -ffreestanding -Os -Wall -Wextra -Werror -I ../bsp/include -c -o crt0.o crt0.S
+/opt/OpenROAD/riscv/gcc14-no-zcmp/bin/riscv32-unknown-elf-gcc -march=rv32imc_zicsr -mabi=ilp32 -nostdlib -nostartfiles -ffreestanding -Os -Wall -Wextra -I ../bsp/include -c -o boot_main.o boot_main.c
+/opt/OpenROAD/riscv/gcc14-no-zcmp/bin/riscv32-unknown-elf-gcc -march=rv32imc_zicsr -mabi=ilp32 -T ../bsp/link.ld -nostdlib -Wl,-Map=bootrom.map -o bootrom.elf crt0.o boot_main.o
+   text	   data	    bss	    dec	    hex	filename
+    258	      0	      0	    258	    102	bootrom/bootrom.elf
+bootrom.bin: 260 bytes
+
+=== CARAVEL_MGMT ===
+/opt/OpenROAD/riscv/gcc14-no-zcmp/bin/riscv32-unknown-elf-gcc -march=rv32imc_zicsr -mabi=ilp32 -nostdlib -nostartfiles -ffreestanding -Os -Wall -Wextra -c -o caravel_fw/crt0.o caravel_fw/crt0.S
+/opt/OpenROAD/riscv/gcc14-no-zcmp/bin/riscv32-unknown-elf-gcc -march=rv32imc_zicsr -mabi=ilp32 -nostdlib -nostartfiles -ffreestanding -Os -Wall -Wextra -I bsp/include -c -o caravel_fw/mgmt_fw.o caravel_fw/mgmt_fw.c
+/opt/OpenROAD/riscv/gcc14-no-zcmp/bin/riscv32-unknown-elf-gcc -march=rv32imc_zicsr -mabi=ilp32 -T caravel_fw/mgmt.ld -nostdlib -Wl,-Map=caravel_fw/mgmt_fw.map -o caravel_fw/mgmt_fw.elf caravel_fw/crt0.o caravel_fw/mgmt_fw.o
+   text	   data	    bss	    dec	    hex	filename
+    433	      0	      0	    433	    1b1	caravel_fw/mgmt_fw.elf
+mgmt_fw.hex: 1264 bytes
+
+=== ALL BUILDS PASSED ===

@@ -1,0 +1,12 @@
+{
+  "module": "ibex_core",
+  "classification": "REUSE_INTERNAL",
+  "tier": "C",
+  "cell_count": 6528,
+  "synthesis_log": "~/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-ibex_core/logs/synth/ibex_core_synth.log",
+  "results_xml": "~/hermes_workspace/projects/IP-010/v4/06_verification_stage/tb-ibex_core/results.xml",
+  "equiv_status": "PROVEN",
+  "tests_passed": 40,
+  "tests_total": 40,
+  "admitted": true
+}

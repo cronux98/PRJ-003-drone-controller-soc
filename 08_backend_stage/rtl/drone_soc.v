@@ -1,0 +1,1 @@
+/home/smdadmin/hermes_workspace/projects/IP-010/v4/04_frontend_stage/rtl-drone_soc/rtl/drone_soc.v

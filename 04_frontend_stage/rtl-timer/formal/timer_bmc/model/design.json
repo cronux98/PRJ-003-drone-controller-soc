@@ -1,0 +1,2085 @@
+{
+  "$schema": "https://raw.githubusercontent.com/YosysHQ/yosys/main/misc/jny.schema.json",
+  "generator": "Yosys 0.65+71 (git sha1 e56c6a954, clang++ 18.1.8 -fPIC -O3)",
+  "version": "0.0.1",
+  "invocation": "write_jny -no-connections ../model/design.json ",
+  "features": ["attributes", "properties"],
+  "modules": [
+      {
+        "name": "EF_TMR32_WB_wrapper",
+        "cell_sorts": [
+          {
+            "type": "$scopeinfo",
+            "ports": [
+
+            ],
+            "cells": [
+                {
+                  "name": "u_ef_tmr",
+                  "attributes": {
+                    "cell_module_not_derived": "00000000000000000000000000000001",
+                    "cell_src": "EF_TMR32_WB_wrapper.v:32.17-47.6",
+                    "module": "EF_TMR32_WB",
+                    "module_dynports": "00000000000000000000000000000001",
+                    "module_hdlname": "EF_TMR32_WB",
+                    "module_src": "timer.v:25.1-266.10"
+                  },
+                  "parameters": {
+                    "TYPE": "module"
+                  }
+                },
+                {
+                  "name": "u_ef_tmr.clk_gate_cell",
+                  "attributes": {
+                    "cell_module_not_derived": "00000000000000000000000000000001",
+                    "cell_src": "timer.v:65.23-71.4",
+                    "hdlname": "u_ef_tmr clk_gate_cell",
+                    "module": "ef_util_gating_cell",
+                    "module_hdlname": "ef_util_gating_cell",
+                    "module_src": "ef_util_lib.v:366.1-393.10"
+                  },
+                  "parameters": {
+                    "TYPE": "module"
+                  }
+                },
+                {
+                  "name": "u_ef_tmr.instance_to_wrap",
+                  "attributes": {
+                    "cell_module_not_derived": "00000000000000000000000000000001",
+                    "cell_src": "timer.v:216.5-242.4",
+                    "hdlname": "u_ef_tmr instance_to_wrap",
+                    "module": "$paramod\\EF_TMR32\\PRW=s32'00000000000000000000000000010000",
+                    "module_dynports": "00000000000000000000000000000001",
+                    "module_hdlname": "EF_TMR32",
+                    "module_src": "EF_TMR32.v:22.1-284.10"
+                  },
+                  "parameters": {
+                    "TYPE": "module"
+                  }
+                },
+                {
+                  "name": "u_ef_tmr.instance_to_wrap.TMREN_PE",
+                  "attributes": {
+                    "cell_module_not_derived": "00000000000000000000000000000001",
+                    "cell_src": "EF_TMR32.v:70.17-74.6",
+                    "hdlname": "u_ef_tmr instance_to_wrap TMREN_PE",
+                    "module": "ef_util_ped",
+                    "module_hdlname": "ef_util_ped",
+                    "module_src": "ef_util_lib.v:48.1-57.10"
+                  },
+                  "parameters": {
+                    "TYPE": "module"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$dff",
+            "ports": [
+                {
+                  "name": "CLK",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "D",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "Q",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.\\TMREN_PE.$procdff$1023",
+                  "attributes": {
+                    "src": "ef_util_lib.v:54.5-55.16"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$and",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "B",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$flatten\\u_ef_tmr.$and$timer.v:110$13",
+                  "attributes": {
+                    "src": "timer.v:110.14-110.58"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$and$timer.v:116$16",
+                  "attributes": {
+                    "src": "timer.v:116.14-116.54"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$and$timer.v:122$19",
+                  "attributes": {
+                    "src": "timer.v:122.14-122.56"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$and$timer.v:128$22",
+                  "attributes": {
+                    "src": "timer.v:128.14-128.56"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$and$timer.v:140$25",
+                  "attributes": {
+                    "src": "timer.v:140.14-140.56"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$and$timer.v:146$28",
+                  "attributes": {
+                    "src": "timer.v:146.14-146.55"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$and$timer.v:152$31",
+                  "attributes": {
+                    "src": "timer.v:152.14-152.59"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$and$timer.v:158$34",
+                  "attributes": {
+                    "src": "timer.v:158.14-158.59"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$and$timer.v:164$37",
+                  "attributes": {
+                    "src": "timer.v:164.14-164.57"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$and$timer.v:170$40",
+                  "attributes": {
+                    "src": "timer.v:170.14-170.57"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$and$timer.v:181$44",
+                  "attributes": {
+                    "src": "timer.v:181.26-181.42"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000011",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000011",
+                    "Y_WIDTH": "00000000000000000000000000000011"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$and$timer.v:184$47",
+                  "attributes": {
+                    "src": "timer.v:184.14-184.54"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$and$timer.v:187$50",
+                  "attributes": {
+                    "src": "timer.v:187.14-187.54"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$and$timer.v:264$99",
+                  "attributes": {
+                    "src": "timer.v:264.14-264.31"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$and$timer.v:76$6",
+                  "attributes": {
+                    "src": "timer.v:76.29-76.42"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$and$timer.v:77$7",
+                  "attributes": {
+                    "src": "timer.v:77.26-77.41"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$and$EF_TMR32.v:100$128",
+                  "attributes": {
+                    "src": "EF_TMR32.v:100.16-100.50"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$and$EF_TMR32.v:100$130",
+                  "attributes": {
+                    "src": "EF_TMR32.v:100.16-100.61"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$and$EF_TMR32.v:102$132",
+                  "attributes": {
+                    "src": "EF_TMR32.v:102.21-102.60"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$and$EF_TMR32.v:102$133",
+                  "attributes": {
+                    "src": "EF_TMR32.v:102.21-102.70"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$and$EF_TMR32.v:113$137",
+                  "attributes": {
+                    "src": "EF_TMR32.v:113.17-113.48"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$and$EF_TMR32.v:115$139",
+                  "attributes": {
+                    "src": "EF_TMR32.v:115.17-115.48"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$and$EF_TMR32.v:117$141",
+                  "attributes": {
+                    "src": "EF_TMR32.v:117.17-117.48"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$and$EF_TMR32.v:161$159",
+                  "attributes": {
+                    "src": "EF_TMR32.v:161.20-161.41"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$and$EF_TMR32.v:163$160",
+                  "attributes": {
+                    "src": "EF_TMR32.v:163.25-163.52"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$and$EF_TMR32.v:99$126",
+                  "attributes": {
+                    "src": "EF_TMR32.v:99.17-99.37"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.\\TMREN_PE.$and$ef_util_lib.v:56$303",
+                  "attributes": {
+                    "src": "ef_util_lib.v:56.18-56.31"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$adff",
+            "ports": [
+                {
+                  "name": "ARST",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "CLK",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "D",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "Q",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$flatten\\u_ef_tmr.$procdff$975",
+                  "attributes": {
+                    "src": "timer.v:262.3-265.24"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$procdff$986",
+                  "attributes": {
+                    "src": "timer.v:185.3-188.25"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "000",
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000011"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$procdff$972",
+                  "attributes": {
+                    "src": "EF_TMR32.v:77.5-84.34"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0000000000000001",
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000010000"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$reduce_bool",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [2, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$flatten\\u_ef_tmr.$auto$opt_dff.cc:235:make_patterns_logic$1098",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$auto$opt_dff.cc:235:make_patterns_logic$1101",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$auto$opt_dff.cc:235:make_patterns_logic$1104",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$auto$opt_dff.cc:235:make_patterns_logic$1047",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$auto$opt_dff.cc:235:make_patterns_logic$1051",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$auto$opt_dff.cc:235:make_patterns_logic$1056",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$auto$opt_dff.cc:235:make_patterns_logic$1064",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$auto$opt_dff.cc:235:make_patterns_logic$1066",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000011",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$logic_not",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [16, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$flatten\\u_ef_tmr.$eq$timer.v:245$56",
+                  "attributes": {
+                    "src": "timer.v:245.5-245.36"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000010000",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$eq$EF_TMR32.v:76$112",
+                  "attributes": {
+                    "src": "EF_TMR32.v:76.18-76.29"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000010000",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$eq$EF_TMR32.v:88$117",
+                  "attributes": {
+                    "src": "EF_TMR32.v:88.42-88.50"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000100000",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$adffe",
+            "ports": [
+                {
+                  "name": "ARST",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "CLK",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "D",
+                  "direction": "io",
+                  "range": [16, 0]
+                },
+                {
+                  "name": "EN",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "Q",
+                  "direction": "",
+                  "range": [16, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$flatten\\u_ef_tmr.$auto$ff.cc:337:slice$1095",
+                  "attributes": {
+                    "src": "timer.v:156.3-158.90"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0000000000000000",
+                    "CLK_POLARITY": "00000000000000000000000000000001",
+                    "EN_POLARITY": "00000000000000000000000000000001",
+                    "WIDTH": "00000000000000000000000000010000"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$auto$ff.cc:337:slice$1096",
+                  "attributes": {
+                    "src": "timer.v:195.3-210.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "00000000000000000000000000000001",
+                    "EN_POLARITY": "00000000000000000000000000000001",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$auto$ff.cc:337:slice$1099",
+                  "attributes": {
+                    "src": "timer.v:195.3-210.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "00000000000000000000000000000001",
+                    "EN_POLARITY": "00000000000000000000000000000001",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$auto$ff.cc:337:slice$1102",
+                  "attributes": {
+                    "src": "timer.v:195.3-210.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "00000000000000000000000000000001",
+                    "EN_POLARITY": "00000000000000000000000000000001",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$auto$ff.cc:337:slice$1105",
+                  "attributes": {
+                    "src": "timer.v:126.3-128.84"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "00000000000000000000000000000000",
+                    "CLK_POLARITY": "00000000000000000000000000000001",
+                    "EN_POLARITY": "00000000000000000000000000000001",
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$auto$ff.cc:337:slice$1107",
+                  "attributes": {
+                    "src": "timer.v:150.3-152.90"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "000000000000",
+                    "CLK_POLARITY": "00000000000000000000000000000001",
+                    "EN_POLARITY": "00000000000000000000000000000001",
+                    "WIDTH": "00000000000000000000000000001100"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$auto$ff.cc:337:slice$1108",
+                  "attributes": {
+                    "src": "timer.v:114.3-116.81"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0000000000000000",
+                    "CLK_POLARITY": "00000000000000000000000000000001",
+                    "EN_POLARITY": "00000000000000000000000000000001",
+                    "WIDTH": "00000000000000000000000000010000"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$auto$ff.cc:337:slice$1109",
+                  "attributes": {
+                    "src": "timer.v:182.3-184.79"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "000",
+                    "CLK_POLARITY": "00000000000000000000000000000001",
+                    "EN_POLARITY": "00000000000000000000000000000001",
+                    "WIDTH": "00000000000000000000000000000011"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$auto$ff.cc:337:slice$1110",
+                  "attributes": {
+                    "src": "timer.v:144.3-146.81"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "000",
+                    "CLK_POLARITY": "00000000000000000000000000000001",
+                    "EN_POLARITY": "00000000000000000000000000000001",
+                    "WIDTH": "00000000000000000000000000000011"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$auto$ff.cc:337:slice$1112",
+                  "attributes": {
+                    "src": "timer.v:120.3-122.84"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "00000000000000000000000000000000",
+                    "CLK_POLARITY": "00000000000000000000000000000001",
+                    "EN_POLARITY": "00000000000000000000000000000001",
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$auto$ff.cc:337:slice$1113",
+                  "attributes": {
+                    "src": "timer.v:162.3-164.85"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "00000000",
+                    "CLK_POLARITY": "00000000000000000000000000000001",
+                    "EN_POLARITY": "00000000000000000000000000000001",
+                    "WIDTH": "00000000000000000000000000001000"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$auto$ff.cc:337:slice$1114",
+                  "attributes": {
+                    "src": "timer.v:138.3-140.83"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0000000",
+                    "CLK_POLARITY": "00000000000000000000000000000001",
+                    "EN_POLARITY": "00000000000000000000000000000001",
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$auto$ff.cc:337:slice$1115",
+                  "attributes": {
+                    "src": "timer.v:168.3-170.86"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0000000000000000",
+                    "CLK_POLARITY": "00000000000000000000000000000001",
+                    "EN_POLARITY": "00000000000000000000000000000001",
+                    "WIDTH": "00000000000000000000000000010000"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$auto$ff.cc:337:slice$1116",
+                  "attributes": {
+                    "src": "timer.v:108.3-110.88"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "00000000000000000000000000000000",
+                    "CLK_POLARITY": "00000000000000000000000000000001",
+                    "EN_POLARITY": "00000000000000000000000000000001",
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$auto$ff.cc:337:slice$1041",
+                  "attributes": {
+                    "src": "EF_TMR32.v:137.5-148.42"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "00000000000000000000000000000000",
+                    "CLK_POLARITY": "00000000000000000000000000000001",
+                    "EN_POLARITY": "00000000000000000000000000000001",
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$auto$ff.cc:337:slice$1054",
+                  "attributes": {
+                    "src": "EF_TMR32.v:151.5-171.33"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "1",
+                    "CLK_POLARITY": "00000000000000000000000000000001",
+                    "EN_POLARITY": "00000000000000000000000000000001",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$auto$ff.cc:337:slice$1062",
+                  "attributes": {
+                    "src": "EF_TMR32.v:94.5-103.30"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "00000000000000000000000000000001",
+                    "EN_POLARITY": "00000000000000000000000000000001",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$reduce_and",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [6, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$auto$opt_dff.cc:252:make_patterns_logic$1053",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000110",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$auto$opt_dff.cc:252:make_patterns_logic$1060",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$auto$opt_dff.cc:252:make_patterns_logic$1068",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$eq",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [16, 0]
+                },
+                {
+                  "name": "B",
+                  "direction": "io",
+                  "range": [16, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$flatten\\u_ef_tmr.$eq$timer.v:246$57",
+                  "attributes": {
+                    "src": "timer.v:246.5-246.39"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000010000",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000010000",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$eq$timer.v:247$58",
+                  "attributes": {
+                    "src": "timer.v:247.5-247.35"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000010000",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000010000",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$eq$timer.v:248$59",
+                  "attributes": {
+                    "src": "timer.v:248.5-248.37"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000010000",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000010000",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$eq$timer.v:249$60",
+                  "attributes": {
+                    "src": "timer.v:249.5-249.37"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000010000",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000010000",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$eq$timer.v:250$61",
+                  "attributes": {
+                    "src": "timer.v:250.5-250.37"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000010000",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000010000",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$eq$timer.v:251$62",
+                  "attributes": {
+                    "src": "timer.v:251.5-251.36"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000010000",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000010000",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$eq$timer.v:252$63",
+                  "attributes": {
+                    "src": "timer.v:252.5-252.40"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000010000",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000010000",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$eq$timer.v:253$64",
+                  "attributes": {
+                    "src": "timer.v:253.5-253.40"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000010000",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000010000",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$eq$timer.v:254$65",
+                  "attributes": {
+                    "src": "timer.v:254.5-254.38"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000010000",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000010000",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$eq$timer.v:255$66",
+                  "attributes": {
+                    "src": "timer.v:255.5-255.38"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000010000",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000010000",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$eq$timer.v:256$67",
+                  "attributes": {
+                    "src": "timer.v:256.5-256.35"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000010000",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000010000",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$eq$timer.v:257$68",
+                  "attributes": {
+                    "src": "timer.v:257.5-257.36"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000010000",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000010000",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$eq$timer.v:258$69",
+                  "attributes": {
+                    "src": "timer.v:258.5-258.36"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000010000",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000010000",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$eq$timer.v:259$70",
+                  "attributes": {
+                    "src": "timer.v:259.5-259.35"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000010000",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000010000",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$eq$EF_TMR32.v:160$157",
+                  "attributes": {
+                    "src": "EF_TMR32.v:160.16-160.33"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$eq$EF_TMR32.v:166$161",
+                  "attributes": {
+                    "src": "EF_TMR32.v:166.21-166.38"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$eq$EF_TMR32.v:168$162",
+                  "attributes": {
+                    "src": "EF_TMR32.v:168.21-168.38"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$eq$EF_TMR32.v:87$116",
+                  "attributes": {
+                    "src": "EF_TMR32.v:87.42-87.59"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000100000",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000100000",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$eq$EF_TMR32.v:89$119",
+                  "attributes": {
+                    "src": "EF_TMR32.v:89.42-89.65"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000100000",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000100000",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$eq$EF_TMR32.v:90$120",
+                  "attributes": {
+                    "src": "EF_TMR32.v:90.42-90.50"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000100000",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000100000",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$eq$EF_TMR32.v:91$121",
+                  "attributes": {
+                    "src": "EF_TMR32.v:91.42-91.53"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000100000",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000100000",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$eq$EF_TMR32.v:92$122",
+                  "attributes": {
+                    "src": "EF_TMR32.v:92.42-92.53"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000100000",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000100000",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$not",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$flatten\\u_ef_tmr.$not$timer.v:264$98",
+                  "attributes": {
+                    "src": "timer.v:264.25-264.31"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$not$EF_TMR32.v:161$158",
+                  "attributes": {
+                    "src": "EF_TMR32.v:161.33-161.41"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$not$EF_TMR32.v:99$125",
+                  "attributes": {
+                    "src": "EF_TMR32.v:99.17-99.30"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.\\TMREN_PE.$not$ef_util_lib.v:56$302",
+                  "attributes": {
+                    "src": "ef_util_lib.v:56.23-56.31"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$reduce_or",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [3, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$flatten\\u_ef_tmr.$reduce_or$timer.v:212$55",
+                  "attributes": {
+                    "src": "timer.v:212.16-212.24"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000011",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$add",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [32, 0]
+                },
+                {
+                  "name": "B",
+                  "direction": "io",
+                  "range": [32, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [32, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$add$EF_TMR32.v:134$150",
+                  "attributes": {
+                    "src": "EF_TMR32.v:134.32-134.48"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000100000",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000100000",
+                    "Y_WIDTH": "00000000000000000000000000100000"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$mux",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "B",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "S",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$flatten\\u_ef_tmr.$procmux$869",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "timer.v:264.14-264.31|timer.v:264.10-265.24"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$procmux$871",
+                  "attributes": {
+                    "src": "timer.v:208.18-208.35|timer.v:208.14-208.58"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$procmux$874",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "timer.v:207.13-207.24|timer.v:207.9-208.58"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$procmux$876",
+                  "attributes": {
+                    "src": "timer.v:204.18-204.35|timer.v:204.14-204.58"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$procmux$879",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "timer.v:203.13-203.24|timer.v:203.9-204.58"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$procmux$881",
+                  "attributes": {
+                    "src": "timer.v:200.18-200.35|timer.v:200.14-200.58"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$procmux$884",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "timer.v:199.13-199.24|timer.v:199.9-200.58"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$procmux$887",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "timer.v:187.14-187.54|timer.v:187.10-188.25"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000011"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$ternary$timer.v:245$96",
+                  "attributes": {
+                    "src": "timer.v:245.4-260.16"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$ternary$timer.v:246$95",
+                  "attributes": {
+                    "src": "timer.v:246.4-260.16"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$ternary$timer.v:247$94",
+                  "attributes": {
+                    "src": "timer.v:247.4-260.16"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$ternary$timer.v:248$92",
+                  "attributes": {
+                    "src": "timer.v:248.4-260.16"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$ternary$timer.v:249$91",
+                  "attributes": {
+                    "src": "timer.v:249.4-260.16"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$ternary$timer.v:250$90",
+                  "attributes": {
+                    "src": "timer.v:250.4-260.16"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$ternary$timer.v:251$88",
+                  "attributes": {
+                    "src": "timer.v:251.4-260.16"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$ternary$timer.v:252$86",
+                  "attributes": {
+                    "src": "timer.v:252.4-260.16"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$ternary$timer.v:253$84",
+                  "attributes": {
+                    "src": "timer.v:253.4-260.16"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$ternary$timer.v:254$82",
+                  "attributes": {
+                    "src": "timer.v:254.4-260.16"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$ternary$timer.v:255$80",
+                  "attributes": {
+                    "src": "timer.v:255.4-260.16"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$ternary$timer.v:256$78",
+                  "attributes": {
+                    "src": "timer.v:256.4-260.16"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$ternary$timer.v:257$76",
+                  "attributes": {
+                    "src": "timer.v:257.4-260.16"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$ternary$timer.v:258$74",
+                  "attributes": {
+                    "src": "timer.v:258.4-260.16"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.$ternary$timer.v:259$72",
+                  "attributes": {
+                    "src": "timer.v:259.4-260.16"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$procmux$677",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "EF_TMR32.v:166.21-166.38|EF_TMR32.v:166.18-171.33"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$procmux$680",
+                  "attributes": {
+                    "src": "EF_TMR32.v:163.25-163.52|EF_TMR32.v:163.22-164.34"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$procmux$683",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "EF_TMR32.v:161.20-161.41|EF_TMR32.v:161.17-164.34"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$procmux$685",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "EF_TMR32.v:160.16-160.33|EF_TMR32.v:160.13-171.33"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$procmux$687",
+                  "attributes": {
+                    "src": "EF_TMR32.v:159.17-159.21|EF_TMR32.v:159.14-171.33"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$procmux$691",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "EF_TMR32.v:155.16-155.33|EF_TMR32.v:155.13-158.30"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$procmux$693",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "EF_TMR32.v:154.12-154.19|EF_TMR32.v:154.9-171.33"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$procmux$695",
+                  "attributes": {
+                    "src": "EF_TMR32.v:147.16-147.20|EF_TMR32.v:147.13-148.42"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$procmux$699",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "EF_TMR32.v:142.16-142.33|EF_TMR32.v:142.13-145.30"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$procmux$701",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "EF_TMR32.v:141.12-141.19|EF_TMR32.v:141.9-148.42"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$procmux$707",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "EF_TMR32.v:131.16-131.29|EF_TMR32.v:131.13-134.49"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$procmux$730",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "EF_TMR32.v:130.17-130.36|EF_TMR32.v:130.14-134.49"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$procmux$752",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "EF_TMR32.v:126.16-126.27|EF_TMR32.v:126.13-129.49"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$procmux$772",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "EF_TMR32.v:125.17-125.36|EF_TMR32.v:125.14-134.49"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$procmux$791",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "EF_TMR32.v:120.16-120.23|EF_TMR32.v:120.13-123.44"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$procmux$808",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "EF_TMR32.v:119.17-119.34|EF_TMR32.v:119.14-134.49"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$procmux$823",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "EF_TMR32.v:117.17-117.48|EF_TMR32.v:117.14-134.49"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$procmux$835",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "EF_TMR32.v:115.17-115.48|EF_TMR32.v:115.14-134.49"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$procmux$844",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "EF_TMR32.v:113.17-113.48|EF_TMR32.v:113.14-134.49"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$procmux$850",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "EF_TMR32.v:111.12-111.20|EF_TMR32.v:111.9-134.49"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$procmux$852",
+                  "attributes": {
+                    "src": "EF_TMR32.v:102.21-102.70|EF_TMR32.v:102.18-103.30"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$procmux$855",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "EF_TMR32.v:100.16-100.61|EF_TMR32.v:100.13-103.30"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$procmux$857",
+                  "attributes": {
+                    "src": "EF_TMR32.v:99.17-99.37|EF_TMR32.v:99.14-103.30"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$procmux$860",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "EF_TMR32.v:97.12-97.24|EF_TMR32.v:97.9-103.30"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$procmux$864",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "EF_TMR32.v:81.16-81.20|EF_TMR32.v:81.13-82.39"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000010000"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$procmux$866",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "EF_TMR32.v:80.12-80.18|EF_TMR32.v:80.9-84.34"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000010000"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$ternary$EF_TMR32.v:127$146",
+                  "attributes": {
+                    "src": "EF_TMR32.v:127.32-127.67"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$ternary$EF_TMR32.v:132$149",
+                  "attributes": {
+                    "src": "EF_TMR32.v:132.32-132.58"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$ternary$EF_TMR32.v:282$300",
+                  "attributes": {
+                    "src": "EF_TMR32.v:282.33-282.70"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$ne",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [8, 0]
+                },
+                {
+                  "name": "B",
+                  "direction": "io",
+                  "range": [8, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$auto$opt_dff.cc:235:make_patterns_logic$1043",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000001000",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000001000",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$auto$opt_dff.cc:235:make_patterns_logic$1045",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000001000",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000001000",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$auto$opt_dff.cc:235:make_patterns_logic$1058",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000100",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000100",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$sub",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [32, 0]
+                },
+                {
+                  "name": "B",
+                  "direction": "io",
+                  "range": [32, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [32, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$sub$EF_TMR32.v:129$147",
+                  "attributes": {
+                    "src": "EF_TMR32.v:129.32-129.48"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000100000",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000100000",
+                    "Y_WIDTH": "00000000000000000000000000100000"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$sub$EF_TMR32.v:82$115",
+                  "attributes": {
+                    "src": "EF_TMR32.v:82.28-82.38"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000010000",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000100000",
+                    "Y_WIDTH": "00000000000000000000000000100000"
+                  }
+                },
+                {
+                  "name": "$flatten\\u_ef_tmr.\\instance_to_wrap.$sub$EF_TMR32.v:89$118",
+                  "attributes": {
+                    "src": "EF_TMR32.v:89.50-89.64"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000100000",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000100000",
+                    "Y_WIDTH": "00000000000000000000000000100000"
+                  }
+                }
+            ]
+          }
+        ],
+        "attributes": {
+            "hdlname": "EF_TMR32_WB_wrapper",
+            "top": "00000000000000000000000000000001",
+            "src": "EF_TMR32_WB_wrapper.v:7.1-55.10"
+        }
+      }
+  ]
+}

@@ -1,0 +1,24 @@
+Plan written to `11_postmortem_audit/POSTMORTEM_IMPROVEMENT_PLAN.md`. I read all 19 reports, then verified the final postmortem's claims against the live framework files — which changed the plan substantially.
+
+**The most important finding isn't in any of the reports:**
+
+Six frontend waivers and ten promote waivers all name "GLS at Stage 06" as their compensating check. `06_verification_validation.md:44` says GLS was **NOT RUN**, deferring to a post-PD GLS stage that doesn't exist in the chain — and cites the frontend waivers as its justification. Circular citation. The design reached Caravel with 16 uncompensated waivers, zero gate-level verification, and `tests=0` on all 16 formal XMLs. Every gate graded PASS. No rubric check currently verifies that a waiver's compensating check actually ran.
+
+**Four of the five mandates were already in the framework and were violated anyway:**
+
+| Mandate | Final postmortem claims | Verified live |
+|---|---|---|
+| M1 "SOUL has no constraint" | — | `SOUL.md:848` already says *"I won't do the hands-on work myself"* |
+| M2 "patch skill to mandate Metrics" | — | Already mandated (pitfall #10) + template exists; **0/10 reports complied** |
+| M4 "12 turns, 3 retries, $0.80 caps" | — | Already `--max-turns 24`, `MAX_RETRIES=10`, caps removed entirely |
+| Bottleneck B GLIBC | — | Already fixed at `librelane-backend/SKILL.md:156` |
+
+Applying Mandate 4 verbatim would be a **regression** — it would lower `MAX_RETRIES` from 10 to 5 and reintroduce deliberately-removed budget caps. The backend timeout wasn't a bad default; the skill said 3h and the task was created with 1h. Configuration drift, not a wrong number.
+
+So the plan's framing is that the framework's failure mode is documentation without enforcement, and Phase 0 builds gates rather than writing more rules. Its acceptance criterion is deliberately inverted: **run the new gates against v4 and confirm they fail.** A gate that passes the run that motivated it isn't a gate.
+
+Other cross-reference contradictions found (§4.3): provenance banners claimed as scheduled but 0/52 logs have them; promote graded PASS with 1 blocked module against its own §5.2 requiring zero; backend recorded **19,447 slew + 128 cap violations** in its postmortem while its validation table omits §7.7b and four other backend-specific checks entirely; stage 01's absolute-path SKILL_FIX still unapplied at two live call sites.
+
+Two things I'd flag:
+- I did **not** update `00_postmortem_index.md` — the task specified a single output file, and that index is auditor-owned. Say the word and I'll add the router row.
+- Stage 09 has Vera recorded as both waiver adjudicator and author of the report granting it, which makes W09-001/002 structurally void under `waiver-adjudication`. That may warrant a decision independent of v5 planning.
