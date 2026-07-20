@@ -1,7 +1,10 @@
-# PRJ-003 — Drone Controller SoC v4
+# PRJ-003 — Drone Controller SoC
 
-**Autonomous agentic ASIC design — Ibex RV32IMC on sky130**
-**Tapeout-ready GDS | DRC/LVS clean | 10/10 stages audited PASS**
+**I designed the agentic ASIC framework. The framework autonomously produced this chip — no human wrote RTL, testbenches, or ran EDA tools.**
+
+![KLayout render of drone_soc GDS](layout.png)
+
+Tapeout-ready GDS on SkyWater 130nm. DRC/LVS clean. 10/10 autonomous stages audited PASS by Claude Opus 4.8.
 
 ---
 
@@ -13,7 +16,7 @@
 | **Process** | sky130_fd_sc_hd (SkyWater 130nm) |
 | **Frequency** | 50 MHz target (closed at +30ns WNS) |
 | **SRAM** | 8 KB OpenRAM (blackbox hard macro) |
-| **Modules** | 17 (3 UART, 2 SPI, I2C, GPIO, DShot PWM, Timer, Watchdog, IRQ Ctrl, Clock/Reset Mgr, Wishbone Interconnect, Ibex Core, SRAM, Caravel Wrapper) |
+| **Modules** | 17 (3× UART, 2× SPI, I2C, GPIO, DShot PWM, Timer, Watchdog, IRQ Ctrl, Clock/Reset Mgr, Wishbone Interconnect, Ibex Core, SRAM, Caravel Wrapper) |
 | **Gates** | ~146K standard cells |
 | **Area** | 2,800 × 1,760 μm (Caravel user area) |
 | **Power** | 1.8V core / 3.3V IO |
@@ -22,6 +25,8 @@
 ---
 
 ## Stage Status
+
+Every stage was dispatched, executed, and audited autonomously — no human intervention.
 
 | # | Stage | Verdict | Retries |
 |---|-------|---------|---------|
@@ -55,36 +60,39 @@
 - **Tier A modules:** 9 (high coverage)
 - **Tier B modules:** 5 (functional coverage)
 - **Tier C modules:** 4 (basic integration)
-- **Failure clusters:** 0 (no RTL bugs found in verification)
+- **Failure clusters:** 0 (no RTL bugs found)
 
 ### Caravel Integration
 - **mpw-precheck:** 3 runs, final PASS
 - **DRC:** Clean on user_project_wrapper
 - **BEOL check:** PASSED
-- **Offgrid check:** PASSED
 
 ---
 
 ## Repository Structure
 
+The early-stage directories (business, specification, architecture) include only the primary output document — the full stage artifacts are extensive and were used to inform downstream stages, but the single document captures the essential technical content.
+
 ```
-PRJ-003/
-├── README.md                    ← this file
+├── README.md
+├── layout.png                  ← KLayout GDS render
 ├── .gitignore
 ├── waiver_ledger.json
-├── 00_validation_report/        ← per-stage validation (11 reports)
-├── 11_postmortem_audit/         ← per-stage postmortems + final (9 reports)
-├── 01_business_stage/           ← market analysis (teaser)
-├── 02_specification_stage/      ← system spec (teaser)
-├── 03_architecture_stage/       ← architecture doc (teaser)
-├── 04_frontend_stage/           ← RTL + lint/synth/formal/equiv logs
-├── 05_firmware_stage/           ← BSP + drivers + bootrom
-├── 06_verification_stage/       ← cocotb testbenches + results
-├── 07_promote_stage/            ← per-module promotion reports
-├── 08_backend_stage/            ← GDS + constraints + macros
-├── 09_caravel_stage/            ← mpw-precheck logs + report
-└── 10_document_stage/           ← thesis docs + metrics
+├── 00_validation_report/       ← per-stage validation (11 reports)
+├── 11_postmortem_audit/        ← postmortems + improvement plans (9 reports)
+├── 01_business_stage/          ← market analysis
+├── 02_specification_stage/     ← system specification
+├── 03_architecture_stage/      ← architecture document
+├── 04_frontend_stage/          ← RTL + lint/synth/formal/equiv logs
+├── 05_firmware_stage/          ← BSP + drivers + bootrom
+├── 06_verification_stage/      ← cocotb testbenches + results
+├── 07_promote_stage/           ← per-module promotion reports
+├── 08_backend_stage/           ← GDS + constraints + macros
+├── 09_caravel_stage/           ← mpw-precheck logs + report
+└── 10_document_stage/          ← documentation
 ```
+
+> **Note on language stats:** Some Yosys intermediate files (`.il`, `.smt2`) from formal verification are excluded via `.gitignore`. These are tool byproducts, not hand-written code. Any remaining non-Verilog files in the formal directories are solver artifacts generated during BMC/k-induction proofs.
 
 ---
 
@@ -110,15 +118,28 @@ Spec → Arch → RTL (lint/formal/synth/equiv) → Firmware (BSP/drivers/bootro
 
 ---
 
-## Acknowledgements
+## Third-Party Components
 
-- **RTL core:** Ibex by lowRISC (ETH Zürich / University of Bologna)
-- **SRAM:** OpenRAM generator
-- **PDK:** SkyWater sky130 (Google / Efabless)
-- **Toolchain:** Yosys, OpenROAD, Magic, Klayout, cocotb, Icarus Verilog, Verilator
-- **Harness:** Caravel by Efabless (chipIgnite / ChipFoundry)
+This project integrates and redistributes the following open-source hardware components. Each retains its original license.
+
+| Component | Source | License |
+|-----------|--------|---------|
+| Ibex RISC-V Core | lowRISC (ETH Zürich / Univ. of Bologna) | Apache 2.0 |
+| OpenRAM SRAM Macro | OpenRAM Project | BSD 3-Clause |
+| Caravel Harness | Efabless | Apache 2.0 |
+| sky130 PDK | SkyWater / Google | Apache 2.0 |
+| EF_UART, EF_SPI, EF_GPIO8, EF_TMR32, EF_WDT32, EF_I2C | Efabless IP Library | Apache 2.0 |
+
+See [THIRD_PARTY.md](THIRD_PARTY.md) for full attribution and license text references.
+
+---
+
+## License
+
+This project's original content (the agentic framework output, orchestration, and integration work) is licensed under Apache 2.0. Third-party components retain their original licenses as listed above. See [LICENSE](LICENSE).
 
 ---
 
 *Generated autonomously by the Hermes ASIC workflow — July 19, 2026*
 *No human wrote RTL, testbenches, constraints, or ran EDA tools for this chip.*
+*This repository is a single commit by design — the framework iterated its work internally across 10 stages with Claude Opus audit gates. The commit is the signed-off deliverable, not a development log.*

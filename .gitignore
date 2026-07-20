@@ -30,3 +30,5 @@ venv/
 # Formal tool databases (large SQLite)
 **/formal/*/status.sqlite
 09_caravel_stage/mpw_precheck/
+*.il
+*.smt2
