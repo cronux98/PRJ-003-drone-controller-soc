@@ -48,7 +48,7 @@ IP-010 v4 specification reused the v3 baseline (16.67 MHz, 8 KB SRAM, RV32IMC, W
 1. **Profile OAuth sync is critical.** Before dispatching any auditor task, run the auth sync script from `kanban-asic-workflow/references/profile-health-and-sync.md` to copy default-profile OAuth tokens into all profile homes.
 2. **Pre-computed evidence needs tool-removal.** When passing pre-computed evidence to Claude, use `--tools ""` (no tools) to prevent Claude from exploring the filesystem and burning turns.
 3. **grep -c counts occurrences, not unique.** Always use `grep -oP | sort -u | wc -l` for unique ID counts in audit evidence. `grep -c` inflated the trace matrix count from 53 to 63.
-4. **HOME override is a valid fallback for headless OAuth recovery.** When the current profile's OAuth is expired and no API key is available, `HOME=/home/<user> claude ...` can use the default profile's Pro subscription session.
+4. **HOME override is a valid fallback for headless OAuth recovery.** When the current profile's OAuth is expired and no API key is available, `HOME=$HOME claude ...` can use the default profile's Pro subscription session.
 
 ## Improvement Actions
 
