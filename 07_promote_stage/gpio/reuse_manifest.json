@@ -1,5 +1,5 @@
 {
-  "_generated_from": "gen_reuse_manifest.py host=smdtest02 utc=2026-07-19T12:06:19.523149+00:00",
+  "_generated_from": "gen_reuse_manifest.py host=buildhost utc=2026-07-19T12:06:19.523149+00:00",
   "module": "gpio",
   "module_type": "REUSE",
   "source_ip": "REUSE_INTERNAL",

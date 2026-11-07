@@ -2,7 +2,7 @@
   "project": "IP-010",
   "version": "v4",
   "timestamp": "2026-07-19T12:06:19.522552+00:00",
-  "_generated_from": "promotion_stage host=smdtest02 pid=848552 utc=2026-07-19T12:05:44.960051+00:00",
+  "_generated_from": "promotion_stage host=buildhost pid=848552 utc=2026-07-19T12:05:44.960051+00:00",
   "modules_expected": 17,
   "modules_promoted": 16,
   "modules_blocked": 1,

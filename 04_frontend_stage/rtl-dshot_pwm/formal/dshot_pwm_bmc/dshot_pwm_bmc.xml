@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-<testsuite timestamp="2026-07-19T10:08:53" hostname="smdtest02" package="dshot_pwm" id="0" name="bmc" tests="0" errors="0" failures="0" time="2" skipped="0">
+<testsuite timestamp="2026-07-19T10:08:53" hostname="buildhost" package="dshot_pwm" id="0" name="bmc" tests="0" errors="0" failures="0" time="2" skipped="0">
 <properties>
 <property name="os" value="Linux"/>
 <property name="expect" value="PASS"/>
